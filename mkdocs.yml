@@ -1,13 +1,16 @@
-site_name: obsidian-mkdocs template
+site_name: thdlrt CsNotes
 
 theme:
+    logo: https://thdlrt.oss-cn-beijing.aliyuncs.com/android-chrome-512x512.png
     name: 'material'
+    features:
+    - content.code.select
     palette:
 
     # Light mode
     - media: "(prefers-color-scheme: light)"
       scheme: default
-      primary: pink
+      primary: light blue
       accent: indigo
       toggle:
         icon: material/toggle-switch-off-outline
@@ -16,7 +19,7 @@ theme:
     # Dark mode
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
-      primary: pink
+      primary: light blue
       accent: blue
       toggle:
         icon: material/toggle-switch
