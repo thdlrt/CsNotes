@@ -383,7 +383,6 @@ Map <String,String> sm = Collections.unmodifiableSortedMap(
 - 允许存储null
 - 保持元素的**插入顺序**，迭代时将按照元素的添加顺序返回。
 - 性能略低于`HashSet`，但在迭代访问整个集合时有更好的性能。
-![image.png](https://thdlrt.oss-cn-beijing.aliyuncs.com/20240306202015.png)
 
 #### Map
 
@@ -424,7 +423,6 @@ pollFirstEntry();
 pollLastEntry();
 //逆序排序
 map = map.descendingMap();
-//范围查找元素
 ```
 
 
