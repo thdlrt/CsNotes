@@ -329,7 +329,7 @@ Map <String,String> sm = Collections.unmodifiableSortedMap(
 - `element()`返回队首元素，null时会报错
   - `peek()`可以返回null
 - `offer()`在队尾插入元素
-- `remove()`出队并返回队尾元素，null时会报错
+- `remove()` 出队并返回队首元素，null 时会报错
   - `poll()`可以返回null
 - 虽然来源于LinkedList，但不能直接使用其方法
 
@@ -357,26 +357,25 @@ Map <String,String> sm = Collections.unmodifiableSortedMap(
 - 不允许有重复元素，HashSet **是无序的**，即不会记录插入的顺序
 - 使用`contains()`判断元素是否存在
 - 允许存储null
-- 范围搜索
-  - 最小元素：`first()`
-  - 最大元素：`last()`
-  - `subSet(E fromElement, E toElement)`：获取`TreeSet`的一个子集，该子集包含从`fromElement`（包含）到`toElement`（不包含）的所有元素。（Element不一定要在集合中，只是表示一个范围）
-  - `headSet(E toElement)`方法返回一个视图，包含小于（不包含）`toElement`的所有元素。
-  - `tailSet(E fromElement)`方法返回一个视图，包含大于或等于`fromElement`的所有元素。
-  - 注意对视图的修改是对原集合的修改
 - 自定义数据类型要实现equals、hashCode
 
 ##### TreeSet
 
+- 实现 SortedSet 接口
 - 允许存储null
 - 使用红黑树实现元素排序存储
 - 创建时可以传入一个比较器，如`String.CASE_INSENSITIVE_ORDER`
 - 自定义数据类型要实现equals、Comparable<>接口
-- `last()``first()`生成最大/小元素
-- 范围选择
-  - `subSet(from,to)`不包含to
-  - `headSet(to)`所有小于to
-  - `taulSet(from)`所有大于等于from
+- `last() first()` 生成最大/小元素
+- `floor(E e)`：返回在 `TreeSet` 中小于等于给定元素的最大元素，如果不存在这样的元素，则返回 `null`。
+- `ceiling(E e)`：返回在`TreeSet`中大于等于给定元素的最小元素，如果不存在这样的元素，则返回`null`。
+- `higher(E e)`：返回在`TreeSet`中严格大于给定元素的最小元素，如果不存在这样的元素，则返回`null`。
+- `lower(E e)`：返回在`TreeSet`中严格小于给定元素的最大元素，如果不存在这样的元素，则返回`null`。
+- 范围搜索
+  - `subSet(E fromElement, E toElement)`：获取 `TreeSet` 的一个子集，该子集包含从 `fromElement`（包含）到 `toElement`（不包含）的所有元素。（Element 不一定要在集合中，只是表示一个范围）
+  - `headSet(E toElement)` 方法返回一个视图，包含小于（不包含）`toElement` 的所有元素。
+  - `tailSet(E fromElement)` 方法返回一个视图，包含大于或等于 `fromElement` 的所有元素。
+  - 注意对视图的修改是对原集合的修改
 
 
 ##### LinkedHashSet
@@ -384,6 +383,7 @@ Map <String,String> sm = Collections.unmodifiableSortedMap(
 - 允许存储null
 - 保持元素的**插入顺序**，迭代时将按照元素的添加顺序返回。
 - 性能略低于`HashSet`，但在迭代访问整个集合时有更好的性能。
+![image.png](https://thdlrt.oss-cn-beijing.aliyuncs.com/20240306202015.png)
 
 #### Map
 
