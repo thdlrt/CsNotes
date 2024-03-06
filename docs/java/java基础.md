@@ -201,7 +201,7 @@ public class SpaceShipDelegation {
 
 ## [[异常]]
 
-## [[docs/java/java基础/杂项/测试]]
+## [[docs/java/java基础/杂项/测试|测试]]
 
 ## 并发编程
 
