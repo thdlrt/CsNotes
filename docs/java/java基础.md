@@ -311,7 +311,7 @@ Map <String,String> sm = Collections.unmodifiableSortedMap(
 
 ##### LinkedList
 
-- 实现了queue\deque等接口，可以作为队列使用
+- 实现了 queue deque 等接口，可以作为队列使用
 - 使用`add`默认在末尾加，也可以指定`addFirst()/addLast()`
   - remove、get同理
   - 也可以随机访问，不过如果访问元素不在收尾，效率很低
@@ -329,7 +329,7 @@ Map <String,String> sm = Collections.unmodifiableSortedMap(
 - `element()`返回队首元素，null时会报错
   - `peek()`可以返回null
 - `offer()`在队尾插入元素
-- `remove()`返回队尾元素，null时会报错
+- `remove()`出队并返回队尾元素，null时会报错
   - `poll()`可以返回null
 - 虽然来源于LinkedList，但不能直接使用其方法
 
