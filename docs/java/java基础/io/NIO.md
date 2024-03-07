@@ -1,6 +1,6 @@
- 
+  
 - **Buffer 包含一些要写入或者刚读出的数据**。在 NIO 库中，所有数据都是用 Buffer 处理的。在读取数据时，它是直接读到 Buffer 中的；在写入数据时，也是写入到 Buffer 中的。
-- **ByteBuffer 是唯一和 FileChannel 通信的类型**。在 NIO 中，所有的数据都是通过 Channel 处理的。它就像水管一样，是一个通道。数据可以从 Channel 读取到 Buffer 中，也可以从 Buffer 写入到 Channel 中。
+- **ByteBuffer 是唯一和 FileChannel 通信的类型**。在 NIO 中，所有的数据都是通过 Channel 处理的。它就像水管一样，是一个通道。数据可以从 Channel 读取到 Buffer 中，也可以从 Buffer 写入到 Channel 中。（通过 buffer 来读写文件，然后再通过 channel 进行传输）
   - `FileChannel` 是 Java NIO（New Input/Output）中的一个关键类，用于文件的读取、写入、映射和操作。它提供了一个与文件相关联的通道，并支持高效的文件处理。
   - 隧道通常绑定一个目标对象，**作为从文件读取到缓冲区、从缓冲区写入到文件的中间桥梁**
   
