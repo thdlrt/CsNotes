@@ -26,16 +26,6 @@
 - 适配器InputStreamReader和OutputStreamWriter可以将Input/OutputStream转化为Reader/Writer
   - 都有对应的，后缀为R/W
 
-#### Scanning
-
-- 用于扫描和解析文本数据
-- 可以用不同的输入源来创建 `Scanner` 对象`Scanner scanner = new Scanner(System.in); // 从标准输入读取`
-- `Scanner` 类提供了一系列的方法来读取不同类型的数据，如 `nextInt()`, `nextDouble()`, `nextLine()`,`hasNext()` 等。
-```java
-int number = scanner.nextInt();
-String str = scanner.nextLine();
-```
-- 关闭`scanner.close();`
 #### RandomAccessFile
 
 - 用于处理由大小已知的记录组成的文件，可以通过seek()在各条记录上来回移动，并读取或修改记录

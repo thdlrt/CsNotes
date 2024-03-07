@@ -3,7 +3,14 @@
 - 绑定字符流到控制台 `BufferedReader br = new BufferedReader(new InputStreamReader(System.in));`
   - 可以使用 read () 方法从控制台读取一个字符，或者用 readLine () 方法读取一个字符串。
 
-- 使用 [[旧IO#Scanning|Scanning]] 获取更强大更强大 (格式化)的输出
+- 格式化输入 **Scanner**，用于扫描和解析文本数据
+- 可以用不同的输入源来创建 `Scanner` 对象 `Scanner scanner = new Scanner(System.in); // 从标准输入读取`
+- `Scanner` 类提供了一系列的方法来读取不同类型的数据，如 `nextInt()`, `nextDouble()`, `nextLine()`, `hasNext()` 等。
+```java
+int number = scanner.nextInt();
+String str = scanner.nextLine();
+```
+- 关闭 `scanner.close();`
 
 - Console
   - 封装好的控制台类，支持更加方便的功能
