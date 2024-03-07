@@ -385,6 +385,8 @@ Map <String,String> sm = Collections.unmodifiableSortedMap(
 
 #### Map
 
+- java 中如何进行 `map[x]++`
+
 ##### HashMap
 
 - 添加`put(,)`
