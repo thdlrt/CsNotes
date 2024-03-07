@@ -5,6 +5,10 @@
       "path": "docs/java/java基础.md"
     },
     {
+      "basename": "Iterator",
+      "path": "docs/java/java基础/Util/集合/Iterator.md"
+    },
+    {
       "basename": "数组类型",
       "path": "docs/java/java基础/数据类型/数组类型.md"
     },
@@ -119,10 +123,6 @@
     {
       "basename": "Collections工具类",
       "path": "docs/java/java基础/Util/集合/Collections工具类.md"
-    },
-    {
-      "basename": "Iterator",
-      "path": "docs/java/java基础/Util/集合/Iterator.md"
     },
     {
       "basename": "测试",

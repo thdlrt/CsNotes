@@ -325,6 +325,7 @@ Map <String,String> sm = Collections.unmodifiableSortedMap(
 
 ###### Queue
 
+-  `Queue<Integer> queue = new LinkedList<>();`
 - `element()`返回队首元素，null时会报错
   - `peek()`可以返回null
 - `offer()`在队尾插入元素
@@ -335,16 +336,14 @@ Map <String,String> sm = Collections.unmodifiableSortedMap(
 ###### Deque
 
 - Deque<\T>是一个接口
-  - `Deque<String> deque = new linkedList<>();`
-- `addFirst(E e)` / `offerFirst(E e)`: 在队列的头部插入元素。`addFirst`在空间不足时抛出异常，而`offerFirst`则返回`false`。
-- `addLast(E e)` / `offerLast(E e)`: 在队列的尾部插入元素。`addLast`在空间不足时抛出异常，而`offerLast`则返回`false`。
-- `removeFirst()` / `pollFirst()`: 移除并返回队列头部的元素。`removeFirst`在队列为空时抛出异常，而`pollFirst`则返回`null`。
-- `removeLast()` / `pollLast()`: 移除并返回队列尾部的元素。`removeLast`在队列为空时抛出异常，而`pollLast`则返回`null`。
-- `getFirst()` / `peekFirst()`: 返回队列头部的元素但不移除。`getFirst`在队列为空时抛出异常，而`peekFirst`则返回`null`。
-- `getLast()` / `peekLast()`: 返回队列尾部的元素但不移除。`getLast`在队列为空时抛出异常，而`peekLast`则返回`null`。
+  - `Deque<String> deque = new ArrayDeque<>();`
+- `addFirst(E e)` / `offerFirst(E e)`；`addLast(E e)` / `offerLast(E e)`:
+- `removeFirst()` / `pollFirst()`；`removeLast()` / `pollLast()`
+- `getFirst()` / `peekFirst()`；`getLast()` / `peekLast()`
 
 #### PriorityQueue
 
+- `PriorityQueue<Integer> priorityQueue = new PriorityQueue<>();`
 - 基本操作与Queue一致，但是是优先队列
 - 默认是小根堆
 - 可以传入比较器，或者类型实现 Comporable<>接口
@@ -386,6 +385,16 @@ Map <String,String> sm = Collections.unmodifiableSortedMap(
 #### Map
 
 - java 中如何进行 `map[x]++`
+```java
+if (map.containsKey(x)) {
+    map.put(x, map.get(x) + 1);
+} else {
+    map.put(x, 1);
+}
+
+// Java 8及更高版本中，可以更简洁地使用Map的getOrDefault方法
+map.put(x, map.getOrDefault(x, 0) + 1);
+```
 
 ##### HashMap
 
@@ -399,7 +408,16 @@ m.put(r, freq==null?1: freq+1);
 
 - 允许`null`键和`null`值。
 - 不保证映射的顺序，顺序可能随时间发生变化。
-- `entrySet()`生成Map.Entry（Map中的键值对）组成的Set，这个Set可以转化为流对象进行操作
+- `entrySet()` 生成 Map.Entry（Map 中的键值对）组成的 Set，这个 Set 可以转化为流对象进行操作
+- 遍历 map 的方法：
+```java
+//使用entrySet
+for (Map.Entry<Integer, String> entry : map.entrySet()) {
+    System.out.println("Key: " + entry.getKey() + ", Value: " + entry.getValue());
+}
+//使用forEach
+map.forEach((key, value) -> System.out.println("Key: " + key + ", Value: " + value));
+```
 
 ##### TreeMap
 
