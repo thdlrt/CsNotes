@@ -9,28 +9,16 @@
       "path": "docs/java/java基础/Util/集合/Iterator.md"
     },
     {
-      "basename": "数组类型",
-      "path": "docs/java/java基础/数据类型/数组类型.md"
+      "basename": "函数式编程",
+      "path": "docs/java/java基础/杂项/函数式编程.md"
     },
     {
-      "basename": "sort基本用法",
-      "path": "sort基本用法.md"
-    },
-    {
-      "basename": "3",
-      "path": "docs/归档课程/计算机系统基础/data/3.md"
-    },
-    {
-      "basename": "软件体系结构",
-      "path": "docs/课程/软件体系结构/软件体系结构.md"
+      "basename": "Collections工具类",
+      "path": "docs/java/java基础/Util/集合/Collections工具类.md"
     },
     {
       "basename": "流",
       "path": "docs/java/java基础/数据类型/流.md"
-    },
-    {
-      "basename": "函数式编程",
-      "path": "docs/java/java基础/杂项/函数式编程.md"
     },
     {
       "basename": "jvm",
@@ -121,10 +109,6 @@
       "path": "docs/归档课程/数据结构/笔记/排序.md"
     },
     {
-      "basename": "Collections工具类",
-      "path": "docs/java/java基础/Util/集合/Collections工具类.md"
-    },
-    {
       "basename": "测试",
       "path": "docs/java/java基础/杂项/测试.md"
     },
@@ -147,6 +131,10 @@
     {
       "basename": "README",
       "path": "README.md"
+    },
+    {
+      "basename": "数组类型",
+      "path": "docs/java/java基础/数据类型/数组类型.md"
     },
     {
       "basename": "内部类",
@@ -199,6 +187,18 @@
     {
       "basename": "栈与队列",
       "path": "docs/算法/栈与队列.md"
+    },
+    {
+      "basename": "动态规划",
+      "path": "docs/算法/动态规划.md"
+    },
+    {
+      "basename": "哈希",
+      "path": "docs/算法/哈希.md"
+    },
+    {
+      "basename": "博弈",
+      "path": "docs/算法/博弈.md"
     }
   ],
   "omittedPaths": [],

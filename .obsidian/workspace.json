@@ -8,7 +8,7 @@
         "type": "tabs",
         "children": [
           {
-            "id": "456eec2f70fc5260",
+            "id": "87935f88de6c6c69",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -48,7 +48,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "比较",
+                "query": "虚引用",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -175,18 +175,15 @@
       "omnisearch:Omnisearch": false
     }
   },
-  "active": "456eec2f70fc5260",
+  "active": "87935f88de6c6c69",
   "lastOpenFiles": [
     "docs/java/java基础/Util/集合/Iterator.md",
+    "docs/java/java基础/杂项/函数式编程.md",
     "docs/java/java基础.md",
-    "docs/java/java基础/数据类型/数组类型.md",
+    "docs/java/java基础/Util/集合/Collections工具类.md",
     "sort基本用法.md",
-    "docs/归档课程/计算机系统基础/data/3.md",
     "docs/课程/软件体系结构/软件体系结构.md",
     "docs/java/java基础/数据类型/流.md",
-    "docs/课程/软件体系结构/未命名.md",
-    "docs/java/java基础/杂项/函数式编程.md",
-    "docs/课程/软件体系结构",
     "docs/java/工具/jvm.md",
     "docs/java/java基础/杂项/注解.md",
     "docs/java/java基础/io/文件.md",
@@ -204,6 +201,8 @@
     "docs/java/java基础/并发编程/基本概念.md",
     "docs/java/java基础/高级/序列化与反序列化.md",
     "docs/java/java基础/高级/record记录.md",
+    "docs/java/java基础/杂项/equals()与hashCode().md",
+    "docs/java/java基础/高级/使用享元自定义Collecction和Map.md",
     "Anki",
     "CsNotes/mkdocs.yml",
     "CsNotes/docs/javascripts/mathjax.js",
@@ -213,6 +212,7 @@
     "CsNotes/docs/Features",
     "CsNotes/docs/blog",
     "CsNotes/docs",
+    "CsNotes/LICENSE",
     "CsNotes/2021-11-22-22-54-02.png",
     "CsNotes/2021-11-22-22-52-49.png",
     "CsNotes/2021-11-22-22-49-26.png",
