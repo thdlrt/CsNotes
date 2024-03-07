@@ -1,12 +1,12 @@
 {
   "recentFiles": [
     {
-      "basename": "软件体系结构",
-      "path": "docs/课程/软件体系结构/软件体系结构.md"
-    },
-    {
       "basename": "流",
       "path": "docs/java/java基础/数据类型/流.md"
+    },
+    {
+      "basename": "软件体系结构",
+      "path": "docs/课程/软件体系结构/软件体系结构.md"
     },
     {
       "basename": "函数式编程",

@@ -31,7 +31,8 @@
               }
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -106,7 +107,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/课程/软件体系结构/软件体系结构.md",
+                "file": "docs/java/java基础/数据类型/流.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -123,7 +124,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/课程/软件体系结构/软件体系结构.md",
+                "file": "docs/java/java基础/数据类型/流.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -146,7 +147,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/课程/软件体系结构/软件体系结构.md"
+                "file": "docs/java/java基础/数据类型/流.md"
               }
             }
           },
@@ -189,10 +190,10 @@
       "omnisearch:Omnisearch": false
     }
   },
-  "active": "456eec2f70fc5260",
+  "active": "736175fcf719c6dc",
   "lastOpenFiles": [
-    "docs/java/java基础/数据类型/流.md",
     "docs/课程/软件体系结构/软件体系结构.md",
+    "docs/java/java基础/数据类型/流.md",
     "docs/课程/软件体系结构/未命名.md",
     "docs/java/java基础/杂项/函数式编程.md",
     "docs/课程/软件体系结构",
