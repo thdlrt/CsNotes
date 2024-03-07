@@ -1,0 +1,444 @@
+{
+  "workspaces": {
+    "金融大数据": {
+      "main": {
+        "id": "3bf91ed0d25eca77",
+        "type": "split",
+        "children": [
+          {
+            "id": "48250b3e7d4025a8",
+            "type": "tabs",
+            "dimension": 34.10852713178294,
+            "children": [
+              {
+                "id": "3a9106a20945344d",
+                "type": "leaf",
+                "state": {
+                  "type": "pdf",
+                  "state": {
+                    "file": "课程/金融大数据/课件/01 Big Data.pdf"
+                  }
+                }
+              },
+              {
+                "id": "6cb1a8b1bdd8937d",
+                "type": "leaf",
+                "state": {
+                  "type": "pdf",
+                  "state": {
+                    "file": "课程/金融大数据/课件/02 Parallel Computing.pdf"
+                  }
+                }
+              },
+              {
+                "id": "6b28b54a7622fcf8",
+                "type": "leaf",
+                "state": {
+                  "type": "pdf",
+                  "state": {
+                    "file": "课程/金融大数据/课件/03 MapReduce简介.pdf"
+                  }
+                }
+              },
+              {
+                "id": "85e8071c312252d6",
+                "type": "leaf",
+                "state": {
+                  "type": "pdf",
+                  "state": {
+                    "file": "课程/金融大数据/课件/04 Google MapReduce基本架构.pdf"
+                  }
+                }
+              },
+              {
+                "id": "c40d09e4b488b38c",
+                "type": "leaf",
+                "state": {
+                  "type": "pdf",
+                  "state": {
+                    "file": "课程/金融大数据/课件/05 Hadoop基本架构.pdf"
+                  }
+                }
+              },
+              {
+                "id": "2af6e2c3652d6e96",
+                "type": "leaf",
+                "state": {
+                  "type": "pdf",
+                  "state": {
+                    "file": "课程/金融大数据/课件/06 MapReduce Basic Programming (I).pdf"
+                  }
+                }
+              },
+              {
+                "id": "a35671502fb8004f",
+                "type": "leaf",
+                "state": {
+                  "type": "pdf",
+                  "state": {
+                    "file": "课程/金融大数据/课件/07 MapReduce Basic Programming (II).pdf"
+                  }
+                }
+              },
+              {
+                "id": "fd08d52ff5b787e7",
+                "type": "leaf",
+                "state": {
+                  "type": "pdf",
+                  "state": {
+                    "file": "课程/金融大数据/课件/08 MapReduce Advanced Programming.pdf"
+                  }
+                }
+              },
+              {
+                "id": "08ec73ecd7e1e2a2",
+                "type": "leaf",
+                "state": {
+                  "type": "pdf",
+                  "state": {
+                    "file": "课程/金融大数据/课件/09 基于MapReduce的搜索引擎算法.pdf"
+                  }
+                }
+              },
+              {
+                "id": "c075f0454a8ca0d1",
+                "type": "leaf",
+                "state": {
+                  "type": "pdf",
+                  "state": {
+                    "file": "课程/金融大数据/课件/10 MapReduce数据挖掘基础算法 (I).pdf"
+                  }
+                }
+              },
+              {
+                "id": "1c31ea89d9a285f1",
+                "type": "leaf",
+                "state": {
+                  "type": "pdf",
+                  "state": {
+                    "file": "课程/金融大数据/课件/11 MapReduce数据挖掘基础算法 (II).pdf"
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "id": "ab9d111c4271ed1f",
+            "type": "tabs",
+            "dimension": 33.273703041144906,
+            "children": [
+              {
+                "id": "649468bdb1fdb6a7",
+                "type": "leaf",
+                "state": {
+                  "type": "markdown",
+                  "state": {
+                    "file": "课程/金融大数据/期末复习.md",
+                    "mode": "source",
+                    "source": false
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "id": "4b93e7da879bb26b",
+            "type": "split",
+            "dimension": 32.61776982707215,
+            "children": [
+              {
+                "id": "2a1160213c0e25f6",
+                "type": "tabs",
+                "children": [
+                  {
+                    "id": "56fab8fba4807e0d",
+                    "type": "leaf",
+                    "state": {
+                      "type": "markdown",
+                      "state": {
+                        "file": "课程/金融大数据/笔记/概述.md",
+                        "mode": "source",
+                        "source": false
+                      }
+                    }
+                  },
+                  {
+                    "id": "d3bbe201a2f68ff5",
+                    "type": "leaf",
+                    "state": {
+                      "type": "markdown",
+                      "state": {
+                        "file": "课程/金融大数据/笔记/Hadoop.md",
+                        "mode": "source",
+                        "source": false
+                      }
+                    }
+                  }
+                ]
+              },
+              {
+                "id": "8fdc18036a6ce0f9",
+                "type": "tabs",
+                "children": [
+                  {
+                    "id": "25cae27755b201c4",
+                    "type": "leaf",
+                    "state": {
+                      "type": "markdown",
+                      "state": {
+                        "file": "课程/金融大数据/笔记/概述.md",
+                        "mode": "source",
+                        "source": false
+                      }
+                    }
+                  }
+                ]
+              }
+            ],
+            "direction": "horizontal"
+          }
+        ],
+        "direction": "vertical"
+      },
+      "left": {
+        "id": "ddc18e91108c4f9f",
+        "type": "split",
+        "children": [
+          {
+            "id": "f228e3e380c645f9",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "96e173acdf249e6c",
+                "type": "leaf",
+                "state": {
+                  "type": "file-explorer",
+                  "state": {
+                    "sortOrder": "alphabetical"
+                  }
+                }
+              },
+              {
+                "id": "24063adb5be26e38",
+                "type": "leaf",
+                "state": {
+                  "type": "search",
+                  "state": {
+                    "query": "asset",
+                    "matchingCase": false,
+                    "explainSearch": false,
+                    "collapseAll": false,
+                    "extraContext": false,
+                    "sortOrder": "alphabetical"
+                  }
+                }
+              },
+              {
+                "id": "7cb1e0bd8fbfc91f",
+                "type": "leaf",
+                "state": {
+                  "type": "bookmarks",
+                  "state": {}
+                }
+              },
+              {
+                "id": "0a9cd0319ddd3dbc",
+                "type": "leaf",
+                "state": {
+                  "type": "recent-files",
+                  "state": {}
+                }
+              }
+            ]
+          }
+        ],
+        "direction": "horizontal",
+        "width": 200
+      },
+      "right": {
+        "id": "d615b65a4ccf8a6a",
+        "type": "split",
+        "children": [
+          {
+            "id": "cd2e3e794c190243",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "2208db6412c2caff",
+                "type": "leaf",
+                "state": {
+                  "type": "backlink",
+                  "state": {
+                    "file": "课程/金融大数据/课件/11 MapReduce数据挖掘基础算法 (II).pdf",
+                    "collapseAll": false,
+                    "extraContext": false,
+                    "sortOrder": "alphabetical",
+                    "showSearch": false,
+                    "searchQuery": "",
+                    "backlinkCollapsed": false,
+                    "unlinkedCollapsed": false
+                  }
+                }
+              },
+              {
+                "id": "4aa9436462af2a50",
+                "type": "leaf",
+                "state": {
+                  "type": "outgoing-link",
+                  "state": {
+                    "file": "课程/金融大数据/课件/11 MapReduce数据挖掘基础算法 (II).pdf",
+                    "linksCollapsed": false,
+                    "unlinkedCollapsed": true
+                  }
+                }
+              },
+              {
+                "id": "d9423a8b603d19bf",
+                "type": "leaf",
+                "state": {
+                  "type": "tag",
+                  "state": {
+                    "sortOrder": "frequency",
+                    "useHierarchy": true
+                  }
+                }
+              },
+              {
+                "id": "6c7418c521ab7a68",
+                "type": "leaf",
+                "state": {
+                  "type": "outline",
+                  "state": {
+                    "file": "课程/金融大数据/课件/11 MapReduce数据挖掘基础算法 (II).pdf"
+                  }
+                }
+              },
+              {
+                "id": "541551cc93ddceea",
+                "type": "leaf",
+                "state": {
+                  "type": "calendar",
+                  "state": {}
+                }
+              },
+              {
+                "id": "160702efc0127260",
+                "type": "leaf",
+                "state": {
+                  "type": "todo",
+                  "state": {}
+                }
+              }
+            ],
+            "currentTab": 3
+          }
+        ],
+        "direction": "horizontal",
+        "width": 398.5,
+        "collapsed": true
+      },
+      "left-ribbon": {
+        "hiddenItems": {
+          "omnisearch:Omnisearch": false,
+          "obsidian-excalidraw-plugin:新建绘图文件": false,
+          "switcher:打开快速切换": false,
+          "graph:查看关系图谱": false,
+          "canvas:新建白板": false,
+          "daily-notes:打开/创建今天的日记": false,
+          "templates:插入模板": false,
+          "command-palette:打开命令面板": false,
+          "workspaces:管理工作区布局": false,
+          "audio-recorder:开始/结束录音": false,
+          "obsidian-advanced-slides:Show Slide Preview": false
+        }
+      },
+      "floating": {
+        "id": "9167a8e78d27abaf",
+        "type": "floating",
+        "children": [
+          {
+            "id": "27a82181d99c3e1a",
+            "type": "window",
+            "children": [
+              {
+                "id": "f3bfc05b1fc37710",
+                "type": "tabs",
+                "children": [
+                  {
+                    "id": "d0a1e10dc7e23e17",
+                    "type": "leaf",
+                    "state": {
+                      "type": "markdown",
+                      "state": {
+                        "file": "课程/金融大数据/作业/p1.md",
+                        "mode": "source",
+                        "source": false
+                      }
+                    }
+                  },
+                  {
+                    "id": "3ae04d0c1e4572a2",
+                    "type": "leaf",
+                    "state": {
+                      "type": "markdown",
+                      "state": {
+                        "file": "课程/金融大数据/作业/p2.md",
+                        "mode": "source",
+                        "source": false
+                      }
+                    }
+                  },
+                  {
+                    "id": "e66911a6489b17bf",
+                    "type": "leaf",
+                    "state": {
+                      "type": "markdown",
+                      "state": {
+                        "file": "课程/金融大数据/作业/p3.md",
+                        "mode": "source",
+                        "source": false
+                      }
+                    }
+                  },
+                  {
+                    "id": "ab6e9d07d324c0e2",
+                    "type": "leaf",
+                    "state": {
+                      "type": "markdown",
+                      "state": {
+                        "file": "课程/金融大数据/作业/p4.md",
+                        "mode": "source",
+                        "source": false
+                      }
+                    }
+                  },
+                  {
+                    "id": "1da468f40f5f6a08",
+                    "type": "leaf",
+                    "state": {
+                      "type": "markdown",
+                      "state": {
+                        "file": "课程/金融大数据/作业/p5.md",
+                        "mode": "source",
+                        "source": false
+                      }
+                    }
+                  }
+                ]
+              }
+            ],
+            "direction": "vertical",
+            "x": 1920,
+            "y": -538,
+            "width": 1080,
+            "height": 936,
+            "maximize": false,
+            "zoom": 0
+          }
+        ]
+      },
+      "active": "1c31ea89d9a285f1"
+    }
+  },
+  "active": "金融大数据"
+}

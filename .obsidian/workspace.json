@@ -1,0 +1,240 @@
+{
+  "main": {
+    "id": "3bf91ed0d25eca77",
+    "type": "split",
+    "children": [
+      {
+        "id": "b952d573127ec1f9",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "b6905aa5648acbd9",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "docs/java/java基础/杂项/函数式编程.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "736175fcf719c6dc",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "docs/java/java基础/数据类型/流.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "ddc18e91108c4f9f",
+    "type": "split",
+    "children": [
+      {
+        "id": "f228e3e380c645f9",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "96e173acdf249e6c",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "24063adb5be26e38",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "虚引用",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "7cb1e0bd8fbfc91f",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
+          },
+          {
+            "id": "0a9cd0319ddd3dbc",
+            "type": "leaf",
+            "state": {
+              "type": "recent-files",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 200
+  },
+  "right": {
+    "id": "d615b65a4ccf8a6a",
+    "type": "split",
+    "children": [
+      {
+        "id": "cd2e3e794c190243",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "2208db6412c2caff",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "docs/java/java基础/杂项/函数式编程.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": false
+              }
+            }
+          },
+          {
+            "id": "4aa9436462af2a50",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "docs/java/java基础/杂项/函数式编程.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "d9423a8b603d19bf",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "6c7418c521ab7a68",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "docs/java/java基础/杂项/函数式编程.md"
+              }
+            }
+          },
+          {
+            "id": "541551cc93ddceea",
+            "type": "leaf",
+            "state": {
+              "type": "calendar",
+              "state": {}
+            }
+          },
+          {
+            "id": "160702efc0127260",
+            "type": "leaf",
+            "state": {
+              "type": "todo",
+              "state": {}
+            }
+          }
+        ],
+        "currentTab": 3
+      }
+    ],
+    "direction": "horizontal",
+    "width": 200
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:打开快速切换": false,
+      "graph:查看关系图谱": false,
+      "canvas:新建白板": false,
+      "daily-notes:打开/创建今天的日记": false,
+      "templates:插入模板": false,
+      "command-palette:打开命令面板": false,
+      "workspaces:管理工作区布局": false,
+      "audio-recorder:开始/结束录音": false,
+      "obsidian-excalidraw-plugin:新建绘图文件": false,
+      "obsidian-advanced-slides:Show Slide Preview": false,
+      "omnisearch:Omnisearch": false
+    }
+  },
+  "active": "b6905aa5648acbd9",
+  "lastOpenFiles": [
+    "docs/java/java基础/数据类型/流.md",
+    "docs/java/java基础/杂项/函数式编程.md",
+    "docs/java/工具/jvm.md",
+    "docs/java/java基础/杂项/注解.md",
+    "docs/java/java基础/io/文件.md",
+    "docs/java/java基础/io/网络编程.md",
+    "docs/java/java基础/io/NIO.md",
+    "docs/java/java基础/数据类型/拷贝与引用.md",
+    "docs/java/java基础/io/旧IO.md",
+    "docs/java/java基础/io/控制台IO.md",
+    "docs/java/java基础/数据类型/基本数据类型与包装类.md",
+    "docs/java/java基础.md",
+    "docs/java/java基础/杂项/包.md",
+    "docs/java/java基础/杂项/Java编码规范.md",
+    "docs/java/java基础/并发编程/高级.md",
+    "docs/java/java基础/并发编程/线程安全的数据类型.md",
+    "docs/java/java基础/并发编程/线程与线程池.md",
+    "docs/java/java基础/并发编程/基本概念.md",
+    "docs/java/java基础/高级/序列化与反序列化.md",
+    "docs/java/java基础/高级/record记录.md",
+    "docs/java/java基础/杂项/equals()与hashCode().md",
+    "docs/java/java基础/高级/使用享元自定义Collecction和Map.md",
+    "docs/java/java基础/Util/Math类.md",
+    "docs/java/java基础/Util/时间类.md",
+    "docs/归档课程/数据结构/笔记/排序.md",
+    "docs/java/java基础/Util/集合/Collections工具类.md",
+    "Anki",
+    "CsNotes/mkdocs.yml",
+    "CsNotes/docs/javascripts/mathjax.js",
+    "CsNotes/docs/blog/posts",
+    "CsNotes/docs/Topic 1",
+    "CsNotes/docs/javascripts",
+    "CsNotes/docs/Features",
+    "CsNotes/docs/blog",
+    "CsNotes/docs",
+    "CsNotes/LICENSE",
+    "CsNotes/2021-11-22-22-54-02.png",
+    "CsNotes/2021-11-22-22-52-49.png",
+    "CsNotes/2021-11-22-22-49-26.png",
+    "未命名.canvas",
+    "Pasted image 20231227111944.png",
+    "export/金融大数据p4/plugin/chalkboard/img/whiteboard.png",
+    "export/金融大数据p4/plugin/chalkboard/img/sponge.png",
+    "export/金融大数据p4/plugin/chalkboard/img/chalk-yellow.png",
+    "export/金融大数据p4/plugin/chalkboard/img/chalk-white.png",
+    "export/金融大数据p4/plugin/chalkboard/img/chalk-red.png",
+    "export/金融大数据p4/plugin/chalkboard/img/chalk-purple.png"
+  ]
+}

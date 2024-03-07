@@ -1,0 +1,207 @@
+{
+  "recentFiles": [
+    {
+      "basename": "函数式编程",
+      "path": "docs/java/java基础/杂项/函数式编程.md"
+    },
+    {
+      "basename": "流",
+      "path": "docs/java/java基础/数据类型/流.md"
+    },
+    {
+      "basename": "jvm",
+      "path": "docs/java/工具/jvm.md"
+    },
+    {
+      "basename": "注解",
+      "path": "docs/java/java基础/杂项/注解.md"
+    },
+    {
+      "basename": "文件",
+      "path": "docs/java/java基础/io/文件.md"
+    },
+    {
+      "basename": "网络编程",
+      "path": "docs/java/java基础/io/网络编程.md"
+    },
+    {
+      "basename": "NIO",
+      "path": "docs/java/java基础/io/NIO.md"
+    },
+    {
+      "basename": "拷贝与引用",
+      "path": "docs/java/java基础/数据类型/拷贝与引用.md"
+    },
+    {
+      "basename": "旧IO",
+      "path": "docs/java/java基础/io/旧IO.md"
+    },
+    {
+      "basename": "控制台IO",
+      "path": "docs/java/java基础/io/控制台IO.md"
+    },
+    {
+      "basename": "基本数据类型与包装类",
+      "path": "docs/java/java基础/数据类型/基本数据类型与包装类.md"
+    },
+    {
+      "basename": "java基础",
+      "path": "docs/java/java基础.md"
+    },
+    {
+      "basename": "包",
+      "path": "docs/java/java基础/杂项/包.md"
+    },
+    {
+      "basename": "Java编码规范",
+      "path": "docs/java/java基础/杂项/Java编码规范.md"
+    },
+    {
+      "basename": "高级",
+      "path": "docs/java/java基础/并发编程/高级.md"
+    },
+    {
+      "basename": "线程安全的数据类型",
+      "path": "docs/java/java基础/并发编程/线程安全的数据类型.md"
+    },
+    {
+      "basename": "线程与线程池",
+      "path": "docs/java/java基础/并发编程/线程与线程池.md"
+    },
+    {
+      "basename": "基本概念",
+      "path": "docs/java/java基础/并发编程/基本概念.md"
+    },
+    {
+      "basename": "序列化与反序列化",
+      "path": "docs/java/java基础/高级/序列化与反序列化.md"
+    },
+    {
+      "basename": "record记录",
+      "path": "docs/java/java基础/高级/record记录.md"
+    },
+    {
+      "basename": "equals()与hashCode()",
+      "path": "docs/java/java基础/杂项/equals()与hashCode().md"
+    },
+    {
+      "basename": "使用享元自定义Collecction和Map",
+      "path": "docs/java/java基础/高级/使用享元自定义Collecction和Map.md"
+    },
+    {
+      "basename": "Math类",
+      "path": "docs/java/java基础/Util/Math类.md"
+    },
+    {
+      "basename": "时间类",
+      "path": "docs/java/java基础/Util/时间类.md"
+    },
+    {
+      "basename": "排序",
+      "path": "docs/归档课程/数据结构/笔记/排序.md"
+    },
+    {
+      "basename": "Collections工具类",
+      "path": "docs/java/java基础/Util/集合/Collections工具类.md"
+    },
+    {
+      "basename": "Iterator",
+      "path": "docs/java/java基础/Util/集合/Iterator.md"
+    },
+    {
+      "basename": "测试",
+      "path": "docs/java/java基础/杂项/测试.md"
+    },
+    {
+      "basename": "异常",
+      "path": "docs/java/java基础/杂项/异常.md"
+    },
+    {
+      "basename": "反射",
+      "path": "docs/java/java基础/杂项/反射.md"
+    },
+    {
+      "basename": "泛型",
+      "path": "docs/java/java基础/杂项/泛型.md"
+    },
+    {
+      "basename": "index",
+      "path": "docs/index.md"
+    },
+    {
+      "basename": "README",
+      "path": "README.md"
+    },
+    {
+      "basename": "数组类型",
+      "path": "docs/java/java基础/数据类型/数组类型.md"
+    },
+    {
+      "basename": "内部类",
+      "path": "docs/java/java基础/面向对象/内部类.md"
+    },
+    {
+      "basename": "语法分析",
+      "path": "docs/课程/编译原理/笔记/语法分析.md"
+    },
+    {
+      "basename": "构造方法",
+      "path": "docs/java/java基础/面向对象/构造方法.md"
+    },
+    {
+      "basename": "字符串",
+      "path": "docs/java/java基础/数据类型/字符串.md"
+    },
+    {
+      "basename": "枚举类型",
+      "path": "docs/java/java基础/数据类型/枚举类型.md"
+    },
+    {
+      "basename": "switch",
+      "path": "docs/java/java基础/流程控制/switch.md"
+    },
+    {
+      "basename": "SQL注入",
+      "path": "docs/网络安全/SQL注入.md"
+    },
+    {
+      "basename": "final",
+      "path": "docs/java/java基础/杂项/final.md"
+    },
+    {
+      "basename": "八股",
+      "path": "docs/java/八股.md"
+    },
+    {
+      "basename": "数组与字符串",
+      "path": "docs/算法/数组与字符串.md"
+    },
+    {
+      "basename": "贪心",
+      "path": "docs/算法/贪心.md"
+    },
+    {
+      "basename": "数据结构",
+      "path": "docs/算法/数据结构.md"
+    },
+    {
+      "basename": "栈与队列",
+      "path": "docs/算法/栈与队列.md"
+    },
+    {
+      "basename": "动态规划",
+      "path": "docs/算法/动态规划.md"
+    },
+    {
+      "basename": "哈希",
+      "path": "docs/算法/哈希.md"
+    },
+    {
+      "basename": "博弈",
+      "path": "docs/算法/博弈.md"
+    }
+  ],
+  "omittedPaths": [],
+  "maxLength": null,
+  "openType": "tab"
+}
