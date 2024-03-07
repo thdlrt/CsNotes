@@ -1,12 +1,16 @@
 {
   "recentFiles": [
     {
-      "basename": "函数式编程",
-      "path": "docs/java/java基础/杂项/函数式编程.md"
+      "basename": "软件体系结构",
+      "path": "docs/课程/软件体系结构/软件体系结构.md"
     },
     {
       "basename": "流",
       "path": "docs/java/java基础/数据类型/流.md"
+    },
+    {
+      "basename": "函数式编程",
+      "path": "docs/java/java基础/杂项/函数式编程.md"
     },
     {
       "basename": "jvm",
@@ -195,10 +199,6 @@
     {
       "basename": "哈希",
       "path": "docs/算法/哈希.md"
-    },
-    {
-      "basename": "博弈",
-      "path": "docs/算法/博弈.md"
     }
   ],
   "omittedPaths": [],
