@@ -195,10 +195,6 @@
     {
       "basename": "动态规划",
       "path": "docs/算法/动态规划.md"
-    },
-    {
-      "basename": "哈希",
-      "path": "docs/算法/哈希.md"
     }
   ],
   "omittedPaths": [],
