@@ -49,7 +49,7 @@
 - **加载**(Loading)。由**类加载器(Class Loaders)** 执行，查找字节码，创建一个`Class`对象。
   - 通过一个类的全限定名来获取定义此类的二进制字节流；将这个字节流所代表的静态存储结构转换为方法区内的运行时数据结构；在内存中生成一个代表这个类的java.lang.Class对象，作为方法区这个类的各种数据的访问入口。
   - Java类由[`java.lang.ClassLoader`](https://docs.oracle.com/javase/8/docs/api/java/lang/ClassLoader.html)加载。
-    - 这本身也是一个类，"Bootstrap Class Loader" 是 Java 虚拟机（JVM）中的一种特殊类加载器，它是负责加载 Java 核心类库和其他 JDK 内部类的加载器。这个类加载器是 JVM 的一部分，通常由本地代码实现。
+    - 这本身也是一个类，"Bootstrap Class Loader" 是 Java 虚拟机（JVM）中的一种特殊类加载器，它是负责加载 Java 核心类库和其他 JDK 内部类的加载器。这个类加载器是 JVM 的一部分，通常由**本地代码**实现。
   - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20231002201139513.png" alt="image-20231002201139513" style="zoom:33%;" />
   - 获取加载器`Array.class.getClassLoader()`
   - 双亲委派模型
@@ -66,7 +66,6 @@
 - **初始化**(Initializing)。如果该类有超类，则对其初始化，执行静态初始化器和静态初始化块。
 
 - 类的热加载&自定义加载策略
-
 ```java
     import java.io.ByteArrayOutputStream;
     import java.io.File;
@@ -126,35 +125,6 @@
   - 一旦某个类的`Class`对象被载入内存，它就被**用来创建**这个类的所有对象
   - 构造器也是类的**静态方法**，使用`new`操作符创建新对象会被当作对类的静态成员的引用
 
-### 类的自射
-
-- Java Reflection 是一种强大的机制，它允许你在运行时检查、分析和操作类、方法、字段和其他类成员的信息，而无需提前知道这些信息。通过 Java Reflection，你可以动态地获取、创建、操作和使用类的对象，以及调用其方法，甚至是私有方法。
-
-  - 反射的核心是 JVM 在运行时才动态加载类或调用方法/访问属性，它不需要事先（写代码的时候或编译期）知道运行对象是谁。
-  - 在运行时判断任意一个对象所属的类；
-  - 在运行时构造任意一个类的对象；
-  - 在运行时判断任意一个类所具有的成员变量和方法
-  - 在运行时调用任意一个对象的方法
-
-```java
-  import java.lang.reflect.*;
-  public class DumpMethods {
-      public static void main(String args[]) {
-          try {
-              Class c = Class.forName(args[0]);
-              Method m[] = c.getDeclaredMethods();
-              for (int i = 0; i < m.length; i++)
-              System.out.println(m[i].toString());
-          }
-          catch (Throwable e) {
-              System.err.println(e);
-          }
-      }
-  }
-  ```
-
-  - 使用 Java Reflection 动态获取类的方法信息，以便在运行时检查和操作类的成员。通过运行这个程序并传递一个类的名称作为参数，可以查看该类中声明的所有方法，包括它们的名称、返回类型、参数等信息。这对于编写通用工具、调试和动态加载类非常有用。
-
 ### 对象
 
 - 虚拟机遇到一个new指令时，首先将去检查这个指令的参数是否能在常量池中定位到一个类的符号引用；检查这个符号引用代表的类**是否已经被加载**，解析和初始化过。如果没有，那必须先执行响应的**类加载过程**；在类加载检查功通过后，为新生对象分配内存。对象所需的内存大小在类加载完成后便可完全确定。
@@ -168,15 +138,16 @@
 
 ### 内存模型
 
-- <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20231002194747154.png" alt="image-20231002194747154" style="zoom:33%;" />
+- <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20231002194747154.png" alt="image-20231002194747154" style="zoom:50%;" />
 
   - 堆内存（Heap）（公有）：堆内存是Java程序运行时动态分配内存的主要区域，它用于存储**对象实例和数组**，所有通过 `new` 关键字创建的对象都会在堆上分配内存。
 
   - 方法区（Method Area）（公有）：方法区是用于存储类（已被加载的）的元信息、静态变量、常量和方法字节码等信息的地方。
 
-  - 虚拟机栈（VM Stack）：虚拟机栈是用于**存储方法调用和局部变量**的内存区域。每一个java方法从调用直至完成的过程，就对应着一个栈帧在虚拟机栈中入栈到出栈的过程。
+  - 虚拟机栈（JVM Stack）：虚拟机栈是用于**存储方法调用和局部变量**的内存区域。每一个 java 方法从调用直至完成的过程，就对应着一个栈帧在虚拟机栈中入栈到出栈的过程。
 
   - 本地方法栈（Native Method Stack）：本地方法栈类似于虚拟机栈，但是用于执行**本地**（Native）方法，这些方法通常是由本地库实现的。
+	  - 虚拟机栈为虚拟机执行Java 方法（也就是字节码）服务，而本地方法栈则是为虚拟机使用到的Native 方法服务。
 
   - 程序计数器（Program Counter Register）：程序计数器是当前线程执行的字节码指令的地址指示器。
 
@@ -210,7 +181,7 @@
 
 - JVM中分为年轻代和老年代。
   - HotSpot JVM把年轻代分为了三部分：1个Eden区和2个Survivor区（分别叫from和to）。默认比例为8：1
-    - 一般新创建的对象会被分配到**Eden区**，在GC开始的时候，对象只会存在于Eden区和名为“From”的Survivor区，紧接着进行GC，Eden区中所有存活的对象都会被复制到“To”，而在“From”区中，仍存活的对象会根据他们的年龄值来决定去向。年龄达到一定值(年龄阈值，可以通过-XX:MaxTenuringThreshold来设置)的对象会被移动到**年老代**中，没有达到阈值的对象会被复制到**“To”区域**。经过这次GC后，Eden区和From区已经被清空。这个时候，“From”和“To”会交换他们的角色，保证名为To的Survivor区域是空的。
+    - 一般新创建的对象会被分配到**Eden 区**，在 GC 开始的时候，对象只会存在于 Eden 区和名为“From”的 Survivor 区，紧接着进行 GC，Eden 区中所有存活的对象都会被复制到“To”，而在“From”区中，仍存活的对象会根据他们的年龄值来决定去向。年龄达到一定值(年龄阈值，可以通过-XX: MaxTenuringThreshold 来设置)的对象会被移动到**年老代**中，没有达到阈值的对象会被复制到 **“To”区域**。经过这次 GC 后，Eden 区和 From 区已经被清空。这个时候，“From”和“To”会交换他们的角色，保证名为 To 的 Survivor 区域是空的。
 - 空间分配担保
   - 在发生Minor GC之前，虚拟机会**先检查老年代最大可用的连续空间是否大于新生代所有对象的总空间**，如果这个条件成立，那么Minor GC可以 确保是安全的。如果不成立，则虚拟机**会查看HandlePromotionFailure设置值是否允许担保失败**。如果允许，那会继续检查老年代最大可用的连续空间**是否大于历次晋升到老年代对象的平均大小，如果大于，则将尝试进行一次Minor GC**，尽管这个Minor GC是有风险的。如果小于，或者HandlePromotionFailure设置不允许冒险，那这时也要改为进行一次Full GC。
 
