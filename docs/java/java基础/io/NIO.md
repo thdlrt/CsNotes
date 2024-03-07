@@ -25,7 +25,7 @@
     - **rewind ()**：重置 `position` 为 0，可以重新读写缓冲区中的所有数据。
     - **reset ()**：讲 position 移动到 mark 的位置，如果 mark 还没有被设置则会抛出异常
 
-- 创建
+- 创建 buffer
   - 直接指定大小 `ByteBuffer buff = ByteBuffer.allocate(BSIZE);`
   - 从数据创建 **wrap**`c.write(ByteBuffer.wrap("Some text ".getBytes()));`
   - 使用 `put` 放入数据：`buff.put(str.getBytes());` 将数据写入缓冲区的当前位置，并将**位置向前移动**。如果缓冲区的剩余空间不足以容纳新的数据，那么 `put` 方法将抛出 `BufferOverflowException` 异常。
