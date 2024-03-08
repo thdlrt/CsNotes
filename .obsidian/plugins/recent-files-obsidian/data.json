@@ -1,6 +1,10 @@
 {
   "recentFiles": [
     {
+      "basename": "八股",
+      "path": "docs/数据库/八股.md"
+    },
+    {
       "basename": "Collections工具类",
       "path": "docs/java/java基础/Util/集合/Collections工具类.md"
     },
@@ -195,10 +199,6 @@
     {
       "basename": "哈希",
       "path": "docs/算法/哈希.md"
-    },
-    {
-      "basename": "博弈",
-      "path": "docs/算法/博弈.md"
     }
   ],
   "omittedPaths": [],
