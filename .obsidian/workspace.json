@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/java/java基础.md",
+                "file": "docs/java/java基础/数据类型/基本数据类型与包装类.md",
                 "mode": "source",
                 "source": false
               }
@@ -93,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/java/java基础.md",
+                "file": "docs/java/java基础/数据类型/基本数据类型与包装类.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/java/java基础.md",
+                "file": "docs/java/java基础/数据类型/基本数据类型与包装类.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/java/java基础.md"
+                "file": "docs/java/java基础/数据类型/基本数据类型与包装类.md"
               }
             }
           },
@@ -177,9 +177,9 @@
   },
   "active": "87935f88de6c6c69",
   "lastOpenFiles": [
+    "docs/java/java基础.md",
     "docs/java/java基础/Util/集合/Iterator.md",
     "docs/java/java基础/杂项/函数式编程.md",
-    "docs/java/java基础.md",
     "docs/java/java基础/Util/集合/Collections工具类.md",
     "sort基本用法.md",
     "docs/课程/软件体系结构/软件体系结构.md",

@@ -1,6 +1,10 @@
 {
   "recentFiles": [
     {
+      "basename": "基本数据类型与包装类",
+      "path": "docs/java/java基础/数据类型/基本数据类型与包装类.md"
+    },
+    {
       "basename": "java基础",
       "path": "docs/java/java基础.md"
     },
@@ -51,10 +55,6 @@
     {
       "basename": "控制台IO",
       "path": "docs/java/java基础/io/控制台IO.md"
-    },
-    {
-      "basename": "基本数据类型与包装类",
-      "path": "docs/java/java基础/数据类型/基本数据类型与包装类.md"
     },
     {
       "basename": "包",
