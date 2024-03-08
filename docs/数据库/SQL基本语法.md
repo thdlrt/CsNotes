@@ -127,7 +127,7 @@ select * from emp where age = 18 or age = 20 or age =40;
 select * from emp where age in(18,20,40);
 select * from emp where idcard like '%X';
 ```
-  - 
+  - **注意**：MySQL 使用三值逻辑 —— TRUE, FALSE 和 UNKNOWN。因此对于 x!=y 如果其中有为 null 的则不会返回 true。需要对 null 单独处理 `SELECT name FROM customer WHERE referee_id <> 2 OR referee_id IS NULL;`
 
 - 聚合函数（count、max、min、avg、sum）
   - 将一列数据作为一个整体，进行纵向计算 。
@@ -465,11 +465,12 @@ commit;
 ```
 
 - 并发问题
-  - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230719101107601.png" alt="image-20230719101107601" style="zoom:33%;" />
-  - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230719101120117.png" alt="image-20230719101120117" style="zoom:33%;" />
-  - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230719101135718.png" alt="image-20230719101135718" style="zoom:33%;" />
+  - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230719101107601.png" alt="image-20230719101107601" style="zoom:50%;" />
+    - 事务A修改了一条记录，但还没有提交这个修改。此时，事务B读取了同一条记录。如果事务A回滚，事务B读到的数据实际上是错误的。
+  - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230719101120117.png" alt="image-20230719101120117" style="zoom:50%;" />
+  - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230719101135718.png" alt="image-20230719101135718" style="zoom:50%;" />
 
-#### 事物隔离级别
+#### 事务隔离级别
 
 - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230719102656148.png" alt="image-20230719102656148" style="zoom:33%;" />
 
@@ -481,7 +482,7 @@ commit;
 - 读已提交（Read Committed）：
   - 保证一个事务只能读取到**已提交的数据**。
   - 事务在执行过程中看到的数据是**稳定的**，不会读取到其他事务已提交的数据变化。
-  - 可能导致不可重复读（Non-repeatable Read），即同一事务内两次读取同一数据，结果不一致。（强调单挑数据的修改）
+  - 可能导致不可重复读（Non-repeatable Read），即同一事务内两次读取同一数据，结果不一致。（强调单条数据的修改）
 
 - 可重复读（Repeatable Read）：
   - 保证一个事务多次读取**同一数据**时结果始终一致。
