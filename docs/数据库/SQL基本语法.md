@@ -127,7 +127,7 @@ select * from emp where age = 18 or age = 20 or age =40;
 select * from emp where age in(18,20,40);
 select * from emp where idcard like '%X';
 ```
-  - **注意**：MySQL 使用三值逻辑 —— TRUE, FALSE 和 UNKNOWN。因此对于 x!=y 如果其中有为 null 的则不会返回 true。需要对 null 单独处理 `SELECT name FROM customer WHERE referee_id <> 2 OR referee_id IS NULL;`
+  - **注意**：MySQL 使用三值逻辑 —— TRUE, FALSE 和 UNKNOWN。因此对于 x!=y 如果其中有为 null 的则不会返回 true。需要对 null 单独处理 `SELECT name FROM customer WHERE referee_id <> 2 OR referee_id IS NULL;` 而不应该使用 `= null`
 
 - 聚合函数（count、max、min、avg、sum）
   - 将一列数据作为一个整体，进行纵向计算 。
@@ -598,7 +598,7 @@ select year('2023-05-20') as year1,
 	- 如果 number 是正数，那么就是从左往右数，第 N 个分隔符的左边的全部内容，
 	- 相反，如果是负数，那么就是从右边开始数，第 N 个分隔符右边的所有内容。
 	- ![image.png](https://thdlrt.oss-cn-beijing.aliyuncs.com/20240223172107.png)
-
+- 获取字符串长度 `LENGTH(column)`
 #### 数学
 - 近似值 `round(num,len)`
 #### 其它
