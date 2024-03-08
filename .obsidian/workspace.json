@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/java/java基础/数据类型/基本数据类型与包装类.md",
+                "file": "docs/java/java基础/Util/集合/Collections工具类.md",
                 "mode": "source",
                 "source": false
               }
@@ -93,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/java/java基础/数据类型/基本数据类型与包装类.md",
+                "file": "docs/java/java基础/Util/集合/Collections工具类.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/java/java基础/数据类型/基本数据类型与包装类.md",
+                "file": "docs/java/java基础/Util/集合/Collections工具类.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/java/java基础/数据类型/基本数据类型与包装类.md"
+                "file": "docs/java/java基础/Util/集合/Collections工具类.md"
               }
             }
           },
@@ -178,6 +178,9 @@
   "active": "87935f88de6c6c69",
   "lastOpenFiles": [
     "docs/java/java基础.md",
+    "docs/java/java基础/数据类型/数组类型.md",
+    "docs/算法/动态规划.md",
+    "docs/java/java基础/数据类型/基本数据类型与包装类.md",
     "docs/java/java基础/Util/集合/Iterator.md",
     "docs/java/java基础/杂项/函数式编程.md",
     "docs/java/java基础/Util/集合/Collections工具类.md",
@@ -192,7 +195,6 @@
     "docs/java/java基础/数据类型/拷贝与引用.md",
     "docs/java/java基础/io/旧IO.md",
     "docs/java/java基础/io/控制台IO.md",
-    "docs/java/java基础/数据类型/基本数据类型与包装类.md",
     "docs/java/java基础/杂项/包.md",
     "docs/java/java基础/杂项/Java编码规范.md",
     "docs/java/java基础/并发编程/高级.md",
@@ -201,8 +203,6 @@
     "docs/java/java基础/并发编程/基本概念.md",
     "docs/java/java基础/高级/序列化与反序列化.md",
     "docs/java/java基础/高级/record记录.md",
-    "docs/java/java基础/杂项/equals()与hashCode().md",
-    "docs/java/java基础/高级/使用享元自定义Collecction和Map.md",
     "Anki",
     "CsNotes/mkdocs.yml",
     "CsNotes/docs/javascripts/mathjax.js",

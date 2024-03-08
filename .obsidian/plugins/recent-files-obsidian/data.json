@@ -1,12 +1,24 @@
 {
   "recentFiles": [
     {
-      "basename": "基本数据类型与包装类",
-      "path": "docs/java/java基础/数据类型/基本数据类型与包装类.md"
+      "basename": "Collections工具类",
+      "path": "docs/java/java基础/Util/集合/Collections工具类.md"
     },
     {
       "basename": "java基础",
       "path": "docs/java/java基础.md"
+    },
+    {
+      "basename": "数组类型",
+      "path": "docs/java/java基础/数据类型/数组类型.md"
+    },
+    {
+      "basename": "动态规划",
+      "path": "docs/算法/动态规划.md"
+    },
+    {
+      "basename": "基本数据类型与包装类",
+      "path": "docs/java/java基础/数据类型/基本数据类型与包装类.md"
     },
     {
       "basename": "Iterator",
@@ -15,10 +27,6 @@
     {
       "basename": "函数式编程",
       "path": "docs/java/java基础/杂项/函数式编程.md"
-    },
-    {
-      "basename": "Collections工具类",
-      "path": "docs/java/java基础/Util/集合/Collections工具类.md"
     },
     {
       "basename": "流",
@@ -133,10 +141,6 @@
       "path": "README.md"
     },
     {
-      "basename": "数组类型",
-      "path": "docs/java/java基础/数据类型/数组类型.md"
-    },
-    {
       "basename": "内部类",
       "path": "docs/java/java基础/面向对象/内部类.md"
     },
@@ -187,10 +191,6 @@
     {
       "basename": "栈与队列",
       "path": "docs/算法/栈与队列.md"
-    },
-    {
-      "basename": "动态规划",
-      "path": "docs/算法/动态规划.md"
     },
     {
       "basename": "哈希",
