@@ -12,7 +12,7 @@
 
 - 注释
   - 单行注释：-- 注释内容或 # 注释内容
-  - 多行注释：/* 注释内容 */
+  - 多行注释：/* 注释内容 \*/
 
 ### DDL
 
@@ -50,16 +50,15 @@ gender varchar(1) comment '性别'
 
 - 数据类型
 
-  - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230718221307579.png" alt="image-20230718221307579" style="zoom: 33%;" />
+  - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230718221307579.png" alt="image-20230718221307579" style="zoom: 66%;" />
     - 还具有一些附加参数
     - 声明为无符号`age tinyint unsigned`
     - 声明(总最大位数，小数部分位数)`score double(4,1)`
-  - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230718221618281.png" alt="image-20230718221618281" style="zoom:33%;" />
+  - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230718221618281.png" alt="image-20230718221618281" style="zoom:66%;" />
     - char是定长字符串，指定长度多长，就占用多少个字符，和字段值的长度无关 。而varchar是变长字符串，指定的长度为最大占用长度
-  - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230718221742671.png" alt="image-20230718221742671" style="zoom:33%;" />
+  - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230718221742671.png" alt="image-20230718221742671" style="zoom:66%;" />
 
 - 修改
-
   - 添加字段 `ALTER TABLE 表名 ADD 字段名 类型 (长度) [ COMMENT 注释 ] [ 约束 ];`
 	  - `ALTER TABLE employee ADD weight INT(4) DEFAULT 120 AFTER age;`
 	  - `ALTER TABLE employee ADD test INT(10) DEFAULT 11 FIRST;`
@@ -181,7 +180,7 @@ select * from emp where idcard like '%X';
     UNION
     SELECT Txn_Date FROM Internet_Sales;
 ```
-  - UNION AL用于将两个 SELECT 语句的结果组合在一起，重复行也包含在内。
+  - UNION ALL 用于将两个 SELECT 语句的结果组合在一起，重复行也包含在内。
 
 - INTERSECT
   - 用于组合两个 SELECT 语句，但是只返回两个 SELECT 语句的结果中**都有**的行。

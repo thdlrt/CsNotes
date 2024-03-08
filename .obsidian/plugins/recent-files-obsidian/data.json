@@ -1,6 +1,14 @@
 {
   "recentFiles": [
     {
+      "basename": "SQL基本语法",
+      "path": "docs/数据库/SQL基本语法.md"
+    },
+    {
+      "basename": "MySQL",
+      "path": "docs/数据库/关系数据库/MySQL.md"
+    },
+    {
       "basename": "八股",
       "path": "docs/数据库/八股.md"
     },
@@ -191,14 +199,6 @@
     {
       "basename": "数据结构",
       "path": "docs/算法/数据结构.md"
-    },
-    {
-      "basename": "栈与队列",
-      "path": "docs/算法/栈与队列.md"
-    },
-    {
-      "basename": "哈希",
-      "path": "docs/算法/哈希.md"
     }
   ],
   "omittedPaths": [],
