@@ -31,7 +31,7 @@ public class MovieLister{
 - 依赖注入方法分类：
 	- 构造器注入：`MovieLister` 的依赖会在 `MovieLister` 实例化的时候通过构造器传递进来。
 	- 设置值注入：这允许在对象创建后的任何时刻注入依赖，提供了更大的灵活性。
-	- 接口注入：任何需要使用`MovieFinder`的类（如`MovieLister`）都需要实现这个接口，并通过实现的`injectFinder`方法接收依赖注入。
+	- 接口注入：任何需要使用 `MovieFinder` 的类（如 `MovieLister`）都需要实现这个接口，并通过实现的 `injectFinder` 方法接收依赖注入。
 
 - 在 spring 中配置（bean 就表示构件）早起方式，现在可以使用注解等方式实现
 ```xml

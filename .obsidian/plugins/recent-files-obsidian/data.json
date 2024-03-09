@@ -1,20 +1,132 @@
 {
   "recentFiles": [
     {
-      "basename": "八股",
-      "path": "docs/数据库/八股.md"
+      "basename": "nodejs",
+      "path": "docs/后端/nodejs.md"
     },
     {
-      "basename": "八股",
-      "path": "docs/java/八股.md"
+      "basename": "软件体系结构(Spring)",
+      "path": "docs/课程/软件体系结构/软件体系结构(Spring).md"
+    },
+    {
+      "basename": "Spring",
+      "path": "docs/课程/软件体系结构/笔记/Spring.md"
+    },
+    {
+      "basename": "知识图谱",
+      "path": "docs/面试/知识图谱.md"
+    },
+    {
+      "basename": "杂项",
+      "path": "docs/算法/杂项.md"
+    },
+    {
+      "basename": "错题本",
+      "path": "docs/算法/错题本.md"
+    },
+    {
+      "basename": "线性代数engin",
+      "path": "docs/c++/库/线性代数engin.md"
+    },
+    {
+      "basename": "c++基础",
+      "path": "docs/c++/c++基础.md"
+    },
+    {
+      "basename": "位运算",
+      "path": "docs/算法/位运算.md"
+    },
+    {
+      "basename": "模板",
+      "path": "docs/算法/模板.md"
+    },
+    {
+      "basename": "webpack",
+      "path": "docs/web开发/前端/工具/webpack.md"
+    },
+    {
+      "basename": "postman",
+      "path": "docs/web开发/前端/工具/postman.md"
+    },
+    {
+      "basename": "html&CSS",
+      "path": "docs/web开发/前端/html&CSS.md"
+    },
+    {
+      "basename": "ts",
+      "path": "docs/web开发/前端/ts.md"
     },
     {
       "basename": "文件系统",
       "path": "docs/归档课程/数据结构/笔记/文件系统.md"
     },
     {
+      "basename": "Redis",
+      "path": "docs/数据库/NoSQL/Redis.md"
+    },
+    {
+      "basename": "八股",
+      "path": "docs/杂项/linux与shell/八股.md"
+    },
+    {
+      "basename": "调试",
+      "path": "docs/软件工程/编程思想与规范/调试.md"
+    },
+    {
+      "basename": "抽象ADT",
+      "path": "docs/软件工程/编程思想与规范/抽象ADT.md"
+    },
+    {
+      "basename": "代码规范",
+      "path": "docs/软件工程/编程思想与规范/代码规范.md"
+    },
+    {
+      "basename": "测试",
+      "path": "docs/软件工程/软件测试/测试.md"
+    },
+    {
+      "basename": "并发编程",
+      "path": "docs/软件工程/编程思想与规范/并发编程.md"
+    },
+    {
+      "basename": "项目管理",
+      "path": "docs/软件工程/项目管理.md"
+    },
+    {
+      "basename": "uml",
+      "path": "docs/软件工程/uml.md"
+    },
+    {
+      "basename": "文档",
+      "path": "docs/软件工程/编程思想与规范/文档.md"
+    },
+    {
       "basename": "设计模式",
       "path": "docs/软件工程/设计模式.md"
+    },
+    {
+      "basename": "编程思想",
+      "path": "docs/软件工程/编程思想与规范/编程思想.md"
+    },
+    {
+      "basename": "计算机网络",
+      "path": "docs/面试/计算机科学/计算机网络.md"
+    },
+    {
+      "basename": "操作系统",
+      "path": "docs/面试/计算机科学/操作系统.md"
+    },
+    {
+      "basename": "temp",
+      "path": "临时/temp.md"
+    },
+    {
+      "basename": "八股",
+      "path": "docs/数据库/八股.md"
+    },
+    {
+      "basename": "八股",
+      "path": "docs/java/八股.md"
     },
     {
       "basename": "SQL基本语法",
@@ -87,118 +199,6 @@
     {
       "basename": "控制台IO",
       "path": "docs/java/java基础/io/控制台IO.md"
-    },
-    {
-      "basename": "包",
-      "path": "docs/java/java基础/杂项/包.md"
-    },
-    {
-      "basename": "Java编码规范",
-      "path": "docs/java/java基础/杂项/Java编码规范.md"
-    },
-    {
-      "basename": "高级",
-      "path": "docs/java/java基础/并发编程/高级.md"
-    },
-    {
-      "basename": "线程安全的数据类型",
-      "path": "docs/java/java基础/并发编程/线程安全的数据类型.md"
-    },
-    {
-      "basename": "线程与线程池",
-      "path": "docs/java/java基础/并发编程/线程与线程池.md"
-    },
-    {
-      "basename": "基本概念",
-      "path": "docs/java/java基础/并发编程/基本概念.md"
-    },
-    {
-      "basename": "序列化与反序列化",
-      "path": "docs/java/java基础/高级/序列化与反序列化.md"
-    },
-    {
-      "basename": "record记录",
-      "path": "docs/java/java基础/高级/record记录.md"
-    },
-    {
-      "basename": "equals()与hashCode()",
-      "path": "docs/java/java基础/杂项/equals()与hashCode().md"
-    },
-    {
-      "basename": "使用享元自定义Collecction和Map",
-      "path": "docs/java/java基础/高级/使用享元自定义Collecction和Map.md"
-    },
-    {
-      "basename": "Math类",
-      "path": "docs/java/java基础/Util/Math类.md"
-    },
-    {
-      "basename": "时间类",
-      "path": "docs/java/java基础/Util/时间类.md"
-    },
-    {
-      "basename": "排序",
-      "path": "docs/归档课程/数据结构/笔记/排序.md"
-    },
-    {
-      "basename": "测试",
-      "path": "docs/java/java基础/杂项/测试.md"
-    },
-    {
-      "basename": "异常",
-      "path": "docs/java/java基础/杂项/异常.md"
-    },
-    {
-      "basename": "反射",
-      "path": "docs/java/java基础/杂项/反射.md"
-    },
-    {
-      "basename": "泛型",
-      "path": "docs/java/java基础/杂项/泛型.md"
-    },
-    {
-      "basename": "index",
-      "path": "docs/index.md"
-    },
-    {
-      "basename": "README",
-      "path": "README.md"
-    },
-    {
-      "basename": "内部类",
-      "path": "docs/java/java基础/面向对象/内部类.md"
-    },
-    {
-      "basename": "语法分析",
-      "path": "docs/课程/编译原理/笔记/语法分析.md"
-    },
-    {
-      "basename": "构造方法",
-      "path": "docs/java/java基础/面向对象/构造方法.md"
-    },
-    {
-      "basename": "字符串",
-      "path": "docs/java/java基础/数据类型/字符串.md"
-    },
-    {
-      "basename": "枚举类型",
-      "path": "docs/java/java基础/数据类型/枚举类型.md"
-    },
-    {
-      "basename": "switch",
-      "path": "docs/java/java基础/流程控制/switch.md"
-    },
-    {
-      "basename": "SQL注入",
-      "path": "docs/网络安全/SQL注入.md"
-    },
-    {
-      "basename": "final",
-      "path": "docs/java/java基础/杂项/final.md"
-    },
-    {
-      "basename": "数组与字符串",
-      "path": "docs/算法/数组与字符串.md"
     }
   ],
   "omittedPaths": [],
