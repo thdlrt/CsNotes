@@ -1,6 +1,10 @@
 {
   "recentFiles": [
     {
+      "basename": "计算机网络",
+      "path": "docs/面试/计算机科学/计算机网络.md"
+    },
+    {
       "basename": "八股",
       "path": "docs/数据库/八股.md"
     },
@@ -123,10 +127,6 @@
     {
       "basename": "编程思想",
       "path": "docs/软件工程/编程思想与规范/编程思想.md"
-    },
-    {
-      "basename": "计算机网络",
-      "path": "docs/面试/计算机科学/计算机网络.md"
     },
     {
       "basename": "操作系统",
