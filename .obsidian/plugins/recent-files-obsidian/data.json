@@ -1,16 +1,16 @@
 {
   "recentFiles": [
     {
+      "basename": "八股",
+      "path": "docs/数据库/八股.md"
+    },
+    {
       "basename": "SQL基本语法",
       "path": "docs/数据库/SQL基本语法.md"
     },
     {
       "basename": "MySQL",
       "path": "docs/数据库/关系数据库/MySQL.md"
-    },
-    {
-      "basename": "八股",
-      "path": "docs/数据库/八股.md"
     },
     {
       "basename": "Collections工具类",

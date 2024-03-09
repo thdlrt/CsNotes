@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/数据库/SQL基本语法.md",
+                "file": "docs/数据库/八股.md",
                 "mode": "source",
                 "source": false
               }
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/数据库/SQL基本语法.md",
+                "file": "docs/数据库/八股.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -111,7 +111,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/数据库/SQL基本语法.md",
+                "file": "docs/数据库/八股.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -134,7 +134,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/数据库/SQL基本语法.md"
+                "file": "docs/数据库/八股.md"
               }
             }
           },
@@ -159,7 +159,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 200,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -178,8 +179,8 @@
   },
   "active": "87935f88de6c6c69",
   "lastOpenFiles": [
-    "docs/数据库/关系数据库/MySQL.md",
     "docs/数据库/SQL基本语法.md",
+    "docs/数据库/关系数据库/MySQL.md",
     "docs/数据库/八股.md",
     "docs/java/java基础/Util/集合/Collections工具类.md",
     "docs/java/java基础.md",
