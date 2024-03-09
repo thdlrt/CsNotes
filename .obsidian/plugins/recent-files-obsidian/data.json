@@ -5,6 +5,14 @@
       "path": "docs/面试/计算机科学/计算机网络.md"
     },
     {
+      "basename": "知识图谱",
+      "path": "docs/面试/知识图谱.md"
+    },
+    {
+      "basename": "index",
+      "path": "docs/index.md"
+    },
+    {
       "basename": "八股",
       "path": "docs/数据库/八股.md"
     },
@@ -15,14 +23,6 @@
     {
       "basename": "未命名",
       "path": "未命名.canvas"
-    },
-    {
-      "basename": "index",
-      "path": "docs/index.md"
-    },
-    {
-      "basename": "知识图谱",
-      "path": "docs/面试/知识图谱.md"
     },
     {
       "basename": "java",
