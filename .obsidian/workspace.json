@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/后端/nodejs.md",
+                "file": "docs/数据库/八股.md",
                 "mode": "source",
                 "source": false
               }
@@ -89,7 +89,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 200,
+    "collapsed": true
   },
   "right": {
     "id": "d615b65a4ccf8a6a",
@@ -105,7 +106,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/后端/nodejs.md",
+                "file": "docs/数据库/八股.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -122,7 +123,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/后端/nodejs.md",
+                "file": "docs/数据库/八股.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -145,7 +146,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/后端/nodejs.md"
+                "file": "docs/数据库/八股.md"
               }
             }
           },
@@ -170,7 +171,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 200,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -187,11 +189,17 @@
       "omnisearch:Omnisearch": false
     }
   },
-  "active": "96e173acdf249e6c",
+  "active": "efade200bb812e17",
   "lastOpenFiles": [
+    "docs/归档课程/数据结构/笔记/文件系统.md",
+    "未命名.canvas",
+    "docs/index.md",
+    "docs/数据库/八股.md",
+    "docs/面试/知识图谱.md",
+    "docs/杂项/构建&编译&调试/java.md",
+    "docs/后端/nodejs.md",
     "docs/课程/软件体系结构/软件体系结构(Spring).md",
     "docs/课程/软件体系结构/笔记/Spring.md",
-    "docs/面试/知识图谱.md",
     "docs/算法/杂项.md",
     "docs/算法/错题本.md",
     "docs/c++/库/线性代数engin.md",
@@ -206,19 +214,13 @@
     "docs/web开发/前端/工具/mockjs.md",
     "docs/web开发/前端/html&CSS.md",
     "docs/web开发/前端/ts.md",
-    "docs/归档课程/数据结构/笔记/文件系统.md",
     "docs/web开发/前端/库&框架/react.md",
     "docs/数据库/NoSQL/Redis.md",
     "docs/杂项/linux与shell/八股.md",
     "docs/软件工程/编程思想与规范/调试.md",
     "docs/软件工程/编程思想与规范/抽象ADT.md",
-    "docs/归档课程/software construction/其它.md",
     "docs/软件工程/软件测试",
-    "docs/软件工程/编程思想与规范/代码规范.md",
     "docs/软件工程/编程思想与规范",
-    "docs/软件工程/软件测试/测试.md",
-    "docs/软件工程/编程思想与规范/并发编程.md",
-    "docs/软件工程/项目管理.md",
     "docs/面试/计算机科学",
     "面试/未命名",
     "Anki",
@@ -228,7 +230,6 @@
     "CsNotes/2021-11-22-22-54-02.png",
     "CsNotes/2021-11-22-22-52-49.png",
     "CsNotes/2021-11-22-22-49-26.png",
-    "未命名.canvas",
     "Pasted image 20231227111944.png",
     "export/金融大数据p4/plugin/chalkboard/img/whiteboard.png",
     "export/金融大数据p4/plugin/chalkboard/img/sponge.png",

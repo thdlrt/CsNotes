@@ -1,6 +1,30 @@
 {
   "recentFiles": [
     {
+      "basename": "八股",
+      "path": "docs/数据库/八股.md"
+    },
+    {
+      "basename": "文件系统",
+      "path": "docs/归档课程/数据结构/笔记/文件系统.md"
+    },
+    {
+      "basename": "未命名",
+      "path": "未命名.canvas"
+    },
+    {
+      "basename": "index",
+      "path": "docs/index.md"
+    },
+    {
+      "basename": "知识图谱",
+      "path": "docs/面试/知识图谱.md"
+    },
+    {
+      "basename": "java",
+      "path": "docs/杂项/构建&编译&调试/java.md"
+    },
+    {
       "basename": "nodejs",
       "path": "docs/后端/nodejs.md"
     },
@@ -11,10 +35,6 @@
     {
       "basename": "Spring",
       "path": "docs/课程/软件体系结构/笔记/Spring.md"
-    },
-    {
-      "basename": "知识图谱",
-      "path": "docs/面试/知识图谱.md"
     },
     {
       "basename": "杂项",
@@ -55,10 +75,6 @@
     {
       "basename": "ts",
       "path": "docs/web开发/前端/ts.md"
-    },
-    {
-      "basename": "文件系统",
-      "path": "docs/归档课程/数据结构/笔记/文件系统.md"
     },
     {
       "basename": "Redis",
@@ -119,10 +135,6 @@
     {
       "basename": "temp",
       "path": "临时/temp.md"
-    },
-    {
-      "basename": "八股",
-      "path": "docs/数据库/八股.md"
     },
     {
       "basename": "八股",
@@ -187,18 +199,6 @@
     {
       "basename": "NIO",
       "path": "docs/java/java基础/io/NIO.md"
-    },
-    {
-      "basename": "拷贝与引用",
-      "path": "docs/java/java基础/数据类型/拷贝与引用.md"
-    },
-    {
-      "basename": "旧IO",
-      "path": "docs/java/java基础/io/旧IO.md"
-    },
-    {
-      "basename": "控制台IO",
-      "path": "docs/java/java基础/io/控制台IO.md"
     }
   ],
   "omittedPaths": [],
