@@ -90,7 +90,15 @@ gender varchar(1) comment '性别'
 - 删除数据 `DELETE FROM 表名 [ WHERE 条件 ] ;`
   - `delete from employee where gender = '女'; `
   - 删除的是整条记录
-
+- **特殊**：连接删除
+```sql
+DELETE p1 FROM Person p1,
+    Person p2
+WHERE
+    p1.Email = p2.Email AND p1.Id > p2.Id
+```
+- DELETE p1 表示对 p1 表进行删除，具体删除哪些条目由 where 决定
+- [删除重复的电子邮箱](https://leetcode.cn/problems/delete-duplicate-emails/description/)
 ### DQL
 
 - 基本查询（不带任何条件）
