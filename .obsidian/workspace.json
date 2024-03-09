@@ -8,18 +8,6 @@
         "type": "tabs",
         "children": [
           {
-            "id": "87935f88de6c6c69",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "docs/java/八股.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
             "id": "efade200bb812e17",
             "type": "leaf",
             "state": {
@@ -30,9 +18,20 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "13347a781f72acc6",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "docs/归档课程/数据结构/笔记/文件系统.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -194,6 +193,7 @@
   "lastOpenFiles": [
     "docs/java/八股.md",
     "docs/数据库/八股.md",
+    "docs/归档课程/数据结构/笔记/文件系统.md",
     "docs/java/未命名.md",
     "docs/软件工程/设计模式.md",
     "docs/数据库/SQL基本语法.md",
@@ -217,7 +217,6 @@
     "docs/java/java基础/io/旧IO.md",
     "docs/java/java基础/io/控制台IO.md",
     "docs/java/java基础/杂项/包.md",
-    "docs/java/java基础/杂项/Java编码规范.md",
     "Anki",
     "CsNotes/mkdocs.yml",
     "CsNotes/docs/javascripts/mathjax.js",
