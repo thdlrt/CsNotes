@@ -585,6 +585,8 @@ select year('2023-05-20') as year1,
 - 日期运算 data_sub&data_add
 	- DATE_ADD(date,interval expr type)、DATE_SUB(date,interval expr type) 其中常用的 type 的类型有：second、minute、hour、day、month、year 等。
 	- ![image.png|500](https://thdlrt.oss-cn-beijing.aliyuncs.com/20240224103935.png)
+- 格式转化，如年月日转化为年月：`SELECT DATE_FORMAT('2018-12-18', '%Y-%m') AS year_month;
+`
 
 #### 字符串函数
 - 拼接 `CONCAT_WS(separator,string1,string2,...)`, (以指定的字符拼接)
