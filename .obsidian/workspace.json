@@ -13,13 +13,26 @@
             "state": {
               "type": "markdown",
               "state": {
+                "file": "docs/面试/知识图谱.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "12f2a4a4f9bc57d3",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
                 "file": "docs/数据库/NoSQL/Redis.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -177,15 +190,18 @@
       "omnisearch:Omnisearch": false
     }
   },
-  "active": "efade200bb812e17",
+  "active": "12f2a4a4f9bc57d3",
   "lastOpenFiles": [
+    "docs/面试/知识图谱.md",
+    "docs/数据库/关系数据库/MySQL.md",
+    "docs/数据库/八股.md",
+    "未命名.md",
+    "docs/数据库/NoSQL/Redis.md",
     "docs/数据库/NoSQL/MongoDB.md",
     "docs/面试/计算机科学/计算机网络.md",
     "docs/软件工程/设计模式.md",
     "docs/java/java基础.md",
-    "docs/面试/知识图谱.md",
     "docs/index.md",
-    "docs/数据库/八股.md",
     "docs/归档课程/数据结构/笔记/文件系统.md",
     "未命名.canvas",
     "docs/杂项/构建&编译&调试/java.md",
@@ -205,9 +221,6 @@
     "docs/web开发/前端/工具/postman.md",
     "docs/web开发/前端/工具/mockjs.md",
     "docs/web开发/前端/html&CSS.md",
-    "docs/web开发/前端/ts.md",
-    "docs/web开发/前端/库&框架/react.md",
-    "docs/数据库/NoSQL/Redis.md",
     "docs/软件工程/软件测试",
     "docs/软件工程/编程思想与规范",
     "docs/面试/计算机科学",

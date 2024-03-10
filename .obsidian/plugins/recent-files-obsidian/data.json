@@ -5,6 +5,14 @@
       "path": "docs/数据库/NoSQL/Redis.md"
     },
     {
+      "basename": "知识图谱",
+      "path": "docs/面试/知识图谱.md"
+    },
+    {
+      "basename": "MySQL",
+      "path": "docs/数据库/关系数据库/MySQL.md"
+    },
+    {
       "basename": "MongoDB",
       "path": "docs/数据库/NoSQL/MongoDB.md"
     },
@@ -21,24 +29,12 @@
       "path": "docs/java/java基础.md"
     },
     {
-      "basename": "知识图谱",
-      "path": "docs/面试/知识图谱.md"
-    },
-    {
       "basename": "index",
       "path": "docs/index.md"
     },
     {
-      "basename": "八股",
-      "path": "docs/数据库/八股.md"
-    },
-    {
       "basename": "文件系统",
       "path": "docs/归档课程/数据结构/笔记/文件系统.md"
-    },
-    {
-      "basename": "未命名",
-      "path": "未命名.canvas"
     },
     {
       "basename": "java",
@@ -153,10 +149,6 @@
       "path": "docs/数据库/SQL基本语法.md"
     },
     {
-      "basename": "MySQL",
-      "path": "docs/数据库/关系数据库/MySQL.md"
-    },
-    {
       "basename": "Collections工具类",
       "path": "docs/java/java基础/Util/集合/Collections工具类.md"
     },
@@ -195,10 +187,6 @@
     {
       "basename": "文件",
       "path": "docs/java/java基础/io/文件.md"
-    },
-    {
-      "basename": "网络编程",
-      "path": "docs/java/java基础/io/网络编程.md"
     }
   ],
   "omittedPaths": [],
