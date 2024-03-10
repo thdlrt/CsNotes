@@ -1,6 +1,14 @@
 {
   "recentFiles": [
     {
+      "basename": "Redis",
+      "path": "docs/数据库/NoSQL/Redis.md"
+    },
+    {
+      "basename": "MongoDB",
+      "path": "docs/数据库/NoSQL/MongoDB.md"
+    },
+    {
       "basename": "计算机网络",
       "path": "docs/面试/计算机科学/计算机网络.md"
     },
@@ -87,10 +95,6 @@
     {
       "basename": "ts",
       "path": "docs/web开发/前端/ts.md"
-    },
-    {
-      "basename": "Redis",
-      "path": "docs/数据库/NoSQL/Redis.md"
     },
     {
       "basename": "八股",
@@ -195,10 +199,6 @@
     {
       "basename": "网络编程",
       "path": "docs/java/java基础/io/网络编程.md"
-    },
-    {
-      "basename": "NIO",
-      "path": "docs/java/java基础/io/NIO.md"
     }
   ],
   "omittedPaths": [],
