@@ -25,7 +25,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/java/工具/Maven&gradle.md",
+                "file": "docs/课程/软件体系结构/笔记/Spring.md",
                 "mode": "source",
                 "source": false
               }
@@ -107,7 +107,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/java/工具/Maven&gradle.md",
+                "file": "docs/课程/软件体系结构/笔记/Spring.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -124,7 +124,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/java/工具/Maven&gradle.md",
+                "file": "docs/课程/软件体系结构/笔记/Spring.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -147,7 +147,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/java/工具/Maven&gradle.md"
+                "file": "docs/课程/软件体系结构/笔记/Spring.md"
               }
             }
           },
@@ -192,8 +192,8 @@
   },
   "active": "7f4dfc1fb136c0f5",
   "lastOpenFiles": [
-    "docs/面试/知识图谱.md",
     "docs/java/工具/Maven&gradle.md",
+    "docs/面试/知识图谱.md",
     "docs/课程/软件体系结构/笔记/Spring.md",
     "docs/数据库/NoSQL/Redis.md",
     "docs/数据库/关系数据库/MySQL.md",
