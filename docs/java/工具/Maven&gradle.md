@@ -124,7 +124,11 @@
 - 运行特定阶段的构建
   - mvn+阶段名称
   - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20231224221949199.png" alt="image-20231224221949199" style="zoom:33%;" />
-
+- 配置主类并执行 java 程序（修改文件之后都需要先编译再执行）
+```shell
+mvn compile 
+mvn exec:java -Dexec.mainClass="com.shiyanlou.demo.App"
+```
 ## Gradle
 
 - 文件结构

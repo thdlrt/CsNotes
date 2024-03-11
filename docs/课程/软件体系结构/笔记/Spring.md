@@ -75,10 +75,11 @@ public class MovieLister{
 	- ![image.png|376](https://thdlrt.oss-cn-beijing.aliyuncs.com/20240307153409.png)
 ```java
 public void testWithSpring() throws Exception{
-
+//加载spring配置文件
   ApplicationContext ctx = new FileSystemXmlApplicationContext("spring.xml");
-
+//使用配置文件创建对象并还原类型
   MovieLister lister = (MovieLister) ctx.getBean("MovieLister");
+  
   Movie[] movies = lister.moviesDirectedBy("Sergio Leone");
 
   assertEquals("Once Upon a Time in the West", movies[0].getTitle());
