@@ -93,6 +93,26 @@ public class MovieLister{
 	- **接口注入**：任何需要使用 `MovieFinder` 的类（如 `MovieLister`）都需要实现这个接口，并通过实现的 `injectFinder` 方法接收依赖注入。
 ### 实现控制反转
 - bean 的三种定义方式：基于 XML、基于注解、基于 JAVA 类
+#### bean 的作用域
+- singleton — **单例模式**，由 IOC 容器返回一个唯一的 bean 实例。
+- prototype — **原型模式**，被请求时，每次返回一个新的 bean 实例。
+- request — 每个 HTTP Request 请求返回一个唯一的 Bean 实例。
+- session — 每个 HTTP Session 返回一个唯一的 Bean 实例。
+- globalSession — Http Session 全局 Bean 实例。
+#### bean 的生命周期
+- 一般担当管理角色的是 BeanFactory 或者 ApplicationContext
+- Bean 的建立，由 BeanFactory 读取 Bean 定义文件，并生成各个实例。
+- Setter 注入，执行 Bean 的属性依赖注入。
+- BeanNameAware 的 `setBeanName()`，如果实现该接口，则执行其 setBeanName 方法
+- BeanFactoryAware 的 `setBeanFactory()`，如果实现该接口，则执行其 setBeanFactory 方法。
+- BeanPostProcessor 的 `processBeforeInitialization()`，如果有关联的 processor，则在 Bean 初始化之前都会执行这个实例的 `processBeforeInitialization()` 方法。
+- InitializingBean 的 `afterPropertiesSet()`，如果实现了该接口，则执行其 `afterPropertiesSet()` 方法。
+- Bean 定义文件中定义 init-method。
+- BeanPostProcessors 的 `processAfterInitialization()`，如果有关联的 processor，则在 Bean 初始化之前都会执行这个实例的 `processAfterInitialization()` 方法。
+- DisposableBean 的 `destroy()`，在容器关闭时，如果 Bean 类实现了该接口，则执行它的 `destroy()` 方法。
+- Bean 定义文件中定义 destroy-method，在容器关闭时，可以在 Bean 定义文件中使用“destory-method”定义的方法。
+- ![image.png|378](https://thdlrt.oss-cn-beijing.aliyuncs.com/20240311231122.png)
+
 #### 使用 XML 配置文件实现
 - 在 **xml** 中配置（bean 就表示构件, 通常在 src/main/resources 下）
 ```xml
@@ -161,11 +181,111 @@ public class AppConfig {
     }
 }
 ```
+- @Configuration 标记类，@Bean 在内部标记需要由同期托管的**方法**
 - 三个等效名称（功能无区别）
 	- @Controller：对应表现层的 Bean，也就是 Action
 	- @Service：对应的是业务层 Bean
 	- @Repository：对应数据访问层 Bean
 
-- 属性注入
+- 将类声明为 Bean 使用 `@Component`表示这个 Class 是一个**自动扫描组件**
+```java
+@Component
+public class MyComponent {
+    // Spring将自动将此类的实例注册为bean
+}
+```
+- 默认情况下，Spring 将把组件 Class 的**第一个字母变成小写**，来作为自动扫描组件的名称
+	- 即 `context.getBean("myComponent");`
+	- 该类会被自动注册为 bean
+
+- 属性注入 `Autowired`
+	- 
+#### 嵌套 Bean
+- 使用 xml
+```xml
+ <bean id = "CustomerBean" class = "com.shiyanlou.spring.innerbean.Customer">
+        <property name = "person">
+            <bean class = "com.shiyanlou.spring.innerbean.Person">
+                <property name = "name" value = "shiyanlou" />
+                <property name = "address" value = "chengdu" />
+                <property name = "age" value = "25" />
+            </bean>
+        </property>
+  </bean>
+```
+
+#### 集合类型的 Bean
+- 使用 xml 注入到不同类型的集合
+```java
+<?xml version = "1.0" encoding = "UTF-8"?>
+<beans xmlns = "http://www.springframework.org/schema/beans"
+    xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation = "http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--bean的 id 最好首字母小写 -->
+    <bean id = "customerBean" class = "com.shiyanlou.spring.collections.Customer">
+
+        <!-- java.util.List -->
+        <property name = "lists">
+            <list>
+                <value>1</value>
+                <!-- List 属性既可以通过 <value> 注入字符串，也可以通过 <ref> 注入容器中其他的 Bean-->
+                 <ref bean = "personBean" />
+                 <value>2</value>
+                <bean class = "com.shiyanlou.spring.collections.Person">
+                    <property name = "name" value = "shiyanlouList" />
+                    <property name = "address" value = "chengdu" />
+                    <property name = "age" value="25" />
+                </bean>
+            </list>
+        </property>
+
+        <!-- java.util.Set -->
+        <property name = "sets">
+            <set>
+                <value>1</value><!--Set 与 List 类似-->
+                <ref bean = "personBean" />
+                <bean class = "com.shiyanlou.spring.collections.Person">
+                    <property name = "name" value = "shiyanlouSet" />
+                    <property name = "address" value = "chengdu" />
+                    <property name = "age" value = "25" />
+                </bean>
+            </set>
+        </property>
+
+        <!-- java.util.Map -->
+        <property name = "maps">
+            <map>
+                <entry key = "Key 1" value = "1" />
+                <!--一个 entry 就是一个 Map 元素-->
+                <entry key = "Key 2" value-ref = "personBean" />
+                <entry key = "Key 3">
+                    <bean class = "com.shiyanlou.spring.collections.Person">
+                        <property name = "name" value = "shiyanlouMap" />
+                           <property name = "address" value = "chengdu" />
+                        <property name = "age" value = "25" />
+                    </bean>
+                </entry>
+            </map>
+        </property>
+
+        <!-- java.util.Properties -->
+        <property name = "pros">
+        <!-- Properties 类型类似于Map 类型的特例，Map 元素的键值可以对应任何类型的对象，但是Properties只能是字符串-->
+            <props>
+                <prop key = "admin">admin@nospam.com</prop>
+                <prop key = "support">support@nospam.com</prop>
+            </props>
+        </property>
+    </bean>
+
+    <bean id = "personBean" class = "com.shiyanlou.spring.collections.Person">
+        <property name = "name" value = "shiyanlouPersonBean" />
+        <property name = "address" value = "chengdu" />
+        <property name = "age" value = "25" />
+    </bean>
+</beans>
+```
 
 ### AOP 面相切面编程
