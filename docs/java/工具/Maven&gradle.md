@@ -129,6 +129,10 @@
 mvn compile 
 mvn exec:java -Dexec.mainClass="com.shiyanlou.demo.App"
 ```
+- 新建 maven 项目
+```shell
+mvn archetype:generate -DgroupId=com.shiyanlou.spring -DartifactId=bean -DarchetypeArtifactId=maven-archetype-quickstart
+```
 ## Gradle
 
 - 文件结构

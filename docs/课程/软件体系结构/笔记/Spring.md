@@ -19,6 +19,43 @@
 	- 简单的数据库事务管理
 	- 灵活的 web 层支持
 	- 简化各种技术集成
+### 使用 Spring
+- maven 中引入依赖
+```xml
+<?xml version = "1.0" encoding = "UTF-8"?>
+<project xmlns = "http://maven.apache.org/POM/4.0.0" xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation = "http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.shiyanlou.spring</groupId>
+    <artifactId>bean</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <name>bean</name>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <spring.version>5.1.1.RELEASE</spring.version>
+
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-core</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+    </dependencies>
+</project>
+
+```
 ## 反转控制&依赖注入 IOC
 ### 什么是组件
 - ccm 抽象构建
@@ -32,6 +69,9 @@
 - 控制反转就是指模块将内部的控制权交给了外部
 
 - 软件设计中的**依赖注入**模式。在 IoC 模式中，控制权从程序代码转移**给了外部系统或框架**
+	- 传统程序设计是在对象内部直接 new 创建对象，而 IoC 是通过专门的容器（context）创建对象，由 IoC 控制对象
+	- ![image.png|325](https://thdlrt.oss-cn-beijing.aliyuncs.com/20240311222719.png)
+
 - 比如有一个程序 MovieLister 有一个功能是使用实现了 MovieFinder 接口的类从列表中寻找符合条件的项
 	- 依赖注入是 IoC 的一种形式，它涉及到在运行时动态地将具体的 `MovieFinder`**实现注入**到 `MovieLister` 中，而不是由 `MovieLister` 自己构造或查找 `MovieFinder` 的实现。这样，我们就可以在不改变 `MovieLister` 代码的情况下，改变它所依赖的电影查找方式，增加了代码的模块化和**灵活性**。
 	- 在 Lister 内自己创建就**不是一个好设计**，写死了算法 ![image.png|425](https://thdlrt.oss-cn-beijing.aliyuncs.com/20240307152005.png)
@@ -52,6 +92,7 @@ public class MovieLister{
 	- **设置值注入**：这允许在对象创建后的任何时刻注入依赖，提供了更大的灵活性。
 	- **接口注入**：任何需要使用 `MovieFinder` 的类（如 `MovieLister`）都需要实现这个接口，并通过实现的 `injectFinder` 方法接收依赖注入。
 ### 实现控制反转
+- bean 的三种定义方式：基于 XML、基于注解、基于 JAVA 类
 #### 使用 XML 配置文件实现
 - 在 **xml** 中配置（bean 就表示构件, 通常在 src/main/resources 下）
 ```xml
@@ -66,10 +107,26 @@ public class MovieLister{
             <value>movies1.txt</value>
         </property>
     </bean>
+        <!-- 另一种配置方法 缩写方法-->
+    <!--
+        <bean id = "FileNameGenerator" class = "com.shiyanlou.spring.bean.FileNameGenerator">
+               <property name = "name" value = "shiyanlou" />
+               <property name = "type" value = "txt" />
+           </bean>
+     -->
+     <!--pschema方法-->
+     <!--
+     <bean id = "FileNameGenerator" class = "com.shiyanlou.spring.bean.FileNameGenerator" p:name = "shiyanlou" p:type = "txt" />
+     -->
 </beans>
 ```
 - 通过 property 标签为 name 属性设置默认值，在创建实例时会自动先进性赋值
 	- 对于属性 finder 会自动去找对应的 setFinder 来对属性值进行修改
+- 有三种配置方式：完整、缩写、pschema
+```xml
+使用pschma要在beans配置加上
+xmlns:p = "http://www.springframework.org/schema/p"
+```
 
 - spring 通过 xml 配置文件对构件进行组装
 	- ![image.png|376](https://thdlrt.oss-cn-beijing.aliyuncs.com/20240307153409.png)
@@ -86,5 +143,29 @@ public void testWithSpring() throws Exception{
 }
 ```
 #### 使用注解方式
-- 
+- 通过使用注释 @Configuration 告诉 Spring，这个 Class 是 Spring 的核心配置文件，并且通过使用注解 @Bean 定义 bean
+
+- 定义 bean
+```java
+package com.shiyanlou.spring.java_config;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+@Configuration
+public class AppConfig {
+
+    @Bean(name = "animal")
+    public IAnimal getAnimal(){
+        return new Dog();
+    }
+}
+```
+- 三个等效名称（功能无区别）
+	- @Controller：对应表现层的 Bean，也就是 Action
+	- @Service：对应的是业务层 Bean
+	- @Repository：对应数据访问层 Bean
+
+- 属性注入
+
 ### AOP 面相切面编程
