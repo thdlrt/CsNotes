@@ -163,6 +163,11 @@ public void testWithSpring() throws Exception{
 }
 ```
 #### 使用注解方式
+- 过程
+	- **组件扫描**：Spring 扫描类路径，寻找所有标有 `@Component`（及其特化版本如 `@Service`、`@Repository`、`@Controller` 等）的类。
+	- **实例化 bean**：对于每一个找到的类，Spring 都会创建一个实例，并将这个实例放入 Spring 容器中。
+	- **依赖注入**：对于那些需要依赖的 bean，Spring 会查找容器中匹配的 bean，并通过 `@Autowired` 注解自动注入这些依赖。
+
 - 通过使用注释 @Configuration 告诉 Spring，这个 Class 是 Spring 的核心配置文件，并且通过使用注解 @Bean 定义 bean
 
 - 定义 bean
@@ -197,9 +202,61 @@ public class MyComponent {
 - 默认情况下，Spring 将把组件 Class 的**第一个字母变成小写**，来作为自动扫描组件的名称
 	- 即 `context.getBean("myComponent");`
 	- 该类会被自动注册为 bean
+- 自定义扫描组件的名称
+	- 添加注解 `@Service("AAA")` 指出名称
+- 优先匹配`@Primary`
 
-- 属性注入 `Autowired`
-	- 
+- 属性注入 `Autowired` (自动装配)
+	- **自动尝试满足该依赖**：Spring 查找容器中与字段、构造函数参数或方法参数**匹配类型的其他 bean**，并将这些 bean**注入**到标有 `@Autowired` 的地方。
+- 明确指出要注入的内容
+```java
+@Autowired
+@Qualifier("specificBean")
+private MyBean myBean;
+```
+
+- `@Required` 表示必须注入，属性必须在XML配置文件中被设置，或者通过其他配置方式（如Java配置）显式提供，否则Spring容器会在运行时抛出异常
+##### 使用注解时的 xml 配置
+- xml 的配置
+	- 加入了 `context:component-scan` 标签，`beans` 中也加入了标签，这样就将 Spring 的自动扫描特性引入，`base-package` 表示组件的存放位置，Spring 将**扫描对应文件夹下的 bean**（用 @Component 注释过的），将这些 bean 注册到容器中。
+```xml
+<?xml version = "1.0" encoding = "UTF-8"?>
+<beans xmlns = "http://www.springframework.org/schema/beans"
+       xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context = "http://www.springframework.org/schema/context"
+       xsi:schemaLocation = "
+            http://www.springframework.org/schema/context
+            http://www.springframework.org/schema/context/spring-context.xsd
+            http://www.springframework.org/schema/beans
+            http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <context:component-scan base-package = "com.shiyanlou.spring"/>
+
+</beans>
+```
+- 添加过滤的自动扫描
+```xml
+ <beans xmlns = "http://www.springframework.org/schema/beans"
+    xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context = "http://www.springframework.org/schema/context"
+    xsi:schemaLocation = "
+            http://www.springframework.org/schema/context
+            http://www.springframework.org/schema/context/spring-context.xsd
+            http://www.springframework.org/schema/beans
+            http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <context:component-scan base-package = "com.shiyanlou.spring" >
+
+        <context:include-filter type = "regex"
+                       expression = "com.shiyanlou.spring.dao.*DAO.*" />
+
+        <context:include-filter type = "regex"
+                       expression = "com.shiyanlou.spring.services.*Service.*" />
+
+    </context:component-scan>
+
+</beans>
+```
 #### 嵌套 Bean
 - 使用 xml
 ```xml
@@ -288,4 +345,6 @@ public class MyComponent {
 </beans>
 ```
 
-### AOP 面相切面编程
+## AOP 面相切面编程
+
+## Spring 与数据库
