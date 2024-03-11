@@ -1,12 +1,12 @@
 {
   "recentFiles": [
     {
-      "basename": "Spring",
-      "path": "docs/课程/软件体系结构/笔记/Spring.md"
-    },
-    {
       "basename": "Maven&gradle",
       "path": "docs/java/工具/Maven&gradle.md"
+    },
+    {
+      "basename": "Spring",
+      "path": "docs/课程/软件体系结构/笔记/Spring.md"
     },
     {
       "basename": "知识图谱",
