@@ -56,6 +56,7 @@
 </project>
 
 ```
+- 可以只添加 context，因为 context 依赖于 core，core 会被自动引入
 ## 反转控制&依赖注入 IOC
 ### 什么是组件
 - ccm 抽象构建
@@ -169,7 +170,7 @@ public void testWithSpring() throws Exception{
 	- **依赖注入**：对于那些需要依赖的 bean，Spring 会查找容器中匹配的 bean，并通过 `@Autowired` 注解自动注入这些依赖。
 
 - 通过使用注释 @Configuration 告诉 Spring，这个 Class 是 Spring 的核心配置文件，并且通过使用注解 @Bean 定义 bean
-
+	- 当 Spring 容器启动时，它会扫描包含 `@Configuration` 注解的类，并执行其中的 `@Bean` 注解的方法，**将返回的对象作为 beans 注册到容器中。**
 - 定义 bean
 ```java
 package com.shiyanlou.spring.java_config;
@@ -213,6 +214,20 @@ public class MyComponent {
 @Autowired
 @Qualifier("specificBean")
 private MyBean myBean;
+//构造函数要写在行内
+@Autowired  
+public AsciiPanel(int width, int height,@Qualifier("cp437_9x16") AsciiFont font)
+```
+- 当使用 `@Autowired` 注解在构造函数上时，Spring 容器会尝试自动注入构造函数参数所需的所有依赖。这里的“依赖”指的是 Spring 容器可以管理的 beans，通常是**自定义的类实例或通过配置声明的实例**
+- Spring 默**认不会尝试注入基本类型的值**，因为它预期这些值是明确指定的，而不是通过依赖注入管理。如果需要注入基本类型的值，应该使用 `@Value` 注解来指定这些值。
+```java
+@Autowired
+public AsciiPanel(@Value("${panel.width}") int width, 
+                  @Value("${panel.height}") int height, 
+                  AsciiFont font) {
+    // ...
+}
+
 ```
 
 - `@Required` 表示必须注入，属性必须在XML配置文件中被设置，或者通过其他配置方式（如Java配置）显式提供，否则Spring容器会在运行时抛出异常
