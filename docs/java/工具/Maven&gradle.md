@@ -1,17 +1,38 @@
 ## Maven
 
 ### 基本概念
+- 标准项目结构
 
-#### **POM Files**的基本内容
+|目录|描述|
+|---|---|
+|`src/main/java`|源代码目录|
+|`src/main/resources`|资源目录，一般是存放配置文件|
+|`src/main/filters`|资源过滤文件|
+|`src/main/webapp`|Web 应用资源|
+|`src/test/java`|测试代码|
+|`src/test/resources`|测试资源，用于测试的配置文件|
+|`src/test/filters`|测试资源过滤文件|
+|`src/it`|集成测试|
+|`src/assembly`|程序集描述符|
+|`src/site`|站点文档|
+|`target`|编译输出目录|
+|`pom.xml`|maven 项目配置文件|
+|`LICENSE.txt`|项目许可证|
+|`NOTICE.txt`|项目依赖和通知|
+|`README.txt`|项目描述|
+
+#### POM Files的基本内容
 
 - **POM**（Project Object Model）文件定义了项目的构建配置，包括项目的依赖、插件、目标等。（就是所说的pom项目对象模型）包含：
 - **项目基本信息**：如项目名称、版本、描述、URL等。
 - **依赖关系**：列出了项目需要的所有库和框架的依赖项，包括它们的版本和配置。
 - **构建设置**：定义了编译源代码、打包输出和执行测试等任务所需的配置。
+
 - **构建生命周期**：指定了项目构建过程中要经历的一系列阶段，如编译、测试和打包。
   - **clean 生命周期**:旨在**清理项目**，删除所有由之前构建生成的文件。
   - **default 生命周期**:是进行项目实际构建的主要生命周期，包括**编译、测试、打包、安装和部署等阶段。**
   - **site 生命周期**:用于创建和处理项目文档站点。
+
 - **插件和目标**：指明了Maven在构建过程中需要执行的插件以及插件目标。
 - **项目目录结构**：规定了源代码、资源、测试和输出文件的标准文件夹结构。
 - **属性**：可以定义一些属性，以便在POM的不同部分重用。
@@ -67,15 +88,18 @@
    - 这通常用于将构建的成果发布到可以供其他项目或团队成员访问的中央仓库。
 
 ### 基本命令
+- 查看版本 `mvn -version`
+- 编译项目 `mvn compile`
 
 - 运行特定阶段的构建
+  - mvn+阶段名称
   - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20231224221949199.png" alt="image-20231224221949199" style="zoom:33%;" />
 
 ## Gradle
 
 - 文件结构
 
-  - ```bash
+```bash
     my-project/                    # 项目根目录
     ├── gradle/                    # Gradle 脚本目录
     │   └── wrapper/               # Gradle Wrapper 相关文件
@@ -92,7 +116,7 @@
     ├── settings.gradle            # Gradle 设置文件，用于配置项目
     └── gradlew                    # Unix/Linux 系统上的 Gradle Wrapper 启动脚本
     └── gradlew.bat                # Windows 系统上的 Gradle Wrapper 启动脚本
-    ```
+```
 
   - **`gradle/` 目录**：包含与 Gradle Wrapper 相关的文件。这些文件允许项目使用预定义的 Gradle 版本，无需手动安装。
 
@@ -110,7 +134,7 @@
 
 - `build.gradle` 文件定义了项目的构建逻辑。这包括了项目依赖、插件、任务和其他构建相关的配置。
 
-- ```bash
+```bash
   // 插件
   plugins {
       id 'java'
@@ -138,7 +162,7 @@
       }
   }
   
-  ```
+```
 
 - **插件**：使用 `plugins` 代码块定义项目使用的插件。
 
@@ -152,12 +176,12 @@
 
 - `settings.gradle` 文件用于配置 Gradle 构建的基本设置，特别是在多项目构建中。
 
-- ```bash
+```bash
   rootProject.name = 'my-project'
   
   // 包含的子项目
   include 'subproject1', 'subproject2'
-  ```
+```
 
 - **项目名称**：设置根项目名称。
 

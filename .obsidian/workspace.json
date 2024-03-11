@@ -20,12 +20,12 @@
             }
           },
           {
-            "id": "12f2a4a4f9bc57d3",
+            "id": "7f4dfc1fb136c0f5",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/数据库/NoSQL/Redis.md",
+                "file": "docs/java/工具/Maven&gradle.md",
                 "mode": "source",
                 "source": false
               }
@@ -107,7 +107,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/数据库/NoSQL/Redis.md",
+                "file": "docs/java/工具/Maven&gradle.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -124,7 +124,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/数据库/NoSQL/Redis.md",
+                "file": "docs/java/工具/Maven&gradle.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -147,7 +147,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/数据库/NoSQL/Redis.md"
+                "file": "docs/java/工具/Maven&gradle.md"
               }
             }
           },
@@ -190,17 +190,19 @@
       "omnisearch:Omnisearch": false
     }
   },
-  "active": "12f2a4a4f9bc57d3",
+  "active": "7f4dfc1fb136c0f5",
   "lastOpenFiles": [
-    "docs/数据库/关系数据库/MySQL.md",
+    "docs/面试/知识图谱.md",
+    "docs/java/工具/Maven&gradle.md",
+    "docs/课程/软件体系结构/笔记/Spring.md",
     "docs/数据库/NoSQL/Redis.md",
+    "docs/数据库/关系数据库/MySQL.md",
     "docs/数据库/关系数据库/data/MySQL卸载文档-Windows版.md",
     "docs/数据库/关系数据库/data/MySQL安装.md",
     "docs/软件工程/设计模式.md",
     "docs/课程/编译原理/笔记/语法分析.md",
     "docs/课程/编译原理/编译原理.md",
     "docs/java/javaWeb/kafka.md",
-    "docs/面试/知识图谱.md",
     "docs/数据库/八股.md",
     "未命名.md",
     "docs/数据库/NoSQL/MongoDB.md",
@@ -212,13 +214,11 @@
     "docs/杂项/构建&编译&调试/java.md",
     "docs/后端/nodejs.md",
     "docs/课程/软件体系结构/软件体系结构(Spring).md",
-    "docs/课程/软件体系结构/笔记/Spring.md",
     "docs/算法/杂项.md",
     "docs/算法/错题本.md",
     "docs/c++/库/线性代数engin.md",
     "docs/c++/c++基础.md",
     "docs/c++/并发编程.md",
-    "docs/算法/位运算.md",
     "docs/javascripts/mathjax.js",
     "docs/javascripts",
     "docs/软件工程/软件测试",

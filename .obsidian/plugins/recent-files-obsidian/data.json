@@ -1,6 +1,18 @@
 {
   "recentFiles": [
     {
+      "basename": "Maven&gradle",
+      "path": "docs/java/工具/Maven&gradle.md"
+    },
+    {
+      "basename": "知识图谱",
+      "path": "docs/面试/知识图谱.md"
+    },
+    {
+      "basename": "Spring",
+      "path": "docs/课程/软件体系结构/笔记/Spring.md"
+    },
+    {
       "basename": "Redis",
       "path": "docs/数据库/NoSQL/Redis.md"
     },
@@ -33,10 +45,6 @@
       "path": "docs/java/javaWeb/kafka.md"
     },
     {
-      "basename": "知识图谱",
-      "path": "docs/面试/知识图谱.md"
-    },
-    {
       "basename": "MongoDB",
       "path": "docs/数据库/NoSQL/MongoDB.md"
     },
@@ -67,10 +75,6 @@
     {
       "basename": "软件体系结构(Spring)",
       "path": "docs/课程/软件体系结构/软件体系结构(Spring).md"
-    },
-    {
-      "basename": "Spring",
-      "path": "docs/课程/软件体系结构/笔记/Spring.md"
     },
     {
       "basename": "杂项",
@@ -195,10 +199,6 @@
     {
       "basename": "流",
       "path": "docs/java/java基础/数据类型/流.md"
-    },
-    {
-      "basename": "jvm",
-      "path": "docs/java/工具/jvm.md"
     }
   ],
   "omittedPaths": [],
