@@ -35,7 +35,37 @@
 
 - **插件和目标**：指明了Maven在构建过程中需要执行的插件以及插件目标。
 - **项目目录结构**：规定了源代码、资源、测试和输出文件的标准文件夹结构。
-- **属性**：可以定义一些属性，以便在POM的不同部分重用。
+- **属性**：可以定义一些属性，以便在 POM 的不同部分重用。（即变量，常定义一些版本号）
+```xml
+//定义属性
+<properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <spring.version>5.1.1.RELEASE</spring.version>
+
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-core</artifactId>
+            //使用前面定义为属性的版本号
+            <version>${spring.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>3.8.1</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+```
 - **构建配置文件**：可以为不同的构建环境指定不同的设置。
 - **项目继承**：允许一个项目POM继承另一个POM的配置。
 - **模块**：在多模块项目中，一个父POM可以定义多个子模块。

@@ -1,4 +1,4 @@
-### 基本概念
+## 基本概念
 - Spring 是一个容器，通过**反转控制**（IoC）和**依赖注入**（DI）来实现高内聚、低耦合的应用。除此之外它可以整合很多第三方框架，它还提供**面向切面编程**（AOP）的能力，对数据库事务的管理尤其方便。
 - 功能
 	- 帮助**通过配置方式**来创建对象，管理对象之间**依赖关系**
@@ -19,15 +19,15 @@
 	- 简单的数据库事务管理
 	- 灵活的 web 层支持
 	- 简化各种技术集成
-### 反转控制&依赖注入 IOC
-#### 什么是组件
+## 反转控制&依赖注入 IOC
+### 什么是组件
 - ccm 抽象构建
 	- ![image.png|450](https://thdlrt.oss-cn-beijing.aliyuncs.com/20240307144504.png)
 	- ![image.png|475](https://thdlrt.oss-cn-beijing.aliyuncs.com/20240307144529.png)
 - spring：支持构建现代化的构件软件系统
 	- spring 负责对构件管理和组装，即由 spring 框架来控制程序中各个类之间的关系
 	- ![image.png|450](https://thdlrt.oss-cn-beijing.aliyuncs.com/20240307151410.png)
-#### 控制反转 IOC
+### 控制反转 IOC
 
 - 控制反转就是指模块将内部的控制权交给了外部
 
@@ -47,16 +47,16 @@ public class MovieLister{
   ...
 }
 ```
-
 - 依赖注入方法分类：
-	- 构造器注入：`MovieLister` 的依赖会在 `MovieLister` 实例化的时候通过构造器传递进来。
-	- 设置值注入：这允许在对象创建后的任何时刻注入依赖，提供了更大的灵活性。
-	- 接口注入：任何需要使用 `MovieFinder` 的类（如 `MovieLister`）都需要实现这个接口，并通过实现的 `injectFinder` 方法接收依赖注入。
-
-- 在 spring 中配置（bean 就表示构件）早起方式，现在可以使用注解等方式实现
+	- **构造器注入**：`MovieLister` 的依赖会在 `MovieLister` 实例化的时候通过构造器传递进来。
+	- **设置值注入**：这允许在对象创建后的任何时刻注入依赖，提供了更大的灵活性。
+	- **接口注入**：任何需要使用 `MovieFinder` 的类（如 `MovieLister`）都需要实现这个接口，并通过实现的 `injectFinder` 方法接收依赖注入。
+### 实现控制反转
+#### 使用 XML 配置文件实现
+- 在 **xml** 中配置（bean 就表示构件, 通常在 src/main/resources 下）
 ```xml
 <beans>
-    <bean id="MovieLister" class="spring.MovieLister">                   
+    <bean id="MovieLister" class="spring.MovieLister">                
         <property name="finder">
             <ref local="MovieFinder" />
         </property>
@@ -68,7 +68,9 @@ public class MovieLister{
     </bean>
 </beans>
 ```
-- 对于属性 finder 会自动去找对应的 setFinder 来对属性值进行修改
+- 通过 property 标签为 name 属性设置默认值，在创建实例时会自动先进性赋值
+	- 对于属性 finder 会自动去找对应的 setFinder 来对属性值进行修改
+
 - spring 通过 xml 配置文件对构件进行组装
 	- ![image.png|376](https://thdlrt.oss-cn-beijing.aliyuncs.com/20240307153409.png)
 ```java
@@ -82,4 +84,6 @@ public void testWithSpring() throws Exception{
   assertEquals("Once Upon a Time in the West", movies[0].getTitle());
 }
 ```
+#### 使用注解方式
+- 
 ### AOP 面相切面编程
