@@ -1,6 +1,14 @@
 {
   "recentFiles": [
     {
+      "basename": "MySQL卸载文档-Windows版",
+      "path": "docs/数据库/关系数据库/data/MySQL卸载文档-Windows版.md"
+    },
+    {
+      "basename": "MySQL安装",
+      "path": "docs/数据库/关系数据库/data/MySQL安装.md"
+    },
+    {
       "basename": "设计模式",
       "path": "docs/软件工程/设计模式.md"
     },
@@ -191,14 +199,6 @@
     {
       "basename": "jvm",
       "path": "docs/java/工具/jvm.md"
-    },
-    {
-      "basename": "注解",
-      "path": "docs/java/java基础/杂项/注解.md"
-    },
-    {
-      "basename": "文件",
-      "path": "docs/java/java基础/io/文件.md"
     }
   ],
   "omittedPaths": [],

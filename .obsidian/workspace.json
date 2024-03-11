@@ -25,7 +25,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/软件工程/设计模式.md",
+                "file": "docs/数据库/关系数据库/data/MySQL卸载文档-Windows版.md",
                 "mode": "source",
                 "source": false
               }
@@ -90,8 +90,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 200
   },
   "right": {
     "id": "d615b65a4ccf8a6a",
@@ -107,7 +106,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/软件工程/设计模式.md",
+                "file": "docs/数据库/关系数据库/data/MySQL卸载文档-Windows版.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -124,7 +123,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/软件工程/设计模式.md",
+                "file": "docs/数据库/关系数据库/data/MySQL卸载文档-Windows版.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -147,7 +146,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/软件工程/设计模式.md"
+                "file": "docs/数据库/关系数据库/data/MySQL卸载文档-Windows版.md"
               }
             }
           },
@@ -172,8 +171,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 200
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -190,11 +188,13 @@
       "omnisearch:Omnisearch": false
     }
   },
-  "active": "12f2a4a4f9bc57d3",
+  "active": "96e173acdf249e6c",
   "lastOpenFiles": [
+    "docs/数据库/关系数据库/data/MySQL安装.md",
+    "docs/数据库/关系数据库/data/MySQL卸载文档-Windows版.md",
+    "docs/软件工程/设计模式.md",
     "docs/课程/编译原理/笔记/语法分析.md",
     "docs/课程/编译原理/编译原理.md",
-    "docs/软件工程/设计模式.md",
     "docs/数据库/NoSQL/Redis.md",
     "docs/java/javaWeb/kafka.md",
     "docs/面试/知识图谱.md",
@@ -217,10 +217,8 @@
     "docs/c++/c++基础.md",
     "docs/c++/并发编程.md",
     "docs/算法/位运算.md",
-    "docs/算法/模板.md",
     "docs/javascripts/mathjax.js",
     "docs/javascripts",
-    "docs/web开发/前端/工具/webpack.md",
     "docs/软件工程/软件测试",
     "docs/软件工程/编程思想与规范",
     "docs/面试/计算机科学",
