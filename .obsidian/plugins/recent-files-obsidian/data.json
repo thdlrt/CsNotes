@@ -1,6 +1,10 @@
 {
   "recentFiles": [
     {
+      "basename": "设计模式",
+      "path": "docs/软件工程/设计模式.md"
+    },
+    {
       "basename": "Redis",
       "path": "docs/数据库/NoSQL/Redis.md"
     },
@@ -23,10 +27,6 @@
     {
       "basename": "计算机网络",
       "path": "docs/面试/计算机科学/计算机网络.md"
-    },
-    {
-      "basename": "设计模式",
-      "path": "docs/软件工程/设计模式.md"
     },
     {
       "basename": "java基础",
