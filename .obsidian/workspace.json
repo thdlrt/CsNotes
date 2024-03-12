@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/c++/八股.md",
+                "file": "docs/归档课程/数字逻辑与计算机组成/笔记/U8 中央处理器.md",
                 "mode": "source",
                 "source": false
               }
@@ -93,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/c++/八股.md",
+                "file": "docs/归档课程/数字逻辑与计算机组成/笔记/U8 中央处理器.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/c++/八股.md",
+                "file": "docs/归档课程/数字逻辑与计算机组成/笔记/U8 中央处理器.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/c++/八股.md"
+                "file": "docs/归档课程/数字逻辑与计算机组成/笔记/U8 中央处理器.md"
               }
             }
           },
@@ -158,8 +158,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 200
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -178,10 +177,11 @@
   },
   "active": "7f4dfc1fb136c0f5",
   "lastOpenFiles": [
+    "docs/杂项/linux与shell/linux.md",
+    "docs/c++/八股.md",
     "docs/课程/计算机图形学/Games101-现代图形学基础.md",
     "docs/课程/计算机图形学/opengl.md",
     "docs/面试/计算机科学/并发编程.md",
-    "docs/c++/八股.md",
     "docs/c++/C++基础.md",
     "docs/软件工程/设计模式.md",
     "docs/软件工程/项目管理.md",
@@ -204,7 +204,6 @@
     "docs/java/javaWeb/kafka.md",
     "docs/数据库/八股.md",
     "未命名.md",
-    "docs/数据库/NoSQL/MongoDB.md",
     "未命名.canvas",
     "docs/javascripts/mathjax.js",
     "docs/javascripts",

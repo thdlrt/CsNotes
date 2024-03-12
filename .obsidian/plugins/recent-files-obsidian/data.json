@@ -1,6 +1,14 @@
 {
   "recentFiles": [
     {
+      "basename": "U8 中央处理器",
+      "path": "docs/归档课程/数字逻辑与计算机组成/笔记/U8 中央处理器.md"
+    },
+    {
+      "basename": "linux",
+      "path": "docs/杂项/linux与shell/linux.md"
+    },
+    {
       "basename": "八股",
       "path": "docs/c++/八股.md"
     },
@@ -191,14 +199,6 @@
     {
       "basename": "编程思想",
       "path": "docs/软件工程/编程思想与规范/编程思想.md"
-    },
-    {
-      "basename": "操作系统",
-      "path": "docs/面试/计算机科学/操作系统.md"
-    },
-    {
-      "basename": "temp",
-      "path": "临时/temp.md"
     }
   ],
   "omittedPaths": [],

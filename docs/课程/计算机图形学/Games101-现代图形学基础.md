@@ -1,5 +1,6 @@
 ## 线性代数基础
 
+- **点乘**主要用来求两个单位向量的**夹角**
 - 投影<img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230705094433677.png" alt="image-20230705094433677" style="zoom: 33%;" /><img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230705094408593.png" alt="image-20230705094408593" style="zoom: 15%;" />
 
 
@@ -56,7 +57,7 @@
 - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230705112115221.png" alt="image-20230705112115221" style="zoom:33%;" />
 - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230705113438466.png" alt="image-20230705113438466" style="zoom:33%;" />
 - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230705113455204.png" alt="image-20230705113455204" style="zoom:33%;" />
-- 旋转公式（绕任一过原点的向量n旋转）
+- 罗德里格旋转公式（绕任一过原点的向量n旋转）
   - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230705114627385.png" alt="image-20230705114627385" style="zoom:33%;" />
 
 ### 视图变化
@@ -78,9 +79,9 @@
 #### 正交投影
 
 - 平行线仍然平行<img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230705182825442.png" alt="image-20230705182825442" style="zoom:33%;" />
-- 看作摄像机无限远，平行投射
+- 看作摄像机无限远，**平行投射**
   - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230705183034320.png" alt="image-20230705183034320" style="zoom:33%;" />
-  - 想当于扔掉z坐标
+  - 相当于扔掉z坐标
 - 长方形投影到标准正方体（观测矩阵）
   - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230705183815650.png" alt="image-20230705183815650" style="zoom:33%;" />
   - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230705183829219.png" alt="image-20230705183829219" style="zoom:33%;" />
@@ -108,7 +109,7 @@
 
 ## 光栅化
 
-- 光栅化：将图像显示在屏幕上
+- 光栅化：将图像显示在屏幕上，矢量图形转化为像素网格
 
 - 视锥
   - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230705195643643.png" alt="image-20230705195643643" style="zoom:33%;" />
