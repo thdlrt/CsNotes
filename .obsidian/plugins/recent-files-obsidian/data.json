@@ -1,20 +1,20 @@
 {
   "recentFiles": [
     {
-      "basename": "设计模式",
-      "path": "docs/软件工程/设计模式.md"
-    },
-    {
       "basename": "C++基础",
       "path": "docs/c++/C++基础.md"
     },
     {
-      "basename": "项目管理",
-      "path": "docs/软件工程/项目管理.md"
-    },
-    {
       "basename": "八股",
       "path": "docs/c++/八股.md"
+    },
+    {
+      "basename": "设计模式",
+      "path": "docs/软件工程/设计模式.md"
+    },
+    {
+      "basename": "项目管理",
+      "path": "docs/软件工程/项目管理.md"
     },
     {
       "basename": "知识图谱",

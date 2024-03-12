@@ -36,21 +36,8 @@
                 "source": false
               }
             }
-          },
-          {
-            "id": "b088f4a646b7083c",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "docs/软件工程/设计模式.md",
-                "mode": "source",
-                "source": false
-              }
-            }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -124,7 +111,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/软件工程/设计模式.md",
+                "file": "docs/c++/C++基础.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -141,7 +128,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/软件工程/设计模式.md",
+                "file": "docs/c++/C++基础.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -164,7 +151,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/软件工程/设计模式.md"
+                "file": "docs/c++/C++基础.md"
               }
             }
           },
@@ -207,12 +194,12 @@
       "omnisearch:Omnisearch": false
     }
   },
-  "active": "b088f4a646b7083c",
+  "active": "6efc063301e9b18d",
   "lastOpenFiles": [
+    "docs/c++/八股.md",
     "docs/c++/C++基础.md",
     "docs/软件工程/设计模式.md",
     "docs/软件工程/项目管理.md",
-    "docs/c++/八股.md",
     "docs/面试/知识图谱.md",
     "docs/面试/计算机科学/并发编程.md",
     "docs/java/工具/Maven&gradle.md",
