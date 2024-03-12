@@ -1,28 +1,56 @@
 {
   "recentFiles": [
     {
+      "basename": "设计模式",
+      "path": "docs/软件工程/设计模式.md"
+    },
+    {
+      "basename": "C++基础",
+      "path": "docs/c++/C++基础.md"
+    },
+    {
+      "basename": "项目管理",
+      "path": "docs/软件工程/项目管理.md"
+    },
+    {
       "basename": "八股",
       "path": "docs/c++/八股.md"
-    },
-    {
-      "basename": "并发编程",
-      "path": "docs/面试/计算机科学/并发编程.md"
-    },
-    {
-      "basename": "杂项",
-      "path": "docs/面试/计算机科学/杂项.md"
     },
     {
       "basename": "知识图谱",
       "path": "docs/面试/知识图谱.md"
     },
     {
-      "basename": "Spring",
-      "path": "docs/课程/软件体系结构/笔记/Spring.md"
+      "basename": "并发编程",
+      "path": "docs/面试/计算机科学/并发编程.md"
     },
     {
       "basename": "Maven&gradle",
       "path": "docs/java/工具/Maven&gradle.md"
+    },
+    {
+      "basename": "高级程序设计复习",
+      "path": "docs/归档课程/高级程序设计/高级程序设计复习.md"
+    },
+    {
+      "basename": "游戏安全",
+      "path": "docs/游戏开发/游戏安全.md"
+    },
+    {
+      "basename": "网络联机",
+      "path": "docs/游戏开发/网络联机.md"
+    },
+    {
+      "basename": "unreal",
+      "path": "docs/游戏开发/游戏引擎/unreal.md"
+    },
+    {
+      "basename": "杂项",
+      "path": "docs/面试/计算机科学/杂项.md"
+    },
+    {
+      "basename": "Spring",
+      "path": "docs/课程/软件体系结构/笔记/Spring.md"
     },
     {
       "basename": "Redis",
@@ -39,10 +67,6 @@
     {
       "basename": "MySQL安装",
       "path": "docs/数据库/关系数据库/data/MySQL安装.md"
-    },
-    {
-      "basename": "设计模式",
-      "path": "docs/软件工程/设计模式.md"
     },
     {
       "basename": "语法分析",
@@ -101,10 +125,6 @@
       "path": "docs/c++/库/线性代数engin.md"
     },
     {
-      "basename": "c++基础",
-      "path": "docs/c++/c++基础.md"
-    },
-    {
       "basename": "位运算",
       "path": "docs/算法/位运算.md"
     },
@@ -153,10 +173,6 @@
       "path": "docs/软件工程/编程思想与规范/并发编程.md"
     },
     {
-      "basename": "项目管理",
-      "path": "docs/软件工程/项目管理.md"
-    },
-    {
       "basename": "uml",
       "path": "docs/软件工程/uml.md"
     },
@@ -179,26 +195,6 @@
     {
       "basename": "八股",
       "path": "docs/java/八股.md"
-    },
-    {
-      "basename": "SQL基本语法",
-      "path": "docs/数据库/SQL基本语法.md"
-    },
-    {
-      "basename": "Collections工具类",
-      "path": "docs/java/java基础/Util/集合/Collections工具类.md"
-    },
-    {
-      "basename": "数组类型",
-      "path": "docs/java/java基础/数据类型/数组类型.md"
-    },
-    {
-      "basename": "动态规划",
-      "path": "docs/算法/动态规划.md"
-    },
-    {
-      "basename": "基本数据类型与包装类",
-      "path": "docs/java/java基础/数据类型/基本数据类型与包装类.md"
     }
   ],
   "omittedPaths": [],
