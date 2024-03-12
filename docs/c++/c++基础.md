@@ -955,19 +955,14 @@ cout << a << endl << b << endl << *p << endl; //OK
 ## 文件读写
 
 - 每个打开的文件都有一个内部（隐藏）的位置指针，它指出文件的当前读写位置。
-
   - 进行读/写操作时，每读入/写出一个字节，文件位置指针会自动往后移动一个字节的位置。
 
 - **判断是否正确读入了数据，可以调用ios类的成员函数fail来实现：bool ios::fail() const;**
   - 该函数返回true表示文件操作失败；返回false表示操作成功。
-  
 - **以二进制方式存取文件不利于程序的兼容性和可移植性。例如，**
   - 在不同计算机平台上，整型数的各字节在内存中的存储次序可能不一样。
-  
   - 在不同的编译环境下，同样的结构类型数据的尺寸（字节数）可能不一样。
-  
   - 具有性能优势
-  
 - 随机读写：
 
   - 下面的操作用来指定文件内部读指针的位置：
@@ -1088,7 +1083,6 @@ cout << a << endl << b << endl << *p << endl; //OK
 ### 函数模板
 
 - 只需要在函数定义（声明）前面添加：
-
   ```c++
   template<class T1,class T2,...[,int x]>//T1，T2均为类型名，可在函数参数等处使用,x为非类型参数
       //比如
@@ -1109,7 +1103,7 @@ cout << a << endl << b << endl << *p << endl; //OK
 
 - 与函数模板类似
 
-- ```c++
+```c++
   template <class T1,class T2,...[,int x]> 
   class <类名>
   {	
@@ -1138,13 +1132,10 @@ cout << a << endl << b << endl << *p << endl; //OK
   ```
 
 - 类属类的实例化必须显示指出（比如vector使用时就要指定元素类型）
-
 - 不同类模板实例之间**不共享**类模板中的静态成员（在同类型之间共享）。
 
 - **友元**
-
   - 普通函数做友元
-
   ```c++
   template <class T> //类模板A的定义
   class A
@@ -1166,7 +1157,6 @@ cout << a << endl << b << endl << *p << endl; //OK
 
   - 函数模板做友元
     - 声明类属类还要带上模板
-
 ![](https://thdlrt.oss-cn-beijing.aliyuncs.com/16760294475967.jpg)
 
 
@@ -1210,9 +1200,6 @@ bool is_same_type(T1 a,T2 b)
 	return check<T1>::k == check<T2>::k;
 }
 ```
-
-
-
 ## stl标准库
 
 ## 概念
@@ -1264,7 +1251,7 @@ void sort(RanIt first, RanIt last);
 
   - BinOp或BinFun：二元操作，需要两个参数
 
-  - ```c++
+```c++
     OutIt transform(InIt src_first, InIt src_last, 
                                OutIt dst_first, Op f);
     OutIt transform(InIt1 src_first1, InIt1 src_last1, 
@@ -1275,14 +1262,12 @@ void sort(RanIt first, RanIt last);
 ## 迭代器
 
 - 种类
-
   - 输出迭代器：可以修改指向的元素，支持* ++（输入输出是只得对于算法而言的）InIt
   - 输入迭代器：只能读取，支持* -> ++ == != OutIt
   - 前向迭代器：可以读取修改元素，支持* -> ++ == !=
   - 双向迭代器：可以读取修改元素，支持* -> ++ -- == !=
   - 随机访问迭代器：可以读取修改元素，支持* -> [] ++ -- + - += -= == != < <= > >=RanIt
-
-  <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/QQ%E6%88%AA%E5%9B%BE20221201223206.png" alt="QQ截图20221201223206" style="zoom: 33%;" />
+![](https://thdlrt.oss-cn-beijing.aliyuncs.com/QQ%E6%88%AA%E5%9B%BE20221201223206.png)
 
   - 反向迭代器：用于对容器元素从尾到头进行反向遍历：++操作是往容器首部移动，--操作是往容器尾部移动。
     - 可以通过容器类的成员函数rbegin和rend可以获得容器的尾和首元素的反向迭代器。

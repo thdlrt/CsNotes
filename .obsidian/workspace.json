@@ -20,24 +20,6 @@
             }
           }
         ]
-      },
-      {
-        "id": "5e6b3ca4b55bdd7c",
-        "type": "tabs",
-        "children": [
-          {
-            "id": "6efc063301e9b18d",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "docs/c++/C++基础.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          }
-        ]
       }
     ],
     "direction": "vertical"
@@ -196,12 +178,14 @@
   },
   "active": "7f4dfc1fb136c0f5",
   "lastOpenFiles": [
-    "docs/c++/C++基础.md",
+    "docs/课程/计算机图形学/Games101-现代图形学基础.md",
+    "docs/课程/计算机图形学/opengl.md",
+    "docs/面试/计算机科学/并发编程.md",
     "docs/c++/八股.md",
+    "docs/c++/C++基础.md",
     "docs/软件工程/设计模式.md",
     "docs/软件工程/项目管理.md",
     "docs/面试/知识图谱.md",
-    "docs/面试/计算机科学/并发编程.md",
     "docs/java/工具/Maven&gradle.md",
     "docs/c++/c++基础.md",
     "docs/归档课程/高级程序设计/高级程序设计复习.md",
@@ -221,8 +205,6 @@
     "docs/数据库/八股.md",
     "未命名.md",
     "docs/数据库/NoSQL/MongoDB.md",
-    "docs/面试/计算机科学/计算机网络.md",
-    "docs/java/java基础.md",
     "未命名.canvas",
     "docs/javascripts/mathjax.js",
     "docs/javascripts",
