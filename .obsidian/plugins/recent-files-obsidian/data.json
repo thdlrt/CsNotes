@@ -1,12 +1,12 @@
 {
   "recentFiles": [
     {
-      "basename": "C++基础",
-      "path": "docs/c++/C++基础.md"
-    },
-    {
       "basename": "八股",
       "path": "docs/c++/八股.md"
+    },
+    {
+      "basename": "C++基础",
+      "path": "docs/c++/C++基础.md"
     },
     {
       "basename": "设计模式",
