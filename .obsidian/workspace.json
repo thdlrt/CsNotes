@@ -25,7 +25,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/课程/软件体系结构/笔记/Spring.md",
+                "file": "docs/c++/八股.md",
                 "mode": "source",
                 "source": false
               }
@@ -102,8 +102,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 200
   },
   "right": {
     "id": "d615b65a4ccf8a6a",
@@ -119,7 +118,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/课程/软件体系结构/笔记/Spring.md",
+                "file": "docs/c++/八股.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -136,7 +135,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/课程/软件体系结构/笔记/Spring.md",
+                "file": "docs/c++/八股.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -159,7 +158,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/课程/软件体系结构/笔记/Spring.md"
+                "file": "docs/c++/八股.md"
               }
             }
           },
@@ -204,8 +203,9 @@
   },
   "active": "7f4dfc1fb136c0f5",
   "lastOpenFiles": [
-    "docs/java/工具/Maven&gradle.md",
     "docs/课程/软件体系结构/笔记/Spring.md",
+    "docs/c++/八股.md",
+    "docs/java/工具/Maven&gradle.md",
     "docs/面试/知识图谱.md",
     "docs/数据库/NoSQL/Redis.md",
     "docs/数据库/关系数据库/MySQL.md",
@@ -230,7 +230,6 @@
     "docs/算法/错题本.md",
     "docs/c++/库/线性代数engin.md",
     "docs/c++/c++基础.md",
-    "docs/c++/并发编程.md",
     "docs/javascripts/mathjax.js",
     "docs/javascripts",
     "docs/软件工程/软件测试",

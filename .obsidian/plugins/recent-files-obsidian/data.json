@@ -1,6 +1,10 @@
 {
   "recentFiles": [
     {
+      "basename": "八股",
+      "path": "docs/c++/八股.md"
+    },
+    {
       "basename": "Spring",
       "path": "docs/课程/软件体系结构/笔记/Spring.md"
     },
@@ -195,10 +199,6 @@
     {
       "basename": "函数式编程",
       "path": "docs/java/java基础/杂项/函数式编程.md"
-    },
-    {
-      "basename": "流",
-      "path": "docs/java/java基础/数据类型/流.md"
     }
   ],
   "omittedPaths": [],
