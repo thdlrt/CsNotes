@@ -1,20 +1,71 @@
 ## Maven
 
 ### 基本概念
+- 标准项目结构
 
-#### **POM Files**的基本内容
+|目录|描述|
+|---|---|
+|`src/main/java`|源代码目录|
+|`src/main/resources`|资源目录，一般是存放配置文件|
+|`src/main/filters`|资源过滤文件|
+|`src/main/webapp`|Web 应用资源|
+|`src/test/java`|测试代码|
+|`src/test/resources`|测试资源，用于测试的配置文件|
+|`src/test/filters`|测试资源过滤文件|
+|`src/it`|集成测试|
+|`src/assembly`|程序集描述符|
+|`src/site`|站点文档|
+|`target`|编译输出目录|
+|`pom.xml`|maven 项目配置文件|
+|`LICENSE.txt`|项目许可证|
+|`NOTICE.txt`|项目依赖和通知|
+|`README.txt`|项目描述|
+
+#### POM Files的基本内容
 
 - **POM**（Project Object Model）文件定义了项目的构建配置，包括项目的依赖、插件、目标等。（就是所说的pom项目对象模型）包含：
 - **项目基本信息**：如项目名称、版本、描述、URL等。
 - **依赖关系**：列出了项目需要的所有库和框架的依赖项，包括它们的版本和配置。
 - **构建设置**：定义了编译源代码、打包输出和执行测试等任务所需的配置。
+
 - **构建生命周期**：指定了项目构建过程中要经历的一系列阶段，如编译、测试和打包。
   - **clean 生命周期**:旨在**清理项目**，删除所有由之前构建生成的文件。
   - **default 生命周期**:是进行项目实际构建的主要生命周期，包括**编译、测试、打包、安装和部署等阶段。**
   - **site 生命周期**:用于创建和处理项目文档站点。
+
 - **插件和目标**：指明了Maven在构建过程中需要执行的插件以及插件目标。
 - **项目目录结构**：规定了源代码、资源、测试和输出文件的标准文件夹结构。
-- **属性**：可以定义一些属性，以便在POM的不同部分重用。
+- **属性**：可以定义一些属性，以便在 POM 的不同部分重用。（即变量，常定义一些版本号）
+```xml
+//定义属性
+<properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <spring.version>5.1.1.RELEASE</spring.version>
+
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-core</artifactId>
+            //使用前面定义为属性的版本号
+            <version>${spring.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>3.8.1</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+```
 - **构建配置文件**：可以为不同的构建环境指定不同的设置。
 - **项目继承**：允许一个项目POM继承另一个POM的配置。
 - **模块**：在多模块项目中，一个父POM可以定义多个子模块。
@@ -60,22 +111,33 @@
    - 运行任何必要的检查来**验证打包是否有效**，并且满足质量标准。
    - 这可能包括代码质量评估、性能测试等。
 7. **install（安装）**:
-   - 将软件包安装到本地仓库，供本地其他项目作为依赖使用。
+   - 将软件包**安装到本地仓库**，供本地其他项目作为依赖使用。
    - 这使得其他本地项目可以轻松地引用正在开发的项目。
 8. **deploy（部署）**:
    - 在集成或发布环境中进行，将最终的软件包复制到远程仓库，以便与其他开发者和项目共享。
    - 这通常用于将构建的成果发布到可以供其他项目或团队成员访问的中央仓库。
 
 ### 基本命令
+- 查看版本 `mvn -version`
+- 编译项目 `mvn compile`
 
 - 运行特定阶段的构建
+  - mvn+阶段名称
   - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20231224221949199.png" alt="image-20231224221949199" style="zoom:33%;" />
-
+- 配置主类并执行 java 程序（修改文件之后都需要先编译再执行）
+```shell
+mvn compile 
+mvn exec:java -Dexec.mainClass="com.shiyanlou.demo.App"
+```
+- 新建 maven 项目
+```shell
+mvn archetype:generate -DgroupId=com.shiyanlou.spring -DartifactId=bean -DarchetypeArtifactId=maven-archetype-quickstart
+```
 ## Gradle
 
 - 文件结构
 
-  - ```bash
+```bash
     my-project/                    # 项目根目录
     ├── gradle/                    # Gradle 脚本目录
     │   └── wrapper/               # Gradle Wrapper 相关文件
@@ -92,7 +154,7 @@
     ├── settings.gradle            # Gradle 设置文件，用于配置项目
     └── gradlew                    # Unix/Linux 系统上的 Gradle Wrapper 启动脚本
     └── gradlew.bat                # Windows 系统上的 Gradle Wrapper 启动脚本
-    ```
+```
 
   - **`gradle/` 目录**：包含与 Gradle Wrapper 相关的文件。这些文件允许项目使用预定义的 Gradle 版本，无需手动安装。
 
@@ -110,7 +172,7 @@
 
 - `build.gradle` 文件定义了项目的构建逻辑。这包括了项目依赖、插件、任务和其他构建相关的配置。
 
-- ```bash
+```bash
   // 插件
   plugins {
       id 'java'
@@ -138,7 +200,7 @@
       }
   }
   
-  ```
+```
 
 - **插件**：使用 `plugins` 代码块定义项目使用的插件。
 
@@ -152,12 +214,12 @@
 
 - `settings.gradle` 文件用于配置 Gradle 构建的基本设置，特别是在多项目构建中。
 
-- ```bash
+```bash
   rootProject.name = 'my-project'
   
   // 包含的子项目
   include 'subproject1', 'subproject2'
-  ```
+```
 
 - **项目名称**：设置根项目名称。
 
