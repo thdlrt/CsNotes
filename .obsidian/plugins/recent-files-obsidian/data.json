@@ -1,12 +1,16 @@
 {
   "recentFiles": [
     {
+      "basename": "八股",
+      "path": "docs/c++/八股.md"
+    },
+    {
       "basename": "并发编程",
       "path": "docs/面试/计算机科学/并发编程.md"
     },
     {
-      "basename": "八股",
-      "path": "docs/c++/八股.md"
+      "basename": "杂项",
+      "path": "docs/面试/计算机科学/杂项.md"
     },
     {
       "basename": "知识图谱",
@@ -195,10 +199,6 @@
     {
       "basename": "基本数据类型与包装类",
       "path": "docs/java/java基础/数据类型/基本数据类型与包装类.md"
-    },
-    {
-      "basename": "Iterator",
-      "path": "docs/java/java基础/Util/集合/Iterator.md"
     }
   ],
   "omittedPaths": [],
