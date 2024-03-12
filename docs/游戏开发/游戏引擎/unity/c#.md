@@ -2,12 +2,12 @@
 
 - `foreach`循环
 
-  - ```
-    foreach(string item in strings)
-    {
-        print (item);
-    }
-    ```
+```c#
+foreach(string item in strings)
+{
+    print (item);
+}
+```
 
 - 值类型与引用类型
 
@@ -23,47 +23,44 @@
     - **接口 (Interfaces)**
 
 - 类型转化`as`
-
 - 命名空间
-
   - 同一命名空间不能使用相同的名称，通过使用命名空间限定，可以使用不同的具有相同名称的属性/方法
-
   - 使用命名空间的方式
 
-    - ```c#
-      namespace MyNamespace
-      {
-          class MyClass
-          {
-              // 类的实现
-          }
-      }
-      ```
+```c#
+namespace MyNamespace
+{
+    class MyClass
+    {
+        // 类的实现
+    }
+}
+```
 
-      - 如果不同位置使用相同名称，表示两个块使用**相同的命名空间**
-
-    - 直接限定`MyNamespace.MyClass myObject = new MyNamespace.MyClass();`
-
-    - 对整个文件使用`using MyNamespace;`
+- 如果不同位置使用相同名称，表示两个块使用**相同的命名空间**
+  
+- 直接限定`MyNamespace.MyClass myObject = new MyNamespace.MyClass();`
+  
+- 对整个文件使用`using MyNamespace;`
 
   - 嵌套命名空间
 
-    - ```c#
-      namespace MyNamespace
-      {
-          namespace MySubNamespace
-          {
-              class MyClass
-              {
-                  // 类的实现
-              }
-          }
-      }
-      ```
+```c#
+namespace MyNamespace
+{
+    namespace MySubNamespace
+    {
+        class MyClass
+        {
+            // 类的实现
+        }
+    }
+}
+```
 
-    - `MyNamespace.MySubNamespace.MyClass myObject = new MyNamespace.MySubNamespace.MyClass();`
-
-    - `using MyNamespace.MySubNamespace;`
+- `MyNamespace.MySubNamespace.MyClass myObject = new MyNamespace.MySubNamespace.MyClass();`
+  
+- `using MyNamespace.MySubNamespace;`
 
 - **协程（重要）**
 
@@ -73,122 +70,125 @@
 
   - 时间延迟
 
-    - ```c#
-      IEnumerator WaitAndPrint()
-      {
-          yield return new WaitForSeconds(5);
-          Debug.Log("Printed after 5 seconds");
-      }
-      ```
+```c#
+IEnumerator WaitAndPrint()
+{
+    yield return new WaitForSeconds(5);
+    Debug.Log("Printed after 5 seconds");
+}
+```
 
   - 帧延迟
 
-    - ```c#
-      IEnumerator WaitForFrames()
-      {
-          for (int i = 0; i < 5; i++)
-          {
-              yield return null;
-              Debug.Log("New frame");
-          }
-      }
-      ```
+```c#
+IEnumerator WaitForFrames()
+{
+    for (int i = 0; i < 5; i++)
+    {
+        yield return null;
+        Debug.Log("New frame");
+    }
+}
+```
 
-  - 也可以将另一个协程作为返回条件
+- 也可以将另一个协程作为返回条件
 
-    - ```c#
-      IEnumerator MainRoutine()
-      {
-          yield return StartCoroutine(SubRoutine());
-          Debug.Log("Subroutine finished!");
-      }
-      
-      IEnumerator SubRoutine()
-      {
-          yield return new WaitForSeconds(3);
-      }
-      
-      ```
 
-  - 启动协程
+```c#
+IEnumerator MainRoutine()
+{
+    yield return StartCoroutine(SubRoutine());
+    Debug.Log("Subroutine finished!");
+}
 
-    - ```c#
-      StartCoroutine(MyCoroutine());
-      Coroutine myCoroutine = StartCoroutine(MyCoroutine());
-      ```
+IEnumerator SubRoutine()
+{
+    yield return new WaitForSeconds(3);
+}
 
-  - 停止协程
+```
 
-    - ````c#
-      StopCoroutine(myCoroutine);
-      StopCoroutine("MyCoroutine");
-      //全部停止
-      StopAllCoroutines();
-      ````
+- 启动协程
 
-  - 应用：
 
-    - ```c#
-      //缓释复杂计算
-      IEnumerator LoadData()
-      {
-          for (int i = 0; i < 10000; i++)
-          {
-              // Simulating data load with a simple operation
-              float data = i * 0.5f;
-              
-              if (i % 100 == 0)  // Every 100 iterations, wait for the next frame
-                  yield return null;
-          }
-          Debug.Log("Data loaded!");
-      }
-      ```
+```c#
+StartCoroutine(MyCoroutine());
+Coroutine myCoroutine = StartCoroutine(MyCoroutine());
+```
 
-    - ```c#
-      //两点之间移动
-      public Transform pointA;
-      public Transform pointB;
-      public float speed = 1.0f;
-      
-      IEnumerator MoveObjectBackAndForth()
-      {
-          Vector3 startPos = pointA.position;
-          Vector3 endPos = pointB.position;
-          float journeyLength = Vector3.Distance(startPos, endPos);
-          while (true)
-          {
-              float startTime = Time.time;
-              float journeyCovered = 0;
-              while (journeyCovered < journeyLength)
-              {
-                  journeyCovered = (Time.time - startTime) * speed;
-                  float fracJourney = journeyCovered / journeyLength;
-                  transform.position = Vector3.Lerp(startPos, endPos, fracJourney);
-                  yield return null;
-              }
-      
-              // Swap points for the next journey
-              Vector3 temp = startPos;
-              startPos = endPos;
-              endPos = temp;
-          }
-      }
-      ```
+- 停止协程
 
-    - ```c#
-      //延迟启动
-      IEnumerator Start()
-      {
-          yield return new WaitForSeconds(5);
-          ShowWelcomeMessage();
-      }
-      
-      void ShowWelcomeMessage()
-      {
-          Debug.Log("Welcome to the game!");
-      }
-      
-      ```
+
+````c#
+StopCoroutine(myCoroutine);
+StopCoroutine("MyCoroutine");
+//全部停止
+StopAllCoroutines();
+````
+
+应用：
+
+```c#
+//缓释复杂计算
+IEnumerator LoadData()
+{
+    for (int i = 0; i < 10000; i++)
+    {
+        // Simulating data load with a simple operation
+        float data = i * 0.5f;
+        
+        if (i % 100 == 0)  // Every 100 iterations, wait for the next frame
+            yield return null;
+    }
+    Debug.Log("Data loaded!");
+}
+```
+
+```c#
+//两点之间移动
+public Transform pointA;
+public Transform pointB;
+public float speed = 1.0f;
+
+IEnumerator MoveObjectBackAndForth()
+{
+    Vector3 startPos = pointA.position;
+    Vector3 endPos = pointB.position;
+    float journeyLength = Vector3.Distance(startPos, endPos);
+    while (true)
+    {
+        float startTime = Time.time;
+        float journeyCovered = 0;
+        while (journeyCovered < journeyLength)
+        {
+            journeyCovered = (Time.time - startTime) * speed;
+            float fracJourney = journeyCovered / journeyLength;
+            transform.position = Vector3.Lerp(startPos, endPos, fracJourney);
+            yield return null;
+        }
+
+        // Swap points for the next journey
+        Vector3 temp = startPos;
+        startPos = endPos;
+        endPos = temp;
+    }
+}
+```
+
+```c#
+//延迟启动
+IEnumerator Start()
+{
+    yield return new WaitForSeconds(5);
+    ShowWelcomeMessage();
+}
+
+void ShowWelcomeMessage()
+{
+    Debug.Log("Welcome to the game!");
+}
+
+```
 
 
 - 委托
@@ -197,73 +197,77 @@
 
   - 使用`delegate`定义`public delegate void SimpleDelegate();`
 
-  - ```c#
-    public class DelegateExample
+
+```c#
+public class DelegateExample
+{
+    public delegate void ShowMessage(string message);
+
+    public void DisplayMessage(string text)
     {
-        public delegate void ShowMessage(string message);
-    
-        public void DisplayMessage(string text)
-        {
-            Console.WriteLine(text);
-        }
-    
-        public void Execute()
-        {
-            ShowMessage showMessage = DisplayMessage; // 创建委托实例并关联方法
-            showMessage("Hello, World!"); // 调用委托
-        }
+        Console.WriteLine(text);
     }
-    ```
 
-  - 多播委托
+    public void Execute()
+    {
+        ShowMessage showMessage = DisplayMessage; // 创建委托实例并关联方法
+        showMessage("Hello, World!"); // 调用委托
+    }
+}
+```
 
-    - ```c#
-      public delegate void MathOperation(int number);
-      
-      public void MultiplyByTwo(int num)
-      {
-          Console.WriteLine(num * 2);
-      }
-      
-      public void Square(int num)
-      {
-          Console.WriteLine(num * num);
-      }
-      
-      MathOperation operation = MultiplyByTwo;
-      operation += Square; // 将 Square 方法添加到委托链
-      
-      operation(5); // 输出: 10 (5的两倍) 和 25 (5的平方)
-      ```
+- 多播委托
 
-  - `Func` 和 `Action` 是两种**预定义的委托类型**，提供了更简便的方式来表示具有特定参数和返回类型的方法，从而避免了为每个方法声明新的委托类型。
-  - func委托
-    - `Func<int>`: 一个没有参数、返回 `int` 类型值的方法。
-    - `Func<int, int>`: 一个接受一个 `int` 参数、返回 `int` 类型值的方法。
-    - `Func<string, int>`: 一个接受一个 `string` 参数、返回 `int` 类型值的方法。
-    - `Func<T1, T2, TResult>`: 一个接受两个参数的方法，第一个参数是 `T1` 类型，
-  - action委托
-    - `Action`: 一个没有参数的方法。
-    - `Action<int>`: 一个接受一个 `int` 参数的方法。
-    - `Action<string, int>`: 一个接受 `string` 和 `int` 两个参数的方法。
-    - `Action<T1, T2>`: 一个接受两个参数的方法，第一个参数是 `T1` 类型，第二个参数是 `T2` 类型。
+
+```c#
+public delegate void MathOperation(int number);
+
+public void MultiplyByTwo(int num)
+{
+    Console.WriteLine(num * 2);
+}
+
+public void Square(int num)
+{
+    Console.WriteLine(num * num);
+}
+
+MathOperation operation = MultiplyByTwo;
+operation += Square; // 将 Square 方法添加到委托链
+
+operation(5); // 输出: 10 (5的两倍) 和 25 (5的平方)
+```
+
+- `Func` 和 `Action` 是两种**预定义的委托类型**，提供了更简便的方式来表示具有特定参数和返回类型的方法，从而避免了为每个方法声明新的委托类型。
+- func委托
+  - `Func<int>`: 一个没有参数、返回 `int` 类型值的方法。
+  - `Func<int, int>`: 一个接受一个 `int` 参数、返回 `int` 类型值的方法。
+  - `Func<string, int>`: 一个接受一个 `string` 参数、返回 `int` 类型值的方法。
+  - `Func<T1, T2, TResult>`: 一个接受两个参数的方法，第一个参数是 `T1` 类型，
+- action委托
+  - `Action`: 一个没有参数的方法。
+  - `Action<int>`: 一个接受一个 `int` 参数的方法。
+  - `Action<string, int>`: 一个接受 `string` 和 `int` 两个参数的方法。
+  - `Action<T1, T2>`: 一个接受两个参数的方法，第一个参数是 `T1` 类型，第二个参数是 `T2` 类型。
+
 
 - lambda表达式
 
-  - ```c#
-    x => x * x
-        
-    (x, y) => 
-    {
-        int result = x + y;
-        Console.WriteLine(result);
-        return result;
-    }
-    
-    (int x, int y) => x + y 
-    ```
 
-  
+```c#
+x => x * x
+    
+(x, y) => 
+{
+    int result = x + y;
+    Console.WriteLine(result);
+    return result;
+}
+
+(int x, int y) => x + y 
+```
+
+
 
 ### 数据结构（标准库）
 
@@ -330,70 +334,72 @@
 
 - 自定义比较IComparer\<T>
 
-  - ```c#
-    public class Person
+
+```c#
+public class Person
+{
+    public string Name { get; set; }
+    public int Age { get; set; }
+}
+//外部比较器，方便一个类有多种不同比较方式
+public class AgeComparer : IComparer<Person>
+{
+    public int Compare(Person x, Person y)
     {
-        public string Name { get; set; }
-        public int Age { get; set; }
+        return x.Age.CompareTo(y.Age);  // 正常顺序
+        // 或者
+        // return y.Age.CompareTo(x.Age);  // 反向顺序
     }
-    //外部比较器，方便一个类有多种不同比较方式
-    public class AgeComparer : IComparer<Person>
+}
+
+List<Person> people = new List<Person> { /* ... */ };
+people.Sort(new AgeComparer());
+//或者直接写在类里（内部比较器）为一个类定义默认比较方式
+public class BadGuy : IComparable<BadGuy>
+{
+    public string name;
+    public int power;
+
+    public BadGuy(string newName, int newPower)
     {
-        public int Compare(Person x, Person y)
-        {
-            return x.Age.CompareTo(y.Age);  // 正常顺序
-            // 或者
-            // return y.Age.CompareTo(x.Age);  // 反向顺序
-        }
+        name = newName;
+        power = newPower;
     }
-    
-    List<Person> people = new List<Person> { /* ... */ };
-    people.Sort(new AgeComparer());
-    //或者直接写在类里（内部比较器）为一个类定义默认比较方式
-    public class BadGuy : IComparable<BadGuy>
+
+    //IComparable 接口需要
+    //此方法。
+    public int CompareTo(BadGuy other)
     {
-        public string name;
-        public int power;
-    
-        public BadGuy(string newName, int newPower)
+        if(other == null)
         {
-            name = newName;
-            power = newPower;
+            return 1;
         }
-    
-        //IComparable 接口需要
-        //此方法。
-        public int CompareTo(BadGuy other)
-        {
-            if(other == null)
-            {
-                return 1;
-            }
-    
-            //返回力量差异。（正负表示大小关系）
-            return power - other.power;
-        }
+
+        //返回力量差异。（正负表示大小关系）
+        return power - other.power;
     }
-    ```
+}
+```
 
 - 自定义判断相等/计算哈希(使用哈希表/字典时)IEqualityComparer\<T>
 
-  - ```c#
-    public class NameEqualityComparer : IEqualityComparer<Person>
+
+```c#
+public class NameEqualityComparer : IEqualityComparer<Person>
+{
+    public bool Equals(Person x, Person y)
     {
-        public bool Equals(Person x, Person y)
-        {
-            return x.Name == y.Name;
-        }
-    
-        public int GetHashCode(Person obj)
-        {
-            return obj.Name.GetHashCode();
-        }
+        return x.Name == y.Name;
     }
-    
-    HashSet<Person> uniquePeople = new HashSet<Person>(new NameEqualityComparer());
-    ```
+
+    public int GetHashCode(Person obj)
+    {
+        return obj.Name.GetHashCode();
+    }
+}
+
+HashSet<Person> uniquePeople = new HashSet<Person>(new NameEqualityComparer());
+```
 
 ### 面向对象
 
@@ -404,47 +410,49 @@
 
 - 配置属性的get、set方法
 
-  - ```c#
-    public int Level
-    {
-        get
-        {
-            return experience / 1000;
-        }
-        set//value表示输入的值
-        {
-            experience = value * 1000;
-        }
-    }
-    ```
 
-  - 更为灵活的控制访问，不写get/set表示只写/读
+```c#
+public int Level
+{
+    get
+    {
+        return experience / 1000;
+    }
+    set//value表示输入的值
+    {
+        experience = value * 1000;
+    }
+}
+```
+
+- 更为灵活的控制访问，不写get/set表示只写/读
 
 - 操作符重载函数必须是static的
 
 - 泛型
 
-  - ```c#
-    public class GenericClass <T>
+
+```c#
+public class GenericClass <T>
+{
+    T item;
+    public void UpdateItem(T newItem)
     {
-        T item;
-        public void UpdateItem(T newItem)
-        {
-            item = newItem;
-        }
+        item = newItem;
     }
-    
-    public class SomeClass 
+}
+
+public class SomeClass 
+{
+    //这是一个通用方法。注意通用
+    //类型“T”。该“T”将在运行时替换为
+    //实际类型。
+    public T GenericMethod<T>(T param)
     {
-        //这是一个通用方法。注意通用
-        //类型“T”。该“T”将在运行时替换为
-        //实际类型。
-        public T GenericMethod<T>(T param)
-        {
-            return param;
-        }
+        return param;
     }
-    ```
+}
+```
 
 - 继承和多态
 
@@ -458,14 +466,15 @@
 
 - 接口
 
-  - ```c#
-    public interface IFlyable
-    {
-        void Fly();
-    }
-    ```
 
-  - 向继承那样表示实现接口
+```c#
+public interface IFlyable
+{
+    void Fly();
+}
+```
+
+- 向继承那样表示实现接口
 
 - 成员隐藏
 
@@ -473,24 +482,25 @@
 
   - 为了避免产生警告，显式地指定你想要隐藏基类的成员，可以使用`new`关键字
 
-    - ```c#
-      public class BaseClass
-      {
-          public void MyMethod()
-          {
-              Console.WriteLine("BaseClass MyMethod");
-          }
-      }
-      
-      public class DerivedClass : BaseClass
-      {
-          // 使用new关键字明确隐藏基类的MyMethod
-          public new void MyMethod()
-          {
-              Console.WriteLine("DerivedClass MyMethod");
-          }
-      }
-      ```
+
+```c#
+public class BaseClass
+{
+    public void MyMethod()
+    {
+        Console.WriteLine("BaseClass MyMethod");
+    }
+}
+
+public class DerivedClass : BaseClass
+{
+    // 使用new关键字明确隐藏基类的MyMethod
+    public new void MyMethod()
+    {
+        Console.WriteLine("DerivedClass MyMethod");
+    }
+}
+```
 
 - 静态类
 
@@ -507,20 +517,21 @@
 
   - 定义一个静态方法，将你想要扩展的类型作为它的第一个参数。这个参数必须前面有`this`修饰符。
 
-    - ```c#
-      public static class StringExtensions
-      {
-          public static bool IsNumeric(this string str)
-          {
-              return str.All(char.IsDigit);
-          }
-      }
-      
-      string value = "12345";
-      bool result = value.IsNumeric();
-      Console.WriteLine(result);  // 输出: True
-      ```
 
-  - 尽管扩展方法允许为类型添加新方法，但它们不能访问类型的私有字段或方法。
+```c#
+public static class StringExtensions
+{
+    public static bool IsNumeric(this string str)
+    {
+        return str.All(char.IsDigit);
+    }
+}
 
-  - 如果类型已经有了与扩展方法同名的方法，原始的方法会优先被调用。
+string value = "12345";
+bool result = value.IsNumeric();
+Console.WriteLine(result);  // 输出: True
+```
+
+- 尽管扩展方法允许为类型添加新方法，但它们不能访问类型的私有字段或方法。
+
+- 如果类型已经有了与扩展方法同名的方法，原始的方法会优先被调用。

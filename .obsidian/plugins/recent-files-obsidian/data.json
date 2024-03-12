@@ -1,6 +1,10 @@
 {
   "recentFiles": [
     {
+      "basename": "c#",
+      "path": "docs/游戏开发/游戏引擎/unity/c#.md"
+    },
+    {
       "basename": "U8 中央处理器",
       "path": "docs/归档课程/数字逻辑与计算机组成/笔记/U8 中央处理器.md"
     },
@@ -195,10 +199,6 @@
     {
       "basename": "文档",
       "path": "docs/软件工程/编程思想与规范/文档.md"
-    },
-    {
-      "basename": "编程思想",
-      "path": "docs/软件工程/编程思想与规范/编程思想.md"
     }
   ],
   "omittedPaths": [],
