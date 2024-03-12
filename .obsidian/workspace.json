@@ -73,7 +73,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "链",
+                "query": "tag:#define",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -98,7 +98,8 @@
               "state": {}
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -201,7 +202,7 @@
       "omnisearch:Omnisearch": false
     }
   },
-  "active": "7f4dfc1fb136c0f5",
+  "active": "24063adb5be26e38",
   "lastOpenFiles": [
     "docs/课程/软件体系结构/笔记/Spring.md",
     "docs/c++/八股.md",
