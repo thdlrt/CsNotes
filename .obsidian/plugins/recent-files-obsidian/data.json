@@ -1,6 +1,30 @@
 {
   "recentFiles": [
     {
+      "basename": "p1",
+      "path": "docs/课程/编译原理/作业/p1.md"
+    },
+    {
+      "basename": "p2",
+      "path": "docs/课程/编译原理/作业/p2.md"
+    },
+    {
+      "basename": "词法分析",
+      "path": "docs/课程/编译原理/笔记/词法分析.md"
+    },
+    {
+      "basename": "3.7",
+      "path": "docs/课程/编译原理/作业/答案/dragon-book-exercise-answers-master/ch03/3.7/3.7.md"
+    },
+    {
+      "basename": "4.2",
+      "path": "docs/课程/编译原理/作业/答案/dragon-book-exercise-answers-master/ch04/4.2/4.2.md"
+    },
+    {
+      "basename": "4.4",
+      "path": "docs/课程/编译原理/作业/答案/dragon-book-exercise-answers-master/ch04/4.4/4.4.md"
+    },
+    {
       "basename": "c#",
       "path": "docs/游戏开发/游戏引擎/unity/c#.md"
     },
@@ -175,30 +199,6 @@
     {
       "basename": "调试",
       "path": "docs/软件工程/编程思想与规范/调试.md"
-    },
-    {
-      "basename": "抽象ADT",
-      "path": "docs/软件工程/编程思想与规范/抽象ADT.md"
-    },
-    {
-      "basename": "代码规范",
-      "path": "docs/软件工程/编程思想与规范/代码规范.md"
-    },
-    {
-      "basename": "测试",
-      "path": "docs/软件工程/软件测试/测试.md"
-    },
-    {
-      "basename": "并发编程",
-      "path": "docs/软件工程/编程思想与规范/并发编程.md"
-    },
-    {
-      "basename": "uml",
-      "path": "docs/软件工程/uml.md"
-    },
-    {
-      "basename": "文档",
-      "path": "docs/软件工程/编程思想与规范/文档.md"
     }
   ],
   "omittedPaths": [],
