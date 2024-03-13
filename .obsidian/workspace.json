@@ -18,21 +18,8 @@
                 "source": false
               }
             }
-          },
-          {
-            "id": "6ecdb2699a841029",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "docs/软件工程/设计模式.md",
-                "mode": "source",
-                "source": false
-              }
-            }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -107,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/软件工程/设计模式.md",
+                "file": "docs/游戏开发/游戏引擎/unity/unity.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -124,7 +111,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/软件工程/设计模式.md",
+                "file": "docs/游戏开发/游戏引擎/unity/unity.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -147,7 +134,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/软件工程/设计模式.md"
+                "file": "docs/游戏开发/游戏引擎/unity/unity.md"
               }
             }
           },
@@ -189,8 +176,9 @@
       "omnisearch:Omnisearch": false
     }
   },
-  "active": "6ecdb2699a841029",
+  "active": "9ba24f857a113aa2",
   "lastOpenFiles": [
+    "docs/软件工程/设计模式.md",
     "docs/c++/八股.md",
     "面试/自我介绍/腾讯天美游戏端开发.md",
     "docs/游戏开发/游戏引擎/unity/unity.md",
@@ -225,7 +213,6 @@
     "docs/面试",
     "docs/软件工程/软件测试/测试.md",
     "docs/软件工程/软件测试",
-    "docs/软件工程/编程思想与规范/调试.md",
     "docs/软件工程/编程思想与规范",
     "CsNotes/2021-11-22-22-54-02.png",
     "CsNotes/2021-11-22-22-52-49.png",
