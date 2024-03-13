@@ -1,6 +1,10 @@
 {
   "recentFiles": [
     {
+      "basename": "八股",
+      "path": "docs/c++/八股.md"
+    },
+    {
       "basename": "unity",
       "path": "docs/游戏开发/游戏引擎/unity/unity.md"
     },
@@ -195,10 +199,6 @@
     {
       "basename": "八股",
       "path": "docs/java/八股.md"
-    },
-    {
-      "basename": "数组与字符串",
-      "path": "docs/算法/数组与字符串.md"
     }
   ],
   "omittedPaths": [],
