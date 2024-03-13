@@ -1,6 +1,14 @@
 {
   "recentFiles": [
     {
+      "basename": "unity",
+      "path": "docs/游戏开发/游戏引擎/unity/unity.md"
+    },
+    {
+      "basename": "c#",
+      "path": "docs/游戏开发/游戏引擎/unity/c#.md"
+    },
+    {
       "basename": "反问环节",
       "path": "面试/面试技巧/反问环节.md"
     },
@@ -191,14 +199,6 @@
     {
       "basename": "数组与字符串",
       "path": "docs/算法/数组与字符串.md"
-    },
-    {
-      "basename": "贪心",
-      "path": "docs/算法/贪心.md"
-    },
-    {
-      "basename": "数据结构",
-      "path": "docs/算法/数据结构.md"
     }
   ],
   "omittedPaths": [],

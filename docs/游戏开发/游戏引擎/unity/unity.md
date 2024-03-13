@@ -10,16 +10,11 @@
 ### UGUI
 
 - 基本组成
-
   - **Canvas**：所有的 UI 元素都需要放在 Canvas 下。Canvas 可以是屏幕空间、世界空间或摄像机空间。
-
   - **Rect Transform**：替代了传统的 Transform，用于 2D 界面定位。
-
   - **UI 组件**：例如 Button、Text、Image、Slider 等。
-
   - **事件系统**：UGUI 有自己的事件系统，用于处理如点击、拖放、滚动等交互。
   - **Raycasting**：用于确定用户点击了哪个 UI 元素。
-
   - **布局组件**：如 Grid Layout Group 和 Vertical Layout Group，它们可以自动安排其子对象。
 
 #### 布局
@@ -33,8 +28,6 @@
 #### 事件系统
 
 - 事件绑定，如按钮
-
-
 ```c#
 public Button myButton;
 
@@ -51,7 +44,6 @@ void OnClick()
 ```
 
 #### UI组件
-
 
 
 ## 脚本c#
@@ -93,10 +85,7 @@ void OnClick()
 #### 碰撞器
 
 - 设置为触发器：不会产生物理碰撞
-
   - `OnTriggerEnter`、`OnTriggerStay`和`OnTriggerExit`等事件就会被触发。
-
-
 ```c#
 using UnityEngine;
 
@@ -124,7 +113,6 @@ public class Cannon : MonoBehaviour
 ```
 
 - 使用标签标识
-
   - 在Unity的主界面的顶部，点击`Edit`。
   - 从下拉菜单中选择`Project Settings`。
   - 在打开的窗口中选择`Tags and Layers`。
