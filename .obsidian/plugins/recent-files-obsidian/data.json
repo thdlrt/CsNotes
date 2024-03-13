@@ -195,10 +195,6 @@
     {
       "basename": "数据结构",
       "path": "docs/算法/数据结构.md"
-    },
-    {
-      "basename": "栈与队列",
-      "path": "docs/算法/栈与队列.md"
     }
   ],
   "omittedPaths": [],
