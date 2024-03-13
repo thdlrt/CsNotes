@@ -5,12 +5,20 @@
       "path": "面试/自我介绍/腾讯天美游戏端开发.md"
     },
     {
-      "basename": "unity",
-      "path": "docs/游戏开发/游戏引擎/unity/unity.md"
-    },
-    {
       "basename": "设计模式",
       "path": "docs/软件工程/设计模式.md"
+    },
+    {
+      "basename": "项目管理",
+      "path": "docs/软件工程/项目管理.md"
+    },
+    {
+      "basename": "词法分析",
+      "path": "docs/课程/编译原理/笔记/词法分析.md"
+    },
+    {
+      "basename": "unity",
+      "path": "docs/游戏开发/游戏引擎/unity/unity.md"
     },
     {
       "basename": "八股",
@@ -191,14 +199,6 @@
     {
       "basename": "switch",
       "path": "docs/java/java基础/流程控制/switch.md"
-    },
-    {
-      "basename": "SQL注入",
-      "path": "docs/网络安全/SQL注入.md"
-    },
-    {
-      "basename": "final",
-      "path": "docs/java/java基础/杂项/final.md"
     }
   ],
   "omittedPaths": [],
