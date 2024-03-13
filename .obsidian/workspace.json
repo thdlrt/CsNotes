@@ -20,12 +20,12 @@
             }
           },
           {
-            "id": "cdd5b8ba1110f4de",
+            "id": "6ecdb2699a841029",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/c++/八股.md",
+                "file": "docs/软件工程/设计模式.md",
                 "mode": "source",
                 "source": false
               }
@@ -61,7 +61,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "tag:#include",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -86,8 +86,7 @@
               "state": {}
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -108,7 +107,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/c++/八股.md",
+                "file": "docs/软件工程/设计模式.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -125,7 +124,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/c++/八股.md",
+                "file": "docs/软件工程/设计模式.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -148,7 +147,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/c++/八股.md"
+                "file": "docs/软件工程/设计模式.md"
               }
             }
           },
@@ -173,8 +172,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 200
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -191,10 +189,10 @@
       "omnisearch:Omnisearch": false
     }
   },
-  "active": "cdd5b8ba1110f4de",
+  "active": "6ecdb2699a841029",
   "lastOpenFiles": [
-    "面试/自我介绍/腾讯天美游戏端开发.md",
     "docs/c++/八股.md",
+    "面试/自我介绍/腾讯天美游戏端开发.md",
     "docs/游戏开发/游戏引擎/unity/unity.md",
     "docs/游戏开发/游戏引擎/unity/c#.md",
     "面试/面试技巧/反问环节.md",

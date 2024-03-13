@@ -1,6 +1,10 @@
 {
   "recentFiles": [
     {
+      "basename": "设计模式",
+      "path": "docs/软件工程/设计模式.md"
+    },
+    {
       "basename": "八股",
       "path": "docs/c++/八股.md"
     },
@@ -195,10 +199,6 @@
     {
       "basename": "final",
       "path": "docs/java/java基础/杂项/final.md"
-    },
-    {
-      "basename": "八股",
-      "path": "docs/java/八股.md"
     }
   ],
   "omittedPaths": [],
