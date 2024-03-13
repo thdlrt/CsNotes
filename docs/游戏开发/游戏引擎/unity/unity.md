@@ -475,12 +475,11 @@ public static bool RayTrigger(Vector3 from, GameObject to , string tag)
 
 ### 摄像机动画
 
-- [[Unity Cinemachine & Timeline 制作镜头动画_unity timeline cinemachine_CoderZ1010的博客-CSDN博客](https://blog.csdn.net/qq_42139931/article/details/122860760)](https://zhuanlan.zhihu.com/p/104728350)
+- [[Unity Cinemachine & Timeline 制作镜头动画](https://zhuanlan.zhihu.com/p/104728350)
 - brain组件放置到主摄像机上，创建虚拟摄像机（虚拟摄像机本质上是作为主摄像机上进行移动，即可以被附身）
 - 使用<img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20231027173210290.png" alt="image-20231027173210290" style="zoom:33%;" />
   - 在脚本中进行播放
   - 可以使用timeline文件存储动画，左侧拖入主摄像机，右侧剪辑虚拟摄像机，即不同时间使用不同的虚拟摄像机作为显示
-
 
 ### MonoBehaviour
 
@@ -552,9 +551,7 @@ public static bool RayTrigger(Vector3 from, GameObject to , string tag)
 ### 问题及解决
 
 - 移动碰撞后不正常
-
   - 使用物理刚体线性速度代替直接设置transform
-
 
 ```c#
 public class InputMove : MonoBehaviour
@@ -582,10 +579,7 @@ public class InputMove : MonoBehaviour
 ### 静态脚本
 
 - 用于进行一些批量化处理及操作
-
 - 将路径下所有网格设置为可以读取
-
-
 ```c#
 using UnityEngine;
 using UnityEditor;
