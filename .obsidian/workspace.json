@@ -91,7 +91,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 200,
+    "collapsed": true
   },
   "right": {
     "id": "d615b65a4ccf8a6a",
@@ -190,7 +191,7 @@
       "omnisearch:Omnisearch": false
     }
   },
-  "active": "24063adb5be26e38",
+  "active": "cdd5b8ba1110f4de",
   "lastOpenFiles": [
     "docs/游戏开发/游戏引擎/unity/unity.md",
     "docs/游戏开发/游戏引擎/unity/c#.md",
