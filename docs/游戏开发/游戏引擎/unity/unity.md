@@ -34,20 +34,21 @@
 
 - 事件绑定，如按钮
 
-  - ```c#
-    public Button myButton;
-    
-    void Start()
-    {
-        myButton.onClick.AddListener(OnClick);
-    }
-    
-    void OnClick()
-    {
-        Debug.Log("Button was clicked!");
-    }
-    
-    ```
+
+```c#
+public Button myButton;
+
+void Start()
+{
+    myButton.onClick.AddListener(OnClick);
+}
+
+void OnClick()
+{
+    Debug.Log("Button was clicked!");
+}
+
+```
 
 #### UI组件
 
@@ -95,31 +96,32 @@
 
   - `OnTriggerEnter`、`OnTriggerStay`和`OnTriggerExit`等事件就会被触发。
 
-  - ```c#
-    using UnityEngine;
-    
-    public class Cannon : MonoBehaviour
+
+```c#
+using UnityEngine;
+
+public class Cannon : MonoBehaviour
+{
+    private void OnTriggerEnter(Collider other)
     {
-        private void OnTriggerEnter(Collider other)
+        if (other.CompareTag("Enemy"))
         {
-            if (other.CompareTag("Enemy"))
-            {
-                // 敌人进入了攻击范围
-                Debug.Log("Enemy in range!");
-            }
-        }
-    
-        private void OnTriggerExit(Collider other)
-        {
-            if (other.CompareTag("Enemy"))
-            {
-                // 敌人离开了攻击范围
-                Debug.Log("Enemy out of range!");
-            }
+            // 敌人进入了攻击范围
+            Debug.Log("Enemy in range!");
         }
     }
-    
-    ```
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Enemy"))
+        {
+            // 敌人离开了攻击范围
+            Debug.Log("Enemy out of range!");
+        }
+    }
+}
+
+```
 
 - 使用标签标识
 
@@ -157,11 +159,12 @@
 
   - 可以指定位置、角度（省略时在默认位置生成）
 
-  - ```c#
-     Vector3 position = new Vector3(0, 0, 0);
-     Quaternion rotation = Quaternion.identity;
-     GameObject instance = Instantiate(myPrefab, position, rotation);
-    ```
+
+```c#
+Vector3 position = new Vector3(0, 0, 0);
+Quaternion rotation = Quaternion.identity;
+GameObject instance = Instantiate(myPrefab, position, rotation);
+```
 
 - `Instantiate` 方法的返回值是一个 `Object` 类型。
 
@@ -279,23 +282,24 @@
 
   - 让摄像机指向一个对象
 
-    - ```c#
-       using UnityEngine;
-       using System.Collections;
-       
-       public class CameraLookAt : MonoBehaviour
-       {
-           public Transform target;
-       
-           void Update ()
-           {
-               transform.LookAt(target);
-           }
-       }
-      ```
 
-    - 可以在图形界面拖拽绑定对象组件
-  
+```c#
+using UnityEngine;
+using System.Collections;
+
+public class CameraLookAt : MonoBehaviour
+{
+    public Transform target;
+
+    void Update ()
+    {
+        transform.LookAt(target);
+    }
+}
+```
+
+- 可以在图形界面拖拽绑定对象组件
+
 - 使用四元数管理旋转
 
   - 允许连续的旋转运算而不失稳定性。使用欧拉角旋转物体时，可能会遇到一个称为“万向锁”的问题，其中某个旋转轴“消失”了。通过使用四元数，可以避免这种情况。
@@ -333,24 +337,26 @@
 
 - 实现灯光的渐变插值
 
-  - ```c#
-     void Update ()
-     {
-         light.intensity = Mathf.Lerp(light.intensity, 8f, 0.5f * Time.deltaTime);
-     }
-    ```
+
+```c#
+void Update ()
+{
+    light.intensity = Mathf.Lerp(light.intensity, 8f, 0.5f * Time.deltaTime);
+}
+```
 
 #### Slerp四元数插值
 
 - lerp 会考虑四元数的球形几何特性，从而提供更自然和正确的旋转插值。Slerp 的速度在开始和结束时会减慢，这使得旋转看起来更自然。
 
-- ```c#
-  Quaternion startRotation = Quaternion.Euler(0, 0, 0);
-  Quaternion endRotation = Quaternion.Euler(0, 90, 0);
-  float t = 0.5f; // t 可以是时间或其他变量，它决定了插值的位置：0 是开始旋转，1 是结束旋转。
-  
-  transform.rotation = Quaternion.Slerp(startRotation, endRotation, t*Time.deltaTime);
-  ```
+
+```c#
+Quaternion startRotation = Quaternion.Euler(0, 0, 0);
+Quaternion endRotation = Quaternion.Euler(0, 90, 0);
+float t = 0.5f; // t 可以是时间或其他变量，它决定了插值的位置：0 是开始旋转，1 是结束旋转。
+
+transform.rotation = Quaternion.Slerp(startRotation, endRotation, t*Time.deltaTime);
+```
 
 ### 操作输入
 
@@ -396,13 +402,14 @@
 
 - 事件本身是一种特殊的委托（多播）
 
-- ```c#
-  //通过委托定义事件格式
-  public delegate void MyEventHandler(string message);
-  //声明事件
-  public event MyEventHandler MyEvent;
-  
-  ```
+
+```c#
+//通过委托定义事件格式
+public delegate void MyEventHandler(string message);
+//声明事件
+public event MyEventHandler MyEvent;
+
+```
 
 - 触发事件`MyEvent()`
 
@@ -431,30 +438,32 @@
   - 只能调用不需要参数并且无返回值的函数
   - `Invoke ("函数名", time);`
   - 周期调用`InvokeRepeating(函数名", 初次延时, 周期调用间隔);`
-  
+
 - 属性标志
 
   - Range限制`Inspector`窗口中变量的取值范围。
 
-    - ```c#
-      [Range(0, 10)]
-      public int myNumber;
-      ```
 
-  - ExecuteInEditMode将此特性放在MonoBehaviour派生的类之前时，该类中的代码**将在编辑模式下运行**，而不是仅在播放模式下。
+```c#
+[Range(0, 10)]
+public int myNumber;
+```
 
-    - ```c#
-      [ExecuteInEditMode]
-      public class MyScript : MonoBehaviour
-      {
-          void Update()
-          {
-              // 这个代码将在编辑器模式下每帧执行
-          }
-      }
-      ```
+- ExecuteInEditMode将此特性放在MonoBehaviour派生的类之前时，该类中的代码**将在编辑模式下运行**，而不是仅在播放模式下。
 
-    - 存在副作用：使用 `ExecuteInEditMode` 可能会导致场景数据在编辑模式下被更改，如果您没有注意到这些更改并保存了场景，这可能会导致您丢失某些所需的配置或数据。（永久改变）
+
+```c#
+[ExecuteInEditMode]
+public class MyScript : MonoBehaviour
+{
+    void Update()
+    {
+        // 这个代码将在编辑器模式下每帧执行
+    }
+}
+```
+
+- 存在副作用：使用 `ExecuteInEditMode` 可能会导致场景数据在编辑模式下被更改，如果您没有注意到这些更改并保存了场景，这可能会导致您丢失某些所需的配置或数据。（永久改变）
 
 ## 高级
 
@@ -466,26 +475,27 @@
 
 - 可以设置屏蔽吗，屏蔽&指定图层
 
-- ```c#
-  public static bool RayTrigger(Vector3 from, GameObject to , string tag)
-      {
-          Vector3 rayOrigin = from;
-          Vector3 rayDirection = to.transform.position - from;
-          float rayDistance = rayDirection.magnitude;
-          RaycastHit hit;
-          int layerMask = ~(1 << LayerMask.NameToLayer(tag));//屏蔽码
-          // 发送射线
-          if (Physics.Raycast(rayOrigin, rayDirection.normalized, out hit, rayDistance, layerMask))
-          {
-              // 如果射线只碰撞到敌方或没有碰撞到其他物体
-              if (hit.collider.gameObject == to)
-              {
-                  return true;
-              }
-          }
-          return false;
-      }
-  ```
+
+```c#
+public static bool RayTrigger(Vector3 from, GameObject to , string tag)
+    {
+        Vector3 rayOrigin = from;
+        Vector3 rayDirection = to.transform.position - from;
+        float rayDistance = rayDirection.magnitude;
+        RaycastHit hit;
+        int layerMask = ~(1 << LayerMask.NameToLayer(tag));//屏蔽码
+        // 发送射线
+        if (Physics.Raycast(rayOrigin, rayDirection.normalized, out hit, rayDistance, layerMask))
+        {
+            // 如果射线只碰撞到敌方或没有碰撞到其他物体
+            if (hit.collider.gameObject == to)
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+```
 
 - 获得点击点的坐标`hit.point`
 
@@ -592,28 +602,29 @@
 
   - 使用物理刚体线性速度代替直接设置transform
 
-  - ```c#
-    public class InputMove : MonoBehaviour
+
+```c#
+public class InputMove : MonoBehaviour
+{
+    private float _speed;
+    private Rigidbody rb;
+
+    void Start()
     {
-        private float _speed;
-        private Rigidbody rb;
-    
-        void Start()
-        {
-            _speed = GetComponent<Hero>().moveSpeed;
-            rb = GetComponent<Rigidbody>();
-        }
-    
-        void FixedUpdate() // 使用FixedUpdate而不是Update处理物理相关操作
-        {
-            float moveHorizontal = Input.GetAxis("Horizontal");
-            float moveVertical = Input.GetAxis("Vertical");
-    
-            Vector3 movement = new Vector3(moveHorizontal, 0.0f, moveVertical);
-            rb.velocity = movement * _speed;
-        }
+        _speed = GetComponent<Hero>().moveSpeed;
+        rb = GetComponent<Rigidbody>();
     }
-    ```
+
+    void FixedUpdate() // 使用FixedUpdate而不是Update处理物理相关操作
+    {
+        float moveHorizontal = Input.GetAxis("Horizontal");
+        float moveVertical = Input.GetAxis("Vertical");
+
+        Vector3 movement = new Vector3(moveHorizontal, 0.0f, moveVertical);
+        rb.velocity = movement * _speed;
+    }
+}
+```
 
 ### 静态脚本
 
@@ -621,81 +632,83 @@
 
 - 将路径下所有网格设置为可以读取
 
-  - ```c#
-    using UnityEngine;
-    using UnityEditor;
-    using System.Collections.Generic;
-    
-    public class MeshReadWriteSetter
+
+```c#
+using UnityEngine;
+using UnityEditor;
+using System.Collections.Generic;
+
+public class MeshReadWriteSetter
+{
+    [MenuItem("Tools/Set Meshes to Read/Write Enabled")]
+    public static void SetMeshesToReadWriteEnabled()
     {
-        [MenuItem("Tools/Set Meshes to Read/Write Enabled")]
-        public static void SetMeshesToReadWriteEnabled()
+        string folder = "Assets/GameMain/Packages"; // 替换 "YourFolderPath" 为你的文件夹路径
+
+        // 获取文件夹中的所有模型
+        string[] guids = AssetDatabase.FindAssets("t:Model", new[] { folder });
+        List<ModelImporter> importersToModify = new List<ModelImporter>();
+
+        foreach (string guid in guids)
         {
-            string folder = "Assets/GameMain/Packages"; // 替换 "YourFolderPath" 为你的文件夹路径
-    
-            // 获取文件夹中的所有模型
-            string[] guids = AssetDatabase.FindAssets("t:Model", new[] { folder });
-            List<ModelImporter> importersToModify = new List<ModelImporter>();
-    
-            foreach (string guid in guids)
+            string assetPath = AssetDatabase.GUIDToAssetPath(guid);
+            ModelImporter importer = AssetImporter.GetAtPath(assetPath) as ModelImporter;
+
+            if (importer && !importer.isReadable)
             {
-                string assetPath = AssetDatabase.GUIDToAssetPath(guid);
-                ModelImporter importer = AssetImporter.GetAtPath(assetPath) as ModelImporter;
-    
-                if (importer && !importer.isReadable)
-                {
-                    importersToModify.Add(importer);
-                }
+                importersToModify.Add(importer);
             }
-    
-            // 设置每个模型为可读/写
-            foreach (var importer in importersToModify)
-            {
-                importer.isReadable = true;
-                importer.SaveAndReimport();
-            }
-    
-            Debug.Log($"Set {importersToModify.Count} meshes to Read/Write Enabled.");
         }
+
+        // 设置每个模型为可读/写
+        foreach (var importer in importersToModify)
+        {
+            importer.isReadable = true;
+            importer.SaveAndReimport();
+        }
+
+        Debug.Log($"Set {importersToModify.Count} meshes to Read/Write Enabled.");
     }
-    ```
+}
+```
 
 - 为所有子对象添加mesh碰撞器
 
-  - ```c#
-    using UnityEngine;
-    using UnityEditor;
-    
-    public static class MeshColliderEditorUtility
+
+```c#
+using UnityEngine;
+using UnityEditor;
+
+public static class MeshColliderEditorUtility
+{
+    [MenuItem("GameObject/Add MeshCollider to Children", false, 30)]
+    public static void AddMeshColliders()
     {
-        [MenuItem("GameObject/Add MeshCollider to Children", false, 30)]
-        public static void AddMeshColliders()
+        GameObject selectedObj = Selection.activeGameObject;
+
+        if (selectedObj == null)
         {
-            GameObject selectedObj = Selection.activeGameObject;
-    
-            if (selectedObj == null)
-            {
-                Debug.LogWarning("No object selected. Please select an object first.");
-                return;
-            }
-    
-            RecursiveAddMeshCollider(selectedObj);
-            Debug.Log("MeshColliders added to " + selectedObj.name + " and its children.");
+            Debug.LogWarning("No object selected. Please select an object first.");
+            return;
         }
-    
-        private static void RecursiveAddMeshCollider(GameObject obj)
+
+        RecursiveAddMeshCollider(selectedObj);
+        Debug.Log("MeshColliders added to " + selectedObj.name + " and its children.");
+    }
+
+    private static void RecursiveAddMeshCollider(GameObject obj)
+    {
+        if (obj.GetComponent<MeshFilter>() && !obj.GetComponent<MeshCollider>())
         {
-            if (obj.GetComponent<MeshFilter>() && !obj.GetComponent<MeshCollider>())
-            {
-                obj.AddComponent<MeshCollider>();
-            }
-    
-            foreach (Transform child in obj.transform)
-            {
-                RecursiveAddMeshCollider(child.gameObject);
-            }
+            obj.AddComponent<MeshCollider>();
+        }
+
+        foreach (Transform child in obj.transform)
+        {
+            RecursiveAddMeshCollider(child.gameObject);
         }
     }
-    ```
+}
+```
 
 - 
