@@ -1,6 +1,14 @@
 {
   "recentFiles": [
     {
+      "basename": "八股",
+      "path": "docs/c++/八股.md"
+    },
+    {
+      "basename": "c++基础",
+      "path": "docs/c++/c++基础.md"
+    },
+    {
       "basename": "语法分析",
       "path": "docs/课程/编译原理/笔记/语法分析.md"
     },
@@ -187,14 +195,6 @@
     {
       "basename": "贪心",
       "path": "docs/算法/贪心.md"
-    },
-    {
-      "basename": "数据结构",
-      "path": "docs/算法/数据结构.md"
-    },
-    {
-      "basename": "栈与队列",
-      "path": "docs/算法/栈与队列.md"
     }
   ],
   "omittedPaths": [],
