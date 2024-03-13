@@ -25,7 +25,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "conflict-files-obsidian-git.md",
+                "file": "面试/自我介绍/腾讯.md",
                 "mode": "source",
                 "source": false
               }
@@ -106,7 +106,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "conflict-files-obsidian-git.md",
+                "file": "面试/自我介绍/腾讯.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -123,7 +123,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "conflict-files-obsidian-git.md",
+                "file": "面试/自我介绍/腾讯.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -146,7 +146,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "conflict-files-obsidian-git.md"
+                "file": "面试/自我介绍/腾讯.md"
               }
             }
           },
@@ -190,6 +190,9 @@
   },
   "active": "d087b27aba7bd5e3",
   "lastOpenFiles": [
+    "面试/自我介绍/腾讯.md",
+    "面试/自我介绍",
+    "面试",
     "docs/课程/编译原理/笔记/语法分析.md",
     "conflict-files-obsidian-git.md",
     "docs/课程/编译原理/作业/p2.md",
@@ -221,11 +224,8 @@
     "docs/软件工程/编程思想与规范/文档.md",
     "docs/软件工程/编程思想与规范/编程思想.md",
     "docs/软件工程/编程思想与规范/抽象ADT.md",
-    "docs/软件工程/编程思想与规范/并发编程.md",
     "docs/软件工程/编程思想与规范",
     "docs/课程/软件体系结构/笔记",
-    "docs/课程/软件体系结构",
-    "Anki",
     "CsNotes/2021-11-22-22-54-02.png",
     "CsNotes/2021-11-22-22-52-49.png",
     "CsNotes/2021-11-22-22-49-26.png",
