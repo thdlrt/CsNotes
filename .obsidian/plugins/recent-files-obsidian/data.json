@@ -1,6 +1,14 @@
 {
   "recentFiles": [
     {
+      "basename": "并发编程",
+      "path": "docs/面试/计算机科学/并发编程.md"
+    },
+    {
+      "basename": "操作系统",
+      "path": "docs/面试/计算机科学/操作系统.md"
+    },
+    {
       "basename": "八股",
       "path": "docs/c++/八股.md"
     },
@@ -191,14 +199,6 @@
     {
       "basename": "index",
       "path": "docs/index.md"
-    },
-    {
-      "basename": "README",
-      "path": "README.md"
-    },
-    {
-      "basename": "内部类",
-      "path": "docs/java/java基础/面向对象/内部类.md"
     }
   ],
   "omittedPaths": [],

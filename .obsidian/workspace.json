@@ -25,7 +25,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/c++/八股.md",
+                "file": "docs/面试/计算机科学/并发编程.md",
                 "mode": "source",
                 "source": false
               }
@@ -119,7 +119,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/c++/八股.md",
+                "file": "docs/面试/计算机科学/并发编程.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -136,7 +136,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/c++/八股.md",
+                "file": "docs/面试/计算机科学/并发编程.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -159,7 +159,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/c++/八股.md"
+                "file": "docs/面试/计算机科学/并发编程.md"
               }
             }
           },
@@ -204,6 +204,8 @@
   },
   "active": "247d481c6156abbc",
   "lastOpenFiles": [
+    "docs/面试/计算机科学/操作系统.md",
+    "docs/c++/八股.md",
     "docs/面试/知识图谱.md",
     "docs/c++/C++基础.md",
     "docs/面试/计算机科学/计算机网络.md",
@@ -213,7 +215,6 @@
     "docs/软件工程/项目管理.md",
     "docs/课程/编译原理/笔记/词法分析.md",
     "docs/游戏开发/游戏引擎/unity/unity.md",
-    "docs/c++/八股.md",
     "docs/游戏开发/游戏引擎/unity/c#.md",
     "面试/面试技巧/反问环节.md",
     "docs/游戏开发/游戏引擎/unity/八股.md",
@@ -234,7 +235,6 @@
     "docs/游戏开发/游戏引擎",
     "docs/游戏开发/游戏安全.md",
     "docs/数据库/关系数据库/data/MySQL安装.md",
-    "docs/数据库/关系数据库/data/MySQL卸载文档-Windows版.md",
     "docs/数据库/关系数据库/data",
     "docs/面试/计算机科学",
     "docs/面试",
