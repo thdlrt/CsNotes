@@ -5,6 +5,10 @@
       "path": "docs/面试/计算机科学/计算机网络.md"
     },
     {
+      "basename": "应用层",
+      "path": "docs/归档课程/计算机网络/data/应用层.md"
+    },
+    {
       "basename": "腾讯天美游戏端开发",
       "path": "面试/自我介绍/腾讯天美游戏端开发.md"
     },
@@ -195,10 +199,6 @@
     {
       "basename": "泛型",
       "path": "docs/java/java基础/杂项/泛型.md"
-    },
-    {
-      "basename": "index",
-      "path": "docs/index.md"
     }
   ],
   "omittedPaths": [],
