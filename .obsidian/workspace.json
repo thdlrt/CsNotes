@@ -18,8 +18,21 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "6bfa14fc1fd650a4",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "conflict-files-obsidian-git.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -93,7 +106,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/c++/八股.md",
+                "file": "conflict-files-obsidian-git.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +123,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/c++/八股.md",
+                "file": "conflict-files-obsidian-git.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +146,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/c++/八股.md"
+                "file": "conflict-files-obsidian-git.md"
               }
             }
           },
@@ -176,13 +189,18 @@
       "omnisearch:Omnisearch": false
     }
   },
-  "active": "96e173acdf249e6c",
+  "active": "6bfa14fc1fd650a4",
   "lastOpenFiles": [
-    "().md",
     "docs/c++/八股.md",
+    "conflict-files-obsidian-git.md",
+    "面试/面试技巧/反问环节.md",
+    "面试/自我介绍/腾讯天美游戏端开发.md",
+    "面试/面试技巧",
+    "面试/自我介绍",
+    "面试",
+    "().md",
     "docs/c++/c++基础.md",
     "docs/课程/编译原理/笔记/语法分析.md",
-    "conflict-files-obsidian-git.md",
     "docs/课程/编译原理/作业/p2.md",
     "docs/面试/计算机科学/杂项.md",
     "docs/面试/计算机科学/并发编程.md",
@@ -208,12 +226,7 @@
     "docs/软件工程/软件测试/测试.md",
     "docs/软件工程/软件测试",
     "docs/软件工程/编程思想与规范/调试.md",
-    "docs/软件工程/编程思想与规范/文档.md",
-    "docs/软件工程/编程思想与规范/编程思想.md",
     "docs/软件工程/编程思想与规范",
-    "docs/课程/软件体系结构/笔记",
-    "docs/课程/软件体系结构",
-    "Anki",
     "CsNotes/2021-11-22-22-54-02.png",
     "CsNotes/2021-11-22-22-52-49.png",
     "CsNotes/2021-11-22-22-49-26.png",
