@@ -20,6 +20,18 @@
             }
           },
           {
+            "id": "247d481c6156abbc",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "docs/c++/八股.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
             "id": "42c3e9046e4e314c",
             "type": "leaf",
             "state": {
@@ -107,7 +119,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/面试/计算机科学/计算机网络.md",
+                "file": "docs/c++/八股.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -124,7 +136,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/面试/计算机科学/计算机网络.md",
+                "file": "docs/c++/八股.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -147,7 +159,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/面试/计算机科学/计算机网络.md"
+                "file": "docs/c++/八股.md"
               }
             }
           },
@@ -190,11 +202,13 @@
       "omnisearch:Omnisearch": false
     }
   },
-  "active": "42c3e9046e4e314c",
+  "active": "247d481c6156abbc",
   "lastOpenFiles": [
+    "docs/面试/知识图谱.md",
+    "docs/c++/C++基础.md",
+    "docs/面试/计算机科学/计算机网络.md",
     "docs/杂项/linux与shell/八股.md",
     "docs/软件工程/设计模式.md",
-    "docs/面试/知识图谱.md",
     "面试/自我介绍/腾讯天美游戏端开发.md",
     "docs/软件工程/项目管理.md",
     "docs/课程/编译原理/笔记/词法分析.md",
@@ -222,8 +236,6 @@
     "docs/数据库/关系数据库/data/MySQL安装.md",
     "docs/数据库/关系数据库/data/MySQL卸载文档-Windows版.md",
     "docs/数据库/关系数据库/data",
-    "docs/课程/编译原理/编译原理.md",
-    "docs/java/java基础.md",
     "docs/面试/计算机科学",
     "docs/面试",
     "docs/软件工程/软件测试",

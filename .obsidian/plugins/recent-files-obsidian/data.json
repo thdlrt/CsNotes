@@ -1,6 +1,18 @@
 {
   "recentFiles": [
     {
+      "basename": "八股",
+      "path": "docs/c++/八股.md"
+    },
+    {
+      "basename": "知识图谱",
+      "path": "docs/面试/知识图谱.md"
+    },
+    {
+      "basename": "C++基础",
+      "path": "docs/c++/C++基础.md"
+    },
+    {
       "basename": "计算机网络",
       "path": "docs/面试/计算机科学/计算机网络.md"
     },
@@ -11,10 +23,6 @@
     {
       "basename": "设计模式",
       "path": "docs/软件工程/设计模式.md"
-    },
-    {
-      "basename": "知识图谱",
-      "path": "docs/面试/知识图谱.md"
     },
     {
       "basename": "腾讯天美游戏端开发",
@@ -31,10 +39,6 @@
     {
       "basename": "unity",
       "path": "docs/游戏开发/游戏引擎/unity/unity.md"
-    },
-    {
-      "basename": "八股",
-      "path": "docs/c++/八股.md"
     },
     {
       "basename": "c#",
@@ -195,10 +199,6 @@
     {
       "basename": "内部类",
       "path": "docs/java/java基础/面向对象/内部类.md"
-    },
-    {
-      "basename": "构造方法",
-      "path": "docs/java/java基础/面向对象/构造方法.md"
     }
   ],
   "omittedPaths": [],
