@@ -25,7 +25,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/杂项/linux与shell/八股.md",
+                "file": "docs/面试/计算机科学/计算机网络.md",
                 "mode": "source",
                 "source": false
               }
@@ -107,7 +107,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/杂项/linux与shell/八股.md",
+                "file": "docs/面试/计算机科学/计算机网络.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -124,7 +124,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/杂项/linux与shell/八股.md",
+                "file": "docs/面试/计算机科学/计算机网络.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -147,7 +147,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/杂项/linux与shell/八股.md"
+                "file": "docs/面试/计算机科学/计算机网络.md"
               }
             }
           },
@@ -192,8 +192,8 @@
   },
   "active": "42c3e9046e4e314c",
   "lastOpenFiles": [
-    "docs/软件工程/设计模式.md",
     "docs/杂项/linux与shell/八股.md",
+    "docs/软件工程/设计模式.md",
     "docs/面试/知识图谱.md",
     "面试/自我介绍/腾讯天美游戏端开发.md",
     "docs/软件工程/项目管理.md",

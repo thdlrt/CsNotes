@@ -1,6 +1,10 @@
 {
   "recentFiles": [
     {
+      "basename": "计算机网络",
+      "path": "docs/面试/计算机科学/计算机网络.md"
+    },
+    {
       "basename": "八股",
       "path": "docs/杂项/linux与shell/八股.md"
     },
@@ -195,10 +199,6 @@
     {
       "basename": "构造方法",
       "path": "docs/java/java基础/面向对象/构造方法.md"
-    },
-    {
-      "basename": "字符串",
-      "path": "docs/java/java基础/数据类型/字符串.md"
     }
   ],
   "omittedPaths": [],
