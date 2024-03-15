@@ -1,6 +1,10 @@
 {
   "recentFiles": [
     {
+      "basename": "八股",
+      "path": "docs/课程/计算机图形学/八股.md"
+    },
+    {
       "basename": "计算机网络",
       "path": "docs/面试/计算机科学/计算机网络.md"
     },
@@ -195,10 +199,6 @@
     {
       "basename": "反射",
       "path": "docs/java/java基础/杂项/反射.md"
-    },
-    {
-      "basename": "泛型",
-      "path": "docs/java/java基础/杂项/泛型.md"
     }
   ],
   "omittedPaths": [],
