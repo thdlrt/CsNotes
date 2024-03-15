@@ -73,13 +73,14 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/软件工程/设计模式.md",
+                "file": "docs/课程/计算机图形学/八股.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ]
+        ],
+        "currentTab": 5
       }
     ],
     "direction": "vertical"
@@ -154,7 +155,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/杂项/linux与shell/八股.md",
+                "file": "docs/课程/计算机图形学/八股.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -171,7 +172,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/杂项/linux与shell/八股.md",
+                "file": "docs/课程/计算机图形学/八股.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -194,7 +195,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/杂项/linux与shell/八股.md"
+                "file": "docs/课程/计算机图形学/八股.md"
               }
             }
           },
@@ -237,14 +238,14 @@
       "omnisearch:Omnisearch": false
     }
   },
-  "active": "9ba24f857a113aa2",
+  "active": "aa70e65fb16973c4",
   "lastOpenFiles": [
+    "docs/软件工程/设计模式.md",
     "docs/c++/八股.md",
     "docs/杂项/linux与shell/八股.md",
     "docs/面试/知识图谱.md",
     "docs/游戏开发/游戏引擎/unity/八股.md",
     "docs/面试/计算机科学/计算机网络.md",
-    "docs/软件工程/设计模式.md",
     "docs/面试/计算机科学/并发编程.md",
     "docs/课程/计算机图形学/八股.md",
     "docs/c++/C++基础.md",
