@@ -1,12 +1,28 @@
 {
   "recentFiles": [
     {
-      "basename": "设计模式",
-      "path": "docs/软件工程/设计模式.md"
+      "basename": "八股",
+      "path": "docs/杂项/linux与shell/八股.md"
+    },
+    {
+      "basename": "知识图谱",
+      "path": "docs/面试/知识图谱.md"
     },
     {
       "basename": "八股",
       "path": "docs/游戏开发/游戏引擎/unity/八股.md"
+    },
+    {
+      "basename": "计算机网络",
+      "path": "docs/面试/计算机科学/计算机网络.md"
+    },
+    {
+      "basename": "八股",
+      "path": "docs/c++/八股.md"
+    },
+    {
+      "basename": "设计模式",
+      "path": "docs/软件工程/设计模式.md"
     },
     {
       "basename": "并发编程",
@@ -17,16 +33,8 @@
       "path": "docs/课程/计算机图形学/八股.md"
     },
     {
-      "basename": "八股",
-      "path": "docs/c++/八股.md"
-    },
-    {
       "basename": "C++基础",
       "path": "docs/c++/C++基础.md"
-    },
-    {
-      "basename": "计算机网络",
-      "path": "docs/面试/计算机科学/计算机网络.md"
     },
     {
       "basename": "应用层",
@@ -39,14 +47,6 @@
     {
       "basename": "操作系统",
       "path": "docs/面试/计算机科学/操作系统.md"
-    },
-    {
-      "basename": "知识图谱",
-      "path": "docs/面试/知识图谱.md"
-    },
-    {
-      "basename": "八股",
-      "path": "docs/杂项/linux与shell/八股.md"
     },
     {
       "basename": "项目管理",
