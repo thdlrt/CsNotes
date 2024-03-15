@@ -5,6 +5,10 @@
       "path": "docs/杂项/linux与shell/八股.md"
     },
     {
+      "basename": "八股",
+      "path": "docs/c++/八股.md"
+    },
+    {
       "basename": "知识图谱",
       "path": "docs/面试/知识图谱.md"
     },
@@ -15,10 +19,6 @@
     {
       "basename": "计算机网络",
       "path": "docs/面试/计算机科学/计算机网络.md"
-    },
-    {
-      "basename": "八股",
-      "path": "docs/c++/八股.md"
     },
     {
       "basename": "设计模式",
