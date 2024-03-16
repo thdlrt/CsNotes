@@ -8,55 +8,18 @@
         "type": "tabs",
         "children": [
           {
-            "id": "9ba24f857a113aa2",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "docs/杂项/linux与shell/八股.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
             "id": "7b1d7d26719ce89a",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/面试/计算机科学/计算机网络.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "cd651d5f46c64401",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "docs/c++/八股.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "aa70e65fb16973c4",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "docs/课程/计算机图形学/八股.md",
+                "file": "docs/课程/软件体系结构/笔记/理念.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ],
-        "currentTab": 3
+        ]
       }
     ],
     "direction": "vertical"
@@ -114,8 +77,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 200
   },
   "right": {
     "id": "d615b65a4ccf8a6a",
@@ -131,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/课程/计算机图形学/八股.md",
+                "file": "docs/课程/软件体系结构/笔记/理念.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -148,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/课程/计算机图形学/八股.md",
+                "file": "docs/课程/软件体系结构/笔记/理念.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -171,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/课程/计算机图形学/八股.md"
+                "file": "docs/课程/软件体系结构/笔记/理念.md"
               }
             }
           },
@@ -214,16 +176,18 @@
       "omnisearch:Omnisearch": false
     }
   },
-  "active": "aa70e65fb16973c4",
+  "active": "7b1d7d26719ce89a",
   "lastOpenFiles": [
+    "docs/课程/软件体系结构/笔记/Spring.md",
+    "docs/课程/软件体系结构/笔记/理念.md",
+    "docs/面试/计算机科学/计算机网络.md",
+    "docs/课程/计算机图形学/八股.md",
     "docs/软件工程/设计模式.md",
     "docs/c++/八股.md",
     "docs/杂项/linux与shell/八股.md",
     "docs/面试/知识图谱.md",
     "docs/游戏开发/游戏引擎/unity/八股.md",
-    "docs/面试/计算机科学/计算机网络.md",
     "docs/面试/计算机科学/并发编程.md",
-    "docs/课程/计算机图形学/八股.md",
     "docs/c++/C++基础.md",
     "docs/归档课程/计算机网络/data/应用层.md",
     "面试/自我介绍/腾讯天美游戏端开发.md",
@@ -244,9 +208,7 @@
     "docs/游戏开发/游戏引擎/LibGDX .md",
     "docs/游戏开发/游戏引擎/unreal.md",
     "docs/游戏开发/游戏引擎/unity",
-    "docs/游戏开发/游戏引擎/cocos.md",
     "docs/游戏开发/游戏引擎",
-    "docs/游戏开发/游戏安全.md",
     "docs/数据库/关系数据库/data",
     "docs/面试/计算机科学",
     "docs/面试",
