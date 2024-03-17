@@ -1,12 +1,28 @@
 {
   "recentFiles": [
     {
-      "basename": "作业",
-      "path": "docs/课程/金融工程学/作业.md"
+      "basename": "Chapter_4",
+      "path": "docs/课程/编译原理/课件/Chapter_4.pdf"
+    },
+    {
+      "basename": "语法分析",
+      "path": "docs/课程/编译原理/笔记/语法分析.md"
+    },
+    {
+      "basename": "p3",
+      "path": "docs/课程/编译原理/作业/p3.md"
+    },
+    {
+      "basename": "p2",
+      "path": "docs/课程/编译原理/作业/p2.md"
     },
     {
       "basename": "郑振龙《金融工程》（第5版）笔记和课后习题（含考研真题）详解答案",
       "path": "docs/课程/金融工程学/郑振龙《金融工程》（第5版）笔记和课后习题（含考研真题）详解答案.pdf"
+    },
+    {
+      "basename": "作业",
+      "path": "docs/课程/金融工程学/作业.md"
     },
     {
       "basename": "理念",
@@ -83,10 +99,6 @@
     {
       "basename": "反问环节",
       "path": "面试/面试技巧/反问环节.md"
-    },
-    {
-      "basename": "语法分析",
-      "path": "docs/课程/编译原理/笔记/语法分析.md"
     },
     {
       "basename": "编译原理",
@@ -187,18 +199,6 @@
     {
       "basename": "equals()与hashCode()",
       "path": "docs/java/java基础/杂项/equals()与hashCode().md"
-    },
-    {
-      "basename": "使用享元自定义Collecction和Map",
-      "path": "docs/java/java基础/高级/使用享元自定义Collecction和Map.md"
-    },
-    {
-      "basename": "Math类",
-      "path": "docs/java/java基础/Util/Math类.md"
-    },
-    {
-      "basename": "时间类",
-      "path": "docs/java/java基础/Util/时间类.md"
     }
   ],
   "omittedPaths": [],
