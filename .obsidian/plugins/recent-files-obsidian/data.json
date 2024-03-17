@@ -1,6 +1,14 @@
 {
   "recentFiles": [
     {
+      "basename": "作业",
+      "path": "docs/课程/金融工程学/作业.md"
+    },
+    {
+      "basename": "郑振龙《金融工程》（第5版）笔记和课后习题（含考研真题）详解答案",
+      "path": "docs/课程/金融工程学/郑振龙《金融工程》（第5版）笔记和课后习题（含考研真题）详解答案.pdf"
+    },
+    {
       "basename": "理念",
       "path": "docs/课程/软件体系结构/笔记/理念.md"
     },
@@ -191,14 +199,6 @@
     {
       "basename": "时间类",
       "path": "docs/java/java基础/Util/时间类.md"
-    },
-    {
-      "basename": "排序",
-      "path": "docs/归档课程/数据结构/笔记/排序.md"
-    },
-    {
-      "basename": "Collections工具类",
-      "path": "docs/java/java基础/Util/集合/Collections工具类.md"
     }
   ],
   "omittedPaths": [],
