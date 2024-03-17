@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/课程/软件体系结构/笔记/Spring.md",
+                "file": "docs/课程/软件体系结构/笔记/理念.md",
                 "mode": "source",
                 "source": false
               }
@@ -93,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/课程/软件体系结构/笔记/Spring.md",
+                "file": "docs/课程/软件体系结构/笔记/理念.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/课程/软件体系结构/笔记/Spring.md",
+                "file": "docs/课程/软件体系结构/笔记/理念.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/课程/软件体系结构/笔记/Spring.md"
+                "file": "docs/课程/软件体系结构/笔记/理念.md"
               }
             }
           },
@@ -178,9 +178,9 @@
   },
   "active": "7b1d7d26719ce89a",
   "lastOpenFiles": [
+    "docs/课程/软件体系结构/笔记/Spring.md",
     "docs/课程/软件体系结构/笔记/理念.md",
     "docs/课程/软件体系结构/笔记/SSM",
-    "docs/课程/软件体系结构/笔记/Spring.md",
     "docs/面试/计算机科学/计算机网络.md",
     "docs/课程/计算机图形学/八股.md",
     "docs/软件工程/设计模式.md",
