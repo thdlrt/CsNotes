@@ -20,7 +20,7 @@
         ]
       },
       {
-        "id": "ce1908b57a695d11",
+        "id": "375011d24550f088",
         "type": "tabs",
         "children": [
           {
@@ -93,7 +93,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 414.5
   },
   "right": {
     "id": "d615b65a4ccf8a6a",
@@ -196,6 +196,7 @@
   "lastOpenFiles": [
     "docs/课程/编译原理/课件/Chapter_4.pdf",
     "docs/课程/编译原理/笔记/语法分析.md",
+    "docs/课程/编译原理/作业/答案/dragon-book-exercise-answers-master/ch04/4.4/4.4.md",
     "docs/课程/编译原理/作业/p3.md",
     "docs/课程/编译原理/作业/p2.md",
     "docs/课程/金融工程学/郑振龙《金融工程》（第5版）笔记和课后习题（含考研真题）详解答案.pdf",
@@ -222,7 +223,6 @@
     "面试/面试技巧/反问环节.md",
     "docs/游戏开发/游戏引擎/unity/Untitled.md",
     "面试/面试技巧",
-    "conflict-files-obsidian-git.md",
     "面试/自我介绍",
     "面试",
     "docs/游戏开发/游戏引擎/unity",

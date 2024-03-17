@@ -9,6 +9,10 @@
       "path": "docs/课程/编译原理/课件/Chapter_4.pdf"
     },
     {
+      "basename": "4.4",
+      "path": "docs/课程/编译原理/作业/答案/dragon-book-exercise-answers-master/ch04/4.4/4.4.md"
+    },
+    {
       "basename": "p3",
       "path": "docs/课程/编译原理/作业/p3.md"
     },
@@ -195,10 +199,6 @@
     {
       "basename": "record记录",
       "path": "docs/java/java基础/高级/record记录.md"
-    },
-    {
-      "basename": "equals()与hashCode()",
-      "path": "docs/java/java基础/杂项/equals()与hashCode().md"
     }
   ],
   "omittedPaths": [],
