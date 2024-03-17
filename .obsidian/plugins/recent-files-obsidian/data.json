@@ -5,6 +5,18 @@
       "path": "docs/课程/编译原理/笔记/语法分析.md"
     },
     {
+      "basename": "词法分析",
+      "path": "docs/课程/编译原理/笔记/词法分析.md"
+    },
+    {
+      "basename": "p1",
+      "path": "docs/课程/编译原理/作业/p1.md"
+    },
+    {
+      "basename": "p2",
+      "path": "docs/课程/编译原理/作业/p2.md"
+    },
+    {
       "basename": "Chapter_4",
       "path": "docs/课程/编译原理/课件/Chapter_4.pdf"
     },
@@ -15,10 +27,6 @@
     {
       "basename": "p3",
       "path": "docs/课程/编译原理/作业/p3.md"
-    },
-    {
-      "basename": "p2",
-      "path": "docs/课程/编译原理/作业/p2.md"
     },
     {
       "basename": "郑振龙《金融工程》（第5版）笔记和课后习题（含考研真题）详解答案",
@@ -87,10 +95,6 @@
     {
       "basename": "项目管理",
       "path": "docs/软件工程/项目管理.md"
-    },
-    {
-      "basename": "词法分析",
-      "path": "docs/课程/编译原理/笔记/词法分析.md"
     },
     {
       "basename": "unity",
@@ -195,10 +199,6 @@
     {
       "basename": "序列化与反序列化",
       "path": "docs/java/java基础/高级/序列化与反序列化.md"
-    },
-    {
-      "basename": "record记录",
-      "path": "docs/java/java基础/高级/record记录.md"
     }
   ],
   "omittedPaths": [],
