@@ -109,7 +109,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/课程/编译原理/课件/Chapter_4.pdf",
+                "file": "docs/课程/编译原理/笔记/语法分析.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -126,7 +126,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/课程/编译原理/课件/Chapter_4.pdf",
+                "file": "docs/课程/编译原理/笔记/语法分析.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -149,7 +149,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/课程/编译原理/课件/Chapter_4.pdf"
+                "file": "docs/课程/编译原理/笔记/语法分析.md"
               }
             }
           },
@@ -192,10 +192,10 @@
       "omnisearch:Omnisearch": false
     }
   },
-  "active": "264f854b549b813d",
+  "active": "c96ffc852ccc1d74",
   "lastOpenFiles": [
-    "docs/课程/编译原理/笔记/语法分析.md",
     "docs/课程/编译原理/课件/Chapter_4.pdf",
+    "docs/课程/编译原理/笔记/语法分析.md",
     "docs/课程/编译原理/作业/p3.md",
     "docs/课程/编译原理/作业/p2.md",
     "docs/课程/金融工程学/郑振龙《金融工程》（第5版）笔记和课后习题（含考研真题）详解答案.pdf",
