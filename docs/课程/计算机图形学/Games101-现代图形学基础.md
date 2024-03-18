@@ -1,21 +1,18 @@
 ## 线性代数基础
 
 - **点乘**主要用来求两个单位向量的**夹角**
-- 投影<img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230705094433677.png" alt="image-20230705094433677" style="zoom: 33%;" /><img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230705094408593.png" alt="image-20230705094408593" style="zoom: 15%;" />
-- 可以用于判断两个方向的**接近程度**（夹角），判断前后
-	- <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/20240318154923.png" alt="image.png|250" style="zoom:50%;" />
+  - 可以用于判断两个方向的**接近程度**（夹角），判断**前后**
+  - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/20240318154923.png" alt="image.png|250" style="zoom:50%;" />
+
 
 
 - 叉乘
   - <img src=" https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230705094854131.png" alt="image-20230705094854131" style="zoom:50%;" />
   - 可以用于求出三维直角坐标系(右手坐标系)，指导两个方向就能推导出第三个方向$\overrightarrow{x}\times \overrightarrow{y}=\overrightarrow{z}$
-  - 对于三维直角坐标系
-    - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230705101014464.png" alt="image-20230705101014464" style="zoom:33%;" />
   - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230705095355307.png" alt="image-20230705095355307" style="zoom:33%;" />
   - 判断**左右、内外**（p在三角形三条边的同一边（左边））<img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230705095708064.png" alt="image-20230705095708064" style="zoom:33%;" />
-  
 - 矩阵
-  - 乘法符合结合律、分配律
+  - 乘法符合结合律、分配律，**没有**交换律
   - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230705101406981.png" alt="image-20230705101406981" style="zoom:33%;" />
   - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230705101428671.png" alt="image-20230705101428671" style="zoom:33%;" />
   - 表示向量运算
@@ -28,7 +25,7 @@
 - 缩放
   - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230705104154105.png" alt="image-20230705104154105" style="zoom:33%;" />
   - s为负数时也可以用于图像的翻转
-- 变形
+- 变形（切变）
   - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230705104504994.png" alt="image-20230705104504994" style="zoom:33%;" />
 - 旋转（以原点为中心点）
   - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230705104522160.png" alt="image-20230705104522160" style="zoom:33%;" />
@@ -36,13 +33,13 @@
 
 #### 齐次坐标
 
-- 目的：用矩阵乘法（线性变化）表示平移
+- 目的：用矩阵乘法（**线性变化**）无法表示**平移**
   - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230705105530183.png" alt="image-20230705105530183" style="zoom:33%;" />
 - 用三维向量表示二维坐标
   - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230705105957413.png" alt="image-20230705105957413" style="zoom:33%;" />
   - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230705110729591.png" alt="image-20230705110729591" style="zoom:33%;" />
     - **先线性变化再平移**
-  - 通过第三维度是1/0来判断是点还是向量
+  - 通过第三维度是1/0来判断是点还是向量，向量的第三维为0，因而向量不会因为平移而发生改变
   - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230705110613745.png" alt="image-20230705110613745" style="zoom:33%;" />
     - 点加点表示两个点的中点（规格化）
 
