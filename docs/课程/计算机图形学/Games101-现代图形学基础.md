@@ -122,7 +122,6 @@
 ## 光栅化
 
 - 光栅化：将图像**显示在屏幕上**，矢量图形转化为像素网格
-
 - 视锥
   - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230705195643643.png" alt="image-20230705195643643" style="zoom:33%;" />
   - 影响因素：**长宽比**、**垂直可视角度**（红线角度）
@@ -131,32 +130,39 @@
   - 将标准正方**体映射到屏幕上**
   - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230705200732208.png" alt="image-20230705200732208" style="zoom:33%;" />
 - 使用最简单的多边形——**三角形**来表示一切
-- 简易采样决定像素是否显示<img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230705202357596.png" style="zoom:33%;" />
-  - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230705202512612.png" alt="image-20230705202512612" style="zoom:33%;" />
+  - 最简单多边形，任何图形都可以划分为三角形
+
+- 简易采样（就是离散化）决定像素是否显示
+  - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230705202357596.png" style="zoom:33%;" />
+  - 使用**像素中心**进行采样<img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230705202512612.png" alt="image-20230705202512612" style="zoom:33%;" />
   - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230705202526369.png" alt="image-20230705202526369" style="zoom:33%;" />
-  - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230705202734257.png" alt="image-20230705202734257" style="zoom:33%;" />
-  - 使用向量叉乘判断（是否在三条边的同一侧）
+    - 判断中心点是否在三角形内部（使用向量叉乘，在三条边同方向）
+    - 不需要遍历所有的点，可以使用包围盒进行优化
+    - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20240318192736159.png" alt="image-20240318192736159" style="zoom:33%;" />
+    - 更加优秀的算法
+    - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20240318192907431.png" alt="image-20240318192907431" style="zoom:33%;" />
+
   - 但是这种方法会出现严重的走样问题
     - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230705204001597.png" alt="image-20230705204001597" style="zoom:33%;" />
 
-### 反走样
 
-- 事件、空间上的问题，由采样频率不足引起
+### 反走样&抗锯齿
+
+- 时间、空间上的问题，**采样频率不足就会引起走样**
   - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230705210016059.png" alt="image-20230705210016059" style="zoom:33%;" />
 
 - 先模糊后采样
 
   - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230705205023851.png" alt="image-20230705205023851" style="zoom:33%;" />
 
-- 傅里叶级数展开
-
+- *原理：傅里叶级数展开
   - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230705205535746.png" alt="image-20230705205535746" style="zoom:33%;" />
   - 傅里叶变换：可以将一个函数变换为另一个
   - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230705205610906.png" alt="image-20230705205610906" style="zoom:33%;" />
   - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/40cf849e55ed95732a60b52d4019d609_r.jpg" alt="img" style="zoom: 50%;" />
   - 仅仅有频谱（振幅谱）是不够的，我们还需要一个相位谱（不同波的起始相位）
     - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/07199fc0250791d768771b50c098e26a_r.jpg" alt="img" style="zoom:33%;" />
-
+  
 - 滤波
 
   - 在频域可以十分方便的实现滤波（去除指定竖线）
@@ -181,7 +187,7 @@
   - 像素内部添加更多的采样点<img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230705230610889.png" alt="image-20230705230610889" style="zoom:33%;" />
   - 覆盖采样点数目来决定模糊状态（抗锯齿）<img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230705230656738.png" alt="image-20230705230656738" style="zoom:33%;" />
 
-### 深度遮挡
+### 深度缓冲（测试）
 
 - 如何绘制深度不同具有遮挡关系的不同图像（三角形）？
   - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230705232435826.png" alt="image-20230705232435826" style="zoom:33%;" />
