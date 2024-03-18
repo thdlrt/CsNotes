@@ -70,43 +70,46 @@
   - **视图矩阵**：将世界坐标系转换到观察者（或摄像机）的坐标系（视图空间）。这个变换通常涉及到将摄像机（视点）移动到原点，并进行必要的旋转，使得观察者面向场景的特定部分。
   - **投影矩阵**：将视图空间中的坐标转换到裁剪空间，进而通过透视除法转换为归一化设备坐标（NDC）。这个变换定义了一个可视范围，通常是一个锥形体（透视投影）或者一个长方体（正交投影）。
 
-- 相机参数（视图矩阵）
+- 相机参数（视图 矩阵）
   - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230705115308858.png" alt="image-20230705115308858" style="zoom:33%;" />
     - position：原点位置
     - look-at：相机指向
     - up direction：相机头方向（即绕指向的旋转，就是相机上方的指向）
   - 固定相机的位置，移动物体，标准位置：
     - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230705180340120.png" alt="image-20230705180340120" style="zoom: 50%;" />
-  - 回正过程
+  - 回正过程（同时移动相机和物体，相对关系不变）
     - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230705180837520.png" alt="image-20230705180837520" style="zoom:33%;" />
     - 先平移再旋转（逆矩阵便于确定旋转方式）
     - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230705182029845.png" alt="image-20230705182029845" style="zoom:33%;" />
 
 ### 投影变化
 
+- <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230705182959157.png" alt="image-20230705182959157" style="zoom:50%;" />
+
 #### 正交投影
 
 - 平行线仍然平行<img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230705182825442.png" alt="image-20230705182825442" style="zoom:33%;" />
 - 看作摄像机无限远，**平行投射**
   - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230705183034320.png" alt="image-20230705183034320" style="zoom:33%;" />
-  - 相当于扔掉z坐标
+  - 相当于**扔掉z坐标**
 - 长方形投影到标准正方体（观测矩阵）
+  - 先平移到原点，再进行缩放
   - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230705183815650.png" alt="image-20230705183815650" style="zoom:33%;" />
   - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230705183829219.png" alt="image-20230705183829219" style="zoom:33%;" />
+  
 
 #### 透视投影
 
 - 近大远小<img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230705182859731.png" alt="image-20230705182859731" style="zoom:33%;" />
-- <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230705182959157.png" alt="image-20230705182959157" style="zoom:50%;" />
   - 四棱锥投射
 - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230705184740070.png" alt="image-20230705184740070" style="zoom:33%;" />
-  - 将锥形“挤压”为长方体，再做正交投影
+  - 先将锥形“**挤压**”为长方体，再做**正交投影**
 - 坐标变换
   - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230705185005754.png" alt="image-20230705185005754" style="zoom: 33%;" />
   - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230705185348679.png" alt="image-20230705185348679" style="zoom:33%;" />
   - 变换矩阵
     - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230705185919398.png" alt="image-20230705185919398" style="zoom:33%;" />
-  - 近平面的xyz均不发生变化
+  - **近平面**的xyz均不发生变化
     - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230705185949350.png" alt="image-20230705185949350" style="zoom:33%;" />
     - 可知与xy无关，前两项为0
   - 远平面的xy发生压缩，但是z不发生变化（中心点的xyz均不变）
