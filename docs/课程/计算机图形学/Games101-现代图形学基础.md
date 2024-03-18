@@ -150,38 +150,34 @@
 
 - 时间、空间上的问题，**采样频率不足就会引起走样**
   - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230705210016059.png" alt="image-20230705210016059" style="zoom:33%;" />
-
 - 先模糊后采样
 
   - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230705205023851.png" alt="image-20230705205023851" style="zoom:33%;" />
-
-- *原理：傅里叶级数展开
+- 傅里叶级数展开
   - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230705205535746.png" alt="image-20230705205535746" style="zoom:33%;" />
-  - 傅里叶变换：可以将一个函数变换为另一个
+  - 傅里叶变换：实现函数在**时域和频域**之间的变化
   - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230705205610906.png" alt="image-20230705205610906" style="zoom:33%;" />
   - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/40cf849e55ed95732a60b52d4019d609_r.jpg" alt="img" style="zoom: 50%;" />
   - 仅仅有频谱（振幅谱）是不够的，我们还需要一个相位谱（不同波的起始相位）
     - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/07199fc0250791d768771b50c098e26a_r.jpg" alt="img" style="zoom:33%;" />
-  
+- 对于图片来说
+  - 时域表示图片上的像素变化快慢
+  - 频域用黑色图表示，中间为低频四周为高频
+
 - 滤波
-
-  - 在频域可以十分方便的实现滤波（去除指定竖线）
-  - 去除某些特定频率的波
-
+  - 在**频域**可以十分方便的实现滤波（**去除指定竖线**（去除某个频率））
   - 卷积
     - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230705212537943.png" alt="image-20230705212537943" style="zoom:33%;" />
-    - 信号范围内平均处理
-
-  - 时域的相乘等于频域的卷积，时域的卷积等于频域相乘
+    - 信号**范围内平均**处理
+  - **时域的相乘等于频域的卷积，时域的卷积等于频域相乘**
     - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230705212715013.png" alt="image-20230705212715013" style="zoom:33%;" />
-
   - 采样就是重复原始信号频谱<img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230705230234448.png" alt="image-20230705230234448" style="zoom:33%;" />
+    - 左侧的在时域上相乘，域右侧上做卷积是等价的
     - 采样率过低时会发生频谱重叠
     - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230705225914520.png" alt="image-20230705225914520" style="zoom:33%;" />
-  - 模糊（卷积）可以减少重叠，减少走样
+  - 模糊（卷积）可以**减少重叠**，减少走样（屏幕分辨率高时走样少，是因为采样频率高）
     - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230705230138093.png" alt="image-20230705230138093" style="zoom:33%;" />
     - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230705230342691.png" alt="image-20230705230342691" style="zoom:33%;" />
-
 - MSAA多采样反走样（卷积计算开销大）
 
   - 像素内部添加更多的采样点<img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230705230610889.png" alt="image-20230705230610889" style="zoom:33%;" />
