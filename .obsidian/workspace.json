@@ -112,7 +112,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/课程/编译原理/课件/Chapter_4.pdf",
+                "file": "docs/课程/编译原理/笔记/语法分析.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -129,7 +129,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/课程/编译原理/课件/Chapter_4.pdf",
+                "file": "docs/课程/编译原理/笔记/语法分析.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -152,7 +152,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/课程/编译原理/课件/Chapter_4.pdf"
+                "file": "docs/课程/编译原理/笔记/语法分析.md"
               }
             }
           },
@@ -177,8 +177,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 200
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -195,10 +194,10 @@
       "omnisearch:Omnisearch": false
     }
   },
-  "active": "264f854b549b813d",
+  "active": "c96ffc852ccc1d74",
   "lastOpenFiles": [
-    "docs/课程/编译原理/笔记/语法分析.md",
     "docs/课程/编译原理/课件/Chapter_4.pdf",
+    "docs/课程/编译原理/笔记/语法分析.md",
     "docs/课程/编译原理/作业/答案/dragon-book-exercise-answers-master/ch04/4.5/4.5.md",
     "docs/课程/编译原理/笔记/词法分析.md",
     "docs/课程/编译原理/作业/p1.md",
