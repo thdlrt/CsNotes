@@ -319,7 +319,7 @@
 ### 隐式表述
 
 - 数学表达式
-  - 不告诉点都在哪，只告诉点的位置满足的约束（判断是否在几何上），如`f(x,y,z)=0`
+  - 不告诉点都在哪，只告诉**点的位置是否满足的约束**（判断是否在几何上），如`f(x,y,z)=0`
   - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230706233235852.png" alt="image-20230706233235852" style="zoom:33%;" />
 - csg法
   - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230706234848733.png" alt="image-20230706234848733" style="zoom:33%;" />
@@ -329,18 +329,20 @@
   - 插值（应用）<img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230706235644170.png" alt="image-20230706235644170" style="zoom:33%;" />
     - 通过正负划分边界
   - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230707001420918.png" alt="image-20230707001420918" style="zoom:33%;" />
+- 分型描述（自相似）
+  - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20240318230440273.png" style="zoom:33%;" />
+
 
 ### 显示表述
 
 - 直接表示
-  - 规定平面图形和二维到三维的映射
+  - 规定**平面图形**和二维到三维的**映射**
   - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230706233403094.png" alt="image-20230706233403094" style="zoom:33%;" />
   - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230706233636662.png" alt="image-20230706233636662" style="zoom:33%;" />
-  - 但不容易判断内部和外部
   - 区别隐式曲面与显示曲面的关键就在于是否可以直接表示出所有的点
+  - 显示的问题在于**不容易判断**一个点在不在几何体上
 - 点云表示 
   - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230707205754492.png" alt="image-20230707205754492" style="zoom:33%;" />
-
 - 多边形面
   - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230707205819560.png" alt="image-20230707205819560" style="zoom:33%;" />
 
