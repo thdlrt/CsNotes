@@ -195,10 +195,6 @@
     {
       "basename": "SQL注入",
       "path": "docs/网络安全/SQL注入.md"
-    },
-    {
-      "basename": "final",
-      "path": "docs/java/java基础/杂项/final.md"
     }
   ],
   "omittedPaths": [],
