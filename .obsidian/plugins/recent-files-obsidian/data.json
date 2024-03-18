@@ -1,12 +1,20 @@
 {
   "recentFiles": [
     {
-      "basename": "语法分析",
-      "path": "docs/课程/编译原理/笔记/语法分析.md"
+      "basename": "绪论",
+      "path": "docs/课程/操作系统/笔记/绪论.md"
     },
     {
       "basename": "Chapter_4",
       "path": "docs/课程/编译原理/课件/Chapter_4.pdf"
+    },
+    {
+      "basename": "操作系统",
+      "path": "docs/课程/操作系统/操作系统.md"
+    },
+    {
+      "basename": "语法分析",
+      "path": "docs/课程/编译原理/笔记/语法分析.md"
     },
     {
       "basename": "4.5",
@@ -191,14 +199,6 @@
     {
       "basename": "线程安全的数据类型",
       "path": "docs/java/java基础/并发编程/线程安全的数据类型.md"
-    },
-    {
-      "basename": "线程与线程池",
-      "path": "docs/java/java基础/并发编程/线程与线程池.md"
-    },
-    {
-      "basename": "基本概念",
-      "path": "docs/java/java基础/并发编程/基本概念.md"
     }
   ],
   "omittedPaths": [],

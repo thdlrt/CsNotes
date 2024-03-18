@@ -4,26 +4,8 @@
     "type": "split",
     "children": [
       {
-        "id": "2bf34d5bb032df25",
-        "type": "tabs",
-        "dimension": 46.85501066098081,
-        "children": [
-          {
-            "id": "264f854b549b813d",
-            "type": "leaf",
-            "state": {
-              "type": "pdf",
-              "state": {
-                "file": "docs/课程/编译原理/课件/Chapter_4.pdf"
-              }
-            }
-          }
-        ]
-      },
-      {
         "id": "375011d24550f088",
         "type": "tabs",
-        "dimension": 53.14498933901919,
         "children": [
           {
             "id": "c96ffc852ccc1d74",
@@ -31,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/课程/编译原理/笔记/语法分析.md",
+                "file": "docs/课程/操作系统/笔记/绪论.md",
                 "mode": "source",
                 "source": false
               }
@@ -95,7 +77,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 414.5,
+    "width": 213.5,
     "collapsed": true
   },
   "right": {
@@ -112,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/课程/编译原理/笔记/语法分析.md",
+                "file": "docs/课程/操作系统/笔记/绪论.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -129,7 +111,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/课程/编译原理/笔记/语法分析.md",
+                "file": "docs/课程/操作系统/笔记/绪论.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -152,7 +134,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/课程/编译原理/笔记/语法分析.md"
+                "file": "docs/课程/操作系统/笔记/绪论.md"
               }
             }
           },
@@ -177,7 +159,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 200,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -197,6 +180,8 @@
   "active": "c96ffc852ccc1d74",
   "lastOpenFiles": [
     "docs/课程/编译原理/课件/Chapter_4.pdf",
+    "docs/课程/操作系统/笔记/绪论.md",
+    "docs/课程/操作系统/操作系统.md",
     "docs/课程/编译原理/笔记/语法分析.md",
     "docs/课程/编译原理/作业/答案/dragon-book-exercise-answers-master/ch04/4.5/4.5.md",
     "docs/课程/编译原理/笔记/词法分析.md",
@@ -222,8 +207,6 @@
     "面试/自我介绍/腾讯天美游戏端开发.md",
     "docs/面试/计算机科学/操作系统.md",
     "docs/软件工程/项目管理.md",
-    "docs/游戏开发/游戏引擎/unity/unity.md",
-    "docs/游戏开发/游戏引擎/unity/c#.md",
     "面试/面试技巧",
     "面试/自我介绍",
     "面试",
