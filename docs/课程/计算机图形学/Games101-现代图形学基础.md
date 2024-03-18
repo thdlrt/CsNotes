@@ -266,15 +266,18 @@
   - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230706155402173.png" alt="image-20230706155402173" style="zoom:33%;" />
   - 通过坐标**三角形顶点**颜色映射
 
-- 知道了顶点的着色，还需要插值，对内部其他点进行着色
+- 知道了顶点的着色，还需要插值，对内部其他点进行着色（如何通过三角形的顶点得到内部参数的平滑过渡）
   
-- 重心坐标
+- **重心坐标**
+  - 三角型内任一点可以使用**顶点坐标的线性组合**表示（参数和为1（在三角形所在平面上）且非负（在三角形内部））
   - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230706161338947.png" alt="image-20230706161338947" style="zoom:33%;" />
   - 可以使用三角形面积之比计算出来
     - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230706162806562.png" alt="image-20230706162806562" style="zoom:33%;" />
-  -  <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230706163045057.png" alt="image-20230706163045057" style="zoom:33%;" />
-  - 计算得到参数后可以用这几个参数做插值
+  - 将任何一点的转化为用顶点表示
+  - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230706163045057.png" alt="image-20230706163045057" style="zoom:33%;" />
+  - 计算得到参数后可以用这几个参数做插值$V=\alpha V_A+\beta V_B+r V_C$
   - 问题：投影之后的重心坐标会发生变化，因此要先插值再投影
+  
 - 纹理映射（双线性插值）（纹理过小）
   - 当显示分辨率远高于纹理分辨率时可能存在映射问题，如坐标转化后为小数，可能使得多个坐标映射到相同的纹理位置，造成显示不准确
   - 采用周围4个点的数值进行插值（两次水平一次垂直）
