@@ -109,9 +109,10 @@
   - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230705185348679.png" alt="image-20230705185348679" style="zoom:33%;" />
   - 变换矩阵
     - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230705185919398.png" alt="image-20230705185919398" style="zoom:33%;" />
-  - **近平面**的xyz均不发生变化
+    - 还无法确定z如何变化
+  - 明确的是在**近/远平面**的 $z$ 均不发生变化
     - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230705185949350.png" alt="image-20230705185949350" style="zoom:33%;" />
-    - 可知与xy无关，前两项为0
+    - 可知与xy无关，前两项为0（利用**近平面**上变化前后的$z$不发生变化来进行计算）
   - 远平面的xy发生压缩，但是z不发生变化（中心点的xyz均不变）
     - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230705190049429.png" alt="image-20230705190049429" style="zoom:33%;" />
   - 即<img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230705190139231.png" alt="image-20230705190139231" style="zoom:33%;" />
@@ -120,14 +121,14 @@
 
 ## 光栅化
 
-- 光栅化：将图像显示在屏幕上，矢量图形转化为像素网格
+- 光栅化：将图像**显示在屏幕上**，矢量图形转化为像素网格
 
 - 视锥
   - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230705195643643.png" alt="image-20230705195643643" style="zoom:33%;" />
-  - 长宽比、垂直可视角度（红线角度）
+  - 影响因素：**长宽比**、**垂直可视角度**（红线角度）
 - 屏幕
   - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230705200526116.png" alt="image-20230705200526116" style="zoom:33%;" />
-  - 将标准正方体映射到屏幕上
+  - 将标准正方**体映射到屏幕上**
   - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230705200732208.png" alt="image-20230705200732208" style="zoom:33%;" />
 - 使用最简单的多边形——**三角形**来表示一切
 - 简易采样决定像素是否显示<img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230705202357596.png" style="zoom:33%;" />
