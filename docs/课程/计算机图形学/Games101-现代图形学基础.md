@@ -354,12 +354,14 @@
 - 时间t贝塞尔曲线上的点
   - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230707211233908.png" alt="image-20230707211233908" style="zoom:33%;" />
   - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230707211258321.png" alt="image-20230707211258321" style="zoom:33%;" />
+  - 将每个时间t的点连起来就得到了贝塞尔曲线
 - 四点
-  -  多次t划分直至剩下一个点
+  -  多次t划分**直至剩下一个点**
   - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230707211546574.png" alt="image-20230707211546574" style="zoom:33%;" />
 - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230707211724731.png" alt="image-20230707211724731" style="zoom:33%;" />
   - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230707212011614.png" alt="image-20230707212011614" style="zoom:33%;" />
-- 分段：点过多时不易于控制
+  - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20240318232516865.png" alt="image-20240318232516865" style="zoom:33%;" />
+- 分段：点过多时不易于控制；贝塞尔曲线还具有凸包性质，在几个控制点限定的范围之内
   - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230707213247492.png" alt="image-20230707213247492" style="zoom:33%;" />
   - 直接分段不够平滑（4个点一段）<img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230707213259047.png" alt="image-20230707213259047" style="zoom:33%;" />
   - c^0^连续：曲线首尾相接
@@ -368,22 +370,29 @@
 ### 曲面
 
 - 贝塞尔曲面
-  - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230707215834137.png" alt="image-20230707215834137" style="zoom:33%;" />
+  - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20240318233552317.png" alt="image-20240318233552317" style="zoom: 25%;" /><img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230707215834137.png" alt="image-20230707215834137" style="zoom: 25%;" />
   - **双重**贝塞尔曲线
-- 曲面loop细分
-  - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230707220818242.png" alt="image-20230707220818242" style="zoom:33%;" />
-  - 划分为更多三角形并调整位置使得更加贴近原先的图像
+  
+
+#### 曲面细分
+
+- 曲面细分的基本思路
+  - 划分为**更多三角**形并**调整位置**使得更加贴近原先的图像
   - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230707225708716.png" alt="image-20230707225708716" style="zoom:33%;" />
-  - 新顶点的位置由周围旧顶点的位置计算得到
+
+- 曲面**loop细分**
+  - **新顶点**的位置由周围旧顶点的位置计算得到（如每条边的**中点**）
     - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230707230254250.png" alt="image-20230707230254250" style="zoom:33%;" />
-  - 旧顶点的位置由原先的位置和周围点的位置决定
+  - **旧顶点**的位置由原先的位置和周围点的位置决定
     - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230707230347683.png" style="zoom:33%;" />
-- Catmull-Clark细分（处理四边形面）
+- **Catmull-Clark细分**（处理四边形面）
   - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230707231458185.png" alt="image-20230707231458185" style="zoom:33%;" />
   - 连接边、面的中点
   - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230707231505479.png" alt="image-20230707231505479" style="zoom:33%;" />
   - 非四边形会产生奇异点，会在细分之后消失（因此之后奇异点数目不会再发生变化，即只有第一次细分时变化）
   - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230707231829386.png" alt="image-20230707231829386" style="zoom:33%;" />
+
+#### 曲面简化
 
 - 曲面简化
   - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230707220830993.png" alt="image-20230707220830993" style="zoom:33%;" />
@@ -393,6 +402,8 @@
     - 用偏差（二次误差）计算新位置（到原先各面的平方和最小）
     - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230707232521945.png" alt="image-20230707232521945" style="zoom:33%;" />
     - 优先坍缩造成二次误差最小的边（使用优先队列）
+
+#### 曲面正则化
 
 - 曲面正则化（直到曲面简化，减少细节丢失）
   - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230707220845910.png" alt="image-20230707220845910" style="zoom:33%;" />
