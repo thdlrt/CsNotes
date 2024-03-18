@@ -1,12 +1,16 @@
 {
   "recentFiles": [
     {
-      "basename": "语法分析",
-      "path": "docs/课程/编译原理/笔记/语法分析.md"
+      "basename": "Games101-现代图形学基础",
+      "path": "docs/课程/计算机图形学/Games101-现代图形学基础.md"
     },
     {
       "basename": "Chapter_4",
       "path": "docs/课程/编译原理/课件/Chapter_4.pdf"
+    },
+    {
+      "basename": "语法分析",
+      "path": "docs/课程/编译原理/笔记/语法分析.md"
     },
     {
       "basename": "八股",
@@ -195,10 +199,6 @@
     {
       "basename": "switch",
       "path": "docs/java/java基础/流程控制/switch.md"
-    },
-    {
-      "basename": "SQL注入",
-      "path": "docs/网络安全/SQL注入.md"
     }
   ],
   "omittedPaths": [],

@@ -11,25 +11,9 @@
             "id": "f2d3c321ff559679",
             "type": "leaf",
             "state": {
-              "type": "pdf",
-              "state": {
-                "file": "docs/课程/编译原理/课件/Chapter_4.pdf"
-              }
-            }
-          }
-        ]
-      },
-      {
-        "id": "2ccdd9a0dfdc316e",
-        "type": "tabs",
-        "children": [
-          {
-            "id": "c4e7b79996817f30",
-            "type": "leaf",
-            "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/课程/编译原理/笔记/语法分析.md",
+                "file": "docs/课程/计算机图形学/Games101-现代图形学基础.md",
                 "mode": "source",
                 "source": false
               }
@@ -89,8 +73,7 @@
               "state": {}
             }
           }
-        ],
-        "currentTab": 3
+        ]
       }
     ],
     "direction": "horizontal",
@@ -111,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/课程/编译原理/笔记/语法分析.md",
+                "file": "docs/课程/计算机图形学/Games101-现代图形学基础.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -128,7 +111,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/课程/编译原理/笔记/语法分析.md",
+                "file": "docs/课程/计算机图形学/Games101-现代图形学基础.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -151,7 +134,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/课程/编译原理/笔记/语法分析.md"
+                "file": "docs/课程/计算机图形学/Games101-现代图形学基础.md"
               }
             }
           },
@@ -194,7 +177,7 @@
       "omnisearch:Omnisearch": false
     }
   },
-  "active": "c4e7b79996817f30",
+  "active": "f2d3c321ff559679",
   "lastOpenFiles": [
     "docs/课程/编译原理/课件/Chapter_4.pdf",
     "docs/课程/编译原理/笔记/语法分析.md",
@@ -231,7 +214,6 @@
     "docs/数据库/关系数据库/data/MySQL安装.md",
     "docs/数据库/关系数据库/data",
     "docs/面试/计算机科学",
-    "docs/面试",
     "CsNotes/2021-11-22-22-54-02.png",
     "CsNotes/2021-11-22-22-52-49.png",
     "CsNotes/2021-11-22-22-49-26.png",

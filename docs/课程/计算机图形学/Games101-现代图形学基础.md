@@ -2,7 +2,8 @@
 
 - **点乘**主要用来求两个单位向量的**夹角**
 - 投影<img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230705094433677.png" alt="image-20230705094433677" style="zoom: 33%;" /><img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230705094408593.png" alt="image-20230705094408593" style="zoom: 15%;" />
-
+- 可以用于判断两个方向的接近程度（夹角），判断方向（前后）
+	- ![image.png|250](https://thdlrt.oss-cn-beijing.aliyuncs.com/20240318154923.png)
 
 
 - 叉乘
