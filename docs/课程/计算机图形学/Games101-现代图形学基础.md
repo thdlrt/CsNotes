@@ -20,7 +20,7 @@
 
 ## 变换
 
-### 二维变换
+### 变换基础
 
 - 缩放
   - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230705104154105.png" alt="image-20230705104154105" style="zoom:33%;" />
@@ -41,16 +41,18 @@
     - **先线性变化再平移**
   - 通过第三维度是1/0来判断是点还是向量，向量的第三维为0，因而向量不会因为平移而发生改变
   - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230705110613745.png" alt="image-20230705110613745" style="zoom:33%;" />
-    - 点加点表示两个点的中点（规格化）
+    - 点加点表示两个点的中点（规格化，保证第三维为1）
 
 - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230705110923011.png" alt="image-20230705110923011" style="zoom:33%;" />
 - **逆矩阵**可以表示**逆变换**
 - 连乘（注意先进行的在**右侧**）
+  - 组合变换通常**先旋转后平移**
   - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230705111602621.png" alt="image-20230705111602621" style="zoom:33%;" />
+  
 - 以任一点为原点旋转
   - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230705111931171.png" alt="image-20230705111931171" style="zoom: 33%;" />
 
-### 三维变换
+#### 三维变换
 
 - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230705112020193.png" alt="image-20230705112020193" style="zoom:33%;" />
 - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230705112115221.png" alt="image-20230705112115221" style="zoom:33%;" />
@@ -58,10 +60,17 @@
 - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230705113455204.png" alt="image-20230705113455204" style="zoom:33%;" />
 - 罗德里格旋转公式（绕任一过原点的向量n旋转）
   - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230705114627385.png" alt="image-20230705114627385" style="zoom:33%;" />
+- 以上矩阵变换的方式不适用于线性插值（并不是线性连续变化的），如果需要动画、插值需要使用**四元数**
 
 ### 视图变化
 
-- 相机参数（观测矩阵）
+- **mvp** 矩阵变化
+  - 代表了模型（Model）、视图（View）、投影（Projection）三个变换矩阵的乘积
+  - **模型矩阵**：将对象的局部坐标系（模型空间）转换到世界坐标系（世界空间）。这个变换涉及到物体的位移、旋转和缩放。
+  - **视图矩阵**：将世界坐标系转换到观察者（或摄像机）的坐标系（视图空间）。这个变换通常涉及到将摄像机（视点）移动到原点，并进行必要的旋转，使得观察者面向场景的特定部分。
+  - **投影矩阵**：将视图空间中的坐标转换到裁剪空间，进而通过透视除法转换为归一化设备坐标（NDC）。这个变换定义了一个可视范围，通常是一个锥形体（透视投影）或者一个长方体（正交投影）。
+
+- 相机参数（视图矩阵）
   - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230705115308858.png" alt="image-20230705115308858" style="zoom:33%;" />
     - position：原点位置
     - look-at：相机指向
