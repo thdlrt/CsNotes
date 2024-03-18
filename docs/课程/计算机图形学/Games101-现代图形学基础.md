@@ -175,13 +175,21 @@
     - 左侧的在时域上相乘，域右侧上做卷积是等价的
     - 采样率过低时会发生频谱重叠
     - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230705225914520.png" alt="image-20230705225914520" style="zoom:33%;" />
-  - 模糊（卷积）可以**减少重叠**，减少走样（屏幕分辨率高时走样少，是因为采样频率高）
+  - 模糊（卷积）可以**减少重叠**，减少走样（屏幕分辨率高时走样少，是因为**采样频率高**）
     - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230705230138093.png" alt="image-20230705230138093" style="zoom:33%;" />
     - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230705230342691.png" alt="image-20230705230342691" style="zoom:33%;" />
-- MSAA多采样反走样（卷积计算开销大）
-
+- **MSAA**多采样反走样（卷积计算开销大）
   - 像素内部添加更多的采样点<img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230705230610889.png" alt="image-20230705230610889" style="zoom:33%;" />
   - 覆盖采样点数目来决定模糊状态（抗锯齿）<img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230705230656738.png" alt="image-20230705230656738" style="zoom:33%;" />
+
+#### 反走样的方法总结
+
+- 抗锯齿
+    - MSAA：像像素内添加更多的采样点，根据覆盖采样点的数目决定显示状态（不透明度）
+    - FXAA：分析渲染后的图像来检测锯齿边缘，性能开销较低
+    - TAA：通过多帧信息提高图像质量，在时间上的累计和平滑，减少锯齿同时保持图像细节
+- 超分辨率
+    - 深度学习（DLSS）：：通过分析图像的局部模式和纹理信息，超分辨率算法尝试推断高分辨率图像中可能出现的细节和结构。通过学习大量低分辨率与高分辨率图像对应的关系，能够生成高质量的高分辨率图像。
 
 ### 深度缓冲（测试）
 
@@ -198,7 +206,7 @@
 
 - 对不同物体应用不同材质
 
-### Blinn-Phong着色模型
+### Blinn-Phong反射模型
 
 - 高光、漫反射、环境光
 - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230705234429839.png" alt="image-20230705234429839" style="zoom:33%;" />
