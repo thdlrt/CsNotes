@@ -2,17 +2,18 @@
 
 - **点乘**主要用来求两个单位向量的**夹角**
 - 投影<img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230705094433677.png" alt="image-20230705094433677" style="zoom: 33%;" /><img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230705094408593.png" alt="image-20230705094408593" style="zoom: 15%;" />
-- 可以用于判断两个方向的接近程度（夹角），判断方向（前后）
-	- ![image.png|250](https://thdlrt.oss-cn-beijing.aliyuncs.com/20240318154923.png)
+- 可以用于判断两个方向的**接近程度**（夹角），判断前后
+	- <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/20240318154923.png" alt="image.png|250" style="zoom:50%;" />
 
 
 - 叉乘
-  - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230705094854131.png" alt="image-20230705094854131" style="zoom:33%;" />
+  - <img src=" https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230705094854131.png" alt="image-20230705094854131" style="zoom:50%;" />
+  - 可以用于求出三维直角坐标系(右手坐标系)，指导两个方向就能推导出第三个方向$\overrightarrow{x}\times \overrightarrow{y}=\overrightarrow{z}$
   - 对于三维直角坐标系
     - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230705101014464.png" alt="image-20230705101014464" style="zoom:33%;" />
   - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230705095355307.png" alt="image-20230705095355307" style="zoom:33%;" />
-  - 判断左右、内外（p在三角形三条边的同一边（左边））<img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230705095708064.png" alt="image-20230705095708064" style="zoom:33%;" />
-
+  - 判断**左右、内外**（p在三角形三条边的同一边（左边））<img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230705095708064.png" alt="image-20230705095708064" style="zoom:33%;" />
+  
 - 矩阵
   - 乘法符合结合律、分配律
   - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230705101406981.png" alt="image-20230705101406981" style="zoom:33%;" />
