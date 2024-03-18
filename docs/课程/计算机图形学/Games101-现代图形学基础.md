@@ -284,17 +284,17 @@
   - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230706172208264.png" alt="image-20230706172208264" style="zoom:33%;" />
 - Mipmap范围查询（纹理过大）
   - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230706174502149.png" alt="image-20230706174502149" style="zoom:33%;" />
-  - 范围查询：快速获取一个区域内颜色的平均值
-    - 而不是超采样，这样可以减少重复计算
+  - 范围查询：**快速**获取一个（方形）区域内颜色的近似平均值
     - 建立不同的层
   - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230706174824188.png" style="zoom:33%;" />
-  - 映射相邻点区域，选取距离最大值为映射范围正方型的边长<img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230706175452958.png" alt="image-20230706175452958" style="zoom:33%;" />
+    - mipmap所占用的**额外**空间为原图的**1/3**
+  - 映射**相邻点区域**，选取距离**最大值**为映射范围**正方型的边长**<img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230706175452958.png" alt="image-20230706175452958" style="zoom:33%;" />
   - 问题：不同层之间的过度不连续
   - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230706180309960.png" alt="image-20230706180309960" style="zoom:33%;" />
     - 不同层上双线性插值，再在两层之间插值。（三线性插值）
   - 并不是所有像素都是压缩正方形（过采样）
     - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230706181304364.png" alt="image-20230706181304364" style="zoom:33%;" />
-    - 各向异性过滤（对长条区域快速范围查询）
+    - 各向异性过滤（对长条区域快速范围查询）总开销为原本的三倍
     - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230706181428953.png" alt="image-20230706181428953" style="zoom:33%;" />
 
 #### 纹理应用
@@ -308,8 +308,8 @@
   - 定义点相对基础面的相对高度
   - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230706183842672.png" alt="image-20230706183842672" style="zoom:33%;" />
   - 通过法线差异模拟高度变化
-  - 扰动法线<img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230706184104600.png" alt="image-20230706184104600" style="zoom:33%;" />
-    - 法线通过求导得到的切线得到
+  - **扰动法线**<img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230706184104600.png" alt="image-20230706184104600" style="zoom:33%;" />
+    - 法线通过求导得到的切线旋转得到
     - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230706184802484.png" alt="image-20230706184802484" style="zoom:33%;" />
   - 二维图像上同理通过黑白变化计算<img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230706184817165.png" alt="image-20230706184817165" style="zoom: 33%;" />
   - 法线模拟vs位移<img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230706185019444.png" alt="image-20230706185019444" style="zoom:33%;" />
