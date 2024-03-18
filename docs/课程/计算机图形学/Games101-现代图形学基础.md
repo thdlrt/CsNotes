@@ -205,27 +205,32 @@
 ## 着色
 
 - 对不同物体应用不同材质
+- 着色**只考虑物体自身**，不考虑其他的物体的影响（如阴影等）
 
 ### Blinn-Phong反射模型
 
 - 高光、漫反射、环境光
 - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230705234429839.png" alt="image-20230705234429839" style="zoom:33%;" />
-  - 着色只考虑物体自身
 - 漫反射
   - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230705234922833.png" style="zoom:33%;" />
-  - 角度会影响反射的强度
+  - **平面与光线的夹角**会影响反射的强度，接受的光的比率可以使用$cos\theta$表示
     - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230705235058342.png" alt="image-20230705235058342" style="zoom:50%;" />
+  - 对于点光源，**距离光源的距离**也会影响反射的强度（总能量一定，距离越大半径越大，单位面积自然越小）对于半径为r的位置，光照强度使用$I/r^2$来表示
+    - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20240318205850062.png" alt="image-20240318205850062" style="zoom: 20%;" />
   - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230705235520417.png" alt="image-20230705235520417" style="zoom:33%;" />
-  - 漫反射与v的方向无关
+  - 漫反射与v的方向无关（均匀反射）
 - 高光
   - 观察方向和镜面反射方向接近时看到高光
     - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230706092213901.png" alt="image-20230706092213901" style="zoom:33%;" />
-  - 将观察方向与镜面方向接近转化为半程向量（角平分线）和法线的接近程度
+  - 通过**半程向量**（角平分线）和法线的夹角判断接近程度
+    - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20240318210959363.png" alt="image-20240318210959363" style="zoom:33%;" />
   - 用指数表示高光衰减
     - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230706093241355.png" alt="image-20230706093241355" style="zoom:33%;" /> 
-
+  
 - 环境光
+  - 认为环境光恒定
   - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230706094302227.png" alt="image-20230706094302227" style="zoom:33%;" />
+  
 - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230706094343294.png" alt="image-20230706094343294" style="zoom:33%;" />
 
 ### 着色频率
