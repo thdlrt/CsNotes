@@ -236,24 +236,27 @@
 ### 着色频率
 
 - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230706094654726.png" alt="image-20230706094654726" style="zoom:33%;" />
-  -  面着色Flat shading
-  - 点着色Gouraud shading
-  - 像素着色Phong shading、
-- 确定顶点的法线
+  -  面着色
+  - 点着色
+  - 像素着色
+- 确定**顶点的法线**
   - 使用相邻面的法线来求平均
   - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230706095747210.png" alt="image-20230706095747210" style="zoom:33%;" />
-- 像素的法线
+- **像素的法线**：使用重心坐标确定
   - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230706100014116.png" alt="image-20230706100014116" style="zoom:33%;" />
+- 随着采样频率提升（模型面数）不同着色频率之间的**差距越来越小**
+  - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20240318212454444.png" alt="image-20240318212454444" style="zoom: 25%;" />
+
 
 ### 实时渲染管线
 
 - 指渲染的一系列过程，图像是如何渲染出来的
 - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230706100232686.png" alt="image-20230706100232686" style="zoom:33%;" />
   - 输入三维空间的点
-  - 投影到二维平面上
-  - 点构成成三角形
-  - 对三角形进行光栅化
-  - 对三角形进行着色
+  - 投影到二维平面上（mvp矩阵变换）
+  - 点构成三角形
+  - 对三角形进行光栅化（采样（反走样）+深度缓冲）
+  - 对三角形进行着色（如布林冯反射模型、纹理摸映射）
 
 ### 纹理映射
 
@@ -261,8 +264,10 @@
 - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230706154430087.png" alt="image-20230706154430087" style="zoom:33%;" />
   - 纹理映射：3维->2维
   - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230706155402173.png" alt="image-20230706155402173" style="zoom:33%;" />
-  - 通过坐标三角形顶点颜色映射
+  - 通过坐标**三角形顶点**颜色映射
 
+- 知道了顶点的着色，还需要插值，对内部其他点进行着色
+  
 - 重心坐标
   - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230706161338947.png" alt="image-20230706161338947" style="zoom:33%;" />
   - 可以使用三角形面积之比计算出来
