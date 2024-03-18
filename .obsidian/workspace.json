@@ -112,7 +112,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/课程/编译原理/笔记/语法分析.md",
+                "file": "docs/课程/编译原理/课件/Chapter_4.pdf",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -129,7 +129,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/课程/编译原理/笔记/语法分析.md",
+                "file": "docs/课程/编译原理/课件/Chapter_4.pdf",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -152,7 +152,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/课程/编译原理/笔记/语法分析.md"
+                "file": "docs/课程/编译原理/课件/Chapter_4.pdf"
               }
             }
           },
@@ -195,11 +195,11 @@
       "omnisearch:Omnisearch": false
     }
   },
-  "active": "c96ffc852ccc1d74",
+  "active": "264f854b549b813d",
   "lastOpenFiles": [
-    "docs/课程/编译原理/作业/答案/dragon-book-exercise-answers-master/ch04/4.5/4.5.md",
     "docs/课程/编译原理/笔记/语法分析.md",
     "docs/课程/编译原理/课件/Chapter_4.pdf",
+    "docs/课程/编译原理/作业/答案/dragon-book-exercise-answers-master/ch04/4.5/4.5.md",
     "docs/课程/编译原理/笔记/词法分析.md",
     "docs/课程/编译原理/作业/p1.md",
     "docs/课程/编译原理/作业/p2.md",
@@ -225,7 +225,6 @@
     "docs/软件工程/项目管理.md",
     "docs/游戏开发/游戏引擎/unity/unity.md",
     "docs/游戏开发/游戏引擎/unity/c#.md",
-    "面试/面试技巧/反问环节.md",
     "面试/面试技巧",
     "面试/自我介绍",
     "面试",
