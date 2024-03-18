@@ -1,6 +1,22 @@
 {
   "recentFiles": [
     {
+      "basename": "设计模式",
+      "path": "docs/软件工程/设计模式.md"
+    },
+    {
+      "basename": "linux",
+      "path": "docs/杂项/linux与shell/linux.md"
+    },
+    {
+      "basename": "文件系统",
+      "path": "docs/杂项/linux与shell/linux/文件系统.md"
+    },
+    {
+      "basename": "八股",
+      "path": "docs/杂项/linux与shell/八股.md"
+    },
+    {
       "basename": "八股",
       "path": "docs/c++/八股.md"
     },
@@ -183,18 +199,6 @@
     {
       "basename": "final",
       "path": "docs/java/java基础/杂项/final.md"
-    },
-    {
-      "basename": "八股",
-      "path": "docs/java/八股.md"
-    },
-    {
-      "basename": "数组与字符串",
-      "path": "docs/算法/数组与字符串.md"
-    },
-    {
-      "basename": "贪心",
-      "path": "docs/算法/贪心.md"
     }
   ],
   "omittedPaths": [],
