@@ -5,6 +5,14 @@
       "path": "docs/课程/编译原理/笔记/语法分析.md"
     },
     {
+      "basename": "4.5",
+      "path": "docs/课程/编译原理/作业/答案/dragon-book-exercise-answers-master/ch04/4.5/4.5.md"
+    },
+    {
+      "basename": "Chapter_4",
+      "path": "docs/课程/编译原理/课件/Chapter_4.pdf"
+    },
+    {
       "basename": "词法分析",
       "path": "docs/课程/编译原理/笔记/词法分析.md"
     },
@@ -15,10 +23,6 @@
     {
       "basename": "p2",
       "path": "docs/课程/编译原理/作业/p2.md"
-    },
-    {
-      "basename": "Chapter_4",
-      "path": "docs/课程/编译原理/课件/Chapter_4.pdf"
     },
     {
       "basename": "4.4",
@@ -195,10 +199,6 @@
     {
       "basename": "基本概念",
       "path": "docs/java/java基础/并发编程/基本概念.md"
-    },
-    {
-      "basename": "序列化与反序列化",
-      "path": "docs/java/java基础/高级/序列化与反序列化.md"
     }
   ],
   "omittedPaths": [],
