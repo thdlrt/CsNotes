@@ -4,47 +4,38 @@
     "type": "split",
     "children": [
       {
-        "id": "b952d573127ec1f9",
+        "id": "4f04c79099109f82",
         "type": "tabs",
         "children": [
           {
-            "id": "456eec2f70fc5260",
+            "id": "f2d3c321ff559679",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "pdf",
               "state": {
-                "file": "docs/软件工程/设计模式.md",
-                "mode": "source",
-                "source": false
+                "file": "docs/课程/编译原理/课件/Chapter_4.pdf"
               }
             }
-          },
+          }
+        ]
+      },
+      {
+        "id": "2ccdd9a0dfdc316e",
+        "type": "tabs",
+        "children": [
           {
-            "id": "97bb6565fd49946d",
+            "id": "c4e7b79996817f30",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "conflict-files-obsidian-git.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "ee52b926d12bc80c",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "docs/杂项/linux与shell/八股.md",
+                "file": "docs/课程/编译原理/笔记/语法分析.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -98,11 +89,13 @@
               "state": {}
             }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 200,
+    "collapsed": true
   },
   "right": {
     "id": "d615b65a4ccf8a6a",
@@ -118,7 +111,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "conflict-files-obsidian-git.md",
+                "file": "docs/课程/编译原理/笔记/语法分析.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -135,7 +128,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "conflict-files-obsidian-git.md",
+                "file": "docs/课程/编译原理/笔记/语法分析.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -158,7 +151,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "conflict-files-obsidian-git.md"
+                "file": "docs/课程/编译原理/笔记/语法分析.md"
               }
             }
           },
@@ -183,7 +176,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 200,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -200,8 +194,11 @@
       "omnisearch:Omnisearch": false
     }
   },
-  "active": "97bb6565fd49946d",
+  "active": "c4e7b79996817f30",
   "lastOpenFiles": [
+    "docs/课程/编译原理/课件/Chapter_4.pdf",
+    "docs/课程/编译原理/笔记/语法分析.md",
+    "docs/杂项/linux与shell/八股.md",
     "docs/软件工程/设计模式.md",
     "conflict-files-obsidian-git.md",
     "docs/课程/金融工程学/郑振龙《金融工程》（第5版）笔记和课后习题（含考研真题）详解答案.pdf",
@@ -211,7 +208,6 @@
     "docs/课程/编译原理/作业/p3.md",
     "docs/杂项/linux与shell/linux.md",
     "docs/杂项/linux与shell/linux/文件系统.md",
-    "docs/杂项/linux与shell/八股.md",
     "docs/c++/八股.md",
     "面试/面试技巧/反问环节.md",
     "面试/自我介绍/腾讯天美游戏端开发.md",
@@ -220,7 +216,6 @@
     "面试",
     "().md",
     "docs/c++/c++基础.md",
-    "docs/课程/编译原理/笔记/语法分析.md",
     "docs/课程/编译原理/作业/p2.md",
     "docs/面试/计算机科学/杂项.md",
     "docs/面试/计算机科学/并发编程.md",
@@ -234,7 +229,6 @@
     "docs/游戏开发/游戏引擎",
     "docs/游戏开发/游戏安全.md",
     "docs/数据库/关系数据库/data/MySQL安装.md",
-    "docs/数据库/关系数据库/data/MySQL卸载文档-Windows版.md",
     "docs/数据库/关系数据库/data",
     "docs/面试/计算机科学",
     "docs/面试",
