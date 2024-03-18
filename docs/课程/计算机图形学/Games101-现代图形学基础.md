@@ -381,27 +381,28 @@
   - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230707225708716.png" alt="image-20230707225708716" style="zoom:33%;" />
 
 - 曲面**loop细分**
-  - **新顶点**的位置由周围旧顶点的位置计算得到（如每条边的**中点**）
+  - **新顶点**（如每条边的**中点**）的位置由周围旧顶点的位置计算得到
     - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230707230254250.png" alt="image-20230707230254250" style="zoom:33%;" />
+    - 由周围旧点的加权平均得到
   - **旧顶点**的位置由原先的位置和周围点的位置决定
     - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230707230347683.png" style="zoom:33%;" />
+    - 相信自己也相信周围旧点，计算加权平均
 - **Catmull-Clark细分**（处理四边形面）
   - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230707231458185.png" alt="image-20230707231458185" style="zoom:33%;" />
+    - 称度不为4的点为**奇异点**
   - 连接边、面的中点
   - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230707231505479.png" alt="image-20230707231505479" style="zoom:33%;" />
-  - 非四边形会产生奇异点，会在细分之后消失（因此之后奇异点数目不会再发生变化，即只有第一次细分时变化）
+  - 非四边形会产生奇异点，非四边形面会在**细分之后消失**（做一次细分之后只有四边形面了，因此之后奇异点数目不会再发生变化，即**只有第一次细分时变化**）
   - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230707231829386.png" alt="image-20230707231829386" style="zoom:33%;" />
 
 #### 曲面简化
 
-- 曲面简化
-  - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230707220830993.png" alt="image-20230707220830993" style="zoom:33%;" />
-  - 边坍缩
-    - 删去边，捏成一个点
-    - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230707232409037.png" alt="image-20230707232409037" style="zoom:33%;" />
-    - 用偏差（二次误差）计算新位置（到原先各面的平方和最小）
-    - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230707232521945.png" alt="image-20230707232521945" style="zoom:33%;" />
-    - 优先坍缩造成二次误差最小的边（使用优先队列）
+- 边坍缩
+  - 删去边，捏成一个点
+  - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230707232409037.png" alt="image-20230707232409037" style="zoom:33%;" />
+  - 用偏差（二次误差）计算新位置（到原先各面的**平方和最小**）
+  - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230707232521945.png" alt="image-20230707232521945" style="zoom:33%;" />
+  - **优先坍缩**造成二次误差最小的边（使用优先队列）
 
 #### 曲面正则化
 
@@ -410,10 +411,10 @@
 
 ## 光线追踪
 
-- Shadow Mapping（处理点光源）
-  - 阴影：人能看到的位置，但光源看不到的位置
+- Shadow Mapping阴影映射（只能处理点光源、硬阴影）
+  - 阴影：人能看到的位置，但**光源看不到的位置**
   - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230707234220403.png" alt="image-20230707234220403" style="zoom:33%;" />
-  - 可以记录光源到不同物体的最短距离，来判断是否被遮挡形成阴影
+  - 记录**光源**到不同物体的**最短距离**，将摄像机看到的位置与光源的深度距离比较来判断是否被遮挡形成阴影
   - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230707234622435.png" alt="image-20230707234622435" style="zoom:33%;" />
   - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230707234634718.png" alt="image-20230707234634718" style="zoom:33%;" />
     - 存在数值精度问题
@@ -422,7 +423,7 @@
 - 硬阴影与软阴影
   - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230707235609373.png" alt="image-20230707235609373" style="zoom:33%;" />
   - 点光源只会产生硬阴影
-  - 当光源被部分遮挡时会产生软阴影
+  - 当光源被**部分遮挡**时会产生软阴影
 - 光线追踪应用了光路可逆性，从眼睛出发直至光源进行追踪
   - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230708092756902.png" alt="image-20230708092756902" style="zoom:33%;" />
   - 从眼睛向外寻找，到达最近的（可观察物体）然后与光源连线计算着色结果（可见性）
