@@ -665,15 +665,22 @@
 - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230709132124387.png" alt="image-20230709132124387" style="zoom:33%;" />
 - 光线穿入<img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230709132149614.png" alt="image-20230709132149614" style="zoom:33%;" />
   - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230709132509349.png" alt="image-20230709132509349" style="zoom:33%;" />
-  - 双重圆柱模型<img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230709133149938.png" alt="image-20230709133149938" style="zoom:33%;" />
+  - （动物毛发）双重圆柱模型<img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230709133149938.png" alt="image-20230709133149938" style="zoom:33%;" />
 - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230709133521939.png" alt="image-20230709133521939" style="zoom:33%;" />
   - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230709133534764.png" alt="image-20230709133534764" style="zoom:33%;" />
 
 #### 表面模型
 
-- Translucent Material:（半透明）
+- Translucent Material:（指光线射入后从不确定的位置出来）
   - 次表面反射<img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230709133811091.png" alt="image-20230709133811091" style="zoom:33%;" />
-  - BSSRDF就好像内部也有一个光源（双光源模拟）<img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230709134123772.png" alt="image-20230709134123772" style="zoom:33%;" />
+  - BSSRDF就好像**内部也有一个光源**（双光源模拟）<img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230709134123772.png" alt="image-20230709134123772" style="zoom:33%;" />
+  
+- 布料材质
+
+  - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20240319164113189.png" alt="image-20240319164113189" style="zoom:33%;" />
+
+    
+
 
 ## 相机
 
