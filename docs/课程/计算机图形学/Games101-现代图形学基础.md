@@ -572,31 +572,43 @@
 
 ## 材质与外观
 
-- 材质=BRDF决定如何进行反射
+- **材质=BRDF决定如何进行反射**
+
+### 反射与折射
+
+- 类镜面反射材质（如铜镜）、
+  - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20240319150054098.png" alt="image-20240319150054098" style="zoom: 25%;" />
+- 透明物体（如水，可以折射进去）
+  - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20240319150120994.png" alt="image-20240319150120994" style="zoom:25%;" />
 
 - 反射角计算
-  - （菲涅⽿项）<img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230709105229295.png" alt="image-20230709105229295" style="zoom:33%;" />
+  - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230709105229295.png" alt="image-20230709105229295" style="zoom:33%;" />
+- 菲涅⽿项，反射的程度与夹角（入射角）有关
   - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230709111102180.png" alt="image-20230709111102180" style="zoom:33%;" />
-    - 入射角越大，反射越强 （绝缘体，如玻璃）
-  - 金属<img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230709111217100.png" alt="image-20230709111217100" style="zoom:33%;" />
+    - **入射角越大，反射越强** （绝缘体，如玻璃）
+  - 金属
+    - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230709111217100.png" alt="image-20230709111217100" style="zoom:33%;" />
   - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230709111357074.png" alt="image-20230709111357074" style="zoom:33%;" />
 - 折射
   - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230709110651481.png" alt="image-20230709110651481" style="zoom:33%;" />
-- 微表面模型
-  - 远处看材质，近处看几何（表面凹凸不平 ）
-  - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230709111942766.png" alt="image-20230709111942766" style="zoom:33%;" />
-  - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230709112348765.png" alt="image-20230709112348765" style="zoom:33%;" />
-    - 法线分布是否集中决定是漫反射还是镜面反射
-  - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230709113045372.png" style="zoom:33%;" />
-    - 菲涅尔项：总共有多少能量被反射
-    - shadowing-masking：修正光线遮挡（入射角很大时反射光发现很可能会被表面上的凹凸遮挡）
-    - distribution of normals：法线分布情况
-  - 微表面方向性：各向同性/各向异性
-    - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230709113753033.png" alt="image-20230709113753033" style="zoom:33%;" />
-    - 各向同性：反射结果只与 入射光与反射光的夹角相关<img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230709115045068.png" alt="image-20230709115045068" style="zoom:33%;" />
-      - （四维）：入射光线和反射光线的坐标（二维）
-      - 对于各向异性可以化简为三维
-    - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230709113933413.png" alt="image-20230709113933413" style="zoom:33%;" />
+
+### 微表面模型
+
+- 远处看材质，近处看几何（表面凹凸不平 ）
+- <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230709111942766.png" alt="image-20230709111942766" style="zoom:33%;" />
+- <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230709112348765.png" alt="image-20230709112348765" style="zoom:33%;" />
+  - 法线分布是否集中决定是漫反射还是镜面反射
+- <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230709113045372.png" style="zoom:33%;" />
+  - 菲涅尔项：总共有多少能量被反射
+  - shadowing-masking：修正光线遮挡（入射角很大时反射光发现很可能会被表面上的凹凸遮挡）
+  - distribution of normals：法线分布情况
+- 微表面方向性：各向同性/各向异性
+  - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230709113753033.png" alt="image-20230709113753033" style="zoom:33%;" />
+  - 各向同性：反射结果只与 入射光与反射光的夹角相关<img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230709115045068.png" alt="image-20230709115045068" style="zoom:33%;" />
+    - （四维）：入射光线和反射光线的坐标（二维）
+    - 对于各向异性可以化简为三维
+  - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230709113933413.png" alt="image-20230709113933413" style="zoom:33%;" />
+
 - BRDF性质
   - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230709114203505.png" alt="image-20230709114203505" style="zoom:33%;" />
   - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230709114224042.png" alt="image-20230709114224042" style="zoom:33%;" />
