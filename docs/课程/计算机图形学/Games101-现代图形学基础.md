@@ -693,6 +693,7 @@
 - 曝光
   - 进光量*时间<img src="C:\Users\MSI\AppData\Roaming\Typora\typora-user-images\image-20230709162749444.png" alt="image-20230709162749444" style="zoom:33%;" />
   - 光圈
+    - FN中的N是1/光圈直径
   - 快门速度（曝光时长）
     - 由于快门让然是逐渐打开的，不同位置的曝光时间存在误差，因此存在果冻效应
     - 光圈大小减小一倍，曝光面积会减少为1/4即快门要延长为原来的4倍
@@ -703,7 +704,7 @@
 
 ### 镜头
 
-- 物距、像距<img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230709165307006.png" alt="image-20230709165307006" style="zoom:33%;" />
+- 物距、像距<img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230709165307006.png" alt="image-20230709165307006" style="zoom: 25%;" />
 - 景深
   - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230709170131194.png" alt="image-20230709170131194" style="zoom:33%;" />
     - 像投射在了传感器前面，在传感器上呈圆形
@@ -713,7 +714,7 @@
     - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230709171355075.png" alt="image-20230709171355075" style="zoom:33%;" />
   - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230709171415497.png" alt="image-20230709171415497" style="zoom:33%;" />
 
-### 模拟渲染
+#### 模拟渲染
 
 - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230709172112189.png" alt="image-20230709172112189" style="zoom: 33%;" />
 - 清晰范围（可接受CoC大小的成像范围）<img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230709172646808.png" alt="image-20230709172646808" style="zoom:33%;" />
