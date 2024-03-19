@@ -544,17 +544,20 @@
   - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230709085416035.png" alt="image-20230709085416035" style="zoom:33%;" />
 
 
-- 解决Whitted-Style Ray不正确的地方
+- 解决Whitted-Style Ray不正确的地方，**Whitted不能处理好漫反射**
+  - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20240319135928162.png" alt="image-20240319135928162" style="zoom:33%;" />
+
 - 用蒙特卡洛积分表示反射方程
   - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230709091915429.png" alt="image-20230709091915429" style="zoom:33%;" />
 - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230709092950726.png" alt="image-20230709092950726" style="zoom:33%;" />
-  - N!=1时N会指数级增长
+  - N（一根光线反射后探测数目）!=1时N会指数级增长
+  - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20240319141155446.png" alt="image-20240319141155446" style="zoom:33%;" />
 - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230709093026135.png" alt="image-20230709093026135" style="zoom:33%;" />
-  - 为了避免指数增长，只考虑一个方向（这就是路径追踪）
+  - 为了避免指数增长，只考虑**一个方向**（这就是路径追踪）
   - 采样足够多的经过同一个像素的光线来减少误差<img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230709093237329.png" alt="image-20230709093237329" style="zoom:33%;" />
   - 向不同方向随机发光
   - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230709093429284.png" alt="image-20230709093429284" style="zoom:33%;" />
-  - 为了避免无限递归，随即决定发反射次数（何时开始停止反射）
+  - 为了避免无限递归，(RR)随机决定发反射次数（何时开始停止反射）
   - 概率p继续反射，（1-p）不再继续发射<img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230709094812062.png" alt="image-20230709094812062" style="zoom:33%;" />
     - 由于除以p，期望不变
   - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230709095033407.png" alt="image-20230709095033407" style="zoom:33%;" />
