@@ -430,7 +430,7 @@
 
 ### Whitted-Style Ray Tracing
 
-- 一种递归算法，可以处理多次反射（折射）的情况
+- 一种递归算法，可以处理多次反射（折射）的情况（打到光滑表面就继续反射，打到漫反射就停止）
 - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230708093259968.png" alt="image-20230708093259968" style="zoom:33%;" />
   - 着色叠加
 - 光线与图形的交点（几何隐式表示）
@@ -533,10 +533,16 @@
 
 #### 蒙特卡罗路径追踪
 
-- <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230709085252585.png" alt="image-20230709085252585" style="zoom:33%;" />
-- 使用随机采样获取积分区域内的值，用于进一步的积分计算
-- （均匀采样）<img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230709085408396.png" alt="image-20230709085408396" style="zoom:33%;" />
-- <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230709085416035.png" alt="image-20230709085416035" style="zoom:33%;" />
+- 蒙特克罗积分
+
+  - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230709085252585.png" alt="image-20230709085252585" style="zoom:33%;" />
+
+  - 使用**随机采样**获取积分区域内的值，用于进一步的积分计算
+
+  - （均匀采样）<img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230709085408396.png" alt="image-20230709085408396" style="zoom:33%;" />
+
+  - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230709085416035.png" alt="image-20230709085416035" style="zoom:33%;" />
+
 
 - 解决Whitted-Style Ray不正确的地方
 - 用蒙特卡洛积分表示反射方程
