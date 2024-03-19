@@ -456,7 +456,7 @@
   - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230708105432269.png" alt="image-20230708105432269" style="zoom:33%;" />
   - 记录与平面的交点，求交后得到与包围盒的交点
   - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230708105702893.png" alt="image-20230708105702893" style="zoom:33%;" />
-    - 光线进入所有对面才真正进入了盒子，光线 离开任何一个对面就离开了盒子
+    - 光线**进入所有**对面才真正进入了盒子，光线 **离开任何**一个对面就离开了盒子
     - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230708110125119.png" alt="image-20230708110125119" style="zoom:33%;" />
   
 - Uniform Spatial Partitions（AABB加速光线追踪）
@@ -467,7 +467,7 @@
   - 划分的各自数目要恰当（但是均匀划分存在一系列问题，因为物体的分布不是均匀的）
     - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230708191224698.png" alt="image-20230708191224698" style="zoom: 33%;" />
 
-- 几种不均匀划分方式（划分是广信追踪的准备工作）
+- **空间划分**方法
 
   - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230708192117492.png" alt="image-20230708192117492" style="zoom:33%;" />
 
@@ -477,7 +477,7 @@
   - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230708212902708.png" alt="image-20230708212902708" style="zoom:33%;" />
   - 难点：判断三角形与盒子是否交很难，并且三角形可能跨盒子
 
-- (BVH)物体划分
+- (BVH)**物体划分**
 
   - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230708213437753.png" alt="image-20230708213437753" style="zoom:33%;" />
     - 确定包围盒；对包围盒内的物体进行划分；分别重新计算包围盒；继续计算。
