@@ -1,6 +1,18 @@
 {
   "recentFiles": [
     {
+      "basename": "C++基础",
+      "path": "docs/c++/C++基础.md"
+    },
+    {
+      "basename": "知识图谱",
+      "path": "docs/面试/知识图谱.md"
+    },
+    {
+      "basename": "并发编程",
+      "path": "docs/面试/计算机科学/并发编程.md"
+    },
+    {
       "basename": "设计模式",
       "path": "docs/软件工程/设计模式.md"
     },
@@ -187,18 +199,6 @@
     {
       "basename": "构造方法",
       "path": "docs/java/java基础/面向对象/构造方法.md"
-    },
-    {
-      "basename": "字符串",
-      "path": "docs/java/java基础/数据类型/字符串.md"
-    },
-    {
-      "basename": "枚举类型",
-      "path": "docs/java/java基础/数据类型/枚举类型.md"
-    },
-    {
-      "basename": "switch",
-      "path": "docs/java/java基础/流程控制/switch.md"
     }
   ],
   "omittedPaths": [],
