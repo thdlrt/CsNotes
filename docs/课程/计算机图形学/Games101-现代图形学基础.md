@@ -411,7 +411,7 @@
 
 ## 光线追踪
 
-- Shadow Mapping阴影映射（只能处理点光源、硬阴影）光栅化的阴影
+- Shadow Mapping阴影映射（只能处理点光源、硬阴影）光栅化的阴影处理
   - 阴影：人能看到的位置，但**光源看不到的位置**
   - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230707234220403.png" alt="image-20230707234220403" style="zoom:33%;" />
   - 记录**光源**到不同物体的**最短距离**，将摄像机看到的位置与光源的深度距离比较来判断是否被遮挡形成阴影
@@ -430,7 +430,7 @@
 
 ### Whitted-Style Ray Tracing
 
-- 一种递归算法，可以处理多次反射的情况
+- 一种递归算法，可以处理多次反射（折射）的情况
 - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230708093259968.png" alt="image-20230708093259968" style="zoom:33%;" />
   - 着色叠加
 - 光线
