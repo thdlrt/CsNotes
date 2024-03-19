@@ -624,25 +624,28 @@
 
 #### 无偏光线传输
 
-- BDPT双向路径追踪
+- BDPT**双向路径**追踪
   - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230709125601288.png" alt="image-20230709125601288" style="zoom: 33%;" />
   - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230709120747552.png" alt="image-20230709120747552" style="zoom:33%;" />
 - MLT
+  - 适用于较为困难的场景
   - 使用马尔科夫链，找到一条有效路径后可以更好地找到有用的相关路径
-  - 问题：难以确定覆盖率（局部自动推导）,可能存在覆盖率不均匀，何时收敛
+    - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20240319161050055.png" alt="image-20240319161050055" style="zoom: 33%;" />
+  - 问题：难以确定覆盖率（局部自动推导）,可能存在覆盖率不均匀，**何时收敛**（因此不适用与连续动画）
+  
 
 #### 有偏光线传输
 
 - Photon Mapping 光子映射
   - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230709123959664.png" alt="image-20230709123959664" style="zoom:33%;" />
-  - 首先由光源发射光子
-  - 然后由摄像机发送进行观察
+  - 首先由**光源**发射光子，然后由摄像机发送进行观察
+  - 擅长渲染光斑
     - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230709124821506.png" alt="image-20230709124821506" style="zoom:33%;" />
-    - 找周围最近n个光子占据的面积大小，从而得到光子密度
+    - 找周围最近n个光子占据的面积大小，从而得到**光子密度**
     - 根据局部光子密度进行渲染
     - 不过由于光子数目有限，因此存在偏差
-    - **有偏**：存在偏差，但样本足够多时会收敛
-- VCM：双向路径+光子追踪
+    - **有偏**：存在偏差，会造成模糊（用一个范围的数目估计一个点），但样本足够多时会**收敛**
+- VCM：**双向路径+光子追踪**
   - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230709125657992.png" alt="image-20230709125657992" style="zoom:33%;" />
 - IR实时辐射度
   - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230709125730381.png" alt="image-20230709125730381" style="zoom:33%;" />
@@ -666,7 +669,7 @@
 - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230709133521939.png" alt="image-20230709133521939" style="zoom:33%;" />
   - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230709133534764.png" alt="image-20230709133534764" style="zoom:33%;" />
 
-### 表面模型
+#### 表面模型
 
 - Translucent Material:（半透明）
   - 次表面反射<img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230709133811091.png" alt="image-20230709133811091" style="zoom:33%;" />
