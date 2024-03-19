@@ -786,47 +786,50 @@
 - 关键帧动画
   - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230709202301977.png" alt="image-20230709202301977" style="zoom:33%;" />
 
-- 质点弹簧系统
 
-  - 弹簧连接质点<img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230709203041124.png" alt="image-20230709203041124" style="zoom:33%;" />
-  - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230709203227037.png" alt="image-20230709203227037" style="zoom:33%;" />
-    - 单位向量表示方向
-  - 为了让物体最终停下来，添加反方向摩擦力（弹簧**内部**的摩擦力）<img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230709204039960.png" alt="image-20230709204039960" style="zoom:33%;" />
-  - 添加抵抗各方向弯折的弹簧<img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230709204711839.png" alt="image-20230709204711839" style="zoom:33%;" />
+### 质点弹簧系统
 
-- 粒子系统
+- 弹簧连接质点<img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230709203041124.png" alt="image-20230709203041124" style="zoom:33%;" />
+- <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230709203227037.png" alt="image-20230709203227037" style="zoom:33%;" />
+  - 单位向量表示方向
+- 为了让物体最终停下来，添加反方向摩擦力（弹簧**内部**的摩擦力）<img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230709204039960.png" alt="image-20230709204039960" style="zoom:33%;" />
+- 添加抵抗各方向弯折的弹簧<img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230709204711839.png" alt="image-20230709204711839" style="zoom:33%;" />
 
-  - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230709205041017.png" style="zoom:33%;" />
+### 粒子系统
 
-  - 粒子在速度场中的运动（知道粒子在任意位置的速度），结合起点，计算例子的运动方程
+- <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230709205041017.png" style="zoom:33%;" />
 
-    - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230709211743748.png" alt="image-20230709211743748" style="zoom:33%;" />
-    - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230709211753844.png" alt="image-20230709211753844" style="zoom:33%;" />
-    - 欧拉法方法（上一帧估计下一帧）<img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230709211926568.png" alt="image-20230709211926568" style="zoom:33%;" />
-    - 要求t很小才能足够精细并且不稳定<img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230709213346189.png" alt="image-20230709213346189" style="zoom:33%;" /><img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230709213111686.png" alt="image-20230709213111686" style="zoom:33%;" />
+- 粒子在速度场中的运动（知道粒子在任意位置的速度），结合起点，计算例子的运动方程
 
-  - 改进
+  - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230709211743748.png" alt="image-20230709211743748" style="zoom:33%;" />
+  - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230709211753844.png" alt="image-20230709211753844" style="zoom:33%;" />
+  - 欧拉法方法（上一帧估计下一帧）<img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230709211926568.png" alt="image-20230709211926568" style="zoom:33%;" />
+  - 要求t很小才能足够精细并且不稳定<img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230709213346189.png" alt="image-20230709213346189" style="zoom:33%;" /><img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230709213111686.png" alt="image-20230709213111686" style="zoom:33%;" />
 
-    - 中点法
-      - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230709213806098.png" alt="image-20230709213806098" style="zoom:33%;" />
-      - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230709213920961.png" alt="image-20230709213920961" style="zoom:33%;" />
-      - 先用欧拉方法计算，得到中点，用中点的方向再移动
-    - 自适应法，根据误差判断是否还需要继续划分<img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230709214211113.png" alt="image-20230709214211113" style="zoom:33%;" />
-    - 隐式欧拉方法
-      - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230709214354671.png" alt="image-20230709214354671" style="zoom:33%;" />
+- 改进
 
-    - Runge-Kutta Families
-      - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230709215954648.png" alt="image-20230709215954648" style="zoom:33%;" />
-    - Position-Based
-      - 根据位置利用数学、机器学习的方法而不是物理模拟，如利用水的不可压缩性，通过水的密度，对流体运动进行约束和模拟
-    - 刚体模拟
-      - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230709221354495.png" alt="image-20230709221354495" style="zoom:33%;" />
+  - 中点法
+    - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230709213806098.png" alt="image-20230709213806098" style="zoom:33%;" />
+    - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230709213920961.png" alt="image-20230709213920961" style="zoom:33%;" />
+    - 先用欧拉方法计算，得到中点，用中点的方向再移动
+  - 自适应法，根据误差判断是否还需要继续划分<img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230709214211113.png" alt="image-20230709214211113" style="zoom:33%;" />
+  - 隐式欧拉方法
+    - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230709214354671.png" alt="image-20230709214354671" style="zoom:33%;" />
+
+  - Runge-Kutta Families
+    - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230709215954648.png" alt="image-20230709215954648" style="zoom:33%;" />
+  - Position-Based
+    - 根据位置利用数学、机器学习的方法而不是物理模拟，如利用水的不可压缩性，通过水的密度，对流体运动进行约束和模拟
+  - 刚体模拟
+    - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230709221354495.png" alt="image-20230709221354495" style="zoom:33%;" />
 
 ### 运动学
 
-- <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230709205649883.png" alt="image-20230709205649883" style="zoom:33%;" />
+- 正向运动学：告知如何进行运动
 
-- 逆运动学：告知运动轨迹，自动计算运动方向
+  - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230709205649883.png" alt="image-20230709205649883" style="zoom:33%;" />
+
+- 逆运动学：告知**运动轨迹**，自动计算运动方向
 
   - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230709210237548.png" alt="image-20230709210237548" style="zoom:33%;" />
 
