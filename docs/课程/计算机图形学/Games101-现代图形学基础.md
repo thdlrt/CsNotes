@@ -493,17 +493,21 @@
 - **准确**定义物理光照
 - Radiant flux：**单位时间的能量**
   - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230708220326227.png" alt="image-20230708220326227" style="zoom:33%;" />
-- Radiant Intensity：辐射能量
-  - 单位立体角辐射的能量
+- Radiant Intensity：辐射强度（辐射能量）
+  - Radiant Intensity是指光源在特定方向上单位立体角内的辐射功率（Radiant Flux，单位是Watts）。它描述了光源在**某个方向上**的“亮度”有多**强**。
   - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230708221019629.png" alt="image-20230708221019629" style="zoom:33%;" />
   - 立体角：
     - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230708221146340.png" alt="image-20230708221146340" style="zoom:33%;" />
     - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230708221803814.png" alt="image-20230708221803814" style="zoom:33%;" />
-- Irradiance：单位面能量
+    - 注意强度只与立体角相关，与距离无关
+- Irradiance：辐照度（单位面能量）
+  - Irradiance是指达到某个表面**单位面积**上的辐射功率。它衡量的是光源对物体表面的照射能力，反映了物体**表面接收到的光能量**有多少。
   - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230708225633808.png" alt="image-20230708225633808" style="zoom:33%;" />
   - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230708230202366.png" alt="image-20230708230202366" style="zoom:33%;" />
     - 随着半径增大，Irradiance减小；Radiant Intensity恒定
-- Radiance：传播过程的能量
+  
+- Radiance：辐射亮度（传播过程的能量）
+  - **单位面积上单位立体角内**的辐射功率。它是描述光在空间中传播的基本物理量，综合考虑了方向性和空间分布
   - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230708230557368.png" alt="image-20230708230557368" style="zoom:33%;" />
     - 单位面积向特定方向的单位角内的能量辐射
     - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230708232550470.png" alt="image-20230708232550470" style="zoom:33%;" />
@@ -511,13 +515,14 @@
   - Radiance是考虑特定入射方向的Irradiance
   - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230708233048471.png" alt="image-20230708233048471" style="zoom:33%;" />
 
+
 #### BRDF
 
 - 描述一个方向反射到另外一个方向的过程
 - 接受能量=输出能量
   - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230708233350627.png" alt="image-20230708233350627" style="zoom:33%;" />
-  - BRDF就是能量被如何分配到不同放线<img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230708233526839.png" alt="image-20230708233526839" style="zoom:33%;" />
-  - 所有光源的辐射->反射总光线<img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230708233840810.png" alt="image-20230708233840810" style="zoom:33%;" />
+  - BRDF就是能量被如何分配到不同方向
+  - 所有光源的辐射->反射总光线<img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20240319122347958.png" alt="image-20240319122347958" style="zoom:33%;" />
   - 渲染方程：自发光+反射光<img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230708234338841.png" alt="image-20230708234338841" style="zoom:33%;" />
   - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230708234751059.png" alt="image-20230708234751059" style="zoom:33%;" />
   - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230708235018969.png" alt="image-20230708235018969" style="zoom:33%;" />
