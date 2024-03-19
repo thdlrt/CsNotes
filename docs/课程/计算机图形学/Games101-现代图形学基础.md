@@ -559,18 +559,20 @@
   - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230709093429284.png" alt="image-20230709093429284" style="zoom:33%;" />
   - 为了避免无限递归，(RR)随机决定发反射次数（何时开始停止反射）
   - 概率p继续反射，（1-p）不再继续发射<img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230709094812062.png" alt="image-20230709094812062" style="zoom:33%;" />
-    - 由于除以p，期望不变
+    - 渲染结果要$L_0/p$，这样保证期望不变，即：$E=P*(L_0/P)+(1-P)*0=L_0$
   - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230709095033407.png" alt="image-20230709095033407" style="zoom:33%;" />
 - 采样效率低：光源太小，大部分发出的路径都不会到达光源
   - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230709095531705.png" alt="image-20230709095531705" style="zoom:33%;" />
-  - 改用光源来进行采样、积分
+  - 改用向光源来进行采样、积分
   - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230709100416475.png" alt="image-20230709100416475" style="zoom:33%;" />
     - dA是立体角dw对应光源上的区域（先将dA映射到平行方向，然后两个平行表面是成比例的）
   - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230709100612954.png" alt="image-20230709100612954" style="zoom:33%;" />
   - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230709100920862.png" alt="image-20230709100920862" style="zoom:33%;" />
-    - 对于直接光照采用dA计算，对于间接光照仍然采用随机 方式
+    - 对于直接光照采用dA计算，对于间接光照仍然采用随机方式
 
 ## 材质与外观
+
+- 材质=BRDF决定如何进行反射
 
 - 反射角计算
   - （菲涅⽿项）<img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230709105229295.png" alt="image-20230709105229295" style="zoom:33%;" />
