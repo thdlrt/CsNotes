@@ -728,7 +728,7 @@
 
 - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230709173911389.png" alt="image-20230709173911389" style="zoom:33%;" />
 
-  - 从任意位置以不同角度来看世界
+  - 任何时间从任意位置以不同角度来看世界
 
 - 光线
 
@@ -751,7 +751,7 @@
 
 #### 光场照相机
 
-- 将原本的单个像素进一步拆分，将单个像素细分为不同的方向
+- 将原本的单个像素进一步**拆分**，将单个像素细分为不同的方向
 - 选择来自不同方向的信息，对画面做出调整<img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230709184808585.png" alt="image-20230709184808585" style="zoom:33%;" />
 
 ### 色彩
