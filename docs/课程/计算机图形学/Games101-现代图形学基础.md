@@ -433,17 +433,17 @@
 - 一种递归算法，可以处理多次反射（折射）的情况
 - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230708093259968.png" alt="image-20230708093259968" style="zoom:33%;" />
   - 着色叠加
-- 光线
+- 光线与图形的交点（几何隐式表示）
   - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230708094310500.png" alt="image-20230708094310500" style="zoom:33%;" />
-  - 点加方向
-  - 解任意曲面
+  - 点加方向表示光线 $r(t)=o+td$
+  - 解任意曲面与光线的交点
     - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230708094545633.png" alt="image-20230708094545633" style="zoom:33%;" />
-- 光线与三角形面求交
+- 光线与三角形面求交（几何显式表示）
   - 使用一条法向量加上一个点来表示一个平面，并且通过向量乘法判断一个点是否在平面上
   - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230708095659898.png" style="zoom:33%;" />
-  - 法一：先求和平面的交点，再判断是否属于某个三角形
+  - 法一：先求**和平面的交点**，再判断是否**属于某个三角形**
     - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230708100348543.png" alt="image-20230708100348543" style="zoom:33%;" />
-  - 法二：利用中心坐标直接判断（三个参数都非负）
+  - 法二：利用重心坐标直接判断（三个参数都非负）
     - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230708101437239.png" alt="image-20230708101437239" style="zoom:33%;" />
 
 #### 优化
