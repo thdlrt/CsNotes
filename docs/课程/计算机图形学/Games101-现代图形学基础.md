@@ -707,17 +707,20 @@
 - 物距、像距<img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230709165307006.png" alt="image-20230709165307006" style="zoom: 25%;" />
 - 景深
   - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230709170131194.png" alt="image-20230709170131194" style="zoom:33%;" />
-    - 像投射在了传感器前面，在传感器上呈圆形
-    - 其他条件一定时光圈越小CoC也越小，景深越弱
+    - 像投射在了传感器前面，在传感器上呈**圆形**（称为CoC）
+    - 其他条件一定时光圈越小（改变C的长度）CoC也越小，景深越弱
     - 认为当CoC足够小时图象是清晰的
   - 光圈f数=焦距/光圈直径
     - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230709171355075.png" alt="image-20230709171355075" style="zoom:33%;" />
   - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230709171415497.png" alt="image-20230709171415497" style="zoom:33%;" />
+  - 焦距越大、光圈越小CoC越大
 
 #### 模拟渲染
 
 - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230709172112189.png" alt="image-20230709172112189" style="zoom: 33%;" />
 - 清晰范围（可接受CoC大小的成像范围）<img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230709172646808.png" alt="image-20230709172646808" style="zoom:33%;" />
+  - Depth of field表示在焦内的区域，越小表示景深越严重
+
 
 ### 光场
 
