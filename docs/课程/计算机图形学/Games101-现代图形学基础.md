@@ -522,20 +522,21 @@
 - 接受能量=输出能量
   - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230708233350627.png" alt="image-20230708233350627" style="zoom:33%;" />
   - BRDF就是能量被如何分配到不同方向
-  - 所有光源的辐射->反射总光线<img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20240319122347958.png" alt="image-20240319122347958" style="zoom:33%;" />
-  - 渲染方程：自发光+反射光<img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230708234338841.png" alt="image-20230708234338841" style="zoom:33%;" />
+  - 所有光源的辐射->反射总光线
+    - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20240319122540620.png" alt="image-20240319122540620" style="zoom:33%;" />
+    - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20240319122347958.png" alt="image-20240319122347958" style="zoom:33%;" />
+    - 这是一个递归计算过程
+  - 渲染方程：自发光+反射光加和（包含多次反射递归）<img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230708234338841.png" alt="image-20230708234338841" style="zoom:33%;" />
   - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230708234751059.png" alt="image-20230708234751059" style="zoom:33%;" />
-  - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230708235018969.png" alt="image-20230708235018969" style="zoom:33%;" />
+  - 简化表示<img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230708235018969.png" alt="image-20230708235018969" style="zoom:33%;" />
   - 递归弹射（包含多次反射**即全局光照**（直接光照+间接光照））<img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230708235900191.png" alt="image-20230708235900191" style="zoom:33%;" />
 
-#### 蒙特卡罗积分
+#### 蒙特卡罗路径追踪
 
 - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230709085252585.png" alt="image-20230709085252585" style="zoom:33%;" />
 - 使用随机采样获取积分区域内的值，用于进一步的积分计算
 - （均匀采样）<img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230709085408396.png" alt="image-20230709085408396" style="zoom:33%;" />
 - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230709085416035.png" alt="image-20230709085416035" style="zoom:33%;" />
-
-#### 路径追踪
 
 - 解决Whitted-Style Ray不正确的地方
 - 用蒙特卡洛积分表示反射方程
