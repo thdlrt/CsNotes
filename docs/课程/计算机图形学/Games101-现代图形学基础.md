@@ -832,5 +832,5 @@
 - 逆运动学：告知**运动轨迹**，自动计算运动方向
 
   - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230709210237548.png" alt="image-20230709210237548" style="zoom:33%;" />
-
-  
+  - 手动操控
+- 动作捕捉 
