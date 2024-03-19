@@ -602,20 +602,27 @@
   - 菲涅尔项：总共有多少能量被反射
   - shadowing-masking：修正光线遮挡（入射角很大时反射光发现很可能会被表面上的凹凸遮挡）
   - distribution of normals：法线分布情况
-- 微表面方向性：各向同性/各向异性
+- 微表面的方向性：各向同性/各向异性
   - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230709113753033.png" alt="image-20230709113753033" style="zoom:33%;" />
   - 各向同性：反射结果只与 入射光与反射光的夹角相关<img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230709115045068.png" alt="image-20230709115045068" style="zoom:33%;" />
-    - （四维）：入射光线和反射光线的坐标（二维）
-    - 对于各向异性可以化简为三维
-  - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230709113933413.png" alt="image-20230709113933413" style="zoom:33%;" />
+    - 各向异性下（四维）：入射光线和反射光线的坐标
+    - 对于各向同性可以化简为三维（两个坐标->差）
 
 - BRDF性质
   - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230709114203505.png" alt="image-20230709114203505" style="zoom:33%;" />
+    - BRDF是非负的
   - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230709114224042.png" alt="image-20230709114224042" style="zoom:33%;" />
+    - 具有可逆性（交换入射、出射）
   - 能量收敛
     - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230709114417284.png" alt="image-20230709114417284" style="zoom:33%;" />
+- BRDF的测量
+  - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20240319155006214.png" alt="image-20240319155006214" style="zoom:33%;" />
 
 ### 高级光线传播
+
+- 无偏：蒙特卡洛估计的期望是正确的
+
+#### 无偏光线传输
 
 - BDPT双向路径追踪
   - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230709125601288.png" alt="image-20230709125601288" style="zoom: 33%;" />
@@ -623,6 +630,9 @@
 - MLT
   - 使用马尔科夫链，找到一条有效路径后可以更好地找到有用的相关路径
   - 问题：难以确定覆盖率（局部自动推导）,可能存在覆盖率不均匀，何时收敛
+
+#### 有偏光线传输
+
 - Photon Mapping 光子映射
   - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230709123959664.png" alt="image-20230709123959664" style="zoom:33%;" />
   - 首先由光源发射光子
