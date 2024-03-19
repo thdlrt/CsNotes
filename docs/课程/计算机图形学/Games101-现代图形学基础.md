@@ -468,29 +468,30 @@
     - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230708191224698.png" alt="image-20230708191224698" style="zoom: 33%;" />
 
 - **空间划分**方法
-
   - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230708192117492.png" alt="image-20230708192117492" style="zoom:33%;" />
+  
+- Oct-Tree（八叉树）：问题：随着维度增加，划分数目指数增加
 
 - KD-Tree
 
   - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230708192359516.png" alt="image-20230708192359516" style="zoom:33%;" />
   - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230708212902708.png" alt="image-20230708212902708" style="zoom:33%;" />
-  - 难点：判断三角形与盒子是否交很难，并且三角形可能跨盒子
+  - 难点：判断**三角形与盒子是否交**很难，并且三角形可能跨盒子
 
 - (BVH)**物体划分**
 
   - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230708213437753.png" alt="image-20230708213437753" style="zoom:33%;" />
     - 确定包围盒；对包围盒内的物体进行划分；分别重新计算包围盒；继续计算。
 
-  - 一个物体只会出现在一个盒子中
+  - 一个物体只会出现在一个盒子中（盒子中也一定有物体）
   - 可以每次都选择位于中间的三角形用于划分
-  - 求交过程<img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230708215158007.png" alt="image-20230708215158007" style="zoom:33%;" />
+  - 求交过程（与节点相交了，再继续去看子节点）<img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230708215158007.png" alt="image-20230708215158007" style="zoom:33%;" />
 
 
 ### 辐射度量学
 
-- 准确定义物理光照
-- Radiant flux：单位时间的能量
+- **准确**定义物理光照
+- Radiant flux：**单位时间的能量**
   - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230708220326227.png" alt="image-20230708220326227" style="zoom:33%;" />
 - Radiant Intensity：辐射能量
   - 单位立体角辐射的能量
