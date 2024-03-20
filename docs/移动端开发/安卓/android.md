@@ -3756,7 +3756,9 @@ class LessonTwoActivity : AppCompatActivity() {
 - **Model**：同MVC，负责数据的管理和存取。
 - **View**：负责展示数据给用户。在MVP中，View更加专注于UI的展示，通常由Activity、Fragment或自定义View实现。
 - **Presenter**：作为Model和View之间的中介，处理所有的业务逻辑。Presenter从Model层获取数据，然后将数据格式化后传递给View层进行显示。
-- 
+- 将业务逻辑从UI逻辑（Activity或Fragment）中分离出来
+  - **分离关注点**：Activity和Fragment不再直接处理数据，它们的任务仅限于处理UI逻辑。
+  - **提高测试性**：由于Presenter不依赖于Android的API，可以不需要模拟器或真机就能进行单元测试。
 
 ### 安卓虚拟机Dalvik
 
