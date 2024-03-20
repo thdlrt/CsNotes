@@ -6,47 +6,49 @@
 
 - Android- Manifest.xml配置文件
 
-  - ```xml
-    <application
-            android:allowBackup="true"
-            android:dataExtractionRules="@xml/data_extraction_rules"
-            android:fullBackupContent="@xml/backup_rules"
-            android:icon="@mipmap/ic_launcher"
-            android:label="@string/app_name"
-            android:roundIcon="@mipmap/ic_launcher_round"
-            android:supportsRtl="true"
-            android:theme="@style/Theme.BaiduDemo"
-            tools:targetApi="31">
-    ```
 
-    - 基本配置信息
+```xml
+<application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.BaiduDemo"
+        tools:targetApi="31">
+```
 
-  - ```xml
-    <activity android:name=".lesson2.LessonTwoActivity"
-    android:exported="true">
-       <intent-filter>
-           <action android:name="android.intent.action.MAIN" />
-           <category android:name="android.intent.category.LAUNCHER" />
-       </intent-filter>
-    </activity>
-    ```
+- 基本配置信息
 
-    - 对MainActivity进⾏注册，并表⽰MainActivity是这个项⽬的主Activity，在⼿机上点击应⽤图标，⾸先启动的就是这个Activity。(必须要设置一个主activity)
+```xml
+<activity android:name=".lesson2.LessonTwoActivity"
+android:exported="true">
+   <intent-filter>
+       <action android:name="android.intent.action.MAIN" />
+       <category android:name="android.intent.category.LAUNCHER" />
+   </intent-filter>
+</activity>
+```
+
+- 对MainActivity进⾏注册，并表⽰MainActivity是这个项⽬的主Activity，在⼿机上点击应⽤图标，⾸先启动的就是这个Activity。(必须要设置一个主activity)
 
 - activity：
 
-  - ```
-    class LessonTwoActivity : AppCompatActivity() {
-        override fun onCreate(savedInstanceState: Bundle?) {
-            super.onCreate(savedInstanceState)
-            setContentView(R.layout.activity_main)
-        }
-    }
-    ```
 
-    - 项⽬中所有⾃定义的Activity都必须继承它或者它的⼦类才能拥有Activity的特性，该文件中存储程序的逻辑
-    - 在res/layout文件夹中以xml的格式设置布局（上面的activity_main）
-      - 在activity中引用ui配置`setContentView(R.layout.first_layout)`
+```kotlin
+class LessonTwoActivity : AppCompatActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+    }
+}
+```
+
+- 项⽬中所有⾃定义的Activity都必须继承它或者它的⼦类才能拥有Activity的特性，该文件中存储程序的逻辑
+- 在res/layout文件夹中以xml的格式设置布局（上面的activity_main）
+  - 在activity中引用ui配置`setContentView(R.layout.first_layout)`
 
 - res文件结构
 
@@ -345,7 +347,6 @@
 
 - 横竖屏切换
   - 在Activity由于异常情况下终止时，系统会调用**onSaveInstanceState**来保存当前Activity的状态。这个方法的调用是在**onStop之前**，它和onPause没有既定的时序关系，该方法只在Activity被异常终止的情况下调用。当异常终止的Activity被**重建**以后，系统会调用**onRestoreInstanceState**，并且把Activity销毁时onSaveInstanceState方法所保存的Bundle对象参数同时传递给onRestoreInstanceState和onCreate方法。
-    - <img src="https://camo.githubusercontent.com/2a3ceb59c3e7851daea9a0dff4e669eb261ae0dfbaa6eca22dc1fcce37545a50/687474703a2f2f75706c6f61642d696d616765732e6a69616e7368752e696f2f75706c6f61645f696d616765732f333938353536332d323364393034373166613766313264322e706e673f696d6167654d6f6772322f6175746f2d6f7269656e742f7374726970253743696d61676556696577322f322f772f31323430" alt="img" style="zoom: 80%;" />
   - 横竖屏切换的生命周期：onPause()->onSaveInstanceState()-> onStop()->onDestroy()->onCreate()->onStart()->onRestoreInstanceState->onResume()
 - 由于资源不足Activity被杀死
   - 优先级分类：
@@ -483,6 +484,8 @@
 
 ### 数据绑定
 
+- 不仅包括视图绑定的功能，还允许在布局文件中直接绑定应用程序数据，会自动将数据更新到视图上，实现 UI 和数据的自动同步
+
 ### 响应
 
 - 信号绑定
@@ -517,14 +520,15 @@
 
 ### 生命周期
 
-- <img src="https://camo.githubusercontent.com/64b60032e7d886a21adf8de58ebd4ed92d710933380fda2693a2ce93bb14eb7e/687474703a2f2f75706c6f61642d696d616765732e6a69616e7368752e696f2f75706c6f61645f696d616765732f333938353536332d383536313461646462626563376130632e706e673f696d6167654d6f6772322f6175746f2d6f7269656e742f7374726970253743696d61676556696577322f322f772f31323430" alt="img" style="zoom: 80%;" />
+- <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20240320105520192.png" alt="image-20240320105520192" style="zoom: 80%;" />
 - **OnCreate()**：系统在service第一次创建时执行此方法，来执行**只运行一次的**初始化工作。如果service已经运行，这个方法不会被调用。
 - **onStartCommand()**：每次客户端调用startService()方法启动该Service都会回调该方法（**多次调用**）。一旦这个方法执行，service就启动并且在后台长期运行。通过调用stopSelf()或stopService()来停止服务。
 - **OnBind()**：当组件调用bindService()想要绑定到service时(比如想要执行进程间通讯)系统调用此方法（**一次调用**，一旦绑定后，下次再调用bindService()不会回调该方法）。在你的实现中，你必须提供一个返回一个**IBinder来以使客户端能够使用它与service通讯**，你必须总是实现这个方法，但是如果你不允许绑定，那么你应返回null。（可以通过返回的IBinder来获取Service对象）
 - **OnUnbind()**：当前组件调用unbindService()，想要解除与service的绑定时系统调用此方法
 - **OnDestory()**:系统在service不再被使用并要销毁时调用此方法。
-- 1：第一次 startService 会触发 onCreate 和 onStartCommand，以后在服务运行过程中，每次 startService 都**只会触发 onStartCommand**；不论 startService 多少次，stopService **一次就会停止服务**
-- 2：如果一个Service在某个Activity中被调用bindService方法启动，不论bindService被调用几次，Service的onCreate方法只会执行一次（onBind也是），同时onStartCommand方法始终不会调用。Service会一直运行，除非调用u**nbindService来解除绑定**、**断开连接或调用该Service的Context不存在**
+  - 第一次 startService 会触发 onCreate 和 onStartCommand，以后在服务运行过程中，每次 startService 都**只会触发 onStartCommand**；不论 startService 多少次，stopService **一次就会停止服务**
+  - 如果一个 Service 在某个 Activity 中被调用 bindService 方法启动，不论 bindService 被调用几次，Service 的 onCreate 方法只会执行一次（onBind 也是），同时 onStartCommand 方法始终不会调用。Service 会一直运行，除非调用 u**nbindService 来解除绑定**、**断开连接或调用该 Service 的 Context 不存在**
+
 - 混合型：当一个Service在被启动(startService)的同时又被绑定(bindService)，该Service将会一直在后台运行，并且不管调用几次，onCreate方法始终只会调用一次，**onStartCommand的调用次数与startService调用的次数一致**（使用bindService方法不会调用onStartCommand）。同时，**调用unBindService将不会停止Service，必须调用stopService或Service自身的stopSelf来停止服务。**（同时也应该解绑）
 
 #### 使用选择
@@ -1409,7 +1413,6 @@
 
 - 唯一标识 ContentProvider & 其中的数据
 - <img src="https://camo.githubusercontent.com/56b7f3d1be49a53d21d31463a616686e872bc1c2096fc6c3c92557a78b9e8955/687474703a2f2f75706c6f61642d696d616765732e6a69616e7368752e696f2f75706c6f61645f696d616765732f3934343336352d393630313961323035346562323763662e706e673f696d6167654d6f6772322f6175746f2d6f7269656e742f7374726970253743696d61676556696577322f322f772f31323430" alt="img" style="zoom:80%;" />
-- 
 
 #### 访问其他程序中的数据
 
@@ -2045,7 +2048,7 @@
   - 当一个触摸事件发生时，`dispatchTouchEvent` 被首先调用。
   - 在 `ViewGroup` 中，`onInterceptTouchEvent` 决定是否拦截这个事件。
   - 如果 `ViewGroup` 拦截了事件，那么 `onTouchEvent` 会被调用；否则，事件将被分发到子视图。
-- <img src="https://camo.githubusercontent.com/1a1b199c244d959e5f2a3b16734469453f8dd99c5ce0a5bf2c951a9ecc8a2067/687474703a2f2f75706c6f61642d696d616765732e6a69616e7368752e696f2f75706c6f61645f696d616765732f3934343336352d616138343136666336643265356563642e706e673f696d6167654d6f6772322f6175746f2d6f7269656e742f7374726970253743696d61676556696577322f322f772f31323430" alt="img" style="zoom:80%;" />
+- <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/687474703a2f2f75706c6f61642d696d616765732e6a69616e7368752e696f2f75706c6f61645f696d616765732f3934343336352d616138343136666336643265356563642e706e673f696d6167654d6f6772322f6175746f2d6f7269656e742f7374726970253743696d6.webp" style="zoom:50%;" />
 
 - ```java
   / 点击事件产生后，会直接调用dispatchTouchEvent（）方法
@@ -2822,7 +2825,8 @@
 
 #### ConstraintLayout约束布局
 
-- 创建具有复杂关系的界面，减少嵌套层次，提高性能
+- 创建具有复杂关系的界面，减少嵌套层次，提高性能，支持基线对齐、比例定位等高级功能。提供了可视化工具来构建复杂布局
+- `ConstraintLayout` 是为了提高布局的灵活性和性能而设计的。它可以轻松创建复杂的布局，同时保持层级**结构扁平**，从而提高渲染效率。
 - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230724112212503.png" alt="image-20230724112212503" style="zoom:33%;" />
   - 指向其他组件/parent
 - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230724112243620.png" alt="image-20230724112243620" style="zoom:33%;" />
@@ -2832,7 +2836,7 @@
 
 #### RelativeLayout相对布局
 
-- 可以通过相对定位的⽅式让控件出现在布局的任何位置
+- 可以通过相对定位的⽅式让控件出现在布局的任何位置，允许**子视图相对于彼此或父容器的位置**进行定位
 
 - ```
   android:layout_alignParentLeft、
@@ -3727,7 +3731,7 @@
 
 - <img src="https://camo.githubusercontent.com/6eac7dfc45afb5cf12e764fa07b53b47aaf3647c3bc48575d8bfcb285578ed65/687474703a2f2f75706c6f61642d696d616765732e6a69616e7368752e696f2f75706c6f61645f696d616765732f333938353536332d386165666163343262333931323533392e706e673f696d6167654d6f6772322f6175746f2d6f7269656e742f7374726970253743696d61676556696577322f322f772f31323430" alt="img" style="zoom:80%;" />
 
-##### deaw绘制
+##### daw绘制
 
 - 顺序
   - 绘制背景 background.draw(canvas)

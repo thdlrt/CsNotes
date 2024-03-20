@@ -195,10 +195,6 @@
     {
       "basename": "泛型",
       "path": "docs/java/java基础/杂项/泛型.md"
-    },
-    {
-      "basename": "index",
-      "path": "docs/index.md"
     }
   ],
   "omittedPaths": [],
