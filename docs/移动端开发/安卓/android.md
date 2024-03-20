@@ -532,7 +532,7 @@ class LessonTwoActivity : AppCompatActivity() {
   - 第一次 startService 会触发 onCreate 和 onStartCommand，以后在服务运行过程中，每次 startService 都**只会触发 onStartCommand**；不论 startService 多少次，stopService **一次就会停止服务**
   - 如果一个 Service 在某个 Activity 中被调用 bindService 方法启动，不论 bindService 被调用几次，Service 的 onCreate 方法只会执行一次（onBind 也是），同时 onStartCommand 方法始终不会调用。Service 会一直运行，除非调用 u**nbindService 来解除绑定**、**断开连接或调用该 Service 的 Context 不存在**
 
-- 混合型：当一个Service在被启动(startService)的同时又被绑定(bindService)，该Service将会一直在后台运行，并且不管调用几次，onCreate方法始终只会调用一次，**onStartCommand的调用次数与startService调用的次数一致**（使用bindService方法不会调用onStartCommand）。同时，**调用unBindService将不会停止Service，必须调用stopService或Service自身的stopSelf来停止服务。**（同时也应该解绑）
+- 混合型：当一个Service在被启动(startService)的同时又被绑定(bindService)，该Service将会一直在后台运行（bindservice会在绑定对象销毁时自动销毁），并且不管调用几次，onCreate方法始终只会调用一次，**onStartCommand的调用次数与startService调用的次数一致**（使用bindService方法不会调用onStartCommand）。同时，**调用unBindService将不会停止Service，必须调用stopService或Service自身的stopSelf来停止服务。**（同时也应该解绑）
 
 #### 使用选择
 
@@ -863,20 +863,20 @@ class LessonTwoActivity : AppCompatActivity() {
 
 ## BroadcastReceiver广播机制
 
-- 标准⼴播是⼀种完全异步执⾏的⼴播，在⼴播发出之后，所有的BroadcastReceiver⼏乎会在**同⼀时刻**收到这条⼴播消息，因此它们之间没有任何先后顺序可⾔。
-- 有序⼴播则是⼀种同步执⾏的⼴播，在⼴播发出之后，同⼀时刻只会有⼀个BroadcastReceiver能够收到这条⼴播消息，当这个BroadcastReceiver中的逻辑执⾏完毕后，⼴播才会继续传递。（顺序传递）
+- **标准⼴播**是⼀种完全异步执⾏的⼴播，在⼴播发出之后，所有的BroadcastReceiver⼏乎会在**同⼀时刻**收到这条⼴播消息，因此它们之间没有任何先后顺序可⾔。
+- **有序⼴播**则是⼀种同步执⾏的⼴播，在⼴播发出之后，同⼀时刻只会有⼀个BroadcastReceiver能够收到这条⼴播消息，当这个BroadcastReceiver中的逻辑执⾏完毕后，⼴播才会继续传递。（顺序传递）
 
 ### 实现原理
 
 - 使用设计模式中的观察者模式
-- <img src="https://camo.githubusercontent.com/02d7f9103dbf61f95d4896cc111700240c140e527d01f5384486380c87368c3c/687474703a2f2f75706c6f61642d696d616765732e6a69616e7368752e696f2f75706c6f61645f696d616765732f3934343336352d303839366261386439313535313430652e706e673f696d6167654d6f6772322f6175746f2d6f7269656e742f7374726970253743696d61676556696577322f322f772f31323430" alt="img" style="zoom:80%;" />
+- <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20240320232531477.png" alt="image-20240320232531477" style="zoom:50%;" />
 - 广播接收者 通过 `Binder`机制在 `AMS` 注册
 - 广播发送者 通过 `Binder` 机制向 `AMS` 发送广播
 - `AMS` 根据 广播发送者 要求，在已注册列表中，寻找合适的广播接收者
 - `AMS`将广播发送到合适的广播接收者相应的消息循环队列中；
 - 广播接收者通过 消息循环 拿到此广播，并回调 `onReceive()`
 
-<img src="https://camo.githubusercontent.com/abe7d72b051318e58e429c8987d4c227ccaec2a5170dc000f098dd8cf54aa02a/687474703a2f2f75706c6f61642d696d616765732e6a69616e7368752e696f2f75706c6f61645f696d616765732f3934343336352d376339666636353665626431623938312e706e673f696d6167654d6f6772322f6175746f2d6f7269656e742f7374726970253743696d61676556696577322f322f772f31323430" alt="img" style="zoom:80%;" />
+![image-20240320232704341](https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20240320232704341.png)
 
 ### 注册
 
@@ -970,6 +970,8 @@ class LessonTwoActivity : AppCompatActivity() {
 - 通常事件绑定和取消都是在`onCreate()和onDestroy()`中进行的，但是如果希望只有最上层的activity响应事件（如在控制类中的全局事件处理会被每个activity继承，造成重复响应）
 
   - 可以在`onResume()和onPause()`中处理来解决
+  
+- <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20240320232901793.png" alt="image-20240320232901793" style="zoom:50%;" />
 
 
 ### 发送广播
