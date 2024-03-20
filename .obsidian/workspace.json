@@ -18,8 +18,19 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "0b0431a5cc9568e5",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.5.11"
+              }
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -176,7 +187,7 @@
       "omnisearch:Omnisearch": false
     }
   },
-  "active": "f2d3c321ff559679",
+  "active": "0b0431a5cc9568e5",
   "lastOpenFiles": [
     "docs/课程/计算机图形学/Games101-现代图形学基础.md",
     "docs/课程/编译原理/课件/Chapter_4.pdf",
