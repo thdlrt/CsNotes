@@ -1353,11 +1353,13 @@ class LessonTwoActivity : AppCompatActivity() {
 
 ### ContentProvider跨应用数据交互
 
-- <img src="https://camo.githubusercontent.com/3d97174ca9577d6a8cbcbc93785bb752951c254264bcd2eae023517c2b84285c/687474703a2f2f75706c6f61642d696d616765732e6a69616e7368752e696f2f75706c6f61645f696d616765732f3934343336352d336334333339633566316434613066642e706e673f696d6167654d6f6772322f6175746f2d6f7269656e742f7374726970253743696d61676556696577322f322f772f31323430" alt="img" style="zoom:33%;" />
+- <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20240320233904998.png" alt="image-20240320233904998" style="zoom:33%;" />
 
 - 可以选择将一部分数据共享给其他应用，而一些数据不共享
 
 - ContentProvider主要以表格的形式组织数据
+
+- 实现**跨进程通讯**
 
 #### 运行时权限
 
@@ -1417,7 +1419,7 @@ class LessonTwoActivity : AppCompatActivity() {
 #### 统一资源标识符URI
 
 - 唯一标识 ContentProvider & 其中的数据
-- <img src="https://camo.githubusercontent.com/56b7f3d1be49a53d21d31463a616686e872bc1c2096fc6c3c92557a78b9e8955/687474703a2f2f75706c6f61642d696d616765732e6a69616e7368752e696f2f75706c6f61645f696d616765732f3934343336352d393630313961323035346562323763662e706e673f696d6167654d6f6772322f6175746f2d6f7269656e742f7374726970253743696d61676556696577322f322f772f31323430" alt="img" style="zoom:80%;" />
+- <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20240320234222825.png" alt="image-20240320234222825" style="zoom: 50%;" />
 
 #### 访问其他程序中的数据
 
@@ -1947,12 +1949,13 @@ class LessonTwoActivity : AppCompatActivity() {
   - 停⽌状态：当⼀个Activity进⼊停⽌状态时，与它相关联的Fragment就会进⼊停⽌状态，或者通过调⽤FragmentTransaction的remove()、replace()⽅法将Fragment从Activity中移除，但在事务提交之前调⽤了addToBackStack()⽅法（**操作可以回退**），这时的Fragment也会进⼊停⽌状态。
   - 销毁状态：当Activity被销毁时，与它相关联的Fragment就会进⼊销毁状态。或者通过调⽤FragmentTransaction的remove()、replace()⽅法将Fragment从Activity中移除，但在事务提交之前并没有调⽤addToBackStack()⽅法，这时的Fragment也会进⼊销毁状态。
 - 生命周期回调
+  - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230717203711104.png" alt="image-20230717203711104" style="zoom:33%;" />
   - onAttach()：当Fragment和Activity建⽴关联时调⽤。
   - onCreateView()：为Fragment创建视图（加载布局）时调⽤。
   - onActivityCreated()：确保与Fragment相关联的Activity已经创建完毕时调⽤。
   - onDestroyView()：当与Fragment关联的视图被移除时调⽤。
   - onDetach()：当Fragment和Activity解除关联时调⽤。
-  - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230717203711104.png" alt="image-20230717203711104" style="zoom:33%;" />
+  
 
 ### 响应式布局
 
@@ -1980,8 +1983,8 @@ class LessonTwoActivity : AppCompatActivity() {
 
 ### 回退栈
 
-- ragment的回退栈是用来保存每一次Fragment事务发生的变化 如果你将Fragment任务添加到回退栈，当用户点击后退按钮时，将看到上一次的保存的Fragment。一旦Fragment完全从后退栈中弹出，用户再次点击后退键，则退出当前Activity
-- 使用remove操作时，如果被移除的Fragment没有添加到回退栈（回退栈后面会详细说），这个Fragment实例将会被销毁（在replace操作很常用）
+- fragment的回退栈是用来保存每一次Fragment事务发生的变化 如果你将Fragment任务添加到回退栈，当用户点击后退按钮时，将看到上一次的保存的Fragment。一旦Fragment完全从后退栈中弹出，用户再次点击后退键，则退出当前Activity
+- 使用remove操作时，如果被移除的Fragment没有添加到回退栈，这个Fragment实例将会被销毁（在replace操作很常用）
 
 ## 消息机制
 
