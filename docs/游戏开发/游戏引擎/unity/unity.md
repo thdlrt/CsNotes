@@ -164,13 +164,13 @@ GameObject instance = Instantiate(myPrefab, position, rotation);
   - 在**加载**包含脚本的游戏对象时调用，无论该对象是否启用。
   - 总是在任何`Start`方法之前被调用。
   - 即使脚本是禁用的，这个方法也会被调用。
-  - 初始化变量或状态。配置不依赖于其他游戏对象的设置。
+  - 初始化变量或状态。配置**不依赖于其他游戏对象**的设置。
 
 - **OnEnable**
   - 当脚本被初始化或者当所在的GameObject被设置为active时调用。在脚本对象被**激活**时调用
   - 这发生在所有对象的 `Awake` 之后、任何对象的 `Start` 之前。
-  - 注册事件监听器或广播消息。开始协程。对外部资源进行订阅或更新状态。
-
+  - 注册事件监听器或**广播消息。开始协程。对外部资源进行订阅或更新状态。****
+**
 - **Start**
   - 在**Update之前**的第一个帧中被调用。
   - **仅被调用一次**。
@@ -396,6 +396,7 @@ public delegate void MyEventHandler(string message);
 public event MyEventHandler MyEvent;
 
 ```
+- 可以讲一个参数匹配的方法赋值给委托，即相当于用这个方法实现了这个委托
 
 - 触发事件`MyEvent()`
 - 订阅事件`someInstance.MyEvent += MyHandlerMethod;`
@@ -411,7 +412,8 @@ public event MyEventHandler MyEvent;
       {
           someEvent -= MyEventHandler;
       }
-      
+  //广播
+  someEvent?.Invoke();
 ```
 
 ### 补充
@@ -540,8 +542,7 @@ public static bool RayTrigger(Vector3 from, GameObject to , string tag)
 
 - 统一unity editor版本：**2022.3.8f1c1**
 - editor更换中文(hub更换中文直接设置里改)
-  - [https://new-translate.unity3d.jp/v1/live/54/](http://jump.bdimg.com/safecheck/index?url=rN3wPs8te/rPoP5v45JBTu4czwulJGOOaj5g08pyEDegSqfiflO2vx91sG5rwyFyv/fBB5q9WQqltJi6QngliCrc+wPGJ+uFg6bTGKqiExMgZ1h2ZCQ4UKn2oQ7N0q40l40itacg0FRU8hR5zalJyfYTmn8eAnOoVfdkwJqFldMwPGbuJnYGNA==){version}/zh-hans 把{version}换成你的版本，比如说如果你的是2022.3.8f1c1那就填**2022.3.**其他同理。下完之后放到Unity安装目录下Data里的Localization文件夹里，如果没有就新建一个。放完之后在界面左上角找到Edit，然后在下面找到preferences选项，找到language，在editor language那一栏选简体中文。
-- 使用vscode作为编译器[Visual Studio Code and Unity](https://code.visualstudio.com/docs/other/unity)
+  - [https://new-translate.unity3d.jp/v1/live/54/](http://jump.bdimg.com/safecheck/index?url=rN3wPs8te/rPoP5v45JBTu4czwulJGOOaj5g08pyEDegSqfiflO2vx91sG5rwyFyv/fBB5q9WQqltJi6QngliCrc+wPGJ+uFg6bTGKqiExMgZ1h2ZCQ4UKn2oQ7N0q40l40itacg0FRU8hR5zalJyfYTmn8eAnOoVfdkwJqFldMwPGbuJnYGNA==){version}/zh-hans 把{version}换成你的版本，比如说如果你的是2022.3.8f1c1那就填**2022.3.** 其他同理。下完之后放到 Unity 安装目录下 Data 里的 Localization 文件夹里，如果没有就新建一个。放完之后在界面左上角找到 Edit，然后在下面找到 preferences 选项，找到 language，在 editor language 那一栏选简体中文。
 
 ### 文件结构
 
