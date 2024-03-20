@@ -1852,15 +1852,15 @@ class LessonTwoActivity : AppCompatActivity() {
 
 - **Android应用模型是基于组件的应用设计模式，组件的运行要有一个完整的Android工程环境**，在这个环境下，Activity、Service等系统组件才能够正常工作，而这些组件并不能采用普通的Java对象创建方式，new一下就能创建实例了，而是要有它们各自的上**下文环境，也就是Context。**
 - Context提供了关于应用**环境全局信息**的接口。**它是一个抽象类，它的执行被Android系统所提供**。
-- <img src="https://camo.githubusercontent.com/f13f4e36dff25e4779267e1673708d89b1e3cf1c6af1766989cce8381170fb58/687474703a2f2f75706c6f61642d696d616765732e6a69616e7368752e696f2f75706c6f61645f696d616765732f313138373233372d316234633063643331666430313933662e706e673f696d6167654d6f6772322f6175746f2d6f7269656e742f7374726970253743696d61676556696577322f322f772f31323430" alt="img" style="zoom:50%;" />
+- <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20240321004805798.png" alt="image-20240321004805798" style="zoom:33%;" />
   - Context数量=Activity数量+Service数量+1（Application）
 - 功能：弹出Toast、启动Activity、启动Service、发送广播、操作数据库等等
-  - <img src="https://camo.githubusercontent.com/cb4b5eeeaf7c3c75d4857f966bfe3c4a0626b34c01fd67a5548191eef7ddaf0e/687474703a2f2f75706c6f61642d696d616765732e6a69616e7368752e696f2f75706c6f61645f696d616765732f313138373233372d666233326230663939326461343738312e706e673f696d6167654d6f6772322f6175746f2d6f7269656e742f7374726970253743696d61676556696577322f322f772f31323430" alt="img" style="zoom: 67%;" />
-  - 即：凡是跟UI相关的，都应该使用Activity做为Context来处理；其他的一些操作，Service,Activity,Application等实例都可以
+  - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20240321004755302.png" alt="image-20240321004755302" style="zoom:33%;" />
+  - 即：**凡是跟UI相关的**，都应该使用**Activity**做为Context来处理；其他的一些操作，Service,Activity,Application等实例都可以
 
 ### 获取Context对象
 
-- View.getContext,返回当前View对象的Context对象，通常是当前正在展示的Activity对象。
+- View.getContext,返回当前View对象的Context对象，通常是当前正在展示的**Activity对象**。
 - Activity.getApplicationContext,获取当前Activity所在的(应用)进程的Context对象，通常我们使用Context对象时，要优先考虑这个全局的进程Context。
 - Activity.this 返回当前的Activity实例，如果是UI控件需要使用Activity作为Context对象，但是默认的Toast实际上使用ApplicationContext也可以。
 
@@ -3741,6 +3741,22 @@ class LessonTwoActivity : AppCompatActivity() {
 - **onDraw()方法：**无论单一View，或者ViewGroup都需要实现该方法，因其是个空方法
 
 ## 拓展
+
+### MVC与MVP
+
+#### MVC
+
+- **Model**：负责数据的存取、修改和管理。在Android中，Model层可能包含数据库操作（SQLite）、网络请求或任何其他数据源的操作。
+- **View**：负责展示数据（UI元素）给用户。在Android中，View通常是由XML文件定义的UI组件，如Activity或Fragment。
+- **Controller**：控制器，负责接收用户的输入，处理用户请求，通过Model获取数据，然后选择相应的View进行显示。在Android开发中，Activity或Fragment通常承担了Controller的角色，负责协调Model和View。
+- MVC在Android中的一个挑战是，由于Activity和Fragment**既扮演View的角色又扮演Controller的角色**，使得它们很容易变得过于臃肿和复杂。因此，重要的是要尽量保持Activity和Fragment的精简，避免直接在其中进行数据库操作或网络请求，而是通过调用Model层的接口来处理这些逻辑。
+
+#### MVP
+
+- **Model**：同MVC，负责数据的管理和存取。
+- **View**：负责展示数据给用户。在MVP中，View更加专注于UI的展示，通常由Activity、Fragment或自定义View实现。
+- **Presenter**：作为Model和View之间的中介，处理所有的业务逻辑。Presenter从Model层获取数据，然后将数据格式化后传递给View层进行显示。
+- 
 
 ### 安卓虚拟机Dalvik
 

@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/移动端开发/安卓/android.md",
+                "file": "docs/面试/计算机科学/计算机网络.md",
                 "mode": "source",
                 "source": false
               }
@@ -93,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/移动端开发/安卓/android.md",
+                "file": "docs/面试/计算机科学/计算机网络.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/移动端开发/安卓/android.md",
+                "file": "docs/面试/计算机科学/计算机网络.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/移动端开发/安卓/android.md"
+                "file": "docs/面试/计算机科学/计算机网络.md"
               }
             }
           },
@@ -180,8 +180,8 @@
   "lastOpenFiles": [
     "docs/游戏开发/游戏引擎/unity/unity.md",
     "docs/游戏开发/游戏引擎/unity/八股.md",
-    "docs/java/工具/jvm.md",
     "docs/移动端开发/安卓/android.md",
+    "docs/java/工具/jvm.md",
     "docs/面试/计算机科学/计算机网络.md",
     "docs/归档课程/计算机系统基础/data/6.md",
     "docs/归档课程/计算机网络/八股.md",
