@@ -296,14 +296,18 @@ class LessonTwoActivity : AppCompatActivity() {
   - 停⽌状态：当⼀个Activity不再处于栈顶位置，并且完全不可⻅的时候，就进⼊了停⽌状态。
   - 销毁状态：⼀个Activity从返回栈中移除后就变成了销毁状态。
 
+- <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20240320220534218.png" alt="image-20240320220534218" style="zoom: 25%;" />
+
 - 生命周期回调
 
   - onCreate()：Activity第⼀次被创建的时候调⽤。完成Activity的初始化操作，⽐如加载布局、绑定事件等。
-    - ⼀般情况下，⼀个Activity会在onCreate()⽅法中完成各种初始化操作，⽽在onDestroy()⽅法中完成释放内存的操作。
+    - ⼀般情况下，⼀个Activity会在onCreate()⽅法中完成各种初始化操作(如setContentView去加载界面布局资源)，⽽在onDestroy()⽅法中完成释放内存的操作。
   - onStart()。这个⽅法在Activity由**不可⻅变为可⻅**的时候调⽤。
     - Activity在onStart()⽅法和onStop()⽅法之间所经历的就是可⻅⽣存期。可以通过这两个⽅法合理地管理那些对⽤户可⻅的资源。
+    - 这是activity已经显示出来了但是还没有被用户看到
   - onResume()。这个⽅法在Activity准备好和⽤户进⾏交互的时候调⽤。此时的Activity⼀定位于返回栈的栈顶，并且处于运⾏状态。
     - Activity在onResume()⽅法和onPause()⽅法之间所经历的就是前台⽣存期
+    - 已经可见了，出现在前台开始活动
   - onPause()。这个⽅法在系统准备去启动或者恢复另⼀个Activity的时候调⽤。
   - onStop()。这个⽅法在Activity**完全不可⻅**的时候调⽤。
     - 不应执行太耗时的操作
@@ -312,8 +316,7 @@ class LessonTwoActivity : AppCompatActivity() {
     - 关闭`B Activity`
       分别执行`B onPause()、A onRestart()、A onStart()、A onResume()、B onStop()、B onDestroy()`方法。
   - onDestroy()。这个⽅法在Activity**被销毁之前**调⽤，之后Activity的状态将变为销毁状态。
-  - onRestart()。这个⽅法在Activity由停⽌状态变为运⾏状态之前调⽤，也就是Activity被重新启动了。
-  - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230716234506110.png" alt="image-20230716234506110" style="zoom: 50%;" />
+  - onRestart()。这个⽅法在Activity由停⽌状态变为运⾏状态之前调⽤，也就是Activity被重新启动了。（不可见重新变为可见）
 
 - 当一个activity被回收时会丢失其中暂存的数据，需要进行缓存，从而在重新创建时恢复
 
