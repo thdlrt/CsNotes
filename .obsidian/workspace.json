@@ -158,7 +158,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 200,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -177,9 +178,13 @@
   },
   "active": "1ee023b7498b09d5",
   "lastOpenFiles": [
+    "docs/移动端开发/安卓/android.md",
+    "docs/面试/计算机科学/并发编程.md",
+    "docs/面试/计算机科学/计算机网络.md",
+    "docs/软件工程/编程思想与规范/编程思想.md",
+    "docs/c++/八股.md",
     "docs/c++/C++基础.md",
     "docs/面试/知识图谱.md",
-    "docs/面试/计算机科学/并发编程.md",
     "docs/软件工程/设计模式.md",
     "docs/课程/计算机图形学/Games101-现代图形学基础.md",
     "docs/课程/编译原理/课件/Chapter_4.pdf",
@@ -193,7 +198,6 @@
     "docs/课程/编译原理/作业/p3.md",
     "docs/杂项/linux与shell/linux.md",
     "docs/杂项/linux与shell/linux/文件系统.md",
-    "docs/c++/八股.md",
     "面试/面试技巧/反问环节.md",
     "面试/自我介绍/腾讯天美游戏端开发.md",
     "面试/面试技巧",
@@ -206,10 +210,7 @@
     "docs/课程/计算机图形学/八股.md",
     "docs/游戏开发/游戏引擎/unity/unity.md",
     "docs/游戏开发/游戏引擎/unity/c#.md",
-    "docs/游戏开发/游戏引擎/LibGDX .md",
-    "docs/游戏开发/游戏引擎/unreal.md",
     "docs/游戏开发/游戏引擎/unity",
-    "docs/游戏开发/游戏引擎/cocos.md",
     "docs/游戏开发/游戏引擎",
     "docs/数据库/关系数据库/data",
     "docs/面试/计算机科学",
