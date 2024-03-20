@@ -195,10 +195,6 @@
     {
       "basename": "测试",
       "path": "docs/java/java基础/杂项/测试.md"
-    },
-    {
-      "basename": "异常",
-      "path": "docs/java/java基础/杂项/异常.md"
     }
   ],
   "omittedPaths": [],
