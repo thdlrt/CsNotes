@@ -1,4 +1,4 @@
-参考：[GitHub - LRH1993/android\_interview: gitbook地址](https://github.com/LRH1993/android_interview/tree/master)
+参考：[GitHub - LRH1993/android\_interview: gitbook地址](https://github.com/LRH1993/android_interview/tree/master)以及《第一行代码——安卓开发》
 
 ##  概述
 
@@ -435,8 +435,8 @@ class LessonTwoActivity : AppCompatActivity() {
 #### 前台栈和后台栈的交互
 
 - 假如目前有两个任务栈。前台任务栈为AB，后台任务栈为CD，这里假设CD的启动模式均为singleTask,现在请求启动D，那么**这个后台的任务栈都会被切换到前台**
-  - <img src="https://camo.githubusercontent.com/796afbc8136b4404ce0a3b7361ce25dfecbcf604e5d1ada5097551b1e0152fc7/687474703a2f2f75706c6f61642d696d616765732e6a69616e7368752e696f2f75706c6f61645f696d616765732f333938353536332d346165623139343762626132376534342e706e673f696d6167654d6f6772322f6175746f2d6f7269656e742f7374726970253743696d61676556696577322f322f772f31323430" alt="img" style="zoom:80%;" />
-  - <img src="https://camo.githubusercontent.com/2a1accaf4f4fe23931a9023d30ae0aa64560f2269a72dfdab1663f73505acb28/687474703a2f2f75706c6f61642d696d616765732e6a69616e7368752e696f2f75706c6f61645f696d616765732f333938353536332d663265616631303035636466316231642e706e673f696d6167654d6f6772322f6175746f2d6f7269656e742f7374726970253743696d61676556696577322f322f772f31323430" alt="img" style="zoom:80%;" />
+  - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20240320223605269.png" alt="image-20240320223605269" style="zoom:33%;" />
+  - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20240320223619373.png" alt="image-20240320223619373" style="zoom:33%;" />
 
 ### 组件获取
 
