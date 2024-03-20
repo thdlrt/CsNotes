@@ -9,6 +9,10 @@
       "path": "docs/归档课程/计算机系统基础/data/4.md"
     },
     {
+      "basename": "6",
+      "path": "docs/归档课程/计算机系统基础/data/6.md"
+    },
+    {
       "basename": "计算机系统基础笔记",
       "path": "docs/归档课程/计算机系统基础/计算机系统基础笔记.md"
     },
@@ -195,10 +199,6 @@
     {
       "basename": "异常",
       "path": "docs/java/java基础/杂项/异常.md"
-    },
-    {
-      "basename": "反射",
-      "path": "docs/java/java基础/杂项/反射.md"
     }
   ],
   "omittedPaths": [],

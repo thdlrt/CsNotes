@@ -8,18 +8,6 @@
         "type": "tabs",
         "children": [
           {
-            "id": "1ee023b7498b09d5",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "docs/归档课程/计算机系统基础/data/4.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
             "id": "7a69e99c6430ff04",
             "type": "leaf",
             "state": {
@@ -42,9 +30,20 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "ca3db7518f44857c",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "docs/归档课程/计算机系统基础/data/6.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -203,8 +202,9 @@
   "active": "7a69e99c6430ff04",
   "lastOpenFiles": [
     "docs/归档课程/计算机系统基础/data/4.md",
-    "docs/归档课程/计算机系统基础/计算机系统基础笔记.md",
     "docs/归档课程/计算机系统基础/data/3.md",
+    "docs/归档课程/计算机系统基础/data/6.md",
+    "docs/归档课程/计算机系统基础/计算机系统基础笔记.md",
     "docs/面试/计算机科学/并发编程.md",
     "conflict-files-obsidian-git.md",
     "docs/移动端开发/安卓/android.md",
@@ -233,7 +233,6 @@
     "().md",
     "docs/c++/c++基础.md",
     "docs/课程/编译原理/作业/p2.md",
-    "docs/面试/计算机科学/杂项.md",
     "docs/游戏开发/游戏引擎/unity",
     "docs/游戏开发/游戏引擎",
     "docs/数据库/关系数据库/data",
