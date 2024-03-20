@@ -1,4 +1,4 @@
-参考：[android_interview/android/basis/broadcastreceiver.md at master · LRH1993/android_interview (github.com)](https://github.com/LRH1993/android_interview/blob/master/android/basis/broadcastreceiver.md)
+参考：[GitHub - LRH1993/android\_interview: gitbook地址](https://github.com/LRH1993/android_interview/tree/master)
 
 ##  概述
 
