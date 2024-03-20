@@ -8,18 +8,6 @@
         "type": "tabs",
         "children": [
           {
-            "id": "b419deca562da154",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "docs/c++/C++基础.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
             "id": "1ee023b7498b09d5",
             "type": "leaf",
             "state": {
@@ -105,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/c++/C++基础.md",
+                "file": "docs/面试/计算机科学/并发编程.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -122,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/c++/C++基础.md",
+                "file": "docs/面试/计算机科学/并发编程.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -145,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/c++/C++基础.md"
+                "file": "docs/面试/计算机科学/并发编程.md"
               }
             }
           },
@@ -187,10 +175,10 @@
       "omnisearch:Omnisearch": false
     }
   },
-  "active": "b419deca562da154",
+  "active": "1ee023b7498b09d5",
   "lastOpenFiles": [
-    "docs/面试/知识图谱.md",
     "docs/c++/C++基础.md",
+    "docs/面试/知识图谱.md",
     "docs/面试/计算机科学/并发编程.md",
     "docs/软件工程/设计模式.md",
     "docs/课程/计算机图形学/Games101-现代图形学基础.md",
