@@ -484,6 +484,8 @@ class LessonTwoActivity : AppCompatActivity() {
 
 ### 数据绑定
 
+- 不仅包括视图绑定的功能，还允许在布局文件中直接绑定应用程序数据，会自动将数据更新到视图上，实现 UI 和数据的自动同步
+
 ### 响应
 
 - 信号绑定
@@ -518,14 +520,15 @@ class LessonTwoActivity : AppCompatActivity() {
 
 ### 生命周期
 
-- <img src="https://camo.githubusercontent.com/64b60032e7d886a21adf8de58ebd4ed92d710933380fda2693a2ce93bb14eb7e/687474703a2f2f75706c6f61642d696d616765732e6a69616e7368752e696f2f75706c6f61645f696d616765732f333938353536332d383536313461646462626563376130632e706e673f696d6167654d6f6772322f6175746f2d6f7269656e742f7374726970253743696d61676556696577322f322f772f31323430" alt="img" style="zoom: 80%;" />
+- <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20240320105520192.png" alt="image-20240320105520192" style="zoom: 80%;" />
 - **OnCreate()**：系统在service第一次创建时执行此方法，来执行**只运行一次的**初始化工作。如果service已经运行，这个方法不会被调用。
 - **onStartCommand()**：每次客户端调用startService()方法启动该Service都会回调该方法（**多次调用**）。一旦这个方法执行，service就启动并且在后台长期运行。通过调用stopSelf()或stopService()来停止服务。
 - **OnBind()**：当组件调用bindService()想要绑定到service时(比如想要执行进程间通讯)系统调用此方法（**一次调用**，一旦绑定后，下次再调用bindService()不会回调该方法）。在你的实现中，你必须提供一个返回一个**IBinder来以使客户端能够使用它与service通讯**，你必须总是实现这个方法，但是如果你不允许绑定，那么你应返回null。（可以通过返回的IBinder来获取Service对象）
 - **OnUnbind()**：当前组件调用unbindService()，想要解除与service的绑定时系统调用此方法
 - **OnDestory()**:系统在service不再被使用并要销毁时调用此方法。
-- 1：第一次 startService 会触发 onCreate 和 onStartCommand，以后在服务运行过程中，每次 startService 都**只会触发 onStartCommand**；不论 startService 多少次，stopService **一次就会停止服务**
-- 2：如果一个Service在某个Activity中被调用bindService方法启动，不论bindService被调用几次，Service的onCreate方法只会执行一次（onBind也是），同时onStartCommand方法始终不会调用。Service会一直运行，除非调用u**nbindService来解除绑定**、**断开连接或调用该Service的Context不存在**
+  - 第一次 startService 会触发 onCreate 和 onStartCommand，以后在服务运行过程中，每次 startService 都**只会触发 onStartCommand**；不论 startService 多少次，stopService **一次就会停止服务**
+  - 如果一个 Service 在某个 Activity 中被调用 bindService 方法启动，不论 bindService 被调用几次，Service 的 onCreate 方法只会执行一次（onBind 也是），同时 onStartCommand 方法始终不会调用。Service 会一直运行，除非调用 u**nbindService 来解除绑定**、**断开连接或调用该 Service 的 Context 不存在**
+
 - 混合型：当一个Service在被启动(startService)的同时又被绑定(bindService)，该Service将会一直在后台运行，并且不管调用几次，onCreate方法始终只会调用一次，**onStartCommand的调用次数与startService调用的次数一致**（使用bindService方法不会调用onStartCommand）。同时，**调用unBindService将不会停止Service，必须调用stopService或Service自身的stopSelf来停止服务。**（同时也应该解绑）
 
 #### 使用选择
