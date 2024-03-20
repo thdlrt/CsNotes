@@ -8,18 +8,6 @@
         "type": "tabs",
         "children": [
           {
-            "id": "7a69e99c6430ff04",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "docs/归档课程/计算机系统基础/data/3.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
             "id": "65c4b4121e19c7ca",
             "type": "leaf",
             "state": {
@@ -117,7 +105,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/归档课程/计算机系统基础/data/3.md",
+                "file": "docs/归档课程/计算机系统基础/data/4.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -134,7 +122,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/归档课程/计算机系统基础/data/3.md",
+                "file": "docs/归档课程/计算机系统基础/data/4.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -157,7 +145,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/归档课程/计算机系统基础/data/3.md"
+                "file": "docs/归档课程/计算机系统基础/data/4.md"
               }
             }
           },
@@ -199,10 +187,10 @@
       "omnisearch:Omnisearch": false
     }
   },
-  "active": "7a69e99c6430ff04",
+  "active": "65c4b4121e19c7ca",
   "lastOpenFiles": [
-    "docs/归档课程/计算机系统基础/data/4.md",
     "docs/归档课程/计算机系统基础/data/3.md",
+    "docs/归档课程/计算机系统基础/data/4.md",
     "docs/归档课程/计算机系统基础/data/6.md",
     "docs/归档课程/计算机系统基础/计算机系统基础笔记.md",
     "docs/面试/计算机科学/并发编程.md",
