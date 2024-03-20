@@ -1,36 +1,8 @@
 {
   "recentFiles": [
     {
-      "basename": "并发编程",
-      "path": "docs/面试/计算机科学/并发编程.md"
-    },
-    {
       "basename": "android",
       "path": "docs/移动端开发/安卓/android.md"
-    },
-    {
-      "basename": "计算机网络",
-      "path": "docs/面试/计算机科学/计算机网络.md"
-    },
-    {
-      "basename": "编程思想",
-      "path": "docs/软件工程/编程思想与规范/编程思想.md"
-    },
-    {
-      "basename": "八股",
-      "path": "docs/c++/八股.md"
-    },
-    {
-      "basename": "C++基础",
-      "path": "docs/c++/C++基础.md"
-    },
-    {
-      "basename": "知识图谱",
-      "path": "docs/面试/知识图谱.md"
-    },
-    {
-      "basename": "设计模式",
-      "path": "docs/软件工程/设计模式.md"
     },
     {
       "basename": "Games101-现代图形学基础",
@@ -49,12 +21,20 @@
       "path": "docs/杂项/linux与shell/八股.md"
     },
     {
+      "basename": "设计模式",
+      "path": "docs/软件工程/设计模式.md"
+    },
+    {
       "basename": "linux",
       "path": "docs/杂项/linux与shell/linux.md"
     },
     {
       "basename": "文件系统",
       "path": "docs/杂项/linux与shell/linux/文件系统.md"
+    },
+    {
+      "basename": "八股",
+      "path": "docs/c++/八股.md"
     },
     {
       "basename": "c++基础",
@@ -199,6 +179,26 @@
     {
       "basename": "index",
       "path": "docs/index.md"
+    },
+    {
+      "basename": "README",
+      "path": "README.md"
+    },
+    {
+      "basename": "内部类",
+      "path": "docs/java/java基础/面向对象/内部类.md"
+    },
+    {
+      "basename": "构造方法",
+      "path": "docs/java/java基础/面向对象/构造方法.md"
+    },
+    {
+      "basename": "字符串",
+      "path": "docs/java/java基础/数据类型/字符串.md"
+    },
+    {
+      "basename": "枚举类型",
+      "path": "docs/java/java基础/数据类型/枚举类型.md"
     }
   ],
   "omittedPaths": [],

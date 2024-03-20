@@ -6,47 +6,49 @@
 
 - Android- Manifest.xml配置文件
 
-  - ```xml
-    <application
-            android:allowBackup="true"
-            android:dataExtractionRules="@xml/data_extraction_rules"
-            android:fullBackupContent="@xml/backup_rules"
-            android:icon="@mipmap/ic_launcher"
-            android:label="@string/app_name"
-            android:roundIcon="@mipmap/ic_launcher_round"
-            android:supportsRtl="true"
-            android:theme="@style/Theme.BaiduDemo"
-            tools:targetApi="31">
-    ```
 
-    - 基本配置信息
+```xml
+<application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.BaiduDemo"
+        tools:targetApi="31">
+```
 
-  - ```xml
-    <activity android:name=".lesson2.LessonTwoActivity"
-    android:exported="true">
-       <intent-filter>
-           <action android:name="android.intent.action.MAIN" />
-           <category android:name="android.intent.category.LAUNCHER" />
-       </intent-filter>
-    </activity>
-    ```
+- 基本配置信息
 
-    - 对MainActivity进⾏注册，并表⽰MainActivity是这个项⽬的主Activity，在⼿机上点击应⽤图标，⾸先启动的就是这个Activity。(必须要设置一个主activity)
+```xml
+<activity android:name=".lesson2.LessonTwoActivity"
+android:exported="true">
+   <intent-filter>
+       <action android:name="android.intent.action.MAIN" />
+       <category android:name="android.intent.category.LAUNCHER" />
+   </intent-filter>
+</activity>
+```
+
+- 对MainActivity进⾏注册，并表⽰MainActivity是这个项⽬的主Activity，在⼿机上点击应⽤图标，⾸先启动的就是这个Activity。(必须要设置一个主activity)
 
 - activity：
 
-  - ```
-    class LessonTwoActivity : AppCompatActivity() {
-        override fun onCreate(savedInstanceState: Bundle?) {
-            super.onCreate(savedInstanceState)
-            setContentView(R.layout.activity_main)
-        }
-    }
-    ```
 
-    - 项⽬中所有⾃定义的Activity都必须继承它或者它的⼦类才能拥有Activity的特性，该文件中存储程序的逻辑
-    - 在res/layout文件夹中以xml的格式设置布局（上面的activity_main）
-      - 在activity中引用ui配置`setContentView(R.layout.first_layout)`
+```kotlin
+class LessonTwoActivity : AppCompatActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+    }
+}
+```
+
+- 项⽬中所有⾃定义的Activity都必须继承它或者它的⼦类才能拥有Activity的特性，该文件中存储程序的逻辑
+- 在res/layout文件夹中以xml的格式设置布局（上面的activity_main）
+  - 在activity中引用ui配置`setContentView(R.layout.first_layout)`
 
 - res文件结构
 
@@ -345,7 +347,6 @@
 
 - 横竖屏切换
   - 在Activity由于异常情况下终止时，系统会调用**onSaveInstanceState**来保存当前Activity的状态。这个方法的调用是在**onStop之前**，它和onPause没有既定的时序关系，该方法只在Activity被异常终止的情况下调用。当异常终止的Activity被**重建**以后，系统会调用**onRestoreInstanceState**，并且把Activity销毁时onSaveInstanceState方法所保存的Bundle对象参数同时传递给onRestoreInstanceState和onCreate方法。
-    - <img src="https://camo.githubusercontent.com/2a3ceb59c3e7851daea9a0dff4e669eb261ae0dfbaa6eca22dc1fcce37545a50/687474703a2f2f75706c6f61642d696d616765732e6a69616e7368752e696f2f75706c6f61645f696d616765732f333938353536332d323364393034373166613766313264322e706e673f696d6167654d6f6772322f6175746f2d6f7269656e742f7374726970253743696d61676556696577322f322f772f31323430" alt="img" style="zoom: 80%;" />
   - 横竖屏切换的生命周期：onPause()->onSaveInstanceState()-> onStop()->onDestroy()->onCreate()->onStart()->onRestoreInstanceState->onResume()
 - 由于资源不足Activity被杀死
   - 优先级分类：
