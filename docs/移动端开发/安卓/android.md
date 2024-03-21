@@ -2825,7 +2825,8 @@ class LessonTwoActivity : AppCompatActivity() {
 
 #### ConstraintLayout约束布局
 
-- 创建具有复杂关系的界面，减少嵌套层次，提高性能
+- 创建具有复杂关系的界面，减少嵌套层次，提高性能，支持基线对齐、比例定位等高级功能。提供了可视化工具来构建复杂布局
+- `ConstraintLayout` 是为了提高布局的灵活性和性能而设计的。它可以轻松创建复杂的布局，同时保持层级**结构扁平**，从而提高渲染效率。
 - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230724112212503.png" alt="image-20230724112212503" style="zoom:33%;" />
   - 指向其他组件/parent
 - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230724112243620.png" alt="image-20230724112243620" style="zoom:33%;" />
@@ -2835,7 +2836,7 @@ class LessonTwoActivity : AppCompatActivity() {
 
 #### RelativeLayout相对布局
 
-- 可以通过相对定位的⽅式让控件出现在布局的任何位置
+- 可以通过相对定位的⽅式让控件出现在布局的任何位置，允许**子视图相对于彼此或父容器的位置**进行定位
 
 - ```
   android:layout_alignParentLeft、
@@ -3730,7 +3731,7 @@ class LessonTwoActivity : AppCompatActivity() {
 
 - <img src="https://camo.githubusercontent.com/6eac7dfc45afb5cf12e764fa07b53b47aaf3647c3bc48575d8bfcb285578ed65/687474703a2f2f75706c6f61642d696d616765732e6a69616e7368752e696f2f75706c6f61645f696d616765732f333938353536332d386165666163343262333931323533392e706e673f696d6167654d6f6772322f6175746f2d6f7269656e742f7374726970253743696d61676556696577322f322f772f31323430" alt="img" style="zoom:80%;" />
 
-##### deaw绘制
+##### daw绘制
 
 - 顺序
   - 绘制背景 background.draw(canvas)
