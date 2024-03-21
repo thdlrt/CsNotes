@@ -5,16 +5,24 @@
       "path": "docs/课程/操作系统/笔记/并发.md"
     },
     {
+      "basename": "android",
+      "path": "docs/移动端开发/安卓/android.md"
+    },
+    {
+      "basename": "thread",
+      "path": "docs/课程/操作系统/代码/thread-lib/thread.h"
+    },
+    {
+      "basename": "操作系统",
+      "path": "docs/课程/操作系统/操作系统.md"
+    },
+    {
       "basename": "绪论",
       "path": "docs/课程/操作系统/笔记/绪论.md"
     },
     {
       "basename": "6",
       "path": "docs/归档课程/计算机系统基础/data/6.md"
-    },
-    {
-      "basename": "android",
-      "path": "docs/移动端开发/安卓/android.md"
     },
     {
       "basename": "八股",
@@ -191,14 +199,6 @@
     {
       "basename": "使用享元自定义Collecction和Map",
       "path": "docs/java/java基础/高级/使用享元自定义Collecction和Map.md"
-    },
-    {
-      "basename": "Math类",
-      "path": "docs/java/java基础/Util/Math类.md"
-    },
-    {
-      "basename": "时间类",
-      "path": "docs/java/java基础/Util/时间类.md"
     }
   ],
   "omittedPaths": [],

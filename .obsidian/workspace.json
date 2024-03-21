@@ -77,7 +77,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 216.5
   },
   "right": {
     "id": "d615b65a4ccf8a6a",
@@ -173,11 +173,21 @@
       "audio-recorder:开始/结束录音": false,
       "obsidian-excalidraw-plugin:新建绘图文件": false,
       "obsidian-advanced-slides:Show Slide Preview": false,
-      "omnisearch:Omnisearch": false
+      "omnisearch:Omnisearch": false,
+      "vscode-editor:新建代码文件": false
     }
   },
   "active": "409de4665ab6bbb8",
   "lastOpenFiles": [
+    "docs/移动端开发/安卓/android.md",
+    "docs/课程/操作系统/笔记/并发.md",
+    "docs/课程/操作系统/代码/thread-lib/thread.h",
+    "docs/课程/操作系统/代码/thread-lib/hello.h.c",
+    "docs/课程/操作系统/代码/thread-lib/hello.c",
+    "docs/课程/操作系统/操作系统.md",
+    "docs/课程/操作系统/代码/thread-lib/Makefile",
+    "docs/课程/操作系统/代码/thread-lib/README.md",
+    "docs/课程/操作系统/代码/thread-lib",
     "docs/课程/操作系统/笔记/绪论.md",
     "docs/归档课程/计算机系统基础/data/6.md",
     "conflict-files-obsidian-git.md",
@@ -187,14 +197,9 @@
     "docs/课程/操作系统/代码/os-model/hello.py",
     "docs/课程/操作系统/代码/os-model",
     "docs/课程/操作系统/代码",
-    "docs/移动端开发/安卓/android.md",
     "docs/课程/操作系统/笔记/虚拟化.md",
     "docs/课程/操作系统/笔记/持久化.md",
-    "docs/课程/操作系统/笔记/并发.md",
     "docs/课程/操作系统/笔记/内核.md",
-    "docs/课程/操作系统/操作系统.md",
-    "docs/课程/操作系统/笔记",
-    "docs/课程/操作系统",
     "docs/c++/八股.md",
     "docs/面试/计算机科学/计算机网络.md",
     "docs/游戏开发/游戏引擎/unity/unity.md",
@@ -209,10 +214,6 @@
     "docs/c++/C++基础.md",
     "docs/面试/知识图谱.md",
     "docs/软件工程/设计模式.md",
-    "docs/课程/计算机图形学/Games101-现代图形学基础.md",
-    "docs/课程/编译原理/课件/Chapter_4.pdf",
-    "docs/课程/金融工程学/郑振龙《金融工程》（第5版）笔记和课后习题（含考研真题）详解答案.pdf",
-    "docs/课程/金融工程学",
     "CsNotes/2021-11-22-22-54-02.png",
     "CsNotes/2021-11-22-22-52-49.png",
     "CsNotes/2021-11-22-22-49-26.png",
