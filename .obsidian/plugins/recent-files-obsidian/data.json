@@ -1,6 +1,10 @@
 {
   "recentFiles": [
     {
+      "basename": "6",
+      "path": "docs/归档课程/计算机系统基础/data/6.md"
+    },
+    {
       "basename": "绪论",
       "path": "docs/课程/操作系统/笔记/绪论.md"
     },
@@ -27,10 +31,6 @@
     {
       "basename": "jvm",
       "path": "docs/java/工具/jvm.md"
-    },
-    {
-      "basename": "6",
-      "path": "docs/归档课程/计算机系统基础/data/6.md"
     },
     {
       "basename": "4",
