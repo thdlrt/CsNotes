@@ -18,8 +18,19 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "7c0ccb73e1c48851",
+            "type": "leaf",
+            "state": {
+              "type": "vscode-editor",
+              "state": {
+                "file": "docs/课程/操作系统/代码/os-model/os-model.py"
+              }
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -77,8 +88,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 417.5
   },
   "right": {
     "id": "d615b65a4ccf8a6a",
@@ -94,7 +104,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/课程/操作系统/笔记/绪论.md",
+                "file": "docs/课程/操作系统/代码/os-model/os-model.py",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -111,7 +121,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/课程/操作系统/笔记/绪论.md",
+                "file": "docs/课程/操作系统/代码/os-model/os-model.py",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -134,7 +144,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/课程/操作系统/笔记/绪论.md"
+                "file": "docs/课程/操作系统/代码/os-model/os-model.py"
               }
             }
           },
@@ -174,13 +184,20 @@
       "audio-recorder:开始/结束录音": false,
       "obsidian-excalidraw-plugin:新建绘图文件": false,
       "obsidian-advanced-slides:Show Slide Preview": false,
-      "omnisearch:Omnisearch": false
+      "omnisearch:Omnisearch": false,
+      "vscode-editor:新建代码文件": false
     }
   },
-  "active": "f2d3c321ff559679",
+  "active": "7c0ccb73e1c48851",
   "lastOpenFiles": [
-    "conflict-files-obsidian-git.md",
     "docs/课程/操作系统/笔记/绪论.md",
+    "docs/课程/操作系统/代码/os-model/os-model.py",
+    "docs/课程/操作系统/代码/os-model/hello.py",
+    "docs/课程/操作系统/代码/os-model/proc.py",
+    "docs/课程/操作系统/代码/os-model/README.md",
+    "docs/课程/操作系统/代码/os-model",
+    "docs/课程/操作系统/代码",
+    "conflict-files-obsidian-git.md",
     "docs/面试/计算机科学/计算机网络.md",
     "docs/移动端开发/安卓/android.md",
     "docs/杂项/linux与shell/八股.md",
@@ -204,17 +221,10 @@
     "面试/面试技巧/反问环节.md",
     "面试/面试技巧",
     "面试/自我介绍",
-    "面试",
     "().md",
     "docs/c++/c++基础.md",
     "docs/课程/编译原理/作业/p2.md",
     "docs/面试/计算机科学/杂项.md",
-    "docs/面试/计算机科学/并发编程.md",
-    "docs/游戏开发/游戏引擎/unity/unity.md",
-    "docs/游戏开发/游戏引擎/unity",
-    "docs/游戏开发/游戏引擎",
-    "docs/数据库/关系数据库/data",
-    "docs/面试/计算机科学",
     "CsNotes/2021-11-22-22-54-02.png",
     "CsNotes/2021-11-22-22-52-49.png",
     "CsNotes/2021-11-22-22-49-26.png",
