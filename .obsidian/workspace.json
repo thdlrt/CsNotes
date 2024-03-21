@@ -18,8 +18,17 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "e1f421f616a9da20",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {}
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -94,7 +103,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/课程/操作系统/笔记/绪论.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -111,7 +119,6 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/课程/操作系统/笔记/绪论.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,9 +140,7 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "docs/课程/操作系统/笔记/绪论.md"
-              }
+              "state": {}
             }
           },
           {
@@ -177,10 +182,10 @@
       "omnisearch:Omnisearch": false
     }
   },
-  "active": "409de4665ab6bbb8",
+  "active": "e1f421f616a9da20",
   "lastOpenFiles": [
-    "docs/移动端开发/安卓/android.md",
     "docs/课程/操作系统/笔记/绪论.md",
+    "docs/移动端开发/安卓/android.md",
     "docs/课程/操作系统/笔记/虚拟化.md",
     "docs/课程/操作系统/笔记/持久化.md",
     "docs/课程/操作系统/笔记/并发.md",
