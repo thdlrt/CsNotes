@@ -5,8 +5,6 @@
 ### 工程结构
 
 - Android- Manifest.xml配置文件
-
-
 ```xml
 <application
         android:allowBackup="true"
