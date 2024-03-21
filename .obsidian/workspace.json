@@ -13,26 +13,13 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/课程/操作系统/笔记/绪论.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "971b573ca64a1acf",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "docs/归档课程/计算机系统基础/data/6.md",
+                "file": "docs/课程/操作系统/笔记/并发.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -106,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/归档课程/计算机系统基础/data/6.md",
+                "file": "docs/课程/操作系统/笔记/并发.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -123,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/归档课程/计算机系统基础/data/6.md",
+                "file": "docs/课程/操作系统/笔记/并发.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -146,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/归档课程/计算机系统基础/data/6.md"
+                "file": "docs/课程/操作系统/笔记/并发.md"
               }
             }
           },
@@ -171,7 +158,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 200,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -188,9 +176,10 @@
       "omnisearch:Omnisearch": false
     }
   },
-  "active": "971b573ca64a1acf",
+  "active": "409de4665ab6bbb8",
   "lastOpenFiles": [
     "docs/课程/操作系统/笔记/绪论.md",
+    "docs/归档课程/计算机系统基础/data/6.md",
     "conflict-files-obsidian-git.md",
     "docs/课程/操作系统/代码/os-model/proc.py",
     "docs/课程/操作系统/代码/os-model/README.md",
@@ -211,7 +200,6 @@
     "docs/游戏开发/游戏引擎/unity/unity.md",
     "docs/游戏开发/游戏引擎/unity/八股.md",
     "docs/java/工具/jvm.md",
-    "docs/归档课程/计算机系统基础/data/6.md",
     "docs/归档课程/计算机网络/八股.md",
     "docs/归档课程/计算机系统基础/data/4.md",
     "docs/归档课程/计算机系统基础/data/3.md",
