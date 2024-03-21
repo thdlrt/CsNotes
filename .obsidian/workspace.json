@@ -18,8 +18,21 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "4be3e082dac4e515",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "conflict-files-obsidian-git.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -94,7 +107,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/课程/操作系统/笔记/绪论.md",
+                "file": "conflict-files-obsidian-git.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -111,7 +124,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/课程/操作系统/笔记/绪论.md",
+                "file": "conflict-files-obsidian-git.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -134,7 +147,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/课程/操作系统/笔记/绪论.md"
+                "file": "conflict-files-obsidian-git.md"
               }
             }
           },
@@ -177,8 +190,10 @@
       "omnisearch:Omnisearch": false
     }
   },
-  "active": "f2d3c321ff559679",
+  "active": "4be3e082dac4e515",
   "lastOpenFiles": [
+    "docs/课程/操作系统/笔记/绪论.md",
+    "conflict-files-obsidian-git.md",
     "docs/面试/计算机科学/计算机网络.md",
     "docs/移动端开发/安卓/android.md",
     "docs/杂项/linux与shell/八股.md",
@@ -186,7 +201,6 @@
     "docs/java/java基础.md",
     "docs/软件工程/项目管理.md",
     "docs/课程/计算机图形学/八股.md",
-    "conflict-files-obsidian-git.md",
     "面试/自我介绍/腾讯天美游戏端开发.md",
     "docs/课程/计算机图形学/Games101-现代图形学基础.md",
     "docs/课程/编译原理/课件/Chapter_4.pdf",
@@ -210,7 +224,6 @@
     "docs/面试/计算机科学/杂项.md",
     "docs/面试/计算机科学/并发编程.md",
     "docs/游戏开发/游戏引擎/unity/unity.md",
-    "docs/游戏开发/游戏引擎/unity/c#.md",
     "docs/游戏开发/游戏引擎/unity",
     "docs/游戏开发/游戏引擎",
     "docs/数据库/关系数据库/data",
