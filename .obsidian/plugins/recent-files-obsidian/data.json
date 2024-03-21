@@ -1,6 +1,10 @@
 {
   "recentFiles": [
     {
+      "basename": "绪论",
+      "path": "docs/课程/操作系统/笔记/绪论.md"
+    },
+    {
       "basename": "计算机网络",
       "path": "docs/面试/计算机科学/计算机网络.md"
     },
@@ -195,10 +199,6 @@
     {
       "basename": "泛型",
       "path": "docs/java/java基础/杂项/泛型.md"
-    },
-    {
-      "basename": "index",
-      "path": "docs/index.md"
     }
   ],
   "omittedPaths": [],
