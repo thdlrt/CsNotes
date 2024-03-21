@@ -1,12 +1,12 @@
 {
   "recentFiles": [
     {
-      "basename": "os-model",
-      "path": "docs/课程/操作系统/代码/os-model/os-model.py"
-    },
-    {
       "basename": "绪论",
       "path": "docs/课程/操作系统/笔记/绪论.md"
+    },
+    {
+      "basename": "os-model",
+      "path": "docs/课程/操作系统/代码/os-model/os-model.py"
     },
     {
       "basename": "计算机网络",

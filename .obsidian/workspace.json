@@ -18,19 +18,8 @@
                 "source": false
               }
             }
-          },
-          {
-            "id": "7c0ccb73e1c48851",
-            "type": "leaf",
-            "state": {
-              "type": "vscode-editor",
-              "state": {
-                "file": "docs/课程/操作系统/代码/os-model/os-model.py"
-              }
-            }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -104,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/课程/操作系统/代码/os-model/os-model.py",
+                "file": "docs/课程/操作系统/笔记/绪论.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -121,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/课程/操作系统/代码/os-model/os-model.py",
+                "file": "docs/课程/操作系统/笔记/绪论.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -144,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/课程/操作系统/代码/os-model/os-model.py"
+                "file": "docs/课程/操作系统/笔记/绪论.md"
               }
             }
           },
@@ -188,10 +177,10 @@
       "vscode-editor:新建代码文件": false
     }
   },
-  "active": "7c0ccb73e1c48851",
+  "active": "f2d3c321ff559679",
   "lastOpenFiles": [
-    "docs/课程/操作系统/笔记/绪论.md",
     "docs/课程/操作系统/代码/os-model/os-model.py",
+    "docs/课程/操作系统/笔记/绪论.md",
     "docs/课程/操作系统/代码/os-model/hello.py",
     "docs/课程/操作系统/代码/os-model/proc.py",
     "docs/课程/操作系统/代码/os-model/README.md",
