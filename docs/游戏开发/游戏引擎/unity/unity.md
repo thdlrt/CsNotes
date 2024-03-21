@@ -128,6 +128,9 @@ public class Cannon : MonoBehaviour
   - 默认条件下会对模型所有的面添加碰撞
   - 开启凸包选项之后则只有模型的凸包（最外层）具有碰撞
 
+- 层级通常用于：摄像机渲染控制、光照控制、物理交互（如是否碰撞）
+- 标签通常用于：快速访问对象（筛选），逻辑分组（如敌我识别）
+
 #### Rigidbody
 
 - 
@@ -158,18 +161,21 @@ GameObject instance = Instantiate(myPrefab, position, rotation);
   - 如果声明为虚函数并重写则只会调用一个
 #### 初始化阶段
 - **Awake**
-  - 当一个脚本实例被加载时被调用。
+  - 在**加载**包含脚本的游戏对象时调用，无论该对象是否启用。
   - 总是在任何`Start`方法之前被调用。
   - 即使脚本是禁用的，这个方法也会被调用。
+  - 初始化变量或状态。配置**不依赖于其他游戏对象**的设置。
 
 - **OnEnable**
-  - 当脚本被初始化或者当所在的GameObject被设置为active时调用。
+  - 当脚本被初始化或者当所在的GameObject被设置为active时调用。在脚本对象被**激活**时调用
   - 这发生在所有对象的 `Awake` 之后、任何对象的 `Start` 之前。
-
+  - 注册事件监听器或**广播消息。开始协程。对外部资源进行订阅或更新状态。****
+**
 - **Start**
-  - 在Update之前的第一个帧中被调用。
+  - 在**Update之前**的第一个帧中被调用。
   - **仅被调用一次**。
   - 如果 MonoBehaviour 被禁用，则不会被调用。
+  - 初始化**依赖于其他对象**的变量或状态。在场景中查找其他游戏对象。设置依赖于场景中其他对象或组件的初始化代码。
 #### 更新阶段
 - **FixedUpdate**
   - 用于(时间)**固定**的帧率**的更新，与**物理**相关的代码应该放在这里。** 可以保证物理模拟的稳定性
@@ -338,6 +344,18 @@ transform.rotation = Quaternion.Slerp(startRotation, endRotation, t*Time.deltaTi
 - `KeyCode`
   - 对于字母：`KeyCode.W`
 
+- 传统方式就是在 Update 中进行轮询
+```c#
+void Update() {
+    if (Input.GetKeyDown(KeyCode.Space)) {
+        Debug.Log("Space key was pressed.");
+    }
+
+    float horizontal = Input.GetAxis("Horizontal");
+    float vertical = Input.GetAxis("Vertical");
+}
+```
+
 #### 鼠标
 
 - `Input.GetMouseButton(int)`: 在按钮被按下的每一帧中返回`true`。
@@ -378,6 +396,7 @@ public delegate void MyEventHandler(string message);
 public event MyEventHandler MyEvent;
 
 ```
+- 可以讲一个参数匹配的方法赋值给委托，即相当于用这个方法实现了这个委托
 
 - 触发事件`MyEvent()`
 - 订阅事件`someInstance.MyEvent += MyHandlerMethod;`
@@ -393,7 +412,8 @@ public event MyEventHandler MyEvent;
       {
           someEvent -= MyEventHandler;
       }
-      
+  //广播
+  someEvent?.Invoke();
 ```
 
 ### 补充
@@ -522,8 +542,7 @@ public static bool RayTrigger(Vector3 from, GameObject to , string tag)
 
 - 统一unity editor版本：**2022.3.8f1c1**
 - editor更换中文(hub更换中文直接设置里改)
-  - [https://new-translate.unity3d.jp/v1/live/54/](http://jump.bdimg.com/safecheck/index?url=rN3wPs8te/rPoP5v45JBTu4czwulJGOOaj5g08pyEDegSqfiflO2vx91sG5rwyFyv/fBB5q9WQqltJi6QngliCrc+wPGJ+uFg6bTGKqiExMgZ1h2ZCQ4UKn2oQ7N0q40l40itacg0FRU8hR5zalJyfYTmn8eAnOoVfdkwJqFldMwPGbuJnYGNA==){version}/zh-hans 把{version}换成你的版本，比如说如果你的是2022.3.8f1c1那就填**2022.3.**其他同理。下完之后放到Unity安装目录下Data里的Localization文件夹里，如果没有就新建一个。放完之后在界面左上角找到Edit，然后在下面找到preferences选项，找到language，在editor language那一栏选简体中文。
-- 使用vscode作为编译器[Visual Studio Code and Unity](https://code.visualstudio.com/docs/other/unity)
+  - [https://new-translate.unity3d.jp/v1/live/54/](http://jump.bdimg.com/safecheck/index?url=rN3wPs8te/rPoP5v45JBTu4czwulJGOOaj5g08pyEDegSqfiflO2vx91sG5rwyFyv/fBB5q9WQqltJi6QngliCrc+wPGJ+uFg6bTGKqiExMgZ1h2ZCQ4UKn2oQ7N0q40l40itacg0FRU8hR5zalJyfYTmn8eAnOoVfdkwJqFldMwPGbuJnYGNA==){version}/zh-hans 把{version}换成你的版本，比如说如果你的是2022.3.8f1c1那就填**2022.3.** 其他同理。下完之后放到 Unity 安装目录下 Data 里的 Localization 文件夹里，如果没有就新建一个。放完之后在界面左上角找到 Edit，然后在下面找到 preferences 选项，找到 language，在 editor language 那一栏选简体中文。
 
 ### 文件结构
 

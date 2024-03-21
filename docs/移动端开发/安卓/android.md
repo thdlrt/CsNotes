@@ -1,4 +1,4 @@
-参考：[android_interview/android/basis/broadcastreceiver.md at master · LRH1993/android_interview (github.com)](https://github.com/LRH1993/android_interview/blob/master/android/basis/broadcastreceiver.md)
+参考：[GitHub - LRH1993/android\_interview: gitbook地址](https://github.com/LRH1993/android_interview/tree/master)以及《第一行代码——安卓开发》
 
 ##  概述
 
@@ -296,14 +296,18 @@ class LessonTwoActivity : AppCompatActivity() {
   - 停⽌状态：当⼀个Activity不再处于栈顶位置，并且完全不可⻅的时候，就进⼊了停⽌状态。
   - 销毁状态：⼀个Activity从返回栈中移除后就变成了销毁状态。
 
+- <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20240320220534218.png" alt="image-20240320220534218" style="zoom: 25%;" />
+
 - 生命周期回调
 
   - onCreate()：Activity第⼀次被创建的时候调⽤。完成Activity的初始化操作，⽐如加载布局、绑定事件等。
-    - ⼀般情况下，⼀个Activity会在onCreate()⽅法中完成各种初始化操作，⽽在onDestroy()⽅法中完成释放内存的操作。
+    - ⼀般情况下，⼀个Activity会在onCreate()⽅法中完成各种初始化操作(如setContentView去加载界面布局资源)，⽽在onDestroy()⽅法中完成释放内存的操作。
   - onStart()。这个⽅法在Activity由**不可⻅变为可⻅**的时候调⽤。
     - Activity在onStart()⽅法和onStop()⽅法之间所经历的就是可⻅⽣存期。可以通过这两个⽅法合理地管理那些对⽤户可⻅的资源。
+    - 这是activity已经显示出来了但是还没有被用户看到
   - onResume()。这个⽅法在Activity准备好和⽤户进⾏交互的时候调⽤。此时的Activity⼀定位于返回栈的栈顶，并且处于运⾏状态。
     - Activity在onResume()⽅法和onPause()⽅法之间所经历的就是前台⽣存期
+    - 已经可见了，出现在前台开始活动
   - onPause()。这个⽅法在系统准备去启动或者恢复另⼀个Activity的时候调⽤。
   - onStop()。这个⽅法在Activity**完全不可⻅**的时候调⽤。
     - 不应执行太耗时的操作
@@ -312,8 +316,7 @@ class LessonTwoActivity : AppCompatActivity() {
     - 关闭`B Activity`
       分别执行`B onPause()、A onRestart()、A onStart()、A onResume()、B onStop()、B onDestroy()`方法。
   - onDestroy()。这个⽅法在Activity**被销毁之前**调⽤，之后Activity的状态将变为销毁状态。
-  - onRestart()。这个⽅法在Activity由停⽌状态变为运⾏状态之前调⽤，也就是Activity被重新启动了。
-  - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230716234506110.png" alt="image-20230716234506110" style="zoom: 50%;" />
+  - onRestart()。这个⽅法在Activity由停⽌状态变为运⾏状态之前调⽤，也就是Activity被重新启动了。（不可见重新变为可见）
 
 - 当一个activity被回收时会丢失其中暂存的数据，需要进行缓存，从而在重新创建时恢复
 
@@ -432,8 +435,8 @@ class LessonTwoActivity : AppCompatActivity() {
 #### 前台栈和后台栈的交互
 
 - 假如目前有两个任务栈。前台任务栈为AB，后台任务栈为CD，这里假设CD的启动模式均为singleTask,现在请求启动D，那么**这个后台的任务栈都会被切换到前台**
-  - <img src="https://camo.githubusercontent.com/796afbc8136b4404ce0a3b7361ce25dfecbcf604e5d1ada5097551b1e0152fc7/687474703a2f2f75706c6f61642d696d616765732e6a69616e7368752e696f2f75706c6f61645f696d616765732f333938353536332d346165623139343762626132376534342e706e673f696d6167654d6f6772322f6175746f2d6f7269656e742f7374726970253743696d61676556696577322f322f772f31323430" alt="img" style="zoom:80%;" />
-  - <img src="https://camo.githubusercontent.com/2a1accaf4f4fe23931a9023d30ae0aa64560f2269a72dfdab1663f73505acb28/687474703a2f2f75706c6f61642d696d616765732e6a69616e7368752e696f2f75706c6f61645f696d616765732f333938353536332d663265616631303035636466316231642e706e673f696d6167654d6f6772322f6175746f2d6f7269656e742f7374726970253743696d61676556696577322f322f772f31323430" alt="img" style="zoom:80%;" />
+  - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20240320223605269.png" alt="image-20240320223605269" style="zoom:33%;" />
+  - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20240320223619373.png" alt="image-20240320223619373" style="zoom:33%;" />
 
 ### 组件获取
 
@@ -529,7 +532,7 @@ class LessonTwoActivity : AppCompatActivity() {
   - 第一次 startService 会触发 onCreate 和 onStartCommand，以后在服务运行过程中，每次 startService 都**只会触发 onStartCommand**；不论 startService 多少次，stopService **一次就会停止服务**
   - 如果一个 Service 在某个 Activity 中被调用 bindService 方法启动，不论 bindService 被调用几次，Service 的 onCreate 方法只会执行一次（onBind 也是），同时 onStartCommand 方法始终不会调用。Service 会一直运行，除非调用 u**nbindService 来解除绑定**、**断开连接或调用该 Service 的 Context 不存在**
 
-- 混合型：当一个Service在被启动(startService)的同时又被绑定(bindService)，该Service将会一直在后台运行，并且不管调用几次，onCreate方法始终只会调用一次，**onStartCommand的调用次数与startService调用的次数一致**（使用bindService方法不会调用onStartCommand）。同时，**调用unBindService将不会停止Service，必须调用stopService或Service自身的stopSelf来停止服务。**（同时也应该解绑）
+- 混合型：当一个Service在被启动(startService)的同时又被绑定(bindService)，该Service将会一直在后台运行（bindservice会在绑定对象销毁时自动销毁），并且不管调用几次，onCreate方法始终只会调用一次，**onStartCommand的调用次数与startService调用的次数一致**（使用bindService方法不会调用onStartCommand）。同时，**调用unBindService将不会停止Service，必须调用stopService或Service自身的stopSelf来停止服务。**（同时也应该解绑）
 
 #### 使用选择
 
@@ -860,20 +863,20 @@ class LessonTwoActivity : AppCompatActivity() {
 
 ## BroadcastReceiver广播机制
 
-- 标准⼴播是⼀种完全异步执⾏的⼴播，在⼴播发出之后，所有的BroadcastReceiver⼏乎会在**同⼀时刻**收到这条⼴播消息，因此它们之间没有任何先后顺序可⾔。
-- 有序⼴播则是⼀种同步执⾏的⼴播，在⼴播发出之后，同⼀时刻只会有⼀个BroadcastReceiver能够收到这条⼴播消息，当这个BroadcastReceiver中的逻辑执⾏完毕后，⼴播才会继续传递。（顺序传递）
+- **标准⼴播**是⼀种完全异步执⾏的⼴播，在⼴播发出之后，所有的BroadcastReceiver⼏乎会在**同⼀时刻**收到这条⼴播消息，因此它们之间没有任何先后顺序可⾔。
+- **有序⼴播**则是⼀种同步执⾏的⼴播，在⼴播发出之后，同⼀时刻只会有⼀个BroadcastReceiver能够收到这条⼴播消息，当这个BroadcastReceiver中的逻辑执⾏完毕后，⼴播才会继续传递。（顺序传递）
 
 ### 实现原理
 
 - 使用设计模式中的观察者模式
-- <img src="https://camo.githubusercontent.com/02d7f9103dbf61f95d4896cc111700240c140e527d01f5384486380c87368c3c/687474703a2f2f75706c6f61642d696d616765732e6a69616e7368752e696f2f75706c6f61645f696d616765732f3934343336352d303839366261386439313535313430652e706e673f696d6167654d6f6772322f6175746f2d6f7269656e742f7374726970253743696d61676556696577322f322f772f31323430" alt="img" style="zoom:80%;" />
+- <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20240320232531477.png" alt="image-20240320232531477" style="zoom:50%;" />
 - 广播接收者 通过 `Binder`机制在 `AMS` 注册
 - 广播发送者 通过 `Binder` 机制向 `AMS` 发送广播
 - `AMS` 根据 广播发送者 要求，在已注册列表中，寻找合适的广播接收者
 - `AMS`将广播发送到合适的广播接收者相应的消息循环队列中；
 - 广播接收者通过 消息循环 拿到此广播，并回调 `onReceive()`
 
-<img src="https://camo.githubusercontent.com/abe7d72b051318e58e429c8987d4c227ccaec2a5170dc000f098dd8cf54aa02a/687474703a2f2f75706c6f61642d696d616765732e6a69616e7368752e696f2f75706c6f61645f696d616765732f3934343336352d376339666636353665626431623938312e706e673f696d6167654d6f6772322f6175746f2d6f7269656e742f7374726970253743696d61676556696577322f322f772f31323430" alt="img" style="zoom:80%;" />
+![image-20240320232704341](https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20240320232704341.png)
 
 ### 注册
 
@@ -967,6 +970,8 @@ class LessonTwoActivity : AppCompatActivity() {
 - 通常事件绑定和取消都是在`onCreate()和onDestroy()`中进行的，但是如果希望只有最上层的activity响应事件（如在控制类中的全局事件处理会被每个activity继承，造成重复响应）
 
   - 可以在`onResume()和onPause()`中处理来解决
+  
+- <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20240320232901793.png" alt="image-20240320232901793" style="zoom:50%;" />
 
 
 ### 发送广播
@@ -1348,11 +1353,13 @@ class LessonTwoActivity : AppCompatActivity() {
 
 ### ContentProvider跨应用数据交互
 
-- <img src="https://camo.githubusercontent.com/3d97174ca9577d6a8cbcbc93785bb752951c254264bcd2eae023517c2b84285c/687474703a2f2f75706c6f61642d696d616765732e6a69616e7368752e696f2f75706c6f61645f696d616765732f3934343336352d336334333339633566316434613066642e706e673f696d6167654d6f6772322f6175746f2d6f7269656e742f7374726970253743696d61676556696577322f322f772f31323430" alt="img" style="zoom:33%;" />
+- <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20240320233904998.png" alt="image-20240320233904998" style="zoom:33%;" />
 
 - 可以选择将一部分数据共享给其他应用，而一些数据不共享
 
 - ContentProvider主要以表格的形式组织数据
+
+- 实现**跨进程通讯**
 
 #### 运行时权限
 
@@ -1412,7 +1419,7 @@ class LessonTwoActivity : AppCompatActivity() {
 #### 统一资源标识符URI
 
 - 唯一标识 ContentProvider & 其中的数据
-- <img src="https://camo.githubusercontent.com/56b7f3d1be49a53d21d31463a616686e872bc1c2096fc6c3c92557a78b9e8955/687474703a2f2f75706c6f61642d696d616765732e6a69616e7368752e696f2f75706c6f61645f696d616765732f3934343336352d393630313961323035346562323763662e706e673f696d6167654d6f6772322f6175746f2d6f7269656e742f7374726970253743696d61676556696577322f322f772f31323430" alt="img" style="zoom:80%;" />
+- <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20240320234222825.png" alt="image-20240320234222825" style="zoom: 50%;" />
 
 #### 访问其他程序中的数据
 
@@ -1845,15 +1852,15 @@ class LessonTwoActivity : AppCompatActivity() {
 
 - **Android应用模型是基于组件的应用设计模式，组件的运行要有一个完整的Android工程环境**，在这个环境下，Activity、Service等系统组件才能够正常工作，而这些组件并不能采用普通的Java对象创建方式，new一下就能创建实例了，而是要有它们各自的上**下文环境，也就是Context。**
 - Context提供了关于应用**环境全局信息**的接口。**它是一个抽象类，它的执行被Android系统所提供**。
-- <img src="https://camo.githubusercontent.com/f13f4e36dff25e4779267e1673708d89b1e3cf1c6af1766989cce8381170fb58/687474703a2f2f75706c6f61642d696d616765732e6a69616e7368752e696f2f75706c6f61645f696d616765732f313138373233372d316234633063643331666430313933662e706e673f696d6167654d6f6772322f6175746f2d6f7269656e742f7374726970253743696d61676556696577322f322f772f31323430" alt="img" style="zoom:50%;" />
+- <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20240321004805798.png" alt="image-20240321004805798" style="zoom:33%;" />
   - Context数量=Activity数量+Service数量+1（Application）
 - 功能：弹出Toast、启动Activity、启动Service、发送广播、操作数据库等等
-  - <img src="https://camo.githubusercontent.com/cb4b5eeeaf7c3c75d4857f966bfe3c4a0626b34c01fd67a5548191eef7ddaf0e/687474703a2f2f75706c6f61642d696d616765732e6a69616e7368752e696f2f75706c6f61645f696d616765732f313138373233372d666233326230663939326461343738312e706e673f696d6167654d6f6772322f6175746f2d6f7269656e742f7374726970253743696d61676556696577322f322f772f31323430" alt="img" style="zoom: 67%;" />
-  - 即：凡是跟UI相关的，都应该使用Activity做为Context来处理；其他的一些操作，Service,Activity,Application等实例都可以
+  - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20240321004755302.png" alt="image-20240321004755302" style="zoom:33%;" />
+  - 即：**凡是跟UI相关的**，都应该使用**Activity**做为Context来处理；其他的一些操作，Service,Activity,Application等实例都可以
 
 ### 获取Context对象
 
-- View.getContext,返回当前View对象的Context对象，通常是当前正在展示的Activity对象。
+- View.getContext,返回当前View对象的Context对象，通常是当前正在展示的**Activity对象**。
 - Activity.getApplicationContext,获取当前Activity所在的(应用)进程的Context对象，通常我们使用Context对象时，要优先考虑这个全局的进程Context。
 - Activity.this 返回当前的Activity实例，如果是UI控件需要使用Activity作为Context对象，但是默认的Toast实际上使用ApplicationContext也可以。
 
@@ -1942,12 +1949,13 @@ class LessonTwoActivity : AppCompatActivity() {
   - 停⽌状态：当⼀个Activity进⼊停⽌状态时，与它相关联的Fragment就会进⼊停⽌状态，或者通过调⽤FragmentTransaction的remove()、replace()⽅法将Fragment从Activity中移除，但在事务提交之前调⽤了addToBackStack()⽅法（**操作可以回退**），这时的Fragment也会进⼊停⽌状态。
   - 销毁状态：当Activity被销毁时，与它相关联的Fragment就会进⼊销毁状态。或者通过调⽤FragmentTransaction的remove()、replace()⽅法将Fragment从Activity中移除，但在事务提交之前并没有调⽤addToBackStack()⽅法，这时的Fragment也会进⼊销毁状态。
 - 生命周期回调
+  - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230717203711104.png" alt="image-20230717203711104" style="zoom:33%;" />
   - onAttach()：当Fragment和Activity建⽴关联时调⽤。
   - onCreateView()：为Fragment创建视图（加载布局）时调⽤。
   - onActivityCreated()：确保与Fragment相关联的Activity已经创建完毕时调⽤。
   - onDestroyView()：当与Fragment关联的视图被移除时调⽤。
   - onDetach()：当Fragment和Activity解除关联时调⽤。
-  - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230717203711104.png" alt="image-20230717203711104" style="zoom:33%;" />
+  
 
 ### 响应式布局
 
@@ -1975,8 +1983,8 @@ class LessonTwoActivity : AppCompatActivity() {
 
 ### 回退栈
 
-- ragment的回退栈是用来保存每一次Fragment事务发生的变化 如果你将Fragment任务添加到回退栈，当用户点击后退按钮时，将看到上一次的保存的Fragment。一旦Fragment完全从后退栈中弹出，用户再次点击后退键，则退出当前Activity
-- 使用remove操作时，如果被移除的Fragment没有添加到回退栈（回退栈后面会详细说），这个Fragment实例将会被销毁（在replace操作很常用）
+- fragment的回退栈是用来保存每一次Fragment事务发生的变化 如果你将Fragment任务添加到回退栈，当用户点击后退按钮时，将看到上一次的保存的Fragment。一旦Fragment完全从后退栈中弹出，用户再次点击后退键，则退出当前Activity
+- 使用remove操作时，如果被移除的Fragment没有添加到回退栈，这个Fragment实例将会被销毁（在replace操作很常用）
 
 ## 消息机制
 
@@ -1990,7 +1998,7 @@ class LessonTwoActivity : AppCompatActivity() {
 
 - Looper：MessageQueue的管家，发现MessageQueue中存在⼀条消息时，就会将它取出，并传递到Handler的handleMessage()⽅法中
 
-- <img src="https://camo.githubusercontent.com/9104023c0d03d0ab0656fa27121f95ae5e67a8f7e3b016bdf2dab798c313b025/687474703a2f2f75706c6f61642d696d616765732e6a69616e7368752e696f2f75706c6f61645f696d616765732f333938353536332d623332393562363761326230343737662e706e673f696d6167654d6f6772322f6175746f2d6f7269656e742f7374726970253743696d61676556696577322f322f772f31323430" alt="img" style="zoom:80%;" />
+- <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20240321000436935.png" alt="image-20240321000436935" style="zoom:33%;" />
 
 - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20231011141831891.png" alt="image-20231011141831891" style="zoom: 50%;" />
 
@@ -2075,21 +2083,6 @@ class LessonTwoActivity : AppCompatActivity() {
       return consume;
      }
   ```
-
-#### 实例
-
-- <img src="https://camo.githubusercontent.com/ecd908684ad3f517399bab2b55cb46bf004fa643de78f6e6844c069ce22d4220/687474703a2f2f75706c6f61642d696d616765732e6a69616e7368752e696f2f75706c6f61645f696d616765732f3934343336352d656361633632343738313661336462312e706e673f696d6167654d6f6772322f6175746f2d6f7269656e742f7374726970253743696d61676556696577322f322f772f31323430" alt="img" style="zoom:50%;" />
-
-- 默认的事件传递过程
-  - <img src="https://camo.githubusercontent.com/b2b1799a1633b84dcca3c256a2db56ac1fdaf894ca9b7745692205f8a0375f09/687474703a2f2f75706c6f61642d696d616765732e6a69616e7368752e696f2f75706c6f61645f696d616765732f3934343336352d363932323966643461383034633066382e706e673f696d6167654d6f6772322f6175746f2d6f7269656e742f7374726970253743696d61676556696577322f322f772f31323430" alt="img" style="zoom:80%;" />
-- 处理事件，如c的onTouchEvent()返回true
-  - <img src="https://camo.githubusercontent.com/d73c302ec266fb6d6b5829ba7940b2e6d953d7eac75a88d4a3d01e7cc8f1c42c/687474703a2f2f75706c6f61642d696d616765732e6a69616e7368752e696f2f75706c6f61645f696d616765732f3934343336352d323632393062306433333337303835332e706e673f696d6167654d6f6772322f6175746f2d6f7269656e742f7374726970253743696d61676556696577322f322f772f31323430" alt="img" style="zoom:50%;" />
-- 拦截down事件
-  - 假设ViewGroup B希望处理这个点击事件，即B覆写了onInterceptTouchEvent()返回true、onTouchEvent()返回true。
-  - 后续事件将直接传递给B的onTouchEvent()处理；后续事件将不会再传递给B的onInterceptTouchEvent方法，该方法一旦返回一次true，就再也不会被调用了。
-  - <img src="https://camo.githubusercontent.com/df628f7eb3985fb35a19e5978e418cdc1c133589a347f1ce93dc6e311c74d63e/687474703a2f2f75706c6f61642d696d616765732e6a69616e7368752e696f2f75706c6f61645f696d616765732f3934343336352d643861636433356433613530653039312e706e673f696d6167654d6f6772322f6175746f2d6f7269656e742f7374726970253743696d61676556696577322f322f772f31323430" alt="img" style="zoom:80%;" />
-- 假设ViewGroup B没有拦截DOWN事件（还是View C来处理DOWN事件），但它拦截了接下来的MOVE事件。
-  - 由于DOWN事件传递到C的onTouchEvent方法，返回了true。在后续到来的MOVE事件，B的onInterceptTouchEvent方法返回true拦截该MOVE事件，**但该事件并没有传递给B**；这个MOVE事件将会被系统变成一个CANCEL事件传递给C的onTouchEvent方法
 
 ## 网络开发
 
@@ -3748,6 +3741,24 @@ class LessonTwoActivity : AppCompatActivity() {
 - **onDraw()方法：**无论单一View，或者ViewGroup都需要实现该方法，因其是个空方法
 
 ## 拓展
+
+### MVC与MVP
+
+#### MVC
+
+- **Model**：负责数据的存取、修改和管理。在Android中，Model层可能包含数据库操作（SQLite）、网络请求或任何其他数据源的操作。
+- **View**：负责展示数据（UI元素）给用户。在Android中，View通常是由XML文件定义的UI组件，如Activity或Fragment。
+- **Controller**：控制器，负责接收用户的输入，处理用户请求，通过Model获取数据，然后选择相应的View进行显示。在Android开发中，Activity或Fragment通常承担了Controller的角色，负责协调Model和View。
+- MVC在Android中的一个挑战是，由于Activity和Fragment**既扮演View的角色又扮演Controller的角色**，使得它们很容易变得过于臃肿和复杂。因此，重要的是要尽量保持Activity和Fragment的精简，避免直接在其中进行数据库操作或网络请求，而是通过调用Model层的接口来处理这些逻辑。
+
+#### MVP
+
+- **Model**：同MVC，负责数据的管理和存取。
+- **View**：负责展示数据给用户。在MVP中，View更加专注于UI的展示，通常由Activity、Fragment或自定义View实现。
+- **Presenter**：作为Model和View之间的中介，处理所有的业务逻辑。Presenter从Model层获取数据，然后将数据格式化后传递给View层进行显示。
+- 将业务逻辑从UI逻辑（Activity或Fragment）中分离出来
+  - **分离关注点**：Activity和Fragment不再直接处理数据，它们的任务仅限于处理UI逻辑。
+  - **提高测试性**：由于Presenter不依赖于Android的API，可以不需要模拟器或真机就能进行单元测试。
 
 ### 安卓虚拟机Dalvik
 
