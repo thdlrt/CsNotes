@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/面试/计算机科学/计算机网络.md",
+                "file": "docs/移动端开发/安卓/android.md",
                 "mode": "source",
                 "source": false
               }
@@ -93,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/面试/计算机科学/计算机网络.md",
+                "file": "docs/移动端开发/安卓/android.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/面试/计算机科学/计算机网络.md",
+                "file": "docs/移动端开发/安卓/android.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/面试/计算机科学/计算机网络.md"
+                "file": "docs/移动端开发/安卓/android.md"
               }
             }
           },
@@ -178,11 +178,12 @@
   },
   "active": "409de4665ab6bbb8",
   "lastOpenFiles": [
+    "docs/c++/八股.md",
+    "docs/面试/计算机科学/计算机网络.md",
     "docs/游戏开发/游戏引擎/unity/unity.md",
     "docs/游戏开发/游戏引擎/unity/八股.md",
     "docs/移动端开发/安卓/android.md",
     "docs/java/工具/jvm.md",
-    "docs/面试/计算机科学/计算机网络.md",
     "docs/归档课程/计算机系统基础/data/6.md",
     "docs/归档课程/计算机网络/八股.md",
     "docs/归档课程/计算机系统基础/data/4.md",
@@ -191,7 +192,6 @@
     "docs/面试/计算机科学/并发编程.md",
     "conflict-files-obsidian-git.md",
     "docs/软件工程/编程思想与规范/编程思想.md",
-    "docs/c++/八股.md",
     "docs/c++/C++基础.md",
     "docs/面试/知识图谱.md",
     "docs/软件工程/设计模式.md",
