@@ -20,11 +20,15 @@
             }
           },
           {
-            "id": "e1f421f616a9da20",
+            "id": "a589eb07e53101f0",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {}
+              "type": "markdown",
+              "state": {
+                "file": "conflict-files-obsidian-git.md",
+                "mode": "source",
+                "source": false
+              }
             }
           }
         ],
@@ -103,6 +107,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "conflict-files-obsidian-git.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -119,6 +124,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "conflict-files-obsidian-git.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -140,7 +146,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "conflict-files-obsidian-git.md"
+              }
             }
           },
           {
@@ -182,9 +190,16 @@
       "omnisearch:Omnisearch": false
     }
   },
-  "active": "e1f421f616a9da20",
+  "active": "a589eb07e53101f0",
   "lastOpenFiles": [
     "docs/课程/操作系统/笔记/绪论.md",
+    "conflict-files-obsidian-git.md",
+    "docs/课程/操作系统/代码/os-model/proc.py",
+    "docs/课程/操作系统/代码/os-model/README.md",
+    "docs/课程/操作系统/代码/os-model/os-model.py",
+    "docs/课程/操作系统/代码/os-model/hello.py",
+    "docs/课程/操作系统/代码/os-model",
+    "docs/课程/操作系统/代码",
     "docs/移动端开发/安卓/android.md",
     "docs/课程/操作系统/笔记/虚拟化.md",
     "docs/课程/操作系统/笔记/持久化.md",
@@ -204,22 +219,14 @@
     "docs/归档课程/计算机系统基础/data/3.md",
     "docs/归档课程/计算机系统基础/计算机系统基础笔记.md",
     "docs/面试/计算机科学/并发编程.md",
-    "conflict-files-obsidian-git.md",
     "docs/软件工程/编程思想与规范/编程思想.md",
     "docs/c++/C++基础.md",
     "docs/面试/知识图谱.md",
     "docs/软件工程/设计模式.md",
     "docs/课程/计算机图形学/Games101-现代图形学基础.md",
     "docs/课程/编译原理/课件/Chapter_4.pdf",
-    "docs/课程/编译原理/笔记/语法分析.md",
-    "docs/杂项/linux与shell/八股.md",
     "docs/课程/金融工程学/郑振龙《金融工程》（第5版）笔记和课后习题（含考研真题）详解答案.pdf",
     "docs/课程/金融工程学",
-    "面试/面试技巧",
-    "面试/自我介绍",
-    "面试",
-    "docs/游戏开发/游戏引擎/unity",
-    "docs/游戏开发/游戏引擎",
     "CsNotes/2021-11-22-22-54-02.png",
     "CsNotes/2021-11-22-22-52-49.png",
     "CsNotes/2021-11-22-22-49-26.png",

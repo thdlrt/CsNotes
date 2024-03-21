@@ -195,10 +195,6 @@
     {
       "basename": "时间类",
       "path": "docs/java/java基础/Util/时间类.md"
-    },
-    {
-      "basename": "排序",
-      "path": "docs/归档课程/数据结构/笔记/排序.md"
     }
   ],
   "omittedPaths": [],
