@@ -179,9 +179,9 @@
   },
   "active": "409de4665ab6bbb8",
   "lastOpenFiles": [
-    "docs/移动端开发/安卓/android.md",
-    "docs/课程/操作系统/笔记/并发.md",
     "docs/课程/操作系统/代码/thread-lib/thread.h",
+    "docs/课程/操作系统/笔记/并发.md",
+    "docs/移动端开发/安卓/android.md",
     "docs/课程/操作系统/代码/thread-lib/hello.h.c",
     "docs/课程/操作系统/代码/thread-lib/hello.c",
     "docs/课程/操作系统/操作系统.md",
