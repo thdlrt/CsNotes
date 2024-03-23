@@ -1,6 +1,10 @@
 {
   "recentFiles": [
     {
+      "basename": "数据结构",
+      "path": "docs/算法/数据结构.md"
+    },
+    {
       "basename": "语法分析",
       "path": "docs/课程/编译原理/笔记/语法分析.md"
     },
@@ -195,10 +199,6 @@
     {
       "basename": "基本概念",
       "path": "docs/java/java基础/并发编程/基本概念.md"
-    },
-    {
-      "basename": "序列化与反序列化",
-      "path": "docs/java/java基础/高级/序列化与反序列化.md"
     }
   ],
   "omittedPaths": [],
