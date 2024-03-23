@@ -4,6 +4,22 @@
     "type": "split",
     "children": [
       {
+        "id": "2d085e65060e5859",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "89cdf32c8a8aae0a",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "docs/课程/编译原理/课件/Chapter_4.pdf"
+              }
+            }
+          }
+        ]
+      },
+      {
         "id": "4f04c79099109f82",
         "type": "tabs",
         "children": [
@@ -13,7 +29,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/课程/操作系统/笔记/并发.md",
+                "file": "docs/课程/编译原理/笔记/语法分析.md",
                 "mode": "source",
                 "source": false
               }
@@ -93,7 +109,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/课程/操作系统/笔记/并发.md",
+                "file": "docs/课程/编译原理/笔记/语法分析.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +126,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/课程/操作系统/笔记/并发.md",
+                "file": "docs/课程/编译原理/笔记/语法分析.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +149,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/课程/操作系统/笔记/并发.md"
+                "file": "docs/课程/编译原理/笔记/语法分析.md"
               }
             }
           },
@@ -158,8 +174,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 200
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -179,8 +194,11 @@
   },
   "active": "409de4665ab6bbb8",
   "lastOpenFiles": [
-    "docs/课程/操作系统/代码/thread-lib/thread.h",
+    "docs/课程/编译原理/课件/Chapter_4.pdf",
+    "docs/课程/编译原理/作业/p4.md",
+    "docs/课程/编译原理/笔记/语法分析.md",
     "docs/课程/操作系统/笔记/并发.md",
+    "docs/课程/操作系统/代码/thread-lib/thread.h",
     "docs/移动端开发/安卓/android.md",
     "docs/课程/操作系统/代码/thread-lib/hello.h.c",
     "docs/课程/操作系统/代码/thread-lib/hello.c",
@@ -196,7 +214,6 @@
     "docs/课程/操作系统/代码/os-model/os-model.py",
     "docs/课程/操作系统/代码/os-model/hello.py",
     "docs/课程/操作系统/代码/os-model",
-    "docs/课程/操作系统/代码",
     "docs/课程/操作系统/笔记/虚拟化.md",
     "docs/课程/操作系统/笔记/持久化.md",
     "docs/课程/操作系统/笔记/内核.md",
@@ -212,8 +229,6 @@
     "docs/面试/计算机科学/并发编程.md",
     "docs/软件工程/编程思想与规范/编程思想.md",
     "docs/c++/C++基础.md",
-    "docs/面试/知识图谱.md",
-    "docs/软件工程/设计模式.md",
     "CsNotes/2021-11-22-22-54-02.png",
     "CsNotes/2021-11-22-22-52-49.png",
     "CsNotes/2021-11-22-22-49-26.png",
