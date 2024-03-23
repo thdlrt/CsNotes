@@ -1,10 +1,6 @@
 {
   "recentFiles": [
     {
-      "basename": "数据结构",
-      "path": "docs/算法/数据结构.md"
-    },
-    {
       "basename": "语法分析",
       "path": "docs/课程/编译原理/笔记/语法分析.md"
     },
@@ -15,6 +11,26 @@
     {
       "basename": "p3",
       "path": "docs/课程/编译原理/作业/p3.md"
+    },
+    {
+      "basename": "数据结构",
+      "path": "docs/算法/数据结构.md"
+    },
+    {
+      "basename": "使用VSCode编写C++单文件程序(Windows系统)",
+      "path": "docs/算法/使用VSCode编写C++单文件程序(Windows系统).md"
+    },
+    {
+      "basename": "前缀和与差分",
+      "path": "docs/算法/前缀和与差分.md"
+    },
+    {
+      "basename": "二分&倍增",
+      "path": "docs/算法/二分&倍增.md"
+    },
+    {
+      "basename": "待学高级知识",
+      "path": "docs/算法/待学高级知识.md"
     },
     {
       "basename": "p2",
@@ -183,22 +199,6 @@
     {
       "basename": "Java编码规范",
       "path": "docs/java/java基础/杂项/Java编码规范.md"
-    },
-    {
-      "basename": "高级",
-      "path": "docs/java/java基础/并发编程/高级.md"
-    },
-    {
-      "basename": "线程安全的数据类型",
-      "path": "docs/java/java基础/并发编程/线程安全的数据类型.md"
-    },
-    {
-      "basename": "线程与线程池",
-      "path": "docs/java/java基础/并发编程/线程与线程池.md"
-    },
-    {
-      "basename": "基本概念",
-      "path": "docs/java/java基础/并发编程/基本概念.md"
     }
   ],
   "omittedPaths": [],

@@ -34,33 +34,8 @@
                 "source": false
               }
             }
-          },
-          {
-            "id": "056d3ad97783e0bd",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "docs/算法/数据结构.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "0a8ba4103739fce8",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "docs/课程/编译原理/作业/p3.md",
-                "mode": "source",
-                "source": false
-              }
-            }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -134,7 +109,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/算法/数据结构.md",
+                "file": "docs/课程/编译原理/笔记/语法分析.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -151,7 +126,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/算法/数据结构.md",
+                "file": "docs/课程/编译原理/笔记/语法分析.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -174,7 +149,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/算法/数据结构.md"
+                "file": "docs/课程/编译原理/笔记/语法分析.md"
               }
             }
           },
@@ -217,11 +192,16 @@
       "vscode-editor:新建代码文件": false
     }
   },
-  "active": "056d3ad97783e0bd",
+  "active": "409de4665ab6bbb8",
   "lastOpenFiles": [
-    "docs/课程/编译原理/笔记/语法分析.md",
     "docs/课程/编译原理/课件/Chapter_4.pdf",
+    "docs/课程/编译原理/笔记/语法分析.md",
     "docs/课程/编译原理/作业/p3.md",
+    "docs/算法/数据结构.md",
+    "docs/算法/使用VSCode编写C++单文件程序(Windows系统).md",
+    "docs/算法/前缀和与差分.md",
+    "docs/算法/二分&倍增.md",
+    "docs/算法/待学高级知识.md",
     "docs/课程/编译原理/作业/p2.md",
     "docs/课程/编译原理/作业/p4.md",
     "docs/课程/操作系统/笔记/并发.md",
@@ -249,11 +229,6 @@
     "docs/游戏开发/游戏引擎/unity/unity.md",
     "docs/游戏开发/游戏引擎/unity/八股.md",
     "docs/java/工具/jvm.md",
-    "docs/归档课程/计算机网络/八股.md",
-    "docs/归档课程/计算机系统基础/data/4.md",
-    "docs/归档课程/计算机系统基础/data/3.md",
-    "docs/归档课程/计算机系统基础/计算机系统基础笔记.md",
-    "docs/面试/计算机科学/并发编程.md",
     "CsNotes/2021-11-22-22-54-02.png",
     "CsNotes/2021-11-22-22-52-49.png",
     "CsNotes/2021-11-22-22-49-26.png",
