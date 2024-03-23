@@ -1,16 +1,20 @@
 {
   "recentFiles": [
     {
-      "basename": "p4",
-      "path": "docs/课程/编译原理/作业/p4.md"
-    },
-    {
       "basename": "语法分析",
       "path": "docs/课程/编译原理/笔记/语法分析.md"
     },
     {
+      "basename": "词法分析",
+      "path": "docs/课程/编译原理/笔记/词法分析.md"
+    },
+    {
       "basename": "Chapter_4",
       "path": "docs/课程/编译原理/课件/Chapter_4.pdf"
+    },
+    {
+      "basename": "p4",
+      "path": "docs/课程/编译原理/作业/p4.md"
     },
     {
       "basename": "p3",
@@ -195,10 +199,6 @@
     {
       "basename": "包",
       "path": "docs/java/java基础/杂项/包.md"
-    },
-    {
-      "basename": "Java编码规范",
-      "path": "docs/java/java基础/杂项/Java编码规范.md"
     }
   ],
   "omittedPaths": [],

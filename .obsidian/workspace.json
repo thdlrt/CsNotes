@@ -4,29 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "2d085e65060e5859",
+        "id": "d5a911fecc5004e9",
         "type": "tabs",
-        "dimension": 13.698630136986301,
         "children": [
           {
-            "id": "89cdf32c8a8aae0a",
-            "type": "leaf",
-            "state": {
-              "type": "pdf",
-              "state": {
-                "file": "docs/课程/编译原理/课件/Chapter_4.pdf"
-              }
-            }
-          }
-        ]
-      },
-      {
-        "id": "4f04c79099109f82",
-        "type": "tabs",
-        "dimension": 86.3013698630137,
-        "children": [
-          {
-            "id": "409de4665ab6bbb8",
+            "id": "dfdd77563c899180",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -36,21 +18,8 @@
                 "source": false
               }
             }
-          },
-          {
-            "id": "84c761df744ffd51",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "docs/课程/编译原理/作业/p4.md",
-                "mode": "source",
-                "source": false
-              }
-            }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -108,8 +77,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 216.5,
-    "collapsed": true
+    "width": 300.5
   },
   "right": {
     "id": "d615b65a4ccf8a6a",
@@ -125,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/课程/编译原理/作业/p4.md",
+                "file": "docs/课程/编译原理/笔记/语法分析.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -142,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/课程/编译原理/作业/p4.md",
+                "file": "docs/课程/编译原理/笔记/语法分析.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -165,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/课程/编译原理/作业/p4.md"
+                "file": "docs/课程/编译原理/笔记/语法分析.md"
               }
             }
           },
@@ -209,11 +177,12 @@
       "vscode-editor:新建代码文件": false
     }
   },
-  "active": "84c761df744ffd51",
+  "active": "dfdd77563c899180",
   "lastOpenFiles": [
+    "docs/课程/编译原理/笔记/词法分析.md",
     "docs/课程/编译原理/笔记/语法分析.md",
-    "docs/课程/编译原理/作业/p4.md",
     "docs/课程/编译原理/课件/Chapter_4.pdf",
+    "docs/课程/编译原理/作业/p4.md",
     "docs/课程/编译原理/作业/p3.md",
     "docs/算法/数据结构.md",
     "docs/算法/使用VSCode编写C++单文件程序(Windows系统).md",
