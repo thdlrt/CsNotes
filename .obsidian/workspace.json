@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/课程/编译原理/笔记/词法分析.md",
+                "file": "docs/课程/编译原理/实验笔记.md",
                 "mode": "source",
                 "source": false
               }
@@ -77,7 +77,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300.5
+    "width": 300.5,
+    "collapsed": true
   },
   "right": {
     "id": "d615b65a4ccf8a6a",
@@ -93,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/课程/编译原理/笔记/词法分析.md",
+                "file": "docs/课程/编译原理/实验笔记.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +111,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/课程/编译原理/笔记/词法分析.md",
+                "file": "docs/课程/编译原理/实验笔记.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +134,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/课程/编译原理/笔记/词法分析.md"
+                "file": "docs/课程/编译原理/实验笔记.md"
               }
             }
           },
@@ -158,7 +159,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 200,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -179,6 +181,7 @@
   "active": "dfdd77563c899180",
   "lastOpenFiles": [
     "docs/课程/编译原理/笔记/语法分析.md",
+    "docs/课程/编译原理/实验笔记.md",
     "docs/课程/编译原理/笔记/词法分析.md",
     "docs/课程/编译原理/课件/Chapter_4.pdf",
     "docs/课程/编译原理/作业/p4.md",
@@ -213,7 +216,6 @@
     "docs/面试/计算机科学/计算机网络.md",
     "docs/游戏开发/游戏引擎/unity/unity.md",
     "docs/游戏开发/游戏引擎/unity/八股.md",
-    "docs/java/工具/jvm.md",
     "CsNotes/2021-11-22-22-54-02.png",
     "CsNotes/2021-11-22-22-52-49.png",
     "CsNotes/2021-11-22-22-49-26.png",
