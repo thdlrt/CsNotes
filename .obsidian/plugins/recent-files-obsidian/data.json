@@ -5,6 +5,10 @@
       "path": "docs/课程/编译原理/实验/实验笔记.md"
     },
     {
+      "basename": "Project_1",
+      "path": "docs/课程/编译原理/实验/p1/Project_1.pdf"
+    },
+    {
       "basename": "正则表达式",
       "path": "docs/杂项/杂项/正则表达式.md"
     },
@@ -195,10 +199,6 @@
     {
       "basename": "旧IO",
       "path": "docs/java/java基础/io/旧IO.md"
-    },
-    {
-      "basename": "控制台IO",
-      "path": "docs/java/java基础/io/控制台IO.md"
     }
   ],
   "omittedPaths": [],
