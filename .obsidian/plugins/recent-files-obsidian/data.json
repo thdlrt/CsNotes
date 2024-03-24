@@ -2,7 +2,11 @@
   "recentFiles": [
     {
       "basename": "实验笔记",
-      "path": "docs/课程/编译原理/实验笔记.md"
+      "path": "docs/课程/编译原理/实验/实验笔记.md"
+    },
+    {
+      "basename": "正则表达式",
+      "path": "docs/杂项/杂项/正则表达式.md"
     },
     {
       "basename": "语法分析",
@@ -195,10 +199,6 @@
     {
       "basename": "控制台IO",
       "path": "docs/java/java基础/io/控制台IO.md"
-    },
-    {
-      "basename": "基本数据类型与包装类",
-      "path": "docs/java/java基础/数据类型/基本数据类型与包装类.md"
     }
   ],
   "omittedPaths": [],
