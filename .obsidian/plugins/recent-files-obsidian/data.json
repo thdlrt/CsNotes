@@ -1,28 +1,32 @@
 {
   "recentFiles": [
     {
-      "basename": "计算机网络",
-      "path": "docs/面试/计算机科学/计算机网络.md"
+      "basename": "MySQL",
+      "path": "docs/数据库/关系数据库/MySQL.md"
     },
     {
       "basename": "排序&选择",
       "path": "docs/算法/排序&选择.md"
     },
     {
-      "basename": "杂项",
-      "path": "docs/面试/计算机科学/杂项.md"
+      "basename": "计算机网络",
+      "path": "docs/面试/计算机科学/计算机网络.md"
     },
     {
       "basename": "Redis",
       "path": "docs/数据库/NoSQL/Redis.md"
     },
     {
-      "basename": "MySQL",
-      "path": "docs/数据库/关系数据库/MySQL.md"
+      "basename": "SQL基本语法",
+      "path": "docs/数据库/SQL基本语法.md"
     },
     {
       "basename": "八股",
       "path": "docs/c++/八股.md"
+    },
+    {
+      "basename": "杂项",
+      "path": "docs/面试/计算机科学/杂项.md"
     },
     {
       "basename": "数学",
@@ -195,10 +199,6 @@
     {
       "basename": "流",
       "path": "docs/java/java基础/数据类型/流.md"
-    },
-    {
-      "basename": "函数式编程",
-      "path": "docs/java/java基础/杂项/函数式编程.md"
     }
   ],
   "omittedPaths": [],
