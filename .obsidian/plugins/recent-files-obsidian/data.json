@@ -1,6 +1,22 @@
 {
   "recentFiles": [
     {
+      "basename": "android",
+      "path": "docs/移动端开发/安卓/android.md"
+    },
+    {
+      "basename": "八股",
+      "path": "docs/c++/八股.md"
+    },
+    {
+      "basename": "MySQL",
+      "path": "docs/数据库/关系数据库/MySQL.md"
+    },
+    {
+      "basename": "Redis",
+      "path": "docs/数据库/NoSQL/Redis.md"
+    },
+    {
       "basename": "实验报告p1",
       "path": "docs/课程/编译原理/实验/p1/实验报告p1.md"
     },
@@ -69,10 +85,6 @@
       "path": "docs/课程/操作系统/代码/thread-lib/thread.h"
     },
     {
-      "basename": "android",
-      "path": "docs/移动端开发/安卓/android.md"
-    },
-    {
       "basename": "操作系统",
       "path": "docs/课程/操作系统/操作系统.md"
     },
@@ -83,10 +95,6 @@
     {
       "basename": "6",
       "path": "docs/归档课程/计算机系统基础/data/6.md"
-    },
-    {
-      "basename": "八股",
-      "path": "docs/c++/八股.md"
     },
     {
       "basename": "计算机网络",
@@ -191,14 +199,6 @@
     {
       "basename": "网络编程",
       "path": "docs/java/java基础/io/网络编程.md"
-    },
-    {
-      "basename": "NIO",
-      "path": "docs/java/java基础/io/NIO.md"
-    },
-    {
-      "basename": "拷贝与引用",
-      "path": "docs/java/java基础/数据类型/拷贝与引用.md"
     }
   ],
   "omittedPaths": [],
