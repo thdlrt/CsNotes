@@ -1,6 +1,14 @@
 {
   "recentFiles": [
     {
+      "basename": "equals()与hashCode()",
+      "path": "docs/java/java基础/杂项/equals()与hashCode().md"
+    },
+    {
+      "basename": "java基础",
+      "path": "docs/java/java基础.md"
+    },
+    {
       "basename": "进程管理",
       "path": "docs/杂项/linux与shell/linux/进程管理.md"
     },
@@ -189,16 +197,8 @@
       "path": "docs/课程/编译原理/编译原理.md"
     },
     {
-      "basename": "java基础",
-      "path": "docs/java/java基础.md"
-    },
-    {
       "basename": "Iterator",
       "path": "docs/java/java基础/Util/集合/Iterator.md"
-    },
-    {
-      "basename": "数组类型",
-      "path": "docs/java/java基础/数据类型/数组类型.md"
     }
   ],
   "omittedPaths": [],

@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/杂项/linux与shell/linux/进程管理.md",
+                "file": "docs/java/java基础/杂项/equals()与hashCode().md",
                 "mode": "source",
                 "source": false
               }
@@ -93,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/杂项/linux与shell/linux/进程管理.md",
+                "file": "docs/java/java基础/杂项/equals()与hashCode().md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/杂项/linux与shell/linux/进程管理.md",
+                "file": "docs/java/java基础/杂项/equals()与hashCode().md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/杂项/linux与shell/linux/进程管理.md"
+                "file": "docs/java/java基础/杂项/equals()与hashCode().md"
               }
             }
           },
@@ -178,6 +178,8 @@
   },
   "active": "f4e45c06706e1270",
   "lastOpenFiles": [
+    "docs/java/java基础.md",
+    "docs/杂项/linux与shell/linux/进程管理.md",
     "docs/算法/排序&选择.md",
     "docs/数据库/关系数据库/MySQL.md",
     "docs/面试/计算机科学/计算机网络.md",
@@ -207,8 +209,6 @@
     "docs/算法/前缀和与差分.md",
     "docs/算法/二分&倍增.md",
     "docs/算法/待学高级知识.md",
-    "docs/课程/编译原理/作业/p2.md",
-    "docs/课程/操作系统/笔记/并发.md",
     "docs/课程/操作系统/代码/thread-lib/thread.h",
     "docs/课程/操作系统/代码/thread-lib/hello.h.c",
     "docs/课程/操作系统/代码/thread-lib/hello.c",
