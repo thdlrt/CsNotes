@@ -1,6 +1,10 @@
 {
   "recentFiles": [
     {
+      "basename": "排序&选择",
+      "path": "docs/算法/排序&选择.md"
+    },
+    {
       "basename": "八股",
       "path": "docs/c++/八股.md"
     },
@@ -195,10 +199,6 @@
     {
       "basename": "注解",
       "path": "docs/java/java基础/杂项/注解.md"
-    },
-    {
-      "basename": "文件",
-      "path": "docs/java/java基础/io/文件.md"
     }
   ],
   "omittedPaths": [],
