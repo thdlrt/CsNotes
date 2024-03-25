@@ -1,12 +1,16 @@
 {
   "recentFiles": [
     {
-      "basename": "实验笔记",
-      "path": "docs/课程/编译原理/实验/实验笔记.md"
+      "basename": "实验报告p1",
+      "path": "docs/课程/编译原理/实验/p1/实验报告p1.md"
     },
     {
       "basename": "Project_1",
       "path": "docs/课程/编译原理/实验/p1/Project_1.pdf"
+    },
+    {
+      "basename": "实验笔记",
+      "path": "docs/课程/编译原理/实验/实验笔记.md"
     },
     {
       "basename": "正则表达式",
@@ -195,10 +199,6 @@
     {
       "basename": "拷贝与引用",
       "path": "docs/java/java基础/数据类型/拷贝与引用.md"
-    },
-    {
-      "basename": "旧IO",
-      "path": "docs/java/java基础/io/旧IO.md"
     }
   ],
   "omittedPaths": [],
