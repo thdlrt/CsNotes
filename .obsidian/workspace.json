@@ -56,7 +56,7 @@
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -131,7 +131,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/面试/计算机科学/计算机网络.md",
+                "file": "docs/算法/数学.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -148,7 +148,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/面试/计算机科学/计算机网络.md",
+                "file": "docs/算法/数学.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -171,7 +171,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/面试/计算机科学/计算机网络.md"
+                "file": "docs/算法/数学.md"
               }
             }
           },
@@ -215,10 +215,10 @@
       "vscode-editor:新建代码文件": false
     }
   },
-  "active": "92a903d0e25e7c27",
+  "active": "3f00c081fc950b79",
   "lastOpenFiles": [
-    "docs/算法/数学.md",
     "docs/面试/计算机科学/计算机网络.md",
+    "docs/算法/数学.md",
     "docs/归档课程/计算机系统基础/data/6.md",
     "docs/游戏开发/游戏引擎/unity/unity.md",
     "docs/软件工程/设计模式.md",
