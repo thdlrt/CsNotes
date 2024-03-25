@@ -20,18 +20,6 @@
             }
           },
           {
-            "id": "9bc8d6febfb1736b",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "docs/归档课程/计算机系统基础/data/6.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
             "id": "92a903d0e25e7c27",
             "type": "leaf",
             "state": {
@@ -44,19 +32,19 @@
             }
           },
           {
-            "id": "3f00c081fc950b79",
+            "id": "f4e45c06706e1270",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/c++/八股.md",
+                "file": "docs/算法/排序&选择.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -130,7 +118,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/c++/八股.md",
+                "file": "docs/面试/计算机科学/计算机网络.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -147,7 +135,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/c++/八股.md",
+                "file": "docs/面试/计算机科学/计算机网络.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -170,7 +158,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/c++/八股.md"
+                "file": "docs/面试/计算机科学/计算机网络.md"
               }
             }
           },
@@ -214,17 +202,19 @@
       "vscode-editor:新建代码文件": false
     }
   },
-  "active": "3f00c081fc950b79",
+  "active": "92a903d0e25e7c27",
   "lastOpenFiles": [
-    "docs/算法/数学.md",
+    "docs/算法/排序&选择.md",
     "docs/面试/计算机科学/计算机网络.md",
+    "docs/面试/计算机科学/杂项.md",
+    "docs/数据库/NoSQL/Redis.md",
+    "docs/数据库/关系数据库/MySQL.md",
+    "docs/c++/八股.md",
+    "docs/算法/数学.md",
     "docs/归档课程/计算机系统基础/data/6.md",
     "docs/游戏开发/游戏引擎/unity/unity.md",
     "docs/软件工程/设计模式.md",
     "docs/移动端开发/安卓/android.md",
-    "docs/c++/八股.md",
-    "docs/数据库/关系数据库/MySQL.md",
-    "docs/数据库/NoSQL/Redis.md",
     "docs/课程/编译原理/实验/p1/实验报告p1.md",
     "docs/课程/编译原理/实验/p1/Project_1.pdf",
     "docs/课程/编译原理/实验/实验笔记.md",
@@ -249,9 +239,7 @@
     "docs/课程/操作系统/代码/thread-lib/hello.c",
     "docs/课程/操作系统/操作系统.md",
     "docs/课程/操作系统/代码/thread-lib/Makefile",
-    "docs/课程/操作系统/代码/thread-lib/README.md",
     "docs/课程/操作系统/代码/thread-lib",
-    "docs/课程/操作系统/笔记/绪论.md",
     "CsNotes/2021-11-22-22-54-02.png",
     "CsNotes/2021-11-22-22-52-49.png",
     "CsNotes/2021-11-22-22-49-26.png",
