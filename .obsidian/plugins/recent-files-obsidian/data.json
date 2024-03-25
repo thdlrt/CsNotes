@@ -5,6 +5,10 @@
       "path": "docs/面试/计算机科学/计算机网络.md"
     },
     {
+      "basename": "数学",
+      "path": "docs/算法/数学.md"
+    },
+    {
       "basename": "6",
       "path": "docs/归档课程/计算机系统基础/data/6.md"
     },
@@ -195,10 +199,6 @@
     {
       "basename": "文件",
       "path": "docs/java/java基础/io/文件.md"
-    },
-    {
-      "basename": "网络编程",
-      "path": "docs/java/java基础/io/网络编程.md"
     }
   ],
   "omittedPaths": [],

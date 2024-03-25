@@ -42,6 +42,18 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "3f00c081fc950b79",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "docs/算法/数学.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
         ],
         "currentTab": 2
@@ -102,7 +114,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 200,
+    "collapsed": true
   },
   "right": {
     "id": "d615b65a4ccf8a6a",
@@ -183,7 +196,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 200,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -203,6 +217,8 @@
   },
   "active": "92a903d0e25e7c27",
   "lastOpenFiles": [
+    "docs/算法/数学.md",
+    "docs/面试/计算机科学/计算机网络.md",
     "docs/归档课程/计算机系统基础/data/6.md",
     "docs/游戏开发/游戏引擎/unity/unity.md",
     "docs/软件工程/设计模式.md",
@@ -237,8 +253,6 @@
     "docs/课程/操作系统/代码/thread-lib/README.md",
     "docs/课程/操作系统/代码/thread-lib",
     "docs/课程/操作系统/笔记/绪论.md",
-    "conflict-files-obsidian-git.md",
-    "docs/课程/操作系统/代码/os-model/README.md",
     "CsNotes/2021-11-22-22-54-02.png",
     "CsNotes/2021-11-22-22-52-49.png",
     "CsNotes/2021-11-22-22-49-26.png",
