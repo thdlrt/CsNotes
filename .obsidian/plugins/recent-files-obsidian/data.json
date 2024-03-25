@@ -1,6 +1,10 @@
 {
   "recentFiles": [
     {
+      "basename": "进程管理",
+      "path": "docs/杂项/linux与shell/linux/进程管理.md"
+    },
+    {
       "basename": "排序&选择",
       "path": "docs/算法/排序&选择.md"
     },
@@ -195,10 +199,6 @@
     {
       "basename": "数组类型",
       "path": "docs/java/java基础/数据类型/数组类型.md"
-    },
-    {
-      "basename": "流",
-      "path": "docs/java/java基础/数据类型/流.md"
     }
   ],
   "omittedPaths": [],
