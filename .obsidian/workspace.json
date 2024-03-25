@@ -49,7 +49,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/算法/数学.md",
+                "file": "docs/c++/八股.md",
                 "mode": "source",
                 "source": false
               }
@@ -114,8 +114,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 200
   },
   "right": {
     "id": "d615b65a4ccf8a6a",
@@ -131,7 +130,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/算法/数学.md",
+                "file": "docs/c++/八股.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -148,7 +147,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/算法/数学.md",
+                "file": "docs/c++/八股.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -171,7 +170,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/算法/数学.md"
+                "file": "docs/c++/八股.md"
               }
             }
           },
@@ -217,8 +216,8 @@
   },
   "active": "3f00c081fc950b79",
   "lastOpenFiles": [
-    "docs/面试/计算机科学/计算机网络.md",
     "docs/算法/数学.md",
+    "docs/面试/计算机科学/计算机网络.md",
     "docs/归档课程/计算机系统基础/data/6.md",
     "docs/游戏开发/游戏引擎/unity/unity.md",
     "docs/软件工程/设计模式.md",

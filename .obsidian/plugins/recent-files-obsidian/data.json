@@ -1,6 +1,10 @@
 {
   "recentFiles": [
     {
+      "basename": "八股",
+      "path": "docs/c++/八股.md"
+    },
+    {
       "basename": "数学",
       "path": "docs/算法/数学.md"
     },
@@ -23,10 +27,6 @@
     {
       "basename": "android",
       "path": "docs/移动端开发/安卓/android.md"
-    },
-    {
-      "basename": "八股",
-      "path": "docs/c++/八股.md"
     },
     {
       "basename": "MySQL",
