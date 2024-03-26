@@ -1,8 +1,20 @@
 {
   "recentFiles": [
     {
+      "basename": "词法分析",
+      "path": "docs/课程/编译原理/笔记/词法分析.md"
+    },
+    {
       "basename": "语法分析",
       "path": "docs/课程/编译原理/笔记/语法分析.md"
+    },
+    {
+      "basename": "Chapter_4",
+      "path": "docs/课程/编译原理/课件/Chapter_4.pdf"
+    },
+    {
+      "basename": "p4",
+      "path": "docs/课程/编译原理/作业/p4.md"
     },
     {
       "basename": "日志系统",
@@ -99,18 +111,6 @@
     {
       "basename": "正则表达式",
       "path": "docs/杂项/杂项/正则表达式.md"
-    },
-    {
-      "basename": "词法分析",
-      "path": "docs/课程/编译原理/笔记/词法分析.md"
-    },
-    {
-      "basename": "Chapter_4",
-      "path": "docs/课程/编译原理/课件/Chapter_4.pdf"
-    },
-    {
-      "basename": "p4",
-      "path": "docs/课程/编译原理/作业/p4.md"
     },
     {
       "basename": "p3",

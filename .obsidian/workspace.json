@@ -4,6 +4,22 @@
     "type": "split",
     "children": [
       {
+        "id": "0d626214708b6dc7",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "a1cc8c422871fb39",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "docs/课程/编译原理/课件/Chapter_4.pdf"
+              }
+            }
+          }
+        ]
+      },
+      {
         "id": "d5a911fecc5004e9",
         "type": "tabs",
         "children": [
@@ -18,8 +34,21 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "f0ec897c6b9ce316",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "docs/课程/编译原理/笔记/词法分析.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -93,7 +122,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/课程/编译原理/笔记/语法分析.md",
+                "file": "docs/课程/编译原理/笔记/词法分析.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +139,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/课程/编译原理/笔记/语法分析.md",
+                "file": "docs/课程/编译原理/笔记/词法分析.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +162,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/课程/编译原理/笔记/语法分析.md"
+                "file": "docs/课程/编译原理/笔记/词法分析.md"
               }
             }
           },
@@ -177,8 +206,11 @@
       "vscode-editor:新建代码文件": false
     }
   },
-  "active": "bc0f397b86eb0e0c",
+  "active": "f0ec897c6b9ce316",
   "lastOpenFiles": [
+    "docs/课程/编译原理/笔记/语法分析.md",
+    "docs/课程/编译原理/课件/Chapter_4.pdf",
+    "docs/课程/编译原理/作业/p4.md",
     "docs/杂项/linux与shell/linux/日志系统.md",
     "docs/杂项/linux与shell/linux.md",
     "docs/杂项/linux与shell/linux/进程管理.md",
@@ -206,10 +238,6 @@
     "docs/课程/编译原理/实验/p1",
     "docs/课程/编译原理/实验",
     "docs/杂项/杂项/正则表达式.md",
-    "docs/课程/编译原理/笔记/语法分析.md",
-    "docs/课程/编译原理/笔记/词法分析.md",
-    "docs/课程/编译原理/课件/Chapter_4.pdf",
-    "docs/课程/编译原理/作业/p4.md",
     "docs/课程/操作系统/代码/thread-lib/thread.h",
     "docs/课程/操作系统/代码/thread-lib/hello.h.c",
     "docs/课程/操作系统/代码/thread-lib/hello.c",
