@@ -1,12 +1,12 @@
 {
   "recentFiles": [
     {
-      "basename": "语法分析",
-      "path": "docs/课程/编译原理/笔记/语法分析.md"
-    },
-    {
       "basename": "Chapter_4",
       "path": "docs/课程/编译原理/课件/Chapter_4.pdf"
+    },
+    {
+      "basename": "语法分析",
+      "path": "docs/课程/编译原理/笔记/语法分析.md"
     },
     {
       "basename": "词法分析",

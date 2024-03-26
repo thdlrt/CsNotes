@@ -112,7 +112,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/课程/编译原理/笔记/语法分析.md",
+                "file": "docs/课程/编译原理/课件/Chapter_4.pdf",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -129,7 +129,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/课程/编译原理/笔记/语法分析.md",
+                "file": "docs/课程/编译原理/课件/Chapter_4.pdf",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -152,7 +152,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/课程/编译原理/笔记/语法分析.md"
+                "file": "docs/课程/编译原理/课件/Chapter_4.pdf"
               }
             }
           },
@@ -196,10 +196,10 @@
       "vscode-editor:新建代码文件": false
     }
   },
-  "active": "bc0f397b86eb0e0c",
+  "active": "a1cc8c422871fb39",
   "lastOpenFiles": [
-    "docs/课程/编译原理/课件/Chapter_4.pdf",
     "docs/课程/编译原理/笔记/语法分析.md",
+    "docs/课程/编译原理/课件/Chapter_4.pdf",
     "docs/课程/编译原理/课件/Chapter_5.pdf",
     "docs/课程/编译原理/作业/Untitled.md",
     "docs/课程/编译原理/笔记/词法分析.md",
