@@ -4,34 +4,32 @@
     "type": "split",
     "children": [
       {
-        "id": "0d626214708b6dc7",
+        "id": "57fa8e3b3f4e8dcb",
         "type": "tabs",
-        "dimension": 49.147121535181235,
         "children": [
           {
-            "id": "a1cc8c422871fb39",
+            "id": "2324fc755f4316de",
             "type": "leaf",
             "state": {
               "type": "pdf",
               "state": {
-                "file": "docs/课程/编译原理/课件/Chapter_4.pdf"
+                "file": "docs/课程/编译原理/课件/Chapter_5.pdf"
               }
             }
           }
         ]
       },
       {
-        "id": "d5a911fecc5004e9",
+        "id": "f61986fe771b62b7",
         "type": "tabs",
-        "dimension": 50.852878464818765,
         "children": [
           {
-            "id": "bc0f397b86eb0e0c",
+            "id": "27bc2c851b469af0",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/课程/编译原理/笔记/语法分析.md",
+                "file": "docs/课程/编译原理/笔记/语法制导的编译技术.md",
                 "mode": "source",
                 "source": false
               }
@@ -95,8 +93,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 241.5,
-    "collapsed": true
+    "width": 241.5
   },
   "right": {
     "id": "d615b65a4ccf8a6a",
@@ -112,7 +109,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/课程/编译原理/课件/Chapter_4.pdf",
+                "file": "docs/课程/编译原理/笔记/语法制导的编译技术.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -129,7 +126,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/课程/编译原理/课件/Chapter_4.pdf",
+                "file": "docs/课程/编译原理/笔记/语法制导的编译技术.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -152,7 +149,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/课程/编译原理/课件/Chapter_4.pdf"
+                "file": "docs/课程/编译原理/笔记/语法制导的编译技术.md"
               }
             }
           },
@@ -196,11 +193,13 @@
       "vscode-editor:新建代码文件": false
     }
   },
-  "active": "a1cc8c422871fb39",
+  "active": "27bc2c851b469af0",
   "lastOpenFiles": [
-    "docs/课程/编译原理/笔记/语法分析.md",
+    "docs/课程/编译原理/课件/Chapter_1.pdf",
+    "docs/课程/编译原理/笔记/语法制导的编译技术.md",
     "docs/课程/编译原理/课件/Chapter_4.pdf",
     "docs/课程/编译原理/课件/Chapter_5.pdf",
+    "docs/课程/编译原理/笔记/语法分析.md",
     "docs/课程/编译原理/作业/Untitled.md",
     "docs/课程/编译原理/笔记/词法分析.md",
     "docs/课程/编译原理/作业/p4.md",
@@ -224,7 +223,6 @@
     "docs/游戏开发/游戏引擎/unity/unity.md",
     "docs/软件工程/设计模式.md",
     "docs/移动端开发/安卓/android.md",
-    "docs/课程/编译原理/实验/p1/实验报告p1.md",
     "docs/课程/编译原理/实验/p1/Project_1.pdf",
     "docs/课程/编译原理/实验/p1/未命名",
     "docs/课程/编译原理/实验/p1",
