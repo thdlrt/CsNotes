@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/杂项/linux与shell/linux/文本处理.md",
+                "file": "docs/课程/编译原理/笔记/语法分析.md",
                 "mode": "source",
                 "source": false
               }
@@ -93,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/杂项/linux与shell/linux/文本处理.md",
+                "file": "docs/课程/编译原理/笔记/语法分析.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/杂项/linux与shell/linux/文本处理.md",
+                "file": "docs/课程/编译原理/笔记/语法分析.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/杂项/linux与shell/linux/文本处理.md"
+                "file": "docs/课程/编译原理/笔记/语法分析.md"
               }
             }
           },
@@ -179,9 +179,11 @@
   },
   "active": "bc0f397b86eb0e0c",
   "lastOpenFiles": [
+    "docs/杂项/linux与shell/linux/日志系统.md",
     "docs/杂项/linux与shell/linux.md",
-    "docs/杂项/linux与shell/linux/文本处理.md",
     "docs/杂项/linux与shell/linux/进程管理.md",
+    "docs/面试/计算机科学/并发编程.md",
+    "docs/杂项/linux与shell/linux/文本处理.md",
     "docs/杂项/linux与shell/linux/文件系统.md",
     "docs/java/java基础/杂项/equals()与hashCode().md",
     "docs/java/java基础.md",
@@ -208,8 +210,6 @@
     "docs/课程/编译原理/笔记/词法分析.md",
     "docs/课程/编译原理/课件/Chapter_4.pdf",
     "docs/课程/编译原理/作业/p4.md",
-    "docs/课程/编译原理/作业/p3.md",
-    "docs/算法/数据结构.md",
     "docs/课程/操作系统/代码/thread-lib/thread.h",
     "docs/课程/操作系统/代码/thread-lib/hello.h.c",
     "docs/课程/操作系统/代码/thread-lib/hello.c",
