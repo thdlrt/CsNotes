@@ -6,7 +6,7 @@
       {
         "id": "0d626214708b6dc7",
         "type": "tabs",
-        "dimension": 21.83406113537118,
+        "dimension": 49.147121535181235,
         "children": [
           {
             "id": "a1cc8c422871fb39",
@@ -23,7 +23,7 @@
       {
         "id": "d5a911fecc5004e9",
         "type": "tabs",
-        "dimension": 78.16593886462883,
+        "dimension": 50.852878464818765,
         "children": [
           {
             "id": "bc0f397b86eb0e0c",
@@ -112,7 +112,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/课程/编译原理/课件/Chapter_4.pdf",
+                "file": "docs/课程/编译原理/笔记/语法分析.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -129,7 +129,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/课程/编译原理/课件/Chapter_4.pdf",
+                "file": "docs/课程/编译原理/笔记/语法分析.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -152,7 +152,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/课程/编译原理/课件/Chapter_4.pdf"
+                "file": "docs/课程/编译原理/笔记/语法分析.md"
               }
             }
           },
@@ -196,11 +196,11 @@
       "vscode-editor:新建代码文件": false
     }
   },
-  "active": "a1cc8c422871fb39",
+  "active": "bc0f397b86eb0e0c",
   "lastOpenFiles": [
+    "docs/课程/编译原理/课件/Chapter_4.pdf",
     "docs/课程/编译原理/笔记/语法分析.md",
     "docs/课程/编译原理/课件/Chapter_5.pdf",
-    "docs/课程/编译原理/课件/Chapter_4.pdf",
     "docs/课程/编译原理/作业/Untitled.md",
     "docs/课程/编译原理/笔记/词法分析.md",
     "docs/课程/编译原理/作业/p4.md",
