@@ -26,14 +26,17 @@ missing:~$ /bin/echo $PATH
 /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 ```
 
-- | 管道符，将管道左边命令的结果作为右边命令的输入
-  - 比如 cat text 01. txt | grep xxx 等价于 grep xxx text 01. txt
-  - 如查找文件 ls xx | grep xx
-  - 嵌套使用 xx|xx|xx|... 依次向右传递
-
 - 查看指令的使用方法 `man xx
 - `history` 输出输入的命令的历史记录
 - `tree` 显示文件目录工具 `
+
+- 一次输入多条命令可以使用 `;` 来分割
+	- 无论前面的执行结果如何后面都会被执行
+- 前面的执行失败后面就不执行了（**选择性执行**）
+	- `which cowsay>/dev/null && cowsay -f head-in ohch~`
+	- 即上一次命令的返回值为 0 后面才继续执行
+	- `||` 上一条返回值不为零（失败）后面才执行
+### [[文本处理]]
 
 ### [[docs/杂项/linux与shell/linux/文件系统|文件系统]]
 
