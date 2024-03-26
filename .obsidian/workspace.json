@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/java/java基础/杂项/equals()与hashCode().md",
+                "file": "docs/杂项/linux与shell/linux/文件系统.md",
                 "mode": "source",
                 "source": false
               }
@@ -48,7 +48,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "比较",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -73,7 +73,8 @@
               "state": {}
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -93,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/java/java基础/杂项/equals()与hashCode().md",
+                "file": "docs/杂项/linux与shell/linux/文件系统.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +111,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/java/java基础/杂项/equals()与hashCode().md",
+                "file": "docs/杂项/linux与shell/linux/文件系统.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +134,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/java/java基础/杂项/equals()与hashCode().md"
+                "file": "docs/杂项/linux与shell/linux/文件系统.md"
               }
             }
           },
@@ -158,7 +159,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 200,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -178,6 +180,8 @@
   },
   "active": "f4e45c06706e1270",
   "lastOpenFiles": [
+    "docs/杂项/linux与shell/linux.md",
+    "docs/java/java基础/杂项/equals()与hashCode().md",
     "docs/java/java基础.md",
     "docs/杂项/linux与shell/linux/进程管理.md",
     "docs/算法/排序&选择.md",
@@ -207,8 +211,6 @@
     "docs/算法/数据结构.md",
     "docs/算法/使用VSCode编写C++单文件程序(Windows系统).md",
     "docs/算法/前缀和与差分.md",
-    "docs/算法/二分&倍增.md",
-    "docs/算法/待学高级知识.md",
     "docs/课程/操作系统/代码/thread-lib/thread.h",
     "docs/课程/操作系统/代码/thread-lib/hello.h.c",
     "docs/课程/操作系统/代码/thread-lib/hello.c",

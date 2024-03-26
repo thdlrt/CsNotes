@@ -1,6 +1,14 @@
 {
   "recentFiles": [
     {
+      "basename": "文件系统",
+      "path": "docs/杂项/linux与shell/linux/文件系统.md"
+    },
+    {
+      "basename": "linux",
+      "path": "docs/杂项/linux与shell/linux.md"
+    },
+    {
       "basename": "equals()与hashCode()",
       "path": "docs/java/java基础/杂项/equals()与hashCode().md"
     },
@@ -179,14 +187,6 @@
     {
       "basename": "八股",
       "path": "docs/杂项/linux与shell/八股.md"
-    },
-    {
-      "basename": "linux",
-      "path": "docs/杂项/linux与shell/linux.md"
-    },
-    {
-      "basename": "文件系统",
-      "path": "docs/杂项/linux与shell/linux/文件系统.md"
     },
     {
       "basename": "c++基础",
