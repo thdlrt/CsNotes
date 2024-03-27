@@ -4,22 +4,6 @@
     "type": "split",
     "children": [
       {
-        "id": "57fa8e3b3f4e8dcb",
-        "type": "tabs",
-        "children": [
-          {
-            "id": "2324fc755f4316de",
-            "type": "leaf",
-            "state": {
-              "type": "pdf",
-              "state": {
-                "file": "docs/课程/编译原理/课件/Chapter_5.pdf"
-              }
-            }
-          }
-        ]
-      },
-      {
         "id": "f61986fe771b62b7",
         "type": "tabs",
         "children": [
@@ -29,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/课程/编译原理/笔记/语法制导的编译技术.md",
+                "file": "docs/课程/编译原理/作业/p5.md",
                 "mode": "source",
                 "source": false
               }
@@ -93,7 +77,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 241.5
+    "width": 241.5,
+    "collapsed": true
   },
   "right": {
     "id": "d615b65a4ccf8a6a",
@@ -109,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/课程/编译原理/笔记/语法制导的编译技术.md",
+                "file": "docs/课程/编译原理/作业/p5.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -126,7 +111,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/课程/编译原理/笔记/语法制导的编译技术.md",
+                "file": "docs/课程/编译原理/作业/p5.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -149,7 +134,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/课程/编译原理/笔记/语法制导的编译技术.md"
+                "file": "docs/课程/编译原理/作业/p5.md"
               }
             }
           },
@@ -195,14 +180,14 @@
   },
   "active": "27bc2c851b469af0",
   "lastOpenFiles": [
-    "docs/课程/编译原理/课件/Chapter_1.pdf",
+    "docs/课程/编译原理/作业/p4.md",
     "docs/课程/编译原理/笔记/语法制导的编译技术.md",
+    "docs/课程/编译原理/课件/Chapter_1.pdf",
     "docs/课程/编译原理/课件/Chapter_4.pdf",
     "docs/课程/编译原理/课件/Chapter_5.pdf",
     "docs/课程/编译原理/笔记/语法分析.md",
-    "docs/课程/编译原理/作业/Untitled.md",
+    "docs/课程/编译原理/作业/p5.md",
     "docs/课程/编译原理/笔记/词法分析.md",
-    "docs/课程/编译原理/作业/p4.md",
     "docs/杂项/linux与shell/linux/日志系统.md",
     "docs/杂项/linux与shell/linux.md",
     "docs/杂项/linux与shell/linux/进程管理.md",
@@ -230,7 +215,6 @@
     "docs/课程/操作系统/代码/thread-lib/thread.h",
     "docs/课程/操作系统/代码/thread-lib/hello.h.c",
     "docs/课程/操作系统/代码/thread-lib/hello.c",
-    "docs/课程/操作系统/代码/thread-lib/Makefile",
     "CsNotes/2021-11-22-22-54-02.png",
     "CsNotes/2021-11-22-22-52-49.png",
     "CsNotes/2021-11-22-22-49-26.png",
