@@ -1,6 +1,10 @@
 {
   "recentFiles": [
     {
+      "basename": "数据结构",
+      "path": "docs/算法/数据结构.md"
+    },
+    {
       "basename": "p5",
       "path": "docs/课程/编译原理/作业/p5.md"
     },
@@ -133,10 +137,6 @@
       "path": "docs/课程/编译原理/作业/p3.md"
     },
     {
-      "basename": "数据结构",
-      "path": "docs/算法/数据结构.md"
-    },
-    {
       "basename": "使用VSCode编写C++单文件程序(Windows系统)",
       "path": "docs/算法/使用VSCode编写C++单文件程序(Windows系统).md"
     },
@@ -195,10 +195,6 @@
     {
       "basename": "编程思想",
       "path": "docs/软件工程/编程思想与规范/编程思想.md"
-    },
-    {
-      "basename": "C++基础",
-      "path": "docs/c++/C++基础.md"
     }
   ],
   "omittedPaths": [],

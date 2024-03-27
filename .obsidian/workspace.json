@@ -18,8 +18,21 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "d2f3babbb3fc6568",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "docs/算法/数据结构.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -93,7 +106,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/课程/编译原理/作业/p5.md",
+                "file": "docs/算法/数据结构.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +123,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/课程/编译原理/作业/p5.md",
+                "file": "docs/算法/数据结构.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +146,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/课程/编译原理/作业/p5.md"
+                "file": "docs/算法/数据结构.md"
               }
             }
           },
@@ -158,8 +171,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 200
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -177,15 +189,16 @@
       "vscode-editor:新建代码文件": false
     }
   },
-  "active": "27bc2c851b469af0",
+  "active": "d2f3babbb3fc6568",
   "lastOpenFiles": [
+    "conflict-files-obsidian-git.md",
+    "docs/课程/编译原理/作业/p5.md",
     "docs/课程/编译原理/作业/p4.md",
     "docs/课程/编译原理/笔记/语法制导的编译技术.md",
     "docs/课程/编译原理/课件/Chapter_1.pdf",
     "docs/课程/编译原理/课件/Chapter_4.pdf",
     "docs/课程/编译原理/课件/Chapter_5.pdf",
     "docs/课程/编译原理/笔记/语法分析.md",
-    "docs/课程/编译原理/作业/p5.md",
     "docs/课程/编译原理/笔记/词法分析.md",
     "docs/杂项/linux与shell/linux/日志系统.md",
     "docs/杂项/linux与shell/linux.md",
