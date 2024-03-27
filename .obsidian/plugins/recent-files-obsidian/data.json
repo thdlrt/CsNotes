@@ -1,6 +1,14 @@
 {
   "recentFiles": [
     {
+      "basename": "Chapter_5",
+      "path": "docs/课程/编译原理/课件/Chapter_5.pdf"
+    },
+    {
+      "basename": "语法制导的编译技术",
+      "path": "docs/课程/编译原理/笔记/语法制导的编译技术.md"
+    },
+    {
       "basename": "绪论",
       "path": "docs/课程/操作系统/笔记/绪论.md"
     },
@@ -187,18 +195,6 @@
     {
       "basename": "Collections工具类",
       "path": "docs/java/java基础/Util/集合/Collections工具类.md"
-    },
-    {
-      "basename": "测试",
-      "path": "docs/java/java基础/杂项/测试.md"
-    },
-    {
-      "basename": "异常",
-      "path": "docs/java/java基础/杂项/异常.md"
-    },
-    {
-      "basename": "反射",
-      "path": "docs/java/java基础/杂项/反射.md"
     }
   ],
   "omittedPaths": [],
