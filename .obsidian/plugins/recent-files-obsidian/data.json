@@ -1,12 +1,16 @@
 {
   "recentFiles": [
     {
-      "basename": "数据结构",
-      "path": "docs/算法/数据结构.md"
+      "basename": "待学高级知识",
+      "path": "docs/算法/待学高级知识.md"
     },
     {
       "basename": "p5",
       "path": "docs/课程/编译原理/作业/p5.md"
+    },
+    {
+      "basename": "数据结构",
+      "path": "docs/算法/数据结构.md"
     },
     {
       "basename": "p4",
@@ -147,10 +151,6 @@
     {
       "basename": "二分&倍增",
       "path": "docs/算法/二分&倍增.md"
-    },
-    {
-      "basename": "待学高级知识",
-      "path": "docs/算法/待学高级知识.md"
     },
     {
       "basename": "p2",
