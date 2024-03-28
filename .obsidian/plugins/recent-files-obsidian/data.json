@@ -1,6 +1,14 @@
 {
   "recentFiles": [
     {
+      "basename": "树",
+      "path": "docs/算法/树.md"
+    },
+    {
+      "basename": "数据结构",
+      "path": "docs/算法/数据结构.md"
+    },
+    {
       "basename": "递归分治",
       "path": "docs/算法/递归分治.md"
     },
@@ -191,14 +199,6 @@
     {
       "basename": "equals()与hashCode()",
       "path": "docs/java/java基础/杂项/equals()与hashCode().md"
-    },
-    {
-      "basename": "使用享元自定义Collecction和Map",
-      "path": "docs/java/java基础/高级/使用享元自定义Collecction和Map.md"
-    },
-    {
-      "basename": "Math类",
-      "path": "docs/java/java基础/Util/Math类.md"
     }
   ],
   "omittedPaths": [],
