@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/算法/树.md",
+                "file": "docs/算法/待学高级知识.md",
                 "mode": "source",
                 "source": false
               }
@@ -93,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/算法/树.md",
+                "file": "docs/算法/待学高级知识.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/算法/树.md",
+                "file": "docs/算法/待学高级知识.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/算法/树.md"
+                "file": "docs/算法/待学高级知识.md"
               }
             }
           },
@@ -178,6 +178,7 @@
   },
   "active": "d2f3babbb3fc6568",
   "lastOpenFiles": [
+    "docs/算法/树.md",
     "docs/算法/待学高级知识.md",
     "面试/自我介绍/腾讯天美游戏端开发.md",
     "docs/课程/软件体系结构/笔记/分发系统.md",
@@ -206,7 +207,6 @@
     "docs/数据库/SQL基本语法.md",
     "docs/c++/八股.md",
     "docs/面试/计算机科学/杂项.md",
-    "docs/算法/数学.md",
     "docs/课程/编译原理/实验/p1/Project_1.pdf",
     "docs/课程/编译原理/实验/p1/未命名",
     "docs/课程/编译原理/实验/p1",
