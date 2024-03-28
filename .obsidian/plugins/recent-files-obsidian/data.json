@@ -1,6 +1,10 @@
 {
   "recentFiles": [
     {
+      "basename": "树",
+      "path": "docs/算法/树.md"
+    },
+    {
       "basename": "待学高级知识",
       "path": "docs/算法/待学高级知识.md"
     },
@@ -195,10 +199,6 @@
     {
       "basename": "计算机系统基础笔记",
       "path": "docs/归档课程/计算机系统基础/计算机系统基础笔记.md"
-    },
-    {
-      "basename": "编程思想",
-      "path": "docs/软件工程/编程思想与规范/编程思想.md"
     }
   ],
   "omittedPaths": [],
