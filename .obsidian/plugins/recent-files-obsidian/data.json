@@ -1,200 +1,204 @@
 {
   "recentFiles": [
     {
-      "basename": "待学高级知识",
-      "path": "docs/算法/待学高级知识.md"
+      "basename": "分发系统",
+      "path": "docs/课程/软件体系结构/笔记/分发系统.md"
     },
     {
-      "basename": "p5",
-      "path": "docs/课程/编译原理/作业/p5.md"
+      "basename": "递归分治",
+      "path": "docs/算法/递归分治.md"
     },
     {
-      "basename": "数据结构",
-      "path": "docs/算法/数据结构.md"
+      "basename": "软件体系结构(Spring)",
+      "path": "docs/课程/软件体系结构/软件体系结构(Spring).md"
     },
     {
-      "basename": "p4",
-      "path": "docs/课程/编译原理/作业/p4.md"
+      "basename": "理念",
+      "path": "docs/课程/软件体系结构/笔记/理念.md"
     },
     {
       "basename": "语法制导的编译技术",
       "path": "docs/课程/编译原理/笔记/语法制导的编译技术.md"
     },
     {
-      "basename": "Chapter_1",
-      "path": "docs/课程/编译原理/课件/Chapter_1.pdf"
-    },
-    {
-      "basename": "Chapter_4",
-      "path": "docs/课程/编译原理/课件/Chapter_4.pdf"
-    },
-    {
       "basename": "Chapter_5",
       "path": "docs/课程/编译原理/课件/Chapter_5.pdf"
-    },
-    {
-      "basename": "语法分析",
-      "path": "docs/课程/编译原理/笔记/语法分析.md"
-    },
-    {
-      "basename": "词法分析",
-      "path": "docs/课程/编译原理/笔记/词法分析.md"
-    },
-    {
-      "basename": "日志系统",
-      "path": "docs/杂项/linux与shell/linux/日志系统.md"
-    },
-    {
-      "basename": "linux",
-      "path": "docs/杂项/linux与shell/linux.md"
-    },
-    {
-      "basename": "进程管理",
-      "path": "docs/杂项/linux与shell/linux/进程管理.md"
-    },
-    {
-      "basename": "并发编程",
-      "path": "docs/面试/计算机科学/并发编程.md"
-    },
-    {
-      "basename": "文本处理",
-      "path": "docs/杂项/linux与shell/linux/文本处理.md"
-    },
-    {
-      "basename": "文件系统",
-      "path": "docs/杂项/linux与shell/linux/文件系统.md"
-    },
-    {
-      "basename": "equals()与hashCode()",
-      "path": "docs/java/java基础/杂项/equals()与hashCode().md"
-    },
-    {
-      "basename": "java基础",
-      "path": "docs/java/java基础.md"
-    },
-    {
-      "basename": "排序&选择",
-      "path": "docs/算法/排序&选择.md"
-    },
-    {
-      "basename": "MySQL",
-      "path": "docs/数据库/关系数据库/MySQL.md"
-    },
-    {
-      "basename": "计算机网络",
-      "path": "docs/面试/计算机科学/计算机网络.md"
-    },
-    {
-      "basename": "Redis",
-      "path": "docs/数据库/NoSQL/Redis.md"
-    },
-    {
-      "basename": "SQL基本语法",
-      "path": "docs/数据库/SQL基本语法.md"
-    },
-    {
-      "basename": "八股",
-      "path": "docs/c++/八股.md"
-    },
-    {
-      "basename": "杂项",
-      "path": "docs/面试/计算机科学/杂项.md"
-    },
-    {
-      "basename": "数学",
-      "path": "docs/算法/数学.md"
-    },
-    {
-      "basename": "6",
-      "path": "docs/归档课程/计算机系统基础/data/6.md"
-    },
-    {
-      "basename": "unity",
-      "path": "docs/游戏开发/游戏引擎/unity/unity.md"
-    },
-    {
-      "basename": "设计模式",
-      "path": "docs/软件工程/设计模式.md"
-    },
-    {
-      "basename": "android",
-      "path": "docs/移动端开发/安卓/android.md"
-    },
-    {
-      "basename": "实验报告p1",
-      "path": "docs/课程/编译原理/实验/p1/实验报告p1.md"
-    },
-    {
-      "basename": "Project_1",
-      "path": "docs/课程/编译原理/实验/p1/Project_1.pdf"
-    },
-    {
-      "basename": "实验笔记",
-      "path": "docs/课程/编译原理/实验/实验笔记.md"
-    },
-    {
-      "basename": "正则表达式",
-      "path": "docs/杂项/杂项/正则表达式.md"
-    },
-    {
-      "basename": "p3",
-      "path": "docs/课程/编译原理/作业/p3.md"
-    },
-    {
-      "basename": "使用VSCode编写C++单文件程序(Windows系统)",
-      "path": "docs/算法/使用VSCode编写C++单文件程序(Windows系统).md"
-    },
-    {
-      "basename": "前缀和与差分",
-      "path": "docs/算法/前缀和与差分.md"
-    },
-    {
-      "basename": "二分&倍增",
-      "path": "docs/算法/二分&倍增.md"
-    },
-    {
-      "basename": "p2",
-      "path": "docs/课程/编译原理/作业/p2.md"
-    },
-    {
-      "basename": "并发",
-      "path": "docs/课程/操作系统/笔记/并发.md"
-    },
-    {
-      "basename": "thread",
-      "path": "docs/课程/操作系统/代码/thread-lib/thread.h"
-    },
-    {
-      "basename": "操作系统",
-      "path": "docs/课程/操作系统/操作系统.md"
     },
     {
       "basename": "绪论",
       "path": "docs/课程/操作系统/笔记/绪论.md"
     },
     {
+      "basename": "os-model",
+      "path": "docs/课程/操作系统/代码/os-model/os-model.py"
+    },
+    {
+      "basename": "计算机网络",
+      "path": "docs/面试/计算机科学/计算机网络.md"
+    },
+    {
+      "basename": "android",
+      "path": "docs/移动端开发/安卓/android.md"
+    },
+    {
       "basename": "八股",
-      "path": "docs/游戏开发/游戏引擎/unity/八股.md"
+      "path": "docs/杂项/linux与shell/八股.md"
     },
     {
-      "basename": "jvm",
-      "path": "docs/java/工具/jvm.md"
+      "basename": "八股",
+      "path": "docs/java/八股.md"
     },
     {
-      "basename": "4",
-      "path": "docs/归档课程/计算机系统基础/data/4.md"
+      "basename": "java基础",
+      "path": "docs/java/java基础.md"
+    },
+    {
+      "basename": "项目管理",
+      "path": "docs/软件工程/项目管理.md"
+    },
+    {
+      "basename": "八股",
+      "path": "docs/课程/计算机图形学/八股.md"
+    },
+    {
+      "basename": "腾讯天美游戏端开发",
+      "path": "面试/自我介绍/腾讯天美游戏端开发.md"
+    },
+    {
+      "basename": "Games101-现代图形学基础",
+      "path": "docs/课程/计算机图形学/Games101-现代图形学基础.md"
+    },
+    {
+      "basename": "Chapter_4",
+      "path": "docs/课程/编译原理/课件/Chapter_4.pdf"
+    },
+    {
+      "basename": "语法分析",
+      "path": "docs/课程/编译原理/笔记/语法分析.md"
+    },
+    {
+      "basename": "设计模式",
+      "path": "docs/软件工程/设计模式.md"
+    },
+    {
+      "basename": "linux",
+      "path": "docs/杂项/linux与shell/linux.md"
+    },
+    {
+      "basename": "文件系统",
+      "path": "docs/杂项/linux与shell/linux/文件系统.md"
+    },
+    {
+      "basename": "八股",
+      "path": "docs/c++/八股.md"
+    },
+    {
+      "basename": "c++基础",
+      "path": "docs/c++/c++基础.md"
+    },
+    {
+      "basename": "编译原理",
+      "path": "docs/课程/编译原理/编译原理.md"
+    },
+    {
+      "basename": "Iterator",
+      "path": "docs/java/java基础/Util/集合/Iterator.md"
+    },
+    {
+      "basename": "数组类型",
+      "path": "docs/java/java基础/数据类型/数组类型.md"
     },
     {
       "basename": "3",
       "path": "docs/归档课程/计算机系统基础/data/3.md"
     },
     {
-      "basename": "计算机系统基础笔记",
-      "path": "docs/归档课程/计算机系统基础/计算机系统基础笔记.md"
+      "basename": "流",
+      "path": "docs/java/java基础/数据类型/流.md"
     },
     {
-      "basename": "编程思想",
-      "path": "docs/软件工程/编程思想与规范/编程思想.md"
+      "basename": "函数式编程",
+      "path": "docs/java/java基础/杂项/函数式编程.md"
+    },
+    {
+      "basename": "jvm",
+      "path": "docs/java/工具/jvm.md"
+    },
+    {
+      "basename": "注解",
+      "path": "docs/java/java基础/杂项/注解.md"
+    },
+    {
+      "basename": "文件",
+      "path": "docs/java/java基础/io/文件.md"
+    },
+    {
+      "basename": "网络编程",
+      "path": "docs/java/java基础/io/网络编程.md"
+    },
+    {
+      "basename": "NIO",
+      "path": "docs/java/java基础/io/NIO.md"
+    },
+    {
+      "basename": "拷贝与引用",
+      "path": "docs/java/java基础/数据类型/拷贝与引用.md"
+    },
+    {
+      "basename": "旧IO",
+      "path": "docs/java/java基础/io/旧IO.md"
+    },
+    {
+      "basename": "控制台IO",
+      "path": "docs/java/java基础/io/控制台IO.md"
+    },
+    {
+      "basename": "基本数据类型与包装类",
+      "path": "docs/java/java基础/数据类型/基本数据类型与包装类.md"
+    },
+    {
+      "basename": "包",
+      "path": "docs/java/java基础/杂项/包.md"
+    },
+    {
+      "basename": "Java编码规范",
+      "path": "docs/java/java基础/杂项/Java编码规范.md"
+    },
+    {
+      "basename": "高级",
+      "path": "docs/java/java基础/并发编程/高级.md"
+    },
+    {
+      "basename": "线程安全的数据类型",
+      "path": "docs/java/java基础/并发编程/线程安全的数据类型.md"
+    },
+    {
+      "basename": "线程与线程池",
+      "path": "docs/java/java基础/并发编程/线程与线程池.md"
+    },
+    {
+      "basename": "基本概念",
+      "path": "docs/java/java基础/并发编程/基本概念.md"
+    },
+    {
+      "basename": "序列化与反序列化",
+      "path": "docs/java/java基础/高级/序列化与反序列化.md"
+    },
+    {
+      "basename": "record记录",
+      "path": "docs/java/java基础/高级/record记录.md"
+    },
+    {
+      "basename": "equals()与hashCode()",
+      "path": "docs/java/java基础/杂项/equals()与hashCode().md"
+    },
+    {
+      "basename": "使用享元自定义Collecction和Map",
+      "path": "docs/java/java基础/高级/使用享元自定义Collecction和Map.md"
+    },
+    {
+      "basename": "Math类",
+      "path": "docs/java/java基础/Util/Math类.md"
     }
   ],
   "omittedPaths": [],
