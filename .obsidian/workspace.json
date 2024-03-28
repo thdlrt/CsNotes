@@ -4,32 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "9f4daa3fc845a0fe",
+        "id": "f61986fe771b62b7",
         "type": "tabs",
         "children": [
           {
-            "id": "33fdff17647fbd00",
-            "type": "leaf",
-            "state": {
-              "type": "pdf",
-              "state": {
-                "file": "docs/课程/编译原理/课件/Chapter_5.pdf"
-              }
-            }
-          }
-        ]
-      },
-      {
-        "id": "4f04c79099109f82",
-        "type": "tabs",
-        "children": [
-          {
-            "id": "65c94f634b210ca3",
+            "id": "d2f3babbb3fc6568",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/课程/编译原理/笔记/语法制导的编译技术.md",
+                "file": "docs/算法/待学高级知识.md",
                 "mode": "source",
                 "source": false
               }
@@ -64,7 +48,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "比较",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -93,8 +77,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 287.5,
-    "collapsed": true
+    "width": 241.5
   },
   "right": {
     "id": "d615b65a4ccf8a6a",
@@ -110,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/课程/编译原理/笔记/语法制导的编译技术.md",
+                "file": "docs/算法/待学高级知识.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -127,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/课程/编译原理/笔记/语法制导的编译技术.md",
+                "file": "docs/算法/待学高级知识.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -150,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/课程/编译原理/笔记/语法制导的编译技术.md"
+                "file": "docs/算法/待学高级知识.md"
               }
             }
           },
@@ -175,8 +158,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 200
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -194,43 +176,44 @@
       "vscode-editor:新建代码文件": false
     }
   },
-  "active": "65c94f634b210ca3",
+  "active": "d2f3babbb3fc6568",
   "lastOpenFiles": [
-    "docs/课程/编译原理/课件/Chapter_5.pdf",
-    "docs/课程/编译原理/笔记/语法制导的编译技术.md",
+    "docs/课程/编译原理/作业/p5.md",
+    "docs/算法/待学高级知识.md",
+    "docs/算法/数据结构.md",
     "conflict-files-obsidian-git.md",
-    "docs/课程/操作系统/笔记/绪论.md",
-    "docs/课程/编译原理/实验/p1/实验报告p1.md",
+    "docs/课程/编译原理/作业/p4.md",
+    "docs/课程/编译原理/笔记/语法制导的编译技术.md",
+    "docs/课程/编译原理/课件/Chapter_1.pdf",
+    "docs/课程/编译原理/课件/Chapter_4.pdf",
+    "docs/课程/编译原理/课件/Chapter_5.pdf",
+    "docs/课程/编译原理/笔记/语法分析.md",
+    "docs/课程/编译原理/笔记/词法分析.md",
+    "docs/杂项/linux与shell/linux/日志系统.md",
+    "docs/杂项/linux与shell/linux.md",
+    "docs/杂项/linux与shell/linux/进程管理.md",
+    "docs/面试/计算机科学/并发编程.md",
+    "docs/杂项/linux与shell/linux/文本处理.md",
+    "docs/杂项/linux与shell/linux/文件系统.md",
+    "docs/java/java基础/杂项/equals()与hashCode().md",
+    "docs/java/java基础.md",
+    "docs/算法/排序&选择.md",
+    "docs/数据库/关系数据库/MySQL.md",
+    "docs/面试/计算机科学/计算机网络.md",
+    "docs/数据库/NoSQL/Redis.md",
+    "docs/数据库/SQL基本语法.md",
+    "docs/c++/八股.md",
+    "docs/面试/计算机科学/杂项.md",
+    "docs/算法/数学.md",
+    "docs/归档课程/计算机系统基础/data/6.md",
+    "docs/游戏开发/游戏引擎/unity/unity.md",
     "docs/课程/编译原理/实验/p1/Project_1.pdf",
-    "docs/课程/编译原理/实验/实验笔记.md",
+    "docs/课程/编译原理/实验/p1/未命名",
     "docs/课程/编译原理/实验/p1",
     "docs/课程/编译原理/实验",
-    "docs/课程/编译原理/作业/p4.md",
-    "docs/课程/编译原理/作业/Untitled.md",
     "docs/课程/操作系统/代码/thread-lib/thread.h",
-    "docs/课程/操作系统/代码/thread-lib/Makefile",
-    "docs/课程/操作系统/代码/thread-lib/README.md",
+    "docs/课程/操作系统/代码/thread-lib/hello.h.c",
     "docs/课程/操作系统/代码/thread-lib/hello.c",
-    "docs/课程/操作系统/代码/thread-lib",
-    "docs/杂项/linux与shell/linux/日志系统.md",
-    "docs/杂项/linux与shell/linux/文本处理.md",
-    "docs/课程/操作系统/代码/os-model/os-model.py",
-    "docs/课程/操作系统/代码/os-model/hello.py",
-    "docs/课程/操作系统/代码/os-model/README.md",
-    "docs/面试/计算机科学/计算机网络.md",
-    "docs/移动端开发/安卓/android.md",
-    "docs/杂项/linux与shell/八股.md",
-    "docs/java/八股.md",
-    "docs/java/java基础.md",
-    "docs/软件工程/项目管理.md",
-    "docs/课程/计算机图形学/八股.md",
-    "面试/自我介绍/腾讯天美游戏端开发.md",
-    "docs/课程/计算机图形学/Games101-现代图形学基础.md",
-    "docs/课程/编译原理/笔记/语法分析.md",
-    "docs/软件工程/设计模式.md",
-    "docs/课程/金融工程学/作业.md",
-    "docs/课程/软件体系结构/笔记/理念.md",
-    "docs/课程/编译原理/作业/p3.md",
     "CsNotes/2021-11-22-22-54-02.png",
     "CsNotes/2021-11-22-22-52-49.png",
     "CsNotes/2021-11-22-22-49-26.png",
