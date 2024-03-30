@@ -1434,3 +1434,12 @@ printf("MM = %d\n", MM);    // MM 被替换为: MM = M * M, 然后又变成 MM =
 	- 对于 `#define S(r) r*r` 使用 `area=S(a+b);` 会被替换为 `area=a+b*a+b`，因此应该改进为 `#define S(r)((r)*(r))`
 	- 或者对于 `#define N 2+2` 使用 `int a=N*N;` 同样也会出现问题，因此要注意**括号的使用**
 - `“”` 内的不会被当做实参，如 `#define FUN（a） "a"`
+### 宏定义的返回值
+- 对于有多个语句的宏定义可以使用 GUN C 扩展语句表达式实现
+	- 最后一个语句会作为返回值
+```
+#define MAX(a, b) \
+  ({ typeof(a) _a = (a); \
+     typeof(b) _b = (b); \
+     _a > _b ? _a : _b; })
+```
