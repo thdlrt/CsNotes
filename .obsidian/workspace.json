@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/c++/八股.md",
+                "file": "docs/c++/C++基础.md",
                 "mode": "source",
                 "source": false
               }
@@ -77,8 +77,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 241.5,
-    "collapsed": true
+    "width": 241.5
   },
   "right": {
     "id": "d615b65a4ccf8a6a",
@@ -94,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/c++/八股.md",
+                "file": "docs/c++/C++基础.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -111,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/c++/八股.md",
+                "file": "docs/c++/C++基础.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -134,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/c++/八股.md"
+                "file": "docs/c++/C++基础.md"
               }
             }
           },
@@ -180,8 +179,10 @@
   },
   "active": "d2f3babbb3fc6568",
   "lastOpenFiles": [
-    "docs/游戏开发/八股.md",
+    "docs/课程/操作系统/实验笔记.md",
+    "docs/课程/操作系统/操作系统.md",
     "docs/c++/八股.md",
+    "docs/游戏开发/八股.md",
     "docs/c++/C++基础.md",
     "docs/算法/待学高级知识.md",
     "docs/算法/树.md",
@@ -207,8 +208,6 @@
     "docs/java/java基础.md",
     "docs/算法/排序&选择.md",
     "docs/数据库/关系数据库/MySQL.md",
-    "docs/面试/计算机科学/计算机网络.md",
-    "docs/数据库/NoSQL/Redis.md",
     "docs/课程/编译原理/实验/p1/Project_1.pdf",
     "docs/课程/编译原理/实验/p1/未命名",
     "docs/课程/编译原理/实验/p1",

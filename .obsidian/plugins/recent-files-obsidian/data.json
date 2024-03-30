@@ -1,16 +1,24 @@
 {
   "recentFiles": [
     {
+      "basename": "C++基础",
+      "path": "docs/c++/C++基础.md"
+    },
+    {
+      "basename": "实验笔记",
+      "path": "docs/课程/操作系统/实验笔记.md"
+    },
+    {
+      "basename": "操作系统",
+      "path": "docs/课程/操作系统/操作系统.md"
+    },
+    {
       "basename": "八股",
       "path": "docs/c++/八股.md"
     },
     {
       "basename": "八股",
       "path": "docs/游戏开发/八股.md"
-    },
-    {
-      "basename": "C++基础",
-      "path": "docs/c++/C++基础.md"
     },
     {
       "basename": "待学高级知识",
@@ -181,10 +189,6 @@
       "path": "docs/课程/操作系统/代码/thread-lib/thread.h"
     },
     {
-      "basename": "操作系统",
-      "path": "docs/课程/操作系统/操作系统.md"
-    },
-    {
       "basename": "绪论",
       "path": "docs/课程/操作系统/笔记/绪论.md"
     },
@@ -195,10 +199,6 @@
     {
       "basename": "4",
       "path": "docs/归档课程/计算机系统基础/data/4.md"
-    },
-    {
-      "basename": "3",
-      "path": "docs/归档课程/计算机系统基础/data/3.md"
     }
   ],
   "omittedPaths": [],
