@@ -1398,6 +1398,35 @@ int main() {
 #define MM M * M            // 宏的嵌套
 printf("MM = %d\n", MM);    // MM 被替换为: MM = M * M, 然后又变成 MM = 5 * 5
 ```
+- `#` 将宏参数转化为字符串字面量 `#define TO_STRING(x) #x`
+- `##` 对字符串进行拼接
+- 可变参数，将两个语言符号组合成一个语言符号
+	- `#define NAME(n) num ## n`
+	- 对于 `NAME(0)` 就会被替换为 `num0`
+- 可变参数宏 `… 和 __VA_ARGS__`
+	- `...` 表示参数，`__VA_ARGS__` 用在替换文本中
+	- 直接使用 `__VA_ARGS__` 会按照传入宏的实参列表原样展开，各参数之间保持原有的**逗号分隔格式**。
+	- 对可变参数的每一项进行操作
+```
+// 辅助宏：用于获取第一个参数
+#define GET_FIRST_ARG(arg1, ...) arg1
+
+// 辅助宏：用于“剥离”第一个参数，并递归处理剩余的参数
+#define PROCESS_REMAINING_ARGS(...) PRINT_ARGS(__VA_ARGS__)
+
+// 打印单个参数的宏
+#define PRINT_SINGLE_ARG(arg) printf("%d\n", arg);
+
+// 处理和打印所有参数的宏
+// 这里使用了GNU C的逗号省略扩展
+#define PRINT_ARGS(first_arg, ...) \
+    do { \
+        PRINT_SINGLE_ARG(first_arg); \
+        if(sizeof((int[]){__VA_ARGS__}) > 0) { \
+            PROCESS_REMAINING_ARGS(__VA_ARGS__); \
+        } \
+    } while(0)
+```
 ### 带参数的宏定义
 - `#define <宏名>(<参数表>) <字符串`
 	- 如 `#define S(a,b) a*b`
