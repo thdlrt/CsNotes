@@ -4,6 +4,22 @@
     "type": "split",
     "children": [
       {
+        "id": "cd2d94326bf3f540",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "325714cf791aeb33",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "docs/课程/金融工程学/郑振龙《金融工程》（第5版）笔记和课后习题（含考研真题）详解答案.pdf"
+              }
+            }
+          }
+        ]
+      },
+      {
         "id": "f61986fe771b62b7",
         "type": "tabs",
         "children": [
@@ -13,7 +29,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/c++/C++基础.md",
+                "file": "docs/课程/金融工程学/作业.md",
                 "mode": "source",
                 "source": false
               }
@@ -77,8 +93,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 241.5,
-    "collapsed": true
+    "width": 241.5
   },
   "right": {
     "id": "d615b65a4ccf8a6a",
@@ -94,7 +109,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/c++/C++基础.md",
+                "file": "docs/课程/金融工程学/作业.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -111,7 +126,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/c++/C++基础.md",
+                "file": "docs/课程/金融工程学/作业.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -134,7 +149,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/c++/C++基础.md"
+                "file": "docs/课程/金融工程学/作业.md"
               }
             }
           },
@@ -180,9 +195,11 @@
   },
   "active": "d2f3babbb3fc6568",
   "lastOpenFiles": [
+    "docs/课程/金融工程学/郑振龙《金融工程》（第5版）笔记和课后习题（含考研真题）详解答案.pdf",
+    "docs/课程/金融工程学/作业.md",
+    "docs/c++/C++基础.md",
     "docs/课程/金融风险管理/实验3 关键利率久期等的计算.md",
     "docs/c++/八股.md",
-    "docs/c++/C++基础.md",
     "docs/课程/操作系统/实验笔记.md",
     "docs/课程/编译原理/课件/Chapter_6.pdf",
     "docs/课程/操作系统/操作系统.md",
@@ -208,14 +225,11 @@
     "docs/杂项/linux与shell/linux/文本处理.md",
     "docs/杂项/linux与shell/linux/文件系统.md",
     "docs/java/java基础/杂项/equals()与hashCode().md",
-    "docs/java/java基础.md",
-    "docs/算法/排序&选择.md",
     "docs/课程/编译原理/实验/p1/Project_1.pdf",
     "docs/课程/编译原理/实验/p1/未命名",
     "docs/课程/编译原理/实验/p1",
     "docs/课程/编译原理/实验",
     "docs/课程/操作系统/代码/thread-lib/thread.h",
-    "docs/课程/操作系统/代码/thread-lib/hello.h.c",
     "CsNotes/2021-11-22-22-54-02.png",
     "CsNotes/2021-11-22-22-52-49.png",
     "CsNotes/2021-11-22-22-49-26.png",
