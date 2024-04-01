@@ -57,4 +57,6 @@
 	- View：模版引擎->HTML，决定用户界面
 	- Controller：处理请求操作了，决定**输入**的处理方式
 	- Model：核心数据功能（实际进行请求的数据计算），进行**业务逻辑的处理**
+## SpringMVC
+- ![image.png|500](https://thdlrt.oss-cn-beijing.aliyuncs.com/20240401155056.png)
 - 
