@@ -5,6 +5,10 @@
       "path": "docs/课程/操作系统/笔记/并发.md"
     },
     {
+      "basename": "fish",
+      "path": "docs/课程/操作系统/代码/fish/fish.c"
+    },
+    {
       "basename": "郑振龙《金融工程》（第5版）笔记和课后习题（含考研真题）详解答案",
       "path": "docs/课程/金融工程学/郑振龙《金融工程》（第5版）笔记和课后习题（含考研真题）详解答案.pdf"
     },
@@ -195,10 +199,6 @@
     {
       "basename": "thread",
       "path": "docs/课程/操作系统/代码/thread-lib/thread.h"
-    },
-    {
-      "basename": "绪论",
-      "path": "docs/课程/操作系统/笔记/绪论.md"
     }
   ],
   "omittedPaths": [],

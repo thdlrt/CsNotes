@@ -36,32 +36,19 @@ static int can_print(char ch) {
     return next(ch) != 0 && quota > 0;
 }
 
-void fish_before(char ch) {
-    mutex_lock(&lk);
-    while (!can_print(ch)) {
-        cond_wait(&cv, &lk);
-    }
-    quota--;
-    mutex_unlock(&lk);
-}
-
-void fish_after(char ch) {
-    mutex_lock(&lk);
-    quota++;
-    current = next(ch);
-    assert(current);
-    cond_broadcast(&cv);
-    mutex_unlock(&lk);
-}
-
 const char roles[] = ".<<<<<>>>>___";
 
 void fish_thread(int id) {
     char role = roles[id];
     while (1) {
-        fish_before(role);
-        putchar(role); // Not lock-protected
-        fish_after(role);
+        mutex_lock(&lk);
+        while (!can_print(ch)) {
+            cond_wait(&cv, &lk);
+        }
+        putchar(role); 
+        current = next(ch);
+        cond_broadcast(&cv);
+        mutex_unlock(&lk);
     }
 }
 
