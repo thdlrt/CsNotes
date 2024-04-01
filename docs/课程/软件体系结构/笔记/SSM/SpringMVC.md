@@ -192,4 +192,31 @@ GetMapping("/")
 - `th:href="@{/edit/{id}(id=${user.id})}"` 和 `th:href="@{/delete/{id}(id=${user.id})}"` 分别为编辑和删除操作提供动态链接，链接中包含用户的ID。
 ### 仓库层（存储）
 #### 使用 h2 数据库
-- h2
+- h2 数据库无需本地配置，通常用于开发以及测试环境
+- maven 配置
+```xml
+<dependency>  
+    <groupId>com.h2database</groupId>  
+    <artifactId>h2</artifactId>  
+</dependency>
+```
+- 在 application. properties 中配置基本信息
+```json
+//非持久存储
+spring.datasource.url=jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+//持久存储（需要指示存储目录）
+spring.datasource.url=jdbc:h2:file:~/testdb;DB_CLOSE_ON_EXIT=FALSE
+spring.datasource.driverClassName=org.h2.Driver
+spring.datasource.username=sa
+spring.datasource.password=
+spring.h2.console.enabled=true
+spring.jpa.database-platform=org.hibernate.dialect.H2Dialect
+spring.h2.console.path=/h2-console
+```
+- 数据库的初始化
+	- **使用 SQL 脚本**：Spring Boot 会在启动时自动执行 `schema.sql` 和 `data.sql` 文件（如果它们存在于 `src/main/resources` 目录中）。`schema.sql` 用于创建数据库结构（表、视图等），`data.sql` 用于插入初始数据。
+	- **使用 JPA 实体**自动创建数据库结构：需要将要存储的对象转化为 JPA 实体
+
+- 使用 JPA
+- 配置数据库架构生成行为
+	- 生产环境下通常使用 `spring.jpa.hibernate.ddl-auto=update`Hibernate会根据实体类的定义更新数据库表结构，这包括添加新的表、列和约束等，但不会删除任何现有的表、列或数据。
