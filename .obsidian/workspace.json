@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/课程/操作系统/笔记/并发.md",
+                "file": "docs/课程/软件体系结构/笔记/SSM/SpringMVC.md",
                 "mode": "source",
                 "source": false
               }
@@ -77,7 +77,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 200,
+    "collapsed": true
   },
   "right": {
     "id": "d615b65a4ccf8a6a",
@@ -93,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/课程/操作系统/笔记/并发.md",
+                "file": "docs/课程/软件体系结构/笔记/SSM/SpringMVC.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +111,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/课程/操作系统/笔记/并发.md",
+                "file": "docs/课程/软件体系结构/笔记/SSM/SpringMVC.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +134,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/课程/操作系统/笔记/并发.md"
+                "file": "docs/课程/软件体系结构/笔记/SSM/SpringMVC.md"
               }
             }
           },
@@ -179,8 +180,11 @@
   },
   "active": "325714cf791aeb33",
   "lastOpenFiles": [
-    "docs/课程/操作系统/代码/fish/fish.c",
+    "docs/课程/软件体系结构/笔记/SpringBoot.md",
+    "docs/课程/软件体系结构/笔记/Spring.md",
+    "docs/课程/软件体系结构/笔记/SSM/SpringMVC.md",
     "docs/课程/操作系统/笔记/并发.md",
+    "docs/课程/操作系统/代码/fish/fish.c",
     "docs/课程/操作系统/代码/fish/README.md",
     "docs/课程/操作系统/代码/fish/Makefile",
     "docs/课程/操作系统/代码/fish",
@@ -210,8 +214,6 @@
     "docs/杂项/linux与shell/linux/日志系统.md",
     "docs/杂项/linux与shell/linux.md",
     "docs/杂项/linux与shell/linux/进程管理.md",
-    "docs/面试/计算机科学/并发编程.md",
-    "docs/杂项/linux与shell/linux/文本处理.md",
     "docs/课程/编译原理/实验/p1/Project_1.pdf",
     "docs/课程/编译原理/实验/p1/未命名",
     "CsNotes/2021-11-22-22-54-02.png",

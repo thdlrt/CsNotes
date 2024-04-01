@@ -1,6 +1,18 @@
 {
   "recentFiles": [
     {
+      "basename": "SpringMVC",
+      "path": "docs/课程/软件体系结构/笔记/SSM/SpringMVC.md"
+    },
+    {
+      "basename": "SpringBoot",
+      "path": "docs/课程/软件体系结构/笔记/SpringBoot.md"
+    },
+    {
+      "basename": "Spring",
+      "path": "docs/课程/软件体系结构/笔记/Spring.md"
+    },
+    {
       "basename": "并发",
       "path": "docs/课程/操作系统/笔记/并发.md"
     },
@@ -187,18 +199,6 @@
     {
       "basename": "前缀和与差分",
       "path": "docs/算法/前缀和与差分.md"
-    },
-    {
-      "basename": "二分&倍增",
-      "path": "docs/算法/二分&倍增.md"
-    },
-    {
-      "basename": "p2",
-      "path": "docs/课程/编译原理/作业/p2.md"
-    },
-    {
-      "basename": "thread",
-      "path": "docs/课程/操作系统/代码/thread-lib/thread.h"
     }
   ],
   "omittedPaths": [],
