@@ -16,3 +16,13 @@
 </dependencies>
 ```
 - 但是如果想使用一个新版本的库或者一个父 POM 中没有的第三方库，你需要在 `pom.xml` 中指定版本号。
+### 程序入口
+```java
+@SpringBootApplication
+public class Application {
+
+    public static void main(String[] args) {
+        SpringApplication.run(Application.class, args);
+    }
+}
+```

@@ -59,7 +59,20 @@
 	- Model：核心数据功能（实际进行请求的数据计算），进行**业务逻辑的处理**
 - 多视图：结合设备信息发送不同的视图
 	- ![image.png|400](https://thdlrt.oss-cn-beijing.aliyuncs.com/20240401163935.png)
-
+#### 补充：渲染模式
+##### 服务端渲染 SSR
+- 在服务端渲染中，**HTML 页面是在服务器上生成的**。当用户请求一个页面时，服务器将所有必要的数据集成到 HTML 中，并且完成页面的渲染，然后将完整的页面发送给客户端。客户端（浏览器）接收到完整的 HTML 页面后，**直接渲染显示给用户**。（上面提到的吗模板引擎就属于这一种）
+- **SEO 友好**：由于页面是预先渲染的，搜索引擎更容易抓取和索引内容，这对 SEO 非常有利。
+- **首屏加载快**：用户能更快地看到完整渲染的页面，因为浏览器不需要等待所有JavaScript下载并执行完成才能显示内容。
+- **兼容性好**：SSR生成的页面不依赖于客户端JavaScript，因此即使在禁用JavaScript的环境下也能正常显示。
+##### 客户端渲染 CSR
+- 在客户端渲染中，服务器发送的 HTML 页面最初**几乎是空的**，所有的内容生成和渲染都在浏览器中**通过 JavaScript 完成**。当页面加载到浏览器后，JavaScript 代码会运行，从服务器获取数据，然后在客户端动态生成页面内容。（vue、react 都是这种）
+- **富交互性**：CSR 非常适合构建交互性强的单页应用（SPA）。JavaScript 框架（如 React、Vue.js）可以提供流畅的用户体验和高效的页面更新。
+- **前后端分离**：客户端渲染支持前后端分离的开发模式，前端负责UI和用户交互，后端通过API提供数据服务，这种模式增强了应用的可维护性和扩展性。
+- **减轻服务器负担**：由于页面渲染工作转移到了客户端，服务器的负担减轻了，尤其是在高流量的情况下。
+##### 静态站点
+- 适用于内容驱动的网站，如博客、文档站点、营销网站。
+- 极快的加载速度，优秀的SEO表现，安全性高。
 ## SpringMVC
 ### 例子
 - [spring-petclinic](https://github.com/spring-petclinic/spring-framework-petclinic?tab=readme-ov-file)
@@ -107,5 +120,66 @@ public String addUser(@Valid User user, BindingResult result, Model model) {
 #### 模板引擎
 - 上面 return 的就是一个模板引擎，比如 `"add-user"` 就对应一个 HTML 模板文件的名字。该文件应该位于 `src/main/resources/templates` 目录下，并且文件名应该是 `add-user.html`。
 	- Spring Boot 配置了**Thymeleaf**模板引擎作为其默认的模板引擎，所以当返回 `"add-user"` 时，Spring MVC 会寻找名为 `add-user.html` 的模板文件，然后渲染这个模板作为 HTTP 响应。
-- 
+- 重定义路径：当执行完一个操作后，比如添加或更新数据，将用户重定向到另一个路径，告诉浏览器去请求一个新的 URL。
+	- `"redirect:/index"` 就表示重定位到 `/index`
+
+- 模版引擎的内容填充发生在服务器端
+	- **解析模板**：模板引擎读取模板文件（例如，`add-user.html`），并解析文件中的 Thymeleaf 语法。
+	- **数据绑定**：模板中的动态部分（比如，表达式、选择变量）会与控制器传递给视图的模型数据（Model）进行绑定。模型数据通常是在控制器方法中构造的，可以包含各种形式的数据，如实体对象、列表或任何需要在页面上展示的数据。
+	- **生成 HTML**：模板引擎将填充后的模板渲染为最终的 HTML 页面。这个过程包括替换动态表达式为实际的值，执行循环、条件判断等操作。
+	- **发送响应**：渲染后的HTML页面作为HTTP响应的一部分发送给客户端（浏览器）。
+### 视图层
+#### 数据绑定
+- 用户表单注册
+```html
+<form action="#" th:action="@{/adduser}" th:object="${user}" method="post">
+    <label for="name">Name</label>
+    <input type="text" th:field="*{name}" id="name" placeholder="Name">
+    <span th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></span>
+
+    <label for="email">Email</label>
+    <input type="text" th:field="*{email}" id="email" placeholder="Email">
+    <span th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></span>
+    
+    <input type="submit" value="Add User">   
+</form>
+```
+- `th:action="@{/adduser}"` 指定表单提交的 URL，Thymeleaf 会解析 `@{/adduser}` 为应用的相对路径。
+- `th:object="${user}"` 将表单与后端的`User`对象绑定。
+- `th:field="*{name}"` 将输入框绑定到`User`对象的`name`属性，实现数据的双向绑定。
+- `th:if="${#fields.hasErrors('name')}" th:errors="*{name}"` 如果 `name` 字段有验证错误，这些错误会被显示出来。
+- 设置动态路径 `@{/update/{id}(id=${user.id})}`
+
+- 用户列表展示
+```html
+<div th:switch="${users}">
+    <h2 th:case="null">No users yet!</h2>
+    <div th:case="*">
+        <h2>Users</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="user : ${users}">
+                    <td th:text="${user.name}">Name</td>
+                    <td th:text="${user.email}">Email</td>
+                    <td><a th:href="@{/edit/{id}(id=${user.id})}">Edit</a></td>
+                    <td><a th:href="@{/delete/{id}(id=${user.id})}">Delete</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>      
+    <p><a href="/signup">Add a new user</a></p>
+</div>
+```
+- `th:each="user : ${users}"` 遍历所有用户，并为每个用户创建一个表格行。
+- `th:text="${user.name}"` 和 `th:text="${user.email}"` 分别显示用户的姓名和电子邮箱。
+- `th:href="@{/edit/{id}(id=${user.id})}"` 和 `th:href="@{/delete/{id}(id=${user.id})}"` 分别为编辑和删除操作提供动态链接，链接中包含用户的ID。
 ### 仓库层（存储）
+- 
