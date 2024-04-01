@@ -23,5 +23,21 @@
 	- Client 提供 GUI 供用户操作，并通过远程方法调用与 Sever 通信，获得服务
 	- 应用系统集中于 Sever ，**便于部署和管理**
 	- ![image.png|500](https://thdlrt.oss-cn-beijing.aliyuncs.com/20240401141625.png)
-- 
 ### BS 模式
+- 三层模式
+	- 用户 PC：展示层，用户界面**不再需要专门的客户端**，使用浏览器来对 html 进行渲染显示
+	- 应用服务器：应用服务层
+	- 资源管理系统：数据层
+	- ![image.png|500](https://thdlrt.oss-cn-beijing.aliyuncs.com/20240401142509.png)
+#### 具体实现：JAVA EE
+- ![image.png|500](https://thdlrt.oss-cn-beijing.aliyuncs.com/20240401142829.png)
+- Java Servlet 是作为控制器，接受并读取 http 请求，访问数据并生成相应，之后将响应发送给服务器
+	- ![image.png|500](https://thdlrt.oss-cn-beijing.aliyuncs.com/20240401143909.png)
+- CGI：用于生成动态内容
+	- 每当 Web 服务器收到一个请求，它就会启动一个新的 CGI 程序（或脚本）实例来处理请求（即**一个新进程**）。这种处理方式相对效率较低，因为每次请求都需要创建一个新的进程，增加了 CPU 和内存的负担。
+	- 无状态
+	- HTML内容通常是由脚本语言（如Perl、Python等）**动态生成并打印出来的**。脚本会执行必要的逻辑处理，并将处理结果以字符串的形式嵌入到HTML标记中，最后将整个HTML内容作为响应输出。
+- Active Page（如 JSP）
+	- 支持使用线程池、缓存登记书，并且支持应用状态管理（不同请求之间可以共享信息，如用户会话），效率更高
+	- Java代码**嵌入**到特定的JSP标签中。当页面被请求时，服务器上的JSP引擎会**处理这些标签**，执行其中的Java代码，生成动态内容，并**插入到HTML页面中。**
+- CGI 脚本通常是**完全独立**于 HTML 的，而JSP将Java代码**嵌入**HTML中。
