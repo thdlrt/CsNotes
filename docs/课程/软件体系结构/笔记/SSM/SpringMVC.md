@@ -213,10 +213,91 @@ spring.h2.console.enabled=true
 spring.jpa.database-platform=org.hibernate.dialect.H2Dialect
 spring.h2.console.path=/h2-console
 ```
-- 数据库的初始化
-	- **使用 SQL 脚本**：Spring Boot 会在启动时自动执行 `schema.sql` 和 `data.sql` 文件（如果它们存在于 `src/main/resources` 目录中）。`schema.sql` 用于创建数据库结构（表、视图等），`data.sql` 用于插入初始数据。
-	- **使用 JPA 实体**自动创建数据库结构：需要将要存储的对象转化为 JPA 实体
-
-- 使用 JPA
+#### 数据库的使用
+- **使用 SQL 脚本**：Spring Boot 会在启动时自动执行 `schema.sql` 和 `data.sql` 文件（如果它们存在于 `src/main/resources` 目录中）。`schema.sql` 用于创建数据库结构（表、视图等），`data.sql` 用于插入初始数据。
+- **使用 JPA 实体**自动创建数据库结构：需要将要存储的对象转化为 JPA 实体
+##### Spring Data JPA
 - 配置数据库架构生成行为
-	- 生产环境下通常使用 `spring.jpa.hibernate.ddl-auto=update`Hibernate会根据实体类的定义更新数据库表结构，这包括添加新的表、列和约束等，但不会删除任何现有的表、列或数据。
+	- 生产环境下通常使用 `spring.jpa.hibernate.ddl-auto=update` Hibernate 会根据实体类的定义更新数据库表结构，这包括添加新的表、列和约束等，但不会删除任何现有的表、列或数据。
+
+- 使用注解标记 JPA 实体以及主键,，**得到 JPA 实体**
+```java
+@Entity
+public class Product {
+    @Id
+    //设置主键自增生成，数据库在插入记录时会自动分配（忽视id的现值）
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private String id;
+    private String name;
+    private double price;
+    private String image;
+}
+@Entity
+@Data
+public class Item {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+	//多个Item共享Product因此是多对一
+    @ManyToOne
+    private Product product;
+
+    private int quantity;
+}
+@Entity
+@Data
+public class Cart {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+	//注意这里是一个列表，因此是一对多
+	//当`Cart`实体被更新或删除时，相关联的`Item`实体也会被相应地更新或删除
+    @OneToMany(cascade = CascadeType.ALL)
+    private List<Item> items = new ArrayList<>();
+    
+    public boolean addItem(Item item) {
+        return items.add(item);
+    }
+}
+
+```
+
+- 创建 Repository 接口
+	- 对于每个实体，创建一个继承自 `JpaRepository` 的接口。这将提供基本的 CRUD 操作和 JPA 查询能力。
+	- 定义在独立文件内，如 `ProductRepository.java`
+```java
+@Repository
+public interface ProductRepository extends JpaRepository<Product, String> {
+}
+@Repository
+public interface ItemRepository extends JpaRepository<Item, Long> {
+}
+@Repository
+public interface CartRepository extends JpaRepository<Cart, Long> {
+    // 这里可以添加特定于Cart的方法，比如根据状态或用户查找购物车
+}
+```
+- 在 Repository 接口中自定义查询方法：**无需实现这些方法的具体逻辑**，Spring Data JPA 能够根据方法名自动解析并生成查询
+	- **方法名的构成**：方法名通常以 `find`、`read`、`query`、`count` 开头，后面跟 `By` 来指示查询条件的开始。之后的部分表达了查询条件，可以通过属性名来直接指定。Spring Data JPA 根据这个命名约定来构造查询。
+	- **条件关键字**：可以使用 `And`、`Or` 来组合查询条件，使用属性名来指定要查询的字段。也可以使用比较关键字如 `GreaterThan`、`LessThan`、`Like` 等来表达更复杂的查询条件。
+```java
+List<Product> findByName(String name); // 通过名字查找产品
+
+List<Product> findByPriceGreaterThanEqual(Double price); // 查找价格大于等于指定值的产品
+
+List<Product> findByCategoryAndPriceLessThan(String category, Double price); // 查找特定分类且价格小于指定值的产品
+
+List<Product> findByNameContaining(String keyword); // 查找名称中包含关键字的产品
+
+List<Product> findByCategoryOrderByPriceAsc(String category); // 查找特定分类的产品，并按价格升序排序
+
+```
+- 也可以使用 `@Query` 注解，手动给出 SQL
+```java
+@Query("SELECT p FROM Product p WHERE p.category = :category")
+List<Product> findByCategory(@Param("category") String category);
+
+@Query(value = "SELECT * FROM product WHERE price < :price", nativeQuery = true)
+List<Product> findByPriceLowerThan(@Param("price") Double price);
+
+```

@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/java/工具/lombok.md",
+                "file": "docs/课程/软件体系结构/笔记/SSM/SpringMVC.md",
                 "mode": "source",
                 "source": false
               }
@@ -93,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/java/工具/lombok.md",
+                "file": "docs/课程/软件体系结构/笔记/SSM/SpringMVC.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/java/工具/lombok.md",
+                "file": "docs/课程/软件体系结构/笔记/SSM/SpringMVC.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/java/工具/lombok.md"
+                "file": "docs/课程/软件体系结构/笔记/SSM/SpringMVC.md"
               }
             }
           },
@@ -179,8 +179,8 @@
   },
   "active": "325714cf791aeb33",
   "lastOpenFiles": [
-    "docs/课程/软件体系结构/笔记/SSM/SpringMVC.md",
     "docs/java/工具/lombok.md",
+    "docs/课程/软件体系结构/笔记/SSM/SpringMVC.md",
     "docs/课程/软件体系结构/笔记/SpringBoot.md",
     "docs/java/javaWeb/JDBC.md",
     "docs/课程/软件体系结构/笔记/Spring.md",
