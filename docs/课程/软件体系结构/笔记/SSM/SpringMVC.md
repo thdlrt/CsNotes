@@ -116,6 +116,15 @@ public String addUser(@Valid User user, BindingResult result, Model model) {
     userRepository.save(user);
     return "redirect:/index";
 }
+//添加依赖项，用于模板引擎进行渲染
+GetMapping("/")
+    public String pos(Model model) {
+        posService.add("PD1", 2);
+        //添加依赖
+        model.addAttribute("products", posService.products());
+        model.addAttribute("cart", posService.getCart());
+        return "index";
+    }
 ```
 #### 模板引擎
 - 上面 return 的就是一个模板引擎，比如 `"add-user"` 就对应一个 HTML 模板文件的名字。该文件应该位于 `src/main/resources/templates` 目录下，并且文件名应该是 `add-user.html`。
