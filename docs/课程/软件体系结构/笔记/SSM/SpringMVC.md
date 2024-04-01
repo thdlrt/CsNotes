@@ -301,3 +301,19 @@ List<Product> findByCategory(@Param("category") String category);
 List<Product> findByPriceLowerThan(@Param("price") Double price);
 
 ```
+
+- 使用数据接口（数据库）
+```java
+@Autowired
+private ProductRepository productRepository;
+
+@Autowired
+private CartRepository cartRepository;
+
+//添加项
+cartRepository.save(new Cart());
+//saveall可以一次添加一个列表
+productRepository.saveAll(products);
+//获取全部项
+productRepository.findAll();
+```
