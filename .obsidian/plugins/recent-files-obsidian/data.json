@@ -5,16 +5,16 @@
       "path": "docs/课程/软件体系结构/笔记/SSM/SpringMVC.md"
     },
     {
+      "basename": "Spring",
+      "path": "docs/课程/软件体系结构/笔记/Spring.md"
+    },
+    {
       "basename": "SpringBoot",
       "path": "docs/课程/软件体系结构/笔记/SpringBoot.md"
     },
     {
       "basename": "分发系统",
       "path": "docs/课程/软件体系结构/笔记/分发系统.md"
-    },
-    {
-      "basename": "Spring",
-      "path": "docs/课程/软件体系结构/笔记/Spring.md"
     },
     {
       "basename": "设计模式",

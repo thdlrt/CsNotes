@@ -87,4 +87,25 @@ public void saveOwner(Owner owner) {
     ownerRepository.save(owner);  
 }
 ```
+### 控制器层
+- 处理指定路径的 GET/POST
+```java
+@GetMapping("/signup")//处理的路径
+public String showSignUpForm(User user) {
+    return "add-user";
+}
+
+@PostMapping("/adduser")
+public String addUser(@Valid User user, BindingResult result, Model model) {
+    if (result.hasErrors()) {
+        return "add-user";
+    }
+    userRepository.save(user);
+    return "redirect:/index";
+}
+```
+#### 模板引擎
+- 上面 return 的就是一个模板引擎，比如 `"add-user"` 就对应一个 HTML 模板文件的名字。该文件应该位于 `src/main/resources/templates` 目录下，并且文件名应该是 `add-user.html`。
+	- Spring Boot 配置了**Thymeleaf**模板引擎作为其默认的模板引擎，所以当返回 `"add-user"` 时，Spring MVC 会寻找名为 `add-user.html` 的模板文件，然后渲染这个模板作为 HTTP 响应。
 - 
+### 仓库层（存储）
