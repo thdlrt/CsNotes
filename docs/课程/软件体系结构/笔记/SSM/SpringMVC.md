@@ -191,6 +191,7 @@ GetMapping("/")
 - `th:each="user : ${users}"` 遍历所有用户，并为每个用户创建一个表格行。
 - `th:text="${user.name}"` 和 `th:text="${user.email}"` 分别显示用户的姓名和电子邮箱。
 - `th:href="@{/edit/{id}(id=${user.id})}"` 和 `th:href="@{/delete/{id}(id=${user.id})}"` 分别为编辑和删除操作提供动态链接，链接中包含用户的 ID。
+	- **只适用于 a 标签，可以实现跳转**，`@{}` 专门用于拼接 URL
 
 - 实现按钮的点击事件
 ### 仓库层（存储）
