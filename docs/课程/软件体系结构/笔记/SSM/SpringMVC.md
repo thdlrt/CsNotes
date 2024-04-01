@@ -191,4 +191,5 @@ GetMapping("/")
 - `th:text="${user.name}"` 和 `th:text="${user.email}"` 分别显示用户的姓名和电子邮箱。
 - `th:href="@{/edit/{id}(id=${user.id})}"` 和 `th:href="@{/delete/{id}(id=${user.id})}"` 分别为编辑和删除操作提供动态链接，链接中包含用户的ID。
 ### 仓库层（存储）
-- 
+#### 使用 h2 数据库
+- h2

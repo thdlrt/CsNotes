@@ -9,6 +9,10 @@
       "path": "docs/课程/软件体系结构/笔记/SpringBoot.md"
     },
     {
+      "basename": "JDBC",
+      "path": "docs/java/javaWeb/JDBC.md"
+    },
+    {
       "basename": "Spring",
       "path": "docs/课程/软件体系结构/笔记/Spring.md"
     },
@@ -195,10 +199,6 @@
     {
       "basename": "p3",
       "path": "docs/课程/编译原理/作业/p3.md"
-    },
-    {
-      "basename": "使用VSCode编写C++单文件程序(Windows系统)",
-      "path": "docs/算法/使用VSCode编写C++单文件程序(Windows系统).md"
     }
   ],
   "omittedPaths": [],
