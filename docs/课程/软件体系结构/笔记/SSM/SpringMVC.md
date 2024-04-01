@@ -1,4 +1,3 @@
-## 软件体系结构
 ### 分层系统
 - 软件层级的发展历程
 - ![image.png|500](https://thdlrt.oss-cn-beijing.aliyuncs.com/20240316133914.png)
@@ -31,8 +30,6 @@
 	- ![image.png|500](https://thdlrt.oss-cn-beijing.aliyuncs.com/20240401142509.png)
 #### 具体实现：JAVA EE
 - ![image.png|500](https://thdlrt.oss-cn-beijing.aliyuncs.com/20240401142829.png)
-- Java Servlet 是作为控制器，接受并读取 http 请求，访问数据并生成相应，之后将响应发送给服务器
-	- ![image.png|500](https://thdlrt.oss-cn-beijing.aliyuncs.com/20240401143909.png)
 - CGI：用于生成动态内容
 	- 每当 Web 服务器收到一个请求，它就会启动一个新的 CGI 程序（或脚本）实例来处理请求（即**一个新进程**）。这种处理方式相对效率较低，因为每次请求都需要创建一个新的进程，增加了 CPU 和内存的负担。
 	- 无状态
@@ -40,4 +37,24 @@
 - Active Page（如 JSP）
 	- 支持使用线程池、缓存登记书，并且支持应用状态管理（不同请求之间可以共享信息，如用户会话），效率更高
 	- Java代码**嵌入**到特定的JSP标签中。当页面被请求时，服务器上的JSP引擎会**处理这些标签**，执行其中的Java代码，生成动态内容，并**插入到HTML页面中。**
-- CGI 脚本通常是**完全独立**于 HTML 的，而JSP将Java代码**嵌入**HTML中。
+	- CGI 脚本通常是**完全独立**于 HTML 的，而 JSP 将 Java 代码**嵌入**HTML 中。
+
+- Java Servlet 是作为控制器，接受并读取 http 请求，访问数据并生成相应，之后将响应发送给服务器
+	- ![image.png|500](https://thdlrt.oss-cn-beijing.aliyuncs.com/20240401143909.png)
+	- 使用的是 CGI 分离模式，在 JAVA 点钟编写相应逻辑而不是在 HTML 中嵌入代码
+	- 可维护性较差，混杂了逻辑处理及页面生成等不同功能，不能使用变化
+
+- Thyme leaf 
+- ![image.png|500](https://thdlrt.oss-cn-beijing.aliyuncs.com/20240401151011.png)
+	- 添加 UI 模块负责将生成的结果填入到页面，即 Active Page
+	- 即将内容动态填入到 HTML 模板
+	- ![image.png|500](https://thdlrt.oss-cn-beijing.aliyuncs.com/20240401151143.png)
+
+- 对结构进一步细分，提取业务处理代码
+	- ![image.png|500](https://thdlrt.oss-cn-beijing.aliyuncs.com/20240401151346.png)
+### MVC
+- ![image.png|425](https://thdlrt.oss-cn-beijing.aliyuncs.com/20240401151625.png)
+	- View：模版引擎->HTML，决定用户界面
+	- Controller：处理请求操作了，决定**输入**的处理方式
+	- Model：核心数据功能（实际进行请求的数据计算），进行**业务逻辑的处理**
+- 
