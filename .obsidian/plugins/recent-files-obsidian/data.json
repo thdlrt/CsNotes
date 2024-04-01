@@ -9,8 +9,16 @@
       "path": "docs/课程/软件体系结构/笔记/SpringBoot.md"
     },
     {
+      "basename": "分发系统",
+      "path": "docs/课程/软件体系结构/笔记/分发系统.md"
+    },
+    {
       "basename": "Spring",
       "path": "docs/课程/软件体系结构/笔记/Spring.md"
+    },
+    {
+      "basename": "设计模式",
+      "path": "docs/软件工程/设计模式.md"
     },
     {
       "basename": "并发",
@@ -165,10 +173,6 @@
       "path": "docs/游戏开发/游戏引擎/unity/unity.md"
     },
     {
-      "basename": "设计模式",
-      "path": "docs/软件工程/设计模式.md"
-    },
-    {
       "basename": "android",
       "path": "docs/移动端开发/安卓/android.md"
     },
@@ -195,10 +199,6 @@
     {
       "basename": "使用VSCode编写C++单文件程序(Windows系统)",
       "path": "docs/算法/使用VSCode编写C++单文件程序(Windows系统).md"
-    },
-    {
-      "basename": "前缀和与差分",
-      "path": "docs/算法/前缀和与差分.md"
     }
   ],
   "omittedPaths": [],

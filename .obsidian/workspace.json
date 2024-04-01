@@ -77,8 +77,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 200
   },
   "right": {
     "id": "d615b65a4ccf8a6a",
@@ -181,8 +180,11 @@
   "active": "325714cf791aeb33",
   "lastOpenFiles": [
     "docs/课程/软件体系结构/笔记/SpringBoot.md",
+    "docs/课程/软件体系结构/笔记/分发系统.md",
     "docs/课程/软件体系结构/笔记/Spring.md",
     "docs/课程/软件体系结构/笔记/SSM/SpringMVC.md",
+    "docs/课程/软件体系结构/笔记/理念.md",
+    "docs/软件工程/设计模式.md",
     "docs/课程/操作系统/笔记/并发.md",
     "docs/课程/操作系统/代码/fish/fish.c",
     "docs/课程/操作系统/代码/fish/README.md",
@@ -200,7 +202,6 @@
     "docs/算法/待学高级知识.md",
     "docs/算法/树.md",
     "面试/自我介绍/腾讯天美游戏端开发.md",
-    "docs/课程/软件体系结构/笔记/分发系统.md",
     "docs/课程/编译原理/作业/p5.md",
     "docs/算法/数据结构.md",
     "conflict-files-obsidian-git.md",
@@ -212,8 +213,6 @@
     "docs/课程/编译原理/笔记/语法分析.md",
     "docs/课程/编译原理/笔记/词法分析.md",
     "docs/杂项/linux与shell/linux/日志系统.md",
-    "docs/杂项/linux与shell/linux.md",
-    "docs/杂项/linux与shell/linux/进程管理.md",
     "docs/课程/编译原理/实验/p1/Project_1.pdf",
     "docs/课程/编译原理/实验/p1/未命名",
     "CsNotes/2021-11-22-22-54-02.png",
