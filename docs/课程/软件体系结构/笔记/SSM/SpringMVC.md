@@ -102,6 +102,7 @@ public void saveOwner(Owner owner) {
 ```
 ### 控制器层
 - 处理指定路径的 GET/POST
+	- 并准备需要的数据
 ```java
 @GetMapping("/signup")//处理的路径
 public String showSignUpForm(User user) {
@@ -189,7 +190,9 @@ GetMapping("/")
 ```
 - `th:each="user : ${users}"` 遍历所有用户，并为每个用户创建一个表格行。
 - `th:text="${user.name}"` 和 `th:text="${user.email}"` 分别显示用户的姓名和电子邮箱。
-- `th:href="@{/edit/{id}(id=${user.id})}"` 和 `th:href="@{/delete/{id}(id=${user.id})}"` 分别为编辑和删除操作提供动态链接，链接中包含用户的ID。
+- `th:href="@{/edit/{id}(id=${user.id})}"` 和 `th:href="@{/delete/{id}(id=${user.id})}"` 分别为编辑和删除操作提供动态链接，链接中包含用户的 ID。
+
+- 实现按钮的点击事件
 ### 仓库层（存储）
 #### 使用 h2 数据库
 - h2 数据库无需本地配置，通常用于开发以及测试环境
