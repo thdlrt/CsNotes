@@ -57,6 +57,34 @@
 	- View：模版引擎->HTML，决定用户界面
 	- Controller：处理请求操作了，决定**输入**的处理方式
 	- Model：核心数据功能（实际进行请求的数据计算），进行**业务逻辑的处理**
+- 多视图：结合设备信息发送不同的视图
+	- ![image.png|400](https://thdlrt.oss-cn-beijing.aliyuncs.com/20240401163935.png)
+
 ## SpringMVC
+### 例子
+- [spring-petclinic](https://github.com/spring-petclinic/spring-framework-petclinic?tab=readme-ov-file)
 - ![image.png|500](https://thdlrt.oss-cn-beijing.aliyuncs.com/20240401155056.png)
+	- ![image.png|275](https://thdlrt.oss-cn-beijing.aliyuncs.com/20240401164136.png)
+- 在控制器和仓库接口之间添加了服务层
+	- 让多个控制器可以重用相同代码，实现代码复用，并且简化了控制器的实现
+	- 服务层可以进行验证和授权，提高系统的安全性
+```java
+//controller与服务层交互
+    @PostMapping(value = "/owners/{ownerId}/edit")
+    public String processUpdateOwnerForm(@Valid Owner owner, BindingResult result, @PathVariable("ownerId") int ownerId) {
+        if (result.hasErrors()) {
+            return VIEWS_OWNER_CREATE_OR_UPDATE_FORM;
+        }
+
+        owner.setId(ownerId);
+        this.clinicService.saveOwner(owner);
+        return "redirect:/owners/{ownerId}";
+    }
+    //server与仓库交互
+    @Override  
+@Transactional  
+public void saveOwner(Owner owner) {  
+    ownerRepository.save(owner);  
+}
+```
 - 
