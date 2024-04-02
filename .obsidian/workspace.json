@@ -11,9 +11,25 @@
             "id": "325714cf791aeb33",
             "type": "leaf",
             "state": {
+              "type": "pdf",
+              "state": {
+                "file": "docs/课程/编译原理/课件/Chapter_5.pdf"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "id": "ca9d621ae48af006",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "0f4e281bf70578d0",
+            "type": "leaf",
+            "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/课程/软件体系结构/笔记/SSM/SpringMVC.md",
+                "file": "docs/课程/编译原理/笔记/语法制导的编译技术.md",
                 "mode": "source",
                 "source": false
               }
@@ -93,7 +109,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/课程/软件体系结构/笔记/SSM/SpringMVC.md",
+                "file": "docs/课程/编译原理/笔记/语法制导的编译技术.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +126,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/课程/软件体系结构/笔记/SSM/SpringMVC.md",
+                "file": "docs/课程/编译原理/笔记/语法制导的编译技术.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +149,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/课程/软件体系结构/笔记/SSM/SpringMVC.md"
+                "file": "docs/课程/编译原理/笔记/语法制导的编译技术.md"
               }
             }
           },
@@ -176,10 +192,11 @@
       "vscode-editor:新建代码文件": false
     }
   },
-  "active": "325714cf791aeb33",
+  "active": "0f4e281bf70578d0",
   "lastOpenFiles": [
-    "docs/java/工具/lombok.md",
+    "docs/课程/编译原理/课件/Chapter_5.pdf",
     "docs/课程/软件体系结构/笔记/SSM/SpringMVC.md",
+    "docs/java/工具/lombok.md",
     "docs/课程/软件体系结构/笔记/SpringBoot.md",
     "docs/java/javaWeb/JDBC.md",
     "docs/课程/软件体系结构/笔记/Spring.md",
@@ -210,8 +227,6 @@
     "docs/课程/编译原理/笔记/语法制导的编译技术.md",
     "docs/课程/编译原理/课件/Chapter_1.pdf",
     "docs/课程/编译原理/课件/Chapter_4.pdf",
-    "docs/课程/编译原理/课件/Chapter_5.pdf",
-    "docs/课程/编译原理/笔记/语法分析.md",
     "docs/课程/编译原理/实验/p1/Project_1.pdf",
     "docs/课程/编译原理/实验/p1/未命名",
     "CsNotes/2021-11-22-22-54-02.png",
