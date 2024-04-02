@@ -5,6 +5,10 @@
       "path": "docs/课程/编译原理/笔记/语法制导的编译技术.md"
     },
     {
+      "basename": "p5",
+      "path": "docs/课程/编译原理/作业/p5.md"
+    },
+    {
       "basename": "Chapter_5",
       "path": "docs/课程/编译原理/课件/Chapter_5.pdf"
     },
@@ -83,10 +87,6 @@
     {
       "basename": "腾讯天美游戏端开发",
       "path": "面试/自我介绍/腾讯天美游戏端开发.md"
-    },
-    {
-      "basename": "p5",
-      "path": "docs/课程/编译原理/作业/p5.md"
     },
     {
       "basename": "数据结构",
