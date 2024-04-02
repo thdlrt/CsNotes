@@ -5,12 +5,12 @@
       "path": "docs/课程/编译原理/笔记/语法制导的编译技术.md"
     },
     {
-      "basename": "游戏设计",
-      "path": "docs/游戏开发/游戏设计.md"
-    },
-    {
       "basename": "Chapter_5",
       "path": "docs/课程/编译原理/课件/Chapter_5.pdf"
+    },
+    {
+      "basename": "游戏设计",
+      "path": "docs/游戏开发/游戏设计.md"
     },
     {
       "basename": "p5",
