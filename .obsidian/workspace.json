@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/课程/操作系统/实验笔记.md",
+                "file": "docs/c++/八股.md",
                 "mode": "source",
                 "source": false
               }
@@ -93,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/课程/操作系统/实验笔记.md",
+                "file": "docs/c++/八股.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/课程/操作系统/实验笔记.md",
+                "file": "docs/c++/八股.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/课程/操作系统/实验笔记.md"
+                "file": "docs/c++/八股.md"
               }
             }
           },
@@ -179,6 +179,9 @@
   },
   "active": "e71cdd44b035e32e",
   "lastOpenFiles": [
+    "docs/课程/操作系统/代码/thread-lib/thread.h",
+    "docs/课程/操作系统/代码/thread-lib/hello.c",
+    "docs/课程/操作系统/实验笔记.md",
     "docs/课程/编译原理/笔记/语法制导的编译技术.md",
     "docs/课程/编译原理/课件/Chapter_5.pdf",
     "docs/杂项/latex/数学语法.md",
@@ -202,7 +205,6 @@
     "docs/c++/C++基础.md",
     "docs/课程/金融风险管理/实验3 关键利率久期等的计算.md",
     "docs/c++/八股.md",
-    "docs/课程/操作系统/实验笔记.md",
     "docs/课程/编译原理/课件/Chapter_6.pdf",
     "docs/课程/操作系统/操作系统.md",
     "docs/游戏开发/八股.md",
@@ -213,7 +215,6 @@
     "docs/课程/编译原理/课件/Chapter_1.pdf",
     "docs/课程/编译原理/课件/Chapter_4.pdf",
     "docs/课程/编译原理/实验/p1/Project_1.pdf",
-    "docs/课程/编译原理/实验/p1/未命名",
     "CsNotes/2021-11-22-22-54-02.png",
     "CsNotes/2021-11-22-22-52-49.png",
     "CsNotes/2021-11-22-22-49-26.png",
