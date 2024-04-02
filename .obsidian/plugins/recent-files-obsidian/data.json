@@ -1,20 +1,20 @@
 {
   "recentFiles": [
     {
-      "basename": "八股",
-      "path": "docs/c++/八股.md"
-    },
-    {
-      "basename": "thread",
-      "path": "docs/课程/操作系统/代码/thread-lib/thread.h"
+      "basename": "实验笔记",
+      "path": "docs/课程/操作系统/实验笔记.md"
     },
     {
       "basename": "hello",
       "path": "docs/课程/操作系统/代码/thread-lib/hello.c"
     },
     {
-      "basename": "实验笔记",
-      "path": "docs/课程/操作系统/实验笔记.md"
+      "basename": "thread",
+      "path": "docs/课程/操作系统/代码/thread-lib/thread.h"
+    },
+    {
+      "basename": "八股",
+      "path": "docs/c++/八股.md"
     },
     {
       "basename": "语法制导的编译技术",
