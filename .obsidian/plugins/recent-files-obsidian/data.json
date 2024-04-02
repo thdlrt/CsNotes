@@ -5,12 +5,16 @@
       "path": "docs/课程/编译原理/笔记/语法制导的编译技术.md"
     },
     {
-      "basename": "p5",
-      "path": "docs/课程/编译原理/作业/p5.md"
+      "basename": "游戏设计",
+      "path": "docs/游戏开发/游戏设计.md"
     },
     {
       "basename": "Chapter_5",
       "path": "docs/课程/编译原理/课件/Chapter_5.pdf"
+    },
+    {
+      "basename": "p5",
+      "path": "docs/课程/编译原理/作业/p5.md"
     },
     {
       "basename": "SpringMVC",
@@ -195,10 +199,6 @@
     {
       "basename": "实验笔记",
       "path": "docs/课程/编译原理/实验/实验笔记.md"
-    },
-    {
-      "basename": "正则表达式",
-      "path": "docs/杂项/杂项/正则表达式.md"
     }
   ],
   "omittedPaths": [],
