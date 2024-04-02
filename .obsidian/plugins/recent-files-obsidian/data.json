@@ -1,6 +1,10 @@
 {
   "recentFiles": [
     {
+      "basename": "实验笔记",
+      "path": "docs/课程/操作系统/实验笔记.md"
+    },
+    {
       "basename": "语法制导的编译技术",
       "path": "docs/课程/编译原理/笔记/语法制导的编译技术.md"
     },
@@ -67,10 +71,6 @@
     {
       "basename": "八股",
       "path": "docs/c++/八股.md"
-    },
-    {
-      "basename": "实验笔记",
-      "path": "docs/课程/操作系统/实验笔记.md"
     },
     {
       "basename": "操作系统",

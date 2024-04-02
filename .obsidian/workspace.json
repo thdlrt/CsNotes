@@ -4,32 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "cd2d94326bf3f540",
+        "id": "1c4396b783561f49",
         "type": "tabs",
         "children": [
           {
-            "id": "325714cf791aeb33",
-            "type": "leaf",
-            "state": {
-              "type": "pdf",
-              "state": {
-                "file": "docs/课程/编译原理/课件/Chapter_5.pdf"
-              }
-            }
-          }
-        ]
-      },
-      {
-        "id": "ca9d621ae48af006",
-        "type": "tabs",
-        "children": [
-          {
-            "id": "0f4e281bf70578d0",
+            "id": "e71cdd44b035e32e",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/课程/编译原理/笔记/语法制导的编译技术.md",
+                "file": "docs/课程/操作系统/实验笔记.md",
                 "mode": "source",
                 "source": false
               }
@@ -109,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/课程/编译原理/笔记/语法制导的编译技术.md",
+                "file": "docs/课程/操作系统/实验笔记.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -126,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/课程/编译原理/笔记/语法制导的编译技术.md",
+                "file": "docs/课程/操作系统/实验笔记.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -149,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/课程/编译原理/笔记/语法制导的编译技术.md"
+                "file": "docs/课程/操作系统/实验笔记.md"
               }
             }
           },
@@ -174,7 +158,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 200,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -192,10 +177,10 @@
       "vscode-editor:新建代码文件": false
     }
   },
-  "active": "0f4e281bf70578d0",
+  "active": "e71cdd44b035e32e",
   "lastOpenFiles": [
-    "docs/课程/编译原理/课件/Chapter_5.pdf",
     "docs/课程/编译原理/笔记/语法制导的编译技术.md",
+    "docs/课程/编译原理/课件/Chapter_5.pdf",
     "docs/杂项/latex/数学语法.md",
     "docs/游戏开发/游戏设计.md",
     "docs/课程/编译原理/作业/p5.md",
