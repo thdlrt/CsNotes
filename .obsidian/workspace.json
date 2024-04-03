@@ -13,7 +13,25 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/算法/动态规划.md",
+                "file": "docs/归档课程/计算机系统基础/计算机系统基础笔记.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          }
+        ]
+      },
+      {
+        "id": "397eed0ee2f95b69",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "6fd4872fc21a7f68",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "docs/面试/计算机科学/计算机组成原理.md",
                 "mode": "source",
                 "source": false
               }
@@ -93,7 +111,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/算法/动态规划.md",
+                "file": "docs/面试/计算机科学/计算机组成原理.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +128,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/算法/动态规划.md",
+                "file": "docs/面试/计算机科学/计算机组成原理.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +151,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/算法/动态规划.md"
+                "file": "docs/面试/计算机科学/计算机组成原理.md"
               }
             }
           },
@@ -158,7 +176,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 200,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -176,8 +195,13 @@
       "vscode-editor:新建代码文件": false
     }
   },
-  "active": "e71cdd44b035e32e",
+  "active": "6fd4872fc21a7f68",
   "lastOpenFiles": [
+    "docs/归档课程/计算机系统基础/计算机系统基础笔记.md",
+    "docs/面试/计算机科学/计算机组成原理.md",
+    "docs/面试/数学/离散数学.md",
+    "docs/面试/数学",
+    "docs/算法/动态规划.md",
     "docs/课程/操作系统/实验笔记.md",
     "docs/课程/操作系统/代码/thread-lib/hello.c",
     "docs/课程/操作系统/代码/thread-lib/thread.h",
@@ -208,11 +232,7 @@
     "docs/课程/操作系统/操作系统.md",
     "docs/游戏开发/八股.md",
     "docs/算法/待学高级知识.md",
-    "docs/算法/树.md",
-    "面试/自我介绍/腾讯天美游戏端开发.md",
-    "docs/算法/数据结构.md",
     "docs/课程/编译原理/课件/Chapter_1.pdf",
-    "docs/课程/编译原理/课件/Chapter_4.pdf",
     "CsNotes/2021-11-22-22-54-02.png",
     "CsNotes/2021-11-22-22-52-49.png",
     "CsNotes/2021-11-22-22-49-26.png",
