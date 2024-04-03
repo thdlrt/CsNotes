@@ -14,7 +14,7 @@
               "type": "markdown",
               "state": {
                 "file": "docs/归档课程/计算机系统基础/计算机系统基础笔记.md",
-                "mode": "source",
+                "mode": "preview",
                 "source": false
               }
             }
@@ -112,7 +112,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/归档课程/计算机系统基础/计算机系统基础笔记.md",
+                "file": "docs/面试/计算机科学/计算机组成原理.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -129,7 +129,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/归档课程/计算机系统基础/计算机系统基础笔记.md",
+                "file": "docs/面试/计算机科学/计算机组成原理.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -152,7 +152,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/归档课程/计算机系统基础/计算机系统基础笔记.md"
+                "file": "docs/面试/计算机科学/计算机组成原理.md"
               }
             }
           },
@@ -196,10 +196,10 @@
       "vscode-editor:新建代码文件": false
     }
   },
-  "active": "e71cdd44b035e32e",
+  "active": "6fd4872fc21a7f68",
   "lastOpenFiles": [
-    "docs/面试/计算机科学/计算机组成原理.md",
     "docs/归档课程/计算机系统基础/计算机系统基础笔记.md",
+    "docs/面试/计算机科学/计算机组成原理.md",
     "docs/面试/数学/离散数学.md",
     "docs/面试/数学",
     "docs/算法/动态规划.md",
