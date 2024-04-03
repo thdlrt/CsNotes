@@ -5,6 +5,10 @@
       "path": "docs/面试/计算机科学/计算机组成原理.md"
     },
     {
+      "basename": "2",
+      "path": "docs/归档课程/计算机系统基础/data/2.md"
+    },
+    {
       "basename": "计算机系统基础笔记",
       "path": "docs/归档课程/计算机系统基础/计算机系统基础笔记.md"
     },
@@ -195,10 +199,6 @@
     {
       "basename": "杂项",
       "path": "docs/面试/计算机科学/杂项.md"
-    },
-    {
-      "basename": "数学",
-      "path": "docs/算法/数学.md"
     }
   ],
   "omittedPaths": [],

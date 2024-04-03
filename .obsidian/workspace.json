@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/归档课程/计算机系统基础/计算机系统基础笔记.md",
+                "file": "docs/归档课程/计算机系统基础/data/2.md",
                 "mode": "preview",
                 "source": false
               }
@@ -198,6 +198,7 @@
   },
   "active": "6fd4872fc21a7f68",
   "lastOpenFiles": [
+    "docs/归档课程/计算机系统基础/data/2.md",
     "docs/归档课程/计算机系统基础/计算机系统基础笔记.md",
     "docs/面试/计算机科学/计算机组成原理.md",
     "docs/面试/数学/离散数学.md",
@@ -232,7 +233,6 @@
     "docs/课程/编译原理/课件/Chapter_6.pdf",
     "docs/课程/操作系统/操作系统.md",
     "docs/游戏开发/八股.md",
-    "docs/算法/待学高级知识.md",
     "docs/课程/编译原理/课件/Chapter_1.pdf",
     "CsNotes/2021-11-22-22-54-02.png",
     "CsNotes/2021-11-22-22-52-49.png",
