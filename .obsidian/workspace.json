@@ -159,8 +159,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 200
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -178,10 +177,48 @@
       "vscode-editor:新建代码文件": false
     }
   },
+  "floating": {
+    "id": "836b1dee55046710",
+    "type": "floating",
+    "children": [
+      {
+        "id": "71642aa6d365a98a",
+        "type": "window",
+        "children": [
+          {
+            "id": "d959e6cc55732c0e",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "dbd7552d6dc0d3de",
+                "type": "leaf",
+                "state": {
+                  "type": "markdown",
+                  "state": {
+                    "file": "docs/归档课程/数字逻辑与计算机组成/笔记/U6 运算.md",
+                    "mode": "source",
+                    "source": false
+                  }
+                }
+              }
+            ]
+          }
+        ],
+        "direction": "vertical",
+        "x": 0,
+        "y": 0,
+        "width": 960,
+        "height": 1032,
+        "maximize": false,
+        "zoom": 0
+      }
+    ]
+  },
   "active": "6fd4872fc21a7f68",
   "lastOpenFiles": [
-    "docs/归档课程/计算机系统基础/data/2.md",
+    "docs/归档课程/数字逻辑与计算机组成/笔记/U6 运算.md",
     "docs/面试/计算机科学/计算机组成原理.md",
+    "docs/归档课程/计算机系统基础/data/2.md",
     "docs/归档课程/计算机系统基础/计算机系统基础笔记.md",
     "docs/面试/数学/离散数学.md",
     "docs/面试/数学",
@@ -214,7 +251,6 @@
     "docs/课程/金融风险管理/实验3 关键利率久期等的计算.md",
     "docs/课程/编译原理/课件/Chapter_6.pdf",
     "docs/课程/操作系统/操作系统.md",
-    "docs/游戏开发/八股.md",
     "docs/课程/编译原理/课件/Chapter_1.pdf",
     "CsNotes/2021-11-22-22-54-02.png",
     "CsNotes/2021-11-22-22-52-49.png",
