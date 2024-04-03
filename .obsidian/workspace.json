@@ -4,24 +4,6 @@
     "type": "split",
     "children": [
       {
-        "id": "1c4396b783561f49",
-        "type": "tabs",
-        "children": [
-          {
-            "id": "e71cdd44b035e32e",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "docs/归档课程/计算机系统基础/data/2.md",
-                "mode": "preview",
-                "source": false
-              }
-            }
-          }
-        ]
-      },
-      {
         "id": "397eed0ee2f95b69",
         "type": "tabs",
         "children": [
