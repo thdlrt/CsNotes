@@ -1,6 +1,18 @@
 {
   "recentFiles": [
     {
+      "basename": "线性代数engin",
+      "path": "docs/c++/库/线性代数engin.md"
+    },
+    {
+      "basename": "Games101-现代图形学基础",
+      "path": "docs/课程/计算机图形学/Games101-现代图形学基础.md"
+    },
+    {
+      "basename": "opengl",
+      "path": "docs/课程/计算机图形学/opengl.md"
+    },
+    {
       "basename": "并发",
       "path": "docs/课程/操作系统/笔记/并发.md"
     },
@@ -187,18 +199,6 @@
     {
       "basename": "排序&选择",
       "path": "docs/算法/排序&选择.md"
-    },
-    {
-      "basename": "MySQL",
-      "path": "docs/数据库/关系数据库/MySQL.md"
-    },
-    {
-      "basename": "计算机网络",
-      "path": "docs/面试/计算机科学/计算机网络.md"
-    },
-    {
-      "basename": "Redis",
-      "path": "docs/数据库/NoSQL/Redis.md"
     }
   ],
   "omittedPaths": [],
