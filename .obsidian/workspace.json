@@ -177,43 +177,6 @@
       "vscode-editor:新建代码文件": false
     }
   },
-  "floating": {
-    "id": "836b1dee55046710",
-    "type": "floating",
-    "children": [
-      {
-        "id": "71642aa6d365a98a",
-        "type": "window",
-        "children": [
-          {
-            "id": "d959e6cc55732c0e",
-            "type": "tabs",
-            "children": [
-              {
-                "id": "dbd7552d6dc0d3de",
-                "type": "leaf",
-                "state": {
-                  "type": "markdown",
-                  "state": {
-                    "file": "docs/归档课程/数字逻辑与计算机组成/笔记/U6 运算.md",
-                    "mode": "source",
-                    "source": false
-                  }
-                }
-              }
-            ]
-          }
-        ],
-        "direction": "vertical",
-        "x": 0,
-        "y": 0,
-        "width": 960,
-        "height": 1032,
-        "maximize": false,
-        "zoom": 0
-      }
-    ]
-  },
   "active": "6fd4872fc21a7f68",
   "lastOpenFiles": [
     "docs/归档课程/数字逻辑与计算机组成/笔记/U6 运算.md",
