@@ -31,7 +31,8 @@
               }
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -105,7 +106,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/面试/计算机科学/计算机组成原理.md",
+                "file": "docs/课程/操作系统/笔记/并发.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -122,7 +123,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/面试/计算机科学/计算机组成原理.md",
+                "file": "docs/课程/操作系统/笔记/并发.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -145,7 +146,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/面试/计算机科学/计算机组成原理.md"
+                "file": "docs/课程/操作系统/笔记/并发.md"
               }
             }
           },
@@ -189,11 +190,11 @@
       "vscode-editor:新建代码文件": false
     }
   },
-  "active": "6fd4872fc21a7f68",
+  "active": "b88ed5cd0970624b",
   "lastOpenFiles": [
+    "docs/面试/计算机科学/计算机组成原理.md",
     "docs/课程/操作系统/笔记/并发.md",
     "docs/课程/编译原理/作业/p6.md",
-    "docs/面试/计算机科学/计算机组成原理.md",
     "docs/归档课程/数字逻辑与计算机组成/笔记/U6 运算.md",
     "docs/归档课程/计算机系统基础/data/2.md",
     "docs/归档课程/计算机系统基础/计算机系统基础笔记.md",
