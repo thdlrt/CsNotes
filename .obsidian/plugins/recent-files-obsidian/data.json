@@ -5,6 +5,14 @@
       "path": "docs/面试/计算机科学/计算机组成原理.md"
     },
     {
+      "basename": "并发",
+      "path": "docs/课程/操作系统/笔记/并发.md"
+    },
+    {
+      "basename": "p6",
+      "path": "docs/课程/编译原理/作业/p6.md"
+    },
+    {
       "basename": "U6 运算",
       "path": "docs/归档课程/数字逻辑与计算机组成/笔记/U6 运算.md"
     },
@@ -83,10 +91,6 @@
     {
       "basename": "设计模式",
       "path": "docs/软件工程/设计模式.md"
-    },
-    {
-      "basename": "并发",
-      "path": "docs/课程/操作系统/笔记/并发.md"
     },
     {
       "basename": "fish",
@@ -195,10 +199,6 @@
     {
       "basename": "Redis",
       "path": "docs/数据库/NoSQL/Redis.md"
-    },
-    {
-      "basename": "SQL基本语法",
-      "path": "docs/数据库/SQL基本语法.md"
     }
   ],
   "omittedPaths": [],
