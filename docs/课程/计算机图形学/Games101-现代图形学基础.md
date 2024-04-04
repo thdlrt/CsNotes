@@ -112,10 +112,11 @@
     - 还无法确定z如何变化
   - 明确的是在**近/远平面**的 $z$ 均不发生变化
     - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230705185949350.png" alt="image-20230705185949350" style="zoom:33%;" />
-    - 可知与xy无关，前两项为0（利用**近平面**上变化前后的$z$不发生变化来进行计算）
-  - 远平面的xy发生压缩，但是z不发生变化（中心点的xyz均不变）
+    - 可知与xy无关，前两项为0（利用**近平面**上变化前后的**$z$不发生变化**来进行计算）
+  - **远平面**的xy发生压缩，但是z不发生变化（中心点的xyz均不变）
     - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230705190049429.png" alt="image-20230705190049429" style="zoom:33%;" />
   - 即<img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230705190139231.png" alt="image-20230705190139231" style="zoom:33%;" />
+  - 更确切的说n=zNear;f=zFar即**最近/远可见距离**
 - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230705190326063.png" alt="image-20230705190326063" style="zoom:33%;" />
   - 压缩+正交
 
