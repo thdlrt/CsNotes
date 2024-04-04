@@ -96,6 +96,8 @@
   - 先平移到原点，再进行缩放
   - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230705183815650.png" alt="image-20230705183815650" style="zoom:33%;" />
   - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230705183829219.png" alt="image-20230705183829219" style="zoom:33%;" />
+  - 归一化到长度为1，具体的长宽由 fov 和比率计算得到
+    - 通常由fov得到y，再乘以比率得到x；
   
 
 #### 透视投影
@@ -120,6 +122,26 @@
 - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230705190326063.png" alt="image-20230705190326063" style="zoom:33%;" />
   - 压缩+正交
 
+```cpp
+Eigen::Matrix4f projection;
+
+    Eigen:: Matrix4f persp_to_ortho;
+    persp_to_ortho << zNear, 0, 0, 0,
+                      0, zNear, 0, 0,
+                      0, 0, zNear + zFar, -zNear * zFar,
+                      0, 0, 1, 0;
+    Eigen::Matrix4f ortho;
+    float top = zNear * tan(eye_fov / 2 / 180 * MY_PI);
+    float right = top * aspect_ratio;
+    ortho << 1 / right, 0, 0, 0,
+             0, 1 / top, 0, 0,
+             0, 0, 2 / (zNear - zFar), 0,
+             0, 0, 0, 1;
+    projection = ortho * persp_to_ortho;
+```
+
+
+
 ## 光栅化
 
 - 光栅化：将图像**显示在屏幕上**，矢量图形转化为像素网格
@@ -132,6 +154,28 @@
   - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230705200732208.png" alt="image-20230705200732208" style="zoom:33%;" />
 - 使用最简单的多边形——**三角形**来表示一切
   - 最简单多边形，任何图形都可以划分为三角形
+
+- 判断点是否在三角形内部
+  - 通过叉乘得到三个向量后，可以通过两两点乘来确定方向是否相同
+
+
+```cpp
+static bool insideTriangle(int x, int y, const Vector3f* _v)
+{   
+    Vector3f AB = _v[1] - _v[0];
+    Vector3f BC = _v[2] - _v[1];
+    Vector3f CA = _v[0] - _v[2];
+    Vector3f AP = Vector3f(x, y, 0) - _v[0];
+    Vector3f BP = Vector3f(x, y, 0) - _v[1];
+    Vector3f CP = Vector3f(x, y, 0) - _v[2];
+    Vector3f cross1 = AB.cross(AP);
+    Vector3f cross2 = BC.cross(BP);
+    Vector3f cross3 = CA.cross(CP);
+    if(cross1.dot(cross2) > 0 && cross2.dot(cross3) > 0 && cross3.dot(cross1) > 0)
+        return true;   
+    return false;
+}
+```
 
 - 简易采样（就是离散化）决定像素是否显示
   - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230705202357596.png" style="zoom:33%;" />
