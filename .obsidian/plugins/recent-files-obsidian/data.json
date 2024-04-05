@@ -1,6 +1,14 @@
 {
   "recentFiles": [
     {
+      "basename": "未命名",
+      "path": "docs/课程/计算机图形学/实验/未命名.md"
+    },
+    {
+      "basename": "计算机图形学",
+      "path": "docs/面试/计算机科学/计算机图形学.md"
+    },
+    {
       "basename": "计算机组成原理",
       "path": "docs/面试/计算机科学/计算机组成原理.md"
     },
@@ -191,14 +199,6 @@
     {
       "basename": "equals()与hashCode()",
       "path": "docs/java/java基础/杂项/equals()与hashCode().md"
-    },
-    {
-      "basename": "java基础",
-      "path": "docs/java/java基础.md"
-    },
-    {
-      "basename": "排序&选择",
-      "path": "docs/算法/排序&选择.md"
     }
   ],
   "omittedPaths": [],
