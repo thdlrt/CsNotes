@@ -276,8 +276,45 @@ static bool insideTriangle(int x, int y, const Vector3f* _v)
   - 认为环境光恒定
   - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230706094302227.png" alt="image-20230706094302227" style="zoom:33%;" />
   
-- <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230706094343294.png" alt="image-20230706094343294" style="zoom:33%;" />
+- <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230706094343294.png" alt="image-20230706094343294" style="zoom:50%;" />
+```cpp
+Eigen::Vector3f phong_fragment_shader(const fragment_shader_payload& payload)
+{
+    //环境光、漫反射、镜面反射
+    Eigen::Vector3f ka = Eigen::Vector3f(0.005, 0.005, 0.005);
+    Eigen::Vector3f kd = payload.color;
+    Eigen::Vector3f ks = Eigen::Vector3f(0.7937, 0.7937, 0.7937);
+    //光源
+    auto l1 = light{{20, 20, 20}, {500, 500, 500}};
+    auto l2 = light{{-20, 20, 0}, {500, 500, 500}};
+    std::vector<light> lights = {l1, l2};
+    //环境光强度
+    Eigen::Vector3f amb_light_intensity{10, 10, 10};
+    //观察者位置
+    Eigen::Vector3f eye_pos{0, 0, 10};
 
+    float p = 150;
+
+    Eigen::Vector3f color = payload.color;
+    Eigen::Vector3f point = payload.view_pos;
+    Eigen::Vector3f normal = payload.normal;
+
+    Eigen::Vector3f result_color = {0, 0, 0};
+    for (auto& light : lights)
+    {
+        Eigen:Vector3f ambient = amb_light_intensity.cwiseProduct(ka);
+        Eigen::Vector3f light_dir = (light.position - point).normalized();
+        float r2= (light.position - point).squaredNorm();
+        Eigen::Vector3f diffuse = kd.cwiseProduct(light.intensity) / r2 * std::max(0.0f, normal.normalized().dot(light_dir));
+        Eigen::Vector3f view_dir = (eye_pos - point).normalized();
+        Eigen::Vector3f half_dir = (view_dir + light_dir).normalized();
+        Eigen::Vector3f specular = ks.cwiseProduct(light.intensity) / r2 * std::pow(std::max(0.0f, normal.normalized().dot(half_dir)), p);
+        result_color += ambient + diffuse + specular;
+    }
+
+    return result_color * 255.f;
+}
+```
 ### 着色频率
 
 - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230706094654726.png" alt="image-20230706094654726" style="zoom:33%;" />
@@ -329,6 +366,38 @@ static bool insideTriangle(int x, int y, const Vector3f* _v)
 	- 透视变换和透视除法确保了三维场景在二维屏幕上的正确投影，但是在处理纹理映射和顶点属性**插值**时，直接应用线性插值会因为透视效果的非线性特征而导致失真。
 	- #TODO
 	    
+```cpp
+void rst::rasterizer::rasterize_triangle(const Triangle& t, const std::array<Eigen::Vector3f, 3>& view_pos) 
+{
+    auto v = t.toVector4();
+    float aabb_min_x = std::min(v[0].x(), std::min(v[1].x(), v[2].x()));
+    float aabb_min_y = std::min(v[0].y(), std::min(v[1].y(), v[2].y()));
+    float aabb_max_x = std::max(v[0].x(), std::max(v[1].x(), v[2].x()));
+    float aabb_max_y = std::max(v[0].y(), std::max(v[1].y(), v[2].y()));
+    for(int i=aabb_min_x; i<=aabb_max_x; i++){
+        for(int j=aabb_min_y; j<=aabb_max_y; j++){
+            if(!insideTriangle(i, j, t.v))
+                continue;
+            auto[alpha, beta, gamma] = computeBarycentric2D(i, j, t.v);
+            float Z = 1.0/(alpha / v[0].w() + beta / v[1].w() + gamma / v[2].w());
+            float zp = alpha * v[0].z() / v[0].w() + beta * v[1].z() / v[1].w() + gamma * v[2].z() / v[2].w();
+            zp *= Z;
+            int index = get_index(i, j);
+            if(zp < depth_buf[index]){
+                depth_buf[index] = zp;
+                auto interpolated_color = interpolate(alpha, beta, gamma, t.color[0], t.color[1], t.color[2], 1.0);
+                auto interpolated_normal = interpolate(alpha, beta, gamma, t.normal[0], t.normal[1], t.normal[2], 1.0);
+                auto interpolated_texcoords = interpolate(alpha, beta, gamma, t.tex_coords[0], t.tex_coords[1], t.tex_coords[2], 1.0);
+                auto interpolated_shadingcoords = interpolate(alpha, beta, gamma, view_pos[0], view_pos[1], view_pos[2], 1.0);
+                fragment_shader_payload payload(interpolated_color, interpolated_normal.normalized(), interpolated_texcoords, texture ? &*texture : nullptr);
+                payload.view_pos = interpolated_shadingcoords;
+                auto pixel_color = fragment_shader(payload);
+                set_pixel(Eigen::Vector2i(i, j), pixel_color);
+            }
+        }
+    }
+}
+```
 - 纹理映射（双线性插值）（纹理过小）
   - 当显示分辨率远高于纹理分辨率时可能存在映射问题，如坐标转化后为小数，可能使得多个坐标映射到相同的纹理位置，造成显示不准确
   - 采用周围4个点的数值进行插值（两次水平一次垂直）
@@ -355,15 +424,17 @@ static bool insideTriangle(int x, int y, const Vector3f* _v)
   - 上下扭曲严重，不是均匀描述<img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230706183455340.png" alt="image-20230706183455340" style="zoom:33%;" />
   - 立方体包围法<img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230706183506530.png" alt="image-20230706183506530" style="zoom:33%;" />
   - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230706183515877.png" alt="image-20230706183515877" style="zoom:33%;" />
-- 凹凸贴图
+- **凹凸贴图**
   - 定义点相对基础面的相对高度
   - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230706183842672.png" alt="image-20230706183842672" style="zoom:33%;" />
-  - 通过法线差异模拟高度变化
+  - 通过**法线差异**模拟高度变化
   - **扰动法线**<img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230706184104600.png" alt="image-20230706184104600" style="zoom:33%;" />
     - 法线通过求导得到的切线旋转得到
     - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230706184802484.png" alt="image-20230706184802484" style="zoom:33%;" />
   - 二维图像上同理通过黑白变化计算<img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230706184817165.png" alt="image-20230706184817165" style="zoom: 33%;" />
-  - 法线模拟vs位移<img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230706185019444.png" alt="image-20230706185019444" style="zoom:33%;" />
+  - 位移贴图
+    - 与凹凸贴图的输入相同，但是位移贴图真正改变几何信息，对顶点做位移相比上更逼真，因为凹凸贴图在边界上会露馅
+    - ![image.png](https://thdlrt.oss-cn-beijing.aliyuncs.com/20240405121309.png)
 
 ## 几何
 
