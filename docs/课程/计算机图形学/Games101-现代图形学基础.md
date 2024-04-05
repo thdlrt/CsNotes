@@ -96,7 +96,7 @@
   - 先平移到原点，再进行缩放
   - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230705183815650.png" alt="image-20230705183815650" style="zoom:33%;" />
   - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230705183829219.png" alt="image-20230705183829219" style="zoom:33%;" />
-  - 归一化到长度为1，具体的长宽由 fov 和比率计算得到
+  - 归一化到长度为1（-1,1 的立方体），具体的长宽由 fov 和比率计算得到
     - 通常由fov得到y，再乘以比率得到x；
   
 
@@ -121,7 +121,6 @@
   - 更确切的说n=zNear;f=zFar即**最近/远可见距离**
 - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230705190326063.png" alt="image-20230705190326063" style="zoom:33%;" />
   - 压缩+正交
-
 ```cpp
 Eigen::Matrix4f projection;
 
@@ -139,9 +138,10 @@ Eigen::Matrix4f projection;
              0, 0, 0, 1;
     projection = ortho * persp_to_ortho;
 ```
-
-
-
+#### 透视除法
+- 经过投影变化将点投射到了标准正方体，现在还需要将三维空间中的点映射到二维屏幕，得到归一化设备坐标（NDC）
+- 如果有一个齐次坐标点 P(x, y, z, w)，透视除法后的坐标为 (x/w, y/w, z/w)。这个新的点现在位于归一化设备坐标系内，其值通常限制在-1到1之间。
+- 透视除法是透视投影不可分割的一部分，它确保了远处的物体在屏幕上呈现得更小，近处的物体呈现得更大，从而**创造了深度感**。
 ## 光栅化
 
 - 光栅化：将图像**显示在屏幕上**，矢量图形转化为像素网格
