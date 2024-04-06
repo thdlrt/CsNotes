@@ -139,3 +139,92 @@ Vec3f world2screen(Vec3f v) {
 	- ![image.png|500](https://thdlrt.oss-cn-beijing.aliyuncs.com/20240406120858.png)
 - 
 
+## 扩展
+### 抗锯齿
+- 使用 ssaa 4
+```cpp
+class zBuffer {  
+private:  
+    int width, height;  
+    Vec3f *frameBuffer;  
+    float *deepBuffer;  
+    zBuffer(int width, int height) {  
+        this->width = width;  
+        this->height = height;  
+        frameBuffer = new Vec3f[width*height*4];  
+        deepBuffer = new float[width*height*4];  
+        for(int i=0;i<width*height*4;i++)  
+        {  
+            frameBuffer[i] = Vec3f(0,0,0);  
+            deepBuffer[i] = -std::numeric_limits<float>::max();  
+        }  
+    }  
+    ~zBuffer() {  
+        delete [] frameBuffer;  
+        delete [] deepBuffer;  
+    }  
+public:  
+    static zBuffer* getInstance(int width=0, int height=0) {  
+        static zBuffer instance(width, height);  
+        return &instance;  
+    }  
+    bool test(int x, int y, int i, float z, Vec3f color) {  
+        if(x<0||x>=width||y<0||y>=height) return false;  
+        if(z>deepBuffer[y*width*4+x*4+i]) {  
+            deepBuffer[y*width*4+x*4+i] = z;  
+            frameBuffer[y*width*4+x*4+i] = color;  
+            return true;  
+        }  
+        return false;  
+    }  
+    float getdeep(int x, int y) {  
+        float res=-std::numeric_limits<float>::max();  
+        for(int i=0;i<4;i++) {  
+            res = std::max(res, deepBuffer[y*width*4+x*4+i]);  
+        }  
+        return res;  
+    }  
+    Vec3f getcolor(int x, int y) {  
+        Vec3f res(0,0,0);  
+        for(int i=0;i<4;i++) {  
+            res = res + frameBuffer[y*width*4+x*4+i];  
+        }  
+        return res;  
+    }  
+};
+
+class SSAA4 {  
+    std::vector<Vec3f> spts;  
+public:  
+    SSAA4(float x, float y, float z) {  
+        spts.emplace_back(x+0.25f, y+0.25f, z);  
+        spts.emplace_back(x+0.75f, y+0.25f, z);  
+        spts.emplace_back(x+0.25f, y+0.75f, z);  
+        spts.emplace_back(x+0.75f, y+0.75f, z);  
+        //spts.emplace_back(x,y,z);  
+    }  
+    void cal(Vec3f *pts, Vec2i *uvs, Model*model,TGAImage&image) {  
+        Vec3f colorAccumulator;  
+        int num=0;  
+        for(int i=0;i<spts.size();i++) {  
+            Vec3f a = spts[i];  
+            Vec3f bc_screen  = barycentric(pts, a);  
+            if (bc_screen.x<0 || bc_screen.y<0 || bc_screen.z<0) continue;  
+            a.z = 0;  
+            Vec2i uv;  
+            for (int j=0; j<3; j++)  
+            {  
+                a.z += pts[j][2]*bc_screen[j];  
+                uv = uv + uvs[j]*bc_screen[j];  
+            }  
+            TGAColor color = model->diffuse(uv);  
+            zBuffer::getInstance()->test(a.x,a.y,i,a.z,Vec3f(color.r/4.f, color.g/4.f, color.b/4.f));  
+        }  
+    }  
+};
+```
+- 分为对 buffer 的修改和 ssaa 实现
+	- 将像素一分四处理，最终渲染时**取颜色平均值**
+- 与 mxaa 区别：mxaa 是对一**个点的颜色深浅**进行调整，而 ssaa 则则真正**拆分为四个像素**，取平均值
+- ![image.png|475](https://thdlrt.oss-cn-beijing.aliyuncs.com/20240406180624.png)
+- ![image.png|475](https://thdlrt.oss-cn-beijing.aliyuncs.com/20240406180651.png)
