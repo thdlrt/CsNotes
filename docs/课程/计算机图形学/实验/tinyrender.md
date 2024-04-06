@@ -180,7 +180,21 @@ Matrix Viewport(int x, int y, int w, int h, int depth) {
 - 常用于处理光照
 	- 直接对法线向量应用相同的仿射变换并不会保留它们与表面的垂直关系。这是因为仿射变换可能包括拉伸（缩放）和扭曲（倾斜），这些变换会改变原始形状的角度和比例，从而破坏了法线与表面的垂直关系。
 	- 正确方法：使用原始仿射变换矩阵的**逆矩阵**的转置来变换法线向量。
-### Shader
+	- 用 ABC 表示法向量，xyz 平面上任意一点，因此有 ![image.png|343](https://thdlrt.oss-cn-beijing.aliyuncs.com/20240406211359.png)
+	- ![image.png|500](https://thdlrt.oss-cn-beijing.aliyuncs.com/20240406211409.png)
+	- ![image.png|500](https://thdlrt.oss-cn-beijing.aliyuncs.com/20240406211420.png)
+	- 由此得知应该进行一次**逆仿射变换**
+### 6-着色 Shader
+- 着色器接口
+```cpp
+struct IShader {  
+    virtual ~IShader();  
+    virtual Vec3i vertex(int iface, int nthvert) = 0;  
+    virtual bool fragment(Vec3f bar, TGAColor &color) = 0;  
+};
+```
+- 顶点着色器：转换顶点坐标（mvp），并为片段着色器准备数据。（如法线，用于处理光照）
+- 面着色器：对三角形内的像素进行具体着色
 ### 阴影shadowmap
 ## 扩展
 ### 抗锯齿
