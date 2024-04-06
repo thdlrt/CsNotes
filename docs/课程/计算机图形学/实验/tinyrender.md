@@ -195,6 +195,34 @@ struct IShader {
 ```
 - 顶点着色器：转换顶点坐标（mvp），并为片段着色器准备数据。（如法线，用于处理光照）
 - 面着色器：对三角形内的像素进行具体着色
+```cpp
+struct GouraudShader : public IShader {  
+	//存储三个点的法向量
+    Vec3f varying_intensity;  
+    Vec3f vertex(int iface, int nthvert) override {  
+       varying_intensity[nthvert] = std::max(0.f, model->normal(iface, nthvert)*light_dir);  
+       Vec3f gl_Vertex = model->vert(iface, nthvert);  
+       return m2v(ModelView*v2m(gl_Vertex));  
+    }  
+  
+    bool fragment(Vec3f bar, TGAColor &color) override {  
+       float intensity = varying_intensity*bar;  
+       color = Vec3f(255,255,255)*intensity;  
+       return false;  
+    }  
+};
+```
+- 由于便利顺序是，枚举每一个面，然后对面上的点进行处理，最后对面进行渲染，因此在点着色时一方面进行了坐标变化，另一方面收集了法向量，用于之后的插值
+- 在面渲染阶段使用法向量结合重心坐标进行插值计算。
+- 面渲染器的返回值可以用于在光栅化渲染时跳过一些绘图
+```cpp
+TGAColor color;
+    bool discard = shader.fragment(c, color);
+    if (!discard) {
+        zbuffer.set(P.x, P.y, TGAColor(P.z));
+        image.set(P.x, P.y, color);
+    }
+```
 ### 阴影shadowmap
 ## 扩展
 ### 抗锯齿
