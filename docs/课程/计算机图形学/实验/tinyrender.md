@@ -223,6 +223,10 @@ TGAColor color;
         image.set(P.x, P.y, color);
     }
 ```
+- phongshader 版本，使用法线贴图对每个点的反射进行具体计算
+```cpp
+
+```
 ### 阴影shadowmap
 ## 扩展
 ### 抗锯齿
