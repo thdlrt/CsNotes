@@ -228,3 +228,5 @@ public:
 - 与 mxaa 区别：mxaa 是对一**个点的颜色深浅**进行调整，而 ssaa 则则真正**拆分为四个像素**，取平均值
 - ![image.png|475](https://thdlrt.oss-cn-beijing.aliyuncs.com/20240406180624.png)
 - ![image.png|475](https://thdlrt.oss-cn-beijing.aliyuncs.com/20240406180651.png)
+### 贴图
+- 双线性插值
