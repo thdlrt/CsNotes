@@ -225,7 +225,22 @@ TGAColor color;
 ```
 - phongshader 版本，使用法线贴图对每个点的反射进行具体计算
 ```cpp
-
+bool fragment(Vec3f bar, TGAColor &color, Vec3f p) override {  
+    Vec2f uv = varying_uv[0]*bar.x + varying_uv[1]*bar.y + varying_uv[2]*bar.z;  
+    Vec3f normal = m2v((ModelView).transpose()*v2m(model->normal(uv))).normalize();  
+    Vec3f light = m2v(ModelView*v2m(light_dir)).normalize();  
+    Vec3f see = (m2v(ModelView*v2m(camera))-m2v(ModelView*v2m(p))).normalize();  
+    Vec3f mid = (light+see).normalize();  
+    float dis = (m2v(ModelView*v2m(p))-m2v(ModelView*v2m(camera))).norm()/100;  
+    float attenuation = 100.0 / (0.5 * dis + 0.1 * dis * dis);  
+    Vec3f ambient = Vec3f(1.2, 1.2, 1.2);  
+    Vec3f diffuse = Vec3f(1, 1, 1)*std::max(0.f, normal*mid)*attenuation;  
+    Vec3f specular = Vec3f(0.2, 0.2, 0.2)*pow(std::max(0.f, normal*mid), 50)*attenuation;  
+    Vec3f result = ambient+diffuse+specular;  
+    TGAColor c = model->diffuse(uv);  
+    color = TGAColor(std::min(255.f,c[2]*result[2]), std::min(255.f,c[1]*result[1]), std::min(255.f,c[0]*result[0]));  
+    return false;  
+}
 ```
 ### 6-2 切线贴图映射
 - 
