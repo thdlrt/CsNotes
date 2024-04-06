@@ -68,5 +68,25 @@ void triangle(Vec2i t0, Vec2i t1, Vec2i t2, TGAImage &image, TGAColor color) {
 	- 本质上就是求解这个方程组（之后得到 uv 判断是否大于零，进而判断是否在三角形内部）
 	- 求解方程就是找一条直线与(ABx,ACx,PAx) and (ABy,ACy,PAy)垂直，这可以通过**一次叉积解决**
 ```cpp
-
+//求三角形的重心坐标  
+Vec3f barycentric(Vec2i *pts, Vec2i P) {  
+    Vec3f u = Vec3f(pts[2][0]-pts[0][0], pts[1][0]-pts[0][0], pts[0][0]-P[0]) ^ Vec3f(pts[2][1]-pts[0][1], pts[1][1]-pts[0][1], pts[0][1]-P[1]);  
+    if (std::abs(u.z)<1) return Vec3f(-1,1,1);  
+    return Vec3f(1.f-(u.x+u.y)/u.z, u.y/u.z, u.x/u.z);  
+}  
+//包围盒绘制三角形  
+void triangle(Vec2i t0, Vec2i t1, Vec2i t2, TGAImage &image, TGAColor color) {  
+    int minx = std::max(0,std::min(t0.x, std::min(t1.x, t2.x)));  
+    int maxx = std::min(image.get_width()-1,std::max(t0.x, std::max(t1.x, t2.x)));  
+    int miny = std::max(0,std::min(t0.y, std::min(t1.y, t2.y)));  
+    int maxy = std::min(image.get_height()-1,std::max(t0.y, std::max(t1.y, t2.y)));  
+    for(int i=minx;i<=maxx;i++){  
+       for(int j=miny;j<=maxy;j++){  
+          Vec3f bc_screen = barycentric(&t0, Vec2i(i,j));  
+          if (bc_screen.x<0 || bc_screen.y<0 || bc_screen.z<0) continue;  
+          image.set(i, j, color);  
+       }  
+    }  
+}
 ```
+### 3-深度缓冲
