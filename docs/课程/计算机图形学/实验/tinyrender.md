@@ -130,5 +130,12 @@ Vec3f world2screen(Vec3f v) {
 	return Vec3f(int((v.x+1.)*width/2.+.5), int((v.y+1.)*height/2.+.5), v.z);
 }
 ```
-- 透视投影
+- 透视投影（另一种透视思路，不是压缩透视为正交）
+	- ![image.png](https://thdlrt.oss-cn-beijing.aliyuncs.com/20240406115705.png)
+	- 左下角区域可以进行一种 `透视` 操作
+	- ![image.png](https://thdlrt.oss-cn-beijing.aliyuncs.com/20240406115734.png)
+- 因此，可以定义一种新的操作：透视
+	- ![image.png|475](https://thdlrt.oss-cn-beijing.aliyuncs.com/20240406115956.png)
+	- ![image.png|500](https://thdlrt.oss-cn-beijing.aliyuncs.com/20240406120858.png)
 - 
+
