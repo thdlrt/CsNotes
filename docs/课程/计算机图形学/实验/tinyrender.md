@@ -123,7 +123,7 @@ public:
     }
 };
 ```
-### 4-投影
+### 4-投影与 mvp 矩阵
 - 正交投影就是从-1~1 的立方体映射到二维平面上
 ```cpp
 Vec3f world2screen(Vec3f v) {
@@ -138,7 +138,8 @@ Vec3f world2screen(Vec3f v) {
 	- ![image.png|475](https://thdlrt.oss-cn-beijing.aliyuncs.com/20240406115956.png)
 	- ![image.png|500](https://thdlrt.oss-cn-beijing.aliyuncs.com/20240406120858.png)
 - 
-
+### Shader
+### 阴影shadowmap
 ## 扩展
 ### 抗锯齿
 - 使用 ssaa 4
@@ -230,3 +231,22 @@ public:
 - ![image.png|475](https://thdlrt.oss-cn-beijing.aliyuncs.com/20240406180651.png)
 ### 贴图
 - 双线性插值
+```cpp
+//双线性插值  
+TGAColor bilerp(Vec2f uv, Model*model) {  
+    float x0=floor(uv.x), y0=floor(uv.y), x1=x0+1, y1=y0+1;  
+    float u=uv.x-x0, v=uv.y-y0;  
+    TGAColor c00 = model->diffuse(Vec2i(x0, y0));  
+    TGAColor c01 = model->diffuse(Vec2i(x0, y1));  
+    TGAColor c10 = model->diffuse(Vec2i(x1, y0));  
+    TGAColor c11 = model->diffuse(Vec2i(x1, y1));  
+    Vec3f color = Vec3f(c00.r*(1-u)*(1-v) + c01.r*(1-u)*v + c10.r*u*(1-v) + c11.r*u*v,  
+                        c00.g*(1-u)*(1-v) + c01.g*(1-u)*v + c10.g*u*(1-v) + c11.g*u*v,  
+                        c00.b*(1-u)*(1-v) + c01.b*(1-u)*v + c10.b*u*(1-v) + c11.b*u*v);  
+    return color;  
+}
+```
+- ![image.png|500](https://thdlrt.oss-cn-beijing.aliyuncs.com/20240406194249.png)
+- ![image.png|500](https://thdlrt.oss-cn-beijing.aliyuncs.com/20240406194342.png)
+
+
