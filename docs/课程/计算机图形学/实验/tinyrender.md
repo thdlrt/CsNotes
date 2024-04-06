@@ -162,6 +162,24 @@ void lookat(Vec3f eye, Vec3f center, Vec3f up) {
     ModelView = Minv*Tr;
 }
 ```
+- 视口变换：从-1~1 立方体转化到屏幕空间 (x~x+w; y~y+h)
+	- ![image.png](https://thdlrt.oss-cn-beijing.aliyuncs.com/20240406204406.png)
+```cpp
+Matrix Viewport(int x, int y, int w, int h, int depth) {  
+    Matrix m = Matrix::identity(4);  
+    m[0][3] = x+w/2.f;  
+    m[1][3] = y+h/2.f;  
+    m[2][3] = depth/2.f;  
+    m[0][0] = w/2.f;  
+    m[1][1] = h/2.f;  
+    m[2][2] = depth/2.f;  
+    return m;  
+}
+```
+#### 法线变换
+- 常用于处理光照
+	- 直接对法线向量应用相同的仿射变换并不会保留它们与表面的垂直关系。这是因为仿射变换可能包括拉伸（缩放）和扭曲（倾斜），这些变换会改变原始形状的角度和比例，从而破坏了法线与表面的垂直关系。
+	- 正确方法：使用原始仿射变换矩阵的**逆矩阵**的转置来变换法线向量。
 ### Shader
 ### 阴影shadowmap
 ## 扩展
