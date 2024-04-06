@@ -137,7 +137,31 @@ Vec3f world2screen(Vec3f v) {
 - 因此，可以定义一种新的操作：透视
 	- ![image.png|475](https://thdlrt.oss-cn-beijing.aliyuncs.com/20240406115956.png)
 	- ![image.png|500](https://thdlrt.oss-cn-beijing.aliyuncs.com/20240406120858.png)
-- 
+### 5-摄像机旋转
+- 将摄像机旋转转化为物体的旋转
+	- 对于平移以及旋转操作，只需要将摄像机的运动转化为物体的反方向运动
+- ![image.png|430](https://thdlrt.oss-cn-beijing.aliyuncs.com/20240406202448.png)
+	- 摄像机旋转之后的 z 轴实际上就是摄像机和物体之间的连线方向
+- ![image.png|475](https://thdlrt.oss-cn-beijing.aliyuncs.com/20240406202537.png)
+	- 此外还定义一个 up 方向，这样就可以完全确定新坐标系
+	- $up\times z=x$，$z\times x=y$
+- ![image.png](https://thdlrt.oss-cn-beijing.aliyuncs.com/20240406202936.png)
+```cpp
+void lookat(Vec3f eye, Vec3f center, Vec3f up) {
+    Vec3f z = (eye-center).normalize();
+    Vec3f x = cross(up,z).normalize();
+    Vec3f y = cross(z,x).normalize();
+    Matrix Minv = Matrix::identity();
+    Matrix Tr   = Matrix::identity();
+    for (int i=0; i<3; i++) {
+        Minv[0][i] = x[i];
+        Minv[1][i] = y[i];
+        Minv[2][i] = z[i];
+        Tr[i][3] = -eye[i];
+    }
+    ModelView = Minv*Tr;
+}
+```
 ### Shader
 ### 阴影shadowmap
 ## 扩展
