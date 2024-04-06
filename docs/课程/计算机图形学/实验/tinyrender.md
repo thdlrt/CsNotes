@@ -227,7 +227,10 @@ TGAColor color;
 ```cpp
 
 ```
-### 阴影shadowmap
+### 6-2 切线贴图映射
+- 
+### 7-阴影 shadowmap
+- 
 ## 扩展
 ### 抗锯齿
 - 使用 ssaa 4
