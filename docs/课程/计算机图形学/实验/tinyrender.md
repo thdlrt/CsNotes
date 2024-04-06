@@ -65,7 +65,7 @@ void triangle(Vec2i t0, Vec2i t1, Vec2i t2, TGAImage &image, TGAColor color) {
 	-  $P=(1-u-v)A+uB+vC$ (对于三角形**内**的点 u, v, 1-u-v **均大于 0**)
 	- $P=A+uAB+vAC\to uAB+vAC+PA=0$
 	- ![image.png|271](https://thdlrt.oss-cn-beijing.aliyuncs.com/20240406013702.png)
-	- 本质上就是求解这个方程组（之后得到 uv 判断是否大于零，进而判断是否在三角形内部）
+	- 本质上就是求解这个方程组（之后得到 uv 判断是否大于零，进而判断是否在三角形内部）对于三维点也是一样的，因为两个方程就能解出两个量了
 	- 求解方程就是找一条直线与(ABx,ACx,PAx) and (ABy,ACy,PAy)垂直，这可以通过**一次叉积解决**
 ```cpp
 //求三角形的重心坐标  
@@ -89,4 +89,46 @@ void triangle(Vec2i t0, Vec2i t1, Vec2i t2, TGAImage &image, TGAColor color) {
     }  
 }
 ```
+- 稍作修改可以得到 3 f 版本
 ### 3-深度缓冲
+```cpp
+//zBuffer单例类
+class zBuffer {
+private:
+    zBuffer(int width, int height) {
+        this->width = width;
+        this->height = height;
+        buffer = new float[width*height];
+        for(int i=0;i<width*height;i++){
+            buffer[i] = -std::numeric_limits<float>::max();
+        }
+    }
+    ~zBuffer() {
+        delete [] buffer;
+    }
+public:
+    int width, height;
+    float *buffer;
+    static zBuffer* getInstance(int width, int height) {
+        static zBuffer instance(width, height);
+        return &instance;
+    }
+    bool test(int x, int y, float z) {
+        if(x<0||x>=width||y<0||y>=height) return false;
+        if(z>buffer[y*width+x]) {
+            buffer[y*width+x] = z;
+            return true;
+        }
+        return false;
+    }
+};
+```
+### 4-投影
+- 正交投影就是从-1~1 的立方体映射到二维平面上
+```cpp
+Vec3f world2screen(Vec3f v) {
+	return Vec3f(int((v.x+1.)*width/2.+.5), int((v.y+1.)*height/2.+.5), v.z);
+}
+```
+- 透视投影
+- 
