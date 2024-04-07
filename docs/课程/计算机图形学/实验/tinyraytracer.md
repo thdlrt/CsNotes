@@ -68,7 +68,7 @@ Vec3f cast_ray(const Vec3f &orig, const Vec3f &dir, const std::vector<Sphere> &s
 }
 ```
 - 对一个方向发射线条之后，检测所有球体，寻找最近的碰撞点作为结果，并记录材质，坐标以及法线等信息
-### 灯光与反射
+### 灯光与基本反射
 - 一个简单的思路，将像**素点与光源的连线**，以及**像素点的法线比较**，计算光照强度。(类似布林冯里的漫反射强度影响因素之一)
 ```cpp
 float diffuse_intensity = 0;  
@@ -79,7 +79,6 @@ for(PointLight light: lights) {
 return material.color*diffuse_intensity;
 ```
 - ![image.png|475](https://thdlrt.oss-cn-beijing.aliyuncs.com/20240407172607.png)
-
 - 镜面反射
 	- 首先为材质添加反射率，镜面指数等不同属性
 ```cpp
@@ -91,7 +90,7 @@ struct Material {
     Material() : albedo(1,0), color(), specular_exponent() {}
 };
 ```
-- 除了漫反射带来的亮度外添加镜面反射的亮度
+- 除了漫反射带来的亮度外**添加镜面反射的亮度**（phong 模型那样）
 ```cpp
 Vec3f reflect(const Vec3f &I, const Vec3f &N) {
     return I - N*2.f*(I*N);
@@ -111,4 +110,20 @@ Vec3f cast_ray(const Vec3f &orig, const Vec3f &dir) {
     return material.color*diffuse_intensity*material.albedo[0] + Vec3f(1., 1., 1.)*specular_intensity*material.albedo[1];
 }
 ```
-- 阴影
+### 阴影
+- 额外进行一次判断，判断点到光源的连线上是否被其他物体
+**遮挡**
+```cpp
+Vec3f shadow_orig = hit_p + light_dir*1e-3;  
+Vec3f shadow_p, shadow_n;  
+Material tmpmaterial;  
+if (intersect(shadow_orig, light_dir, shadow_p, shadow_n, tmpmaterial) && (shadow_p-shadow_orig).norm() < dis) {  
+    continue;  
+}
+```
+### 多次反射
+- 
+### 折射
+- 
+### 扩展
+- 
