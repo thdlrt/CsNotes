@@ -489,6 +489,37 @@ void rst::rasterizer::rasterize_triangle(const Triangle& t, const std::array<Eig
   - c^0^连续：曲线首尾相接
   - c^1^连续：切线连续
 
+- 不同的绘制方式
+```cpp
+void naive_bezier(const std::vector<cv::Point2f> &points, cv::Mat &window) 
+{
+    auto &p_0 = points[0];
+    auto &p_1 = points[1];
+    auto &p_2 = points[2];
+    auto &p_3 = points[3];
+
+    for (double t = 0.0; t <= 1.0; t += 0.001) 
+    {
+        auto point = std::pow(1 - t, 3) * p_0 + 3 * t * std::pow(1 - t, 2) * p_1 +
+                 3 * std::pow(t, 2) * (1 - t) * p_2 + std::pow(t, 3) * p_3;
+
+        window.at<cv::Vec3b>(point.y, point.x)[2] = 255;
+    }
+}
+
+cv::Point2f recursive_bezier(const std::vector<cv::Point2f> &control_points, float t) 
+{
+    std::vector<cv::Point2f> _control_points = control_points;
+    for(int i=0;i<_control_points.size()-1;i++)
+    {
+        for(int j=0;j<_control_points.size()-i-1;j++)
+        {
+            _control_points[j] = (1-t)*_control_points[j] + t*_control_points[j+1];
+        }
+    }
+    return _control_points[0];
+}
+```
 ### 曲面
 
 - 贝塞尔曲面

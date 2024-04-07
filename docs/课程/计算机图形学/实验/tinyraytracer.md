@@ -184,3 +184,5 @@ Vec3f cast_ray(const Vec3f &orig, const Vec3f &dir, int depth=0) {
     return material.color*diffuse_intensity*material.albedo[0] + Vec3f(1., 1., 1.)*specular_intensity*material.albedo[1] + reflect_color*material.albedo[2] + refract_color*material.albedo[3];  
 }
 ```
+### 完工
+- ![image.png|500](https://thdlrt.oss-cn-beijing.aliyuncs.com/20240408013032.png)
