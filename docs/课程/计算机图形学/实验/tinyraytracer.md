@@ -81,4 +81,34 @@ return material.color*diffuse_intensity;
 - ![image.png|475](https://thdlrt.oss-cn-beijing.aliyuncs.com/20240407172607.png)
 
 - 镜面反射
+	- 首先为材质添加反射率，镜面指数等不同属性
+```cpp
+struct Material {
+    Vec3f color;
+    Vec2f albedo;
+    float specular_exponent;
+    Material(const Vec2f &a, const Vec3f &color, const float &spec) : albedo(a), color(color), specular_exponent(spec) {}
+    Material() : albedo(1,0), color(), specular_exponent() {}
+};
+```
+- 除了漫反射带来的亮度外添加镜面反射的亮度
+```cpp
+Vec3f reflect(const Vec3f &I, const Vec3f &N) {
+    return I - N*2.f*(I*N);
+}
+Vec3f cast_ray(const Vec3f &orig, const Vec3f &dir) {
+    Vec3f hit_p, normal;
+    Material material;
+    if (!intersect(orig, dir, hit_p, normal, material)) {
+        return backgroud.color;
+    }
+    float diffuse_intensity = 0, specular_intensity = 0;
+    for(PointLight light: lights) {
+        Vec3f light_dir = (light.position - hit_p).normalize();
+        diffuse_intensity += light.intensity * std::max(0.f, light_dir*normal);
+        specular_intensity += powf(std::max(0.f, -reflect(-light_dir, normal)*dir), material.specular_exponent)*light.intensity;
+    }
+    return material.color*diffuse_intensity*material.albedo[0] + Vec3f(1., 1., 1.)*specular_intensity*material.albedo[1];
+}
+```
 - 阴影
