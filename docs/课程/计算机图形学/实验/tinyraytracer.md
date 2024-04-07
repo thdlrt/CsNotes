@@ -81,4 +81,4 @@ return material.color*diffuse_intensity;
 - ![image.png|475](https://thdlrt.oss-cn-beijing.aliyuncs.com/20240407172607.png)
 
 - 镜面反射
-
+- 阴影
