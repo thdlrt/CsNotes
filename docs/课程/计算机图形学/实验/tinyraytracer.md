@@ -1,3 +1,5 @@
+- Whitted 风格光线追踪
+<img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230708093259968.png" alt="image-20230708093259968" style="zoom:100%;" />
 ### 基本框架搭建
 - 球体类型
 	- `ray_interset` 用于判断球与源点为 orig 方向为 dir 的光线是否相交，如果相交距离是多少
@@ -133,9 +135,52 @@ if (depth>max_depth||!intersect(orig, dir, hit_p, normal, material)) {
     Vec3f reflect_color = cast_ray(reflect_orig, reflect_dir, depth+1);
 ```
 ### 折射
+- 斯涅耳定律计算折射出射角度
+```cpp
+Vec3f refract(const Vec3f &I, const Vec3f &N, const float &refractive_index) {
+    float cosi = - std::max(-1.f, std::min(1.f, I*N));
+    //假定光线从空气（折射率为1）进入另一种介质
+    float etai = 1, etat = refractive_index;
+    Vec3f n = N;
+    if (cosi < 0) {//从介质进入空气
+        cosi = -cosi;
+        std::swap(etai, etat);
+        n = -N;
+    }
+    float eta = etai/etat;
+    float k = 1 - eta*eta*(1 - cosi*cosi);//是否全反射
+    return k<0 ? Vec3f(0, 0, 0) : I*eta + n*(eta*cosi - sqrtf(k));
+}
+```
 - 完整的 cast_ray：漫反射+镜面反射+多次反射（递归）+折射
 ```cpp
-
+Vec3f cast_ray(const Vec3f &orig, const Vec3f &dir, int depth=0) {  
+    Vec3f hit_p, normal;  
+    Material material;  
+    if (depth>max_depth||!intersect(orig, dir, hit_p, normal, material)) {  
+        return backgroud.color;  
+    }  
+    float diffuse_intensity = 0, specular_intensity = 0;  
+    Vec3f reflect_dir = reflect(dir, normal).normalize();  
+    Vec3f reflect_orig = reflect_dir*normal < 0 ? hit_p - normal*1e-3 : hit_p + normal*1e-3;  
+    Vec3f reflect_color = cast_ray(reflect_orig, reflect_dir, depth+1);  
+    Vec3f refract_dir = refract(dir, normal, material.refractive_index).normalize();  
+    Vec3f refract_orig = refract_dir*normal < 0 ? hit_p - normal*1e-3 : hit_p + normal*1e-3;  
+    Vec3f refract_color = cast_ray(refract_orig, refract_dir, depth+1);  
+    for(PointLight light: lights) {  
+        //阴影：判断是否被遮挡  
+        float dis = (light.position - hit_p).norm();  
+        Vec3f light_dir = (light.position - hit_p).normalize();  
+        //偏移原点，避免自己遮挡自己  
+        Vec3f shadow_orig = hit_p + light_dir*1e-3;  
+        Vec3f shadow_p, shadow_n;  
+        Material tmpmaterial;  
+        if (intersect(shadow_orig, light_dir, shadow_p, shadow_n, tmpmaterial) && (shadow_p-shadow_orig).norm() < dis) {  
+            continue;  
+        }  
+        //漫反射与镜面反射  
+        diffuse_intensity += light.intensity * std::max(0.f, light_dir*normal);  
+    }  
+    return material.color*diffuse_intensity*material.albedo[0] + Vec3f(1., 1., 1.)*specular_intensity*material.albedo[1] + reflect_color*material.albedo[2] + refract_color*material.albedo[3];  
+}
 ```
-### 扩展
-- 
