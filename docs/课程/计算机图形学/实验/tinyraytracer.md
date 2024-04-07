@@ -1,3 +1,4 @@
+### 基本框架搭建
 - 球体类型
 	- `ray_interset` 用于判断球与源点为 orig 方向为 dir 的光线是否相交，如果相交距离是多少
 ```cpp
@@ -41,4 +42,36 @@ for (int j = 0; j<height; j++) {
 	- 先将屏幕空间投影到 (-1,1)上的标准空间，之后根据视角映射到真实坐标（默认这个间距是 1，因此直接乘以 tan(FOV/2)）
 	- 即将像素点映射到了真实的空间坐标
 	- ![image.png|425](https://thdlrt.oss-cn-beijing.aliyuncs.com/20240407160626.png)
-- 
+- 检测发出涉嫌是否打到球体，并且可能存在多个球体
+```cpp
+bool intersect(const Vec3f &orig, const Vec3f &dir, const std::vector<Sphere> &spheres, Vec3f &hit_p, Vec3f &normal, Material &material) {  
+    float spheres_dist = std::numeric_limits<float>::max();  
+    for (size_t i=0; i<spheres.size(); i++) {  
+        float dist_i;  
+        //击中更近的球体  
+        if (spheres[i].ray_intersect(orig, dir, dist_i) && dist_i < spheres_dist) {  
+            spheres_dist = dist_i;  
+            hit_p = orig + dir*dist_i;  
+            normal = (hit_p - spheres[i].center).normalize();  
+            material = spheres[i].material;  
+        }  
+    }  
+    return spheres_dist<1000;  
+}  
+Vec3f cast_ray(const Vec3f &orig, const Vec3f &dir, const std::vector<Sphere> &spheres) {  
+    Vec3f hit_p, normal;  
+    Material material;  
+    if (!intersect(orig, dir, spheres, hit_p, normal, material)) {  
+        return backgroud.color;  
+    }  
+    return material.color;  
+}
+```
+- 对一个方向发射线条之后，检测所有球体，寻找最近的碰撞点作为结果，并记录材质，坐标以及法线等信息
+### 灯光与反射
+- 一个简单的思路，将从摄像机发出打到球体光线，像素点与光源的连线，以及像素点的法线比较，计算光照强度。
+```cpp
+
+```
+- 镜面反射
+
