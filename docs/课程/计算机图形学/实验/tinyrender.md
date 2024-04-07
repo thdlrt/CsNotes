@@ -266,6 +266,41 @@ bool fragment(Vec3f bar, TGAColor &color, Vec3f p) override {
 ### 7-（硬）阴影 shadowmap
 - 先**从光源位置看**，看哪些部分可以被点亮，哪些部分会被隐藏起来
 - 使用类似 zbuffer 的系统
+- 对 pongshader 的修改
+```cpp
+struct PhongShader : public IShader {  
+    Vec2f varying_uv[3];  
+    Vec3f sb_p[3];  
+    Vec3f vertex(int iface, int nthvert) override {  
+       varying_uv[nthvert] = model->uv(iface, nthvert);  
+       Vec3f gl_Vertex = model->vert(iface, nthvert);  
+       sb_p[nthvert] = gl_Vertex;  
+       return m2v(ModelView*v2m(gl_Vertex));  
+    }  
+  
+    bool fragment(Vec3f bar, TGAColor &color, Vec3f p) override {  
+       Vec3f shadowp = m2v(ShadowView*v2m(sb_p[0]*bar.x + sb_p[1]*bar.y + sb_p[2]*bar.z));  
+       float shadowdeep = shadowBuffer.getdeep(shadowp.x, shadowp.y);  
+       float shadow_deffuse = 0.7+.3*(shadowdeep<shadowp.z+43.34);  
+       float shadow_reflect = .3+.7*(shadowdeep<shadowp.z+43.34);  
+  
+       Vec2f uv = varying_uv[0]*bar.x + varying_uv[1]*bar.y + varying_uv[2]*bar.z;  
+       Vec3f normal = m2v((ModelView).transpose()*v2m(model->normal(uv))).normalize();  
+       Vec3f light = m2v(ModelView*v2m(light_p)).normalize();  
+       Vec3f see = (m2v(ModelView*v2m(camera))-m2v(ModelView*v2m(p))).normalize();  
+       Vec3f mid = (light+see).normalize();  
+       float dis = (m2v(ModelView*v2m(p))-m2v(ModelView*v2m(camera))).norm()/100;  
+       float attenuation = 300.0 / (0.5 * dis + 0.1 * dis * dis);  
+       Vec3f ambient = Vec3f(0.8, 0.8, 0.8);  
+       Vec3f diffuse = Vec3f(1, 1, 1)*std::max(0.f, normal*mid)*attenuation;  
+       Vec3f specular = Vec3f(0.3, 0.3, 0.3)*pow(std::max(0.f, normal*mid), model->specular(uv))*attenuation;  
+       Vec3f result = ambient*shadow_deffuse+(diffuse+specular)*shadow_reflect;  
+       TGAColor c = model->diffuse(uv);  
+       color = TGAColor(std::min(255.f,c[2]*result[2]), std::min(255.f,c[1]*result[1]), std::min(255.f,c[0]*result[0]));  
+       return false;  
+    }  
+};
+```
 ## 扩展
 ### 抗锯齿
 - 使用 ssaa 4
@@ -376,3 +411,5 @@ TGAColor bilerp(Vec2f uv, Model*model) {
 - ![image.png|500](https://thdlrt.oss-cn-beijing.aliyuncs.com/20240406194342.png)
 
 
+## 效果展示
+- ![image.png](https://thdlrt.oss-cn-beijing.aliyuncs.com/20240407132522.png)
