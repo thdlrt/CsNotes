@@ -71,7 +71,14 @@ Vec3f cast_ray(const Vec3f &orig, const Vec3f &dir, const std::vector<Sphere> &s
 ### 灯光与反射
 - 一个简单的思路，将像**素点与光源的连线**，以及**像素点的法线比较**，计算光照强度。(类似布林冯里的漫反射强度影响因素之一)
 ```cpp
-
+float diffuse_intensity = 0;  
+for(PointLight light: lights) {  
+    Vec3f light_dir = (light.position - hit_p).normalize();  
+    diffuse_intensity += light.intensity * std::max(0.f, light_dir*normal);  
+}  
+return material.color*diffuse_intensity;
 ```
+- ![image.png|475](https://thdlrt.oss-cn-beijing.aliyuncs.com/20240407172607.png)
+
 - 镜面反射
 
