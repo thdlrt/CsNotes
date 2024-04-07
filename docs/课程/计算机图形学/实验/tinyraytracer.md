@@ -122,8 +122,20 @@ if (intersect(shadow_orig, light_dir, shadow_p, shadow_n, tmpmaterial) && (shado
 }
 ```
 ### 多次反射
-- 
+- 递归调用 cast_ray
+```cpp
+if (depth>max_depth||!intersect(orig, dir, hit_p, normal, material)) {
+        return backgroud.color;
+    }
+    float diffuse_intensity = 0, specular_intensity = 0;
+    Vec3f reflect_dir = reflect(dir, normal).normalize();
+    Vec3f reflect_orig = reflect_dir*normal < 0 ? hit_p - normal*1e-3 : hit_p + normal*1e-3;
+    Vec3f reflect_color = cast_ray(reflect_orig, reflect_dir, depth+1);
+```
 ### 折射
-- 
+- 完整的 cast_ray：漫反射+镜面反射+多次反射（递归）+折射
+```cpp
+
+```
 ### 扩展
 - 
