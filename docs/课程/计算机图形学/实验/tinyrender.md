@@ -264,7 +264,8 @@ bool fragment(Vec3f bar, TGAColor &color, Vec3f p) override {
 	- ![image.png](https://thdlrt.oss-cn-beijing.aliyuncs.com/20240407114254.png)
 
 ### 7-（硬）阴影 shadowmap
-- 
+- 先**从光源位置看**，看哪些部分可以被点亮，哪些部分会被隐藏起来
+- 使用类似 zbuffer 的系统
 ## 扩展
 ### 抗锯齿
 - 使用 ssaa 4
