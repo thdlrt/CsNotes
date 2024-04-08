@@ -1,6 +1,14 @@
 {
   "recentFiles": [
     {
+      "basename": "并发",
+      "path": "docs/课程/操作系统/笔记/并发.md"
+    },
+    {
+      "basename": "操作系统",
+      "path": "docs/面试/计算机科学/操作系统.md"
+    },
+    {
       "basename": "Games101-现代图形学基础",
       "path": "docs/课程/计算机图形学/Games101-现代图形学基础.md"
     },
@@ -47,10 +55,6 @@
     {
       "basename": "opengl",
       "path": "docs/课程/计算机图形学/opengl.md"
-    },
-    {
-      "basename": "并发",
-      "path": "docs/课程/操作系统/笔记/并发.md"
     },
     {
       "basename": "p6",
@@ -195,10 +199,6 @@
     {
       "basename": "linux",
       "path": "docs/杂项/linux与shell/linux.md"
-    },
-    {
-      "basename": "进程管理",
-      "path": "docs/杂项/linux与shell/linux/进程管理.md"
     }
   ],
   "omittedPaths": [],
