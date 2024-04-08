@@ -1,6 +1,34 @@
 {
   "recentFiles": [
     {
+      "basename": "现代图形学基础",
+      "path": "docs/计算机图形学/图形学基础/现代图形学基础.md"
+    },
+    {
+      "basename": "动画",
+      "path": "docs/计算机图形学/图形学基础/动画.md"
+    },
+    {
+      "basename": "材质",
+      "path": "docs/计算机图形学/图形学基础/材质.md"
+    },
+    {
+      "basename": "几何",
+      "path": "docs/计算机图形学/图形学基础/几何.md"
+    },
+    {
+      "basename": "线性代数与变换",
+      "path": "docs/计算机图形学/图形学基础/线性代数与变换.md"
+    },
+    {
+      "basename": "光线追踪",
+      "path": "docs/计算机图形学/图形学基础/光线追踪.md"
+    },
+    {
+      "basename": "光栅化",
+      "path": "docs/计算机图形学/图形学基础/光栅化.md"
+    },
+    {
       "basename": "引论",
       "path": "docs/课程/编译原理/笔记/引论.md"
     },
@@ -171,34 +199,6 @@
     {
       "basename": "thread",
       "path": "docs/课程/操作系统/代码/thread-lib/thread.h"
-    },
-    {
-      "basename": "操作系统",
-      "path": "docs/课程/操作系统/操作系统.md"
-    },
-    {
-      "basename": "绪论",
-      "path": "docs/课程/操作系统/笔记/绪论.md"
-    },
-    {
-      "basename": "八股",
-      "path": "docs/游戏开发/游戏引擎/unity/八股.md"
-    },
-    {
-      "basename": "jvm",
-      "path": "docs/java/工具/jvm.md"
-    },
-    {
-      "basename": "4",
-      "path": "docs/归档课程/计算机系统基础/data/4.md"
-    },
-    {
-      "basename": "3",
-      "path": "docs/归档课程/计算机系统基础/data/3.md"
-    },
-    {
-      "basename": "计算机系统基础笔记",
-      "path": "docs/归档课程/计算机系统基础/计算机系统基础笔记.md"
     }
   ],
   "omittedPaths": [],
