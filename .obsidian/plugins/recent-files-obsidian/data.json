@@ -1,6 +1,18 @@
 {
   "recentFiles": [
     {
+      "basename": "android",
+      "path": "docs/移动端开发/安卓/android.md"
+    },
+    {
+      "basename": "并发编程",
+      "path": "docs/面试/计算机科学/并发编程.md"
+    },
+    {
+      "basename": "排序&选择",
+      "path": "docs/算法/排序&选择.md"
+    },
+    {
       "basename": "并发",
       "path": "docs/课程/操作系统/笔记/并发.md"
     },
@@ -187,18 +199,6 @@
     {
       "basename": "语法分析",
       "path": "docs/课程/编译原理/笔记/语法分析.md"
-    },
-    {
-      "basename": "词法分析",
-      "path": "docs/课程/编译原理/笔记/词法分析.md"
-    },
-    {
-      "basename": "日志系统",
-      "path": "docs/杂项/linux与shell/linux/日志系统.md"
-    },
-    {
-      "basename": "linux",
-      "path": "docs/杂项/linux与shell/linux.md"
     }
   ],
   "omittedPaths": [],
