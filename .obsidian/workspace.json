@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/移动端开发/安卓/android.md",
+                "file": "docs/面试/计算机科学/并发编程.md",
                 "mode": "source",
                 "source": false
               }
@@ -93,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/移动端开发/安卓/android.md",
+                "file": "docs/面试/计算机科学/并发编程.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/移动端开发/安卓/android.md",
+                "file": "docs/面试/计算机科学/并发编程.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/移动端开发/安卓/android.md"
+                "file": "docs/面试/计算机科学/并发编程.md"
               }
             }
           },
@@ -178,6 +178,7 @@
   },
   "active": "9845d3bd667a2ee5",
   "lastOpenFiles": [
+    "docs/移动端开发/安卓/android.md",
     "docs/面试/计算机科学/并发编程.md",
     "docs/算法/排序&选择.md",
     "docs/课程/操作系统/笔记/并发.md",
@@ -207,7 +208,6 @@
     "docs/课程/编译原理/作业/p6.md",
     "docs/归档课程/数字逻辑与计算机组成/笔记/U6 运算.md",
     "docs/归档课程/计算机系统基础/data/2.md",
-    "docs/归档课程/计算机系统基础/计算机系统基础笔记.md",
     "docs/面试/数学",
     "docs/课程/操作系统/代码/thread-lib/hello.c",
     "docs/课程/操作系统/代码/thread-lib/thread.h",
