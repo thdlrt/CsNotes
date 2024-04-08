@@ -699,6 +699,7 @@ cv::Point2f recursive_bezier(const std::vector<cv::Point2f> &control_points, flo
   - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230708234751059.png" alt="image-20230708234751059" style="zoom:33%;" />
   - 简化表示<img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230708235018969.png" alt="image-20230708235018969" style="zoom:33%;" />
   - 递归弹射（包含多次反射**即全局光照**（直接光照+间接光照））<img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230708235900191.png" alt="image-20230708235900191" style="zoom:33%;" />
+- ![image.png](https://thdlrt.oss-cn-beijing.aliyuncs.com/20240408163240.png)
 
 #### 蒙特卡罗路径追踪
 
