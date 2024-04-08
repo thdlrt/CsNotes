@@ -623,7 +623,7 @@ cv::Point2f recursive_bezier(const std::vector<cv::Point2f> &control_points, flo
   - 记录与平面的交点，求交后得到与包围盒的交点
   - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230708105702893.png" alt="image-20230708105702893" style="zoom:33%;" />
     - 光线**进入所有**对面才真正进入了盒子，光线 **离开任何**一个对面就离开了盒子
-    - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230708110125119.png" alt="image-20230708110125119" style="zoom:33%;" />
+    - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230708110125119.png" alt="image-20230708110125119" style="zoom:50%;" />
   
 - Uniform Spatial Partitions（AABB加速光线追踪）
 
@@ -645,15 +645,18 @@ cv::Point2f recursive_bezier(const std::vector<cv::Point2f> &control_points, flo
   - 难点：判断**三角形与盒子是否交**很难，并且三角形可能跨盒子
 
 - (BVH)**物体划分**
-
   - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230708213437753.png" alt="image-20230708213437753" style="zoom:33%;" />
-    - 确定包围盒；对包围盒内的物体进行划分；分别重新计算包围盒；继续计算。
+    - 确定包围盒；对包围盒内的**物体进行划**分；分别重新计算包围盒；继续计算。
+    - 先找到最长的轴；然后在那个轴上把三角形均等划分到左右两个包围盒，保持左右两边数量相等或差一，即平行二叉树；重复这两个步骤直到只剩一个或两个三角形。
 
   - 一个物体只会出现在一个盒子中（盒子中也一定有物体）
   - 可以每次都选择位于中间的三角形用于划分
   - 求交过程（与节点相交了，再继续去看子节点）<img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230708215158007.png" alt="image-20230708215158007" style="zoom:33%;" />
 
-
+- SAH 划分
+- BVH 存在不平衡划分的问题：
+	- ![|500](https://thdlrt.oss-cn-beijing.aliyuncs.com/20240408142745.png)
+- SAH 通过计算优化这个划分方式，使得包围盒划分更有效率
 ### 辐射度量学
 
 - **准确**定义物理光照
