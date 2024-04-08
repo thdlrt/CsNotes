@@ -1475,10 +1475,36 @@ asm ("add %2, %1\n\t"
 	- g：表示可以是寄存器、内存或立即数，具体取决于编译器优化。
 ### 补充
 #### 判断系统类型
-```c
+```
 #if __x86_64__
 ...
 #else
 ...
 #endif
 ```
+#### 上下文切换 setjmp.h
+- `setjmp` 保存当前的环境
+	- setjump 保存环境（寄存器等状态），之后立即返回 0
+- `longjmp` 恢复之前保存的环境
+```c
+void co_yield() {
+    int val = setjmp(current->context);
+    if (val == 0) {
+        // 第一次返回
+    } else {
+        // 由longjmp触发的第二次返回
+    }
+}
+```
+- **`setjmp` 第一次返回**：当 `co_yield` 函数被调用时，`setjmp(current->context)` 首先保存当前的协程（也就是 `current` 协程）的环境（包括寄存器等状态）到 `current->context` 中。在这之后，`setjmp` 立即返回0。之后冲虚选择一个待运行的协程运行
+- **`setjmp`由`longjmp`触发的第二次返回**：在某个时刻，当其他某个协程再次通过`longjmp(current->context, val)`跳回到这个协程时，`setjmp`会返回一个非零值（这个值由`longjmp`的**第二个参数指定**）。
+```c
+int main() {
+    int n = 0;
+    jmp_buf buf;
+    setjmp(buf);
+    printf("Hello %d\n", n);
+    longjmp(buf, n++);
+}
+```
+- 
