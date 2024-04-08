@@ -1509,3 +1509,37 @@ int main() {
 ```
 - 这里 n 会递增，这是应为 n 存储在栈上，buf 只存储栈指针等信息，对栈的修改不会被恢复
 	- 使用 `register` 就不会有这个问题了
+#### 栈的切换 stack_switch_call
+```c
+static inline void
+stack_switch_call(void *sp, void *entry, uintptr_t arg) {
+    asm volatile (
+#if __x86_64__
+        "movq %0, %%rsp; movq %2, %%rdi; jmp *%1"
+          :
+          : "b"((uintptr_t)sp),
+            "d"(entry),
+            "a"(arg)
+          : "memory"
+#else
+        "movl %0, %%esp; movl %2, 4(%0); jmp *%1"
+          :
+          : "b"((uintptr_t)sp - 8),
+            "d"(entry),
+            "a"(arg)
+          : "memory"
+#endif
+    );
+}
+```
+- **`void *sp`**：这是**新栈的顶部地址**。函数将会把当前的栈指针（`rsp` 或 `esp`，取决于是64位还是32位架构）设置为这个值，从而切换到新的栈上执行。
+- **`void *entry`**：这是**要调用的函数**的地址。一旦栈切换完成，程序将通过无条件跳转（`jmp`）指令跳转到这个地址执行。
+- **`uintptr_t arg`**：这是传递给 `entry` 指定的函数的参数。对于64位架构，这个参数直接通过 `rdi` 寄存器传递（遵循 x86-64的调用约定）；对于32位架构，这个参数被放置在新栈的某个特定位置，以便被调用的函数能够按照 C 的调用约定通过栈访问它。
+
+## 杂
+- 如果希望在程序运行前完成一系列的初始化工作 (例如分配一些内存)，可以定义 `__attribute__((constructor))` 属性的函数，它们会在 `main` **执行前被运行**。
+```c
+__attribute__((constructor)) void init() {
+	...
+}
+```
