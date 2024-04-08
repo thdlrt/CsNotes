@@ -610,7 +610,8 @@ cv::Point2f recursive_bezier(const std::vector<cv::Point2f> &control_points, flo
     - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230708100348543.png" alt="image-20230708100348543" style="zoom:33%;" />
   - 法二：利用重心坐标直接判断（三个参数都非负）Moller Trumbore Algorithm 算法
     - ![image.png|450](https://thdlrt.oss-cn-beijing.aliyuncs.com/20240408114758.png)
-
+    - 用于快速进行**射线和三角形**求交 (不需要先求解射线与平面的交点)
+    - [Möller–Trumbore](https://zhuanlan.zhihu.com/p/451582864)
 #### 优化
 
 - 包围盒
