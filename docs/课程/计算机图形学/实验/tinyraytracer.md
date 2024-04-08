@@ -44,6 +44,8 @@ for (int j = 0; j<height; j++) {
 	- 先将屏幕空间投影到 (-1,1)上的标准空间，之后根据视角映射到真实坐标（默认这个间距是 1，因此直接乘以 tan(FOV/2)）
 	- 即将像素点映射到了真实的空间坐标
 	- ![image.png|425](https://thdlrt.oss-cn-beijing.aliyuncs.com/20240407160626.png)
+	- ![image.png](https://thdlrt.oss-cn-beijing.aliyuncs.com/20240408111423.png)
+
 - 检测发出涉嫌是否打到球体，并且可能存在多个球体
 ```cpp
 bool intersect(const Vec3f &orig, const Vec3f &dir, const std::vector<Sphere> &spheres, Vec3f &hit_p, Vec3f &normal, Material &material) {  

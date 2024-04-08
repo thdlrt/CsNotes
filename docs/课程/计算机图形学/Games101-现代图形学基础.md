@@ -580,6 +580,13 @@ cv::Point2f recursive_bezier(const std::vector<cv::Point2f> &control_points, flo
 - 光线追踪应用了光路可逆性，从眼睛出发直至光源进行追踪
   - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230708092756902.png" alt="image-20230708092756902" style="zoom:33%;" />
   - 从眼睛向外寻找，到达最近的（可观察物体）然后与光源连线计算着色结果（可见性）
+### 光线追踪中的坐标变换
+- ![image.png](https://thdlrt.oss-cn-beijing.aliyuncs.com/20240408112527.png)
+- 先将像素坐标-> NDC 坐标->屏幕坐标->世界坐标
+	- 像素坐标：$(x_{0},y_{0})(i+0.5,j+0.5)$
+	- NDC 坐标：$(x_{1},y_{1})=\left( \frac{x_{0}}{width},\frac{y_{0}}{height} \right)$
+	- 屏幕坐标： $(x_{2},y_{2})=(2x_{1}-1,1-2y_{1})$
+	- 世界坐标：$(x_{3},y_{3})=\left( x_{2}*\frac{width}{height}*\tan\left( \frac{\alpha}{2} \right),y_{2}*\tan{\frac{\alpha}{2}} \right)$
 
 ### Whitted-Style Ray Tracing
 
@@ -987,3 +994,6 @@ cv::Point2f recursive_bezier(const std::vector<cv::Point2f> &control_points, flo
   - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230709210237548.png" alt="image-20230709210237548" style="zoom:33%;" />
   - 手动操控
 - 动作捕捉 
+## 实验
+- [[tinyrender|光栅化渲染器]]
+- [[tinyraytracer|Whitted风格光线追踪]]
