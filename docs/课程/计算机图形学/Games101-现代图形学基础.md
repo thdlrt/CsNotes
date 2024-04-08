@@ -4,8 +4,6 @@
   - 可以用于判断两个方向的**接近程度**（夹角），判断**前后**
   - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/20240318154923.png" alt="image.png|250" style="zoom:50%;" />
 
-
-
 - 叉乘
   - <img src=" https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230705094854131.png" alt="image-20230705094854131" style="zoom:50%;" />
   - 可以用于求出三维直角坐标系(右手坐标系)，指导两个方向就能推导出第三个方向$\overrightarrow{x}\times \overrightarrow{y}=\overrightarrow{z}$
@@ -361,6 +359,13 @@ Eigen::Vector3f phong_fragment_shader(const fragment_shader_payload& payload)
   - 问题：投影之后的重心坐标会发生变化，因此要先插值再投影
   - 如果需要再投影之后进行插值，则需要进行**透视矫正插值**
 
+- 计算质心坐标
+	- $P=(1-u-v)A+uB+vC$ (对于三角形**内**的点 u, v, 1-u-v **均大于 0**)
+	- $P=A+uAB+vAC\to uAB+vAC+PA=0$
+	- ![image.png|271](https://thdlrt.oss-cn-beijing.aliyuncs.com/20240406013702.png)
+	- 本质上就是求解这个方程组（之后得到 uv 判断是否大于零，进而判断是否在三角形内部）对于三维点也是一样的，因为两个方程就能解出两个量了
+	- 求解方程就是找一条直线与(ABx,ACx,PAx) and (ABy,ACy,PAy)垂直，这可以通过**一次叉积解决**
+
 - **透视矫正**
 	- 因为线性插值假设了所有点在同一平面上，但实际上，由于透视效果，远处的物体应该在视觉上显得更小，这导致了深度（z 值）和其它**依赖于深度的属性不能简单地线性插值**。（比如深度变化的的位置的颜色变化在投影之后被**压密了**）
 	- 透视变换和透视除法确保了三维场景在二维屏幕上的正确投影，但是在处理纹理映射和顶点属性**插值**时，直接应用线性插值会因为透视效果的非线性特征而导致失真。
@@ -603,8 +608,8 @@ cv::Point2f recursive_bezier(const std::vector<cv::Point2f> &control_points, flo
   - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230708095659898.png" style="zoom:33%;" />
   - 法一：先求**和平面的交点**，再判断是否**属于某个三角形**
     - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230708100348543.png" alt="image-20230708100348543" style="zoom:33%;" />
-  - 法二：利用重心坐标直接判断（三个参数都非负）
-    - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20230708101437239.png" alt="image-20230708101437239" style="zoom:33%;" />
+  - 法二：利用重心坐标直接判断（三个参数都非负）Moller Trumbore Algorithm 算法
+    - ![image.png|450](https://thdlrt.oss-cn-beijing.aliyuncs.com/20240408114758.png)
 
 #### 优化
 
