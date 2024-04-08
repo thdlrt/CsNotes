@@ -1,6 +1,10 @@
 {
   "recentFiles": [
     {
+      "basename": "C++基础",
+      "path": "docs/c++/C++基础.md"
+    },
+    {
       "basename": "并发编程",
       "path": "docs/面试/计算机科学/并发编程.md"
     },
@@ -195,10 +199,6 @@
     {
       "basename": "并发",
       "path": "docs/课程/操作系统/笔记/并发.md"
-    },
-    {
-      "basename": "thread",
-      "path": "docs/课程/操作系统/代码/thread-lib/thread.h"
     }
   ],
   "omittedPaths": [],

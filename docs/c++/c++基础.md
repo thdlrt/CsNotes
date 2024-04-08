@@ -1443,3 +1443,18 @@ printf("MM = %d\n", MM);    // MM 被替换为: MM = M * M, 然后又变成 MM =
      typeof(b) _b = (b); \
      _a > _b ? _a : _b; })
 ```
+## 内联汇编
+### 基本语法（gcc）
+- gcc 默认使用 AT&T 风格
+- 将要执行的汇编指令作为字符嵌套 `asm("assembly code");`
+#### 使用 c 语言中的变量
+```c
+asm ( assembler template 
+    : output operands                  //指定输出结果的变量
+    : input operands                   //指定输入变量
+    : list of clobbered registers      //告诉编译器哪些寄存器会被汇编代码修改的列表
+    );
+```
+
+### 补充
+#### 判断系统类型

@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/面试/计算机科学/并发编程.md",
+                "file": "docs/c++/C++基础.md",
                 "mode": "source",
                 "source": false
               }
@@ -93,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/面试/计算机科学/并发编程.md",
+                "file": "docs/c++/C++基础.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/面试/计算机科学/并发编程.md",
+                "file": "docs/c++/C++基础.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/面试/计算机科学/并发编程.md"
+                "file": "docs/c++/C++基础.md"
               }
             }
           },
@@ -177,8 +177,9 @@
       "vscode-editor:新建代码文件": false
     }
   },
-  "active": "96e173acdf249e6c",
+  "active": "9845d3bd667a2ee5",
   "lastOpenFiles": [
+    "docs/面试/计算机科学/并发编程.md",
     "docs/课程/高质量图像渲染/课件/ch2_concepts.pdf",
     "docs/课程/高质量图像渲染/课件/ch3_ray_tracing.pdf",
     "docs/课程/高质量图像渲染/课件/ch4_ray_tracing2.pdf",
@@ -186,7 +187,6 @@
     "docs/课程/高质量图像渲染/课件",
     "docs/课程/高质量图像渲染",
     "docs/移动端开发/安卓/android.md",
-    "docs/面试/计算机科学/并发编程.md",
     "docs/算法/排序&选择.md",
     "docs/课程/操作系统/笔记/并发.md",
     "docs/面试/计算机科学/操作系统.md",
@@ -214,7 +214,6 @@
     "docs/课程/计算机图形学/opengl.md",
     "docs/课程/编译原理/作业/p6.md",
     "docs/归档课程/数字逻辑与计算机组成/笔记/U6 运算.md",
-    "docs/面试/数学",
     "CsNotes/2021-11-22-22-54-02.png",
     "CsNotes/2021-11-22-22-52-49.png",
     "CsNotes/2021-11-22-22-49-26.png",
