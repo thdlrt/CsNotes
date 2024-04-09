@@ -4,16 +4,42 @@
     "type": "split",
     "children": [
       {
-        "id": "397eed0ee2f95b69",
+        "id": "6f9d0d00f5cac784",
         "type": "tabs",
         "children": [
           {
-            "id": "9845d3bd667a2ee5",
+            "id": "51a09c5a2ff32307",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "docs/课程/编译原理/课件/Chapter_5.pdf"
+              }
+            }
+          },
+          {
+            "id": "2fea3a827f0157d2",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "docs/课程/编译原理/课件/Chapter_1.pdf"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "id": "290526adb9fa2650",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "3f78344b63ed81a1",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/课程/编译原理/作业/p6.md",
+                "file": "docs/课程/编译原理/笔记/语法制导的编译技术.md",
                 "mode": "source",
                 "source": false
               }
@@ -93,7 +119,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/课程/编译原理/作业/p6.md",
+                "file": "docs/课程/编译原理/笔记/语法制导的编译技术.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +136,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/课程/编译原理/作业/p6.md",
+                "file": "docs/课程/编译原理/笔记/语法制导的编译技术.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +159,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/课程/编译原理/作业/p6.md"
+                "file": "docs/课程/编译原理/笔记/语法制导的编译技术.md"
               }
             }
           },
@@ -158,8 +184,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 200
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -177,8 +202,16 @@
       "vscode-editor:新建代码文件": false
     }
   },
-  "active": "9845d3bd667a2ee5",
+  "active": "3f78344b63ed81a1",
   "lastOpenFiles": [
+    "docs/课程/编译原理/课件/Chapter_5.pdf",
+    "docs/课程/编译原理/课件/Chapter_1.pdf",
+    "docs/课程/编译原理/课件/Chapter_6.pdf",
+    "docs/课程/编译原理/笔记/引论.md",
+    "docs/课程/编译原理/笔记/语法制导的编译技术.md",
+    "docs/课程/编译原理/笔记/运行时刻环境.md",
+    "docs/课程/编译原理/笔记/语法分析.md",
+    "docs/课程/编译原理/作业/p6.md",
     "docs/c++/C++基础.md",
     "docs/面试/计算机科学/并发编程.md",
     "docs/课程/高质量图像渲染/课件/ch2_concepts.pdf",
@@ -207,14 +240,6 @@
     "docs/面试/计算机科学/计算机组成原理.md",
     "docs/算法/待学高级知识.md",
     "docs/杂项/vscode/运行配置.md",
-    "docs/杂项/vscode/Untitled.md",
-    "docs/杂项/vscode",
-    "docs/杂项/Untitled Folder",
-    "docs/杂项/构建&编译&调试/makefile.md",
-    "docs/c++/库/线性代数engin.md",
-    "docs/课程/计算机图形学/opengl.md",
-    "docs/课程/编译原理/作业/p6.md",
-    "docs/归档课程/数字逻辑与计算机组成/笔记/U6 运算.md",
     "CsNotes/2021-11-22-22-54-02.png",
     "CsNotes/2021-11-22-22-52-49.png",
     "CsNotes/2021-11-22-22-49-26.png",

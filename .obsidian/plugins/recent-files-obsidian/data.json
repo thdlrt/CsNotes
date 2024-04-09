@@ -1,6 +1,34 @@
 {
   "recentFiles": [
     {
+      "basename": "语法制导的编译技术",
+      "path": "docs/课程/编译原理/笔记/语法制导的编译技术.md"
+    },
+    {
+      "basename": "Chapter_5",
+      "path": "docs/课程/编译原理/课件/Chapter_5.pdf"
+    },
+    {
+      "basename": "Chapter_1",
+      "path": "docs/课程/编译原理/课件/Chapter_1.pdf"
+    },
+    {
+      "basename": "Chapter_6",
+      "path": "docs/课程/编译原理/课件/Chapter_6.pdf"
+    },
+    {
+      "basename": "引论",
+      "path": "docs/课程/编译原理/笔记/引论.md"
+    },
+    {
+      "basename": "运行时刻环境",
+      "path": "docs/课程/编译原理/笔记/运行时刻环境.md"
+    },
+    {
+      "basename": "语法分析",
+      "path": "docs/课程/编译原理/笔记/语法分析.md"
+    },
+    {
       "basename": "p6",
       "path": "docs/课程/编译原理/作业/p6.md"
     },
@@ -41,10 +69,6 @@
       "path": "docs/计算机图形学/图形学基础/光栅化.md"
     },
     {
-      "basename": "引论",
-      "path": "docs/课程/编译原理/笔记/引论.md"
-    },
-    {
       "basename": "待学高级知识",
       "path": "docs/算法/待学高级知识.md"
     },
@@ -65,24 +89,8 @@
       "path": "docs/课程/编译原理/作业/p4.md"
     },
     {
-      "basename": "语法制导的编译技术",
-      "path": "docs/课程/编译原理/笔记/语法制导的编译技术.md"
-    },
-    {
-      "basename": "Chapter_1",
-      "path": "docs/课程/编译原理/课件/Chapter_1.pdf"
-    },
-    {
       "basename": "Chapter_4",
       "path": "docs/课程/编译原理/课件/Chapter_4.pdf"
-    },
-    {
-      "basename": "Chapter_5",
-      "path": "docs/课程/编译原理/课件/Chapter_5.pdf"
-    },
-    {
-      "basename": "语法分析",
-      "path": "docs/课程/编译原理/笔记/语法分析.md"
     },
     {
       "basename": "词法分析",
@@ -191,14 +199,6 @@
     {
       "basename": "前缀和与差分",
       "path": "docs/算法/前缀和与差分.md"
-    },
-    {
-      "basename": "二分&倍增",
-      "path": "docs/算法/二分&倍增.md"
-    },
-    {
-      "basename": "p2",
-      "path": "docs/课程/编译原理/作业/p2.md"
     }
   ],
   "omittedPaths": [],
