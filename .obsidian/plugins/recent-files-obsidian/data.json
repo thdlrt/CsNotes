@@ -9,6 +9,18 @@
       "path": "docs/课程/编译原理/课件/Chapter_6.pdf"
     },
     {
+      "basename": "p4",
+      "path": "docs/课程/编译原理/作业/p4.md"
+    },
+    {
+      "basename": "p5",
+      "path": "docs/课程/编译原理/作业/p5.md"
+    },
+    {
+      "basename": "p3",
+      "path": "docs/课程/编译原理/作业/p3.md"
+    },
+    {
       "basename": "语法制导的编译技术",
       "path": "docs/课程/编译原理/笔记/语法制导的编译技术.md"
     },
@@ -85,16 +97,8 @@
       "path": "面试/自我介绍/腾讯天美游戏端开发.md"
     },
     {
-      "basename": "p5",
-      "path": "docs/课程/编译原理/作业/p5.md"
-    },
-    {
       "basename": "数据结构",
       "path": "docs/算法/数据结构.md"
-    },
-    {
-      "basename": "p4",
-      "path": "docs/课程/编译原理/作业/p4.md"
     },
     {
       "basename": "Chapter_4",
@@ -191,10 +195,6 @@
     {
       "basename": "正则表达式",
       "path": "docs/杂项/杂项/正则表达式.md"
-    },
-    {
-      "basename": "p3",
-      "path": "docs/课程/编译原理/作业/p3.md"
     },
     {
       "basename": "使用VSCode编写C++单文件程序(Windows系统)",
