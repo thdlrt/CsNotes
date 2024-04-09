@@ -103,7 +103,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 269.5
   },
   "right": {
     "id": "d615b65a4ccf8a6a",
@@ -205,10 +205,11 @@
   "active": "3f78344b63ed81a1",
   "lastOpenFiles": [
     "docs/课程/编译原理/课件/Chapter_5.pdf",
+    "docs/课程/编译原理/笔记/语法制导的编译技术.md",
+    "docs/课程/编译原理/实验/p1/Project_1.pdf",
     "docs/课程/编译原理/课件/Chapter_1.pdf",
     "docs/课程/编译原理/课件/Chapter_6.pdf",
     "docs/课程/编译原理/笔记/引论.md",
-    "docs/课程/编译原理/笔记/语法制导的编译技术.md",
     "docs/课程/编译原理/笔记/运行时刻环境.md",
     "docs/课程/编译原理/笔记/语法分析.md",
     "docs/课程/编译原理/作业/p6.md",
@@ -229,14 +230,12 @@
     "docs/数学/微积分.md",
     "docs/数学/线性代数.md",
     "docs/数学/概率论.md",
-    "docs/数学",
     "docs/面试/数学/离散数学.md",
     "docs/课程/计算机图形学/实验/tinyraytracer.md",
     "docs/课程/计算机图形学/实验/tinyrender.md",
     "docs/面试/计算机科学/计算机图形学.md",
     "docs/课程/计算机图形学/实验/未命名.md",
     "docs/课程/计算机图形学/实验/README.md",
-    "docs/课程/计算机图形学/实验",
     "docs/面试/计算机科学/计算机组成原理.md",
     "docs/算法/待学高级知识.md",
     "docs/杂项/vscode/运行配置.md",

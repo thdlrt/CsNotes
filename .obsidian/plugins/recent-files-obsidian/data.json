@@ -9,6 +9,10 @@
       "path": "docs/课程/编译原理/课件/Chapter_5.pdf"
     },
     {
+      "basename": "Project_1",
+      "path": "docs/课程/编译原理/实验/p1/Project_1.pdf"
+    },
+    {
       "basename": "Chapter_1",
       "path": "docs/课程/编译原理/课件/Chapter_1.pdf"
     },
@@ -177,12 +181,8 @@
       "path": "docs/课程/编译原理/实验/p1/实验报告p1.md"
     },
     {
-      "basename": "Project_1",
-      "path": "docs/课程/编译原理/实验/p1/Project_1.pdf"
-    },
-    {
-      "basename": "实验笔记",
-      "path": "docs/课程/编译原理/实验/实验笔记.md"
+      "basename": "实验笔记(编译工具的使用)",
+      "path": "docs/课程/编译原理/实验/实验笔记(编译工具的使用).md"
     },
     {
       "basename": "正则表达式",
