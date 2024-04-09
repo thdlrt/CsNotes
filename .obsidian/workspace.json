@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/c++/C++基础.md",
+                "file": "docs/课程/编译原理/作业/p6.md",
                 "mode": "source",
                 "source": false
               }
@@ -93,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/c++/C++基础.md",
+                "file": "docs/课程/编译原理/作业/p6.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/c++/C++基础.md",
+                "file": "docs/课程/编译原理/作业/p6.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/c++/C++基础.md"
+                "file": "docs/课程/编译原理/作业/p6.md"
               }
             }
           },
@@ -179,6 +179,7 @@
   },
   "active": "9845d3bd667a2ee5",
   "lastOpenFiles": [
+    "docs/c++/C++基础.md",
     "docs/面试/计算机科学/并发编程.md",
     "docs/课程/高质量图像渲染/课件/ch2_concepts.pdf",
     "docs/课程/高质量图像渲染/课件/ch3_ray_tracing.pdf",

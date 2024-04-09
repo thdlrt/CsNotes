@@ -1,6 +1,10 @@
 {
   "recentFiles": [
     {
+      "basename": "p6",
+      "path": "docs/课程/编译原理/作业/p6.md"
+    },
+    {
       "basename": "C++基础",
       "path": "docs/c++/C++基础.md"
     },
@@ -195,10 +199,6 @@
     {
       "basename": "p2",
       "path": "docs/课程/编译原理/作业/p2.md"
-    },
-    {
-      "basename": "并发",
-      "path": "docs/课程/操作系统/笔记/并发.md"
     }
   ],
   "omittedPaths": [],
