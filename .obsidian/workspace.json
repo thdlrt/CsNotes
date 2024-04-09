@@ -119,7 +119,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/课程/编译原理/笔记/语法制导的编译技术.md",
+                "file": "docs/课程/编译原理/课件/Chapter_5.pdf",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -136,7 +136,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/课程/编译原理/笔记/语法制导的编译技术.md",
+                "file": "docs/课程/编译原理/课件/Chapter_5.pdf",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -159,7 +159,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/课程/编译原理/笔记/语法制导的编译技术.md"
+                "file": "docs/课程/编译原理/课件/Chapter_5.pdf"
               }
             }
           },
@@ -202,10 +202,10 @@
       "vscode-editor:新建代码文件": false
     }
   },
-  "active": "3f78344b63ed81a1",
+  "active": "51a09c5a2ff32307",
   "lastOpenFiles": [
-    "docs/课程/编译原理/课件/Chapter_5.pdf",
     "docs/课程/编译原理/笔记/语法制导的编译技术.md",
+    "docs/课程/编译原理/课件/Chapter_5.pdf",
     "docs/课程/编译原理/实验/p1/Project_1.pdf",
     "docs/课程/编译原理/课件/Chapter_1.pdf",
     "docs/课程/编译原理/课件/Chapter_6.pdf",
