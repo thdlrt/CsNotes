@@ -1,6 +1,14 @@
 {
   "recentFiles": [
     {
+      "basename": "中间代码生成",
+      "path": "docs/课程/编译原理/笔记/中间代码生成.md"
+    },
+    {
+      "basename": "Chapter_6",
+      "path": "docs/课程/编译原理/课件/Chapter_6.pdf"
+    },
+    {
       "basename": "语法制导的编译技术",
       "path": "docs/课程/编译原理/笔记/语法制导的编译技术.md"
     },
@@ -15,10 +23,6 @@
     {
       "basename": "Chapter_1",
       "path": "docs/课程/编译原理/课件/Chapter_1.pdf"
-    },
-    {
-      "basename": "Chapter_6",
-      "path": "docs/课程/编译原理/课件/Chapter_6.pdf"
     },
     {
       "basename": "引论",
@@ -195,10 +199,6 @@
     {
       "basename": "使用VSCode编写C++单文件程序(Windows系统)",
       "path": "docs/算法/使用VSCode编写C++单文件程序(Windows系统).md"
-    },
-    {
-      "basename": "前缀和与差分",
-      "path": "docs/算法/前缀和与差分.md"
     }
   ],
   "omittedPaths": [],
