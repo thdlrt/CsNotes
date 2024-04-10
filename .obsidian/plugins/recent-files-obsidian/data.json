@@ -1,6 +1,14 @@
 {
   "recentFiles": [
     {
+      "basename": "计算机组成原理",
+      "path": "docs/面试/计算机科学/计算机组成原理.md"
+    },
+    {
+      "basename": "6",
+      "path": "docs/归档课程/计算机系统基础/data/6.md"
+    },
+    {
       "basename": "中间代码生成",
       "path": "docs/课程/编译原理/笔记/中间代码生成.md"
     },
@@ -169,10 +177,6 @@
       "path": "docs/算法/数学.md"
     },
     {
-      "basename": "6",
-      "path": "docs/归档课程/计算机系统基础/data/6.md"
-    },
-    {
       "basename": "unity",
       "path": "docs/游戏开发/游戏引擎/unity/unity.md"
     },
@@ -195,10 +199,6 @@
     {
       "basename": "正则表达式",
       "path": "docs/杂项/杂项/正则表达式.md"
-    },
-    {
-      "basename": "使用VSCode编写C++单文件程序(Windows系统)",
-      "path": "docs/算法/使用VSCode编写C++单文件程序(Windows系统).md"
     }
   ],
   "omittedPaths": [],
