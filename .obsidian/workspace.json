@@ -8,12 +8,36 @@
         "type": "tabs",
         "children": [
           {
-            "id": "ac0c5e2cecff0dad",
+            "id": "8530d4911ad0509f",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/归档课程/计算机系统基础/data/6.md",
+                "file": "docs/归档课程/计算机系统基础/data/3.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "d49f54ea5203428e",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "docs/归档课程/计算机系统基础/data/4.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "c802609a4a622bc2",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "docs/归档课程/计算机系统基础/data/7.md",
                 "mode": "source",
                 "source": false
               }
@@ -31,7 +55,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/面试/计算机科学/计算机组成原理.md",
+                "file": "docs/面试保研/计算机科学/计算机组成原理.md",
                 "mode": "source",
                 "source": false
               }
@@ -95,8 +119,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 204.5,
-    "collapsed": true
+    "width": 200
   },
   "right": {
     "id": "d615b65a4ccf8a6a",
@@ -112,7 +135,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/面试/计算机科学/计算机组成原理.md",
+                "file": "docs/归档课程/计算机系统基础/data/3.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -129,7 +152,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/面试/计算机科学/计算机组成原理.md",
+                "file": "docs/归档课程/计算机系统基础/data/3.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -152,7 +175,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/面试/计算机科学/计算机组成原理.md"
+                "file": "docs/归档课程/计算机系统基础/data/3.md"
               }
             }
           },
@@ -195,10 +218,34 @@
       "vscode-editor:新建代码文件": false
     }
   },
-  "active": "e61741ebc3b4a6dc",
+  "active": "8530d4911ad0509f",
   "lastOpenFiles": [
+    "docs/面试保研/计算机科学/计算机组成原理.md",
+    "docs/归档课程/计算机系统基础/data/3.md",
+    "docs/面试保研/计算机科学/计算机网络.md",
+    "docs/面试保研/计算机科学/数据结构.md",
+    "docs/面试保研/计算机科学/算法设计与分析.md",
+    "docs/面试保研/待完成.md",
+    "docs/面试保研/计算机科学/编译原理.md",
+    "docs/面试保研/计算机科学/操作系统.md",
+    "docs/面试保研/数学/离散数学.md",
     "docs/归档课程/计算机系统基础/data/6.md",
-    "docs/面试/计算机科学/计算机组成原理.md",
+    "面试/保研材料准备",
+    "docs/面试保研/数学/微积分.md",
+    "docs/面试保研/数学/线性代数.md",
+    "docs/面试保研/常用网站.md",
+    "docs/面试保研/英语/问题准备.md",
+    "docs/面试保研/英语/自我介绍.md",
+    "docs/面试保研/英语",
+    "docs/面试保研/数学",
+    "docs/面试保研/计算机科学",
+    "docs/归档课程/计算机系统基础/data/8.md",
+    "docs/面试保研",
+    "docs/面试(实习)/知识图谱.md",
+    "未命名",
+    "docs/面试(实习)/计算机科学/计算机网络.md",
+    "docs/归档课程/计算机系统基础/data/7.md",
+    "docs/归档课程/计算机系统基础/data/4.md",
     "docs/课程/编译原理/笔记/中间代码生成.md",
     "docs/课程/编译原理/课件/Chapter_6.pdf",
     "docs/课程/编译原理/作业/p4.md",
@@ -209,30 +256,6 @@
     "docs/课程/编译原理/实验/p1/Project_1.pdf",
     "docs/课程/编译原理/课件/Chapter_1.pdf",
     "docs/课程/编译原理/笔记/引论.md",
-    "docs/课程/编译原理/笔记/运行时刻环境.md",
-    "docs/课程/编译原理/笔记/语法分析.md",
-    "docs/课程/编译原理/作业/p6.md",
-    "docs/c++/C++基础.md",
-    "docs/面试/计算机科学/并发编程.md",
-    "docs/课程/高质量图像渲染/课件/ch2_concepts.pdf",
-    "docs/课程/高质量图像渲染/课件/ch3_ray_tracing.pdf",
-    "docs/课程/高质量图像渲染/课件/ch4_ray_tracing2.pdf",
-    "docs/课程/高质量图像渲染/课件/ch1_introduction.pdf",
-    "docs/课程/高质量图像渲染/课件",
-    "docs/课程/高质量图像渲染",
-    "docs/移动端开发/安卓/android.md",
-    "docs/算法/排序&选择.md",
-    "docs/课程/操作系统/笔记/并发.md",
-    "docs/面试/计算机科学/操作系统.md",
-    "docs/课程/计算机图形学/Games101-现代图形学基础.md",
-    "docs/数学/离散数学.md",
-    "docs/数学/微积分.md",
-    "docs/数学/线性代数.md",
-    "docs/数学/概率论.md",
-    "docs/面试/数学/离散数学.md",
-    "docs/课程/计算机图形学/实验/tinyraytracer.md",
-    "docs/课程/计算机图形学/实验/tinyrender.md",
-    "docs/面试/计算机科学/计算机图形学.md",
     "CsNotes/2021-11-22-22-54-02.png",
     "CsNotes/2021-11-22-22-52-49.png",
     "CsNotes/2021-11-22-22-49-26.png",
