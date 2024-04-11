@@ -5,6 +5,14 @@
       "path": "docs/面试保研/计算机科学/计算机组成原理.md"
     },
     {
+      "basename": "4",
+      "path": "docs/归档课程/计算机系统基础/data/4.md"
+    },
+    {
+      "basename": "U8 中央处理器",
+      "path": "docs/归档课程/数字逻辑与计算机组成/笔记/U8 中央处理器.md"
+    },
+    {
       "basename": "8",
       "path": "docs/归档课程/计算机系统基础/data/8.md"
     },
@@ -13,16 +21,8 @@
       "path": "docs/归档课程/计算机系统基础/data/7.md"
     },
     {
-      "basename": "4",
-      "path": "docs/归档课程/计算机系统基础/data/4.md"
-    },
-    {
       "basename": "往年题目",
       "path": "docs/面试保研/往年题目.md"
-    },
-    {
-      "basename": "U8 中央处理器",
-      "path": "docs/归档课程/数字逻辑与计算机组成/笔记/U8 中央处理器.md"
     },
     {
       "basename": "3",
@@ -195,10 +195,6 @@
     {
       "basename": "数据结构",
       "path": "docs/算法/数据结构.md"
-    },
-    {
-      "basename": "Chapter_4",
-      "path": "docs/课程/编译原理/课件/Chapter_4.pdf"
     }
   ],
   "omittedPaths": [],

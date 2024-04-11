@@ -9,24 +9,12 @@
         "dimension": 49.783236994219656,
         "children": [
           {
-            "id": "d49f54ea5203428e",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "docs/归档课程/计算机系统基础/data/4.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
             "id": "d28161de159a60db",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/归档课程/数字逻辑与计算机组成/笔记/U8 中央处理器.md",
+                "file": "docs/归档课程/计算机系统基础/data/4.md",
                 "mode": "source",
                 "source": false
               }
@@ -56,8 +44,7 @@
               }
             }
           }
-        ],
-        "currentTab": 3
+        ]
       },
       {
         "id": "1cf2d88ba9f15d9c",
@@ -150,7 +137,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/面试保研/计算机科学/计算机组成原理.md",
+                "file": "docs/归档课程/计算机系统基础/data/4.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -167,7 +154,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/面试保研/计算机科学/计算机组成原理.md",
+                "file": "docs/归档课程/计算机系统基础/data/4.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -190,7 +177,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/面试保研/计算机科学/计算机组成原理.md"
+                "file": "docs/归档课程/计算机系统基础/data/4.md"
               }
             }
           },
@@ -233,14 +220,15 @@
       "vscode-editor:新建代码文件": false
     }
   },
-  "active": "e61741ebc3b4a6dc",
+  "active": "d28161de159a60db",
   "lastOpenFiles": [
-    "docs/归档课程/计算机系统基础/data/8.md",
     "docs/面试保研/计算机科学/计算机组成原理.md",
-    "docs/归档课程/计算机系统基础/data/7.md",
     "docs/归档课程/计算机系统基础/data/4.md",
-    "docs/面试保研/往年题目.md",
+    "docs/归档课程/计算机系统基础/data/4^65745.md",
     "docs/归档课程/数字逻辑与计算机组成/笔记/U8 中央处理器.md",
+    "docs/归档课程/计算机系统基础/data/8.md",
+    "docs/归档课程/计算机系统基础/data/7.md",
+    "docs/面试保研/往年题目.md",
     "docs/归档课程/计算机系统基础/data/3.md",
     "docs/课程/软件体系结构/笔记/SSM/SpringMVC.md",
     "Excalidraw/Drawing 2024-04-11 14.02.59.excalidraw.md",
@@ -266,7 +254,6 @@
     "docs/面试(实习)/知识图谱.md",
     "未命名",
     "docs/面试(实习)/计算机科学/计算机网络.md",
-    "docs/课程/编译原理/笔记/中间代码生成.md",
     "docs/课程/编译原理/课件/Chapter_6.pdf",
     "docs/课程/编译原理/课件/Chapter_5.pdf",
     "docs/课程/编译原理/实验/p1/Project_1.pdf",
