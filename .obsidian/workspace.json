@@ -18,21 +18,8 @@
                 "source": false
               }
             }
-          },
-          {
-            "id": "ef25b89bebe8cbc5",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "docs/归档课程/数字逻辑与计算机组成/笔记/U7 指令系统.md",
-                "mode": "source",
-                "source": false
-              }
-            }
           }
-        ],
-        "currentTab": 1
+        ]
       },
       {
         "id": "1cf2d88ba9f15d9c",
@@ -209,9 +196,9 @@
   },
   "active": "e61741ebc3b4a6dc",
   "lastOpenFiles": [
-    "docs/归档课程/数字逻辑与计算机组成/笔记/U7 指令系统.md",
-    "docs/面试保研/计算机科学/计算机组成原理.md",
     "docs/归档课程/计算机系统基础/data/3.md",
+    "docs/面试保研/计算机科学/计算机组成原理.md",
+    "docs/归档课程/数字逻辑与计算机组成/笔记/U7 指令系统.md",
     "docs/归档课程/计算机系统基础/data/4.md",
     "docs/归档课程/计算机系统基础/data/7.md",
     "docs/面试保研/计算机科学/计算机网络.md",
