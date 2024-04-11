@@ -9,10 +9,6 @@
       "path": "面试/自我介绍/腾讯天美游戏端开发.md"
     },
     {
-      "basename": "计算机图形学",
-      "path": "docs/面试/计算机科学/计算机图形学.md"
-    },
-    {
       "basename": "现代图形学基础",
       "path": "docs/计算机图形学/图形学基础/现代图形学基础.md"
     },
@@ -97,10 +93,6 @@
       "path": "docs/杂项/linux与shell/linux/进程管理.md"
     },
     {
-      "basename": "并发编程",
-      "path": "docs/面试/计算机科学/并发编程.md"
-    },
-    {
       "basename": "文本处理",
       "path": "docs/杂项/linux与shell/linux/文本处理.md"
     },
@@ -125,10 +117,6 @@
       "path": "docs/数据库/关系数据库/MySQL.md"
     },
     {
-      "basename": "计算机网络",
-      "path": "docs/面试/计算机科学/计算机网络.md"
-    },
-    {
       "basename": "Redis",
       "path": "docs/数据库/NoSQL/Redis.md"
     },
@@ -139,10 +127,6 @@
     {
       "basename": "八股",
       "path": "docs/c++/八股.md"
-    },
-    {
-      "basename": "杂项",
-      "path": "docs/面试/计算机科学/杂项.md"
     },
     {
       "basename": "数学",
@@ -167,10 +151,6 @@
     {
       "basename": "Project_1",
       "path": "docs/课程/编译原理/实验/p1/Project_1.pdf"
-    },
-    {
-      "basename": "实验笔记",
-      "path": "docs/课程/编译原理/实验/实验笔记.md"
     },
     {
       "basename": "正则表达式",
