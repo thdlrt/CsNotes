@@ -4,16 +4,34 @@
     "type": "split",
     "children": [
       {
-        "id": "f61986fe771b62b7",
+        "id": "897b9a8dcc004725",
         "type": "tabs",
         "children": [
           {
-            "id": "d2f3babbb3fc6568",
+            "id": "d49f54ea5203428e",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/课程/软件体系结构/笔记/SSM/SpringMVC.md",
+                "file": "docs/归档课程/计算机系统基础/data/3.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          }
+        ]
+      },
+      {
+        "id": "1cf2d88ba9f15d9c",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "e61741ebc3b4a6dc",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "docs/面试保研/计算机科学/计算机组成原理.md",
                 "mode": "source",
                 "source": false
               }
@@ -48,7 +66,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "tag:#include命令指定的文",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -77,8 +95,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 200
   },
   "right": {
     "id": "d615b65a4ccf8a6a",
@@ -94,7 +111,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/课程/软件体系结构/笔记/SSM/SpringMVC.md",
+                "file": "docs/面试保研/计算机科学/计算机组成原理.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -111,7 +128,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/课程/软件体系结构/笔记/SSM/SpringMVC.md",
+                "file": "docs/面试保研/计算机科学/计算机组成原理.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -134,7 +151,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/课程/软件体系结构/笔记/SSM/SpringMVC.md"
+                "file": "docs/面试保研/计算机科学/计算机组成原理.md"
               }
             }
           },
@@ -159,8 +176,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 292.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -178,44 +194,44 @@
       "vscode-editor:新建代码文件": false
     }
   },
-  "active": "d2f3babbb3fc6568",
+  "active": "e61741ebc3b4a6dc",
   "lastOpenFiles": [
-    "docs/课程/软件体系结构/笔记/分发系统.md",
-    "docs/课程/软件体系结构/笔记/Spring REST.md",
-    "Excalidraw/Drawing 2024-04-11 14.02.59.excalidraw.md",
-    "Excalidraw",
-    "docs/课程/软件体系结构/笔记/Spring.md",
-    "docs/软件工程/设计模式.md",
-    "conflict-files-obsidian-git.md",
-    "docs/面试保研/数学/线性代数.md",
+    "docs/归档课程/计算机系统基础/data/3.md",
     "docs/面试保研/计算机科学/计算机组成原理.md",
-    "docs/面试保研/数学/离散数学.md",
-    "docs/面试保研/数学/微积分.md",
+    "docs/课程/软件体系结构/笔记/SSM/SpringMVC.md",
+    "Excalidraw/Drawing 2024-04-11 14.02.59.excalidraw.md",
+    "docs/归档课程/数字逻辑与计算机组成/笔记/U7 指令系统.md",
+    "docs/归档课程/计算机系统基础/data/4.md",
+    "docs/归档课程/计算机系统基础/data/7.md",
     "docs/面试保研/计算机科学/计算机网络.md",
-    "docs/面试保研/计算机科学/编译原理.md",
-    "docs/面试保研/计算机科学/算法设计与分析.md",
     "docs/面试保研/计算机科学/数据结构.md",
+    "docs/面试保研/计算机科学/算法设计与分析.md",
+    "docs/面试保研/待完成.md",
+    "docs/面试保研/计算机科学/编译原理.md",
     "docs/面试保研/计算机科学/操作系统.md",
+    "docs/面试保研/数学/离散数学.md",
+    "docs/归档课程/计算机系统基础/data/6.md",
+    "面试/保研材料准备",
+    "docs/面试保研/数学/微积分.md",
+    "docs/面试保研/数学/线性代数.md",
+    "docs/面试保研/常用网站.md",
     "docs/面试保研/英语/问题准备.md",
     "docs/面试保研/英语/自我介绍.md",
+    "docs/面试保研/英语",
     "docs/面试保研/数学",
     "docs/面试保研/计算机科学",
-    "docs/面试保研/英语",
-    "docs/面试保研/待完成.md",
-    "docs/面试保研/常用网站.md",
+    "docs/归档课程/计算机系统基础/data/8.md",
     "docs/面试保研",
-    "docs/面试(实习)/计算机科学/计算机图形学.md",
-    "docs/面试(实习)/计算机科学/杂项.md",
-    "docs/面试(实习)/计算机科学/计算机网络.md",
-    "docs/面试(实习)/计算机科学/并发编程.md",
-    "docs/面试(实习)/计算机科学/操作系统.md",
-    "docs/面试(实习)/计算机科学",
     "docs/面试(实习)/知识图谱.md",
-    "docs/面试(实习)",
-    "docs/课程/编译原理/实验/实验笔记(编译工具的使用).md",
-    "docs/课程/高质量图像渲染/课件/ch4_ray_tracing2.pdf",
-    "docs/课程/高质量图像渲染/课件/ch3_ray_tracing.pdf",
-    "docs/课程/高质量图像渲染/课件/ch2_concepts.pdf",
+    "未命名",
+    "docs/面试(实习)/计算机科学/计算机网络.md",
+    "docs/课程/编译原理/笔记/中间代码生成.md",
+    "docs/课程/编译原理/课件/Chapter_6.pdf",
+    "docs/课程/编译原理/作业/p4.md",
+    "docs/课程/编译原理/作业/p5.md",
+    "docs/课程/编译原理/课件/Chapter_5.pdf",
+    "docs/课程/编译原理/实验/p1/Project_1.pdf",
+    "docs/课程/编译原理/课件/Chapter_1.pdf",
     "CsNotes/2021-11-22-22-54-02.png",
     "CsNotes/2021-11-22-22-52-49.png",
     "CsNotes/2021-11-22-22-49-26.png",
