@@ -5,6 +5,14 @@
       "path": "docs/面试保研/计算机科学/计算机组成原理.md"
     },
     {
+      "basename": "8",
+      "path": "docs/归档课程/计算机系统基础/data/8.md"
+    },
+    {
+      "basename": "7",
+      "path": "docs/归档课程/计算机系统基础/data/7.md"
+    },
+    {
       "basename": "4",
       "path": "docs/归档课程/计算机系统基础/data/4.md"
     },
@@ -27,10 +35,6 @@
     {
       "basename": "U7 指令系统",
       "path": "docs/归档课程/数字逻辑与计算机组成/笔记/U7 指令系统.md"
-    },
-    {
-      "basename": "7",
-      "path": "docs/归档课程/计算机系统基础/data/7.md"
     },
     {
       "basename": "计算机网络",
@@ -83,10 +87,6 @@
     {
       "basename": "自我介绍",
       "path": "docs/面试保研/英语/自我介绍.md"
-    },
-    {
-      "basename": "8",
-      "path": "docs/归档课程/计算机系统基础/data/8.md"
     },
     {
       "basename": "知识图谱",

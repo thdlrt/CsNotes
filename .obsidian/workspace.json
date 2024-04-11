@@ -6,6 +6,7 @@
       {
         "id": "897b9a8dcc004725",
         "type": "tabs",
+        "dimension": 49.783236994219656,
         "children": [
           {
             "id": "d49f54ea5203428e",
@@ -30,12 +31,38 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "74b7fa676cecc6a0",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "docs/归档课程/计算机系统基础/data/7.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "c93651e67fe45faf",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "docs/归档课程/计算机系统基础/data/8.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
-        ]
+        ],
+        "currentTab": 3
       },
       {
         "id": "1cf2d88ba9f15d9c",
         "type": "tabs",
+        "dimension": 50.21676300578035,
         "children": [
           {
             "id": "e61741ebc3b4a6dc",
@@ -107,8 +134,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 200
   },
   "right": {
     "id": "d615b65a4ccf8a6a",
@@ -209,15 +235,16 @@
   },
   "active": "e61741ebc3b4a6dc",
   "lastOpenFiles": [
-    "docs/归档课程/计算机系统基础/data/4.md",
+    "docs/归档课程/计算机系统基础/data/8.md",
     "docs/面试保研/计算机科学/计算机组成原理.md",
+    "docs/归档课程/计算机系统基础/data/7.md",
+    "docs/归档课程/计算机系统基础/data/4.md",
     "docs/面试保研/往年题目.md",
     "docs/归档课程/数字逻辑与计算机组成/笔记/U8 中央处理器.md",
     "docs/归档课程/计算机系统基础/data/3.md",
     "docs/课程/软件体系结构/笔记/SSM/SpringMVC.md",
     "Excalidraw/Drawing 2024-04-11 14.02.59.excalidraw.md",
     "docs/归档课程/数字逻辑与计算机组成/笔记/U7 指令系统.md",
-    "docs/归档课程/计算机系统基础/data/7.md",
     "docs/面试保研/计算机科学/计算机网络.md",
     "docs/面试保研/计算机科学/数据结构.md",
     "docs/面试保研/计算机科学/算法设计与分析.md",
@@ -235,7 +262,6 @@
     "docs/面试保研/英语",
     "docs/面试保研/数学",
     "docs/面试保研/计算机科学",
-    "docs/归档课程/计算机系统基础/data/8.md",
     "docs/面试保研",
     "docs/面试(实习)/知识图谱.md",
     "未命名",
