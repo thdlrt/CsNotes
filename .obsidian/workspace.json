@@ -8,24 +8,12 @@
         "type": "tabs",
         "children": [
           {
-            "id": "8530d4911ad0509f",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "docs/归档课程/计算机系统基础/data/3.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
             "id": "d49f54ea5203428e",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/归档课程/计算机系统基础/data/4.md",
+                "file": "docs/归档课程/计算机系统基础/data/3.md",
                 "mode": "source",
                 "source": false
               }
@@ -123,7 +111,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/归档课程/计算机系统基础/data/3.md",
+                "file": "docs/面试保研/计算机科学/计算机组成原理.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -140,7 +128,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/归档课程/计算机系统基础/data/3.md",
+                "file": "docs/面试保研/计算机科学/计算机组成原理.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -163,7 +151,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/归档课程/计算机系统基础/data/3.md"
+                "file": "docs/面试保研/计算机科学/计算机组成原理.md"
               }
             }
           },
@@ -206,12 +194,12 @@
       "vscode-editor:新建代码文件": false
     }
   },
-  "active": "8530d4911ad0509f",
+  "active": "e61741ebc3b4a6dc",
   "lastOpenFiles": [
-    "docs/面试保研/计算机科学/计算机组成原理.md",
     "docs/归档课程/计算机系统基础/data/3.md",
-    "docs/归档课程/数字逻辑与计算机组成/笔记/U7 指令系统.md",
     "docs/归档课程/计算机系统基础/data/4.md",
+    "docs/面试保研/计算机科学/计算机组成原理.md",
+    "docs/归档课程/数字逻辑与计算机组成/笔记/U7 指令系统.md",
     "docs/归档课程/计算机系统基础/data/7.md",
     "docs/面试保研/计算机科学/计算机网络.md",
     "docs/面试保研/计算机科学/数据结构.md",
