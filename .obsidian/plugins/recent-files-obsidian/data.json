@@ -1,12 +1,16 @@
 {
   "recentFiles": [
     {
-      "basename": "C++基础",
-      "path": "docs/c++/C++基础.md"
+      "basename": "设计模式",
+      "path": "docs/软件工程/设计模式.md"
     },
     {
-      "basename": "并发编程",
-      "path": "docs/面试/计算机科学/并发编程.md"
+      "basename": "腾讯天美游戏端开发",
+      "path": "面试/自我介绍/腾讯天美游戏端开发.md"
+    },
+    {
+      "basename": "计算机图形学",
+      "path": "docs/面试/计算机科学/计算机图形学.md"
     },
     {
       "basename": "现代图形学基础",
@@ -43,10 +47,6 @@
     {
       "basename": "待学高级知识",
       "path": "docs/算法/待学高级知识.md"
-    },
-    {
-      "basename": "腾讯天美游戏端开发",
-      "path": "面试/自我介绍/腾讯天美游戏端开发.md"
     },
     {
       "basename": "p5",
@@ -95,6 +95,10 @@
     {
       "basename": "进程管理",
       "path": "docs/杂项/linux与shell/linux/进程管理.md"
+    },
+    {
+      "basename": "并发编程",
+      "path": "docs/面试/计算机科学/并发编程.md"
     },
     {
       "basename": "文本处理",
@@ -151,10 +155,6 @@
     {
       "basename": "unity",
       "path": "docs/游戏开发/游戏引擎/unity/unity.md"
-    },
-    {
-      "basename": "设计模式",
-      "path": "docs/软件工程/设计模式.md"
     },
     {
       "basename": "android",

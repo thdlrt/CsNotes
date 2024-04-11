@@ -4,16 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "397eed0ee2f95b69",
+        "id": "f61986fe771b62b7",
         "type": "tabs",
         "children": [
           {
-            "id": "9845d3bd667a2ee5",
+            "id": "d2f3babbb3fc6568",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/c++/C++基础.md",
+                "file": "docs/软件工程/设计模式.md",
                 "mode": "source",
                 "source": false
               }
@@ -77,7 +77,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 241.5
   },
   "right": {
     "id": "d615b65a4ccf8a6a",
@@ -93,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/c++/C++基础.md",
+                "file": "docs/软件工程/设计模式.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/c++/C++基础.md",
+                "file": "docs/软件工程/设计模式.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/c++/C++基础.md"
+                "file": "docs/软件工程/设计模式.md"
               }
             }
           },
@@ -158,8 +158,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 200
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -177,43 +176,44 @@
       "vscode-editor:新建代码文件": false
     }
   },
-  "active": "9845d3bd667a2ee5",
+  "active": "d2f3babbb3fc6568",
   "lastOpenFiles": [
-    "docs/面试/计算机科学/并发编程.md",
-    "docs/课程/高质量图像渲染/课件/ch2_concepts.pdf",
-    "docs/课程/高质量图像渲染/课件/ch3_ray_tracing.pdf",
+    "面试/自我介绍/腾讯天美游戏端开发.md",
+    "docs/面试/计算机科学/计算机图形学.md",
+    "docs/计算机图形学/图形学基础/现代图形学基础.md",
     "docs/课程/高质量图像渲染/课件/ch4_ray_tracing2.pdf",
+    "docs/课程/高质量图像渲染/课件/ch3_ray_tracing.pdf",
+    "docs/课程/高质量图像渲染/课件/ch2_concepts.pdf",
     "docs/课程/高质量图像渲染/课件/ch1_introduction.pdf",
     "docs/课程/高质量图像渲染/课件",
     "docs/课程/高质量图像渲染",
-    "docs/移动端开发/安卓/android.md",
-    "docs/算法/排序&选择.md",
-    "docs/课程/操作系统/笔记/并发.md",
-    "docs/面试/计算机科学/操作系统.md",
-    "docs/课程/计算机图形学/Games101-现代图形学基础.md",
-    "docs/数学/离散数学.md",
-    "docs/数学/微积分.md",
-    "docs/数学/线性代数.md",
-    "docs/数学/概率论.md",
-    "docs/数学",
-    "docs/面试/数学/离散数学.md",
-    "docs/课程/计算机图形学/实验/tinyraytracer.md",
-    "docs/课程/计算机图形学/实验/tinyrender.md",
-    "docs/面试/计算机科学/计算机图形学.md",
-    "docs/课程/计算机图形学/实验/未命名.md",
-    "docs/课程/计算机图形学/实验/README.md",
-    "docs/课程/计算机图形学/实验",
-    "docs/面试/计算机科学/计算机组成原理.md",
+    "docs/计算机图形学/图形学基础/动画.md",
+    "docs/计算机图形学/游戏相关",
+    "docs/计算机图形学/图形学基础/材质.md",
+    "docs/计算机图形学/图形学基础/几何.md",
+    "docs/计算机图形学/图形学基础/线性代数与变换.md",
+    "docs/计算机图形学/图形学基础/光线追踪.md",
+    "docs/计算机图形学/图形学基础/光栅化.md",
+    "docs/计算机图形学/原理/未命名",
+    "docs/计算机图形学/API编程",
+    "docs/计算机图形学/图形学基础",
+    "docs/课程/编译原理/笔记/引论.md",
     "docs/算法/待学高级知识.md",
+    "docs/课程/金融风险管理/实验3 关键利率久期等的计算.md",
+    "docs/课程/软件体系结构/笔记/SSM/SpringMVC.md",
+    "docs/计算机图形学/实验/tinyrender.md",
+    "docs/计算机图形学/实验/tinyraytracer.md",
+    "docs/课程/操作系统/代码/fish/README.md",
     "docs/杂项/vscode/运行配置.md",
-    "docs/杂项/vscode/Untitled.md",
-    "docs/杂项/vscode",
-    "docs/杂项/Untitled Folder",
+    "docs/数学/线性代数.md",
+    "docs/数学/离散数学.md",
+    "docs/数学/概率论.md",
+    "docs/数学/微积分.md",
+    "docs/游戏开发/游戏设计.md",
+    "docs/游戏开发/八股.md",
     "docs/杂项/构建&编译&调试/makefile.md",
-    "docs/c++/库/线性代数engin.md",
-    "docs/课程/计算机图形学/opengl.md",
-    "docs/课程/编译原理/作业/p6.md",
-    "docs/归档课程/数字逻辑与计算机组成/笔记/U6 运算.md",
+    "docs/课程/软件体系结构/笔记/分发系统.md",
+    "docs/课程/编译原理/作业/p5.md",
     "CsNotes/2021-11-22-22-54-02.png",
     "CsNotes/2021-11-22-22-52-49.png",
     "CsNotes/2021-11-22-22-49-26.png",
