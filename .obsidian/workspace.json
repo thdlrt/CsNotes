@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/软件工程/设计模式.md",
+                "file": "docs/课程/软件体系结构/笔记/SSM/SpringMVC.md",
                 "mode": "source",
                 "source": false
               }
@@ -77,7 +77,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 241.5
+    "width": 200,
+    "collapsed": true
   },
   "right": {
     "id": "d615b65a4ccf8a6a",
@@ -93,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/软件工程/设计模式.md",
+                "file": "docs/课程/软件体系结构/笔记/SSM/SpringMVC.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +111,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/软件工程/设计模式.md",
+                "file": "docs/课程/软件体系结构/笔记/SSM/SpringMVC.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +134,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/软件工程/设计模式.md"
+                "file": "docs/课程/软件体系结构/笔记/SSM/SpringMVC.md"
               }
             }
           },
@@ -158,7 +159,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 200,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -178,8 +180,13 @@
   },
   "active": "d2f3babbb3fc6568",
   "lastOpenFiles": [
-    "conflict-files-obsidian-git.md",
+    "docs/课程/软件体系结构/笔记/分发系统.md",
+    "docs/课程/软件体系结构/笔记/Spring REST.md",
+    "Excalidraw/Drawing 2024-04-11 14.02.59.excalidraw.md",
+    "Excalidraw",
+    "docs/课程/软件体系结构/笔记/Spring.md",
     "docs/软件工程/设计模式.md",
+    "conflict-files-obsidian-git.md",
     "docs/面试保研/数学/线性代数.md",
     "docs/面试保研/计算机科学/计算机组成原理.md",
     "docs/面试保研/数学/离散数学.md",
@@ -206,14 +213,9 @@
     "docs/面试(实习)/知识图谱.md",
     "docs/面试(实习)",
     "docs/课程/编译原理/实验/实验笔记(编译工具的使用).md",
-    "面试/自我介绍/腾讯天美游戏端开发.md",
-    "docs/面试/计算机科学/计算机图形学.md",
-    "docs/计算机图形学/图形学基础/现代图形学基础.md",
     "docs/课程/高质量图像渲染/课件/ch4_ray_tracing2.pdf",
     "docs/课程/高质量图像渲染/课件/ch3_ray_tracing.pdf",
     "docs/课程/高质量图像渲染/课件/ch2_concepts.pdf",
-    "docs/课程/高质量图像渲染/课件/ch1_introduction.pdf",
-    "docs/计算机图形学/图形学基础/动画.md",
     "CsNotes/2021-11-22-22-54-02.png",
     "CsNotes/2021-11-22-22-52-49.png",
     "CsNotes/2021-11-22-22-49-26.png",
