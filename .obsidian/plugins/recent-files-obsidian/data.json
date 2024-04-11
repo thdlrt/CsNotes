@@ -9,6 +9,10 @@
       "path": "docs/归档课程/计算机系统基础/data/4.md"
     },
     {
+      "basename": "U8 中央处理器",
+      "path": "docs/归档课程/数字逻辑与计算机组成/笔记/U8 中央处理器.md"
+    },
+    {
       "basename": "3",
       "path": "docs/归档课程/计算机系统基础/data/3.md"
     },
@@ -195,10 +199,6 @@
     {
       "basename": "词法分析",
       "path": "docs/课程/编译原理/笔记/词法分析.md"
-    },
-    {
-      "basename": "日志系统",
-      "path": "docs/杂项/linux与shell/linux/日志系统.md"
     }
   ],
   "omittedPaths": [],
