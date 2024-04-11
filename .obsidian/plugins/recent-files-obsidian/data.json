@@ -9,6 +9,18 @@
       "path": "docs/面试保研/计算机科学/计算机组成原理.md"
     },
     {
+      "basename": "U7 指令系统",
+      "path": "docs/归档课程/数字逻辑与计算机组成/笔记/U7 指令系统.md"
+    },
+    {
+      "basename": "4",
+      "path": "docs/归档课程/计算机系统基础/data/4.md"
+    },
+    {
+      "basename": "7",
+      "path": "docs/归档课程/计算机系统基础/data/7.md"
+    },
+    {
       "basename": "计算机网络",
       "path": "docs/面试保研/计算机科学/计算机网络.md"
     },
@@ -71,14 +83,6 @@
     {
       "basename": "计算机网络",
       "path": "docs/面试(实习)/计算机科学/计算机网络.md"
-    },
-    {
-      "basename": "7",
-      "path": "docs/归档课程/计算机系统基础/data/7.md"
-    },
-    {
-      "basename": "4",
-      "path": "docs/归档课程/计算机系统基础/data/4.md"
     },
     {
       "basename": "中间代码生成",
@@ -195,10 +199,6 @@
     {
       "basename": "linux",
       "path": "docs/杂项/linux与shell/linux.md"
-    },
-    {
-      "basename": "进程管理",
-      "path": "docs/杂项/linux与shell/linux/进程管理.md"
     }
   ],
   "omittedPaths": [],

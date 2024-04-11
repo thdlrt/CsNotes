@@ -30,18 +30,6 @@
                 "source": false
               }
             }
-          },
-          {
-            "id": "c802609a4a622bc2",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "docs/归档课程/计算机系统基础/data/7.md",
-                "mode": "source",
-                "source": false
-              }
-            }
           }
         ]
       },
@@ -90,7 +78,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "tag:#include命令指定的文",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -222,6 +210,9 @@
   "lastOpenFiles": [
     "docs/面试保研/计算机科学/计算机组成原理.md",
     "docs/归档课程/计算机系统基础/data/3.md",
+    "docs/归档课程/数字逻辑与计算机组成/笔记/U7 指令系统.md",
+    "docs/归档课程/计算机系统基础/data/4.md",
+    "docs/归档课程/计算机系统基础/data/7.md",
     "docs/面试保研/计算机科学/计算机网络.md",
     "docs/面试保研/计算机科学/数据结构.md",
     "docs/面试保研/计算机科学/算法设计与分析.md",
@@ -244,8 +235,6 @@
     "docs/面试(实习)/知识图谱.md",
     "未命名",
     "docs/面试(实习)/计算机科学/计算机网络.md",
-    "docs/归档课程/计算机系统基础/data/7.md",
-    "docs/归档课程/计算机系统基础/data/4.md",
     "docs/课程/编译原理/笔记/中间代码生成.md",
     "docs/课程/编译原理/课件/Chapter_6.pdf",
     "docs/课程/编译原理/作业/p4.md",
@@ -255,7 +244,6 @@
     "docs/课程/编译原理/课件/Chapter_5.pdf",
     "docs/课程/编译原理/实验/p1/Project_1.pdf",
     "docs/课程/编译原理/课件/Chapter_1.pdf",
-    "docs/课程/编译原理/笔记/引论.md",
     "CsNotes/2021-11-22-22-54-02.png",
     "CsNotes/2021-11-22-22-52-49.png",
     "CsNotes/2021-11-22-22-49-26.png",
