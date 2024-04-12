@@ -137,7 +137,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/面试保研/计算机科学/计算机组成原理.md",
+                "file": "docs/归档课程/数字逻辑与计算机组成/笔记/U8 中央处理器.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -154,7 +154,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/面试保研/计算机科学/计算机组成原理.md",
+                "file": "docs/归档课程/数字逻辑与计算机组成/笔记/U8 中央处理器.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -177,7 +177,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/面试保研/计算机科学/计算机组成原理.md"
+                "file": "docs/归档课程/数字逻辑与计算机组成/笔记/U8 中央处理器.md"
               }
             }
           },
@@ -220,10 +220,10 @@
       "vscode-editor:新建代码文件": false
     }
   },
-  "active": "e61741ebc3b4a6dc",
+  "active": "d28161de159a60db",
   "lastOpenFiles": [
-    "docs/归档课程/数字逻辑与计算机组成/笔记/U8 中央处理器.md",
     "docs/面试保研/计算机科学/计算机组成原理.md",
+    "docs/归档课程/数字逻辑与计算机组成/笔记/U8 中央处理器.md",
     "docs/归档课程/计算机系统基础/data/4.md",
     "docs/归档课程/计算机系统基础/data/4^65745.md",
     "docs/归档课程/计算机系统基础/data/8.md",
