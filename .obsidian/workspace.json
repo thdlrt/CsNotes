@@ -9,18 +9,6 @@
         "dimension": 49.78323699421966,
         "children": [
           {
-            "id": "74b7fa676cecc6a0",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "docs/归档课程/计算机系统基础/data/7.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
             "id": "c93651e67fe45faf",
             "type": "leaf",
             "state": {
@@ -211,10 +199,10 @@
   },
   "active": "e61741ebc3b4a6dc",
   "lastOpenFiles": [
-    "docs/归档课程/计算机系统基础/data/7.md",
-    "docs/面试保研/计算机科学/计算机组成原理.md",
-    "docs/归档课程/计算机系统基础/data/6.md",
     "docs/归档课程/计算机系统基础/data/8.md",
+    "docs/面试保研/计算机科学/计算机组成原理.md",
+    "docs/归档课程/计算机系统基础/data/7.md",
+    "docs/归档课程/计算机系统基础/data/6.md",
     "docs/归档课程/数字逻辑与计算机组成/笔记/U8 中央处理器.md",
     "docs/课程/编译原理/作业/p7.md",
     "docs/课程/编译原理/实验/p3/Project_3.pdf",
