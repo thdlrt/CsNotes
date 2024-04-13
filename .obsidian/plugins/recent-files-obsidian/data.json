@@ -1,12 +1,16 @@
 {
   "recentFiles": [
     {
+      "basename": "计算机组成原理",
+      "path": "docs/面试保研/计算机科学/计算机组成原理.md"
+    },
+    {
       "basename": "7",
       "path": "docs/归档课程/计算机系统基础/data/7.md"
     },
     {
-      "basename": "计算机组成原理",
-      "path": "docs/面试保研/计算机科学/计算机组成原理.md"
+      "basename": "6",
+      "path": "docs/归档课程/计算机系统基础/data/6.md"
     },
     {
       "basename": "8",
@@ -71,10 +75,6 @@
     {
       "basename": "离散数学",
       "path": "docs/面试保研/数学/离散数学.md"
-    },
-    {
-      "basename": "6",
-      "path": "docs/归档课程/计算机系统基础/data/6.md"
     },
     {
       "basename": "微积分",
