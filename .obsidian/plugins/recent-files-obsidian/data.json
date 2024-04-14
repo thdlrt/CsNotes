@@ -1,6 +1,10 @@
 {
   "recentFiles": [
     {
+      "basename": "Project_3",
+      "path": "docs/课程/编译原理/实验/p3/Project_3.pdf"
+    },
+    {
       "basename": "实验笔记(编译工具的使用)",
       "path": "docs/课程/编译原理/实验/实验笔记(编译工具的使用).md"
     },
@@ -195,10 +199,6 @@
     {
       "basename": "光线追踪",
       "path": "docs/计算机图形学/图形学基础/光线追踪.md"
-    },
-    {
-      "basename": "光栅化",
-      "path": "docs/计算机图形学/图形学基础/光栅化.md"
     }
   ],
   "omittedPaths": [],
