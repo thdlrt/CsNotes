@@ -1,6 +1,14 @@
 {
   "recentFiles": [
     {
+      "basename": "8",
+      "path": "docs/归档课程/计算机系统基础/data/8.md"
+    },
+    {
+      "basename": "Chapter_1",
+      "path": "docs/课程/编译原理/课件/Chapter_1.pdf"
+    },
+    {
       "basename": "实验笔记(编译工具的使用)",
       "path": "docs/课程/编译原理/实验/实验笔记(编译工具的使用).md"
     },
@@ -11,10 +19,6 @@
     {
       "basename": "计算机组成原理",
       "path": "docs/面试保研/计算机科学/计算机组成原理.md"
-    },
-    {
-      "basename": "8",
-      "path": "docs/归档课程/计算机系统基础/data/8.md"
     },
     {
       "basename": "7",
@@ -143,10 +147,6 @@
     {
       "basename": "Project_1",
       "path": "docs/课程/编译原理/实验/p1/Project_1.pdf"
-    },
-    {
-      "basename": "Chapter_1",
-      "path": "docs/课程/编译原理/课件/Chapter_1.pdf"
     },
     {
       "basename": "引论",

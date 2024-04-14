@@ -26,18 +26,6 @@
         "dimension": 50.252525252525245,
         "children": [
           {
-            "id": "e61741ebc3b4a6dc",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "docs/课程/编译原理/实验/实验笔记(编译工具的使用).md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
             "id": "919cf05efbc0ea31",
             "type": "leaf",
             "state": {
@@ -107,8 +95,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 200
   },
   "right": {
     "id": "d615b65a4ccf8a6a",
@@ -124,7 +111,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/课程/编译原理/实验/实验笔记(编译工具的使用).md",
+                "file": "docs/归档课程/计算机系统基础/data/8.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -141,7 +128,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/课程/编译原理/实验/实验笔记(编译工具的使用).md",
+                "file": "docs/归档课程/计算机系统基础/data/8.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -164,7 +151,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/课程/编译原理/实验/实验笔记(编译工具的使用).md"
+                "file": "docs/归档课程/计算机系统基础/data/8.md"
               }
             }
           },
@@ -207,10 +194,11 @@
       "vscode-editor:新建代码文件": false
     }
   },
-  "active": "e61741ebc3b4a6dc",
+  "active": "919cf05efbc0ea31",
   "lastOpenFiles": [
-    "docs/课程/编译原理/实验/p2/Project_2.pdf",
+    "docs/课程/编译原理/课件/Chapter_1.pdf",
     "docs/课程/编译原理/实验/实验笔记(编译工具的使用).md",
+    "docs/课程/编译原理/实验/p2/Project_2.pdf",
     "docs/面试保研/计算机科学/计算机组成原理.md",
     "docs/归档课程/计算机系统基础/data/8.md",
     "docs/归档课程/计算机系统基础/data/7.md",
