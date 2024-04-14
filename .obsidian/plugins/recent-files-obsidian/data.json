@@ -1,6 +1,14 @@
 {
   "recentFiles": [
     {
+      "basename": "实验笔记(编译工具的使用)",
+      "path": "docs/课程/编译原理/实验/实验笔记(编译工具的使用).md"
+    },
+    {
+      "basename": "Project_2",
+      "path": "docs/课程/编译原理/实验/p2/Project_2.pdf"
+    },
+    {
       "basename": "计算机组成原理",
       "path": "docs/面试保研/计算机科学/计算机组成原理.md"
     },
@@ -191,14 +199,6 @@
     {
       "basename": "光栅化",
       "path": "docs/计算机图形学/图形学基础/光栅化.md"
-    },
-    {
-      "basename": "待学高级知识",
-      "path": "docs/算法/待学高级知识.md"
-    },
-    {
-      "basename": "腾讯天美游戏端开发",
-      "path": "面试/自我介绍/腾讯天美游戏端开发.md"
     }
   ],
   "omittedPaths": [],
