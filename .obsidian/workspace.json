@@ -17,8 +17,17 @@
                 "file": "docs/课程/编译原理/实验/p2/Project_2.pdf"
               }
             }
+          },
+          {
+            "id": "64d14b4b47eba61d",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {}
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -92,7 +101,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/课程/编译原理/实验/p2/Project_2.pdf",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -109,7 +117,6 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/课程/编译原理/实验/p2/Project_2.pdf",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -131,9 +138,7 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "docs/课程/编译原理/实验/p2/Project_2.pdf"
-              }
+              "state": {}
             }
           },
           {
@@ -175,11 +180,11 @@
       "vscode-editor:新建代码文件": false
     }
   },
-  "active": "219c11ce17727b22",
+  "active": "64d14b4b47eba61d",
   "lastOpenFiles": [
+    "docs/课程/编译原理/实验/p2/Project_2.pdf",
     "docs/课程/编译原理/实验/p3/Project_3.pdf",
     "docs/课程/编译原理/实验/实验笔记(编译工具的使用).md",
-    "docs/课程/编译原理/实验/p2/Project_2.pdf",
     "docs/课程/编译原理/课件/Chapter_1.pdf",
     "docs/归档课程/计算机系统基础/data/8.md",
     "docs/面试保研/计算机科学/计算机组成原理.md",
