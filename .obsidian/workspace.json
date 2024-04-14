@@ -6,7 +6,7 @@
       {
         "id": "9d7a19776e2894d1",
         "type": "tabs",
-        "dimension": 49.74747474747475,
+        "dimension": 99.99999999999999,
         "children": [
           {
             "id": "219c11ce17727b22",
@@ -15,23 +15,6 @@
               "type": "pdf",
               "state": {
                 "file": "docs/课程/编译原理/实验/p2/Project_2.pdf"
-              }
-            }
-          }
-        ]
-      },
-      {
-        "id": "1cf2d88ba9f15d9c",
-        "type": "tabs",
-        "dimension": 50.252525252525245,
-        "children": [
-          {
-            "id": "d8279c1b8be46de5",
-            "type": "leaf",
-            "state": {
-              "type": "pdf",
-              "state": {
-                "file": "docs/课程/编译原理/实验/p3/Project_3.pdf"
               }
             }
           }
@@ -109,7 +92,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/课程/编译原理/实验/p3/Project_3.pdf",
+                "file": "docs/课程/编译原理/实验/p2/Project_2.pdf",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -126,7 +109,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/课程/编译原理/实验/p3/Project_3.pdf",
+                "file": "docs/课程/编译原理/实验/p2/Project_2.pdf",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -149,7 +132,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/课程/编译原理/实验/p3/Project_3.pdf"
+                "file": "docs/课程/编译原理/实验/p2/Project_2.pdf"
               }
             }
           },
@@ -192,8 +175,9 @@
       "vscode-editor:新建代码文件": false
     }
   },
-  "active": "d8279c1b8be46de5",
+  "active": "219c11ce17727b22",
   "lastOpenFiles": [
+    "docs/课程/编译原理/实验/p3/Project_3.pdf",
     "docs/课程/编译原理/实验/实验笔记(编译工具的使用).md",
     "docs/课程/编译原理/实验/p2/Project_2.pdf",
     "docs/课程/编译原理/课件/Chapter_1.pdf",
@@ -203,7 +187,6 @@
     "docs/归档课程/计算机系统基础/data/6.md",
     "docs/归档课程/数字逻辑与计算机组成/笔记/U8 中央处理器.md",
     "docs/课程/编译原理/作业/p7.md",
-    "docs/课程/编译原理/实验/p3/Project_3.pdf",
     "docs/课程/编译原理/实验/p2/Project_3.pdf",
     "docs/课程/编译原理/实验/p3",
     "docs/课程/编译原理/实验/p2",
