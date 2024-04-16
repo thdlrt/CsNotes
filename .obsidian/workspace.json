@@ -174,7 +174,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 292.5
+    "width": 292.5,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -194,8 +195,9 @@
   },
   "active": "73c3f3db8010ab1a",
   "lastOpenFiles": [
-    "docs/课程/编译原理/课件/Chapter_6.pdf",
+    "docs/课程/编译原理/课件/Chapter_7.pdf",
     "docs/课程/编译原理/笔记/中间代码生成.md",
+    "docs/课程/编译原理/课件/Chapter_6.pdf",
     "Excalidraw/Drawing 2024-04-16 23.40.35.excalidraw.md",
     "Excalidraw/Drawing 2024-04-11 14.02.59.excalidraw.md",
     "Excalidraw/Drawing 2024-04-16 23.39.50.excalidraw.md",
@@ -206,7 +208,6 @@
     "docs/面试(实习)/计算机科学/计算机图形学.md",
     "docs/课程/操作系统/笔记/并发.md",
     "docs/课程/编译原理/实验/实验笔记(编译工具的使用).md",
-    "docs/课程/编译原理/课件/Chapter_7.pdf",
     "docs/课程/操作系统/代码/thread-lib/thread.h",
     "docs/课程/编译原理/实验/p2/Project_2.pdf",
     "docs/面试(实习)/计算机科学/计算机网络.md",
