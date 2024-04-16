@@ -109,7 +109,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/课程/编译原理/笔记/中间代码生成.md",
+                "file": "Excalidraw/Drawing 2024-04-16 23.40.35.excalidraw.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -126,7 +126,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/课程/编译原理/笔记/中间代码生成.md",
+                "file": "Excalidraw/Drawing 2024-04-16 23.40.35.excalidraw.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -149,7 +149,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/课程/编译原理/笔记/中间代码生成.md"
+                "file": "Excalidraw/Drawing 2024-04-16 23.40.35.excalidraw.md"
               }
             }
           },
@@ -192,10 +192,47 @@
       "vscode-editor:新建代码文件": false
     }
   },
-  "active": "d65655192c45390a",
+  "floating": {
+    "id": "85965d92a1582493",
+    "type": "floating",
+    "children": [
+      {
+        "id": "c04ca4914b7e640c",
+        "type": "window",
+        "children": [
+          {
+            "id": "05060975ab20be83",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "14515e776783943f",
+                "type": "leaf",
+                "state": {
+                  "type": "excalidraw",
+                  "state": {
+                    "file": "Excalidraw/Drawing 2024-04-16 23.40.35.excalidraw.md"
+                  }
+                }
+              }
+            ]
+          }
+        ],
+        "direction": "vertical",
+        "x": 0,
+        "y": 0,
+        "width": 960,
+        "height": 1032,
+        "maximize": false,
+        "zoom": 0
+      }
+    ]
+  },
+  "active": "14515e776783943f",
   "lastOpenFiles": [
-    "docs/课程/编译原理/课件/Chapter_6.pdf",
     "docs/课程/编译原理/笔记/中间代码生成.md",
+    "Excalidraw/Drawing 2024-04-16 23.40.35.excalidraw.md",
+    "docs/课程/编译原理/课件/Chapter_6.pdf",
+    "Excalidraw/Drawing 2024-04-16 23.39.50.excalidraw.md",
     "docs/课程/编译原理/笔记/语法制导的编译技术.md",
     "docs/课程/编译原理/笔记/语法分析.md",
     "docs/课程/编译原理/作业/p6.md",
@@ -228,7 +265,6 @@
     "docs/归档课程/计算机系统基础/data/3.md",
     "docs/课程/软件体系结构/笔记/SSM/SpringMVC.md",
     "Excalidraw/Drawing 2024-04-11 14.02.59.excalidraw.md",
-    "docs/归档课程/数字逻辑与计算机组成/笔记/U7 指令系统.md",
     "CsNotes/2021-11-22-22-54-02.png",
     "CsNotes/2021-11-22-22-52-49.png",
     "CsNotes/2021-11-22-22-49-26.png",
