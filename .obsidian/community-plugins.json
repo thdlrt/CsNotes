@@ -16,5 +16,6 @@
   "obsidian-checklist-plugin",
   "omnisearch",
   "text-extractor",
-  "vscode-editor"
+  "vscode-editor",
+  "obsidian-copy-block-link"
 ]
