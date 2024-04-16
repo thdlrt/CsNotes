@@ -1,10 +1,6 @@
 {
   "recentFiles": [
     {
-      "basename": "Drawing 2024-04-16 23.40.35.excalidraw",
-      "path": "Excalidraw/Drawing 2024-04-16 23.40.35.excalidraw.md"
-    },
-    {
       "basename": "中间代码生成",
       "path": "docs/课程/编译原理/笔记/中间代码生成.md"
     },
@@ -13,8 +9,8 @@
       "path": "docs/课程/编译原理/课件/Chapter_6.pdf"
     },
     {
-      "basename": "Drawing 2024-04-16 23.39.50.excalidraw",
-      "path": "Excalidraw/Drawing 2024-04-16 23.39.50.excalidraw.md"
+      "basename": "Drawing 2024-04-16 23.40.35.excalidraw",
+      "path": "Excalidraw/Drawing 2024-04-16 23.40.35.excalidraw.md"
     },
     {
       "basename": "语法制导的编译技术",
@@ -195,10 +191,6 @@
     {
       "basename": "Project_1",
       "path": "docs/课程/编译原理/实验/p1/Project_1.pdf"
-    },
-    {
-      "basename": "引论",
-      "path": "docs/课程/编译原理/笔记/引论.md"
     }
   ],
   "omittedPaths": [],
