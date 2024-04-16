@@ -1,8 +1,40 @@
 {
   "recentFiles": [
     {
+      "basename": "中间代码生成",
+      "path": "docs/课程/编译原理/笔记/中间代码生成.md"
+    },
+    {
+      "basename": "语法制导的编译技术",
+      "path": "docs/课程/编译原理/笔记/语法制导的编译技术.md"
+    },
+    {
+      "basename": "Chapter_6",
+      "path": "docs/课程/编译原理/课件/Chapter_6.pdf"
+    },
+    {
+      "basename": "语法分析",
+      "path": "docs/课程/编译原理/笔记/语法分析.md"
+    },
+    {
+      "basename": "p6",
+      "path": "docs/课程/编译原理/作业/p6.md"
+    },
+    {
+      "basename": "p7",
+      "path": "docs/课程/编译原理/作业/p7.md"
+    },
+    {
+      "basename": "计算机图形学",
+      "path": "docs/面试(实习)/计算机科学/计算机图形学.md"
+    },
+    {
       "basename": "并发",
       "path": "docs/课程/操作系统/笔记/并发.md"
+    },
+    {
+      "basename": "实验笔记(编译工具的使用)",
+      "path": "docs/课程/编译原理/实验/实验笔记(编译工具的使用).md"
     },
     {
       "basename": "thread",
@@ -11,10 +43,6 @@
     {
       "basename": "Project_2",
       "path": "docs/课程/编译原理/实验/p2/Project_2.pdf"
-    },
-    {
-      "basename": "计算机图形学",
-      "path": "docs/面试(实习)/计算机科学/计算机图形学.md"
     },
     {
       "basename": "计算机网络",
@@ -41,10 +69,6 @@
       "path": "docs/课程/编译原理/实验/p3/Project_3.pdf"
     },
     {
-      "basename": "实验笔记(编译工具的使用)",
-      "path": "docs/课程/编译原理/实验/实验笔记(编译工具的使用).md"
-    },
-    {
       "basename": "Chapter_1",
       "path": "docs/课程/编译原理/课件/Chapter_1.pdf"
     },
@@ -67,10 +91,6 @@
     {
       "basename": "U8 中央处理器",
       "path": "docs/归档课程/数字逻辑与计算机组成/笔记/U8 中央处理器.md"
-    },
-    {
-      "basename": "p7",
-      "path": "docs/课程/编译原理/作业/p7.md"
     },
     {
       "basename": "第8章 CPU4-流水线-数据通路",
@@ -149,14 +169,6 @@
       "path": "docs/面试(实习)/知识图谱.md"
     },
     {
-      "basename": "中间代码生成",
-      "path": "docs/课程/编译原理/笔记/中间代码生成.md"
-    },
-    {
-      "basename": "Chapter_6",
-      "path": "docs/课程/编译原理/课件/Chapter_6.pdf"
-    },
-    {
       "basename": "p4",
       "path": "docs/课程/编译原理/作业/p4.md"
     },
@@ -167,10 +179,6 @@
     {
       "basename": "p3",
       "path": "docs/课程/编译原理/作业/p3.md"
-    },
-    {
-      "basename": "语法制导的编译技术",
-      "path": "docs/课程/编译原理/笔记/语法制导的编译技术.md"
     },
     {
       "basename": "Chapter_5",
@@ -187,14 +195,6 @@
     {
       "basename": "运行时刻环境",
       "path": "docs/课程/编译原理/笔记/运行时刻环境.md"
-    },
-    {
-      "basename": "语法分析",
-      "path": "docs/课程/编译原理/笔记/语法分析.md"
-    },
-    {
-      "basename": "p6",
-      "path": "docs/课程/编译原理/作业/p6.md"
     },
     {
       "basename": "C++基础",
