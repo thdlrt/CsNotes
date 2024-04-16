@@ -12,9 +12,11 @@
             "id": "219c11ce17727b22",
             "type": "leaf",
             "state": {
-              "type": "pdf",
+              "type": "markdown",
               "state": {
-                "file": "docs/课程/编译原理/实验/p2/Project_2.pdf"
+                "file": "docs/课程/操作系统/笔记/并发.md",
+                "mode": "source",
+                "source": false
               }
             }
           },
@@ -104,7 +106,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/课程/编译原理/实验/p2/Project_2.pdf",
+                "file": "docs/课程/操作系统/笔记/并发.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -121,7 +123,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/课程/编译原理/实验/p2/Project_2.pdf",
+                "file": "docs/课程/操作系统/笔记/并发.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -144,7 +146,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/课程/编译原理/实验/p2/Project_2.pdf"
+                "file": "docs/课程/操作系统/笔记/并发.md"
               }
             }
           },
@@ -189,13 +191,15 @@
   },
   "active": "219c11ce17727b22",
   "lastOpenFiles": [
+    "docs/课程/操作系统/代码/thread-lib/thread.h",
+    "docs/课程/操作系统/笔记/并发.md",
+    "docs/课程/编译原理/实验/p2/Project_2.pdf",
     "docs/面试(实习)/计算机科学/计算机图形学.md",
     "docs/面试(实习)/计算机科学/计算机网络.md",
     "docs/计算机图形学/图形学基础/现代图形学基础.md",
     "docs/计算机图形学/图形学基础/光栅化.md",
     "docs/游戏开发/游戏引擎/unity/unity.md",
     "docs/游戏开发/游戏设计.md",
-    "docs/课程/编译原理/实验/p2/Project_2.pdf",
     "docs/课程/编译原理/实验/p3/Project_3.pdf",
     "docs/课程/编译原理/实验/实验笔记(编译工具的使用).md",
     "docs/课程/编译原理/课件/Chapter_1.pdf",
@@ -220,8 +224,6 @@
     "docs/面试保研/计算机科学/数据结构.md",
     "docs/面试保研/计算机科学/算法设计与分析.md",
     "docs/面试保研/待完成.md",
-    "docs/面试保研/计算机科学/编译原理.md",
-    "docs/面试保研/计算机科学/操作系统.md",
     "面试/保研材料准备",
     "docs/面试保研/英语",
     "docs/面试保研/数学",

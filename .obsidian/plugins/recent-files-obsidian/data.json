@@ -1,6 +1,14 @@
 {
   "recentFiles": [
     {
+      "basename": "并发",
+      "path": "docs/课程/操作系统/笔记/并发.md"
+    },
+    {
+      "basename": "thread",
+      "path": "docs/课程/操作系统/代码/thread-lib/thread.h"
+    },
+    {
       "basename": "Project_2",
       "path": "docs/课程/编译原理/实验/p2/Project_2.pdf"
     },
@@ -191,14 +199,6 @@
     {
       "basename": "C++基础",
       "path": "docs/c++/C++基础.md"
-    },
-    {
-      "basename": "并发编程",
-      "path": "docs/面试(实习)/计算机科学/并发编程.md"
-    },
-    {
-      "basename": "动画",
-      "path": "docs/计算机图形学/图形学基础/动画.md"
     }
   ],
   "omittedPaths": [],
