@@ -5,200 +5,196 @@
       "path": "docs/课程/操作系统/笔记/并发.md"
     },
     {
-      "basename": "操作系统：三个简单的部分（OSTEP） (it-ebooks) (Z-Library)",
-      "path": "docs/课程/操作系统/操作系统：三个简单的部分（OSTEP） (it-ebooks) (Z-Library).pdf"
+      "basename": "Chapter_7",
+      "path": "docs/课程/编译原理/课件/Chapter_7.pdf"
     },
     {
-      "basename": "SpringMVC",
-      "path": "docs/课程/软件体系结构/笔记/SSM/SpringMVC.md"
+      "basename": "中间代码生成",
+      "path": "docs/课程/编译原理/笔记/中间代码生成.md"
     },
     {
-      "basename": "分发系统",
-      "path": "docs/课程/软件体系结构/笔记/分发系统.md"
+      "basename": "Chapter_6",
+      "path": "docs/课程/编译原理/课件/Chapter_6.pdf"
     },
     {
-      "basename": "Drawing 2024-04-11 14.02.59.excalidraw",
-      "path": "Excalidraw/Drawing 2024-04-11 14.02.59.excalidraw.md"
-    },
-    {
-      "basename": "Spring",
-      "path": "docs/课程/软件体系结构/笔记/Spring.md"
-    },
-    {
-      "basename": "设计模式",
-      "path": "docs/软件工程/设计模式.md"
-    },
-    {
-      "basename": "腾讯天美游戏端开发",
-      "path": "面试/自我介绍/腾讯天美游戏端开发.md"
-    },
-    {
-      "basename": "现代图形学基础",
-      "path": "docs/计算机图形学/图形学基础/现代图形学基础.md"
-    },
-    {
-      "basename": "动画",
-      "path": "docs/计算机图形学/图形学基础/动画.md"
-    },
-    {
-      "basename": "材质",
-      "path": "docs/计算机图形学/图形学基础/材质.md"
-    },
-    {
-      "basename": "几何",
-      "path": "docs/计算机图形学/图形学基础/几何.md"
-    },
-    {
-      "basename": "线性代数与变换",
-      "path": "docs/计算机图形学/图形学基础/线性代数与变换.md"
-    },
-    {
-      "basename": "光线追踪",
-      "path": "docs/计算机图形学/图形学基础/光线追踪.md"
-    },
-    {
-      "basename": "光栅化",
-      "path": "docs/计算机图形学/图形学基础/光栅化.md"
-    },
-    {
-      "basename": "引论",
-      "path": "docs/课程/编译原理/笔记/引论.md"
-    },
-    {
-      "basename": "待学高级知识",
-      "path": "docs/算法/待学高级知识.md"
-    },
-    {
-      "basename": "p5",
-      "path": "docs/课程/编译原理/作业/p5.md"
-    },
-    {
-      "basename": "数据结构",
-      "path": "docs/算法/数据结构.md"
-    },
-    {
-      "basename": "p4",
-      "path": "docs/课程/编译原理/作业/p4.md"
+      "basename": "Drawing 2024-04-16 23.40.35.excalidraw",
+      "path": "Excalidraw/Drawing 2024-04-16 23.40.35.excalidraw.md"
     },
     {
       "basename": "语法制导的编译技术",
       "path": "docs/课程/编译原理/笔记/语法制导的编译技术.md"
     },
     {
-      "basename": "Chapter_1",
-      "path": "docs/课程/编译原理/课件/Chapter_1.pdf"
-    },
-    {
-      "basename": "Chapter_4",
-      "path": "docs/课程/编译原理/课件/Chapter_4.pdf"
-    },
-    {
-      "basename": "Chapter_5",
-      "path": "docs/课程/编译原理/课件/Chapter_5.pdf"
-    },
-    {
       "basename": "语法分析",
       "path": "docs/课程/编译原理/笔记/语法分析.md"
     },
     {
-      "basename": "词法分析",
-      "path": "docs/课程/编译原理/笔记/词法分析.md"
+      "basename": "p6",
+      "path": "docs/课程/编译原理/作业/p6.md"
     },
     {
-      "basename": "日志系统",
-      "path": "docs/杂项/linux与shell/linux/日志系统.md"
+      "basename": "p7",
+      "path": "docs/课程/编译原理/作业/p7.md"
     },
     {
-      "basename": "linux",
-      "path": "docs/杂项/linux与shell/linux.md"
+      "basename": "计算机图形学",
+      "path": "docs/面试(实习)/计算机科学/计算机图形学.md"
     },
     {
-      "basename": "进程管理",
-      "path": "docs/杂项/linux与shell/linux/进程管理.md"
+      "basename": "实验笔记(编译工具的使用)",
+      "path": "docs/课程/编译原理/实验/实验笔记(编译工具的使用).md"
     },
     {
-      "basename": "文本处理",
-      "path": "docs/杂项/linux与shell/linux/文本处理.md"
+      "basename": "thread",
+      "path": "docs/课程/操作系统/代码/thread-lib/thread.h"
     },
     {
-      "basename": "文件系统",
-      "path": "docs/杂项/linux与shell/linux/文件系统.md"
+      "basename": "Project_2",
+      "path": "docs/课程/编译原理/实验/p2/Project_2.pdf"
     },
     {
-      "basename": "equals()与hashCode()",
-      "path": "docs/java/java基础/杂项/equals()与hashCode().md"
+      "basename": "计算机网络",
+      "path": "docs/面试(实习)/计算机科学/计算机网络.md"
     },
     {
-      "basename": "java基础",
-      "path": "docs/java/java基础.md"
+      "basename": "现代图形学基础",
+      "path": "docs/计算机图形学/图形学基础/现代图形学基础.md"
     },
     {
-      "basename": "排序&选择",
-      "path": "docs/算法/排序&选择.md"
-    },
-    {
-      "basename": "MySQL",
-      "path": "docs/数据库/关系数据库/MySQL.md"
-    },
-    {
-      "basename": "Redis",
-      "path": "docs/数据库/NoSQL/Redis.md"
-    },
-    {
-      "basename": "SQL基本语法",
-      "path": "docs/数据库/SQL基本语法.md"
-    },
-    {
-      "basename": "八股",
-      "path": "docs/c++/八股.md"
-    },
-    {
-      "basename": "数学",
-      "path": "docs/算法/数学.md"
-    },
-    {
-      "basename": "6",
-      "path": "docs/归档课程/计算机系统基础/data/6.md"
+      "basename": "光栅化",
+      "path": "docs/计算机图形学/图形学基础/光栅化.md"
     },
     {
       "basename": "unity",
       "path": "docs/游戏开发/游戏引擎/unity/unity.md"
     },
     {
-      "basename": "android",
-      "path": "docs/移动端开发/安卓/android.md"
+      "basename": "游戏设计",
+      "path": "docs/游戏开发/游戏设计.md"
     },
     {
-      "basename": "实验报告p1",
-      "path": "docs/课程/编译原理/实验/p1/实验报告p1.md"
+      "basename": "Project_3",
+      "path": "docs/课程/编译原理/实验/p3/Project_3.pdf"
     },
     {
-      "basename": "Project_1",
-      "path": "docs/课程/编译原理/实验/p1/Project_1.pdf"
+      "basename": "Chapter_1",
+      "path": "docs/课程/编译原理/课件/Chapter_1.pdf"
     },
     {
-      "basename": "正则表达式",
-      "path": "docs/杂项/杂项/正则表达式.md"
+      "basename": "8",
+      "path": "docs/归档课程/计算机系统基础/data/8.md"
+    },
+    {
+      "basename": "计算机组成原理",
+      "path": "docs/面试保研/计算机科学/计算机组成原理.md"
+    },
+    {
+      "basename": "7",
+      "path": "docs/归档课程/计算机系统基础/data/7.md"
+    },
+    {
+      "basename": "6",
+      "path": "docs/归档课程/计算机系统基础/data/6.md"
+    },
+    {
+      "basename": "U8 中央处理器",
+      "path": "docs/归档课程/数字逻辑与计算机组成/笔记/U8 中央处理器.md"
+    },
+    {
+      "basename": "第8章 CPU4-流水线-数据通路",
+      "path": "docs/归档课程/数字逻辑与计算机组成/课件/第8章 CPU4-流水线-数据通路.pdf"
+    },
+    {
+      "basename": "4",
+      "path": "docs/归档课程/计算机系统基础/data/4.md"
+    },
+    {
+      "basename": "往年题目",
+      "path": "docs/面试保研/往年题目.md"
+    },
+    {
+      "basename": "3",
+      "path": "docs/归档课程/计算机系统基础/data/3.md"
+    },
+    {
+      "basename": "SpringMVC",
+      "path": "docs/课程/软件体系结构/笔记/SSM/SpringMVC.md"
+    },
+    {
+      "basename": "U7 指令系统",
+      "path": "docs/归档课程/数字逻辑与计算机组成/笔记/U7 指令系统.md"
+    },
+    {
+      "basename": "计算机网络",
+      "path": "docs/面试保研/计算机科学/计算机网络.md"
+    },
+    {
+      "basename": "数据结构",
+      "path": "docs/面试保研/计算机科学/数据结构.md"
+    },
+    {
+      "basename": "算法设计与分析",
+      "path": "docs/面试保研/计算机科学/算法设计与分析.md"
+    },
+    {
+      "basename": "待完成",
+      "path": "docs/面试保研/待完成.md"
+    },
+    {
+      "basename": "编译原理",
+      "path": "docs/面试保研/计算机科学/编译原理.md"
+    },
+    {
+      "basename": "操作系统",
+      "path": "docs/面试保研/计算机科学/操作系统.md"
+    },
+    {
+      "basename": "离散数学",
+      "path": "docs/面试保研/数学/离散数学.md"
+    },
+    {
+      "basename": "微积分",
+      "path": "docs/面试保研/数学/微积分.md"
+    },
+    {
+      "basename": "线性代数",
+      "path": "docs/面试保研/数学/线性代数.md"
+    },
+    {
+      "basename": "常用网站",
+      "path": "docs/面试保研/常用网站.md"
+    },
+    {
+      "basename": "问题准备",
+      "path": "docs/面试保研/英语/问题准备.md"
+    },
+    {
+      "basename": "自我介绍",
+      "path": "docs/面试保研/英语/自我介绍.md"
+    },
+    {
+      "basename": "知识图谱",
+      "path": "docs/面试(实习)/知识图谱.md"
+    },
+    {
+      "basename": "p4",
+      "path": "docs/课程/编译原理/作业/p4.md"
+    },
+    {
+      "basename": "p5",
+      "path": "docs/课程/编译原理/作业/p5.md"
     },
     {
       "basename": "p3",
       "path": "docs/课程/编译原理/作业/p3.md"
     },
     {
-      "basename": "使用VSCode编写C++单文件程序(Windows系统)",
-      "path": "docs/算法/使用VSCode编写C++单文件程序(Windows系统).md"
+      "basename": "Chapter_5",
+      "path": "docs/课程/编译原理/课件/Chapter_5.pdf"
     },
     {
-      "basename": "前缀和与差分",
-      "path": "docs/算法/前缀和与差分.md"
-    },
-    {
-      "basename": "二分&倍增",
-      "path": "docs/算法/二分&倍增.md"
-    },
-    {
-      "basename": "p2",
-      "path": "docs/课程/编译原理/作业/p2.md"
+      "basename": "Project_1",
+      "path": "docs/课程/编译原理/实验/p1/Project_1.pdf"
     }
   ],
   "omittedPaths": [],
