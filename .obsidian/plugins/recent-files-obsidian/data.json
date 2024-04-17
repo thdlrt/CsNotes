@@ -1,6 +1,10 @@
 {
   "recentFiles": [
     {
+      "basename": "SpringMVC",
+      "path": "docs/课程/软件体系结构/笔记/SSM/SpringMVC.md"
+    },
+    {
       "basename": "并发",
       "path": "docs/课程/操作系统/笔记/并发.md"
     },
@@ -119,10 +123,6 @@
     {
       "basename": "3",
       "path": "docs/归档课程/计算机系统基础/data/3.md"
-    },
-    {
-      "basename": "SpringMVC",
-      "path": "docs/课程/软件体系结构/笔记/SSM/SpringMVC.md"
     },
     {
       "basename": "U7 指令系统",
