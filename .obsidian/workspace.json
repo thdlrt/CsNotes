@@ -4,22 +4,6 @@
     "type": "split",
     "children": [
       {
-        "id": "3d62b76ea779870a",
-        "type": "tabs",
-        "children": [
-          {
-            "id": "a4f474de4249f6d2",
-            "type": "leaf",
-            "state": {
-              "type": "pdf",
-              "state": {
-                "file": "docs/课程/操作系统/操作系统：三个简单的部分（OSTEP） (it-ebooks) (Z-Library).pdf"
-              }
-            }
-          }
-        ]
-      },
-      {
         "id": "5889f2b1d1fa8cec",
         "type": "tabs",
         "children": [
