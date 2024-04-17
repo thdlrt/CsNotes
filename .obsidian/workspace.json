@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "0a53803bc091de91",
+        "id": "b9b54a4ea6065ada",
         "type": "tabs",
         "children": [
           {
-            "id": "41b7e181d8a506c8",
+            "id": "f107e79fc7af1cc1",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -18,8 +18,21 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "41b7e181d8a506c8",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "临时/temp.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -73,12 +86,12 @@
               "state": {}
             }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 200
   },
   "right": {
     "id": "d615b65a4ccf8a6a",
@@ -94,7 +107,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/课程/软件体系结构/笔记/SSM/SpringMVC.md",
+                "file": "临时/temp.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -111,7 +124,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/课程/软件体系结构/笔记/SSM/SpringMVC.md",
+                "file": "临时/temp.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -134,7 +147,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/课程/软件体系结构/笔记/SSM/SpringMVC.md"
+                "file": "临时/temp.md"
               }
             }
           },
@@ -179,6 +192,8 @@
   },
   "active": "41b7e181d8a506c8",
   "lastOpenFiles": [
+    "docs/课程/软件体系结构/笔记/SSM/SpringMVC.md",
+    "临时/temp.md",
     "docs/课程/操作系统/笔记/并发.md",
     "docs/课程/操作系统/代码/cv-sem/cv.c",
     "docs/课程/操作系统/代码/cv-sem/README.md",
@@ -213,7 +228,6 @@
     "docs/归档课程/数字逻辑与计算机组成/笔记/U8 中央处理器.md",
     "docs/归档课程/计算机系统基础/data/4.md",
     "docs/归档课程/计算机系统基础/data/4^65745.md",
-    "docs/面试保研/往年题目.md",
     "CsNotes/2021-11-22-22-54-02.png",
     "CsNotes/2021-11-22-22-52-49.png",
     "CsNotes/2021-11-22-22-49-26.png",

@@ -1,6 +1,10 @@
 {
   "recentFiles": [
     {
+      "basename": "temp",
+      "path": "临时/temp.md"
+    },
+    {
       "basename": "SpringMVC",
       "path": "docs/课程/软件体系结构/笔记/SSM/SpringMVC.md"
     },
@@ -195,10 +199,6 @@
     {
       "basename": "Chapter_5",
       "path": "docs/课程/编译原理/课件/Chapter_5.pdf"
-    },
-    {
-      "basename": "Project_1",
-      "path": "docs/课程/编译原理/实验/p1/Project_1.pdf"
     }
   ],
   "omittedPaths": [],
