@@ -4,16 +4,32 @@
     "type": "split",
     "children": [
       {
-        "id": "f61986fe771b62b7",
+        "id": "3d62b76ea779870a",
         "type": "tabs",
         "children": [
           {
-            "id": "d2f3babbb3fc6568",
+            "id": "a4f474de4249f6d2",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "docs/课程/操作系统/操作系统：三个简单的部分（OSTEP） (it-ebooks) (Z-Library).pdf"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "id": "5889f2b1d1fa8cec",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "5f6afbd0c9be17fe",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/课程/软件体系结构/笔记/SSM/SpringMVC.md",
+                "file": "docs/课程/操作系统/笔记/并发.md",
                 "mode": "source",
                 "source": false
               }
@@ -73,7 +89,8 @@
               "state": {}
             }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
@@ -94,7 +111,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/课程/软件体系结构/笔记/SSM/SpringMVC.md",
+                "file": "docs/课程/操作系统/笔记/并发.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -111,7 +128,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/课程/软件体系结构/笔记/SSM/SpringMVC.md",
+                "file": "docs/课程/操作系统/笔记/并发.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -134,7 +151,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/课程/软件体系结构/笔记/SSM/SpringMVC.md"
+                "file": "docs/课程/操作系统/笔记/并发.md"
               }
             }
           },
@@ -143,14 +160,6 @@
             "type": "leaf",
             "state": {
               "type": "calendar",
-              "state": {}
-            }
-          },
-          {
-            "id": "160702efc0127260",
-            "type": "leaf",
-            "state": {
-              "type": "todo",
               "state": {}
             }
           }
@@ -167,19 +176,21 @@
       "switcher:打开快速切换": false,
       "graph:查看关系图谱": false,
       "canvas:新建白板": false,
-      "daily-notes:打开/创建今天的日记": false,
       "templates:插入模板": false,
       "command-palette:打开命令面板": false,
       "workspaces:管理工作区布局": false,
       "audio-recorder:开始/结束录音": false,
       "obsidian-excalidraw-plugin:新建绘图文件": false,
-      "obsidian-advanced-slides:Show Slide Preview": false,
       "omnisearch:Omnisearch": false,
-      "vscode-editor:新建代码文件": false
+      "vscode-editor:新建代码文件": false,
+      "obsidian-advanced-slides:Show Slide Preview": false
     }
   },
-  "active": "d2f3babbb3fc6568",
+  "active": "5f6afbd0c9be17fe",
   "lastOpenFiles": [
+    "docs/课程/操作系统/操作系统：三个简单的部分（OSTEP） (it-ebooks) (Z-Library).pdf",
+    "docs/课程/操作系统/笔记/并发.md",
+    "docs/课程/软件体系结构/笔记/SSM/SpringMVC.md",
     "docs/面试保研/往年题目.md",
     "docs/课程/编译原理/课件/Chapter_7.pdf",
     "docs/课程/编译原理/实验/p3/Project_3.pdf",
@@ -209,13 +220,9 @@
     "docs/面试保研/英语",
     "docs/面试保研/待完成.md",
     "docs/面试保研/常用网站.md",
-    "docs/面试保研",
     "docs/面试(实习)/计算机科学/计算机图形学.md",
     "docs/面试(实习)/计算机科学/杂项.md",
     "docs/面试(实习)/计算机科学/计算机网络.md",
-    "docs/面试(实习)/计算机科学/并发编程.md",
-    "docs/面试(实习)/计算机科学/操作系统.md",
-    "docs/面试(实习)/知识图谱.md",
     "CsNotes/2021-11-22-22-54-02.png",
     "CsNotes/2021-11-22-22-52-49.png",
     "CsNotes/2021-11-22-22-49-26.png",
