@@ -1,3 +1,4 @@
+> 作业代码（即 Sever）位于 sever 分支
 ## 实验过程
 ### 对控制器进行修改
 - 原先的控制器使用 SpringMVC 以及模版引擎，因此主要需要对 controller 进行修改，使得可以相应客户端的 REST API
@@ -19,4 +20,21 @@ public ResponseEntity<Product> product(@PathVariable Long productId) {
 }
 ```
 - 除此之外只需要简单修改 Product 类以适应新的客户端需求
+### 解决跨域请求问题
+- 由于前端页面的分发的端口与 spring 服务端响应端口不同，因此默认下会被浏览器拒绝
+- 添加一个配置类
+```java
+@Configuration  
+public class WebConfig implements WebMvcConfigurer {  
+  
+    @Override  
+    public void addCorsMappings(CorsRegistry registry) {  
+        registry.addMapping("/**")  // 为所有路径启用CORS  
+                .allowedOrigins("http://localhost:63342")  // 允许来自指定源的访问  
+                .allowedMethods("GET", "POST", "PUT", "DELETE")  // 允许的HTTP方法  
+                .allowCredentials(true)  // 允许凭证  
+                .maxAge(3600);  // 预检请求的缓存持续时间  
+    }  
+}
+```
 ## 问题及思考
