@@ -1,24 +1,52 @@
 {
   "recentFiles": [
     {
-      "basename": "L3 - Recursion",
-      "path": "pdf/算法设计与分析/L3 - Recursion.pdf"
-    },
-    {
       "basename": "数据结构&算法设计与分析",
       "path": "docs/面试保研/计算机科学/数据结构&算法设计与分析.md"
     },
     {
-      "basename": "数学语法",
-      "path": "docs/杂项/latex/数学语法.md"
+      "basename": "p7",
+      "path": "docs/课程/编译原理/作业/p7.md"
+    },
+    {
+      "basename": "p8",
+      "path": "docs/课程/编译原理/作业/p8.md"
+    },
+    {
+      "basename": "排序",
+      "path": "docs/归档课程/数据结构/笔记/排序.md"
+    },
+    {
+      "basename": "数据结构",
+      "path": "docs/归档课程/数据结构/数据结构.md"
     },
     {
       "basename": "线性数据结构",
       "path": "docs/归档课程/数据结构/笔记/线性数据结构.md"
     },
     {
-      "basename": "数据结构",
-      "path": "docs/归档课程/数据结构/数据结构.md"
+      "basename": "L4 - QuickSort",
+      "path": "pdf/算法设计与分析/L4 - QuickSort.pdf"
+    },
+    {
+      "basename": "L6 - MergeSort",
+      "path": "pdf/算法设计与分析/L6 - MergeSort.pdf"
+    },
+    {
+      "basename": "L5 - HeapSort",
+      "path": "pdf/算法设计与分析/L5 - HeapSort.pdf"
+    },
+    {
+      "basename": "L8 - logn search",
+      "path": "pdf/算法设计与分析/L8 - logn search.pdf"
+    },
+    {
+      "basename": "L3 - Recursion",
+      "path": "pdf/算法设计与分析/L3 - Recursion.pdf"
+    },
+    {
+      "basename": "数学语法",
+      "path": "docs/杂项/latex/数学语法.md"
     },
     {
       "basename": "计算机网络",
@@ -125,10 +153,6 @@
       "path": "docs/课程/编译原理/作业/p6.md"
     },
     {
-      "basename": "p7",
-      "path": "docs/课程/编译原理/作业/p7.md"
-    },
-    {
       "basename": "实验笔记(编译工具的使用)",
       "path": "docs/课程/编译原理/实验/实验笔记(编译工具的使用).md"
     },
@@ -175,14 +199,6 @@
     {
       "basename": "4",
       "path": "docs/归档课程/计算机系统基础/data/4.md"
-    },
-    {
-      "basename": "往年题目",
-      "path": "docs/面试保研/往年题目.md"
-    },
-    {
-      "basename": "3",
-      "path": "docs/归档课程/计算机系统基础/data/3.md"
     }
   ],
   "omittedPaths": [],
