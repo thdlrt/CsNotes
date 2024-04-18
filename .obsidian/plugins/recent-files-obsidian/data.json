@@ -5,6 +5,18 @@
       "path": "docs/面试保研/计算机科学/数据结构与算法.md"
     },
     {
+      "basename": "排序",
+      "path": "docs/归档课程/数据结构/笔记/排序.md"
+    },
+    {
+      "basename": "数据结构",
+      "path": "docs/归档课程/数据结构/数据结构.md"
+    },
+    {
+      "basename": "文件系统",
+      "path": "docs/归档课程/数据结构/笔记/文件系统.md"
+    },
+    {
       "basename": "计算机组成原理",
       "path": "docs/面试保研/计算机科学/计算机组成原理.md"
     },
@@ -15,14 +27,6 @@
     {
       "basename": "p8",
       "path": "docs/课程/编译原理/作业/p8.md"
-    },
-    {
-      "basename": "排序",
-      "path": "docs/归档课程/数据结构/笔记/排序.md"
-    },
-    {
-      "basename": "数据结构",
-      "path": "docs/归档课程/数据结构/数据结构.md"
     },
     {
       "basename": "线性数据结构",
@@ -195,10 +199,6 @@
     {
       "basename": "第8章 CPU4-流水线-数据通路",
       "path": "docs/归档课程/数字逻辑与计算机组成/课件/第8章 CPU4-流水线-数据通路.pdf"
-    },
-    {
-      "basename": "4",
-      "path": "docs/归档课程/计算机系统基础/data/4.md"
     }
   ],
   "omittedPaths": [],
