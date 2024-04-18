@@ -157,8 +157,7 @@ GameObject instance = Instantiate(myPrefab, position, rotation);
 ### 生命周期函数
 
 - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20231025094712073.png" alt="image-20231025094712073" style="zoom:50%;" />
-- 像构造析构函数一样，子类和父类之间存在自动调用关系
-  - 如果声明为虚函数并重写则只会调用一个
+
 #### 初始化阶段
 - **Awake**
   - 在**加载**包含脚本的游戏对象时调用，无论该对象是否启用。
@@ -169,8 +168,8 @@ GameObject instance = Instantiate(myPrefab, position, rotation);
 - **OnEnable**
   - 当脚本被初始化或者当所在的GameObject被设置为active时调用。在脚本对象被**激活**时调用
   - 这发生在所有对象的 `Awake` 之后、任何对象的 `Start` 之前。
-  - 注册事件监听器或**广播消息。开始协程。对外部资源进行订阅或更新状态。****
-**
+  - 注册事件监听器或**广播消息。开始协程。对外部资源进行订阅或更新状态。**
+
 - **Start**
   - 在**Update之前**的第一个帧中被调用。
   - **仅被调用一次**。
@@ -184,10 +183,10 @@ GameObject instance = Instantiate(myPrefab, position, rotation);
 - **Update**
   - 每**帧**都被调用。
   - 主要用于普通的游戏逻辑。
-  - 获取帧时间 `Time.deltaTime` 常在移动时使用
+  - 获取帧时间 `Time.deltaTime` 
 
 - **LateUpdate**
-  - 每帧在所有Update方法**调用后被调用**。
+  - 在每帧在所有 Update 方法**调用后被调用**。
   - 主要用于跟随摄像机的移动、后处理、修正、反馈等操作。
   - 如果你有一个摄像机跟随一个角色，你可能想要确保角色在 `Update()` 中首先移动，然后摄像机在 `LateUpdate()` 中进行更新以**跟随角色**。这确保了无论角色如何移动或如何被其他系统影响，摄像机都能够在该帧结束时准确地跟随它。
 
@@ -214,7 +213,7 @@ GameObject instance = Instantiate(myPrefab, position, rotation);
   - **gravity**：定义在 `Physics` 菜单中，全局影响所有 Rigidbody 的重力方向和大小。
   - **drag** 和 **angularDrag**：定义 Rigidbody 的空气阻力和角阻力。
 - 关节
-  - nity 提供了一系列的关节组件（如 Hinge Joint, Spring Joint 等）允许物体之间有约束关系。
+  - unity 提供了一系列的关节组件（如 Hinge Joint, Spring Joint 等）允许物体之间有约束关系。
 
 #### 基本组件
 
@@ -290,20 +289,21 @@ public class CameraLookAt : MonoBehaviour
 
 - 使用四元数管理旋转
   - 允许连续的旋转运算而不失稳定性。使用欧拉角旋转物体时，可能会遇到一个称为“万向锁”的问题，其中某个旋转轴“消失”了。通过使用四元数，可以避免这种情况。
-  - 操作
-    - **单位四元数**：表示没有旋转或旋转360°的四元数。
-    - **四元数乘法**：你可以通过乘法组合两个四元数，从而组合两个旋转。
-    - **四元数的逆**：逆旋转。
-    - **四元数的插值**：例如，`Quaternion.Lerp`和`Quaternion.Slerp`可以用于在两个旋转之间平滑过渡。
+  - 万向节锁：
+- 操作
+  - **单位四元数**：表示没有旋转或旋转360°的四元数。
+  - **四元数乘法**：你可以通过乘法组合两个四元数，从而组合两个旋转。
+  - **四元数的逆**：逆旋转。
+  - **四元数的插值**：例如，`Quaternion.Lerp`和`Quaternion.Slerp`可以用于在两个旋转之间平滑过渡。
 
-  - 创建
-    - `Quaternion.identity`：这是一个单位四元数，表示无旋转。
-    - `Quaternion.Euler(x, y, z)`：从欧拉角创建四元数。
-    - `Quaternion.AngleAxis(angle, axis)`：在给定的轴上创建一个角度的旋转。
-    - `Quaternion.LookRotation(forward, up)`：查看一个方向并指定向上的方向。
+- 创建
+	- `Quaternion.Euler(x, y, z)`：从欧拉角创建四元数。
+	- `Quaternion.AngleAxis(angle, axis)`：在给定的轴上创建一个角度的旋转。
+	- `Quaternion.LookRotation(forward, up)`：查看一个方向并指定向上的方向。
+	- `Quaternion.identity`：这是一个单位四元数，表示无旋转。
 
-  - 应用
-    - 物体旋转：`transform.rotation = Quaternion.Euler(45, 0, 0);`
+- 应用
+	- 物体旋转：`transform.rotation = Quaternion.Euler(45, 0, 0);`
 ```c#
       //面向物体
       Vector3 directionToTarget = target.position - transform.position;

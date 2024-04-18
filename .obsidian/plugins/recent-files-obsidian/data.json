@@ -1,12 +1,20 @@
 {
   "recentFiles": [
     {
-      "basename": "temp",
-      "path": "临时/temp.md"
+      "basename": "unity",
+      "path": "docs/游戏开发/游戏引擎/unity/unity.md"
+    },
+    {
+      "basename": "c#",
+      "path": "docs/游戏开发/游戏引擎/unity/c#.md"
     },
     {
       "basename": "SpringMVC",
       "path": "docs/课程/软件体系结构/笔记/SSM/SpringMVC.md"
+    },
+    {
+      "basename": "temp",
+      "path": "临时/temp.md"
     },
     {
       "basename": "并发",
@@ -75,10 +83,6 @@
     {
       "basename": "光栅化",
       "path": "docs/计算机图形学/图形学基础/光栅化.md"
-    },
-    {
-      "basename": "unity",
-      "path": "docs/游戏开发/游戏引擎/unity/unity.md"
     },
     {
       "basename": "游戏设计",
@@ -195,10 +199,6 @@
     {
       "basename": "p3",
       "path": "docs/课程/编译原理/作业/p3.md"
-    },
-    {
-      "basename": "Chapter_5",
-      "path": "docs/课程/编译原理/课件/Chapter_5.pdf"
     }
   ],
   "omittedPaths": [],
