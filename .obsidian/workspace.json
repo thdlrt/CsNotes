@@ -42,36 +42,6 @@
                 "source": false
               }
             }
-          },
-          {
-            "id": "c8a932f0500a73ca",
-            "type": "leaf",
-            "state": {
-              "type": "pdf",
-              "state": {
-                "file": "pdf/算法设计与分析/L4 - QuickSort.pdf"
-              }
-            }
-          },
-          {
-            "id": "debb0698c4bfe623",
-            "type": "leaf",
-            "state": {
-              "type": "pdf",
-              "state": {
-                "file": "pdf/算法设计与分析/L5 - HeapSort.pdf"
-              }
-            }
-          },
-          {
-            "id": "c5a89feea99967b4",
-            "type": "leaf",
-            "state": {
-              "type": "pdf",
-              "state": {
-                "file": "pdf/算法设计与分析/L6 - MergeSort.pdf"
-              }
-            }
           }
         ],
         "currentTab": 2
