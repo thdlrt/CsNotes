@@ -1,8 +1,12 @@
 {
   "recentFiles": [
     {
-      "basename": "数据结构&算法设计与分析",
-      "path": "docs/面试保研/计算机科学/数据结构&算法设计与分析.md"
+      "basename": "数据结构与算法",
+      "path": "docs/面试保研/计算机科学/数据结构与算法.md"
+    },
+    {
+      "basename": "计算机组成原理",
+      "path": "docs/面试保研/计算机科学/计算机组成原理.md"
     },
     {
       "basename": "p7",
@@ -67,10 +71,6 @@
     {
       "basename": "操作系统",
       "path": "docs/面试保研/计算机科学/操作系统.md"
-    },
-    {
-      "basename": "计算机组成原理",
-      "path": "docs/面试保研/计算机科学/计算机组成原理.md"
     },
     {
       "basename": "6",
