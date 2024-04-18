@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/计算机图形学/实验/tinyrender.md",
+                "file": "docs/面试保研/计算机科学/计算机组成原理.md",
                 "mode": "source",
                 "source": false
               }
@@ -93,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/计算机图形学/实验/tinyrender.md",
+                "file": "docs/面试保研/计算机科学/计算机组成原理.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/计算机图形学/实验/tinyrender.md",
+                "file": "docs/面试保研/计算机科学/计算机组成原理.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/计算机图形学/实验/tinyrender.md"
+                "file": "docs/面试保研/计算机科学/计算机组成原理.md"
               }
             }
           },
@@ -158,8 +158,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 292.5,
-    "collapsed": true
+    "width": 292.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -178,9 +177,14 @@
   },
   "active": "f107e79fc7af1cc1",
   "lastOpenFiles": [
+    "docs/归档课程/计算机系统基础/data/6.md",
+    "docs/面试保研/计算机科学/计算机组成原理.md",
+    "docs/计算机图形学/图形学基础/材质.md",
+    "docs/计算机图形学/实验/tinyrender.md",
+    "docs/计算机图形学/图形学基础/现代图形学基础.md",
+    "docs/计算机图形学/图形学基础/线性代数与变换.md",
     "docs/计算机图形学/实验/tinyraytracer.md",
     "docs/java/java基础.md",
-    "docs/计算机图形学/实验/tinyrender.md",
     "docs/游戏开发/游戏引擎/unity/c#.md",
     "docs/游戏开发/游戏引擎/unity/unity.md",
     "docs/课程/软件体系结构/笔记/SSM/SpringMVC.md",
@@ -207,13 +211,8 @@
     "docs/课程/操作系统/代码/thread-lib/thread.h",
     "docs/课程/编译原理/实验/p2/Project_2.pdf",
     "docs/面试(实习)/计算机科学/计算机网络.md",
-    "docs/计算机图形学/图形学基础/现代图形学基础.md",
     "docs/计算机图形学/图形学基础/光栅化.md",
-    "docs/游戏开发/游戏设计.md",
     "docs/课程/编译原理/实验/p3/Project_3.pdf",
-    "docs/归档课程/计算机系统基础/data/8.md",
-    "docs/面试保研/计算机科学/计算机组成原理.md",
-    "docs/归档课程/计算机系统基础/data/7.md",
     "CsNotes/2021-11-22-22-54-02.png",
     "CsNotes/2021-11-22-22-52-49.png",
     "CsNotes/2021-11-22-22-49-26.png",
