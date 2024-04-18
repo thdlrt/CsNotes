@@ -44,7 +44,7 @@
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 1
       },
       {
         "id": "15a1ce30210a58f1",
@@ -148,7 +148,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/面试保研/计算机科学/数据结构与算法.md",
+                "file": "docs/归档课程/数据结构/笔记/文件系统.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -165,7 +165,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/面试保研/计算机科学/数据结构与算法.md",
+                "file": "docs/归档课程/数据结构/笔记/文件系统.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -188,7 +188,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/面试保研/计算机科学/数据结构与算法.md"
+                "file": "docs/归档课程/数据结构/笔记/文件系统.md"
               }
             }
           },
@@ -231,11 +231,11 @@
       "vscode-editor:新建代码文件": false
     }
   },
-  "active": "f107e79fc7af1cc1",
+  "active": "3bd4da0ea6161a0d",
   "lastOpenFiles": [
+    "docs/面试保研/计算机科学/数据结构与算法.md",
     "docs/归档课程/数据结构/笔记/线性数据结构.md",
     "docs/归档课程/数据结构/数据结构.md",
-    "docs/面试保研/计算机科学/数据结构与算法.md",
     "docs/归档课程/数据结构/笔记/排序.md",
     "docs/归档课程/数据结构/笔记/文件系统.md",
     "docs/面试保研/计算机科学/计算机组成原理.md",
