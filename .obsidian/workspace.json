@@ -31,7 +31,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/面试保研/计算机科学/数据结构.md",
+                "file": "docs/面试保研/计算机科学/数据结构&算法设计与分析.md",
                 "mode": "source",
                 "source": false
               }
@@ -111,7 +111,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/归档课程/数据结构/数据结构.md",
+                "file": "docs/面试保研/计算机科学/数据结构&算法设计与分析.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -128,7 +128,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/归档课程/数据结构/数据结构.md",
+                "file": "docs/面试保研/计算机科学/数据结构&算法设计与分析.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -151,7 +151,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/归档课程/数据结构/数据结构.md"
+                "file": "docs/面试保研/计算机科学/数据结构&算法设计与分析.md"
               }
             }
           },
@@ -193,9 +193,10 @@
       "vscode-editor:新建代码文件": false
     }
   },
-  "active": "ea3b34caa5c22fa5",
+  "active": "f107e79fc7af1cc1",
   "lastOpenFiles": [
-    "docs/面试保研/计算机科学/数据结构.md",
+    "docs/归档课程/数据结构/数据结构.md",
+    "docs/面试保研/计算机科学/数据结构&算法设计与分析.md",
     "docs/面试(实习)/计算机科学/计算机网络.md",
     "docs/面试(实习)/计算机科学/计算机图形学.md",
     "docs/面试保研/计算机科学/编译原理.md",
@@ -227,7 +228,6 @@
     "Excalidraw/Drawing 2024-04-11 14.02.59.excalidraw.md",
     "Excalidraw/Drawing 2024-04-16 23.39.50.excalidraw.md",
     "docs/课程/编译原理/笔记/语法制导的编译技术.md",
-    "docs/课程/编译原理/笔记/语法分析.md",
     "docs/课程/操作系统/代码/thread-lib/thread.h",
     "docs/课程/编译原理/实验/p2/Project_2.pdf",
     "docs/课程/编译原理/实验/p3/Project_3.pdf",
