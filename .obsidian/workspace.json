@@ -30,9 +30,19 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "b337defa90d04b89",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "pdf/算法设计与分析/L3 - Recursion.pdf"
+              }
+            }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       },
       {
         "id": "15a1ce30210a58f1",
@@ -136,7 +146,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/面试保研/计算机科学/数据结构&算法设计与分析.md",
+                "file": "pdf/算法设计与分析/L3 - Recursion.pdf",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -153,7 +163,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/面试保研/计算机科学/数据结构&算法设计与分析.md",
+                "file": "pdf/算法设计与分析/L3 - Recursion.pdf",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -176,7 +186,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/面试保研/计算机科学/数据结构&算法设计与分析.md"
+                "file": "pdf/算法设计与分析/L3 - Recursion.pdf"
               }
             }
           },
@@ -219,22 +229,21 @@
       "vscode-editor:新建代码文件": false
     }
   },
-  "active": "96e173acdf249e6c",
+  "active": "b337defa90d04b89",
   "lastOpenFiles": [
+    "docs/面试保研/计算机科学/数据结构&算法设计与分析.md",
+    "docs/杂项/latex/数学语法.md",
+    "pdf/算法设计与分析/L3 - Recursion.pdf",
     "pdf/算法设计与分析/L9 - Hashing.pdf",
     "pdf/算法设计与分析/L8 - logn search.pdf",
     "pdf/算法设计与分析/L6 - MergeSort.pdf",
     "pdf/算法设计与分析/L7 - Selection.pdf",
-    "pdf/算法设计与分析/L3 - Recursion.pdf",
     "pdf/算法设计与分析/L5 - HeapSort.pdf",
     "pdf/算法设计与分析/L4 - QuickSort.pdf",
     "pdf/算法设计与分析/L2 - Asymptotics.pdf",
     "pdf/算法设计与分析/L16 - DP1.pdf",
     "pdf/算法设计与分析/L19 - NPC2.pdf",
-    "pdf/算法设计与分析/L18 - NPC1.pdf",
-    "docs/面试保研/计算机科学/数据结构&算法设计与分析.md",
     "docs/归档课程/数据结构/笔记/线性数据结构.md",
-    "docs/杂项/latex/数学语法.md",
     "docs/归档课程/数据结构/数据结构.md",
     "docs/面试(实习)/计算机科学/计算机网络.md",
     "docs/面试(实习)/计算机科学/计算机图形学.md",
