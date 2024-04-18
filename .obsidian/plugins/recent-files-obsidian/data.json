@@ -5,12 +5,20 @@
       "path": "docs/面试保研/计算机科学/数据结构&算法设计与分析.md"
     },
     {
-      "basename": "线性数据结构",
-      "path": "docs/归档课程/数据结构/笔记/线性数据结构.md"
-    },
-    {
       "basename": "02-Asymptotics",
       "path": "pdf/算法设计与分析/02-Asymptotics.pdf"
+    },
+    {
+      "basename": "数学语法",
+      "path": "docs/杂项/latex/数学语法.md"
+    },
+    {
+      "basename": "数据结构",
+      "path": "docs/归档课程/数据结构/数据结构.md"
+    },
+    {
+      "basename": "线性数据结构",
+      "path": "docs/归档课程/数据结构/笔记/线性数据结构.md"
     },
     {
       "basename": "03-Recursion",
@@ -19,10 +27,6 @@
     {
       "basename": "01-Introduction",
       "path": "pdf/算法设计与分析/01-Introduction.pdf"
-    },
-    {
-      "basename": "数据结构",
-      "path": "docs/归档课程/数据结构/数据结构.md"
     },
     {
       "basename": "计算机网络",

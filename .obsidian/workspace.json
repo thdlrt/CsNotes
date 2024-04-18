@@ -52,7 +52,7 @@
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       },
       {
         "id": "15a1ce30210a58f1",
@@ -65,6 +65,18 @@
               "type": "markdown",
               "state": {
                 "file": "docs/面试保研/计算机科学/数据结构&算法设计与分析.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "6f7f3ea46cf4a7c1",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "docs/杂项/latex/数学语法.md",
                 "mode": "source",
                 "source": false
               }
@@ -209,7 +221,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 292.5
+    "width": 292.5,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -228,8 +241,11 @@
   },
   "active": "f107e79fc7af1cc1",
   "lastOpenFiles": [
-    "docs/归档课程/数据结构/笔记/线性数据结构.md",
     "pdf/算法设计与分析/02-Asymptotics.pdf",
+    "docs/面试保研/计算机科学/数据结构&算法设计与分析.md",
+    "docs/杂项/latex/数学语法.md",
+    "docs/归档课程/数据结构/数据结构.md",
+    "docs/归档课程/数据结构/笔记/线性数据结构.md",
     "pdf/算法设计与分析/03-Recursion.pdf",
     "pdf/算法设计与分析/01-Introduction.pdf",
     "pdf/算法设计与分析/题目/DynamicProgrammingReview(1).pdf",
@@ -239,8 +255,6 @@
     "pdf/算法设计与分析/题目",
     "pdf/算法设计与分析/23-Probability.pdf",
     "pdf/算法设计与分析/第3章 动态规划.pdf",
-    "docs/面试保研/计算机科学/数据结构&算法设计与分析.md",
-    "docs/归档课程/数据结构/数据结构.md",
     "docs/面试(实习)/计算机科学/计算机网络.md",
     "docs/面试(实习)/计算机科学/计算机图形学.md",
     "docs/面试保研/计算机科学/编译原理.md",
@@ -262,7 +276,6 @@
     "docs/课程/操作系统/代码/cv-sem/README.md",
     "docs/课程/编译原理/笔记/中间代码生成.md",
     "Excalidraw/Drawing 2024-04-16 23.40.35.excalidraw.md",
-    "Excalidraw/Drawing 2024-04-11 14.02.59.excalidraw.md",
     "CsNotes/2021-11-22-22-54-02.png",
     "CsNotes/2021-11-22-22-52-49.png",
     "CsNotes/2021-11-22-22-49-26.png",
