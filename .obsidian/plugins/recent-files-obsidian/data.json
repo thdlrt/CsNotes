@@ -5,20 +5,20 @@
       "path": "docs/面试保研/计算机科学/数据结构与算法.md"
     },
     {
-      "basename": "排序&选择",
-      "path": "docs/算法/排序&选择.md"
+      "basename": "数据结构",
+      "path": "docs/归档课程/数据结构/数据结构.md"
     },
     {
       "basename": "文件系统",
       "path": "docs/归档课程/数据结构/笔记/文件系统.md"
     },
     {
-      "basename": "线性数据结构",
-      "path": "docs/归档课程/数据结构/笔记/线性数据结构.md"
+      "basename": "排序&选择",
+      "path": "docs/算法/排序&选择.md"
     },
     {
-      "basename": "数据结构",
-      "path": "docs/归档课程/数据结构/数据结构.md"
+      "basename": "线性数据结构",
+      "path": "docs/归档课程/数据结构/笔记/线性数据结构.md"
     },
     {
       "basename": "排序",
