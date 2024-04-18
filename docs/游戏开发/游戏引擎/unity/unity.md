@@ -289,7 +289,7 @@ public class CameraLookAt : MonoBehaviour
 
 - 使用四元数管理旋转
   - 允许连续的旋转运算而不失稳定性。使用欧拉角旋转物体时，可能会遇到一个称为“万向锁”的问题，其中某个旋转轴“消失”了。通过使用四元数，可以避免这种情况。
-  - 万向节锁：
+  - 万向节锁：先围绕 Z 轴旋转90度，然后尝试围绕 Y 轴旋转，这种情况下 X 轴会和 Z 轴对齐，导致原本独立的旋转轴合并（此时 Z 轴与 X 轴重合，旋转剩下的 X 与之前的 Z 等价）即损失了一个自由度
 - 操作
   - **单位四元数**：表示没有旋转或旋转360°的四元数。
   - **四元数乘法**：你可以通过乘法组合两个四元数，从而组合两个旋转。
@@ -384,8 +384,48 @@ void Update() {
   - "Mouse X": 鼠标在X轴上的移动。
   - "Mouse Y": 鼠标在Y轴上的移动。
   - 在Unity的Input Manager中，可以自定义轴或修改现有轴的配置。（Edit > Project Settings > Input。）
-- **敏感度和死区**: 在Input Manager中，还可以为每个轴设置敏感度和死区，这在处理游戏手柄摇杆输入时特别有用，可以帮助消除不希望的微小移动
+- **敏感度和死区**: 在 Input Manager 中，还可以为每个轴设置敏感度和死区，这在处理游戏手柄摇杆输入时特别有用，可以帮助消除不希望的微小移动
+#### input system 新输入系统
+- **多设备支持**：新输入系统支持从多种输入设备接收输入，如键盘、鼠标、游戏手柄、触摸屏等，甚至可以处理更复杂的设备如 VR 控制器。
+- **输入动作**：用户可以定义输入动作（Input Actions），这些动作抽象了具体的键位或控制器按钮，允许开发者基于动作而不是具体的按键或按钮编程，这有助于提高代码的可移植性和易用性。
+- **事件驱动**：新系统采用事件驱动模型，允许开发者订阅并响应特定的输入事件，而不是在每个更新周期中检查输入状态。
+```csharp
+using UnityEngine;
+using UnityEngine.InputSystem;
 
+public class PlayerController : MonoBehaviour
+{
+    public InputActionAsset inputActions; // 在Inspector中分配
+
+    private InputAction moveAction;
+
+    private void Awake()
+    {
+        // 获取动作
+        var gameplayActionMap = inputActions.FindActionMap("Gameplay");
+        moveAction = gameplayActionMap.FindAction("Move");
+
+        // 启用动作
+        moveAction.Enable();
+
+        // 订阅事件
+        moveAction.performed += OnMovePerformed;
+    }
+
+    private void OnMovePerformed(InputAction.CallbackContext context)
+    {
+        Vector2 moveInput = context.ReadValue<Vector2>();
+        // 处理移动逻辑
+    }
+
+    private void OnDestroy()
+    {
+        // 清理
+        moveAction.Disable();
+    }
+}
+
+```
 ### 事件
 
 - 事件本身是一种特殊的委托（多播）
