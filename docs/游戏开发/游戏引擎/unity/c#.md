@@ -409,8 +409,6 @@ HashSet<Person> uniquePeople = new HashSet<Person>(new NameEqualityComparer());
   - **编译**：多个类的存在不会影响文件的编译。但要注意，如果你**有多个**`public`类并且你试图在命令行上使用`csc`编译器进行单文件编译，那么**编译器将要求主类（其名字与文件名相同）存在**。
 
 - 配置属性的get、set方法
-
-
 ```c#
 public int Level
 {
@@ -424,14 +422,10 @@ public int Level
     }
 }
 ```
-
 - 更为灵活的控制访问，不写get/set表示只写/读
-
 - 操作符重载函数必须是static的
 
 - 泛型
-
-
 ```c#
 public class GenericClass <T>
 {
@@ -455,34 +449,23 @@ public class SomeClass
 ```
 
 - 继承和多态
-
   - sealed阻止重写（override）
-
   - 使用`virtual`关键字来标记**可以被重写**的方法，然后在子类中使用`override`关键字来实际重写。
-
   - `abstract`表示抽象方法（类似virtual=0）
-
   - c#不支持多继承，但是可以实现多个接口
 
 - 接口
-
-
 ```c#
 public interface IFlyable
 {
     void Fly();
 }
 ```
-
 - 向继承那样表示实现接口
 
 - 成员隐藏
-
   - 当派生类声明了一个与基类中具有相同名称的成员时，基类的成员会被派生类的成员**隐藏**。
-
   - 为了避免产生警告，显式地指定你想要隐藏基类的成员，可以使用`new`关键字
-
-
 ```c#
 public class BaseClass
 {
@@ -512,12 +495,8 @@ public class DerivedClass : BaseClass
   - 静态类在设计**实用程序和工具函数**时特别有用。静态类的生命周期与应用程序的生命周期一致。
 
 - 扩展
-
   - 扩展方法必须定义在**非泛型、非嵌套的静态类中**。（但这不是目标即被扩展类的条件）
-
   - 定义一个静态方法，将你想要扩展的类型作为它的第一个参数。这个参数必须前面有`this`修饰符。
-
-
 ```c#
 public static class StringExtensions
 {
@@ -531,7 +510,5 @@ string value = "12345";
 bool result = value.IsNumeric();
 Console.WriteLine(result);  // 输出: True
 ```
-
 - 尽管扩展方法允许为类型添加新方法，但它们不能访问类型的私有字段或方法。
-
 - 如果类型已经有了与扩展方法同名的方法，原始的方法会优先被调用。
