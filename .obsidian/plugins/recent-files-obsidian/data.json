@@ -5,6 +5,22 @@
       "path": "docs/面试保研/计算机科学/数据结构&算法设计与分析.md"
     },
     {
+      "basename": "线性数据结构",
+      "path": "docs/归档课程/数据结构/笔记/线性数据结构.md"
+    },
+    {
+      "basename": "02-Asymptotics",
+      "path": "pdf/算法设计与分析/02-Asymptotics.pdf"
+    },
+    {
+      "basename": "03-Recursion",
+      "path": "pdf/算法设计与分析/03-Recursion.pdf"
+    },
+    {
+      "basename": "01-Introduction",
+      "path": "pdf/算法设计与分析/01-Introduction.pdf"
+    },
+    {
       "basename": "数据结构",
       "path": "docs/归档课程/数据结构/数据结构.md"
     },
@@ -171,34 +187,6 @@
     {
       "basename": "3",
       "path": "docs/归档课程/计算机系统基础/data/3.md"
-    },
-    {
-      "basename": "U7 指令系统",
-      "path": "docs/归档课程/数字逻辑与计算机组成/笔记/U7 指令系统.md"
-    },
-    {
-      "basename": "算法设计与分析",
-      "path": "docs/面试保研/计算机科学/算法设计与分析.md"
-    },
-    {
-      "basename": "待完成",
-      "path": "docs/面试保研/待完成.md"
-    },
-    {
-      "basename": "离散数学",
-      "path": "docs/面试保研/数学/离散数学.md"
-    },
-    {
-      "basename": "微积分",
-      "path": "docs/面试保研/数学/微积分.md"
-    },
-    {
-      "basename": "线性代数",
-      "path": "docs/面试保研/数学/线性代数.md"
-    },
-    {
-      "basename": "常用网站",
-      "path": "docs/面试保研/常用网站.md"
     }
   ],
   "omittedPaths": [],
