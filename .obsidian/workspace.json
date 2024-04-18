@@ -32,16 +32,6 @@
             }
           },
           {
-            "id": "385d36b711c37a9a",
-            "type": "leaf",
-            "state": {
-              "type": "pdf",
-              "state": {
-                "file": "pdf/算法设计与分析/02-Asymptotics.pdf"
-              }
-            }
-          },
-          {
             "id": "60efa26a3d62e212",
             "type": "leaf",
             "state": {
@@ -156,7 +146,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/面试保研/计算机科学/数据结构&算法设计与分析.md",
+                "file": "pdf/算法设计与分析/03-Recursion.pdf",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -173,7 +163,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/面试保研/计算机科学/数据结构&算法设计与分析.md",
+                "file": "pdf/算法设计与分析/03-Recursion.pdf",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -196,7 +186,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/面试保研/计算机科学/数据结构&算法设计与分析.md"
+                "file": "pdf/算法设计与分析/03-Recursion.pdf"
               }
             }
           },
@@ -239,14 +229,14 @@
       "vscode-editor:新建代码文件": false
     }
   },
-  "active": "f107e79fc7af1cc1",
+  "active": "60efa26a3d62e212",
   "lastOpenFiles": [
-    "pdf/算法设计与分析/02-Asymptotics.pdf",
     "docs/面试保研/计算机科学/数据结构&算法设计与分析.md",
+    "pdf/算法设计与分析/03-Recursion.pdf",
+    "docs/归档课程/数据结构/笔记/线性数据结构.md",
+    "pdf/算法设计与分析/02-Asymptotics.pdf",
     "docs/杂项/latex/数学语法.md",
     "docs/归档课程/数据结构/数据结构.md",
-    "docs/归档课程/数据结构/笔记/线性数据结构.md",
-    "pdf/算法设计与分析/03-Recursion.pdf",
     "pdf/算法设计与分析/01-Introduction.pdf",
     "pdf/算法设计与分析/题目/DynamicProgrammingReview(1).pdf",
     "pdf/算法设计与分析/题目/MiddleReview.pdf",
