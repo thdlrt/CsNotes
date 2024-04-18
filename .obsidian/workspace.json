@@ -8,12 +8,30 @@
         "type": "tabs",
         "children": [
           {
+            "id": "ea3b34caa5c22fa5",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "docs/归档课程/数据结构/数据结构.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          }
+        ]
+      },
+      {
+        "id": "15a1ce30210a58f1",
+        "type": "tabs",
+        "children": [
+          {
             "id": "f107e79fc7af1cc1",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/面试保研/计算机科学/计算机组成原理.md",
+                "file": "docs/面试保研/计算机科学/数据结构.md",
                 "mode": "source",
                 "source": false
               }
@@ -93,7 +111,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/面试保研/计算机科学/计算机组成原理.md",
+                "file": "docs/归档课程/数据结构/数据结构.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +128,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/面试保研/计算机科学/计算机组成原理.md",
+                "file": "docs/归档课程/数据结构/数据结构.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +151,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/面试保研/计算机科学/计算机组成原理.md"
+                "file": "docs/归档课程/数据结构/数据结构.md"
               }
             }
           },
@@ -175,10 +193,16 @@
       "vscode-editor:新建代码文件": false
     }
   },
-  "active": "f107e79fc7af1cc1",
+  "active": "ea3b34caa5c22fa5",
   "lastOpenFiles": [
-    "docs/归档课程/计算机系统基础/data/6.md",
+    "docs/面试保研/计算机科学/数据结构.md",
+    "docs/面试(实习)/计算机科学/计算机网络.md",
+    "docs/面试(实习)/计算机科学/计算机图形学.md",
+    "docs/面试保研/计算机科学/编译原理.md",
+    "docs/面试保研/计算机科学/计算机网络.md",
+    "docs/面试保研/计算机科学/操作系统.md",
     "docs/面试保研/计算机科学/计算机组成原理.md",
+    "docs/归档课程/计算机系统基础/data/6.md",
     "docs/计算机图形学/图形学基础/材质.md",
     "docs/计算机图形学/实验/tinyrender.md",
     "docs/计算机图形学/图形学基础/现代图形学基础.md",
@@ -204,14 +228,8 @@
     "Excalidraw/Drawing 2024-04-16 23.39.50.excalidraw.md",
     "docs/课程/编译原理/笔记/语法制导的编译技术.md",
     "docs/课程/编译原理/笔记/语法分析.md",
-    "docs/课程/编译原理/作业/p6.md",
-    "docs/课程/编译原理/作业/p7.md",
-    "docs/面试(实习)/计算机科学/计算机图形学.md",
-    "docs/课程/编译原理/实验/实验笔记(编译工具的使用).md",
     "docs/课程/操作系统/代码/thread-lib/thread.h",
     "docs/课程/编译原理/实验/p2/Project_2.pdf",
-    "docs/面试(实习)/计算机科学/计算机网络.md",
-    "docs/计算机图形学/图形学基础/光栅化.md",
     "docs/课程/编译原理/实验/p3/Project_3.pdf",
     "CsNotes/2021-11-22-22-54-02.png",
     "CsNotes/2021-11-22-22-52-49.png",

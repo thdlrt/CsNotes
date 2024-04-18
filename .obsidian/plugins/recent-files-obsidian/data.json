@@ -1,6 +1,34 @@
 {
   "recentFiles": [
     {
+      "basename": "数据结构",
+      "path": "docs/归档课程/数据结构/数据结构.md"
+    },
+    {
+      "basename": "数据结构",
+      "path": "docs/面试保研/计算机科学/数据结构.md"
+    },
+    {
+      "basename": "计算机网络",
+      "path": "docs/面试(实习)/计算机科学/计算机网络.md"
+    },
+    {
+      "basename": "计算机图形学",
+      "path": "docs/面试(实习)/计算机科学/计算机图形学.md"
+    },
+    {
+      "basename": "编译原理",
+      "path": "docs/面试保研/计算机科学/编译原理.md"
+    },
+    {
+      "basename": "计算机网络",
+      "path": "docs/面试保研/计算机科学/计算机网络.md"
+    },
+    {
+      "basename": "操作系统",
+      "path": "docs/面试保研/计算机科学/操作系统.md"
+    },
+    {
       "basename": "计算机组成原理",
       "path": "docs/面试保研/计算机科学/计算机组成原理.md"
     },
@@ -89,10 +117,6 @@
       "path": "docs/课程/编译原理/作业/p7.md"
     },
     {
-      "basename": "计算机图形学",
-      "path": "docs/面试(实习)/计算机科学/计算机图形学.md"
-    },
-    {
       "basename": "实验笔记(编译工具的使用)",
       "path": "docs/课程/编译原理/实验/实验笔记(编译工具的使用).md"
     },
@@ -103,10 +127,6 @@
     {
       "basename": "Project_2",
       "path": "docs/课程/编译原理/实验/p2/Project_2.pdf"
-    },
-    {
-      "basename": "计算机网络",
-      "path": "docs/面试(实习)/计算机科学/计算机网络.md"
     },
     {
       "basename": "光栅化",
@@ -157,28 +177,12 @@
       "path": "docs/归档课程/数字逻辑与计算机组成/笔记/U7 指令系统.md"
     },
     {
-      "basename": "计算机网络",
-      "path": "docs/面试保研/计算机科学/计算机网络.md"
-    },
-    {
-      "basename": "数据结构",
-      "path": "docs/面试保研/计算机科学/数据结构.md"
-    },
-    {
       "basename": "算法设计与分析",
       "path": "docs/面试保研/计算机科学/算法设计与分析.md"
     },
     {
       "basename": "待完成",
       "path": "docs/面试保研/待完成.md"
-    },
-    {
-      "basename": "编译原理",
-      "path": "docs/面试保研/计算机科学/编译原理.md"
-    },
-    {
-      "basename": "操作系统",
-      "path": "docs/面试保研/计算机科学/操作系统.md"
     },
     {
       "basename": "离散数学",
@@ -195,10 +199,6 @@
     {
       "basename": "常用网站",
       "path": "docs/面试保研/常用网站.md"
-    },
-    {
-      "basename": "问题准备",
-      "path": "docs/面试保研/英语/问题准备.md"
     }
   ],
   "omittedPaths": [],
