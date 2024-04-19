@@ -426,7 +426,7 @@ public class PlayerController : MonoBehaviour
 }
 
 ```
-### 事件
+### 事件&广播
 
 - 事件本身是一种特殊的委托（多播）
 ```c#
@@ -484,7 +484,96 @@ public class MyScript : MonoBehaviour
 - 存在副作用：使用 `ExecuteInEditMode` 可能会导致场景数据在编辑模式下被更改，如果您没有注意到这些更改并保存了场景，这可能会导致您丢失某些所需的配置或数据。（永久改变）
 
 ## 高级
+### 文件系统
+#### 持久化存储
+- playerprefs：存储简单的少量数据，不适用于大量数据或复杂数据结构（类似简答键值对）
+```c#
+// 保存数据
+PlayerPrefs.SetInt("Level", 10);
+PlayerPrefs.SetFloat("Health", 75.0f);
+PlayerPrefs.SetString("PlayerName", "Alice");
+PlayerPrefs.Save(); // 确保数据写入
 
+// 加载数据
+int level = PlayerPrefs.GetInt("Level", 1); // 默认值为1
+float health = PlayerPrefs.GetFloat("Health", 100.0f); // 默认值为100.0f
+string playerName = PlayerPrefs.GetString("PlayerName", "DefaultName"); // 默认值为DefaultName
+
+```
+
+- 文件存储（JSON，XML，Binary）
+	- Unity 支持 JSON 和 XML 的**序列化和反序列化**，也可以使用二进制格式存储数据以提高效率和安全性。
+```c#
+[System.Serializable]
+public class GameData
+{
+    public int level;
+    public float health;
+    public string playerName;
+}
+
+// 保存数据
+GameData data = new GameData { level = 10, health = 75.0f, playerName = "Alice" };
+string json = JsonUtility.ToJson(data);
+System.IO.File.WriteAllText(Application.persistentDataPath + "/savefile.json", json);
+
+// 加载数据
+string loadedJson = System.IO.File.ReadAllText(Application.persistentDataPath + "/savefile.json");
+GameData loadedData = JsonUtility.FromJson<GameData>(loadedJson);
+
+```
+
+- SQLite 数据库
+	- 对于需要管理大量数据或复杂查询的游戏，使用 SQLite 数据库是一个好选择。Unity 可以通过第三方库（如 SQLite4Unity3d）来集成 SQLite 数据库。
+#### 序列化与反序列化
+- 对象序列化是指将对象的状态信息转换成**可存储或可传输的形式**（如二进制流、XML、JSON 等格式），以便在需要时（如存储到文件、发送到另一台机器等）能够重建对象。
+	- 持久化存储
+	- 网络通信
+	- 深拷贝
+- 可以序列化的对象
+```c#
+[Serializable]
+public class Player {
+    public string Name;
+    public int Score;
+    [NonSerialized]
+    private int secretValue; // 这个字段不会被序列化
+}
+```
+- 使用 JSON 实现（兼容性好，适用于网络传输）
+```c#
+using System.Text.Json; // .NET Core 3.0 以上版本引入的命名空间
+
+public class Player
+{
+    public string Name { get; set; }
+    public int Score { get; set; }
+}
+
+// 序列化
+Player player = new Player { Name = "Alice", Score = 100 };
+string jsonString = JsonSerializer.Serialize(player);
+
+// 反序列化
+Player deserializedPlayer = JsonSerializer.Deserialize<Player>(jsonString);
+
+```
+- 使用二进制实现（效率更高，适合用于本地存储）
+```c#
+// 序列化
+Player player = new Player { Name = "Alice", Score = 100 };
+BinaryFormatter formatter = new BinaryFormatter();
+using (Stream stream = new FileStream("player.dat", FileMode.Create, FileAccess.Write, FileShare.None))
+{
+    formatter.Serialize(stream, player);
+}
+
+// 反序列化
+using (Stream stream = new FileStream("player.dat", FileMode.Open, FileAccess.Read, FileShare.Read))
+{
+    Player deserializedPlayer = (Player)formatter.Deserialize(stream);
+}
+```
 ### 物理系统
 
 #### 射线
@@ -568,7 +657,7 @@ public static bool RayTrigger(Vector3 from, GameObject to , string tag)
   - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20231008200524733.png" alt="image-20231008200524733" style="zoom:33%;" />
 - 冲突处理
   - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20231008201857186.png" alt="image-20231008201857186" style="zoom:33%;" />
-  - 
+  - 对于二进制文件冲突：Unity 提供了一个叫做 Smart Merge（也称为 UnityYAMLMerge）的工具，专门用来解决像 Prefabs 和 Scenes 这样的 YAML 文件冲突。
 
 ### 游戏构建
 

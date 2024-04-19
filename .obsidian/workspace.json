@@ -56,7 +56,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/杂项/git/git.md",
+                "file": "docs/游戏开发/游戏引擎/unity/unity.md",
                 "mode": "source",
                 "source": false
               }
@@ -148,7 +148,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/杂项/git/git.md",
+                "file": "docs/游戏开发/游戏引擎/unity/unity.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -165,7 +165,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/杂项/git/git.md",
+                "file": "docs/游戏开发/游戏引擎/unity/unity.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -188,7 +188,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/杂项/git/git.md"
+                "file": "docs/游戏开发/游戏引擎/unity/unity.md"
               }
             }
           },
@@ -232,6 +232,11 @@
   },
   "active": "f107e79fc7af1cc1",
   "lastOpenFiles": [
+    "docs/游戏开发/游戏引擎/unity/c#.md",
+    "docs/游戏开发/游戏引擎/unity/unity.md",
+    "docs/游戏开发/游戏引擎/cocos.md",
+    "docs/游戏开发/游戏引擎/LibGDX .md",
+    "docs/杂项/git/git.md",
     "docs/面试保研/计算机科学/数据结构与算法.md",
     "docs/归档课程/数据结构/笔记/文件系统.md",
     "docs/归档课程/数据结构/数据结构.md",
@@ -263,11 +268,6 @@
     "docs/计算机图形学/图形学基础/现代图形学基础.md",
     "docs/计算机图形学/图形学基础/线性代数与变换.md",
     "docs/计算机图形学/实验/tinyraytracer.md",
-    "docs/java/java基础.md",
-    "docs/游戏开发/游戏引擎/unity/c#.md",
-    "docs/游戏开发/游戏引擎/unity/unity.md",
-    "docs/课程/软件体系结构/笔记/SSM/SpringMVC.md",
-    "临时/temp.md",
     "CsNotes/2021-11-22-22-54-02.png",
     "CsNotes/2021-11-22-22-52-49.png",
     "CsNotes/2021-11-22-22-49-26.png",
