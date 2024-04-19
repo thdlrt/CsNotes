@@ -1,36 +1,48 @@
 {
   "recentFiles": [
     {
-      "basename": "unity",
-      "path": "docs/游戏开发/游戏引擎/unity/unity.md"
-    },
-    {
-      "basename": "c#",
-      "path": "docs/游戏开发/游戏引擎/unity/c#.md"
-    },
-    {
-      "basename": "cocos",
-      "path": "docs/游戏开发/游戏引擎/cocos.md"
-    },
-    {
-      "basename": "LibGDX ",
-      "path": "docs/游戏开发/游戏引擎/LibGDX .md"
-    },
-    {
-      "basename": "git",
-      "path": "docs/杂项/git/git.md"
+      "basename": "文件系统",
+      "path": "docs/归档课程/数据结构/笔记/文件系统.md"
     },
     {
       "basename": "数据结构与算法",
       "path": "docs/面试保研/计算机科学/数据结构与算法.md"
     },
     {
-      "basename": "文件系统",
-      "path": "docs/归档课程/数据结构/笔记/文件系统.md"
-    },
-    {
       "basename": "数据结构",
       "path": "docs/归档课程/数据结构/数据结构.md"
+    },
+    {
+      "basename": "temp",
+      "path": "临时/temp.md"
+    },
+    {
+      "basename": "HR面",
+      "path": "docs/面试(实习)/面试技巧/HR面.md"
+    },
+    {
+      "basename": "git",
+      "path": "docs/杂项/git/git.md"
+    },
+    {
+      "basename": "unity",
+      "path": "docs/游戏开发/游戏引擎/unity/unity.md"
+    },
+    {
+      "basename": "LibGDX ",
+      "path": "docs/游戏开发/游戏引擎/LibGDX .md"
+    },
+    {
+      "basename": "cocos",
+      "path": "docs/游戏开发/游戏引擎/cocos.md"
+    },
+    {
+      "basename": "c#",
+      "path": "docs/游戏开发/游戏引擎/unity/c#.md"
+    },
+    {
+      "basename": "数学语法",
+      "path": "docs/杂项/latex/数学语法.md"
     },
     {
       "basename": "线性数据结构",
@@ -75,10 +87,6 @@
     {
       "basename": "L3 - Recursion",
       "path": "pdf/算法设计与分析/L3 - Recursion.pdf"
-    },
-    {
-      "basename": "数学语法",
-      "path": "docs/杂项/latex/数学语法.md"
     },
     {
       "basename": "计算机网络",
@@ -131,10 +139,6 @@
     {
       "basename": "SpringMVC",
       "path": "docs/课程/软件体系结构/笔记/SSM/SpringMVC.md"
-    },
-    {
-      "basename": "temp",
-      "path": "临时/temp.md"
     },
     {
       "basename": "并发",
@@ -195,10 +199,6 @@
     {
       "basename": "Project_3",
       "path": "docs/课程/编译原理/实验/p3/Project_3.pdf"
-    },
-    {
-      "basename": "Chapter_1",
-      "path": "docs/课程/编译原理/课件/Chapter_1.pdf"
     }
   ],
   "omittedPaths": [],

@@ -624,6 +624,63 @@ public static bool RayTrigger(Vector3 from, GameObject to , string tag)
 	- 聚光灯：从一个点放出光纤，在特定角度内形成锥形照明区域，随距离减弱，如手电筒、舞台聚光灯
 	- 面光源：从矩形、圆形区域发出光纤，柔和且均匀，模拟窗户光线等大面积光源，常用于室内
 	- 环境光：影响整个场景的光照，提供基础光照
+### 对象池
+- 对象池通过预先创建和维护一定数量的对象实例来工作。这些对象在需要时被激活，不需要时被禁用，而不是被销毁。这样，当游戏需要新对象时，可以**直接从池中获取一个已经存在的禁用对象**，激活并使用它，而不是每次需要时都创建新的对象。
+- 基本过程
+	- 创建池管理器：创建一个管理对象池的类，用于处理对象的请求和回收。
+	- 预先实例化对象：在游戏开始或对象池初始化时，根据需要预先创建足够数量的对象实例。
+	- 管理对象的获取与返回：提供方法来让其他游戏组件请求对象和返回对象。获取对象时，检查池中是否有可用的禁用对象；返回对象时，禁用该对象并将其放回池中。（注意在回收时或启用时进行初始化，因为会带有原先的属性数据）
+- 优点
+	- **性能提升**：减少运行时的实例化和销毁操作，降低**内存分配和回收的压力**，从而提高性能。
+	- **内存使用优化**：通过重复使用对象减少内存消耗，避免频繁的内存分配和**碎片化**。
+```csharp
+using System.Collections.Generic;
+using UnityEngine;
+
+public class ObjectPool : MonoBehaviour
+{
+    public GameObject prefab; // 预设对象
+    public int poolSize = 10; // 池的初始大小
+    private Queue<GameObject> objectPool = new Queue<GameObject>(); // 使用队列存储池中的对象
+
+    void Start()
+    {
+        // 初始化池
+        for (int i = 0; i < poolSize; i++)
+        {
+            GameObject obj = Instantiate(prefab); // 创建对象
+            obj.SetActive(false); // 禁用对象
+            objectPool.Enqueue(obj); // 将对象添加到池中
+        }
+    }
+
+    // 从池中获取对象
+    public GameObject GetObject()
+    {
+        if (objectPool.Count > 0)
+        {
+            GameObject obj = objectPool.Dequeue(); // 获取对象
+            obj.SetActive(true); // 激活对象
+            return obj;
+        }
+        else
+        {
+            // 池为空，根据需要可以扩展池
+            GameObject obj = Instantiate(prefab);
+            obj.SetActive(true);
+            return obj;
+        }
+    }
+
+    // 将对象返回池中
+    public void ReturnObject(GameObject obj)
+    {
+        obj.SetActive(false); // 禁用对象
+        objectPool.Enqueue(obj); // 将对象放回池中
+    }
+}
+
+```
 ## 杂项
 
 - 打印调试`Debug.Log()`
