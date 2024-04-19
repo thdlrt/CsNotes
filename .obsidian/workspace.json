@@ -62,8 +62,7 @@
               }
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -137,7 +136,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/杂项/latex/数学语法.md",
+                "file": "docs/面试保研/计算机科学/数据结构与算法.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -154,7 +153,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/杂项/latex/数学语法.md",
+                "file": "docs/面试保研/计算机科学/数据结构与算法.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -177,7 +176,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/杂项/latex/数学语法.md"
+                "file": "docs/面试保研/计算机科学/数据结构与算法.md"
               }
             }
           },
@@ -219,8 +218,9 @@
       "vscode-editor:新建代码文件": false
     }
   },
-  "active": "6f7f3ea46cf4a7c1",
+  "active": "f107e79fc7af1cc1",
   "lastOpenFiles": [
+    "docs/杂项/latex/数学语法.md",
     "docs/面试保研/计算机科学/数据结构与算法.md",
     "docs/归档课程/数据结构/笔记/线性数据结构.md",
     "docs/归档课程/数据结构/数据结构.md",
@@ -232,7 +232,6 @@
     "docs/游戏开发/游戏引擎/LibGDX .md",
     "docs/游戏开发/游戏引擎/cocos.md",
     "docs/游戏开发/游戏引擎/unity/c#.md",
-    "docs/杂项/latex/数学语法.md",
     "docs/算法/排序&选择.md",
     "docs/归档课程/数据结构/笔记/排序.md",
     "docs/面试保研/计算机科学/计算机组成原理.md",
