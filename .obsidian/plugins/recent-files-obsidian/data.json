@@ -13,12 +13,12 @@
       "path": "docs/归档课程/数据结构/数据结构.md"
     },
     {
-      "basename": "排序&选择",
-      "path": "docs/算法/排序&选择.md"
-    },
-    {
       "basename": "线性数据结构",
       "path": "docs/归档课程/数据结构/笔记/线性数据结构.md"
+    },
+    {
+      "basename": "排序&选择",
+      "path": "docs/算法/排序&选择.md"
     },
     {
       "basename": "排序",
