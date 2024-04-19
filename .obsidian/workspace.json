@@ -136,7 +136,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/面试保研/计算机科学/数据结构与算法.md",
+                "file": "docs/归档课程/数据结构/笔记/线性数据结构.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -153,7 +153,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/面试保研/计算机科学/数据结构与算法.md",
+                "file": "docs/归档课程/数据结构/笔记/线性数据结构.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -176,7 +176,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/面试保研/计算机科学/数据结构与算法.md"
+                "file": "docs/归档课程/数据结构/笔记/线性数据结构.md"
               }
             }
           },
@@ -218,10 +218,10 @@
       "vscode-editor:新建代码文件": false
     }
   },
-  "active": "f107e79fc7af1cc1",
+  "active": "f5bd1cab1b074be1",
   "lastOpenFiles": [
-    "docs/归档课程/数据结构/笔记/线性数据结构.md",
     "docs/面试保研/计算机科学/数据结构与算法.md",
+    "docs/归档课程/数据结构/笔记/线性数据结构.md",
     "docs/杂项/latex/数学语法.md",
     "docs/归档课程/数据结构/数据结构.md",
     "docs/归档课程/数据结构/笔记/文件系统.md",
