@@ -5,6 +5,18 @@
       "path": "docs/面试保研/计算机科学/数据结构与算法.md"
     },
     {
+      "basename": "数学语法",
+      "path": "docs/杂项/latex/数学语法.md"
+    },
+    {
+      "basename": "搜索结构",
+      "path": "docs/归档课程/数据结构/笔记/搜索结构.md"
+    },
+    {
+      "basename": "数据结构",
+      "path": "docs/算法/数据结构.md"
+    },
+    {
       "basename": "图",
       "path": "docs/归档课程/数据结构/笔记/图.md"
     },
@@ -17,20 +29,12 @@
       "path": "docs/归档课程/数据结构/数据结构.md"
     },
     {
-      "basename": "搜索结构",
-      "path": "docs/归档课程/数据结构/笔记/搜索结构.md"
-    },
-    {
       "basename": "图论",
       "path": "docs/算法/图论.md"
     },
     {
       "basename": "线性数据结构",
       "path": "docs/归档课程/数据结构/笔记/线性数据结构.md"
-    },
-    {
-      "basename": "数学语法",
-      "path": "docs/杂项/latex/数学语法.md"
     },
     {
       "basename": "文件系统",
@@ -195,10 +199,6 @@
     {
       "basename": "实验笔记(编译工具的使用)",
       "path": "docs/课程/编译原理/实验/实验笔记(编译工具的使用).md"
-    },
-    {
-      "basename": "thread",
-      "path": "docs/课程/操作系统/代码/thread-lib/thread.h"
     }
   ],
   "omittedPaths": [],
