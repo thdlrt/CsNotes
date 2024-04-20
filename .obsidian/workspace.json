@@ -18,21 +18,8 @@
                 "source": false
               }
             }
-          },
-          {
-            "id": "9a4845fb38f44de2",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "docs/归档课程/数据结构/笔记/搜索结构.md",
-                "mode": "source",
-                "source": false
-              }
-            }
           }
-        ],
-        "currentTab": 1
+        ]
       },
       {
         "id": "15a1ce30210a58f1",
