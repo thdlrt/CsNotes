@@ -5,16 +5,24 @@
       "path": "docs/面试保研/计算机科学/数据结构与算法.md"
     },
     {
+      "basename": "图",
+      "path": "docs/归档课程/数据结构/笔记/图.md"
+    },
+    {
+      "basename": "树",
+      "path": "docs/归档课程/数据结构/笔记/树.md"
+    },
+    {
+      "basename": "数据结构",
+      "path": "docs/归档课程/数据结构/数据结构.md"
+    },
+    {
       "basename": "搜索结构",
       "path": "docs/归档课程/数据结构/笔记/搜索结构.md"
     },
     {
       "basename": "图论",
       "path": "docs/算法/图论.md"
-    },
-    {
-      "basename": "数据结构",
-      "path": "docs/归档课程/数据结构/数据结构.md"
     },
     {
       "basename": "线性数据结构",
@@ -191,14 +199,6 @@
     {
       "basename": "thread",
       "path": "docs/课程/操作系统/代码/thread-lib/thread.h"
-    },
-    {
-      "basename": "Project_2",
-      "path": "docs/课程/编译原理/实验/p2/Project_2.pdf"
-    },
-    {
-      "basename": "光栅化",
-      "path": "docs/计算机图形学/图形学基础/光栅化.md"
     }
   ],
   "omittedPaths": [],
