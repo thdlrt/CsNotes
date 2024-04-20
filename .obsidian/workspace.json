@@ -18,21 +18,8 @@
                 "source": false
               }
             }
-          },
-          {
-            "id": "f5bd1cab1b074be1",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "docs/归档课程/数据结构/笔记/线性数据结构.md",
-                "mode": "source",
-                "source": false
-              }
-            }
           }
-        ],
-        "currentTab": 1
+        ]
       },
       {
         "id": "15a1ce30210a58f1",
@@ -220,9 +207,9 @@
   },
   "active": "f107e79fc7af1cc1",
   "lastOpenFiles": [
+    "docs/归档课程/数据结构/数据结构.md",
     "docs/归档课程/数据结构/笔记/线性数据结构.md",
     "docs/面试保研/计算机科学/数据结构与算法.md",
-    "docs/归档课程/数据结构/数据结构.md",
     "docs/杂项/latex/数学语法.md",
     "docs/归档课程/数据结构/笔记/文件系统.md",
     "临时/temp.md",
