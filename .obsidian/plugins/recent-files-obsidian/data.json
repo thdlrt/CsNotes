@@ -9,6 +9,10 @@
       "path": "docs/归档课程/数据结构/笔记/搜索结构.md"
     },
     {
+      "basename": "图论",
+      "path": "docs/算法/图论.md"
+    },
+    {
       "basename": "数据结构",
       "path": "docs/归档课程/数据结构/数据结构.md"
     },
@@ -195,10 +199,6 @@
     {
       "basename": "光栅化",
       "path": "docs/计算机图形学/图形学基础/光栅化.md"
-    },
-    {
-      "basename": "游戏设计",
-      "path": "docs/游戏开发/游戏设计.md"
     }
   ],
   "omittedPaths": [],
