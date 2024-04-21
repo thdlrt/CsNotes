@@ -5,6 +5,10 @@
       "path": "docs/面试保研/计算机科学/数据结构与算法.md"
     },
     {
+      "basename": "图",
+      "path": "docs/归档课程/数据结构/笔记/图.md"
+    },
+    {
       "basename": "数学语法",
       "path": "docs/杂项/latex/数学语法.md"
     },
@@ -19,10 +23,6 @@
     {
       "basename": "数据结构",
       "path": "docs/算法/数据结构.md"
-    },
-    {
-      "basename": "图",
-      "path": "docs/归档课程/数据结构/笔记/图.md"
     },
     {
       "basename": "数据结构",
