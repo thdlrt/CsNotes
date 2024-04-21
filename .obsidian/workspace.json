@@ -8,18 +8,6 @@
         "type": "tabs",
         "children": [
           {
-            "id": "f499ec59d93bd8e2",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "docs/归档课程/数据结构/笔记/树.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
             "id": "b18e956d83234c1d",
             "type": "leaf",
             "state": {
@@ -219,9 +207,9 @@
   },
   "active": "f107e79fc7af1cc1",
   "lastOpenFiles": [
-    "docs/归档课程/数据结构/笔记/树.md",
-    "docs/面试保研/计算机科学/数据结构与算法.md",
     "docs/杂项/latex/数学语法.md",
+    "docs/面试保研/计算机科学/数据结构与算法.md",
+    "docs/归档课程/数据结构/笔记/树.md",
     "docs/归档课程/数据结构/笔记/搜索结构.md",
     "docs/算法/数据结构.md",
     "docs/归档课程/数据结构/笔记/图.md",
