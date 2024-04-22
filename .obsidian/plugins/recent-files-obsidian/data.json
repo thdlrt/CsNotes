@@ -5,12 +5,12 @@
       "path": "docs/面试保研/计算机科学/数据结构与算法.md"
     },
     {
-      "basename": "HR面",
-      "path": "docs/面试(实习)/面试技巧/HR面.md"
-    },
-    {
       "basename": "数学语法",
       "path": "docs/杂项/latex/数学语法.md"
+    },
+    {
+      "basename": "HR面",
+      "path": "docs/面试(实习)/面试技巧/HR面.md"
     },
     {
       "basename": "虚拟化",
