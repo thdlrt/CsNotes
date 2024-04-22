@@ -1,16 +1,24 @@
 {
   "recentFiles": [
     {
-      "basename": "图",
-      "path": "docs/归档课程/数据结构/笔记/图.md"
+      "basename": "HR面",
+      "path": "docs/面试(实习)/面试技巧/HR面.md"
+    },
+    {
+      "basename": "反问环节",
+      "path": "docs/面试(实习)/面试技巧/反问环节.md"
+    },
+    {
+      "basename": "数据结构与算法",
+      "path": "docs/面试保研/计算机科学/数据结构与算法.md"
     },
     {
       "basename": "作业",
       "path": "docs/课程/金融工程学/作业.md"
     },
     {
-      "basename": "数据结构与算法",
-      "path": "docs/面试保研/计算机科学/数据结构与算法.md"
+      "basename": "图",
+      "path": "docs/归档课程/数据结构/笔记/图.md"
     },
     {
       "basename": "郑振龙《金融工程》（第5版）笔记和课后习题（含考研真题）详解答案",
@@ -55,10 +63,6 @@
     {
       "basename": "temp",
       "path": "临时/temp.md"
-    },
-    {
-      "basename": "HR面",
-      "path": "docs/面试(实习)/面试技巧/HR面.md"
     },
     {
       "basename": "git",
@@ -195,10 +199,6 @@
     {
       "basename": "Drawing 2024-04-16 23.40.35.excalidraw",
       "path": "Excalidraw/Drawing 2024-04-16 23.40.35.excalidraw.md"
-    },
-    {
-      "basename": "语法制导的编译技术",
-      "path": "docs/课程/编译原理/笔记/语法制导的编译技术.md"
     }
   ],
   "omittedPaths": [],
