@@ -5,6 +5,14 @@
       "path": "docs/课程/操作系统/笔记/虚拟化.md"
     },
     {
+      "basename": "Drawing 2024-04-22 16.23.19.excalidraw",
+      "path": "Excalidraw/Drawing 2024-04-22 16.23.19.excalidraw.md"
+    },
+    {
+      "basename": "Drawing 2024-04-22 16.06.51.excalidraw",
+      "path": "Excalidraw/Drawing 2024-04-22 16.06.51.excalidraw.md"
+    },
+    {
       "basename": "HR面",
       "path": "docs/面试(实习)/面试技巧/HR面.md"
     },
@@ -191,14 +199,6 @@
     {
       "basename": "Chapter_7",
       "path": "docs/课程/编译原理/课件/Chapter_7.pdf"
-    },
-    {
-      "basename": "中间代码生成",
-      "path": "docs/课程/编译原理/笔记/中间代码生成.md"
-    },
-    {
-      "basename": "Chapter_6",
-      "path": "docs/课程/编译原理/课件/Chapter_6.pdf"
     }
   ],
   "omittedPaths": [],

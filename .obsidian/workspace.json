@@ -54,6 +54,16 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "dd6163bcd7510fa9",
+            "type": "leaf",
+            "state": {
+              "type": "excalidraw",
+              "state": {
+                "file": "Excalidraw/Drawing 2024-04-22 16.23.19.excalidraw.md"
+              }
+            }
           }
         ],
         "currentTab": 3
@@ -215,8 +225,10 @@
   },
   "active": "936b16945eb2df9c",
   "lastOpenFiles": [
-    "docs/面试(实习)/面试技巧/HR面.md",
+    "Excalidraw/Drawing 2024-04-22 16.23.19.excalidraw.md",
     "docs/课程/操作系统/笔记/虚拟化.md",
+    "Excalidraw/Drawing 2024-04-22 16.06.51.excalidraw.md",
+    "docs/面试(实习)/面试技巧/HR面.md",
     "docs/面试保研/计算机科学/数据结构与算法.md",
     "docs/面试(实习)/面试技巧/反问环节.md",
     "docs/课程/金融工程学/作业.md",
@@ -240,8 +252,6 @@
     "docs/算法/排序&选择.md",
     "docs/归档课程/数据结构/笔记/排序.md",
     "docs/面试保研/计算机科学/计算机组成原理.md",
-    "docs/课程/编译原理/作业/p7.md",
-    "docs/课程/编译原理/作业/p8.md",
     "pdf/算法设计与分析/L4 - QuickSort.pdf",
     "pdf/算法设计与分析/L6 - MergeSort.pdf",
     "pdf/算法设计与分析/L5 - HeapSort.pdf",
