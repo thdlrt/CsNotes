@@ -20,6 +20,16 @@
             }
           },
           {
+            "id": "547891901bdbdac6",
+            "type": "leaf",
+            "state": {
+              "type": "excalidraw",
+              "state": {
+                "file": "Excalidraw/Drawing 2024-04-22 22.36.10.excalidraw.md"
+              }
+            }
+          },
+          {
             "id": "6f7f3ea46cf4a7c1",
             "type": "leaf",
             "state": {
@@ -202,6 +212,7 @@
   "active": "b28a541a5964f7c7",
   "lastOpenFiles": [
     "docs/杂项/latex/数学语法.md",
+    "Excalidraw/Drawing 2024-04-22 22.36.10.excalidraw.md",
     "docs/面试保研/计算机科学/数据结构与算法.md",
     "docs/面试(实习)/面试技巧/HR面.md",
     "docs/课程/操作系统/笔记/虚拟化.md",
@@ -227,7 +238,6 @@
     "docs/游戏开发/游戏引擎/unity/c#.md",
     "docs/算法/排序&选择.md",
     "docs/归档课程/数据结构/笔记/排序.md",
-    "docs/面试保研/计算机科学/计算机组成原理.md",
     "pdf/算法设计与分析/L4 - QuickSort.pdf",
     "pdf/算法设计与分析/L6 - MergeSort.pdf",
     "pdf/算法设计与分析/L5 - HeapSort.pdf",

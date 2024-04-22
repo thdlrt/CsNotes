@@ -9,6 +9,10 @@
       "path": "docs/杂项/latex/数学语法.md"
     },
     {
+      "basename": "Drawing 2024-04-22 22.36.10.excalidraw",
+      "path": "Excalidraw/Drawing 2024-04-22 22.36.10.excalidraw.md"
+    },
+    {
       "basename": "HR面",
       "path": "docs/面试(实习)/面试技巧/HR面.md"
     },
@@ -195,10 +199,6 @@
     {
       "basename": "cv",
       "path": "docs/课程/操作系统/代码/cv-sem/cv.c"
-    },
-    {
-      "basename": "Chapter_7",
-      "path": "docs/课程/编译原理/课件/Chapter_7.pdf"
     }
   ],
   "omittedPaths": [],
