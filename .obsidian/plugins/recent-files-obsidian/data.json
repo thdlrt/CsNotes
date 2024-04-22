@@ -1,6 +1,18 @@
 {
   "recentFiles": [
     {
+      "basename": "数据结构与算法",
+      "path": "docs/面试保研/计算机科学/数据结构与算法.md"
+    },
+    {
+      "basename": "HR面",
+      "path": "docs/面试(实习)/面试技巧/HR面.md"
+    },
+    {
+      "basename": "数学语法",
+      "path": "docs/杂项/latex/数学语法.md"
+    },
+    {
       "basename": "虚拟化",
       "path": "docs/课程/操作系统/笔记/虚拟化.md"
     },
@@ -11,14 +23,6 @@
     {
       "basename": "Drawing 2024-04-22 16.06.51.excalidraw",
       "path": "Excalidraw/Drawing 2024-04-22 16.06.51.excalidraw.md"
-    },
-    {
-      "basename": "HR面",
-      "path": "docs/面试(实习)/面试技巧/HR面.md"
-    },
-    {
-      "basename": "数据结构与算法",
-      "path": "docs/面试保研/计算机科学/数据结构与算法.md"
     },
     {
       "basename": "反问环节",
@@ -39,10 +43,6 @@
     {
       "basename": "金融经济学",
       "path": "docs/归档课程/金融经济学.md"
-    },
-    {
-      "basename": "数学语法",
-      "path": "docs/杂项/latex/数学语法.md"
     },
     {
       "basename": "树",
