@@ -55,8 +55,7 @@
               }
             }
           }
-        ],
-        "currentTab": 3
+        ]
       }
     ],
     "direction": "vertical"
@@ -130,7 +129,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/课程/操作系统/笔记/虚拟化.md",
+                "file": "docs/面试(实习)/面试技巧/HR面.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -147,7 +146,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/课程/操作系统/笔记/虚拟化.md",
+                "file": "docs/面试(实习)/面试技巧/HR面.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -170,7 +169,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/课程/操作系统/笔记/虚拟化.md"
+                "file": "docs/面试(实习)/面试技巧/HR面.md"
               }
             }
           },
@@ -213,8 +212,9 @@
       "vscode-editor:新建代码文件": false
     }
   },
-  "active": "936b16945eb2df9c",
+  "active": "f107e79fc7af1cc1",
   "lastOpenFiles": [
+    "docs/课程/操作系统/笔记/虚拟化.md",
     "docs/面试保研/计算机科学/数据结构与算法.md",
     "docs/面试(实习)/面试技巧/HR面.md",
     "docs/面试(实习)/面试技巧/反问环节.md",
@@ -250,7 +250,6 @@
     "pdf/算法设计与分析/L7 - Selection.pdf",
     "pdf/算法设计与分析/L2 - Asymptotics.pdf",
     "pdf/算法设计与分析/L16 - DP1.pdf",
-    "docs/面试(实习)/计算机科学/计算机网络.md",
     "CsNotes/2021-11-22-22-54-02.png",
     "CsNotes/2021-11-22-22-52-49.png",
     "CsNotes/2021-11-22-22-49-26.png",
