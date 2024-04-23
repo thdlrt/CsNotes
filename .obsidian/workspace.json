@@ -183,7 +183,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 226.5
+    "width": 221.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -203,8 +203,8 @@
   "active": "b28a541a5964f7c7",
   "lastOpenFiles": [
     "docs/杂项/latex/数学语法.md",
-    "docs/面试(实习)/面试技巧/HR面.md",
     "docs/面试保研/计算机科学/数据结构与算法.md",
+    "docs/面试(实习)/面试技巧/HR面.md",
     "docs/课程/操作系统/笔记/虚拟化.md",
     "docs/课程/编译原理/笔记/中间代码生成.md",
     "docs/课程/编译原理/作业/答案/dragon-book-exercise-answers-master/ch06/6.6/6.6.md",
