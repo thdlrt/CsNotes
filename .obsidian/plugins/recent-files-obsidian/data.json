@@ -1,8 +1,20 @@
 {
   "recentFiles": [
     {
+      "basename": "中间代码生成",
+      "path": "docs/课程/编译原理/笔记/中间代码生成.md"
+    },
+    {
       "basename": "虚拟化",
       "path": "docs/课程/操作系统/笔记/虚拟化.md"
+    },
+    {
+      "basename": "6.6",
+      "path": "docs/课程/编译原理/作业/答案/dragon-book-exercise-answers-master/ch06/6.6/6.6.md"
+    },
+    {
+      "basename": "p8",
+      "path": "docs/课程/编译原理/作业/p8.md"
     },
     {
       "basename": "HR面",
@@ -117,10 +129,6 @@
       "path": "docs/课程/编译原理/作业/p7.md"
     },
     {
-      "basename": "p8",
-      "path": "docs/课程/编译原理/作业/p8.md"
-    },
-    {
       "basename": "L4 - QuickSort",
       "path": "pdf/算法设计与分析/L4 - QuickSort.pdf"
     },
@@ -191,14 +199,6 @@
     {
       "basename": "SpringMVC",
       "path": "docs/课程/软件体系结构/笔记/SSM/SpringMVC.md"
-    },
-    {
-      "basename": "并发",
-      "path": "docs/课程/操作系统/笔记/并发.md"
-    },
-    {
-      "basename": "cv",
-      "path": "docs/课程/操作系统/代码/cv-sem/cv.c"
     }
   ],
   "omittedPaths": [],

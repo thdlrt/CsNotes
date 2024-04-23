@@ -54,9 +54,21 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "8cce5dc6a5fb297a",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "docs/课程/编译原理/笔记/中间代码生成.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
         ],
-        "currentTab": 3
+        "currentTab": 4
       }
     ],
     "direction": "vertical"
@@ -110,13 +122,11 @@
               "state": {}
             }
           }
-        ],
-        "currentTab": 3
+        ]
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 580.5
   },
   "right": {
     "id": "d615b65a4ccf8a6a",
@@ -132,7 +142,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/课程/操作系统/笔记/虚拟化.md",
+                "file": "docs/课程/编译原理/笔记/中间代码生成.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -149,7 +159,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/课程/操作系统/笔记/虚拟化.md",
+                "file": "docs/课程/编译原理/笔记/中间代码生成.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -172,7 +182,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/课程/操作系统/笔记/虚拟化.md"
+                "file": "docs/课程/编译原理/笔记/中间代码生成.md"
               }
             }
           },
@@ -197,8 +207,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 226.5,
-    "collapsed": true
+    "width": 226.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -215,10 +224,13 @@
       "vscode-editor:新建代码文件": false
     }
   },
-  "active": "326508bac9e32abb",
+  "active": "8cce5dc6a5fb297a",
   "lastOpenFiles": [
-    "docs/面试(实习)/面试技巧/HR面.md",
     "docs/课程/操作系统/笔记/虚拟化.md",
+    "docs/课程/编译原理/笔记/中间代码生成.md",
+    "docs/课程/编译原理/作业/答案/dragon-book-exercise-answers-master/ch06/6.6/6.6.md",
+    "docs/课程/编译原理/作业/p8.md",
+    "docs/面试(实习)/面试技巧/HR面.md",
     "docs/面试保研/计算机科学/数据结构与算法.md",
     "docs/杂项/latex/数学语法.md",
     "docs/算法/图论.md",
@@ -241,9 +253,6 @@
     "docs/游戏开发/游戏引擎/unity/unity.md",
     "docs/游戏开发/游戏引擎/LibGDX .md",
     "docs/游戏开发/游戏引擎/cocos.md",
-    "docs/游戏开发/游戏引擎/unity/c#.md",
-    "docs/算法/排序&选择.md",
-    "docs/归档课程/数据结构/笔记/排序.md",
     "pdf/算法设计与分析/L4 - QuickSort.pdf",
     "pdf/算法设计与分析/L6 - MergeSort.pdf",
     "pdf/算法设计与分析/L5 - HeapSort.pdf",
