@@ -56,7 +56,7 @@
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -130,7 +130,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/课程/操作系统/笔记/虚拟化.md",
+                "file": "docs/杂项/latex/数学语法.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -147,7 +147,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/课程/操作系统/笔记/虚拟化.md",
+                "file": "docs/杂项/latex/数学语法.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -170,7 +170,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/课程/操作系统/笔记/虚拟化.md"
+                "file": "docs/杂项/latex/数学语法.md"
               }
             }
           },
@@ -212,13 +212,13 @@
       "vscode-editor:新建代码文件": false
     }
   },
-  "active": "96e173acdf249e6c",
+  "active": "6f7f3ea46cf4a7c1",
   "lastOpenFiles": [
-    "docs/课程/编译原理/笔记/中间代码生成.md",
+    "docs/面试(实习)/面试技巧/HR面.md",
     "docs/课程/操作系统/笔记/虚拟化.md",
+    "docs/课程/编译原理/笔记/中间代码生成.md",
     "docs/课程/编译原理/作业/答案/dragon-book-exercise-answers-master/ch06/6.6/6.6.md",
     "docs/课程/编译原理/作业/p8.md",
-    "docs/面试(实习)/面试技巧/HR面.md",
     "docs/面试保研/计算机科学/数据结构与算法.md",
     "docs/杂项/latex/数学语法.md",
     "docs/算法/图论.md",
