@@ -1,12 +1,16 @@
 {
   "recentFiles": [
     {
-      "basename": "数学语法",
-      "path": "docs/杂项/latex/数学语法.md"
-    },
-    {
       "basename": "HR面",
       "path": "docs/面试(实习)/面试技巧/HR面.md"
+    },
+    {
+      "basename": "数据结构与算法",
+      "path": "docs/面试保研/计算机科学/数据结构与算法.md"
+    },
+    {
+      "basename": "数学语法",
+      "path": "docs/杂项/latex/数学语法.md"
     },
     {
       "basename": "虚拟化",
@@ -23,10 +27,6 @@
     {
       "basename": "p8",
       "path": "docs/课程/编译原理/作业/p8.md"
-    },
-    {
-      "basename": "数据结构与算法",
-      "path": "docs/面试保研/计算机科学/数据结构与算法.md"
     },
     {
       "basename": "图论",
