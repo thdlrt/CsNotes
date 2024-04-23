@@ -5,20 +5,24 @@
       "path": "docs/面试保研/计算机科学/数据结构与算法.md"
     },
     {
-      "basename": "图",
-      "path": "docs/归档课程/数据结构/笔记/图.md"
-    },
-    {
-      "basename": "Drawing 2024-04-22 22.36.10.excalidraw",
-      "path": "Excalidraw/Drawing 2024-04-22 22.36.10.excalidraw.md"
-    },
-    {
       "basename": "数学语法",
       "path": "docs/杂项/latex/数学语法.md"
     },
     {
       "basename": "HR面",
       "path": "docs/面试(实习)/面试技巧/HR面.md"
+    },
+    {
+      "basename": "图论",
+      "path": "docs/算法/图论.md"
+    },
+    {
+      "basename": "图",
+      "path": "docs/归档课程/数据结构/笔记/图.md"
+    },
+    {
+      "basename": "Drawing 2024-04-22 22.36.10.excalidraw",
+      "path": "Excalidraw/Drawing 2024-04-22 22.36.10.excalidraw.md"
     },
     {
       "basename": "虚拟化",
@@ -63,10 +67,6 @@
     {
       "basename": "数据结构",
       "path": "docs/归档课程/数据结构/数据结构.md"
-    },
-    {
-      "basename": "图论",
-      "path": "docs/算法/图论.md"
     },
     {
       "basename": "线性数据结构",
