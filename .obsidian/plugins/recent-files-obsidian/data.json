@@ -1,6 +1,30 @@
 {
   "recentFiles": [
     {
+      "basename": "计算机网络",
+      "path": "docs/面试(实习)/计算机科学/计算机网络.md"
+    },
+    {
+      "basename": "计算机图形学",
+      "path": "docs/面试(实习)/计算机科学/计算机图形学.md"
+    },
+    {
+      "basename": "操作系统",
+      "path": "docs/面试(实习)/计算机科学/操作系统.md"
+    },
+    {
+      "basename": "并发编程",
+      "path": "docs/面试(实习)/计算机科学/并发编程.md"
+    },
+    {
+      "basename": "软件体系结构(Spring)",
+      "path": "docs/课程/软件体系结构/软件体系结构(Spring).md"
+    },
+    {
+      "basename": "腾讯天美游戏端开发",
+      "path": "面试/自我介绍/腾讯天美游戏端开发.md"
+    },
+    {
       "basename": "并发",
       "path": "docs/课程/操作系统/笔记/并发.md"
     },
@@ -27,10 +51,6 @@
     {
       "basename": "设计模式",
       "path": "docs/软件工程/设计模式.md"
-    },
-    {
-      "basename": "腾讯天美游戏端开发",
-      "path": "面试/自我介绍/腾讯天美游戏端开发.md"
     },
     {
       "basename": "现代图形学基础",
@@ -179,26 +199,6 @@
     {
       "basename": "正则表达式",
       "path": "docs/杂项/杂项/正则表达式.md"
-    },
-    {
-      "basename": "p3",
-      "path": "docs/课程/编译原理/作业/p3.md"
-    },
-    {
-      "basename": "使用VSCode编写C++单文件程序(Windows系统)",
-      "path": "docs/算法/使用VSCode编写C++单文件程序(Windows系统).md"
-    },
-    {
-      "basename": "前缀和与差分",
-      "path": "docs/算法/前缀和与差分.md"
-    },
-    {
-      "basename": "二分&倍增",
-      "path": "docs/算法/二分&倍增.md"
-    },
-    {
-      "basename": "p2",
-      "path": "docs/课程/编译原理/作业/p2.md"
     }
   ],
   "omittedPaths": [],

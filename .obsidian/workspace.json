@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/课程/操作系统/笔记/并发.md",
+                "file": "docs/面试(实习)/计算机科学/计算机网络.md",
                 "mode": "source",
                 "source": false
               }
@@ -73,13 +73,11 @@
               "state": {}
             }
           }
-        ],
-        "currentTab": 3
+        ]
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 200
   },
   "right": {
     "id": "d615b65a4ccf8a6a",
@@ -95,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/课程/操作系统/笔记/并发.md",
+                "file": "docs/面试(实习)/计算机科学/计算机网络.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -112,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/课程/操作系统/笔记/并发.md",
+                "file": "docs/面试(实习)/计算机科学/计算机网络.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -135,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/课程/操作系统/笔记/并发.md"
+                "file": "docs/面试(实习)/计算机科学/计算机网络.md"
               }
             }
           },
@@ -172,8 +170,14 @@
   },
   "active": "5f6afbd0c9be17fe",
   "lastOpenFiles": [
-    "docs/课程/操作系统/操作系统：三个简单的部分（OSTEP） (it-ebooks) (Z-Library).pdf",
+    "docs/面试(实习)/计算机科学/计算机图形学.md",
+    "docs/面试(实习)/计算机科学/操作系统.md",
+    "docs/面试(实习)/计算机科学/并发编程.md",
+    "docs/面试(实习)/计算机科学/计算机网络.md",
+    "docs/课程/软件体系结构/软件体系结构(Spring).md",
+    "面试/自我介绍/腾讯天美游戏端开发.md",
     "docs/课程/操作系统/笔记/并发.md",
+    "docs/课程/操作系统/操作系统：三个简单的部分（OSTEP） (it-ebooks) (Z-Library).pdf",
     "docs/课程/软件体系结构/笔记/SSM/SpringMVC.md",
     "docs/面试保研/往年题目.md",
     "docs/课程/编译原理/课件/Chapter_7.pdf",
@@ -202,11 +206,6 @@
     "docs/面试保研/数学",
     "docs/面试保研/计算机科学",
     "docs/面试保研/英语",
-    "docs/面试保研/待完成.md",
-    "docs/面试保研/常用网站.md",
-    "docs/面试(实习)/计算机科学/计算机图形学.md",
-    "docs/面试(实习)/计算机科学/杂项.md",
-    "docs/面试(实习)/计算机科学/计算机网络.md",
     "CsNotes/2021-11-22-22-54-02.png",
     "CsNotes/2021-11-22-22-52-49.png",
     "CsNotes/2021-11-22-22-49-26.png",
