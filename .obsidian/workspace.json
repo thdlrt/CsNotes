@@ -110,7 +110,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/课程/编译原理/课件/Chapter_7.pdf",
+                "file": "docs/课程/编译原理/笔记/运行时刻环境.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -127,7 +127,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/课程/编译原理/课件/Chapter_7.pdf",
+                "file": "docs/课程/编译原理/笔记/运行时刻环境.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -150,7 +150,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/课程/编译原理/课件/Chapter_7.pdf"
+                "file": "docs/课程/编译原理/笔记/运行时刻环境.md"
               }
             }
           },
@@ -185,10 +185,10 @@
       "obsidian-advanced-slides:Show Slide Preview": false
     }
   },
-  "active": "3bf67448615cb5a9",
+  "active": "d0e069c16cf7c8df",
   "lastOpenFiles": [
-    "docs/课程/编译原理/笔记/运行时刻环境.md",
     "docs/课程/编译原理/课件/Chapter_7.pdf",
+    "docs/课程/编译原理/笔记/运行时刻环境.md",
     "docs/面试(实习)/计算机科学/计算机网络.md",
     "docs/课程/操作系统/笔记/并发.md",
     "conflict-files-obsidian-git.md",
