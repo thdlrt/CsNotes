@@ -20,18 +20,6 @@
             }
           },
           {
-            "id": "b28a541a5964f7c7",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "docs/面试保研/计算机科学/数据结构与算法.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
             "id": "6f7f3ea46cf4a7c1",
             "type": "leaf",
             "state": {
@@ -42,9 +30,15 @@
                 "source": false
               }
             }
-          },
+          }
+        ]
+      },
+      {
+        "id": "b425d55f606ed9a5",
+        "type": "tabs",
+        "children": [
           {
-            "id": "05cb4dda39c6dfe7",
+            "id": "8ee45e1e5dc6c55e",
             "type": "leaf",
             "state": {
               "type": "pdf",
@@ -53,8 +47,7 @@
               }
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -112,8 +105,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 301.5,
-    "collapsed": true
+    "width": 301.5
   },
   "right": {
     "id": "d615b65a4ccf8a6a",
@@ -129,7 +121,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/面试保研/计算机科学/数据结构与算法.md",
+                "file": "docs/面试保研/数学/离散数学.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -146,7 +138,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/面试保研/计算机科学/数据结构与算法.md",
+                "file": "docs/面试保研/数学/离散数学.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -169,7 +161,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/面试保研/计算机科学/数据结构与算法.md"
+                "file": "docs/面试保研/数学/离散数学.md"
               }
             }
           },
@@ -194,7 +186,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 221.5
+    "width": 221.5,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -211,13 +204,13 @@
       "vscode-editor:新建代码文件": false
     }
   },
-  "active": "b28a541a5964f7c7",
+  "active": "6c1dc2ada2e93fbc",
   "lastOpenFiles": [
+    "pdf/离散数学.pdf",
+    "docs/面试保研/数学/离散数学.md",
     "docs/杂项/latex/数学语法.md",
     "docs/面试保研/计算机科学/数据结构与算法.md",
     "conflict-files-obsidian-git.md",
-    "docs/面试保研/数学/离散数学.md",
-    "pdf/离散数学.pdf",
     "pdf/线性代数.pdf",
     "pdf/笔记.pdf",
     "docs/课程/操作系统/笔记/虚拟化.md",
@@ -242,7 +235,6 @@
     "docs/归档课程/数据结构/笔记/文件系统.md",
     "临时/temp.md",
     "docs/杂项/git/git.md",
-    "docs/游戏开发/游戏引擎/unity/unity.md",
     "pdf/算法设计与分析/L4 - QuickSort.pdf",
     "pdf/算法设计与分析/L6 - MergeSort.pdf",
     "pdf/算法设计与分析/L5 - HeapSort.pdf",
