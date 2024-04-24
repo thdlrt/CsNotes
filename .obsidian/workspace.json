@@ -18,18 +18,6 @@
                 "source": false
               }
             }
-          },
-          {
-            "id": "6f7f3ea46cf4a7c1",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "docs/杂项/latex/数学语法.md",
-                "mode": "source",
-                "source": false
-              }
-            }
           }
         ]
       },
@@ -46,8 +34,21 @@
                 "file": "pdf/离散数学.pdf"
               }
             }
+          },
+          {
+            "id": "6f7f3ea46cf4a7c1",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "docs/杂项/latex/数学语法.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
