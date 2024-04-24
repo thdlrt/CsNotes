@@ -105,7 +105,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 301.5
+    "width": 301.5,
+    "collapsed": true
   },
   "right": {
     "id": "d615b65a4ccf8a6a",
@@ -121,7 +122,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "pdf/离散数学.pdf",
+                "file": "docs/面试保研/数学/离散数学.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -138,7 +139,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "pdf/离散数学.pdf",
+                "file": "docs/面试保研/数学/离散数学.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -161,7 +162,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "pdf/离散数学.pdf"
+                "file": "docs/面试保研/数学/离散数学.md"
               }
             }
           },
@@ -204,10 +205,10 @@
       "vscode-editor:新建代码文件": false
     }
   },
-  "active": "8ee45e1e5dc6c55e",
+  "active": "6c1dc2ada2e93fbc",
   "lastOpenFiles": [
-    "docs/面试保研/数学/离散数学.md",
     "pdf/离散数学.pdf",
+    "docs/面试保研/数学/离散数学.md",
     "docs/杂项/latex/数学语法.md",
     "docs/课程/编译原理/作业/p9.md",
     "docs/课程/编译原理/作业/p8.md",
