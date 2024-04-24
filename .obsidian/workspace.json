@@ -122,7 +122,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/面试保研/数学/离散数学.md",
+                "file": "docs/杂项/latex/数学语法.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -139,7 +139,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/面试保研/数学/离散数学.md",
+                "file": "docs/杂项/latex/数学语法.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -162,7 +162,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/面试保研/数学/离散数学.md"
+                "file": "docs/杂项/latex/数学语法.md"
               }
             }
           },
@@ -205,10 +205,12 @@
       "vscode-editor:新建代码文件": false
     }
   },
-  "active": "6c1dc2ada2e93fbc",
+  "active": "6f7f3ea46cf4a7c1",
   "lastOpenFiles": [
-    "pdf/离散数学.pdf",
     "docs/面试保研/数学/离散数学.md",
+    "pdf/离散数学.pdf",
+    "docs/课程/编译原理/作业/p9.md",
+    "docs/课程/编译原理/作业/p8.md",
     "docs/杂项/latex/数学语法.md",
     "docs/面试保研/计算机科学/数据结构与算法.md",
     "conflict-files-obsidian-git.md",
@@ -218,7 +220,6 @@
     "docs/课程/编译原理/笔记/中间代码生成.md",
     "docs/面试(实习)/面试技巧/HR面.md",
     "docs/课程/编译原理/作业/答案/dragon-book-exercise-answers-master/ch06/6.6/6.6.md",
-    "docs/课程/编译原理/作业/p8.md",
     "docs/算法/图论.md",
     "docs/归档课程/数据结构/笔记/图.md",
     "Excalidraw/Drawing 2024-04-22 22.36.10.excalidraw.md",
@@ -235,7 +236,6 @@
     "docs/归档课程/数据结构/笔记/线性数据结构.md",
     "docs/归档课程/数据结构/笔记/文件系统.md",
     "临时/temp.md",
-    "docs/杂项/git/git.md",
     "pdf/算法设计与分析/L4 - QuickSort.pdf",
     "pdf/算法设计与分析/L6 - MergeSort.pdf",
     "pdf/算法设计与分析/L5 - HeapSort.pdf",
