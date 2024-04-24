@@ -157,8 +157,7 @@ GameObject instance = Instantiate(myPrefab, position, rotation);
 ### 生命周期函数
 
 - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20231025094712073.png" alt="image-20231025094712073" style="zoom:50%;" />
-- 像构造析构函数一样，子类和父类之间存在自动调用关系
-  - 如果声明为虚函数并重写则只会调用一个
+
 #### 初始化阶段
 - **Awake**
   - 在**加载**包含脚本的游戏对象时调用，无论该对象是否启用。
@@ -169,8 +168,8 @@ GameObject instance = Instantiate(myPrefab, position, rotation);
 - **OnEnable**
   - 当脚本被初始化或者当所在的GameObject被设置为active时调用。在脚本对象被**激活**时调用
   - 这发生在所有对象的 `Awake` 之后、任何对象的 `Start` 之前。
-  - 注册事件监听器或**广播消息。开始协程。对外部资源进行订阅或更新状态。****
-**
+  - 注册事件监听器或**广播消息。开始协程。对外部资源进行订阅或更新状态。**
+
 - **Start**
   - 在**Update之前**的第一个帧中被调用。
   - **仅被调用一次**。
@@ -184,10 +183,10 @@ GameObject instance = Instantiate(myPrefab, position, rotation);
 - **Update**
   - 每**帧**都被调用。
   - 主要用于普通的游戏逻辑。
-  - 获取帧时间 `Time.deltaTime` 常在移动时使用
+  - 获取帧时间 `Time.deltaTime` 
 
 - **LateUpdate**
-  - 每帧在所有Update方法**调用后被调用**。
+  - 在每帧在所有 Update 方法**调用后被调用**。
   - 主要用于跟随摄像机的移动、后处理、修正、反馈等操作。
   - 如果你有一个摄像机跟随一个角色，你可能想要确保角色在 `Update()` 中首先移动，然后摄像机在 `LateUpdate()` 中进行更新以**跟随角色**。这确保了无论角色如何移动或如何被其他系统影响，摄像机都能够在该帧结束时准确地跟随它。
 
@@ -214,7 +213,7 @@ GameObject instance = Instantiate(myPrefab, position, rotation);
   - **gravity**：定义在 `Physics` 菜单中，全局影响所有 Rigidbody 的重力方向和大小。
   - **drag** 和 **angularDrag**：定义 Rigidbody 的空气阻力和角阻力。
 - 关节
-  - nity 提供了一系列的关节组件（如 Hinge Joint, Spring Joint 等）允许物体之间有约束关系。
+  - unity 提供了一系列的关节组件（如 Hinge Joint, Spring Joint 等）允许物体之间有约束关系。
 
 #### 基本组件
 
@@ -290,20 +289,21 @@ public class CameraLookAt : MonoBehaviour
 
 - 使用四元数管理旋转
   - 允许连续的旋转运算而不失稳定性。使用欧拉角旋转物体时，可能会遇到一个称为“万向锁”的问题，其中某个旋转轴“消失”了。通过使用四元数，可以避免这种情况。
-  - 操作
-    - **单位四元数**：表示没有旋转或旋转360°的四元数。
-    - **四元数乘法**：你可以通过乘法组合两个四元数，从而组合两个旋转。
-    - **四元数的逆**：逆旋转。
-    - **四元数的插值**：例如，`Quaternion.Lerp`和`Quaternion.Slerp`可以用于在两个旋转之间平滑过渡。
+  - 万向节锁：先围绕 Z 轴旋转90度，然后尝试围绕 Y 轴旋转，这种情况下 X 轴会和 Z 轴对齐，导致原本独立的旋转轴合并（此时 Z 轴与 X 轴重合，旋转剩下的 X 与之前的 Z 等价）即损失了一个自由度
+- 操作
+  - **单位四元数**：表示没有旋转或旋转360°的四元数。
+  - **四元数乘法**：你可以通过乘法组合两个四元数，从而组合两个旋转。
+  - **四元数的逆**：逆旋转。
+  - **四元数的插值**：例如，`Quaternion.Lerp`和`Quaternion.Slerp`可以用于在两个旋转之间平滑过渡。
 
-  - 创建
-    - `Quaternion.identity`：这是一个单位四元数，表示无旋转。
-    - `Quaternion.Euler(x, y, z)`：从欧拉角创建四元数。
-    - `Quaternion.AngleAxis(angle, axis)`：在给定的轴上创建一个角度的旋转。
-    - `Quaternion.LookRotation(forward, up)`：查看一个方向并指定向上的方向。
+- 创建
+	- `Quaternion.Euler(x, y, z)`：从欧拉角创建四元数。
+	- `Quaternion.AngleAxis(angle, axis)`：在给定的轴上创建一个角度的旋转。
+	- `Quaternion.LookRotation(forward, up)`：查看一个方向并指定向上的方向。
+	- `Quaternion.identity`：这是一个单位四元数，表示无旋转。
 
-  - 应用
-    - 物体旋转：`transform.rotation = Quaternion.Euler(45, 0, 0);`
+- 应用
+	- 物体旋转：`transform.rotation = Quaternion.Euler(45, 0, 0);`
 ```c#
       //面向物体
       Vector3 directionToTarget = target.position - transform.position;
@@ -384,9 +384,49 @@ void Update() {
   - "Mouse X": 鼠标在X轴上的移动。
   - "Mouse Y": 鼠标在Y轴上的移动。
   - 在Unity的Input Manager中，可以自定义轴或修改现有轴的配置。（Edit > Project Settings > Input。）
-- **敏感度和死区**: 在Input Manager中，还可以为每个轴设置敏感度和死区，这在处理游戏手柄摇杆输入时特别有用，可以帮助消除不希望的微小移动
+- **敏感度和死区**: 在 Input Manager 中，还可以为每个轴设置敏感度和死区，这在处理游戏手柄摇杆输入时特别有用，可以帮助消除不希望的微小移动
+#### input system 新输入系统
+- **多设备支持**：新输入系统支持从多种输入设备接收输入，如键盘、鼠标、游戏手柄、触摸屏等，甚至可以处理更复杂的设备如 VR 控制器。
+- **输入动作**：用户可以定义输入动作（Input Actions），这些动作抽象了具体的键位或控制器按钮，允许开发者基于动作而不是具体的按键或按钮编程，这有助于提高代码的可移植性和易用性。
+- **事件驱动**：新系统采用事件驱动模型，允许开发者订阅并响应特定的输入事件，而不是在每个更新周期中检查输入状态。
+```csharp
+using UnityEngine;
+using UnityEngine.InputSystem;
 
-### 事件
+public class PlayerController : MonoBehaviour
+{
+    public InputActionAsset inputActions; // 在Inspector中分配
+
+    private InputAction moveAction;
+
+    private void Awake()
+    {
+        // 获取动作
+        var gameplayActionMap = inputActions.FindActionMap("Gameplay");
+        moveAction = gameplayActionMap.FindAction("Move");
+
+        // 启用动作
+        moveAction.Enable();
+
+        // 订阅事件
+        moveAction.performed += OnMovePerformed;
+    }
+
+    private void OnMovePerformed(InputAction.CallbackContext context)
+    {
+        Vector2 moveInput = context.ReadValue<Vector2>();
+        // 处理移动逻辑
+    }
+
+    private void OnDestroy()
+    {
+        // 清理
+        moveAction.Disable();
+    }
+}
+
+```
+### 事件&广播
 
 - 事件本身是一种特殊的委托（多播）
 ```c#
@@ -444,7 +484,96 @@ public class MyScript : MonoBehaviour
 - 存在副作用：使用 `ExecuteInEditMode` 可能会导致场景数据在编辑模式下被更改，如果您没有注意到这些更改并保存了场景，这可能会导致您丢失某些所需的配置或数据。（永久改变）
 
 ## 高级
+### 文件系统
+#### 持久化存储
+- playerprefs：存储简单的少量数据，不适用于大量数据或复杂数据结构（类似简答键值对）
+```c#
+// 保存数据
+PlayerPrefs.SetInt("Level", 10);
+PlayerPrefs.SetFloat("Health", 75.0f);
+PlayerPrefs.SetString("PlayerName", "Alice");
+PlayerPrefs.Save(); // 确保数据写入
 
+// 加载数据
+int level = PlayerPrefs.GetInt("Level", 1); // 默认值为1
+float health = PlayerPrefs.GetFloat("Health", 100.0f); // 默认值为100.0f
+string playerName = PlayerPrefs.GetString("PlayerName", "DefaultName"); // 默认值为DefaultName
+
+```
+
+- 文件存储（JSON，XML，Binary）
+	- Unity 支持 JSON 和 XML 的**序列化和反序列化**，也可以使用二进制格式存储数据以提高效率和安全性。
+```c#
+[System.Serializable]
+public class GameData
+{
+    public int level;
+    public float health;
+    public string playerName;
+}
+
+// 保存数据
+GameData data = new GameData { level = 10, health = 75.0f, playerName = "Alice" };
+string json = JsonUtility.ToJson(data);
+System.IO.File.WriteAllText(Application.persistentDataPath + "/savefile.json", json);
+
+// 加载数据
+string loadedJson = System.IO.File.ReadAllText(Application.persistentDataPath + "/savefile.json");
+GameData loadedData = JsonUtility.FromJson<GameData>(loadedJson);
+
+```
+
+- SQLite 数据库
+	- 对于需要管理大量数据或复杂查询的游戏，使用 SQLite 数据库是一个好选择。Unity 可以通过第三方库（如 SQLite4Unity3d）来集成 SQLite 数据库。
+#### 序列化与反序列化
+- 对象序列化是指将对象的状态信息转换成**可存储或可传输的形式**（如二进制流、XML、JSON 等格式），以便在需要时（如存储到文件、发送到另一台机器等）能够重建对象。
+	- 持久化存储
+	- 网络通信
+	- 深拷贝
+- 可以序列化的对象
+```c#
+[Serializable]
+public class Player {
+    public string Name;
+    public int Score;
+    [NonSerialized]
+    private int secretValue; // 这个字段不会被序列化
+}
+```
+- 使用 JSON 实现（兼容性好，适用于网络传输）
+```c#
+using System.Text.Json; // .NET Core 3.0 以上版本引入的命名空间
+
+public class Player
+{
+    public string Name { get; set; }
+    public int Score { get; set; }
+}
+
+// 序列化
+Player player = new Player { Name = "Alice", Score = 100 };
+string jsonString = JsonSerializer.Serialize(player);
+
+// 反序列化
+Player deserializedPlayer = JsonSerializer.Deserialize<Player>(jsonString);
+
+```
+- 使用二进制实现（效率更高，适合用于本地存储）
+```c#
+// 序列化
+Player player = new Player { Name = "Alice", Score = 100 };
+BinaryFormatter formatter = new BinaryFormatter();
+using (Stream stream = new FileStream("player.dat", FileMode.Create, FileAccess.Write, FileShare.None))
+{
+    formatter.Serialize(stream, player);
+}
+
+// 反序列化
+using (Stream stream = new FileStream("player.dat", FileMode.Open, FileAccess.Read, FileShare.Read))
+{
+    Player deserializedPlayer = (Player)formatter.Deserialize(stream);
+}
+```
 ### 物理系统
 
 #### 射线
@@ -495,6 +624,63 @@ public static bool RayTrigger(Vector3 from, GameObject to , string tag)
 	- 聚光灯：从一个点放出光纤，在特定角度内形成锥形照明区域，随距离减弱，如手电筒、舞台聚光灯
 	- 面光源：从矩形、圆形区域发出光纤，柔和且均匀，模拟窗户光线等大面积光源，常用于室内
 	- 环境光：影响整个场景的光照，提供基础光照
+### 对象池
+- 对象池通过预先创建和维护一定数量的对象实例来工作。这些对象在需要时被激活，不需要时被禁用，而不是被销毁。这样，当游戏需要新对象时，可以**直接从池中获取一个已经存在的禁用对象**，激活并使用它，而不是每次需要时都创建新的对象。
+- 基本过程
+	- 创建池管理器：创建一个管理对象池的类，用于处理对象的请求和回收。
+	- 预先实例化对象：在游戏开始或对象池初始化时，根据需要预先创建足够数量的对象实例。
+	- 管理对象的获取与返回：提供方法来让其他游戏组件请求对象和返回对象。获取对象时，检查池中是否有可用的禁用对象；返回对象时，禁用该对象并将其放回池中。（注意在回收时或启用时进行初始化，因为会带有原先的属性数据）
+- 优点
+	- **性能提升**：减少运行时的实例化和销毁操作，降低**内存分配和回收的压力**，从而提高性能。
+	- **内存使用优化**：通过重复使用对象减少内存消耗，避免频繁的内存分配和**碎片化**。
+```csharp
+using System.Collections.Generic;
+using UnityEngine;
+
+public class ObjectPool : MonoBehaviour
+{
+    public GameObject prefab; // 预设对象
+    public int poolSize = 10; // 池的初始大小
+    private Queue<GameObject> objectPool = new Queue<GameObject>(); // 使用队列存储池中的对象
+
+    void Start()
+    {
+        // 初始化池
+        for (int i = 0; i < poolSize; i++)
+        {
+            GameObject obj = Instantiate(prefab); // 创建对象
+            obj.SetActive(false); // 禁用对象
+            objectPool.Enqueue(obj); // 将对象添加到池中
+        }
+    }
+
+    // 从池中获取对象
+    public GameObject GetObject()
+    {
+        if (objectPool.Count > 0)
+        {
+            GameObject obj = objectPool.Dequeue(); // 获取对象
+            obj.SetActive(true); // 激活对象
+            return obj;
+        }
+        else
+        {
+            // 池为空，根据需要可以扩展池
+            GameObject obj = Instantiate(prefab);
+            obj.SetActive(true);
+            return obj;
+        }
+    }
+
+    // 将对象返回池中
+    public void ReturnObject(GameObject obj)
+    {
+        obj.SetActive(false); // 禁用对象
+        objectPool.Enqueue(obj); // 将对象放回池中
+    }
+}
+
+```
 ## 杂项
 
 - 打印调试`Debug.Log()`
@@ -528,7 +714,7 @@ public static bool RayTrigger(Vector3 from, GameObject to , string tag)
   - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20231008200524733.png" alt="image-20231008200524733" style="zoom:33%;" />
 - 冲突处理
   - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20231008201857186.png" alt="image-20231008201857186" style="zoom:33%;" />
-  - 
+  - 对于二进制文件冲突：Unity 提供了一个叫做 Smart Merge（也称为 UnityYAMLMerge）的工具，专门用来解决像 Prefabs 和 Scenes 这样的 YAML 文件冲突。
 
 ### 游戏构建
 

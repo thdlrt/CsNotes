@@ -4,6 +4,24 @@
     "type": "split",
     "children": [
       {
+        "id": "85e380b2d3381e03",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "d0e069c16cf7c8df",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "docs/课程/编译原理/笔记/运行时刻环境.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          }
+        ]
+      },
+      {
         "id": "5889f2b1d1fa8cec",
         "type": "tabs",
         "children": [
@@ -16,6 +34,16 @@
                 "file": "docs/面试(实习)/计算机科学/计算机网络.md",
                 "mode": "source",
                 "source": false
+              }
+            }
+          },
+          {
+            "id": "3bf67448615cb5a9",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "docs/课程/编译原理/课件/Chapter_7.pdf"
               }
             }
           }
@@ -77,7 +105,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 200,
+    "collapsed": true
   },
   "right": {
     "id": "d615b65a4ccf8a6a",
@@ -93,7 +122,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/面试(实习)/计算机科学/计算机网络.md",
+                "file": "docs/课程/编译原理/笔记/运行时刻环境.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +139,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/面试(实习)/计算机科学/计算机网络.md",
+                "file": "docs/课程/编译原理/笔记/运行时刻环境.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +162,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/面试(实习)/计算机科学/计算机网络.md"
+                "file": "docs/课程/编译原理/笔记/运行时刻环境.md"
               }
             }
           },
@@ -168,44 +197,43 @@
       "obsidian-advanced-slides:Show Slide Preview": false
     }
   },
-  "active": "5f6afbd0c9be17fe",
+  "active": "d0e069c16cf7c8df",
   "lastOpenFiles": [
+    "docs/面试(实习)/计算机科学/计算机网络.md",
+    "docs/课程/操作系统/笔记/并发.md",
+    "conflict-files-obsidian-git.md",
+    "docs/课程/编译原理/课件/Chapter_7.pdf",
+    "docs/面试保研/数学/离散数学.md",
+    "docs/面试保研/计算机科学/数据结构与算法.md",
+    "docs/面试(实习)/面试技巧/反问环节.md",
+    "docs/面试(实习)/面试技巧/HR面.md",
+    "docs/面试(实习)/面试技巧",
+    "docs/面试(实习)/自我介绍/腾讯天美游戏端开发.md",
+    "docs/面试(实习)/自我介绍",
+    "docs/课程/编译原理/作业/p8.md",
+    "docs/课程/操作系统/代码/cv-sem/README.md",
+    "docs/课程/操作系统/代码/cv-sem/Makefile",
+    "docs/课程/操作系统/代码/cv-sem/cv.c",
+    "docs/课程/操作系统/代码/cv-sem",
+    "Excalidraw/Drawing 2024-04-22 22.36.10.excalidraw.md",
+    "Excalidraw/Drawing 2024-04-22 16.23.19.excalidraw.md",
+    "Excalidraw/Drawing 2024-04-22 16.06.51.excalidraw.md",
     "docs/面试(实习)/计算机科学/计算机图形学.md",
     "docs/面试(实习)/计算机科学/操作系统.md",
     "docs/面试(实习)/计算机科学/并发编程.md",
-    "docs/面试(实习)/计算机科学/计算机网络.md",
     "docs/课程/软件体系结构/软件体系结构(Spring).md",
     "面试/自我介绍/腾讯天美游戏端开发.md",
-    "docs/课程/操作系统/笔记/并发.md",
     "docs/课程/操作系统/操作系统：三个简单的部分（OSTEP） (it-ebooks) (Z-Library).pdf",
     "docs/课程/软件体系结构/笔记/SSM/SpringMVC.md",
     "docs/面试保研/往年题目.md",
-    "docs/课程/编译原理/课件/Chapter_7.pdf",
     "docs/课程/编译原理/实验/p3/Project_3.pdf",
     "docs/课程/编译原理/实验/p3",
     "docs/课程/编译原理/实验/p2/Project_2.pdf",
-    "docs/课程/编译原理/实验/p2",
     "docs/课程/软件体系结构/笔记/分发系统.md",
     "docs/课程/软件体系结构/笔记/Spring REST.md",
     "Excalidraw/Drawing 2024-04-11 14.02.59.excalidraw.md",
-    "Excalidraw",
     "docs/课程/软件体系结构/笔记/Spring.md",
     "docs/软件工程/设计模式.md",
-    "conflict-files-obsidian-git.md",
-    "docs/面试保研/数学/线性代数.md",
-    "docs/面试保研/计算机科学/计算机组成原理.md",
-    "docs/面试保研/数学/离散数学.md",
-    "docs/面试保研/数学/微积分.md",
-    "docs/面试保研/计算机科学/计算机网络.md",
-    "docs/面试保研/计算机科学/编译原理.md",
-    "docs/面试保研/计算机科学/算法设计与分析.md",
-    "docs/面试保研/计算机科学/数据结构.md",
-    "docs/面试保研/计算机科学/操作系统.md",
-    "docs/面试保研/英语/问题准备.md",
-    "docs/面试保研/英语/自我介绍.md",
-    "docs/面试保研/数学",
-    "docs/面试保研/计算机科学",
-    "docs/面试保研/英语",
     "CsNotes/2021-11-22-22-54-02.png",
     "CsNotes/2021-11-22-22-52-49.png",
     "CsNotes/2021-11-22-22-49-26.png",

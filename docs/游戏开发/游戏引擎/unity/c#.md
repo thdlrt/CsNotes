@@ -10,7 +10,6 @@ foreach(string item in strings)
 ```
 
 - 值类型与引用类型
-
   - 常见值类型
     - **基本数据类型**：`int`, `float`, `double`, `char`, `bool`, `byte`, `short`, `long`, `sbyte`, `ushort`, `uint`, `ulong`, `decimal`.
     - **结构体 (Structs)**：例如 Unity 中的 `Vector3`, `Vector2`, `Quaternion`, `Color`, `Rect`, 等。
@@ -26,7 +25,6 @@ foreach(string item in strings)
 - 命名空间
   - 同一命名空间不能使用相同的名称，通过使用命名空间限定，可以使用不同的具有相同名称的属性/方法
   - 使用命名空间的方式
-
 ```c#
 namespace MyNamespace
 {
@@ -38,13 +36,9 @@ namespace MyNamespace
 ```
 
 - 如果不同位置使用相同名称，表示两个块使用**相同的命名空间**
-  
 - 直接限定`MyNamespace.MyClass myObject = new MyNamespace.MyClass();`
-  
 - 对整个文件使用`using MyNamespace;`
-
   - 嵌套命名空间
-
 ```c#
 namespace MyNamespace
 {
@@ -62,14 +56,11 @@ namespace MyNamespace
   
 - `using MyNamespace.MySubNamespace;`
 
-- **协程（重要）**
+- **协程（unity 提供）**
 
   - 在需要延迟、重复或异步执行代码时非常有用。比如实现点击移动（这是一个有时长的过程），以及某种动作等等
-
   - unity中允许你在多帧上执行长时间的任务，而不是在单个帧中执行，从而防止游戏**因复杂的计算而“冻结”**。
-
   - 时间延迟
-
 ```c#
 IEnumerator WaitAndPrint()
 {
@@ -79,7 +70,6 @@ IEnumerator WaitAndPrint()
 ```
 
   - 帧延迟
-
 ```c#
 IEnumerator WaitForFrames()
 {
@@ -92,8 +82,6 @@ IEnumerator WaitForFrames()
 ```
 
 - 也可以将另一个协程作为返回条件
-
-
 ```c#
 IEnumerator MainRoutine()
 {
@@ -109,16 +97,12 @@ IEnumerator SubRoutine()
 ```
 
 - 启动协程
-
-
 ```c#
 StartCoroutine(MyCoroutine());
 Coroutine myCoroutine = StartCoroutine(MyCoroutine());
 ```
 
 - 停止协程
-
-
 ````c#
 StopCoroutine(myCoroutine);
 StopCoroutine("MyCoroutine");
@@ -127,7 +111,6 @@ StopAllCoroutines();
 ````
 
 应用：
-
 ```c#
 //缓释复杂计算
 IEnumerator LoadData()
@@ -192,12 +175,8 @@ void ShowWelcomeMessage()
 
 
 - 委托
-
   - 功能上类似函数指针
-
   - 使用`delegate`定义`public delegate void SimpleDelegate();`
-
-
 ```c#
 public class DelegateExample
 {
@@ -217,8 +196,6 @@ public class DelegateExample
 ```
 
 - 多播委托
-
-
 ```c#
 public delegate void MathOperation(int number);
 
@@ -250,10 +227,7 @@ operation(5); // 输出: 10 (5的两倍) 和 25 (5的平方)
   - `Action<string, int>`: 一个接受 `string` 和 `int` 两个参数的方法。
   - `Action<T1, T2>`: 一个接受两个参数的方法，第一个参数是 `T1` 类型，第二个参数是 `T2` 类型。
 
-
 - lambda表达式
-
-
 ```c#
 x => x * x
     
@@ -267,13 +241,11 @@ x => x * x
 (int x, int y) => x + y 
 ```
 
-
-
 ### 数据结构（标准库）
 
 - 名空间`using System.Collections.Generic`
 
-#### 常用模板
+#### 常用容器
 
 - 初始化`List<int>arr=new list<int>();`
 
@@ -333,8 +305,6 @@ x => x * x
 #### 自定义
 
 - 自定义比较IComparer\<T>
-
-
 ```c#
 public class Person
 {
@@ -382,8 +352,6 @@ public class BadGuy : IComparable<BadGuy>
 ```
 
 - 自定义判断相等/计算哈希(使用哈希表/字典时)IEqualityComparer\<T>
-
-
 ```c#
 public class NameEqualityComparer : IEqualityComparer<Person>
 {
@@ -409,8 +377,6 @@ HashSet<Person> uniquePeople = new HashSet<Person>(new NameEqualityComparer());
   - **编译**：多个类的存在不会影响文件的编译。但要注意，如果你**有多个**`public`类并且你试图在命令行上使用`csc`编译器进行单文件编译，那么**编译器将要求主类（其名字与文件名相同）存在**。
 
 - 配置属性的get、set方法
-
-
 ```c#
 public int Level
 {
@@ -424,14 +390,10 @@ public int Level
     }
 }
 ```
-
 - 更为灵活的控制访问，不写get/set表示只写/读
-
 - 操作符重载函数必须是static的
 
 - 泛型
-
-
 ```c#
 public class GenericClass <T>
 {
@@ -455,34 +417,23 @@ public class SomeClass
 ```
 
 - 继承和多态
-
   - sealed阻止重写（override）
-
   - 使用`virtual`关键字来标记**可以被重写**的方法，然后在子类中使用`override`关键字来实际重写。
-
   - `abstract`表示抽象方法（类似virtual=0）
-
   - c#不支持多继承，但是可以实现多个接口
 
 - 接口
-
-
 ```c#
 public interface IFlyable
 {
     void Fly();
 }
 ```
-
 - 向继承那样表示实现接口
 
 - 成员隐藏
-
   - 当派生类声明了一个与基类中具有相同名称的成员时，基类的成员会被派生类的成员**隐藏**。
-
   - 为了避免产生警告，显式地指定你想要隐藏基类的成员，可以使用`new`关键字
-
-
 ```c#
 public class BaseClass
 {
@@ -512,12 +463,8 @@ public class DerivedClass : BaseClass
   - 静态类在设计**实用程序和工具函数**时特别有用。静态类的生命周期与应用程序的生命周期一致。
 
 - 扩展
-
   - 扩展方法必须定义在**非泛型、非嵌套的静态类中**。（但这不是目标即被扩展类的条件）
-
   - 定义一个静态方法，将你想要扩展的类型作为它的第一个参数。这个参数必须前面有`this`修饰符。
-
-
 ```c#
 public static class StringExtensions
 {
@@ -531,7 +478,5 @@ string value = "12345";
 bool result = value.IsNumeric();
 Console.WriteLine(result);  // 输出: True
 ```
-
 - 尽管扩展方法允许为类型添加新方法，但它们不能访问类型的私有字段或方法。
-
 - 如果类型已经有了与扩展方法同名的方法，原始的方法会优先被调用。

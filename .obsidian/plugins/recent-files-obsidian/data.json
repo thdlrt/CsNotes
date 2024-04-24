@@ -1,8 +1,24 @@
 {
   "recentFiles": [
     {
+      "basename": "运行时刻环境",
+      "path": "docs/课程/编译原理/笔记/运行时刻环境.md"
+    },
+    {
       "basename": "计算机网络",
       "path": "docs/面试(实习)/计算机科学/计算机网络.md"
+    },
+    {
+      "basename": "并发",
+      "path": "docs/课程/操作系统/笔记/并发.md"
+    },
+    {
+      "basename": "Chapter_7",
+      "path": "docs/课程/编译原理/课件/Chapter_7.pdf"
+    },
+    {
+      "basename": "离散数学",
+      "path": "docs/面试保研/数学/离散数学.md"
     },
     {
       "basename": "计算机图形学",
@@ -19,14 +35,6 @@
     {
       "basename": "软件体系结构(Spring)",
       "path": "docs/课程/软件体系结构/软件体系结构(Spring).md"
-    },
-    {
-      "basename": "腾讯天美游戏端开发",
-      "path": "面试/自我介绍/腾讯天美游戏端开发.md"
-    },
-    {
-      "basename": "并发",
-      "path": "docs/课程/操作系统/笔记/并发.md"
     },
     {
       "basename": "操作系统：三个简单的部分（OSTEP） (it-ebooks) (Z-Library)",
@@ -187,18 +195,6 @@
     {
       "basename": "android",
       "path": "docs/移动端开发/安卓/android.md"
-    },
-    {
-      "basename": "实验报告p1",
-      "path": "docs/课程/编译原理/实验/p1/实验报告p1.md"
-    },
-    {
-      "basename": "Project_1",
-      "path": "docs/课程/编译原理/实验/p1/Project_1.pdf"
-    },
-    {
-      "basename": "正则表达式",
-      "path": "docs/杂项/杂项/正则表达式.md"
     }
   ],
   "omittedPaths": [],

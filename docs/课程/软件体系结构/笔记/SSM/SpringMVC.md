@@ -364,4 +364,45 @@ productRepository.findAll();
 - 传统的 Spring MVC 应用中，控制器方法通常返回一个**字符串**，表示的是视图名称（View Name），然后通过视图解析器（View Resolver）找到相应的视图模板进行渲染，最后将渲染后的 HTML 返回给客户端。这种方式主要用于生成动态的 HTML 页面。
 - 而在 Spring REST 中，控制器的主要职责转变为处理 HTTP 请求并**返回数据本身**，而**不是返回视图**名称。这里的数据通常是**JSON**或 XML 格式，直接返回给客户端，供客户端应用（如 Web 应用的前端、移动应用等）使用。这种方式更加适合于构建 API 和服务导向的应用。
 	- 这也是 **Vue** 等前端框架的工作模式
-- 
+#### 编程实现
+- 在 REST 风格的控制器中，方法应直接返回**对象或数据集合**，而不是视图名称
+- 直接返回对象（Spring 框架可以自动机将对象转化为 JSON 以及其他响应格式）
+```java
+@GetMapping("/api/data")
+    public List<MyData> getData() {
+        // 返回数据列表
+        return someDataService.findAll();
+    }
+```
+- 如果想要返回更加详细的信息，可以使用 `ResponseEntity`，可以用于表示整个 HTTP 响应（包含状态码，头部信息以及响应体）
+	- 这是一个泛型类 `ResponseEntity<TYPE>`
+- 静态创建 `return new ResponseEntity<>(body, HttpStatus.OK);`
+- 链式构建
+```java
+@GetMapping("/api/users/{id}")
+public ResponseEntity<User> getUserById(@PathVariable Long id) {
+    User user = userService.findById(id);
+    if (user == null) {
+    //创建404的响应
+        return ResponseEntity.notFound().build();
+    } else {
+    //创建200的正确响应
+        return ResponseEntity.ok(user);
+    }
+}
+```
+- 添加更多头部信息
+```java
+@GetMapping("/api/download")
+public ResponseEntity<Resource> downloadFile() {
+    Resource file = fileService.getFileAsResource();
+    HttpHeaders headers = new HttpHeaders();
+    headers.add(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"" + file.getFilename() + "\"");
+
+    return ResponseEntity.ok()
+        .headers(headers)
+        .contentLength(file.contentLength())
+   .contentType(MediaType.APPLICATION_OCTET_STREAM)
+        .body(file);
+}
+```

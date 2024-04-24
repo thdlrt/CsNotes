@@ -1,4 +1,3 @@
-# git
 
 ## 概念
 
@@ -96,10 +95,9 @@
   - head->指向当前的分支
   - 创建分支，并从远端分支拉取作为初始化`git checkout -b dev origin/dev  `
 - 绑定本地与远端分支`git branch --set-upstream-to=origin/dev dev`
-- git merge xxx 把其它分支合并到当前的分支上 
-- git rebase xxx 另一种合并分支的方法，把一个分支直接移动到另一个分支的末端，使得并行开发的任务看起来像线性先后开发的
-  - 把当前分支移动到xxx目标分支上
-
+- git merge xxx 把其它分支合并到当前的分支上，**会生成一个新的合并提交节点**
+- git rebase xxx 另一种合并分支的方法，把一个分支**直接移动到另一个分支的末端**，使得并行开发的任务看起来像线性先后开发的
+  - ![image.png|500](https://thdlrt.oss-cn-beijing.aliyuncs.com/20240419201459.png)
 
 ### head指针
 
@@ -115,7 +113,7 @@
 
 - 通过git status查看需要解决冲突的文件
 
-  - ```bash
+```bash
     $ git status
     On branch master
     Your branch is ahead of 'origin/master' by 2 commits.
@@ -127,7 +125,7 @@
       (use "git add <file>..." to mark resolution)
         both modified:   readme.txt
     no changes added to commit (use "git add" and/or "git commit -a")
-    ```
+```
 
 - 比如两个分支对同一文件同一处进行了 不同修改，那么合并时就会失败
 
@@ -137,18 +135,25 @@
   - 对文件修改完成，解决冲突后再次add 并commit
 
 - 如果本地仓库已经过时，而又进行了修改：
-
   - 先用git pull 把最新的提交从origin/dev 抓下来，然后在本地合并解决冲突，再推送
 
 - 命名规范
-
   - master线上分支（主分支）
   - develop开发分支  
   - feature新功能分支
   - hotfix修复分支（修复bug）
   - feature hotfix用后可以删除
 
-
+#### git 处理冲突原理-三向合并
+- 为什么不能使用二向合并：如果只比较两个人的提交，在代码不同时，不知道时谁进行了修改，也就不知道应该如何处理合并
+- 因此还需要添加第三项：两个 commit 的最近公共父节点，来帮助进行合并
+- 当三向的某一行都不相同，才说明两个提交对同一行进行了修改，即产生了冲突
+	- ![image.png|500](https://thdlrt.oss-cn-beijing.aliyuncs.com/20240419202724.png)
+- 具体过程
+	- **差异对比**：Git 使用差异对比工具来分析两个分支相对于它们的**共同祖先**所做的更改。这一步是通过**对比文本行**来实现的。
+	- **行级对比**：Git 主要在行级进行对比。如果在两个分支中相同的文件的**相同行上发现了不同的修改**，Git 就认定这是一个冲突。
+	- **文本匹配**：对于每一行，Git 检查从共同祖先分支到各个目标分支的修改。如果一个分支修改了文件的某一行，而另一个分支删除了这一行或者在同一行做了不同的修改，Git 就会标记这个地方为冲突。
+	- **合并元数据**：Git 还会考虑文件的元数据（如文件名变更、文件权限等）的变化。如果两个分支都对同一个文件的元数据做了不同的更改，这也会被视为冲突。
 ### 分支策略
 
 - 每个人都在dev分支上干活，每个人都有自己的分支，时不时地往dev分支上合并就可以了。

@@ -156,35 +156,61 @@ Vec3f refract(const Vec3f &I, const Vec3f &N, const float &refractive_index) {
 ```
 - 完整的 cast_ray：漫反射+镜面反射+多次反射（递归）+折射
 ```cpp
+// 定义一个光线投射函数，用于计算从原点 orig 沿方向 dir 发出的光线的颜色。
+// 参数 depth 用于限制递归的深度，避免无限递归。
 Vec3f cast_ray(const Vec3f &orig, const Vec3f &dir, int depth=0) {  
-    Vec3f hit_p, normal;  
-    Material material;  
-    if (depth>max_depth||!intersect(orig, dir, hit_p, normal, material)) {  
+    Vec3f hit_p, normal;  // 定义交点位置和交点处的法线向量
+    Material material;  // 定义在交点处的材质信息
+
+    // 如果递归层级超过最大深度或者光线与场景中的物体不相交，则返回背景色
+    if (depth > max_depth || !intersect(orig, dir, hit_p, normal, material)) {  
         return backgroud.color;  
     }  
-    float diffuse_intensity = 0, specular_intensity = 0;  
+
+    // 初始化漫反射和镜面反射强度
+    float diffuse_intensity = 0, specular_intensity = 0; 
+
+    // 计算反射光方向，并对反射方向进行归一化处理
     Vec3f reflect_dir = reflect(dir, normal).normalize();  
-    Vec3f reflect_orig = reflect_dir*normal < 0 ? hit_p - normal*1e-3 : hit_p + normal*1e-3;  
-    Vec3f reflect_color = cast_ray(reflect_orig, reflect_dir, depth+1);  
+    // 根据反射方向和法线确定反射光的起始位置，避免精度问题导致的自我交叉
+    Vec3f reflect_orig = reflect_dir * normal < 0 ? hit_p - normal * 1e-3 : hit_p + normal * 1e-3;  
+    // 递归计算反射光颜色
+    Vec3f reflect_color = cast_ray(reflect_orig, reflect_dir, depth + 1);  
+
+    // 计算折射光方向，并对折射方向进行归一化处理
     Vec3f refract_dir = refract(dir, normal, material.refractive_index).normalize();  
-    Vec3f refract_orig = refract_dir*normal < 0 ? hit_p - normal*1e-3 : hit_p + normal*1e-3;  
-    Vec3f refract_color = cast_ray(refract_orig, refract_dir, depth+1);  
-    for(PointLight light: lights) {  
-        //阴影：判断是否被遮挡  
+    // 根据折射方向和法线确定折射光的起始位置
+    Vec3f refract_orig = refract_dir * normal < 0 ? hit_p - normal * 1e-3 : hit_p + normal * 1e-3;  
+    // 递归计算折射光颜色
+    Vec3f refract_color = cast_ray(refract_orig, refract_dir, depth + 1);  
+
+    // 遍历所有光源进行照明计算
+    for (PointLight light : lights) {  
+        // 计算光源到交点的距离和方向，并对方向进行归一化
         float dis = (light.position - hit_p).norm();  
         Vec3f light_dir = (light.position - hit_p).normalize();  
-        //偏移原点，避免自己遮挡自己  
-        Vec3f shadow_orig = hit_p + light_dir*1e-3;  
+
+        // 计算阴影的起始位置，避免交点自身遮挡（自阴影问题）
+        Vec3f shadow_orig = hit_p + light_dir * 1e-3;  
         Vec3f shadow_p, shadow_n;  
         Material tmpmaterial;  
-        if (intersect(shadow_orig, light_dir, shadow_p, shadow_n, tmpmaterial) && (shadow_p-shadow_orig).norm() < dis) {  
-            continue;  
+
+        // 检查从交点到光源的路径是否被其他物体遮挡
+        if (intersect(shadow_orig, light_dir, shadow_p, shadow_n, tmpmaterial) && (shadow_p - shadow_orig).norm() < dis) {  
+            continue;  // 如果被遮挡，则跳过当前光源的计算
         }  
-        //漫反射与镜面反射  
-        diffuse_intensity += light.intensity * std::max(0.f, light_dir*normal);  
+
+        // 计算漫反射光强度
+        diffuse_intensity += light.intensity * std::max(0.f, light_dir * normal);  
     }  
-    return material.color*diffuse_intensity*material.albedo[0] + Vec3f(1., 1., 1.)*specular_intensity*material.albedo[1] + reflect_color*material.albedo[2] + refract_color*material.albedo[3];  
+
+    // 根据材质属性和计算出的光照强度，计算最终颜色
+    return material.color * diffuse_intensity * material.albedo[0] +
+           Vec3f(1., 1., 1.) * specular_intensity * material.albedo[1] +
+           reflect_color * material.albedo[2] +
+           refract_color * material.albedo[3];  
 }
+
 ```
 ### 完工
 - ![image.png|500](https://thdlrt.oss-cn-beijing.aliyuncs.com/20240408013032.png)
