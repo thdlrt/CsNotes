@@ -13,26 +13,41 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/课程/编译原理/笔记/运行时刻环境.md",
+                "file": "docs/面试保研/数学/离散数学.md",
                 "mode": "source",
                 "source": false
               }
             }
           },
           {
-            "id": "6555b6425d5c1246",
+            "id": "a4b26a99c8112114",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/游戏开发/性能优化.md",
+                "file": "docs/杂项/latex/数学语法.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ],
-        "currentTab": 1
+        ]
+      },
+      {
+        "id": "7a626c3c2c180b49",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "07c3e45e1341b40c",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "pdf/笔记.pdf"
+              }
+            }
+          }
+        ]
       }
     ],
     "direction": "vertical"
@@ -61,7 +76,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "数学",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -107,7 +122,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/游戏开发/性能优化.md",
+                "file": "docs/面试保研/数学/离散数学.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -124,7 +139,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/游戏开发/性能优化.md",
+                "file": "docs/面试保研/数学/离散数学.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -147,7 +162,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/游戏开发/性能优化.md"
+                "file": "docs/面试保研/数学/离散数学.md"
               }
             }
           },
@@ -182,19 +197,23 @@
       "obsidian-advanced-slides:Show Slide Preview": false
     }
   },
-  "active": "6555b6425d5c1246",
+  "active": "d0e069c16cf7c8df",
   "lastOpenFiles": [
-    "docs/游戏开发/八股.md",
+    "docs/杂项/latex/数学语法.md",
+    "docs/面试保研/数学/离散数学.md",
+    "pdf/笔记.pdf",
+    "pdf",
+    "新建文件夹",
+    "docs/课程/编译原理/笔记/运行时刻环境.md",
     "docs/游戏开发/性能优化.md",
+    "docs/游戏开发/八股.md",
     "docs/游戏开发/网络联机.md",
     "docs/游戏开发/游戏安全.md",
     "docs/游戏开发/游戏设计.md",
-    "docs/课程/编译原理/笔记/运行时刻环境.md",
     "docs/课程/编译原理/课件/Chapter_7.pdf",
     "docs/面试(实习)/计算机科学/计算机网络.md",
     "docs/课程/操作系统/笔记/并发.md",
     "conflict-files-obsidian-git.md",
-    "docs/面试保研/数学/离散数学.md",
     "docs/面试保研/计算机科学/数据结构与算法.md",
     "docs/面试(实习)/面试技巧/反问环节.md",
     "docs/面试(实习)/面试技巧/HR面.md",
@@ -216,10 +235,6 @@
     "面试/自我介绍/腾讯天美游戏端开发.md",
     "docs/课程/操作系统/操作系统：三个简单的部分（OSTEP） (it-ebooks) (Z-Library).pdf",
     "docs/课程/软件体系结构/笔记/SSM/SpringMVC.md",
-    "docs/面试保研/往年题目.md",
-    "docs/课程/编译原理/实验/p3/Project_3.pdf",
-    "docs/课程/编译原理/实验/p3",
-    "docs/课程/编译原理/实验/p2/Project_2.pdf",
     "CsNotes/2021-11-22-22-54-02.png",
     "CsNotes/2021-11-22-22-52-49.png",
     "CsNotes/2021-11-22-22-49-26.png",
