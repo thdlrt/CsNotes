@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "15a1ce30210a58f1",
+        "id": "6fdc6c79a1a9719f",
         "type": "tabs",
         "children": [
           {
-            "id": "6c1dc2ada2e93fbc",
+            "id": "a369160d05475260",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -105,8 +105,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 301.5,
-    "collapsed": true
+    "width": 301.5
   },
   "right": {
     "id": "d615b65a4ccf8a6a",
@@ -205,7 +204,7 @@
       "vscode-editor:新建代码文件": false
     }
   },
-  "active": "6c1dc2ada2e93fbc",
+  "active": "a369160d05475260",
   "lastOpenFiles": [
     "pdf/离散数学.pdf",
     "docs/面试保研/数学/离散数学.md",
