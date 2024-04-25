@@ -5,12 +5,12 @@
       "path": "docs/面试保研/数学/离散数学.md"
     },
     {
-      "basename": "数学语法",
-      "path": "docs/杂项/latex/数学语法.md"
-    },
-    {
       "basename": "笔记",
       "path": "pdf/笔记.pdf"
+    },
+    {
+      "basename": "数学语法",
+      "path": "docs/杂项/latex/数学语法.md"
     },
     {
       "basename": "运行时刻环境",
