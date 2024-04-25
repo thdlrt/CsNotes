@@ -4,50 +4,35 @@
     "type": "split",
     "children": [
       {
-        "id": "15a1ce30210a58f1",
+        "id": "85e380b2d3381e03",
         "type": "tabs",
         "children": [
           {
-            "id": "6c1dc2ada2e93fbc",
+            "id": "d0e069c16cf7c8df",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/面试保研/数学/离散数学.md",
+                "file": "docs/课程/编译原理/笔记/运行时刻环境.md",
                 "mode": "source",
                 "source": false
-              }
-            }
-          }
-        ]
-      },
-      {
-        "id": "b425d55f606ed9a5",
-        "type": "tabs",
-        "children": [
-          {
-            "id": "8ee45e1e5dc6c55e",
-            "type": "leaf",
-            "state": {
-              "type": "pdf",
-              "state": {
-                "file": "pdf/离散数学.pdf"
               }
             }
           },
           {
-            "id": "6f7f3ea46cf4a7c1",
+            "id": "6555b6425d5c1246",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/杂项/latex/数学语法.md",
+                "file": "docs/游戏开发/性能优化.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -76,7 +61,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "GDT",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -105,7 +90,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 301.5,
+    "width": 200,
     "collapsed": true
   },
   "right": {
@@ -122,7 +107,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/面试保研/数学/离散数学.md",
+                "file": "docs/游戏开发/性能优化.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -139,7 +124,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/面试保研/数学/离散数学.md",
+                "file": "docs/游戏开发/性能优化.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -162,7 +147,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/面试保研/数学/离散数学.md"
+                "file": "docs/游戏开发/性能优化.md"
               }
             }
           },
@@ -173,21 +158,13 @@
               "type": "calendar",
               "state": {}
             }
-          },
-          {
-            "id": "160702efc0127260",
-            "type": "leaf",
-            "state": {
-              "type": "todo",
-              "state": {}
-            }
           }
         ],
         "currentTab": 3
       }
     ],
     "direction": "horizontal",
-    "width": 221.5,
+    "width": 200,
     "collapsed": true
   },
   "left-ribbon": {
@@ -200,48 +177,49 @@
       "workspaces:管理工作区布局": false,
       "audio-recorder:开始/结束录音": false,
       "obsidian-excalidraw-plugin:新建绘图文件": false,
-      "obsidian-advanced-slides:Show Slide Preview": false,
       "omnisearch:Omnisearch": false,
-      "vscode-editor:新建代码文件": false
+      "vscode-editor:新建代码文件": false,
+      "obsidian-advanced-slides:Show Slide Preview": false
     }
   },
-  "active": "6c1dc2ada2e93fbc",
+  "active": "6555b6425d5c1246",
   "lastOpenFiles": [
-    "pdf/离散数学.pdf",
-    "docs/面试保研/数学/离散数学.md",
-    "docs/杂项/latex/数学语法.md",
-    "docs/课程/编译原理/作业/p9.md",
-    "docs/课程/编译原理/作业/p8.md",
-    "docs/面试保研/计算机科学/数据结构与算法.md",
+    "docs/游戏开发/八股.md",
+    "docs/游戏开发/性能优化.md",
+    "docs/游戏开发/网络联机.md",
+    "docs/游戏开发/游戏安全.md",
+    "docs/游戏开发/游戏设计.md",
+    "docs/课程/编译原理/笔记/运行时刻环境.md",
+    "docs/课程/编译原理/课件/Chapter_7.pdf",
+    "docs/面试(实习)/计算机科学/计算机网络.md",
+    "docs/课程/操作系统/笔记/并发.md",
     "conflict-files-obsidian-git.md",
-    "pdf/线性代数.pdf",
-    "pdf/笔记.pdf",
-    "docs/课程/操作系统/笔记/虚拟化.md",
-    "docs/课程/编译原理/笔记/中间代码生成.md",
+    "docs/面试保研/数学/离散数学.md",
+    "docs/面试保研/计算机科学/数据结构与算法.md",
+    "docs/面试(实习)/面试技巧/反问环节.md",
     "docs/面试(实习)/面试技巧/HR面.md",
-    "docs/课程/编译原理/作业/答案/dragon-book-exercise-answers-master/ch06/6.6/6.6.md",
-    "docs/算法/图论.md",
-    "docs/归档课程/数据结构/笔记/图.md",
+    "docs/面试(实习)/面试技巧",
+    "docs/面试(实习)/自我介绍/腾讯天美游戏端开发.md",
+    "docs/面试(实习)/自我介绍",
+    "docs/课程/编译原理/作业/p8.md",
+    "docs/课程/操作系统/代码/cv-sem/README.md",
+    "docs/课程/操作系统/代码/cv-sem/Makefile",
+    "docs/课程/操作系统/代码/cv-sem/cv.c",
+    "docs/课程/操作系统/代码/cv-sem",
     "Excalidraw/Drawing 2024-04-22 22.36.10.excalidraw.md",
     "Excalidraw/Drawing 2024-04-22 16.23.19.excalidraw.md",
     "Excalidraw/Drawing 2024-04-22 16.06.51.excalidraw.md",
-    "docs/面试(实习)/面试技巧/反问环节.md",
-    "docs/课程/金融工程学/作业.md",
-    "docs/课程/金融工程学/郑振龙《金融工程》（第5版）笔记和课后习题（含考研真题）详解答案.pdf",
-    "docs/归档课程/金融经济学.md",
-    "docs/归档课程/数据结构/笔记/树.md",
-    "docs/归档课程/数据结构/笔记/搜索结构.md",
-    "docs/算法/数据结构.md",
-    "docs/归档课程/数据结构/数据结构.md",
-    "docs/归档课程/数据结构/笔记/线性数据结构.md",
-    "docs/归档课程/数据结构/笔记/文件系统.md",
-    "临时/temp.md",
-    "pdf/算法设计与分析/L4 - QuickSort.pdf",
-    "pdf/算法设计与分析/L6 - MergeSort.pdf",
-    "pdf/算法设计与分析/L5 - HeapSort.pdf",
-    "pdf/算法设计与分析/L8 - logn search.pdf",
-    "pdf/算法设计与分析/L3 - Recursion.pdf",
-    "pdf/算法设计与分析/L9 - Hashing.pdf",
+    "docs/面试(实习)/计算机科学/计算机图形学.md",
+    "docs/面试(实习)/计算机科学/操作系统.md",
+    "docs/面试(实习)/计算机科学/并发编程.md",
+    "docs/课程/软件体系结构/软件体系结构(Spring).md",
+    "面试/自我介绍/腾讯天美游戏端开发.md",
+    "docs/课程/操作系统/操作系统：三个简单的部分（OSTEP） (it-ebooks) (Z-Library).pdf",
+    "docs/课程/软件体系结构/笔记/SSM/SpringMVC.md",
+    "docs/面试保研/往年题目.md",
+    "docs/课程/编译原理/实验/p3/Project_3.pdf",
+    "docs/课程/编译原理/实验/p3",
+    "docs/课程/编译原理/实验/p2/Project_2.pdf",
     "CsNotes/2021-11-22-22-54-02.png",
     "CsNotes/2021-11-22-22-52-49.png",
     "CsNotes/2021-11-22-22-49-26.png",
