@@ -1,16 +1,44 @@
 {
   "recentFiles": [
     {
-      "basename": "离散数学",
-      "path": "docs/面试保研/数学/离散数学.md"
+      "basename": "并发",
+      "path": "docs/课程/操作系统/笔记/并发.md"
+    },
+    {
+      "basename": "虚拟化",
+      "path": "docs/课程/操作系统/笔记/虚拟化.md"
+    },
+    {
+      "basename": "Drawing 2024-04-27 20.00.28.excalidraw",
+      "path": "Excalidraw/Drawing 2024-04-27 20.00.28.excalidraw.md"
+    },
+    {
+      "basename": "thread",
+      "path": "docs/课程/操作系统/代码/thread-lib/thread.h"
+    },
+    {
+      "basename": "README",
+      "path": "docs/课程/操作系统/代码/thread-lib/README.md"
+    },
+    {
+      "basename": "hello",
+      "path": "docs/课程/操作系统/代码/thread-lib/hello.c"
+    },
+    {
+      "basename": "thread-sync",
+      "path": "docs/课程/操作系统/代码/thread-lib/thread-sync.h"
+    },
+    {
+      "basename": "数学语法",
+      "path": "docs/杂项/latex/数学语法.md"
     },
     {
       "basename": "离散数学",
       "path": "pdf/离散数学.pdf"
     },
     {
-      "basename": "数学语法",
-      "path": "docs/杂项/latex/数学语法.md"
+      "basename": "离散数学",
+      "path": "docs/面试保研/数学/离散数学.md"
     },
     {
       "basename": "数学",
@@ -59,10 +87,6 @@
     {
       "basename": "计算机网络",
       "path": "docs/面试(实习)/计算机科学/计算机网络.md"
-    },
-    {
-      "basename": "并发",
-      "path": "docs/课程/操作系统/笔记/并发.md"
     },
     {
       "basename": "计算机图形学",
@@ -175,30 +199,6 @@
     {
       "basename": "词法分析",
       "path": "docs/课程/编译原理/笔记/词法分析.md"
-    },
-    {
-      "basename": "日志系统",
-      "path": "docs/杂项/linux与shell/linux/日志系统.md"
-    },
-    {
-      "basename": "linux",
-      "path": "docs/杂项/linux与shell/linux.md"
-    },
-    {
-      "basename": "进程管理",
-      "path": "docs/杂项/linux与shell/linux/进程管理.md"
-    },
-    {
-      "basename": "文本处理",
-      "path": "docs/杂项/linux与shell/linux/文本处理.md"
-    },
-    {
-      "basename": "文件系统",
-      "path": "docs/杂项/linux与shell/linux/文件系统.md"
-    },
-    {
-      "basename": "equals()与hashCode()",
-      "path": "docs/java/java基础/杂项/equals()与hashCode().md"
     }
   ],
   "omittedPaths": [],
