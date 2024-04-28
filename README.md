@@ -1,4 +1,6 @@
 - 推荐使用[obsidance](https://obsidian.md/)阅读
-- 为了更好的阅读体验，请先fork仓库，clone之后使用obsidance阅读
+- 为了更好的阅读体验，请clone之后使用obsidance阅读
 - 配置了git插件，打开后会自动pull
-- 只需要更新自己fork的仓库，本地打开后就会自动进行同步
+- 或者使用在线阅读[CsNode](https://thdlrt.github.io/CsNotes/)
+- 不过在线阅读可能存在一些显示错误
+- 由于最初使用typora编写，因此部分较旧的文档使用obsidian或在线阅读可能出现格式错误，遇到格式问题可以考虑使用typora打开
