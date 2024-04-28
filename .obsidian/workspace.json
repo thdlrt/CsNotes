@@ -122,7 +122,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/面试保研/数学/离散数学.md",
+                "file": "pdf/笔记.pdf",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -139,7 +139,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/面试保研/数学/离散数学.md",
+                "file": "pdf/笔记.pdf",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -162,7 +162,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/面试保研/数学/离散数学.md"
+                "file": "pdf/笔记.pdf"
               }
             }
           },
@@ -197,10 +197,10 @@
       "obsidian-advanced-slides:Show Slide Preview": false
     }
   },
-  "active": "d0e069c16cf7c8df",
+  "active": "07c3e45e1341b40c",
   "lastOpenFiles": [
-    "pdf/笔记.pdf",
     "docs/面试保研/数学/离散数学.md",
+    "pdf/笔记.pdf",
     "docs/杂项/latex/数学语法.md",
     "pdf",
     "新建文件夹",
