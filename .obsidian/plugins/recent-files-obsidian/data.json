@@ -5,12 +5,116 @@
       "path": "docs/面试保研/数学/离散数学.md"
     },
     {
-      "basename": "笔记",
-      "path": "pdf/笔记.pdf"
+      "basename": "temp",
+      "path": "临时/temp.md"
+    },
+    {
+      "basename": "temp2",
+      "path": "临时/temp2.md"
+    },
+    {
+      "basename": "离散数学",
+      "path": "pdf/离散数学.pdf"
+    },
+    {
+      "basename": "2021年南京大学计算机科学与技术系本科生开放日7月8日线上考核",
+      "path": "docs/面试保研/南大往年/2021年南京大学计算机科学与技术系本科生开放日7月8日线上考核.pdf"
+    },
+    {
+      "basename": "往年题目",
+      "path": "docs/面试保研/南大往年/往年题目.md"
+    },
+    {
+      "basename": "c96536f112a74024be9f595f007a2763",
+      "path": "docs/面试保研/南大往年/c96536f112a74024be9f595f007a2763.jpg"
+    },
+    {
+      "basename": "simpread-2022 南大 cs 夏令营笔试面试准备",
+      "path": "docs/面试保研/南大往年/simpread-2022 南大 cs 夏令营笔试面试准备.md"
+    },
+    {
+      "basename": "simpread-南京大学计院夏令营历年机试笔试题汇总（刷题版）_南京大学计算机夏令营笔试 - CSDN 博客",
+      "path": "docs/面试保研/南大往年/simpread-南京大学计院夏令营历年机试笔试题汇总（刷题版）_南京大学计算机夏令营笔试 - CSDN 博客.md"
+    },
+    {
+      "basename": "南京大学计院夏令营历年机试笔试题汇总（刷题版）_南京大学计算机夏令营笔试 - CSDN 博客",
+      "path": "Blog/南京大学计院夏令营历年机试笔试题汇总（刷题版）_南京大学计算机夏令营笔试 - CSDN 博客.md"
+    },
+    {
+      "basename": "并发",
+      "path": "docs/课程/操作系统/笔记/并发.md"
+    },
+    {
+      "basename": "可扩展",
+      "path": "docs/课程/软件体系结构/笔记/可扩展.md"
+    },
+    {
+      "basename": "p9",
+      "path": "docs/课程/编译原理/作业/p9.md"
+    },
+    {
+      "basename": "SpringMVC",
+      "path": "docs/课程/软件体系结构/笔记/SSM/SpringMVC.md"
+    },
+    {
+      "basename": "SpringBoot",
+      "path": "docs/课程/软件体系结构/笔记/SpringBoot.md"
+    },
+    {
+      "basename": "Spring",
+      "path": "docs/课程/软件体系结构/笔记/Spring.md"
+    },
+    {
+      "basename": "微服务",
+      "path": "docs/课程/软件体系结构/笔记/微服务.md"
+    },
+    {
+      "basename": "软件体系结构(Spring)",
+      "path": "docs/课程/软件体系结构/软件体系结构(Spring).md"
+    },
+    {
+      "basename": "虚拟化",
+      "path": "docs/课程/操作系统/笔记/虚拟化.md"
+    },
+    {
+      "basename": "Drawing 2024-04-27 20.00.28.excalidraw",
+      "path": "Excalidraw/Drawing 2024-04-27 20.00.28.excalidraw.md"
+    },
+    {
+      "basename": "thread",
+      "path": "docs/课程/操作系统/代码/thread-lib/thread.h"
+    },
+    {
+      "basename": "README",
+      "path": "docs/课程/操作系统/代码/thread-lib/README.md"
+    },
+    {
+      "basename": "hello",
+      "path": "docs/课程/操作系统/代码/thread-lib/hello.c"
+    },
+    {
+      "basename": "thread-sync",
+      "path": "docs/课程/操作系统/代码/thread-lib/thread-sync.h"
     },
     {
       "basename": "数学语法",
       "path": "docs/杂项/latex/数学语法.md"
+    },
+    {
+      "basename": "数学",
+      "path": "docs/算法/数学.md"
+    },
+    {
+      "basename": "线性数据结构",
+      "path": "docs/归档课程/数据结构/笔记/线性数据结构.md"
+    },
+    {
+      "basename": "数据结构与算法",
+      "path": "docs/面试保研/计算机科学/数据结构与算法.md"
+    },
+    {
+      "basename": "笔记",
+      "path": "pdf/笔记.pdf"
     },
     {
       "basename": "运行时刻环境",
@@ -45,10 +149,6 @@
       "path": "docs/面试(实习)/计算机科学/计算机网络.md"
     },
     {
-      "basename": "并发",
-      "path": "docs/课程/操作系统/笔记/并发.md"
-    },
-    {
       "basename": "计算机图形学",
       "path": "docs/面试(实习)/计算机科学/计算机图形学.md"
     },
@@ -61,28 +161,12 @@
       "path": "docs/面试(实习)/计算机科学/并发编程.md"
     },
     {
-      "basename": "软件体系结构(Spring)",
-      "path": "docs/课程/软件体系结构/软件体系结构(Spring).md"
-    },
-    {
       "basename": "操作系统：三个简单的部分（OSTEP） (it-ebooks) (Z-Library)",
       "path": "docs/课程/操作系统/操作系统：三个简单的部分（OSTEP） (it-ebooks) (Z-Library).pdf"
     },
     {
-      "basename": "SpringMVC",
-      "path": "docs/课程/软件体系结构/笔记/SSM/SpringMVC.md"
-    },
-    {
-      "basename": "分发系统",
-      "path": "docs/课程/软件体系结构/笔记/分发系统.md"
-    },
-    {
       "basename": "Drawing 2024-04-11 14.02.59.excalidraw",
       "path": "Excalidraw/Drawing 2024-04-11 14.02.59.excalidraw.md"
-    },
-    {
-      "basename": "Spring",
-      "path": "docs/课程/软件体系结构/笔记/Spring.md"
     },
     {
       "basename": "设计模式",
@@ -115,86 +199,6 @@
     {
       "basename": "光栅化",
       "path": "docs/计算机图形学/图形学基础/光栅化.md"
-    },
-    {
-      "basename": "引论",
-      "path": "docs/课程/编译原理/笔记/引论.md"
-    },
-    {
-      "basename": "待学高级知识",
-      "path": "docs/算法/待学高级知识.md"
-    },
-    {
-      "basename": "p5",
-      "path": "docs/课程/编译原理/作业/p5.md"
-    },
-    {
-      "basename": "数据结构",
-      "path": "docs/算法/数据结构.md"
-    },
-    {
-      "basename": "p4",
-      "path": "docs/课程/编译原理/作业/p4.md"
-    },
-    {
-      "basename": "语法制导的编译技术",
-      "path": "docs/课程/编译原理/笔记/语法制导的编译技术.md"
-    },
-    {
-      "basename": "Chapter_1",
-      "path": "docs/课程/编译原理/课件/Chapter_1.pdf"
-    },
-    {
-      "basename": "Chapter_4",
-      "path": "docs/课程/编译原理/课件/Chapter_4.pdf"
-    },
-    {
-      "basename": "Chapter_5",
-      "path": "docs/课程/编译原理/课件/Chapter_5.pdf"
-    },
-    {
-      "basename": "语法分析",
-      "path": "docs/课程/编译原理/笔记/语法分析.md"
-    },
-    {
-      "basename": "词法分析",
-      "path": "docs/课程/编译原理/笔记/词法分析.md"
-    },
-    {
-      "basename": "日志系统",
-      "path": "docs/杂项/linux与shell/linux/日志系统.md"
-    },
-    {
-      "basename": "linux",
-      "path": "docs/杂项/linux与shell/linux.md"
-    },
-    {
-      "basename": "进程管理",
-      "path": "docs/杂项/linux与shell/linux/进程管理.md"
-    },
-    {
-      "basename": "文本处理",
-      "path": "docs/杂项/linux与shell/linux/文本处理.md"
-    },
-    {
-      "basename": "文件系统",
-      "path": "docs/杂项/linux与shell/linux/文件系统.md"
-    },
-    {
-      "basename": "equals()与hashCode()",
-      "path": "docs/java/java基础/杂项/equals()与hashCode().md"
-    },
-    {
-      "basename": "java基础",
-      "path": "docs/java/java基础.md"
-    },
-    {
-      "basename": "排序&选择",
-      "path": "docs/算法/排序&选择.md"
-    },
-    {
-      "basename": "MySQL",
-      "path": "docs/数据库/关系数据库/MySQL.md"
     }
   ],
   "omittedPaths": [],

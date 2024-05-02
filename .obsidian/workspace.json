@@ -4,24 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "85e380b2d3381e03",
+        "id": "f1dded0d7200b0bd",
         "type": "tabs",
-        "dimension": 43.91117478510028,
         "children": [
           {
-            "id": "a4b26a99c8112114",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "docs/杂项/latex/数学语法.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "5505d9ab2eab13b9",
+            "id": "aaa84637805b7c7b",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -32,21 +19,19 @@
               }
             }
           }
-        ],
-        "currentTab": 1
+        ]
       },
       {
-        "id": "7a626c3c2c180b49",
+        "id": "a05be7893abb2e5a",
         "type": "tabs",
-        "dimension": 56.088825214899714,
         "children": [
           {
-            "id": "07c3e45e1341b40c",
+            "id": "195576027770e92f",
             "type": "leaf",
             "state": {
               "type": "pdf",
               "state": {
-                "file": "pdf/笔记.pdf"
+                "file": "pdf/离散数学.pdf"
               }
             }
           }
@@ -79,7 +64,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "数学",
+                "query": "BS CS",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -108,8 +93,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 202.5
   },
   "right": {
     "id": "d615b65a4ccf8a6a",
@@ -176,13 +160,21 @@
               "type": "calendar",
               "state": {}
             }
+          },
+          {
+            "id": "160702efc0127260",
+            "type": "leaf",
+            "state": {
+              "type": "todo",
+              "state": {}
+            }
           }
         ],
         "currentTab": 3
       }
     ],
     "direction": "horizontal",
-    "width": 200,
+    "width": 221.5,
     "collapsed": true
   },
   "left-ribbon": {
@@ -195,48 +187,50 @@
       "workspaces:管理工作区布局": false,
       "audio-recorder:开始/结束录音": false,
       "obsidian-excalidraw-plugin:新建绘图文件": false,
+      "obsidian-advanced-slides:Show Slide Preview": false,
       "omnisearch:Omnisearch": false,
-      "vscode-editor:新建代码文件": false,
-      "obsidian-advanced-slides:Show Slide Preview": false
+      "vscode-editor:新建代码文件": false
     }
   },
-  "active": "5505d9ab2eab13b9",
+  "active": "aaa84637805b7c7b",
   "lastOpenFiles": [
-    "pdf/笔记.pdf",
+    "临时/temp.md",
+    "临时/temp2.md",
     "docs/面试保研/数学/离散数学.md",
-    "docs/杂项/latex/数学语法.md",
-    "conflict-files-obsidian-git.md",
-    "docs/课程/操作系统/代码/thread-lib/thread-sync.h",
-    "Excalidraw/Drawing 2024-04-27 20.00.28.excalidraw.md",
-    "pdf",
-    "新建文件夹",
-    "docs/课程/编译原理/笔记/运行时刻环境.md",
-    "docs/游戏开发/性能优化.md",
-    "docs/游戏开发/八股.md",
-    "docs/游戏开发/网络联机.md",
-    "docs/游戏开发/游戏安全.md",
-    "docs/游戏开发/游戏设计.md",
-    "docs/课程/编译原理/课件/Chapter_7.pdf",
-    "docs/面试(实习)/计算机科学/计算机网络.md",
+    "pdf/离散数学.pdf",
+    "docs/面试保研/南大往年/2021年南京大学计算机科学与技术系本科生开放日7月8日线上考核.pdf",
+    "docs/面试保研/南大往年/往年题目.md",
+    "docs/面试保研/南大往年",
+    "docs/面试保研/南大往年/c96536f112a74024be9f595f007a2763.jpg",
+    "docs/面试保研/南大往年/simpread-2022 南大 cs 夏令营笔试面试准备.md",
+    "docs/面试保研/南大往年/simpread-南京大学计院夏令营历年机试笔试题汇总（刷题版）_南京大学计算机夏令营笔试 - CSDN 博客.md",
+    "Blog/南京大学计院夏令营历年机试笔试题汇总（刷题版）_南京大学计算机夏令营笔试 - CSDN 博客.md",
+    "docs/面试保研/c96536f112a74024be9f595f007a2763.jpg.crdownload",
     "docs/课程/操作系统/笔记/并发.md",
-    "docs/面试保研/计算机科学/数据结构与算法.md",
-    "docs/面试(实习)/面试技巧/反问环节.md",
-    "docs/面试(实习)/面试技巧/HR面.md",
-    "docs/面试(实习)/面试技巧",
-    "docs/面试(实习)/自我介绍/腾讯天美游戏端开发.md",
-    "docs/面试(实习)/自我介绍",
-    "docs/课程/编译原理/作业/p8.md",
-    "docs/课程/操作系统/代码/cv-sem/README.md",
-    "docs/课程/操作系统/代码/cv-sem/Makefile",
-    "docs/课程/操作系统/代码/cv-sem/cv.c",
-    "docs/课程/操作系统/代码/cv-sem",
-    "Excalidraw/Drawing 2024-04-22 22.36.10.excalidraw.md",
-    "Excalidraw/Drawing 2024-04-22 16.23.19.excalidraw.md",
-    "Excalidraw/Drawing 2024-04-22 16.06.51.excalidraw.md",
-    "docs/面试(实习)/计算机科学/计算机图形学.md",
-    "docs/面试(实习)/计算机科学/操作系统.md",
-    "docs/面试(实习)/计算机科学/并发编程.md",
+    "docs/课程/软件体系结构/笔记/可扩展.md",
+    "临时/Untitled.md",
+    "docs/课程/编译原理/作业/p9.md",
+    "docs/课程/软件体系结构/笔记/SSM/SpringMVC.md",
+    "docs/课程/软件体系结构/笔记/SpringBoot.md",
+    "docs/课程/软件体系结构/笔记/Spring.md",
+    "docs/课程/软件体系结构/笔记/微服务.md",
+    "理念.md",
     "docs/课程/软件体系结构/软件体系结构(Spring).md",
+    "docs/课程/软件体系结构/笔记/分发系统.md",
+    "docs/课程/操作系统/笔记/虚拟化.md",
+    "Excalidraw/Drawing 2024-04-27 20.00.28.excalidraw.md",
+    "docs/课程/操作系统/代码/thread-lib/thread.h",
+    "docs/课程/操作系统/代码/thread-lib/README.md",
+    "docs/课程/操作系统/代码/thread-lib/hello.c",
+    "docs/课程/操作系统/代码/thread-lib/thread-sync.h",
+    "docs/杂项/latex/数学语法.md",
+    "docs/算法/数学.md",
+    "docs/归档课程/数据结构/笔记/线性数据结构.md",
+    "docs/面试保研/计算机科学/数据结构与算法.md",
+    "docs/游戏开发/性能优化.md",
+    "pdf/线性代数.pdf",
+    "pdf/笔记.pdf",
+    "docs/课程/金融工程学/郑振龙《金融工程》（第5版）笔记和课后习题（含考研真题）详解答案.pdf",
     "CsNotes/2021-11-22-22-54-02.png",
     "CsNotes/2021-11-22-22-52-49.png",
     "CsNotes/2021-11-22-22-49-26.png",
@@ -246,7 +240,6 @@
     "export/金融大数据p4/plugin/chalkboard/img/sponge.png",
     "export/金融大数据p4/plugin/chalkboard/img/chalk-yellow.png",
     "export/金融大数据p4/plugin/chalkboard/img/chalk-white.png",
-    "export/金融大数据p4/plugin/chalkboard/img/chalk-red.png",
-    "export/金融大数据p4/plugin/chalkboard/img/chalk-purple.png"
+    "export/金融大数据p4/plugin/chalkboard/img/chalk-red.png"
   ]
 }
