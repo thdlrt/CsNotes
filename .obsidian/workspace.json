@@ -38,16 +38,6 @@
         "type": "tabs",
         "children": [
           {
-            "id": "348b9d8d76a11e2c",
-            "type": "leaf",
-            "state": {
-              "type": "pdf",
-              "state": {
-                "file": "docs/课程/编译原理/课件/Chapter_8.pdf"
-              }
-            }
-          },
-          {
             "id": "0e380b989789518f",
             "type": "leaf",
             "state": {
@@ -56,8 +46,19 @@
                 "file": "docs/课程/编译原理/课件/Chapter_9.pdf"
               }
             }
+          },
+          {
+            "id": "6bf9ffa3b12a8f19",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "docs/课程/编译原理/课件/Chapter_8.pdf"
+              }
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -111,7 +112,8 @@
               "state": {}
             }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
@@ -131,7 +133,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/课程/编译原理/笔记/代码生成.md",
+                "file": "docs/课程/编译原理/课件/Chapter_8.pdf",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -148,7 +150,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/课程/编译原理/笔记/代码生成.md",
+                "file": "docs/课程/编译原理/课件/Chapter_8.pdf",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -171,7 +173,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/课程/编译原理/笔记/代码生成.md"
+                "file": "docs/课程/编译原理/课件/Chapter_8.pdf"
               }
             }
           },
@@ -213,10 +215,10 @@
       "templates:插入模板": false
     }
   },
-  "active": "b66b230ffc083a05",
+  "active": "6bf9ffa3b12a8f19",
   "lastOpenFiles": [
-    "docs/课程/编译原理/课件/Chapter_8.pdf",
     "docs/课程/编译原理/笔记/代码生成.md",
+    "docs/课程/编译原理/课件/Chapter_8.pdf",
     "docs/面试保研/笔试/simpread-南京大学计院夏令营历年机试笔试题汇总（刷题版）_南京大学计算机夏令营笔试 - CSDN 博客.md",
     "docs/面试保研/笔试/c96536f112a74024be9f595f007a2763.jpg",
     "docs/面试保研/面试/面试.pdf",
