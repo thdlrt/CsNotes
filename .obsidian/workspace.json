@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "1d598e7320a58d29",
+        "id": "34d1e8ba1b46568e",
         "type": "tabs",
         "children": [
           {
-            "id": "a2e5e2ce21492eb7",
+            "id": "7ddf52cd7984e40c",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -89,7 +89,8 @@
               "state": {}
             }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
@@ -191,7 +192,7 @@
       "templates:插入模板": false
     }
   },
-  "active": "a2e5e2ce21492eb7",
+  "active": "7ddf52cd7984e40c",
   "lastOpenFiles": [
     "docs/课程/编译原理/课件/Chapter_9.pdf",
     "docs/课程/编译原理/笔记/机器无关优化.md",
