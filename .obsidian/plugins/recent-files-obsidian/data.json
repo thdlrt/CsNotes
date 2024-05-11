@@ -5,6 +5,10 @@
       "path": "docs/课程/编译原理/笔记/机器无关优化.md"
     },
     {
+      "basename": "Chapter_9",
+      "path": "docs/课程/编译原理/课件/Chapter_9.pdf"
+    },
+    {
       "basename": "代码生成",
       "path": "docs/课程/编译原理/笔记/代码生成.md"
     },
@@ -39,10 +43,6 @@
     {
       "basename": "p10",
       "path": "docs/课程/编译原理/作业/p10.md"
-    },
-    {
-      "basename": "Chapter_9",
-      "path": "docs/课程/编译原理/课件/Chapter_9.pdf"
     },
     {
       "basename": "8.2",
