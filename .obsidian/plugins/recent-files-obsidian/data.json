@@ -9,6 +9,30 @@
       "path": "docs/课程/编译原理/课件/Chapter_8.pdf"
     },
     {
+      "basename": "simpread-南京大学计院夏令营历年机试笔试题汇总（刷题版）_南京大学计算机夏令营笔试 - CSDN 博客",
+      "path": "docs/面试保研/笔试/simpread-南京大学计院夏令营历年机试笔试题汇总（刷题版）_南京大学计算机夏令营笔试 - CSDN 博客.md"
+    },
+    {
+      "basename": "c96536f112a74024be9f595f007a2763",
+      "path": "docs/面试保研/笔试/c96536f112a74024be9f595f007a2763.jpg"
+    },
+    {
+      "basename": "simpread-2022 南大 cs 夏令营笔试面试准备",
+      "path": "docs/面试保研/笔试/simpread-2022 南大 cs 夏令营笔试面试准备.md"
+    },
+    {
+      "basename": "往年题目",
+      "path": "docs/面试保研/笔试/往年题目.md"
+    },
+    {
+      "basename": "编译原理期末复习题 (选择)_编译原理选择题 - CSDN 博客",
+      "path": "docs/面试保研/笔试/补充习题/编译原理期末复习题 (选择)_编译原理选择题 - CSDN 博客.md"
+    },
+    {
+      "basename": "编译原理期末考试选择题汇总.doc",
+      "path": "docs/面试保研/笔试/补充习题/编译原理期末考试选择题汇总.doc.pdf"
+    },
+    {
       "basename": "p10",
       "path": "docs/课程/编译原理/作业/p10.md"
     },
@@ -121,10 +145,6 @@
       "path": "docs/面试保研/计算机科学/计算机组成原理.md"
     },
     {
-      "basename": "编译原理期末复习题 (选择)_编译原理选择题 - CSDN 博客",
-      "path": "docs/面试保研/笔试/补充习题/编译原理期末复习题 (选择)_编译原理选择题 - CSDN 博客.md"
-    },
-    {
       "basename": "计算机网络",
       "path": "docs/面试保研/计算机科学/计算机网络.md"
     },
@@ -139,10 +159,6 @@
     {
       "basename": "南京大学计院夏令营历年机试笔试题汇总（刷题版）_南京大学计算机夏令营笔试 - CSDN 博客",
       "path": "Blog/南京大学计院夏令营历年机试笔试题汇总（刷题版）_南京大学计算机夏令营笔试 - CSDN 博客.md"
-    },
-    {
-      "basename": "编译原理期末考试选择题汇总.doc",
-      "path": "docs/面试保研/笔试/补充习题/编译原理期末考试选择题汇总.doc.pdf"
     },
     {
       "basename": "离散数学",
@@ -183,22 +199,6 @@
     {
       "basename": "ch1_introduction",
       "path": "docs/课程/高质量图像渲染/课件/ch1_introduction.pdf"
-    },
-    {
-      "basename": "线性代数与变换",
-      "path": "docs/计算机图形学/图形学基础/线性代数与变换.md"
-    },
-    {
-      "basename": "tinyraytracer",
-      "path": "docs/计算机图形学/实验/tinyraytracer.md"
-    },
-    {
-      "basename": "tinyrender",
-      "path": "docs/计算机图形学/实验/tinyrender.md"
-    },
-    {
-      "basename": "笔记",
-      "path": "docs/归档课程/计算机网络/笔记.md"
     }
   ],
   "omittedPaths": [],
