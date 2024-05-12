@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/课程/操作系统/笔记/并发.md",
+                "file": "docs/课程/操作系统/笔记/虚拟化.md",
                 "mode": "source",
                 "source": false
               }
@@ -93,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/课程/操作系统/笔记/并发.md",
+                "file": "docs/课程/操作系统/笔记/虚拟化.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/课程/操作系统/笔记/并发.md",
+                "file": "docs/课程/操作系统/笔记/虚拟化.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/课程/操作系统/笔记/并发.md"
+                "file": "docs/课程/操作系统/笔记/虚拟化.md"
               }
             }
           },
@@ -177,8 +177,8 @@
   },
   "active": "7ddf52cd7984e40c",
   "lastOpenFiles": [
-    "docs/课程/操作系统/笔记/绪论.md",
     "docs/课程/操作系统/笔记/并发.md",
+    "docs/课程/操作系统/笔记/绪论.md",
     "docs/课程/编译原理/笔记/机器无关优化.md",
     "docs/课程/编译原理/课件/Chapter_9.pdf",
     "docs/面试保研/计算机科学/编译原理.md",
