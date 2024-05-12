@@ -20,22 +20,6 @@
             }
           }
         ]
-      },
-      {
-        "id": "43bfb0b03dbb08a5",
-        "type": "tabs",
-        "children": [
-          {
-            "id": "0e380b989789518f",
-            "type": "leaf",
-            "state": {
-              "type": "pdf",
-              "state": {
-                "file": "docs/课程/编译原理/课件/Chapter_9.pdf"
-              }
-            }
-          }
-        ]
       }
     ],
     "direction": "vertical"
