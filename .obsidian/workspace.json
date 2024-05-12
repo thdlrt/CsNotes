@@ -110,7 +110,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/课程/编译原理/笔记/机器无关优化.md",
+                "file": "docs/课程/编译原理/课件/Chapter_9.pdf",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -127,7 +127,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/课程/编译原理/笔记/机器无关优化.md",
+                "file": "docs/课程/编译原理/课件/Chapter_9.pdf",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -150,7 +150,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/课程/编译原理/笔记/机器无关优化.md"
+                "file": "docs/课程/编译原理/课件/Chapter_9.pdf"
               }
             }
           },
@@ -192,10 +192,10 @@
       "templates:插入模板": false
     }
   },
-  "active": "7ddf52cd7984e40c",
+  "active": "0e380b989789518f",
   "lastOpenFiles": [
-    "docs/课程/编译原理/课件/Chapter_9.pdf",
     "docs/课程/编译原理/笔记/机器无关优化.md",
+    "docs/课程/编译原理/课件/Chapter_9.pdf",
     "docs/面试保研/计算机科学/编译原理.md",
     "docs/面试保研/计算机科学/操作系统.md",
     "docs/面试保研/计算机科学/计算机组成原理.md",
