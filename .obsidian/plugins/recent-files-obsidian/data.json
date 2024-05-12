@@ -1,6 +1,14 @@
 {
   "recentFiles": [
     {
+      "basename": "绪论",
+      "path": "docs/课程/操作系统/笔记/绪论.md"
+    },
+    {
+      "basename": "并发",
+      "path": "docs/课程/操作系统/笔记/并发.md"
+    },
+    {
       "basename": "机器无关优化",
       "path": "docs/课程/编译原理/笔记/机器无关优化.md"
     },
@@ -191,14 +199,6 @@
     {
       "basename": "作业",
       "path": "docs/课程/金融工程学/作业.md"
-    },
-    {
-      "basename": "郑振龙《金融工程》（第5版）笔记和课后习题（含考研真题）详解答案",
-      "path": "docs/课程/金融工程学/郑振龙《金融工程》（第5版）笔记和课后习题（含考研真题）详解答案.pdf"
-    },
-    {
-      "basename": "ch4_ray_tracing2",
-      "path": "docs/课程/高质量图像渲染/课件/ch4_ray_tracing2.pdf"
     }
   ],
   "omittedPaths": [],
