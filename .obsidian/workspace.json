@@ -32,6 +32,22 @@
             }
           }
         ]
+      },
+      {
+        "id": "9974995f4cf609cd",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "675b309e1002032f",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "docs/课程/金融工程学/郑振龙《金融工程》（第5版）笔记和课后习题（含考研真题）详解答案.pdf"
+              }
+            }
+          }
+        ]
       }
     ],
     "direction": "vertical"
@@ -105,7 +121,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/课程/金融工程学/作业.md",
+                "file": "docs/课程/金融工程学/郑振龙《金融工程》（第5版）笔记和课后习题（含考研真题）详解答案.pdf",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -122,7 +138,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/课程/金融工程学/作业.md",
+                "file": "docs/课程/金融工程学/郑振龙《金融工程》（第5版）笔记和课后习题（含考研真题）详解答案.pdf",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -145,7 +161,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/课程/金融工程学/作业.md"
+                "file": "docs/课程/金融工程学/郑振龙《金融工程》（第5版）笔记和课后习题（含考研真题）详解答案.pdf"
               }
             }
           },
@@ -187,8 +203,10 @@
       "templates:插入模板": false
     }
   },
-  "active": "7ddf52cd7984e40c",
+  "active": "675b309e1002032f",
   "lastOpenFiles": [
+    "docs/课程/金融工程学/作业.md",
+    "docs/课程/金融工程学/郑振龙《金融工程》（第5版）笔记和课后习题（含考研真题）详解答案.pdf",
     "docs/课程/操作系统/笔记/并发.md",
     "docs/课程/操作系统/笔记/虚拟化.md",
     "docs/课程/操作系统/笔记/绪论.md",
@@ -223,9 +241,6 @@
     "docs/课程/编译原理/课件/Chapter_1.pdf",
     "docs/课程/编译原理/课件/Chapter_4.pdf",
     "docs/课程/编译原理/笔记/语法分析.md",
-    "docs/课程/编译原理/作业/p4.md",
-    "docs/课程/编译原理/编译原理.md",
-    "docs/课程/编译原理/课件/Chapter_3.pdf",
     "CsNotes/2021-11-22-22-54-02.png",
     "CsNotes/2021-11-22-22-52-49.png",
     "CsNotes/2021-11-22-22-49-26.png",
