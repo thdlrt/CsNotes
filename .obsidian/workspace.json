@@ -8,12 +8,12 @@
         "type": "tabs",
         "children": [
           {
-            "id": "ed106dd4b9cb041a",
+            "id": "dfd907ad20e375a9",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/课程/操作系统/笔记/持久化.md",
+                "file": "docs/保研/计算机科学/计算机组成原理.md",
                 "mode": "source",
                 "source": false
               }
@@ -93,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/课程/操作系统/笔记/持久化.md",
+                "file": "docs/保研/计算机科学/计算机组成原理.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/课程/操作系统/笔记/持久化.md",
+                "file": "docs/保研/计算机科学/计算机组成原理.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/课程/操作系统/笔记/持久化.md"
+                "file": "docs/保研/计算机科学/计算机组成原理.md"
               }
             }
           },
@@ -175,10 +175,13 @@
       "templates:插入模板": false
     }
   },
-  "active": "ed106dd4b9cb041a",
+  "active": "dfd907ad20e375a9",
   "lastOpenFiles": [
-    "docs/课程/操作系统/笔记/并发.md",
+    "docs/保研/计算机科学/计算机网络.md",
+    "docs/保研/计算机科学/计算机组成原理.md",
+    "docs/归档课程/计算机系统基础/data/8.md",
     "docs/课程/操作系统/笔记/持久化.md",
+    "docs/课程/操作系统/笔记/并发.md",
     "docs/课程/操作系统/笔记/虚拟化.md",
     "docs/课程/金融工程学/作业.md",
     "docs/课程/金融工程学/郑振龙《金融工程》（第5版）笔记和课后习题（含考研真题）详解答案.pdf",
@@ -187,8 +190,6 @@
     "docs/课程/编译原理/课件/Chapter_9.pdf",
     "docs/保研/计算机科学/编译原理.md",
     "docs/保研/计算机科学/操作系统.md",
-    "docs/保研/计算机科学/计算机组成原理.md",
-    "docs/保研/计算机科学/计算机网络.md",
     "docs/课程/编译原理/笔记/代码生成.md",
     "临时/学术背景与研究动机问卷.md",
     "docs/课程/编译原理/课件/Chapter_8.pdf",
@@ -213,7 +214,6 @@
     "docs/课程/编译原理/作业/p8.md",
     "docs/课程/编译原理/课件/Chapter_1.pdf",
     "docs/课程/编译原理/课件/Chapter_4.pdf",
-    "docs/课程/编译原理/笔记/语法分析.md",
     "CsNotes/2021-11-22-22-54-02.png",
     "CsNotes/2021-11-22-22-52-49.png",
     "CsNotes/2021-11-22-22-49-26.png",
