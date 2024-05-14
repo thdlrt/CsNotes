@@ -1,8 +1,20 @@
 {
   "recentFiles": [
     {
+      "basename": "微服务SpringCloud",
+      "path": "docs/课程/软件体系结构/笔记/微服务SpringCloud.md"
+    },
+    {
       "basename": "计算机组成原理",
       "path": "docs/保研/计算机科学/计算机组成原理.md"
+    },
+    {
+      "basename": "编译原理",
+      "path": "docs/保研/计算机科学/编译原理.md"
+    },
+    {
+      "basename": "操作系统",
+      "path": "docs/保研/计算机科学/操作系统.md"
     },
     {
       "basename": "持久化",
@@ -63,14 +75,6 @@
     {
       "basename": "Chapter_9",
       "path": "docs/课程/编译原理/课件/Chapter_9.pdf"
-    },
-    {
-      "basename": "编译原理",
-      "path": "docs/保研/计算机科学/编译原理.md"
-    },
-    {
-      "basename": "操作系统",
-      "path": "docs/保研/计算机科学/操作系统.md"
     },
     {
       "basename": "代码生成",
@@ -195,10 +199,6 @@
     {
       "basename": "P5410 【模板】扩展 KMP_exKMP（Z 函数） - 洛谷 _ 计算机科学教育新生态",
       "path": "Blog/P5410 【模板】扩展 KMP_exKMP（Z 函数） - 洛谷 _ 计算机科学教育新生态.md"
-    },
-    {
-      "basename": "南京大学计院夏令营历年机试笔试题汇总（刷题版）_南京大学计算机夏令营笔试 - CSDN 博客",
-      "path": "Blog/南京大学计院夏令营历年机试笔试题汇总（刷题版）_南京大学计算机夏令营笔试 - CSDN 博客.md"
     }
   ],
   "omittedPaths": [],
