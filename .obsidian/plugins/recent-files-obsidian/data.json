@@ -1,6 +1,10 @@
 {
   "recentFiles": [
     {
+      "basename": "离散数学",
+      "path": "docs/保研/数学/离散数学.md"
+    },
+    {
       "basename": "数据结构与算法",
       "path": "docs/保研/计算机科学/数据结构与算法.md"
     },
@@ -195,10 +199,6 @@
     {
       "basename": "temp2",
       "path": "临时/temp2.md"
-    },
-    {
-      "basename": "P5410 【模板】扩展 KMP_exKMP（Z 函数） - 洛谷 _ 计算机科学教育新生态",
-      "path": "Blog/P5410 【模板】扩展 KMP_exKMP（Z 函数） - 洛谷 _ 计算机科学教育新生态.md"
     }
   ],
   "omittedPaths": [],

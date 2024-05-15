@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/保研/计算机科学/数据结构与算法.md",
+                "file": "docs/保研/数学/离散数学.md",
                 "mode": "source",
                 "source": false
               }
@@ -77,8 +77,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 238.5,
-    "collapsed": true
+    "width": 238.5
   },
   "right": {
     "id": "d615b65a4ccf8a6a",
@@ -94,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/保研/计算机科学/数据结构与算法.md",
+                "file": "docs/保研/数学/离散数学.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -111,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/保研/计算机科学/数据结构与算法.md",
+                "file": "docs/保研/数学/离散数学.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -134,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/保研/计算机科学/数据结构与算法.md"
+                "file": "docs/保研/数学/离散数学.md"
               }
             }
           },
@@ -178,9 +177,9 @@
   },
   "active": "0db8cf0bd337fcec",
   "lastOpenFiles": [
+    "docs/保研/计算机科学/数据结构与算法.md",
     "docs/保研/计算机科学/操作系统.md",
     "docs/保研/计算机科学/计算机组成原理.md",
-    "docs/保研/计算机科学/数据结构与算法.md",
     "docs/课程/软件体系结构/笔记/微服务SpringCloud.md",
     "docs/保研/计算机科学/编译原理.md",
     "docs/课程/操作系统/笔记/持久化.md",
