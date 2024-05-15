@@ -1,6 +1,18 @@
 {
   "recentFiles": [
     {
+      "basename": "p2",
+      "path": "docs/课程/编译原理/作业/p2.md"
+    },
+    {
+      "basename": "语法分析",
+      "path": "docs/课程/编译原理/笔记/语法分析.md"
+    },
+    {
+      "basename": "词法分析",
+      "path": "docs/课程/编译原理/笔记/词法分析.md"
+    },
+    {
       "basename": "运行时刻环境",
       "path": "docs/课程/编译原理/笔记/运行时刻环境.md"
     },
@@ -153,10 +165,6 @@
       "path": "docs/课程/编译原理/课件/Chapter_4.pdf"
     },
     {
-      "basename": "语法分析",
-      "path": "docs/课程/编译原理/笔记/语法分析.md"
-    },
-    {
       "basename": "p4",
       "path": "docs/课程/编译原理/作业/p4.md"
     },
@@ -167,14 +175,6 @@
     {
       "basename": "p3",
       "path": "docs/课程/编译原理/作业/p3.md"
-    },
-    {
-      "basename": "p2",
-      "path": "docs/课程/编译原理/作业/p2.md"
-    },
-    {
-      "basename": "词法分析",
-      "path": "docs/课程/编译原理/笔记/词法分析.md"
     },
     {
       "basename": "Chapter_3",
