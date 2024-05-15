@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/课程/软件体系结构/笔记/微服务SpringCloud.md",
+                "file": "docs/保研/计算机科学/计算机组成原理.md",
                 "mode": "source",
                 "source": false
               }
@@ -77,7 +77,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 238.5
+    "width": 238.5,
+    "collapsed": true
   },
   "right": {
     "id": "d615b65a4ccf8a6a",
@@ -93,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/课程/软件体系结构/笔记/微服务SpringCloud.md",
+                "file": "docs/保研/计算机科学/计算机组成原理.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +111,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/课程/软件体系结构/笔记/微服务SpringCloud.md",
+                "file": "docs/保研/计算机科学/计算机组成原理.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +134,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/课程/软件体系结构/笔记/微服务SpringCloud.md"
+                "file": "docs/保研/计算机科学/计算机组成原理.md"
               }
             }
           },
@@ -158,8 +159,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 236.5,
-    "collapsed": true
+    "width": 236.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -178,11 +178,12 @@
   },
   "active": "0db8cf0bd337fcec",
   "lastOpenFiles": [
+    "docs/保研/计算机科学/数据结构与算法.md",
+    "docs/课程/软件体系结构/笔记/微服务SpringCloud.md",
     "docs/保研/计算机科学/计算机组成原理.md",
     "docs/保研/计算机科学/编译原理.md",
     "docs/保研/计算机科学/操作系统.md",
     "docs/课程/操作系统/笔记/持久化.md",
-    "docs/保研/计算机科学/数据结构与算法.md",
     "docs/课程/操作系统/笔记/并发.md",
     "docs/保研/笔试/2021年南京大学计算机科学与技术系本科生开放日7月8日线上考核.pdf",
     "docs/保研/笔试/往年题目.md",
@@ -212,7 +213,6 @@
     "docs/课程/编译原理/笔记/中间代码生成.md",
     "docs/课程/编译原理/作业/p7.md",
     "docs/课程/编译原理/作业/p6.md",
-    "docs/课程/编译原理/笔记/语法制导的编译技术.md",
     "docs/课程/编译原理/课件/Chapter_5.pdf",
     "docs/课程/编译原理/课件/Chapter_1.pdf",
     "CsNotes/2021-11-22-22-54-02.png",
