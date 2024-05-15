@@ -1,6 +1,14 @@
 {
   "recentFiles": [
     {
+      "basename": "运行时刻环境",
+      "path": "docs/课程/编译原理/笔记/运行时刻环境.md"
+    },
+    {
+      "basename": "语法制导的编译技术",
+      "path": "docs/课程/编译原理/笔记/语法制导的编译技术.md"
+    },
+    {
       "basename": "计算机网络",
       "path": "docs/保研/计算机科学/计算机网络.md"
     },
@@ -109,10 +117,6 @@
       "path": "docs/课程/编译原理/作业/答案/dragon-book-exercise-answers-master/ch08/8.2/8.2.md"
     },
     {
-      "basename": "运行时刻环境",
-      "path": "docs/课程/编译原理/笔记/运行时刻环境.md"
-    },
-    {
       "basename": "Chapter_6",
       "path": "docs/课程/编译原理/课件/Chapter_6.pdf"
     },
@@ -131,10 +135,6 @@
     {
       "basename": "p6",
       "path": "docs/课程/编译原理/作业/p6.md"
-    },
-    {
-      "basename": "语法制导的编译技术",
-      "path": "docs/课程/编译原理/笔记/语法制导的编译技术.md"
     },
     {
       "basename": "Chapter_5",
