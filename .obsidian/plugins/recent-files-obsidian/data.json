@@ -1,12 +1,16 @@
 {
   "recentFiles": [
     {
-      "basename": "计算机组成原理",
-      "path": "docs/保研/计算机科学/计算机组成原理.md"
-    },
-    {
       "basename": "数据结构与算法",
       "path": "docs/保研/计算机科学/数据结构与算法.md"
+    },
+    {
+      "basename": "操作系统",
+      "path": "docs/保研/计算机科学/操作系统.md"
+    },
+    {
+      "basename": "计算机组成原理",
+      "path": "docs/保研/计算机科学/计算机组成原理.md"
     },
     {
       "basename": "微服务SpringCloud",
@@ -15,10 +19,6 @@
     {
       "basename": "编译原理",
       "path": "docs/保研/计算机科学/编译原理.md"
-    },
-    {
-      "basename": "操作系统",
-      "path": "docs/保研/计算机科学/操作系统.md"
     },
     {
       "basename": "持久化",
