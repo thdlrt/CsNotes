@@ -35,11 +35,9 @@
             "id": "6b4bb0e4d2c14c9b",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "pdf",
               "state": {
-                "file": "docs/课程/编译原理/笔记/词法分析.md",
-                "mode": "source",
-                "source": false
+                "file": "docs/保研/笔试/补充习题/编译原理期末考试选择题汇总.doc.pdf"
               }
             }
           }
@@ -118,7 +116,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/课程/编译原理/笔记/词法分析.md",
+                "file": "docs/保研/笔试/补充习题/编译原理期末考试选择题汇总.doc.pdf",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -135,7 +133,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/课程/编译原理/笔记/词法分析.md",
+                "file": "docs/保研/笔试/补充习题/编译原理期末考试选择题汇总.doc.pdf",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -158,7 +156,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/课程/编译原理/笔记/词法分析.md"
+                "file": "docs/保研/笔试/补充习题/编译原理期末考试选择题汇总.doc.pdf"
               }
             }
           },
@@ -203,21 +201,23 @@
   "active": "6b4bb0e4d2c14c9b",
   "lastOpenFiles": [
     "docs/保研/笔试/补充习题/编译原理期末复习题 (选择)_编译原理选择题 - CSDN 博客.md",
+    "docs/保研/笔试/补充习题/离散选择题.pdf",
     "docs/保研/笔试/补充习题/编译原理期末考试选择题汇总.doc.pdf",
+    "docs/保研/计算机科学/补充.md",
+    "docs/保研/笔试/simpread-南京大学计院夏令营历年机试笔试题汇总（刷题版）_南京大学计算机夏令营笔试 - CSDN 博客.md",
+    "docs/课程/编译原理/笔记/词法分析.md",
     "docs/课程/操作系统/笔记/持久化.md",
     "docs/保研/计算机科学/计算机组成原理.md",
     "docs/保研/计算机科学/计算机网络.md",
     "docs/课程/编译原理/笔记/语法分析.md",
     "Excalidraw/Drawing 2024-05-16 14.11.03.excalidraw.md",
     "docs/课程/编译原理/作业/p2.md",
-    "docs/课程/编译原理/笔记/词法分析.md",
     "docs/课程/编译原理/笔记/运行时刻环境.md",
     "docs/课程/编译原理/笔记/语法制导的编译技术.md",
     "docs/保研/笔试/2021年南京大学计算机科学与技术系本科生开放日7月8日线上考核.pdf",
     "docs/保研/笔试/往年题目.md",
     "docs/保研/笔试/c96536f112a74024be9f595f007a2763.jpg",
     "docs/保研/笔试/simpread-2022 南大 cs 夏令营笔试面试准备.md",
-    "docs/保研/笔试/simpread-南京大学计院夏令营历年机试笔试题汇总（刷题版）_南京大学计算机夏令营笔试 - CSDN 博客.md",
     "docs/保研/数学/离散数学.md",
     "docs/保研/计算机科学/数据结构与算法.md",
     "docs/保研/计算机科学/操作系统.md",
@@ -231,13 +231,11 @@
     "docs/课程/操作系统/笔记/绪论.md",
     "docs/课程/编译原理/笔记/机器无关优化.md",
     "docs/课程/编译原理/课件/Chapter_9.pdf",
-    "docs/课程/编译原理/笔记/代码生成.md",
     "docs/课程/编译原理/课件/Chapter_8.pdf",
     "docs/保研/面试/面试.pdf",
     "docs/面试保研/面试/~$面试.docx",
     "docs/课程/编译原理/课件/Chapter_6.pdf",
     "docs/课程/编译原理/课件/Chapter_5.pdf",
-    "docs/课程/编译原理/课件/Chapter_1.pdf",
     "CsNotes/2021-11-22-22-54-02.png",
     "CsNotes/2021-11-22-22-52-49.png",
     "CsNotes/2021-11-22-22-49-26.png",

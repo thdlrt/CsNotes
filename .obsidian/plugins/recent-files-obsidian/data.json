@@ -1,16 +1,28 @@
 {
   "recentFiles": [
     {
-      "basename": "词法分析",
-      "path": "docs/课程/编译原理/笔记/词法分析.md"
-    },
-    {
       "basename": "编译原理期末复习题 (选择)_编译原理选择题 - CSDN 博客",
       "path": "docs/保研/笔试/补充习题/编译原理期末复习题 (选择)_编译原理选择题 - CSDN 博客.md"
     },
     {
       "basename": "编译原理期末考试选择题汇总.doc",
       "path": "docs/保研/笔试/补充习题/编译原理期末考试选择题汇总.doc.pdf"
+    },
+    {
+      "basename": "离散选择题",
+      "path": "docs/保研/笔试/补充习题/离散选择题.pdf"
+    },
+    {
+      "basename": "补充",
+      "path": "docs/保研/计算机科学/补充.md"
+    },
+    {
+      "basename": "simpread-南京大学计院夏令营历年机试笔试题汇总（刷题版）_南京大学计算机夏令营笔试 - CSDN 博客",
+      "path": "docs/保研/笔试/simpread-南京大学计院夏令营历年机试笔试题汇总（刷题版）_南京大学计算机夏令营笔试 - CSDN 博客.md"
+    },
+    {
+      "basename": "词法分析",
+      "path": "docs/课程/编译原理/笔记/词法分析.md"
     },
     {
       "basename": "持久化",
@@ -45,20 +57,12 @@
       "path": "docs/保研/笔试/2021年南京大学计算机科学与技术系本科生开放日7月8日线上考核.pdf"
     },
     {
-      "basename": "往年题目",
-      "path": "docs/保研/笔试/往年题目.md"
-    },
-    {
       "basename": "c96536f112a74024be9f595f007a2763",
       "path": "docs/保研/笔试/c96536f112a74024be9f595f007a2763.jpg"
     },
     {
       "basename": "simpread-2022 南大 cs 夏令营笔试面试准备",
       "path": "docs/保研/笔试/simpread-2022 南大 cs 夏令营笔试面试准备.md"
-    },
-    {
-      "basename": "simpread-南京大学计院夏令营历年机试笔试题汇总（刷题版）_南京大学计算机夏令营笔试 - CSDN 博客",
-      "path": "docs/保研/笔试/simpread-南京大学计院夏令营历年机试笔试题汇总（刷题版）_南京大学计算机夏令营笔试 - CSDN 博客.md"
     },
     {
       "basename": "离散数学",
@@ -191,14 +195,6 @@
     {
       "basename": "5.3",
       "path": "docs/课程/编译原理/作业/答案/dragon-book-exercise-answers-master/ch05/5.3/5.3.md"
-    },
-    {
-      "basename": "7.5",
-      "path": "docs/课程/编译原理/作业/答案/dragon-book-exercise-answers-master/ch07/7.5/7.5.md"
-    },
-    {
-      "basename": "temp2",
-      "path": "临时/temp2.md"
     }
   ],
   "omittedPaths": [],
