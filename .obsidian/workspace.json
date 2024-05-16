@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/保研/笔试/simpread-南京大学计院夏令营历年机试笔试题汇总（刷题版）_南京大学计算机夏令营笔试 - CSDN 博客.md",
+                "file": "docs/保研/笔试/simpread-2022 南大 cs 夏令营笔试面试准备.md",
                 "mode": "source",
                 "source": false
               }
@@ -25,13 +25,14 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/保研/计算机科学/计算机组成原理.md",
+                "file": "docs/保研/计算机科学/计算机网络.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -105,7 +106,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/保研/笔试/simpread-南京大学计院夏令营历年机试笔试题汇总（刷题版）_南京大学计算机夏令营笔试 - CSDN 博客.md",
+                "file": "docs/保研/计算机科学/计算机网络.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -122,7 +123,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/保研/笔试/simpread-南京大学计院夏令营历年机试笔试题汇总（刷题版）_南京大学计算机夏令营笔试 - CSDN 博客.md",
+                "file": "docs/保研/计算机科学/计算机网络.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -145,7 +146,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/保研/笔试/simpread-南京大学计院夏令营历年机试笔试题汇总（刷题版）_南京大学计算机夏令营笔试 - CSDN 博客.md"
+                "file": "docs/保研/计算机科学/计算机网络.md"
               }
             }
           },
@@ -179,15 +180,17 @@
       "obsidian-advanced-slides:Show Slide Preview": false
     }
   },
-  "active": "a4b26a99c8112114",
+  "active": "d4a0efc818802fed",
   "lastOpenFiles": [
-    "docs/保研/计算机科学/计算机组成原理.md",
-    "docs/保研/计算机科学/数据结构与算法.md",
-    "docs/保研/笔试/simpread-南京大学计院夏令营历年机试笔试题汇总（刷题版）_南京大学计算机夏令营笔试 - CSDN 博客.md",
+    "docs/保研/笔试/simpread-2022 南大 cs 夏令营笔试面试准备.md",
     "docs/保研/计算机科学/计算机网络.md",
+    "docs/保研/计算机科学/计算机组成原理.md",
+    "docs/保研/笔试/simpread-南京大学计院夏令营历年机试笔试题汇总（刷题版）_南京大学计算机夏令营笔试 - CSDN 博客.md",
+    "docs/归档课程/计算机系统基础/data/3.md",
+    "docs/归档课程/计算机系统基础/data/6.md",
+    "docs/保研/计算机科学/数据结构与算法.md",
     "Excalidraw/Drawing 2024-05-16 14.11.03.excalidraw.md",
     "docs/保研/笔试/c96536f112a74024be9f595f007a2763.jpg",
-    "docs/保研/笔试/simpread-2022 南大 cs 夏令营笔试面试准备.md",
     "docs/保研/笔试/2021年南京大学计算机科学与技术系本科生开放日7月8日线上考核.pdf",
     "docs/杂项/latex/数学语法.md",
     "docs/面试(实习)/自我介绍/腾讯天美游戏端开发.md",
@@ -216,8 +219,6 @@
     "docs/保研/数学/离散数学.md",
     "docs/保研/数学/线性代数.md",
     "docs/保研/数学/微积分.md",
-    "Blog/南京大学计院夏令营历年机试笔试题汇总（刷题版）_南京大学计算机夏令营笔试 - CSDN 博客.md",
-    "docs/面试保研/数学/离散数学.md",
     "CsNotes/2021-11-22-22-54-02.png",
     "CsNotes/2021-11-22-22-52-49.png",
     "CsNotes/2021-11-22-22-49-26.png",

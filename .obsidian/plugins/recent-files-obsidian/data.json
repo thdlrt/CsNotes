@@ -1,20 +1,32 @@
 {
   "recentFiles": [
     {
-      "basename": "simpread-南京大学计院夏令营历年机试笔试题汇总（刷题版）_南京大学计算机夏令营笔试 - CSDN 博客",
-      "path": "docs/保研/笔试/simpread-南京大学计院夏令营历年机试笔试题汇总（刷题版）_南京大学计算机夏令营笔试 - CSDN 博客.md"
+      "basename": "计算机网络",
+      "path": "docs/保研/计算机科学/计算机网络.md"
+    },
+    {
+      "basename": "simpread-2022 南大 cs 夏令营笔试面试准备",
+      "path": "docs/保研/笔试/simpread-2022 南大 cs 夏令营笔试面试准备.md"
     },
     {
       "basename": "计算机组成原理",
       "path": "docs/保研/计算机科学/计算机组成原理.md"
     },
     {
-      "basename": "数据结构与算法",
-      "path": "docs/保研/计算机科学/数据结构与算法.md"
+      "basename": "simpread-南京大学计院夏令营历年机试笔试题汇总（刷题版）_南京大学计算机夏令营笔试 - CSDN 博客",
+      "path": "docs/保研/笔试/simpread-南京大学计院夏令营历年机试笔试题汇总（刷题版）_南京大学计算机夏令营笔试 - CSDN 博客.md"
     },
     {
-      "basename": "计算机网络",
-      "path": "docs/保研/计算机科学/计算机网络.md"
+      "basename": "3",
+      "path": "docs/归档课程/计算机系统基础/data/3.md"
+    },
+    {
+      "basename": "6",
+      "path": "docs/归档课程/计算机系统基础/data/6.md"
+    },
+    {
+      "basename": "数据结构与算法",
+      "path": "docs/保研/计算机科学/数据结构与算法.md"
     },
     {
       "basename": "Drawing 2024-05-16 14.11.03.excalidraw",
@@ -23,10 +35,6 @@
     {
       "basename": "c96536f112a74024be9f595f007a2763",
       "path": "docs/保研/笔试/c96536f112a74024be9f595f007a2763.jpg"
-    },
-    {
-      "basename": "simpread-2022 南大 cs 夏令营笔试面试准备",
-      "path": "docs/保研/笔试/simpread-2022 南大 cs 夏令营笔试面试准备.md"
     },
     {
       "basename": "2021年南京大学计算机科学与技术系本科生开放日7月8日线上考核",
@@ -191,14 +199,6 @@
     {
       "basename": "Chapter_5",
       "path": "docs/课程/编译原理/课件/Chapter_5.pdf"
-    },
-    {
-      "basename": "语法分析",
-      "path": "docs/课程/编译原理/笔记/语法分析.md"
-    },
-    {
-      "basename": "词法分析",
-      "path": "docs/课程/编译原理/笔记/词法分析.md"
     }
   ],
   "omittedPaths": [],

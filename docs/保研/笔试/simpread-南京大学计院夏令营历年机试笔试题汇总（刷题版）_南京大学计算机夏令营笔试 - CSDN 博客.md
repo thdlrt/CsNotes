@@ -110,7 +110,7 @@
 
 > C，快表命中，页肯定命中，不可能发生缺页。
 
-4、主存地址线 32 位，按字节编址。cache 块大小 64Byte，cache 的数据容量是 64Kbyte，cache 采用写回，cache 和主存采取直接映射，问 cache 容量多大？
+4、主存地址线 32 位，按字节编址。cache 块大小 64Byte，cache 的数据容量是 64KByte，cache 采用写回，cache 和主存采取直接映射，问 cache 容量多大？
 
 5、指令取到指令寄存器开始后，POP X2; DIV X2,X1; AND X1,X2; MOV X1 0(X2)，这四种哪一个不会发生异常？
 
