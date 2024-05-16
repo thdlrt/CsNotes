@@ -1,24 +1,40 @@
 {
   "recentFiles": [
     {
-      "basename": "simpread-2022 南大 cs 夏令营笔试面试准备",
-      "path": "docs/保研/笔试/simpread-2022 南大 cs 夏令营笔试面试准备.md"
-    },
-    {
-      "basename": "c96536f112a74024be9f595f007a2763",
-      "path": "docs/保研/笔试/c96536f112a74024be9f595f007a2763.jpg"
-    },
-    {
       "basename": "2021年南京大学计算机科学与技术系本科生开放日7月8日线上考核",
       "path": "docs/保研/笔试/2021年南京大学计算机科学与技术系本科生开放日7月8日线上考核.pdf"
+    },
+    {
+      "basename": "数据结构与算法",
+      "path": "docs/保研/计算机科学/数据结构与算法.md"
+    },
+    {
+      "basename": "编译原理",
+      "path": "docs/保研/计算机科学/编译原理.md"
+    },
+    {
+      "basename": "操作系统",
+      "path": "docs/保研/计算机科学/操作系统.md"
+    },
+    {
+      "basename": "持久化",
+      "path": "docs/课程/操作系统/笔记/持久化.md"
+    },
+    {
+      "basename": "simpread-2022 南大 cs 夏令营笔试面试准备",
+      "path": "docs/保研/笔试/simpread-2022 南大 cs 夏令营笔试面试准备.md"
     },
     {
       "basename": "计算机网络",
       "path": "docs/保研/计算机科学/计算机网络.md"
     },
     {
-      "basename": "数据结构与算法",
-      "path": "docs/保研/计算机科学/数据结构与算法.md"
+      "basename": "编译原理期末复习题 (选择)_编译原理选择题 - CSDN 博客",
+      "path": "docs/保研/笔试/补充习题/编译原理期末复习题 (选择)_编译原理选择题 - CSDN 博客.md"
+    },
+    {
+      "basename": "c96536f112a74024be9f595f007a2763",
+      "path": "docs/保研/笔试/c96536f112a74024be9f595f007a2763.jpg"
     },
     {
       "basename": "计算机组成原理",
@@ -183,22 +199,6 @@
     {
       "basename": "p4",
       "path": "docs/课程/编译原理/作业/p4.md"
-    },
-    {
-      "basename": "语法制导的编译技术",
-      "path": "docs/课程/编译原理/笔记/语法制导的编译技术.md"
-    },
-    {
-      "basename": "Chapter_1",
-      "path": "docs/课程/编译原理/课件/Chapter_1.pdf"
-    },
-    {
-      "basename": "Chapter_4",
-      "path": "docs/课程/编译原理/课件/Chapter_4.pdf"
-    },
-    {
-      "basename": "Chapter_5",
-      "path": "docs/课程/编译原理/课件/Chapter_5.pdf"
     }
   ],
   "omittedPaths": [],
