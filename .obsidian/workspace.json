@@ -38,15 +38,17 @@
       {
         "id": "7a626c3c2c180b49",
         "type": "tabs",
-        "dimension": 56.088825214899714,
+        "dimension": 56.08882521489972,
         "children": [
           {
             "id": "07c3e45e1341b40c",
             "type": "leaf",
             "state": {
-              "type": "pdf",
+              "type": "markdown",
               "state": {
-                "file": "pdf/笔记.pdf"
+                "file": "临时/temp.md",
+                "mode": "source",
+                "source": false
               }
             }
           }
@@ -108,8 +110,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 200
   },
   "right": {
     "id": "d615b65a4ccf8a6a",
@@ -125,7 +126,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/面试保研/数学/离散数学.md",
+                "file": "临时/temp.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -142,7 +143,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/面试保研/数学/离散数学.md",
+                "file": "临时/temp.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -165,7 +166,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/面试保研/数学/离散数学.md"
+                "file": "临时/temp.md"
               }
             }
           },
@@ -200,7 +201,7 @@
       "obsidian-advanced-slides:Show Slide Preview": false
     }
   },
-  "active": "5505d9ab2eab13b9",
+  "active": "07c3e45e1341b40c",
   "lastOpenFiles": [
     "pdf/笔记.pdf",
     "docs/面试保研/数学/离散数学.md",
