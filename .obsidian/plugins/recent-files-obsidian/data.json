@@ -1,6 +1,10 @@
 {
   "recentFiles": [
     {
+      "basename": "词法分析",
+      "path": "docs/课程/编译原理/笔记/词法分析.md"
+    },
+    {
       "basename": "编译原理期末复习题 (选择)_编译原理选择题 - CSDN 博客",
       "path": "docs/保研/笔试/补充习题/编译原理期末复习题 (选择)_编译原理选择题 - CSDN 博客.md"
     },
@@ -27,10 +31,6 @@
     {
       "basename": "p2",
       "path": "docs/课程/编译原理/作业/p2.md"
-    },
-    {
-      "basename": "词法分析",
-      "path": "docs/课程/编译原理/笔记/词法分析.md"
     },
     {
       "basename": "运行时刻环境",
