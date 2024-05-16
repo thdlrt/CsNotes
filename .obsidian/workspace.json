@@ -25,7 +25,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/保研/计算机科学/数据结构与算法.md",
+                "file": "docs/保研/计算机科学/计算机组成原理.md",
                 "mode": "source",
                 "source": false
               }
@@ -181,9 +181,10 @@
   },
   "active": "a4b26a99c8112114",
   "lastOpenFiles": [
+    "docs/保研/计算机科学/计算机组成原理.md",
     "docs/保研/计算机科学/数据结构与算法.md",
-    "docs/保研/计算机科学/计算机网络.md",
     "docs/保研/笔试/simpread-南京大学计院夏令营历年机试笔试题汇总（刷题版）_南京大学计算机夏令营笔试 - CSDN 博客.md",
+    "docs/保研/计算机科学/计算机网络.md",
     "Excalidraw/Drawing 2024-05-16 14.11.03.excalidraw.md",
     "docs/保研/笔试/c96536f112a74024be9f595f007a2763.jpg",
     "docs/保研/笔试/simpread-2022 南大 cs 夏令营笔试面试准备.md",
@@ -203,7 +204,6 @@
     "docs/保研/面试/面试.pdf",
     "docs/保研/面试/南大复试面试题答案汇总.pdf",
     "docs/保研/面试",
-    "docs/保研/计算机科学/计算机组成原理.md",
     "docs/保研/计算机科学/操作系统.md",
     "docs/保研/计算机科学/编译原理.md",
     "docs/保研/计算机科学",

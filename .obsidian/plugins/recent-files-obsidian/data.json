@@ -5,6 +5,10 @@
       "path": "docs/保研/笔试/simpread-南京大学计院夏令营历年机试笔试题汇总（刷题版）_南京大学计算机夏令营笔试 - CSDN 博客.md"
     },
     {
+      "basename": "计算机组成原理",
+      "path": "docs/保研/计算机科学/计算机组成原理.md"
+    },
+    {
       "basename": "数据结构与算法",
       "path": "docs/保研/计算机科学/数据结构与算法.md"
     },
@@ -195,10 +199,6 @@
     {
       "basename": "词法分析",
       "path": "docs/课程/编译原理/笔记/词法分析.md"
-    },
-    {
-      "basename": "日志系统",
-      "path": "docs/杂项/linux与shell/linux/日志系统.md"
     }
   ],
   "omittedPaths": [],
