@@ -1,16 +1,28 @@
 {
   "recentFiles": [
     {
+      "basename": "数学语法",
+      "path": "docs/杂项/latex/数学语法.md"
+    },
+    {
+      "basename": "腾讯天美游戏端开发",
+      "path": "docs/面试(实习)/自我介绍/腾讯天美游戏端开发.md"
+    },
+    {
+      "basename": "学术背景与研究动机问卷",
+      "path": "临时/学术背景与研究动机问卷.md"
+    },
+    {
+      "basename": "temp2",
+      "path": "临时/temp2.md"
+    },
+    {
       "basename": "temp",
       "path": "临时/temp.md"
     },
     {
       "basename": "笔记",
       "path": "pdf/笔记.pdf"
-    },
-    {
-      "basename": "数学语法",
-      "path": "docs/杂项/latex/数学语法.md"
     },
     {
       "basename": "运行时刻环境",
@@ -187,10 +199,6 @@
     {
       "basename": "排序&选择",
       "path": "docs/算法/排序&选择.md"
-    },
-    {
-      "basename": "MySQL",
-      "path": "docs/数据库/关系数据库/MySQL.md"
     }
   ],
   "omittedPaths": [],

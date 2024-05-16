@@ -6,7 +6,6 @@
       {
         "id": "85e380b2d3381e03",
         "type": "tabs",
-        "dimension": 43.91117478510028,
         "children": [
           {
             "id": "a4b26a99c8112114",
@@ -21,38 +20,6 @@
             }
           }
         ]
-      },
-      {
-        "id": "7a626c3c2c180b49",
-        "type": "tabs",
-        "dimension": 56.08882521489972,
-        "children": [
-          {
-            "id": "07c3e45e1341b40c",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "临时/temp.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "e135cd43389e99e5",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "conflict-files-obsidian-git.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          }
-        ],
-        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -126,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "conflict-files-obsidian-git.md",
+                "file": "docs/杂项/latex/数学语法.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -143,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "conflict-files-obsidian-git.md",
+                "file": "docs/杂项/latex/数学语法.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -166,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "conflict-files-obsidian-git.md"
+                "file": "docs/杂项/latex/数学语法.md"
               }
             }
           },
@@ -201,12 +168,13 @@
       "obsidian-advanced-slides:Show Slide Preview": false
     }
   },
-  "active": "e135cd43389e99e5",
+  "active": "a4b26a99c8112114",
   "lastOpenFiles": [
-    "临时/temp.md",
-    "conflict-files-obsidian-git.md",
+    "docs/面试(实习)/自我介绍/腾讯天美游戏端开发.md",
     "临时/学术背景与研究动机问卷.md",
     "临时/temp2.md",
+    "临时/temp.md",
+    "conflict-files-obsidian-git.md",
     "docs/课程/软件体系结构/笔记/微服务SpringCloud.md",
     "docs/课程/软件体系结构/笔记/可扩展.md",
     "docs/课程/编译原理/课件/Review.pdf",
@@ -239,7 +207,6 @@
     "docs/面试保研/数学/离散数学.md",
     "docs/杂项/latex/数学语法.md",
     "Excalidraw/Drawing 2024-04-27 20.00.28.excalidraw.md",
-    "docs/课程/编译原理/笔记/运行时刻环境.md",
     "CsNotes/2021-11-22-22-54-02.png",
     "CsNotes/2021-11-22-22-52-49.png",
     "CsNotes/2021-11-22-22-49-26.png",
