@@ -1,8 +1,8 @@
 {
   "recentFiles": [
     {
-      "basename": "编译原理期末复习题 (选择)_编译原理选择题 - CSDN 博客",
-      "path": "docs/保研/笔试/补充习题/编译原理期末复习题 (选择)_编译原理选择题 - CSDN 博客.md"
+      "basename": "离散数学",
+      "path": "docs/保研/笔试/补充习题/离散数学.md"
     },
     {
       "basename": "编译原理期末考试选择题汇总.doc",
@@ -11,6 +11,30 @@
     {
       "basename": "离散选择题",
       "path": "docs/保研/笔试/补充习题/离散选择题.pdf"
+    },
+    {
+      "basename": "正则表达式",
+      "path": "docs/杂项/杂项/正则表达式.md"
+    },
+    {
+      "basename": "语法分析",
+      "path": "docs/课程/编译原理/笔记/语法分析.md"
+    },
+    {
+      "basename": "实验笔记(编译工具的使用)",
+      "path": "docs/课程/编译原理/实验/实验笔记(编译工具的使用).md"
+    },
+    {
+      "basename": "数据分析",
+      "path": "docs/python/拓展包/数据分析.md"
+    },
+    {
+      "basename": "语法制导的编译技术",
+      "path": "docs/课程/编译原理/笔记/语法制导的编译技术.md"
+    },
+    {
+      "basename": "编译原理期末复习题 (选择)_编译原理选择题 - CSDN 博客",
+      "path": "docs/保研/笔试/补充习题/编译原理期末复习题 (选择)_编译原理选择题 - CSDN 博客.md"
     },
     {
       "basename": "补充",
@@ -37,20 +61,12 @@
       "path": "docs/保研/计算机科学/计算机网络.md"
     },
     {
-      "basename": "语法分析",
-      "path": "docs/课程/编译原理/笔记/语法分析.md"
-    },
-    {
       "basename": "p2",
       "path": "docs/课程/编译原理/作业/p2.md"
     },
     {
       "basename": "运行时刻环境",
       "path": "docs/课程/编译原理/笔记/运行时刻环境.md"
-    },
-    {
-      "basename": "语法制导的编译技术",
-      "path": "docs/课程/编译原理/笔记/语法制导的编译技术.md"
     },
     {
       "basename": "2021年南京大学计算机科学与技术系本科生开放日7月8日线上考核",
@@ -183,18 +199,6 @@
     {
       "basename": "Chapter_3",
       "path": "docs/课程/编译原理/课件/Chapter_3.pdf"
-    },
-    {
-      "basename": "Chapter_7",
-      "path": "docs/课程/编译原理/课件/Chapter_7.pdf"
-    },
-    {
-      "basename": "引论",
-      "path": "docs/课程/编译原理/笔记/引论.md"
-    },
-    {
-      "basename": "5.3",
-      "path": "docs/课程/编译原理/作业/答案/dragon-book-exercise-answers-master/ch05/5.3/5.3.md"
     }
   ],
   "omittedPaths": [],
