@@ -5,6 +5,10 @@
       "path": "docs/保研/笔试/2021年南京大学计算机科学与技术系本科生开放日7月8日线上考核.pdf"
     },
     {
+      "basename": "simpread-2022 南大 cs 夏令营笔试面试准备",
+      "path": "docs/保研/笔试/simpread-2022 南大 cs 夏令营笔试面试准备.md"
+    },
+    {
       "basename": "数据结构与算法",
       "path": "docs/保研/计算机科学/数据结构与算法.md"
     },
@@ -19,10 +23,6 @@
     {
       "basename": "持久化",
       "path": "docs/课程/操作系统/笔记/持久化.md"
-    },
-    {
-      "basename": "simpread-2022 南大 cs 夏令营笔试面试准备",
-      "path": "docs/保研/笔试/simpread-2022 南大 cs 夏令营笔试面试准备.md"
     },
     {
       "basename": "计算机网络",
