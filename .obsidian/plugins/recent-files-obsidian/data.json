@@ -1,6 +1,10 @@
 {
   "recentFiles": [
     {
+      "basename": "JAVA 全套多选题 1-100_java 多选题 - CSDN 博客",
+      "path": "Blog/JAVA 全套多选题 1-100_java 多选题 - CSDN 博客.md"
+    },
+    {
       "basename": "Linux 操作系统期末考试试题及答案 - 选择题_linux 操作系统题库及答案 - CSDN 博客",
       "path": "Blog/Linux 操作系统期末考试试题及答案 - 选择题_linux 操作系统题库及答案 - CSDN 博客.md"
     },
@@ -195,10 +199,6 @@
     {
       "basename": "编译原理",
       "path": "docs/课程/编译原理/编译原理.md"
-    },
-    {
-      "basename": "p3",
-      "path": "docs/课程/编译原理/作业/p3.md"
     }
   ],
   "omittedPaths": [],
