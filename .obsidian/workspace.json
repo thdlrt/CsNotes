@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/保研/数学/离散数学.md",
+                "file": "docs/保研/计算机科学/数据结构与算法.md",
                 "mode": "source",
                 "source": false
               }
@@ -93,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/保研/数学/离散数学.md",
+                "file": "docs/保研/计算机科学/数据结构与算法.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/保研/数学/离散数学.md",
+                "file": "docs/保研/计算机科学/数据结构与算法.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/保研/数学/离散数学.md"
+                "file": "docs/保研/计算机科学/数据结构与算法.md"
               }
             }
           },
@@ -177,8 +177,8 @@
   },
   "active": "dd227294eabbd632",
   "lastOpenFiles": [
-    "docs/保研/笔试/补充习题/离散数学.md",
     "docs/保研/数学/离散数学.md",
+    "docs/保研/笔试/补充习题/离散数学.md",
     "docs/保研/笔试/补充习题/编译原理期末考试选择题汇总.doc.pdf",
     "docs/保研/笔试/补充习题/离散选择题.pdf",
     "docs/杂项/杂项/正则表达式.md",
