@@ -1,6 +1,14 @@
 {
   "recentFiles": [
     {
+      "basename": "重点",
+      "path": "docs/归档课程/软件工程/重点.md"
+    },
+    {
+      "basename": "笔记",
+      "path": "docs/归档课程/软件工程/笔记.md"
+    },
+    {
       "basename": "软件工程期末考试题库（超全）_软件工程题库 - CSDN 博客",
       "path": "docs/保研/笔试/补充习题/软件工程期末考试题库（超全）_软件工程题库 - CSDN 博客.md"
     },
@@ -191,10 +199,6 @@
     {
       "basename": "Chapter_1",
       "path": "docs/课程/编译原理/课件/Chapter_1.pdf"
-    },
-    {
-      "basename": "Chapter_4",
-      "path": "docs/课程/编译原理/课件/Chapter_4.pdf"
     }
   ],
   "omittedPaths": [],

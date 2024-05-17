@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/保研/笔试/补充习题/软件工程期末考试题库（超全）_软件工程题库 - CSDN 博客.md",
+                "file": "docs/归档课程/软件工程/重点.md",
                 "mode": "source",
                 "source": false
               }
@@ -93,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/保研/笔试/补充习题/软件工程期末考试题库（超全）_软件工程题库 - CSDN 博客.md",
+                "file": "docs/归档课程/软件工程/重点.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/保研/笔试/补充习题/软件工程期末考试题库（超全）_软件工程题库 - CSDN 博客.md",
+                "file": "docs/归档课程/软件工程/重点.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/保研/笔试/补充习题/软件工程期末考试题库（超全）_软件工程题库 - CSDN 博客.md"
+                "file": "docs/归档课程/软件工程/重点.md"
               }
             }
           },
@@ -177,6 +177,7 @@
   },
   "active": "dd227294eabbd632",
   "lastOpenFiles": [
+    "docs/归档课程/软件工程/笔记.md",
     "docs/保研/笔试/补充习题/软件工程期末考试题库（超全）_软件工程题库 - CSDN 博客.md",
     "docs/保研/笔试/补充习题/Linux 操作系统期末考试试题及答案 - 选择题_linux 操作系统题库及答案 - CSDN 博客.md",
     "docs/保研/笔试/补充习题/离散选择题.pdf",
