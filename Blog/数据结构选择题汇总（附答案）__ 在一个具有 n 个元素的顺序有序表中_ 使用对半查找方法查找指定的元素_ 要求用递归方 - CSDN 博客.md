@@ -13,7 +13,7 @@ summary:
 
        a[i][j]=i*j;
 
-A、O(m2)      B、O(n2)        C、O(m*n)     D、O(m+n)
+A、O(m2)      B、O(n2)        C、O(m\*n)     D、O(m+n)
 
 2. 线性表采用链式存储时，其地址 (D) 。
 
