@@ -1,6 +1,14 @@
 {
   "recentFiles": [
     {
+      "basename": "Linux 操作系统期末考试试题及答案 - 选择题_linux 操作系统题库及答案 - CSDN 博客",
+      "path": "Blog/Linux 操作系统期末考试试题及答案 - 选择题_linux 操作系统题库及答案 - CSDN 博客.md"
+    },
+    {
+      "basename": "计算机组成原理",
+      "path": "docs/保研/计算机科学/计算机组成原理.md"
+    },
+    {
       "basename": "数据结构与算法",
       "path": "docs/保研/计算机科学/数据结构与算法.md"
     },
@@ -59,10 +67,6 @@
     {
       "basename": "持久化",
       "path": "docs/课程/操作系统/笔记/持久化.md"
-    },
-    {
-      "basename": "计算机组成原理",
-      "path": "docs/保研/计算机科学/计算机组成原理.md"
     },
     {
       "basename": "计算机网络",
@@ -195,10 +199,6 @@
     {
       "basename": "p3",
       "path": "docs/课程/编译原理/作业/p3.md"
-    },
-    {
-      "basename": "Chapter_3",
-      "path": "docs/课程/编译原理/课件/Chapter_3.pdf"
     }
   ],
   "omittedPaths": [],
