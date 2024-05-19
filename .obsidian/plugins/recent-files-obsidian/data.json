@@ -1,44 +1,104 @@
 {
   "recentFiles": [
     {
-      "basename": "2021年南京大学计算机科学与技术系本科生开放日7月8日线上考核",
-      "path": "docs/保研/笔试/2021年南京大学计算机科学与技术系本科生开放日7月8日线上考核.pdf"
+      "basename": "Drawing 2024-05-18 23.24.21.excalidraw",
+      "path": "Excalidraw/Drawing 2024-05-18 23.24.21.excalidraw.md"
     },
     {
-      "basename": "语法分析",
-      "path": "docs/课程/编译原理/笔记/语法分析.md"
+      "basename": "p11",
+      "path": "docs/课程/编译原理/作业/p11.md"
     },
     {
-      "basename": "词法分析",
-      "path": "docs/课程/编译原理/笔记/词法分析.md"
+      "basename": "代码生成",
+      "path": "docs/课程/编译原理/笔记/代码生成.md"
     },
     {
-      "basename": "编译原理期末复习题 (选择)_编译原理选择题 - CSDN 博客",
-      "path": "docs/保研/笔试/补充习题/编译原理期末复习题 (选择)_编译原理选择题 - CSDN 博客.md"
+      "basename": "p10",
+      "path": "docs/课程/编译原理/作业/p10.md"
     },
     {
-      "basename": "编译原理期末考试选择题汇总.doc",
-      "path": "docs/保研/笔试/补充习题/编译原理期末考试选择题汇总.doc.pdf"
+      "basename": "【操作系统】选择题汇总大全_操作系统选择题 - CSDN 博客",
+      "path": "Blog/【操作系统】选择题汇总大全_操作系统选择题 - CSDN 博客.md"
     },
     {
-      "basename": "c96536f112a74024be9f595f007a2763",
-      "path": "docs/保研/笔试/c96536f112a74024be9f595f007a2763.jpg"
+      "basename": "数据结构选择题汇总（附答案）__ 在一个具有 n 个元素的顺序有序表中_ 使用对半查找方法查找指定的元素_ 要求用递归方 - CSDN 博客",
+      "path": "Blog/数据结构选择题汇总（附答案）__ 在一个具有 n 个元素的顺序有序表中_ 使用对半查找方法查找指定的元素_ 要求用递归方 - CSDN 博客.md"
     },
     {
-      "basename": "simpread-2022 南大 cs 夏令营笔试面试准备",
-      "path": "docs/保研/笔试/simpread-2022 南大 cs 夏令营笔试面试准备.md"
+      "basename": "数据库理论习题四（58 道题 - 含答案）选择题_以下对存储过程的叙述中 - CSDN 博客",
+      "path": "Blog/数据库理论习题四（58 道题 - 含答案）选择题_以下对存储过程的叙述中 - CSDN 博客.md"
+    },
+    {
+      "basename": "笔记",
+      "path": "docs/归档课程/软件工程/笔记.md"
+    },
+    {
+      "basename": "重点",
+      "path": "docs/归档课程/软件工程/重点.md"
+    },
+    {
+      "basename": "软件工程期末考试题库（超全）_软件工程题库 - CSDN 博客",
+      "path": "docs/保研/笔试/补充习题/软件工程期末考试题库（超全）_软件工程题库 - CSDN 博客.md"
+    },
+    {
+      "basename": "Linux 操作系统期末考试试题及答案 - 选择题_linux 操作系统题库及答案 - CSDN 博客",
+      "path": "docs/保研/笔试/补充习题/Linux 操作系统期末考试试题及答案 - 选择题_linux 操作系统题库及答案 - CSDN 博客.md"
+    },
+    {
+      "basename": "计算机组成原理",
+      "path": "docs/保研/计算机科学/计算机组成原理.md"
     },
     {
       "basename": "数据结构与算法",
       "path": "docs/保研/计算机科学/数据结构与算法.md"
     },
     {
-      "basename": "编译原理",
-      "path": "docs/保研/计算机科学/编译原理.md"
+      "basename": "离散数学",
+      "path": "docs/保研/数学/离散数学.md"
     },
     {
-      "basename": "操作系统",
-      "path": "docs/保研/计算机科学/操作系统.md"
+      "basename": "离散数学",
+      "path": "docs/保研/笔试/补充习题/离散数学.md"
+    },
+    {
+      "basename": "编译原理期末考试选择题汇总.doc",
+      "path": "docs/保研/笔试/补充习题/编译原理期末考试选择题汇总.doc.pdf"
+    },
+    {
+      "basename": "正则表达式",
+      "path": "docs/杂项/杂项/正则表达式.md"
+    },
+    {
+      "basename": "语法分析",
+      "path": "docs/课程/编译原理/笔记/语法分析.md"
+    },
+    {
+      "basename": "实验笔记(编译工具的使用)",
+      "path": "docs/课程/编译原理/实验/实验笔记(编译工具的使用).md"
+    },
+    {
+      "basename": "数据分析",
+      "path": "docs/python/拓展包/数据分析.md"
+    },
+    {
+      "basename": "语法制导的编译技术",
+      "path": "docs/课程/编译原理/笔记/语法制导的编译技术.md"
+    },
+    {
+      "basename": "编译原理期末复习题 (选择)_编译原理选择题 - CSDN 博客",
+      "path": "docs/保研/笔试/补充习题/编译原理期末复习题 (选择)_编译原理选择题 - CSDN 博客.md"
+    },
+    {
+      "basename": "补充",
+      "path": "docs/保研/计算机科学/补充.md"
+    },
+    {
+      "basename": "simpread-南京大学计院夏令营历年机试笔试题汇总（刷题版）_南京大学计算机夏令营笔试 - CSDN 博客",
+      "path": "docs/保研/笔试/simpread-南京大学计院夏令营历年机试笔试题汇总（刷题版）_南京大学计算机夏令营笔试 - CSDN 博客.md"
+    },
+    {
+      "basename": "词法分析",
+      "path": "docs/课程/编译原理/笔记/词法分析.md"
     },
     {
       "basename": "持久化",
@@ -49,156 +109,96 @@
       "path": "docs/保研/计算机科学/计算机网络.md"
     },
     {
-      "basename": "计算机组成原理",
-      "path": "docs/保研/计算机科学/计算机组成原理.md"
-    },
-    {
-      "basename": "simpread-南京大学计院夏令营历年机试笔试题汇总（刷题版）_南京大学计算机夏令营笔试 - CSDN 博客",
-      "path": "docs/保研/笔试/simpread-南京大学计院夏令营历年机试笔试题汇总（刷题版）_南京大学计算机夏令营笔试 - CSDN 博客.md"
-    },
-    {
-      "basename": "3",
-      "path": "docs/归档课程/计算机系统基础/data/3.md"
-    },
-    {
-      "basename": "6",
-      "path": "docs/归档课程/计算机系统基础/data/6.md"
-    },
-    {
-      "basename": "Drawing 2024-05-16 14.11.03.excalidraw",
-      "path": "Excalidraw/Drawing 2024-05-16 14.11.03.excalidraw.md"
-    },
-    {
-      "basename": "数学语法",
-      "path": "docs/杂项/latex/数学语法.md"
-    },
-    {
-      "basename": "腾讯天美游戏端开发",
-      "path": "docs/面试(实习)/自我介绍/腾讯天美游戏端开发.md"
-    },
-    {
-      "basename": "学术背景与研究动机问卷",
-      "path": "临时/学术背景与研究动机问卷.md"
-    },
-    {
-      "basename": "temp2",
-      "path": "临时/temp2.md"
-    },
-    {
-      "basename": "temp",
-      "path": "临时/temp.md"
-    },
-    {
-      "basename": "笔记",
-      "path": "pdf/笔记.pdf"
+      "basename": "p2",
+      "path": "docs/课程/编译原理/作业/p2.md"
     },
     {
       "basename": "运行时刻环境",
       "path": "docs/课程/编译原理/笔记/运行时刻环境.md"
     },
     {
-      "basename": "性能优化",
-      "path": "docs/游戏开发/性能优化.md"
+      "basename": "2021年南京大学计算机科学与技术系本科生开放日7月8日线上考核",
+      "path": "docs/保研/笔试/2021年南京大学计算机科学与技术系本科生开放日7月8日线上考核.pdf"
     },
     {
-      "basename": "八股",
-      "path": "docs/游戏开发/八股.md"
+      "basename": "c96536f112a74024be9f595f007a2763",
+      "path": "docs/保研/笔试/c96536f112a74024be9f595f007a2763.jpg"
     },
     {
-      "basename": "网络联机",
-      "path": "docs/游戏开发/网络联机.md"
+      "basename": "simpread-2022 南大 cs 夏令营笔试面试准备",
+      "path": "docs/保研/笔试/simpread-2022 南大 cs 夏令营笔试面试准备.md"
     },
     {
-      "basename": "游戏安全",
-      "path": "docs/游戏开发/游戏安全.md"
+      "basename": "操作系统",
+      "path": "docs/保研/计算机科学/操作系统.md"
     },
     {
-      "basename": "游戏设计",
-      "path": "docs/游戏开发/游戏设计.md"
+      "basename": "微服务SpringCloud",
+      "path": "docs/课程/软件体系结构/笔记/微服务SpringCloud.md"
     },
     {
-      "basename": "Chapter_7",
-      "path": "docs/课程/编译原理/课件/Chapter_7.pdf"
-    },
-    {
-      "basename": "计算机网络",
-      "path": "docs/面试(实习)/计算机科学/计算机网络.md"
+      "basename": "编译原理",
+      "path": "docs/保研/计算机科学/编译原理.md"
     },
     {
       "basename": "并发",
       "path": "docs/课程/操作系统/笔记/并发.md"
     },
     {
-      "basename": "计算机图形学",
-      "path": "docs/面试(实习)/计算机科学/计算机图形学.md"
+      "basename": "8",
+      "path": "docs/归档课程/计算机系统基础/data/8.md"
     },
     {
-      "basename": "操作系统",
-      "path": "docs/面试(实习)/计算机科学/操作系统.md"
+      "basename": "虚拟化",
+      "path": "docs/课程/操作系统/笔记/虚拟化.md"
     },
     {
-      "basename": "并发编程",
-      "path": "docs/面试(实习)/计算机科学/并发编程.md"
+      "basename": "作业",
+      "path": "docs/课程/金融工程学/作业.md"
     },
     {
-      "basename": "软件体系结构(Spring)",
-      "path": "docs/课程/软件体系结构/软件体系结构(Spring).md"
+      "basename": "郑振龙《金融工程》（第5版）笔记和课后习题（含考研真题）详解答案",
+      "path": "docs/课程/金融工程学/郑振龙《金融工程》（第5版）笔记和课后习题（含考研真题）详解答案.pdf"
     },
     {
-      "basename": "操作系统：三个简单的部分（OSTEP） (it-ebooks) (Z-Library)",
-      "path": "docs/课程/操作系统/操作系统：三个简单的部分（OSTEP） (it-ebooks) (Z-Library).pdf"
+      "basename": "绪论",
+      "path": "docs/课程/操作系统/笔记/绪论.md"
     },
     {
-      "basename": "SpringMVC",
-      "path": "docs/课程/软件体系结构/笔记/SSM/SpringMVC.md"
+      "basename": "机器无关优化",
+      "path": "docs/课程/编译原理/笔记/机器无关优化.md"
     },
     {
-      "basename": "Drawing 2024-04-11 14.02.59.excalidraw",
-      "path": "Excalidraw/Drawing 2024-04-11 14.02.59.excalidraw.md"
+      "basename": "Chapter_9",
+      "path": "docs/课程/编译原理/课件/Chapter_9.pdf"
     },
     {
-      "basename": "Spring",
-      "path": "docs/课程/软件体系结构/笔记/Spring.md"
+      "basename": "Chapter_8",
+      "path": "docs/课程/编译原理/课件/Chapter_8.pdf"
     },
     {
-      "basename": "设计模式",
-      "path": "docs/软件工程/设计模式.md"
+      "basename": "8.2",
+      "path": "docs/课程/编译原理/作业/答案/dragon-book-exercise-answers-master/ch08/8.2/8.2.md"
     },
     {
-      "basename": "现代图形学基础",
-      "path": "docs/计算机图形学/图形学基础/现代图形学基础.md"
+      "basename": "Chapter_6",
+      "path": "docs/课程/编译原理/课件/Chapter_6.pdf"
     },
     {
-      "basename": "动画",
-      "path": "docs/计算机图形学/图形学基础/动画.md"
+      "basename": "p9",
+      "path": "docs/课程/编译原理/作业/p9.md"
     },
     {
-      "basename": "材质",
-      "path": "docs/计算机图形学/图形学基础/材质.md"
+      "basename": "中间代码生成",
+      "path": "docs/课程/编译原理/笔记/中间代码生成.md"
     },
     {
-      "basename": "几何",
-      "path": "docs/计算机图形学/图形学基础/几何.md"
+      "basename": "p7",
+      "path": "docs/课程/编译原理/作业/p7.md"
     },
     {
-      "basename": "线性代数与变换",
-      "path": "docs/计算机图形学/图形学基础/线性代数与变换.md"
-    },
-    {
-      "basename": "光线追踪",
-      "path": "docs/计算机图形学/图形学基础/光线追踪.md"
-    },
-    {
-      "basename": "光栅化",
-      "path": "docs/计算机图形学/图形学基础/光栅化.md"
-    },
-    {
-      "basename": "引论",
-      "path": "docs/课程/编译原理/笔记/引论.md"
-    },
-    {
-      "basename": "待学高级知识",
-      "path": "docs/算法/待学高级知识.md"
+      "basename": "p6",
+      "path": "docs/课程/编译原理/作业/p6.md"
     }
   ],
   "omittedPaths": [],
