@@ -1,6 +1,18 @@
 {
   "recentFiles": [
     {
+      "basename": "simpread-2022 南大 cs 夏令营笔试面试准备",
+      "path": "docs/保研/笔试/simpread-2022 南大 cs 夏令营笔试面试准备.md"
+    },
+    {
+      "basename": "南大复试面试题答案汇总",
+      "path": "docs/保研/面试/南大复试面试题答案汇总.pdf"
+    },
+    {
+      "basename": "面试",
+      "path": "docs/保研/面试/面试.pdf"
+    },
+    {
       "basename": "Drawing 2024-05-18 23.24.21.excalidraw",
       "path": "Excalidraw/Drawing 2024-05-18 23.24.21.excalidraw.md"
     },
@@ -125,10 +137,6 @@
       "path": "docs/保研/笔试/c96536f112a74024be9f595f007a2763.jpg"
     },
     {
-      "basename": "simpread-2022 南大 cs 夏令营笔试面试准备",
-      "path": "docs/保研/笔试/simpread-2022 南大 cs 夏令营笔试面试准备.md"
-    },
-    {
       "basename": "操作系统",
       "path": "docs/保研/计算机科学/操作系统.md"
     },
@@ -191,14 +199,6 @@
     {
       "basename": "中间代码生成",
       "path": "docs/课程/编译原理/笔记/中间代码生成.md"
-    },
-    {
-      "basename": "p7",
-      "path": "docs/课程/编译原理/作业/p7.md"
-    },
-    {
-      "basename": "p6",
-      "path": "docs/课程/编译原理/作业/p6.md"
     }
   ],
   "omittedPaths": [],

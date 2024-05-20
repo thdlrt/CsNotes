@@ -11,9 +11,11 @@
             "id": "b606d567dcb10329",
             "type": "leaf",
             "state": {
-              "type": "excalidraw",
+              "type": "markdown",
               "state": {
-                "file": "Excalidraw/Drawing 2024-05-18 23.24.21.excalidraw.md"
+                "file": "docs/保研/笔试/simpread-2022 南大 cs 夏令营笔试面试准备.md",
+                "mode": "source",
+                "source": false
               }
             }
           }
@@ -109,7 +111,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Excalidraw/Drawing 2024-05-18 23.24.21.excalidraw.md",
+                "file": "docs/保研/笔试/simpread-2022 南大 cs 夏令营笔试面试准备.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -126,7 +128,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Excalidraw/Drawing 2024-05-18 23.24.21.excalidraw.md",
+                "file": "docs/保研/笔试/simpread-2022 南大 cs 夏令营笔试面试准备.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -149,7 +151,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Excalidraw/Drawing 2024-05-18 23.24.21.excalidraw.md"
+                "file": "docs/保研/笔试/simpread-2022 南大 cs 夏令营笔试面试准备.md"
               }
             }
           },
@@ -193,9 +195,11 @@
   },
   "active": "b606d567dcb10329",
   "lastOpenFiles": [
+    "docs/保研/面试/南大复试面试题答案汇总.pdf",
+    "docs/保研/面试/面试.pdf",
+    "Excalidraw/Drawing 2024-05-18 23.24.21.excalidraw.md",
     "docs/课程/编译原理/作业/p11.md",
     "docs/课程/编译原理/笔记/代码生成.md",
-    "Excalidraw/Drawing 2024-05-18 23.24.21.excalidraw.md",
     "docs/课程/编译原理/作业/p10.md",
     "Blog/【操作系统】选择题汇总大全_操作系统选择题 - CSDN 博客.md",
     "Blog/数据结构选择题汇总（附答案）__ 在一个具有 n 个元素的顺序有序表中_ 使用对半查找方法查找指定的元素_ 要求用递归方 - CSDN 博客.md",
@@ -220,13 +224,11 @@
     "docs/保研/笔试/补充习题/编译原理期末复习题 (选择)_编译原理选择题 - CSDN 博客.md",
     "docs/保研/计算机科学/补充.md",
     "docs/保研/笔试/simpread-南京大学计院夏令营历年机试笔试题汇总（刷题版）_南京大学计算机夏令营笔试 - CSDN 博客.md",
-    "docs/课程/编译原理/笔记/词法分析.md",
     "docs/保研/笔试/2021年南京大学计算机科学与技术系本科生开放日7月8日线上考核.pdf",
     "docs/保研/笔试/c96536f112a74024be9f595f007a2763.jpg",
     "docs/课程/金融工程学/郑振龙《金融工程》（第5版）笔记和课后习题（含考研真题）详解答案.pdf",
     "docs/课程/编译原理/课件/Chapter_9.pdf",
     "docs/课程/编译原理/课件/Chapter_8.pdf",
-    "docs/保研/面试/面试.pdf",
     "docs/面试保研/面试/~$面试.docx",
     "docs/课程/编译原理/课件/Chapter_6.pdf",
     "docs/课程/编译原理/课件/Chapter_5.pdf",
