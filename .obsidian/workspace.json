@@ -4,17 +4,15 @@
     "type": "split",
     "children": [
       {
-        "id": "85e380b2d3381e03",
+        "id": "406d3b4e0b54d17c",
         "type": "tabs",
         "children": [
           {
-            "id": "07cd76df457f454b",
+            "id": "6845375c8b646953",
             "type": "leaf",
             "state": {
-              "type": "pdf",
-              "state": {
-                "file": "docs/保研/笔试/2021年南京大学计算机科学与技术系本科生开放日7月8日线上考核.pdf"
-              }
+              "type": "empty",
+              "state": {}
             }
           }
         ]
@@ -91,7 +89,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/保研/笔试/2021年南京大学计算机科学与技术系本科生开放日7月8日线上考核.pdf",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -108,7 +105,6 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/保研/笔试/2021年南京大学计算机科学与技术系本科生开放日7月8日线上考核.pdf",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -130,9 +126,7 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "docs/保研/笔试/2021年南京大学计算机科学与技术系本科生开放日7月8日线上考核.pdf"
-              }
+              "state": {}
             }
           },
           {
@@ -165,11 +159,11 @@
       "obsidian-advanced-slides:Show Slide Preview": false
     }
   },
-  "active": "07cd76df457f454b",
+  "active": "6845375c8b646953",
   "lastOpenFiles": [
+    "docs/保研/笔试/2021年南京大学计算机科学与技术系本科生开放日7月8日线上考核.pdf",
     "docs/课程/编译原理/笔记/语法分析.md",
     "docs/课程/编译原理/笔记/词法分析.md",
-    "docs/保研/笔试/2021年南京大学计算机科学与技术系本科生开放日7月8日线上考核.pdf",
     "docs/保研/笔试/补充习题/编译原理期末复习题 (选择)_编译原理选择题 - CSDN 博客.md",
     "conflict-files-obsidian-git.md",
     "docs/归档课程/软件工程/笔记.md",
@@ -196,7 +190,6 @@
     "docs/归档课程/计算机系统基础/data/6.md",
     "Excalidraw/Drawing 2024-05-16 14.11.03.excalidraw.md",
     "docs/杂项/latex/数学语法.md",
-    "docs/面试(实习)/自我介绍/腾讯天美游戏端开发.md",
     "docs/课程/编译原理/课件/Review.pdf",
     "docs/课程/编译原理/课件/Chapter_9.pdf",
     "docs/课程/编译原理/课件/Chapter_8.pdf",
