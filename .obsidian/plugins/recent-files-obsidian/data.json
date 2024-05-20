@@ -195,10 +195,6 @@
     {
       "basename": "引论",
       "path": "docs/课程/编译原理/笔记/引论.md"
-    },
-    {
-      "basename": "待学高级知识",
-      "path": "docs/算法/待学高级知识.md"
     }
   ],
   "omittedPaths": [],
