@@ -1,6 +1,30 @@
 {
   "recentFiles": [
     {
+      "basename": "问题准备",
+      "path": "docs/保研/英语/问题准备.md"
+    },
+    {
+      "basename": "学术背景与研究动机问卷",
+      "path": "临时/学术背景与研究动机问卷.md"
+    },
+    {
+      "basename": "simpread-2022 南大 cs 夏令营笔试面试准备",
+      "path": "docs/保研/笔试/simpread-2022 南大 cs 夏令营笔试面试准备.md"
+    },
+    {
+      "basename": "面试",
+      "path": "docs/保研/面试/面试.pdf"
+    },
+    {
+      "basename": "南大复试面试题答案汇总",
+      "path": "docs/保研/面试/南大复试面试题答案汇总.pdf"
+    },
+    {
+      "basename": "相关词汇",
+      "path": "docs/保研/英语/相关词汇.md"
+    },
+    {
       "basename": "2021年南京大学计算机科学与技术系本科生开放日7月8日线上考核",
       "path": "docs/保研/笔试/2021年南京大学计算机科学与技术系本科生开放日7月8日线上考核.pdf"
     },
@@ -23,10 +47,6 @@
     {
       "basename": "c96536f112a74024be9f595f007a2763",
       "path": "docs/保研/笔试/c96536f112a74024be9f595f007a2763.jpg"
-    },
-    {
-      "basename": "simpread-2022 南大 cs 夏令营笔试面试准备",
-      "path": "docs/保研/笔试/simpread-2022 南大 cs 夏令营笔试面试准备.md"
     },
     {
       "basename": "数据结构与算法",
@@ -75,10 +95,6 @@
     {
       "basename": "腾讯天美游戏端开发",
       "path": "docs/面试(实习)/自我介绍/腾讯天美游戏端开发.md"
-    },
-    {
-      "basename": "学术背景与研究动机问卷",
-      "path": "临时/学术背景与研究动机问卷.md"
     },
     {
       "basename": "temp2",
@@ -183,18 +199,6 @@
     {
       "basename": "线性代数与变换",
       "path": "docs/计算机图形学/图形学基础/线性代数与变换.md"
-    },
-    {
-      "basename": "光线追踪",
-      "path": "docs/计算机图形学/图形学基础/光线追踪.md"
-    },
-    {
-      "basename": "光栅化",
-      "path": "docs/计算机图形学/图形学基础/光栅化.md"
-    },
-    {
-      "basename": "引论",
-      "path": "docs/课程/编译原理/笔记/引论.md"
     }
   ],
   "omittedPaths": [],
