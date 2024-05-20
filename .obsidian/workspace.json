@@ -55,7 +55,8 @@
               }
             }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -130,7 +131,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/保研/英语/问题准备.md",
+                "file": "docs/保研/笔试/simpread-2022 南大 cs 夏令营笔试面试准备.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -147,7 +148,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/保研/英语/问题准备.md",
+                "file": "docs/保研/笔试/simpread-2022 南大 cs 夏令营笔试面试准备.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -170,7 +171,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/保研/英语/问题准备.md"
+                "file": "docs/保研/笔试/simpread-2022 南大 cs 夏令营笔试面试准备.md"
               }
             }
           },
@@ -205,10 +206,10 @@
       "obsidian-advanced-slides:Show Slide Preview": false
     }
   },
-  "active": "5abcdef68ded4ab2",
+  "active": "15fcded757700a6d",
   "lastOpenFiles": [
-    "docs/保研/英语/相关词汇.md",
     "docs/保研/英语/问题准备.md",
+    "docs/保研/英语/相关词汇.md",
     "docs/保研/笔试/simpread-2022 南大 cs 夏令营笔试面试准备.md",
     "临时/学术背景与研究动机问卷.md",
     "docs/保研/面试/面试.pdf",
