@@ -1,6 +1,18 @@
 {
   "recentFiles": [
     {
+      "basename": "相关词汇",
+      "path": "docs/保研/英语/相关词汇.md"
+    },
+    {
+      "basename": "问题准备",
+      "path": "docs/保研/英语/问题准备.md"
+    },
+    {
+      "basename": "自我介绍",
+      "path": "docs/保研/英语/自我介绍.md"
+    },
+    {
       "basename": "simpread-2022 南大 cs 夏令营笔试面试准备",
       "path": "docs/保研/笔试/simpread-2022 南大 cs 夏令营笔试面试准备.md"
     },
@@ -187,18 +199,6 @@
     {
       "basename": "8.2",
       "path": "docs/课程/编译原理/作业/答案/dragon-book-exercise-answers-master/ch08/8.2/8.2.md"
-    },
-    {
-      "basename": "Chapter_6",
-      "path": "docs/课程/编译原理/课件/Chapter_6.pdf"
-    },
-    {
-      "basename": "p9",
-      "path": "docs/课程/编译原理/作业/p9.md"
-    },
-    {
-      "basename": "中间代码生成",
-      "path": "docs/课程/编译原理/笔记/中间代码生成.md"
     }
   ],
   "omittedPaths": [],
