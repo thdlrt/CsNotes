@@ -35,11 +35,9 @@
             "id": "15fcded757700a6d",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "pdf",
               "state": {
-                "file": "docs/保研/笔试/simpread-2022 南大 cs 夏令营笔试面试准备.md",
-                "mode": "source",
-                "source": false
+                "file": "docs/保研/面试/南大复试面试题答案汇总.pdf"
               }
             }
           }
@@ -194,13 +192,13 @@
   },
   "active": "5abcdef68ded4ab2",
   "lastOpenFiles": [
+    "docs/保研/面试/南大复试面试题答案汇总.pdf",
+    "docs/保研/面试/面试.pdf",
     "docs/保研/笔试/simpread-2022 南大 cs 夏令营笔试面试准备.md",
-    "docs/保研/面试/英语/问题准备.md",
     "docs/保研/面试/英语/相关词汇.md",
+    "docs/保研/面试/英语/问题准备.md",
     "临时/学术背景与研究动机问卷.md",
     "docs/保研/面试/未命名",
-    "docs/保研/面试/面试.pdf",
-    "docs/保研/面试/南大复试面试题答案汇总.pdf",
     "conflict-files-obsidian-git.md",
     "docs/课程/编译原理/作业/p11.pdf",
     "docs/课程/编译原理/作业/p11.md",
