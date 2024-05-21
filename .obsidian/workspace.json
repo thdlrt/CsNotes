@@ -40,6 +40,18 @@
                 "file": "docs/保研/面试/南大复试面试题答案汇总.pdf"
               }
             }
+          },
+          {
+            "id": "ae1dc3c99a122385",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "docs/保研/笔试/simpread-2022 南大 cs 夏令营笔试面试准备.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
         ]
       }
@@ -192,11 +204,11 @@
   },
   "active": "5abcdef68ded4ab2",
   "lastOpenFiles": [
-    "docs/保研/面试/南大复试面试题答案汇总.pdf",
-    "docs/保研/面试/面试.pdf",
-    "docs/保研/笔试/simpread-2022 南大 cs 夏令营笔试面试准备.md",
     "docs/保研/面试/英语/相关词汇.md",
+    "docs/保研/笔试/simpread-2022 南大 cs 夏令营笔试面试准备.md",
+    "docs/保研/面试/南大复试面试题答案汇总.pdf",
     "docs/保研/面试/英语/问题准备.md",
+    "docs/保研/面试/面试.pdf",
     "临时/学术背景与研究动机问卷.md",
     "docs/保研/面试/未命名",
     "conflict-files-obsidian-git.md",
