@@ -82,7 +82,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "数学",
+                "query": "tag:#TODO",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -107,7 +107,8 @@
               "state": {}
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
