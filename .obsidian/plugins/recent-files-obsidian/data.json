@@ -5,12 +5,28 @@
       "path": "docs/保研/面试/英语/问题准备.md"
     },
     {
-      "basename": "并发",
-      "path": "docs/课程/操作系统/笔记/并发.md"
+      "basename": "线性代数",
+      "path": "docs/保研/数学/线性代数.md"
+    },
+    {
+      "basename": "微积分",
+      "path": "docs/保研/数学/微积分.md"
+    },
+    {
+      "basename": "离散数学",
+      "path": "docs/保研/数学/离散数学.md"
     },
     {
       "basename": "南大复试面试题答案汇总",
       "path": "docs/保研/面试/南大复试面试题答案汇总.pdf"
+    },
+    {
+      "basename": "并发",
+      "path": "docs/课程/操作系统/笔记/并发.md"
+    },
+    {
+      "basename": "相关词汇",
+      "path": "docs/保研/面试/英语/相关词汇.md"
     },
     {
       "basename": "操作系统",
@@ -19,10 +35,6 @@
     {
       "basename": "simpread-2022 南大 cs 夏令营笔试面试准备",
       "path": "docs/保研/面试/simpread-2022 南大 cs 夏令营笔试面试准备.md"
-    },
-    {
-      "basename": "相关词汇",
-      "path": "docs/保研/面试/英语/相关词汇.md"
     },
     {
       "basename": "自我介绍",
@@ -187,18 +199,6 @@
     {
       "basename": "Spring",
       "path": "docs/课程/软件体系结构/笔记/Spring.md"
-    },
-    {
-      "basename": "设计模式",
-      "path": "docs/软件工程/设计模式.md"
-    },
-    {
-      "basename": "现代图形学基础",
-      "path": "docs/计算机图形学/图形学基础/现代图形学基础.md"
-    },
-    {
-      "basename": "动画",
-      "path": "docs/计算机图形学/图形学基础/动画.md"
     }
   ],
   "omittedPaths": [],
