@@ -47,7 +47,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/保研/笔试/simpread-2022 南大 cs 夏令营笔试面试准备.md",
+                "file": "docs/保研/面试/simpread-2022 南大 cs 夏令营笔试面试准备.md",
                 "mode": "source",
                 "source": false
               }
@@ -204,11 +204,12 @@
   },
   "active": "5abcdef68ded4ab2",
   "lastOpenFiles": [
-    "docs/保研/笔试/simpread-2022 南大 cs 夏令营笔试面试准备.md",
-    "docs/保研/面试/英语/问题准备.md",
     "docs/保研/面试/英语/相关词汇.md",
+    "docs/保研/面试/英语/问题准备.md",
+    "docs/保研/面试/问题.md",
     "docs/保研/面试/南大复试面试题答案汇总.pdf",
     "docs/保研/面试/面试.pdf",
+    "docs/保研/面试/simpread-2022 南大 cs 夏令营笔试面试准备.md",
     "临时/学术背景与研究动机问卷.md",
     "docs/保研/面试/未命名",
     "conflict-files-obsidian-git.md",
@@ -236,7 +237,6 @@
     "docs/保研/计算机科学/操作系统.md",
     "docs/课程/操作系统/笔记/持久化.md",
     "docs/保研/计算机科学/计算机网络.md",
-    "docs/保研/计算机科学/计算机组成原理.md",
     "docs/课程/编译原理/课件/Review.pdf",
     "docs/课程/编译原理/课件/Chapter_9.pdf",
     "docs/课程/编译原理/课件/Chapter_8.pdf",
