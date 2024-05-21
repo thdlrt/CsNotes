@@ -5,12 +5,24 @@
       "path": "docs/保研/面试/英语/问题准备.md"
     },
     {
-      "basename": "相关词汇",
-      "path": "docs/保研/面试/英语/相关词汇.md"
+      "basename": "并发",
+      "path": "docs/课程/操作系统/笔记/并发.md"
+    },
+    {
+      "basename": "南大复试面试题答案汇总",
+      "path": "docs/保研/面试/南大复试面试题答案汇总.pdf"
+    },
+    {
+      "basename": "操作系统",
+      "path": "docs/面试(实习)/计算机科学/操作系统.md"
     },
     {
       "basename": "simpread-2022 南大 cs 夏令营笔试面试准备",
       "path": "docs/保研/面试/simpread-2022 南大 cs 夏令营笔试面试准备.md"
+    },
+    {
+      "basename": "相关词汇",
+      "path": "docs/保研/面试/英语/相关词汇.md"
     },
     {
       "basename": "自我介绍",
@@ -27,10 +39,6 @@
     {
       "basename": "问题",
       "path": "docs/保研/面试/问题.md"
-    },
-    {
-      "basename": "南大复试面试题答案汇总",
-      "path": "docs/保研/面试/南大复试面试题答案汇总.pdf"
     },
     {
       "basename": "面试",
@@ -153,16 +161,8 @@
       "path": "docs/面试(实习)/计算机科学/计算机网络.md"
     },
     {
-      "basename": "并发",
-      "path": "docs/课程/操作系统/笔记/并发.md"
-    },
-    {
       "basename": "计算机图形学",
       "path": "docs/面试(实习)/计算机科学/计算机图形学.md"
-    },
-    {
-      "basename": "操作系统",
-      "path": "docs/面试(实习)/计算机科学/操作系统.md"
     },
     {
       "basename": "并发编程",

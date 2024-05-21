@@ -47,7 +47,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/保研/面试/simpread-2022 南大 cs 夏令营笔试面试准备.md",
+                "file": "docs/课程/操作系统/笔记/并发.md",
                 "mode": "source",
                 "source": false
               }
@@ -184,8 +184,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 200
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -204,14 +203,16 @@
   },
   "active": "5abcdef68ded4ab2",
   "lastOpenFiles": [
-    "docs/保研/面试/英语/相关词汇.md",
+    "docs/课程/操作系统/笔记/并发.md",
     "docs/保研/面试/英语/问题准备.md",
+    "docs/保研/面试/南大复试面试题答案汇总.pdf",
+    "docs/面试(实习)/计算机科学/操作系统.md",
     "docs/保研/面试/simpread-2022 南大 cs 夏令营笔试面试准备.md",
+    "docs/保研/面试/英语/相关词汇.md",
     "docs/保研/面试/英语/自我介绍.md",
     "docs/面试(实习)/知识图谱.md",
     "docs/面试(实习)/自我介绍/腾讯天美游戏端开发.md",
     "docs/保研/面试/问题.md",
-    "docs/保研/面试/南大复试面试题答案汇总.pdf",
     "docs/保研/面试/面试.pdf",
     "临时/学术背景与研究动机问卷.md",
     "docs/保研/面试/未命名",
@@ -235,9 +236,6 @@
     "Blog/【操作系统】选择题汇总大全_操作系统选择题 - CSDN 博客.md",
     "docs/保研/笔试/补充习题/编译原理期末考试选择题汇总.doc.pdf",
     "docs/保研/笔试/c96536f112a74024be9f595f007a2763.jpg",
-    "docs/保研/计算机科学/数据结构与算法.md",
-    "docs/保研/计算机科学/编译原理.md",
-    "docs/保研/计算机科学/操作系统.md",
     "docs/课程/编译原理/课件/Review.pdf",
     "docs/课程/编译原理/课件/Chapter_9.pdf",
     "docs/课程/编译原理/课件/Chapter_8.pdf",
