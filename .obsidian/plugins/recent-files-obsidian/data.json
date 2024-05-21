@@ -5,6 +5,18 @@
       "path": "docs/保研/面试/英语/问题准备.md"
     },
     {
+      "basename": "自我介绍",
+      "path": "docs/保研/面试/英语/自我介绍.md"
+    },
+    {
+      "basename": "知识图谱",
+      "path": "docs/面试(实习)/知识图谱.md"
+    },
+    {
+      "basename": "腾讯天美游戏端开发",
+      "path": "docs/面试(实习)/自我介绍/腾讯天美游戏端开发.md"
+    },
+    {
       "basename": "相关词汇",
       "path": "docs/保研/面试/英语/相关词汇.md"
     },
@@ -97,10 +109,6 @@
       "path": "docs/杂项/latex/数学语法.md"
     },
     {
-      "basename": "腾讯天美游戏端开发",
-      "path": "docs/面试(实习)/自我介绍/腾讯天美游戏端开发.md"
-    },
-    {
       "basename": "temp2",
       "path": "临时/temp2.md"
     },
@@ -191,14 +199,6 @@
     {
       "basename": "动画",
       "path": "docs/计算机图形学/图形学基础/动画.md"
-    },
-    {
-      "basename": "材质",
-      "path": "docs/计算机图形学/图形学基础/材质.md"
-    },
-    {
-      "basename": "几何",
-      "path": "docs/计算机图形学/图形学基础/几何.md"
     }
   ],
   "omittedPaths": [],
