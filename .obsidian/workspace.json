@@ -57,6 +57,22 @@
           }
         ],
         "currentTab": 3
+      },
+      {
+        "id": "cd01e69a4827f08f",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "0cecf94c44f8ba64",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "pdf/线性代数.pdf"
+              }
+            }
+          }
+        ]
       }
     ],
     "direction": "vertical"
@@ -130,7 +146,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/保研/数学/线性代数.md",
+                "file": "pdf/线性代数.pdf",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -147,7 +163,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/保研/数学/线性代数.md",
+                "file": "pdf/线性代数.pdf",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -170,7 +186,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/保研/数学/线性代数.md"
+                "file": "pdf/线性代数.pdf"
               }
             }
           },
@@ -205,10 +221,10 @@
       "obsidian-advanced-slides:Show Slide Preview": false
     }
   },
-  "active": "1da0d6ee9d5a9dca",
+  "active": "0cecf94c44f8ba64",
   "lastOpenFiles": [
-    "pdf/线性代数.pdf",
     "docs/保研/数学/线性代数.md",
+    "pdf/线性代数.pdf",
     "docs/保研/数学/概率论.md",
     "docs/保研/面试/英语/【英语】问题准备.md",
     "docs/保研/面试/问题.md",
@@ -243,7 +259,6 @@
     "docs/保研/笔试/c96536f112a74024be9f595f007a2763.jpg",
     "docs/课程/编译原理/课件/Review.pdf",
     "docs/课程/编译原理/课件/Chapter_9.pdf",
-    "docs/课程/编译原理/课件/Chapter_8.pdf",
     "CsNotes/2021-11-22-22-54-02.png",
     "CsNotes/2021-11-22-22-52-49.png",
     "CsNotes/2021-11-22-22-49-26.png",
