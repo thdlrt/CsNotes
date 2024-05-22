@@ -111,7 +111,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 200,
+    "collapsed": true
   },
   "right": {
     "id": "d615b65a4ccf8a6a",
@@ -202,14 +203,15 @@
       "obsidian-advanced-slides:Show Slide Preview": false
     }
   },
-  "active": "5abcdef68ded4ab2",
+  "active": "96e173acdf249e6c",
   "lastOpenFiles": [
+    "docs/保研/计算机科学/计算机组成原理.md",
+    "docs/保研/面试/英语/【英语】问题准备.md",
+    "docs/保研/面试/问题.md",
     "docs/保研/数学/离散数学.md",
     "docs/保研/数学/线性代数.md",
-    "docs/保研/面试/英语/【英语】问题准备.md",
     "docs/保研/数学/概率论.md",
     "docs/保研/笔试/补充习题/离散数学.md",
-    "docs/保研/面试/问题.md",
     "docs/保研/数学/微积分.md",
     "docs/保研/面试/南大复试面试题答案汇总.pdf",
     "docs/课程/操作系统/笔记/并发.md",
@@ -235,7 +237,6 @@
     "docs/归档课程/软件工程",
     "docs/保研/计算机科学/补充.md",
     "docs/保研/笔试/补充习题/软件工程期末考试题库（超全）_软件工程题库 - CSDN 博客.md",
-    "docs/保研/笔试/补充习题/Linux 操作系统期末考试试题及答案 - 选择题_linux 操作系统题库及答案 - CSDN 博客.md",
     "docs/保研/笔试/补充习题/编译原理期末考试选择题汇总.doc.pdf",
     "docs/保研/笔试/c96536f112a74024be9f595f007a2763.jpg",
     "docs/课程/编译原理/课件/Review.pdf",
