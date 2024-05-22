@@ -32,28 +32,31 @@
             }
           },
           {
-            "id": "15fcded757700a6d",
-            "type": "leaf",
-            "state": {
-              "type": "pdf",
-              "state": {
-                "file": "docs/保研/面试/南大复试面试题答案汇总.pdf"
-              }
-            }
-          },
-          {
-            "id": "9e0049651f71e8fd",
+            "id": "d940f3bb5344709b",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/保研/数学/离散数学.md",
+                "file": "docs/保研/数学/概率论.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "1da0d6ee9d5a9dca",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "docs/保研/数学/线性代数.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -111,8 +114,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 200
   },
   "right": {
     "id": "d615b65a4ccf8a6a",
@@ -128,7 +130,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/保研/面试/英语/【英语】问题准备.md",
+                "file": "docs/保研/数学/线性代数.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -145,7 +147,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/保研/面试/英语/【英语】问题准备.md",
+                "file": "docs/保研/数学/线性代数.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -168,7 +170,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/保研/面试/英语/【英语】问题准备.md"
+                "file": "docs/保研/数学/线性代数.md"
               }
             }
           },
@@ -203,25 +205,26 @@
       "obsidian-advanced-slides:Show Slide Preview": false
     }
   },
-  "active": "96e173acdf249e6c",
+  "active": "1da0d6ee9d5a9dca",
   "lastOpenFiles": [
-    "docs/保研/计算机科学/计算机组成原理.md",
-    "docs/保研/面试/英语/【英语】问题准备.md",
-    "docs/保研/面试/问题.md",
-    "docs/保研/数学/离散数学.md",
+    "pdf/线性代数.pdf",
     "docs/保研/数学/线性代数.md",
     "docs/保研/数学/概率论.md",
+    "docs/保研/面试/英语/【英语】问题准备.md",
+    "docs/保研/面试/问题.md",
+    "docs/保研/面试/南大复试面试题答案汇总.pdf",
+    "docs/保研/面试/面试.pdf",
+    "docs/保研/面试/simpread-2022 南大 cs 夏令营笔试面试准备.md",
+    "docs/保研/计算机科学/计算机组成原理.md",
+    "docs/保研/数学/离散数学.md",
     "docs/保研/笔试/补充习题/离散数学.md",
     "docs/保研/数学/微积分.md",
-    "docs/保研/面试/南大复试面试题答案汇总.pdf",
     "docs/课程/操作系统/笔记/并发.md",
     "docs/保研/面试/英语/相关词汇.md",
     "docs/面试(实习)/计算机科学/操作系统.md",
-    "docs/保研/面试/simpread-2022 南大 cs 夏令营笔试面试准备.md",
     "docs/保研/面试/英语/自我介绍.md",
     "docs/面试(实习)/知识图谱.md",
     "docs/面试(实习)/自我介绍/腾讯天美游戏端开发.md",
-    "docs/保研/面试/面试.pdf",
     "临时/学术背景与研究动机问卷.md",
     "docs/保研/面试/未命名",
     "conflict-files-obsidian-git.md",
@@ -236,7 +239,6 @@
     "docs/归档课程/软件工程/重点.md",
     "docs/归档课程/软件工程",
     "docs/保研/计算机科学/补充.md",
-    "docs/保研/笔试/补充习题/软件工程期末考试题库（超全）_软件工程题库 - CSDN 博客.md",
     "docs/保研/笔试/补充习题/编译原理期末考试选择题汇总.doc.pdf",
     "docs/保研/笔试/c96536f112a74024be9f595f007a2763.jpg",
     "docs/课程/编译原理/课件/Review.pdf",

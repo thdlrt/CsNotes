@@ -1,36 +1,48 @@
 {
   "recentFiles": [
     {
-      "basename": "【英语】问题准备",
-      "path": "docs/保研/面试/英语/【英语】问题准备.md"
-    },
-    {
-      "basename": "计算机组成原理",
-      "path": "docs/保研/计算机科学/计算机组成原理.md"
-    },
-    {
-      "basename": "问题",
-      "path": "docs/保研/面试/问题.md"
-    },
-    {
-      "basename": "离散数学",
-      "path": "docs/保研/数学/离散数学.md"
+      "basename": "线性代数",
+      "path": "docs/保研/数学/线性代数.md"
     },
     {
       "basename": "线性代数",
-      "path": "docs/保研/数学/线性代数.md"
+      "path": "pdf/线性代数.pdf"
     },
     {
       "basename": "概率论",
       "path": "docs/保研/数学/概率论.md"
     },
     {
-      "basename": "离散数学",
-      "path": "docs/保研/笔试/补充习题/离散数学.md"
+      "basename": "【英语】问题准备",
+      "path": "docs/保研/面试/英语/【英语】问题准备.md"
+    },
+    {
+      "basename": "问题",
+      "path": "docs/保研/面试/问题.md"
     },
     {
       "basename": "南大复试面试题答案汇总",
       "path": "docs/保研/面试/南大复试面试题答案汇总.pdf"
+    },
+    {
+      "basename": "面试",
+      "path": "docs/保研/面试/面试.pdf"
+    },
+    {
+      "basename": "simpread-2022 南大 cs 夏令营笔试面试准备",
+      "path": "docs/保研/面试/simpread-2022 南大 cs 夏令营笔试面试准备.md"
+    },
+    {
+      "basename": "计算机组成原理",
+      "path": "docs/保研/计算机科学/计算机组成原理.md"
+    },
+    {
+      "basename": "离散数学",
+      "path": "docs/保研/数学/离散数学.md"
+    },
+    {
+      "basename": "离散数学",
+      "path": "docs/保研/笔试/补充习题/离散数学.md"
     },
     {
       "basename": "并发",
@@ -45,10 +57,6 @@
       "path": "docs/面试(实习)/计算机科学/操作系统.md"
     },
     {
-      "basename": "simpread-2022 南大 cs 夏令营笔试面试准备",
-      "path": "docs/保研/面试/simpread-2022 南大 cs 夏令营笔试面试准备.md"
-    },
-    {
       "basename": "自我介绍",
       "path": "docs/保研/面试/英语/自我介绍.md"
     },
@@ -59,10 +67,6 @@
     {
       "basename": "腾讯天美游戏端开发",
       "path": "docs/面试(实习)/自我介绍/腾讯天美游戏端开发.md"
-    },
-    {
-      "basename": "面试",
-      "path": "docs/保研/面试/面试.pdf"
     },
     {
       "basename": "学术背景与研究动机问卷",
@@ -195,10 +199,6 @@
     {
       "basename": "SpringMVC",
       "path": "docs/课程/软件体系结构/笔记/SSM/SpringMVC.md"
-    },
-    {
-      "basename": "Drawing 2024-04-11 14.02.59.excalidraw",
-      "path": "Excalidraw/Drawing 2024-04-11 14.02.59.excalidraw.md"
     }
   ],
   "omittedPaths": [],
