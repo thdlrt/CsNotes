@@ -71,6 +71,16 @@
                 "file": "pdf/线性代数.pdf"
               }
             }
+          },
+          {
+            "id": "607bd740ff0f1379",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "pdf/概率论.pdf"
+              }
+            }
           }
         ]
       }

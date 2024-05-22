@@ -10,6 +10,10 @@
     },
     {
       "basename": "概率论",
+      "path": "pdf/概率论.pdf"
+    },
+    {
+      "basename": "概率论",
       "path": "docs/保研/数学/概率论.md"
     },
     {
@@ -195,10 +199,6 @@
     {
       "basename": "操作系统：三个简单的部分（OSTEP） (it-ebooks) (Z-Library)",
       "path": "docs/课程/操作系统/操作系统：三个简单的部分（OSTEP） (it-ebooks) (Z-Library).pdf"
-    },
-    {
-      "basename": "SpringMVC",
-      "path": "docs/课程/软件体系结构/笔记/SSM/SpringMVC.md"
     }
   ],
   "omittedPaths": [],
