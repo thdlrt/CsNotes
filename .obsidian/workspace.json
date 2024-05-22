@@ -13,19 +13,19 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/保研/面试/英语/问题准备.md",
+                "file": "docs/保研/面试/英语/【英语】问题准备.md",
                 "mode": "source",
                 "source": false
               }
             }
           },
           {
-            "id": "8b2e235560a8e10a",
+            "id": "8d429f2ecab6e4f8",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/保研/面试/英语/相关词汇.md",
+                "file": "docs/保研/面试/问题.md",
                 "mode": "source",
                 "source": false
               }
@@ -47,7 +47,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/保研/数学/线性代数.md",
+                "file": "docs/保研/数学/离散数学.md",
                 "mode": "source",
                 "source": false
               }
@@ -107,8 +107,7 @@
               "state": {}
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -128,7 +127,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/保研/面试/英语/问题准备.md",
+                "file": "docs/保研/面试/英语/【英语】问题准备.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -145,7 +144,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/保研/面试/英语/问题准备.md",
+                "file": "docs/保研/面试/英语/【英语】问题准备.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -168,7 +167,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/保研/面试/英语/问题准备.md"
+                "file": "docs/保研/面试/英语/【英语】问题准备.md"
               }
             }
           },
@@ -185,7 +184,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200,
+    "width": 349.5,
     "collapsed": true
   },
   "left-ribbon": {
@@ -205,19 +204,21 @@
   },
   "active": "5abcdef68ded4ab2",
   "lastOpenFiles": [
-    "docs/保研/数学/线性代数.md",
-    "docs/保研/数学/微积分.md",
     "docs/保研/数学/离散数学.md",
+    "docs/保研/数学/线性代数.md",
+    "docs/保研/面试/英语/【英语】问题准备.md",
+    "docs/保研/数学/概率论.md",
+    "docs/保研/笔试/补充习题/离散数学.md",
+    "docs/保研/面试/问题.md",
+    "docs/保研/数学/微积分.md",
     "docs/保研/面试/南大复试面试题答案汇总.pdf",
     "docs/课程/操作系统/笔记/并发.md",
     "docs/保研/面试/英语/相关词汇.md",
-    "docs/保研/面试/英语/问题准备.md",
     "docs/面试(实习)/计算机科学/操作系统.md",
     "docs/保研/面试/simpread-2022 南大 cs 夏令营笔试面试准备.md",
     "docs/保研/面试/英语/自我介绍.md",
     "docs/面试(实习)/知识图谱.md",
     "docs/面试(实习)/自我介绍/腾讯天美游戏端开发.md",
-    "docs/保研/面试/问题.md",
     "docs/保研/面试/面试.pdf",
     "临时/学术背景与研究动机问卷.md",
     "docs/保研/面试/未命名",
@@ -234,9 +235,7 @@
     "docs/归档课程/软件工程",
     "docs/保研/计算机科学/补充.md",
     "docs/保研/笔试/补充习题/软件工程期末考试题库（超全）_软件工程题库 - CSDN 博客.md",
-    "docs/保研/笔试/补充习题/离散数学.md",
     "docs/保研/笔试/补充习题/Linux 操作系统期末考试试题及答案 - 选择题_linux 操作系统题库及答案 - CSDN 博客.md",
-    "Blog/数据结构选择题汇总（附答案）__ 在一个具有 n 个元素的顺序有序表中_ 使用对半查找方法查找指定的元素_ 要求用递归方 - CSDN 博客.md",
     "docs/保研/笔试/补充习题/编译原理期末考试选择题汇总.doc.pdf",
     "docs/保研/笔试/c96536f112a74024be9f595f007a2763.jpg",
     "docs/课程/编译原理/课件/Review.pdf",
