@@ -42,36 +42,14 @@
                 "source": false
               }
             }
-          },
-          {
-            "id": "1da0d6ee9d5a9dca",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "docs/保研/数学/线性代数.md",
-                "mode": "source",
-                "source": false
-              }
-            }
           }
         ],
-        "currentTab": 3
+        "currentTab": 2
       },
       {
         "id": "cd01e69a4827f08f",
         "type": "tabs",
         "children": [
-          {
-            "id": "0cecf94c44f8ba64",
-            "type": "leaf",
-            "state": {
-              "type": "pdf",
-              "state": {
-                "file": "pdf/线性代数.pdf"
-              }
-            }
-          },
           {
             "id": "607bd740ff0f1379",
             "type": "leaf",
@@ -156,7 +134,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/保研/数学/线性代数.md",
+                "file": "docs/保研/数学/概率论.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -173,7 +151,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/保研/数学/线性代数.md",
+                "file": "docs/保研/数学/概率论.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -196,7 +174,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/保研/数学/线性代数.md"
+                "file": "docs/保研/数学/概率论.md"
               }
             }
           },
@@ -231,12 +209,12 @@
       "obsidian-advanced-slides:Show Slide Preview": false
     }
   },
-  "active": "1da0d6ee9d5a9dca",
+  "active": "d940f3bb5344709b",
   "lastOpenFiles": [
-    "pdf/线性代数.pdf",
-    "docs/保研/数学/线性代数.md",
     "pdf/概率论.pdf",
     "docs/保研/数学/概率论.md",
+    "docs/保研/数学/线性代数.md",
+    "pdf/线性代数.pdf",
     "docs/保研/面试/英语/【英语】问题准备.md",
     "docs/保研/面试/问题.md",
     "docs/保研/面试/南大复试面试题答案汇总.pdf",
