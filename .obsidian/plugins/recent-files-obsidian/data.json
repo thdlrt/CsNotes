@@ -1,16 +1,56 @@
 {
   "recentFiles": [
     {
+      "basename": "八股",
+      "path": "docs/c++/八股.md"
+    },
+    {
+      "basename": "C++基础",
+      "path": "docs/c++/C++基础.md"
+    },
+    {
+      "basename": "问题",
+      "path": "docs/保研/面试/问题.md"
+    },
+    {
+      "basename": "计算机组成原理",
+      "path": "docs/保研/计算机科学/计算机组成原理.md"
+    },
+    {
+      "basename": "补充",
+      "path": "docs/保研/计算机科学/补充.md"
+    },
+    {
+      "basename": "编译原理",
+      "path": "docs/保研/计算机科学/编译原理.md"
+    },
+    {
+      "basename": "面试",
+      "path": "docs/保研/面试/面试.pdf"
+    },
+    {
+      "basename": "南大复试面试题答案汇总",
+      "path": "docs/保研/面试/南大复试面试题答案汇总.pdf"
+    },
+    {
+      "basename": "【英语】问题准备",
+      "path": "docs/保研/面试/英语/【英语】问题准备.md"
+    },
+    {
+      "basename": "笔记",
+      "path": "docs/保研/机试/笔记.md"
+    },
+    {
+      "basename": "simpread-2022 南大 cs 夏令营笔试面试准备",
+      "path": "docs/保研/面试/simpread-2022 南大 cs 夏令营笔试面试准备.md"
+    },
+    {
       "basename": "作业",
       "path": "docs/课程/金融工程学/作业.md"
     },
     {
       "basename": "郑振龙《金融工程》（第5版）笔记和课后习题（含考研真题）详解答案",
       "path": "docs/课程/金融工程学/郑振龙《金融工程》（第5版）笔记和课后习题（含考研真题）详解答案.pdf"
-    },
-    {
-      "basename": "问题",
-      "path": "docs/保研/面试/问题.md"
     },
     {
       "basename": "机器无关优化",
@@ -31,14 +71,6 @@
     {
       "basename": "p12",
       "path": "docs/课程/编译原理/作业/p12.md"
-    },
-    {
-      "basename": "simpread-2022 南大 cs 夏令营笔试面试准备",
-      "path": "docs/保研/面试/simpread-2022 南大 cs 夏令营笔试面试准备.md"
-    },
-    {
-      "basename": "【英语】问题准备",
-      "path": "docs/保研/面试/英语/【英语】问题准备.md"
     },
     {
       "basename": "p10",
@@ -65,18 +97,6 @@
       "path": "pdf/概率论.pdf"
     },
     {
-      "basename": "南大复试面试题答案汇总",
-      "path": "docs/保研/面试/南大复试面试题答案汇总.pdf"
-    },
-    {
-      "basename": "面试",
-      "path": "docs/保研/面试/面试.pdf"
-    },
-    {
-      "basename": "计算机组成原理",
-      "path": "docs/保研/计算机科学/计算机组成原理.md"
-    },
-    {
       "basename": "离散数学",
       "path": "docs/保研/笔试/补充习题/离散数学.md"
     },
@@ -91,10 +111,6 @@
     {
       "basename": "操作系统",
       "path": "docs/面试(实习)/计算机科学/操作系统.md"
-    },
-    {
-      "basename": "自我介绍",
-      "path": "docs/保研/面试/英语/自我介绍.md"
     },
     {
       "basename": "知识图谱",
@@ -135,10 +151,6 @@
     {
       "basename": "数据结构与算法",
       "path": "docs/保研/计算机科学/数据结构与算法.md"
-    },
-    {
-      "basename": "编译原理",
-      "path": "docs/保研/计算机科学/编译原理.md"
     },
     {
       "basename": "操作系统",
@@ -187,18 +199,6 @@
     {
       "basename": "运行时刻环境",
       "path": "docs/课程/编译原理/笔记/运行时刻环境.md"
-    },
-    {
-      "basename": "性能优化",
-      "path": "docs/游戏开发/性能优化.md"
-    },
-    {
-      "basename": "八股",
-      "path": "docs/游戏开发/八股.md"
-    },
-    {
-      "basename": "网络联机",
-      "path": "docs/游戏开发/网络联机.md"
     }
   ],
   "omittedPaths": [],
