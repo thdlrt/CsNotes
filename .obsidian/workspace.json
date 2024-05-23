@@ -134,7 +134,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "pdf/概率论.pdf",
+                "file": "docs/保研/数学/概率论.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -151,7 +151,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "pdf/概率论.pdf",
+                "file": "docs/保研/数学/概率论.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -174,7 +174,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "pdf/概率论.pdf"
+                "file": "docs/保研/数学/概率论.md"
               }
             }
           },
@@ -209,10 +209,10 @@
       "obsidian-advanced-slides:Show Slide Preview": false
     }
   },
-  "active": "607bd740ff0f1379",
+  "active": "d940f3bb5344709b",
   "lastOpenFiles": [
-    "docs/保研/数学/概率论.md",
     "pdf/概率论.pdf",
+    "docs/保研/数学/概率论.md",
     "docs/保研/数学/线性代数.md",
     "pdf/线性代数.pdf",
     "docs/保研/面试/英语/【英语】问题准备.md",
