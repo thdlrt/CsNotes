@@ -1,6 +1,30 @@
 {
   "recentFiles": [
     {
+      "basename": "机器无关优化",
+      "path": "docs/课程/编译原理/笔记/机器无关优化.md"
+    },
+    {
+      "basename": "中间代码生成",
+      "path": "docs/课程/编译原理/笔记/中间代码生成.md"
+    },
+    {
+      "basename": "代码生成",
+      "path": "docs/课程/编译原理/笔记/代码生成.md"
+    },
+    {
+      "basename": "8.5",
+      "path": "docs/课程/编译原理/作业/答案/dragon-book-exercise-answers-master/ch08/8.5/8.5.md"
+    },
+    {
+      "basename": "p12",
+      "path": "docs/课程/编译原理/作业/p12.md"
+    },
+    {
+      "basename": "simpread-2022 南大 cs 夏令营笔试面试准备",
+      "path": "docs/保研/面试/simpread-2022 南大 cs 夏令营笔试面试准备.md"
+    },
+    {
       "basename": "问题",
       "path": "docs/保研/面试/问题.md"
     },
@@ -9,20 +33,12 @@
       "path": "docs/保研/面试/英语/【英语】问题准备.md"
     },
     {
-      "basename": "p12",
-      "path": "docs/课程/编译原理/作业/p12.md"
-    },
-    {
       "basename": "p10",
       "path": "docs/课程/编译原理/作业/p10.md"
     },
     {
       "basename": "p11",
       "path": "docs/课程/编译原理/作业/p11.md"
-    },
-    {
-      "basename": "simpread-2022 南大 cs 夏令营笔试面试准备",
-      "path": "docs/保研/面试/simpread-2022 南大 cs 夏令营笔试面试准备.md"
     },
     {
       "basename": "概率论",
@@ -183,22 +199,6 @@
     {
       "basename": "游戏设计",
       "path": "docs/游戏开发/游戏设计.md"
-    },
-    {
-      "basename": "Chapter_7",
-      "path": "docs/课程/编译原理/课件/Chapter_7.pdf"
-    },
-    {
-      "basename": "计算机网络",
-      "path": "docs/面试(实习)/计算机科学/计算机网络.md"
-    },
-    {
-      "basename": "计算机图形学",
-      "path": "docs/面试(实习)/计算机科学/计算机图形学.md"
-    },
-    {
-      "basename": "并发编程",
-      "path": "docs/面试(实习)/计算机科学/并发编程.md"
     }
   ],
   "omittedPaths": [],
