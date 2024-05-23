@@ -1,24 +1,44 @@
 {
   "recentFiles": [
     {
-      "basename": "概率论",
-      "path": "docs/保研/数学/概率论.md"
-    },
-    {
-      "basename": "概率论",
-      "path": "pdf/概率论.pdf"
-    },
-    {
-      "basename": "线性代数",
-      "path": "docs/保研/数学/线性代数.md"
+      "basename": "问题",
+      "path": "docs/保研/面试/问题.md"
     },
     {
       "basename": "【英语】问题准备",
       "path": "docs/保研/面试/英语/【英语】问题准备.md"
     },
     {
-      "basename": "问题",
-      "path": "docs/保研/面试/问题.md"
+      "basename": "p12",
+      "path": "docs/课程/编译原理/作业/p12.md"
+    },
+    {
+      "basename": "p10",
+      "path": "docs/课程/编译原理/作业/p10.md"
+    },
+    {
+      "basename": "p11",
+      "path": "docs/课程/编译原理/作业/p11.md"
+    },
+    {
+      "basename": "simpread-2022 南大 cs 夏令营笔试面试准备",
+      "path": "docs/保研/面试/simpread-2022 南大 cs 夏令营笔试面试准备.md"
+    },
+    {
+      "basename": "概率论",
+      "path": "docs/保研/数学/概率论.md"
+    },
+    {
+      "basename": "离散数学",
+      "path": "docs/保研/数学/离散数学.md"
+    },
+    {
+      "basename": "线性代数",
+      "path": "docs/保研/数学/线性代数.md"
+    },
+    {
+      "basename": "概率论",
+      "path": "pdf/概率论.pdf"
     },
     {
       "basename": "南大复试面试题答案汇总",
@@ -29,16 +49,8 @@
       "path": "docs/保研/面试/面试.pdf"
     },
     {
-      "basename": "simpread-2022 南大 cs 夏令营笔试面试准备",
-      "path": "docs/保研/面试/simpread-2022 南大 cs 夏令营笔试面试准备.md"
-    },
-    {
       "basename": "计算机组成原理",
       "path": "docs/保研/计算机科学/计算机组成原理.md"
-    },
-    {
-      "basename": "离散数学",
-      "path": "docs/保研/数学/离散数学.md"
     },
     {
       "basename": "离散数学",
@@ -187,14 +199,6 @@
     {
       "basename": "并发编程",
       "path": "docs/面试(实习)/计算机科学/并发编程.md"
-    },
-    {
-      "basename": "软件体系结构(Spring)",
-      "path": "docs/课程/软件体系结构/软件体系结构(Spring).md"
-    },
-    {
-      "basename": "操作系统：三个简单的部分（OSTEP） (it-ebooks) (Z-Library)",
-      "path": "docs/课程/操作系统/操作系统：三个简单的部分（OSTEP） (it-ebooks) (Z-Library).pdf"
     }
   ],
   "omittedPaths": [],

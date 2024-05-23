@@ -20,7 +20,7 @@
             }
           },
           {
-            "id": "8d429f2ecab6e4f8",
+            "id": "157f48fc00cd1e3c",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -32,35 +32,19 @@
             }
           },
           {
-            "id": "d940f3bb5344709b",
+            "id": "8e0bf9c94d32f676",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/保研/数学/概率论.md",
+                "file": "docs/保研/面试/simpread-2022 南大 cs 夏令营笔试面试准备.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
         ],
-        "currentTab": 2
-      },
-      {
-        "id": "cd01e69a4827f08f",
-        "type": "tabs",
-        "children": [
-          {
-            "id": "607bd740ff0f1379",
-            "type": "leaf",
-            "state": {
-              "type": "pdf",
-              "state": {
-                "file": "pdf/概率论.pdf"
-              }
-            }
-          }
-        ]
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -114,7 +98,8 @@
               "state": {}
             }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
@@ -134,7 +119,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/保研/数学/概率论.md",
+                "file": "docs/保研/面试/问题.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -151,7 +136,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/保研/数学/概率论.md",
+                "file": "docs/保研/面试/问题.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -174,7 +159,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/保研/数学/概率论.md"
+                "file": "docs/保研/面试/问题.md"
               }
             }
           },
@@ -209,19 +194,22 @@
       "obsidian-advanced-slides:Show Slide Preview": false
     }
   },
-  "active": "d940f3bb5344709b",
+  "active": "157f48fc00cd1e3c",
   "lastOpenFiles": [
-    "pdf/概率论.pdf",
-    "docs/保研/数学/概率论.md",
-    "docs/保研/数学/线性代数.md",
-    "pdf/线性代数.pdf",
     "docs/保研/面试/英语/【英语】问题准备.md",
+    "docs/课程/编译原理/作业/p12.md",
+    "docs/课程/编译原理/作业/p10.md",
+    "docs/课程/编译原理/作业/p11.md",
     "docs/保研/面试/问题.md",
+    "docs/保研/面试/simpread-2022 南大 cs 夏令营笔试面试准备.md",
+    "docs/保研/数学/概率论.md",
+    "docs/保研/数学/离散数学.md",
+    "docs/保研/数学/线性代数.md",
+    "pdf/概率论.pdf",
+    "pdf/线性代数.pdf",
     "docs/保研/面试/南大复试面试题答案汇总.pdf",
     "docs/保研/面试/面试.pdf",
-    "docs/保研/面试/simpread-2022 南大 cs 夏令营笔试面试准备.md",
     "docs/保研/计算机科学/计算机组成原理.md",
-    "docs/保研/数学/离散数学.md",
     "docs/保研/笔试/补充习题/离散数学.md",
     "docs/保研/数学/微积分.md",
     "docs/课程/操作系统/笔记/并发.md",
@@ -234,7 +222,6 @@
     "docs/保研/面试/未命名",
     "conflict-files-obsidian-git.md",
     "docs/课程/编译原理/作业/p11.pdf",
-    "docs/课程/编译原理/作业/p11.md",
     "Excalidraw/Drawing 2024-05-18 23.24.21.excalidraw.md",
     "docs/保研/笔试/2021年南京大学计算机科学与技术系本科生开放日7月8日线上考核.pdf",
     "docs/课程/编译原理/笔记/语法分析.md",
@@ -243,7 +230,6 @@
     "docs/归档课程/软件工程/笔记.md",
     "docs/归档课程/软件工程/重点.md",
     "docs/归档课程/软件工程",
-    "docs/保研/计算机科学/补充.md",
     "docs/保研/笔试/补充习题/编译原理期末考试选择题汇总.doc.pdf",
     "docs/保研/笔试/c96536f112a74024be9f595f007a2763.jpg",
     "docs/课程/编译原理/课件/Review.pdf",
