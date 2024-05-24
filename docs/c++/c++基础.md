@@ -1178,7 +1178,7 @@ cout << a << endl << b << endl << *p << endl; //OK
 
 ```c++
 template<class T>
-```class check
+class check
 {
 public:
 	T a;
@@ -1209,21 +1209,15 @@ bool is_same_type(T1 a,T2 b)
 ### 容器
 
 - 种类
-
   - vector:用于需要随机访问，并且主要在尾部增减元素的场景
-
   - list:用于经常在任意位置插入删除元素的场景
-
   - deque:用于需要随机访问并且需要在两端增减元素的场景
-
   - stack:用于仅在尾部增减访问的场景
   - queue:用于仅在尾部增加头部删除的场景
   - priority_queue:用于需要按照优先级排序出队的场景
-
   - map multimap unordered_map:用于需要根据关键字访问键值的场景，multiplemap可以有重复关键字，unordered_map是map的无序版本。
   - set multiset unordered_set:用于需要查找关键是否存在，multipleset可以有重复关键字，unordered_set是set的无序版本
   - basic_string:用于元素为字符类型，有string和wstring实例
-
 - 如果容器的元素类型是一个类，则针对该类可能需要：自定义拷贝构造函数和赋值操作符重载函数以及重载小于操作符（<）
 
 ### 算法
@@ -1272,8 +1266,7 @@ void sort(RanIt first, RanIt last);
     - 它们可以分别通过全局函数back_inserter、front_inserter和inserter来获得，函数的参数为容器。
 
 - 与容器对应关系
-
-  - vector deque basic_string 使用随即迭代器
+  - vector deque basic_string 使用随机迭代器
   - list map set使用双向迭代器
   - queue stack priority_queue 不支持迭代器
 
@@ -1284,7 +1277,12 @@ void sort(RanIt first, RanIt last);
 - 需要对“如何做”进行详细描述，包括操作步骤和状态变化。
 - 代表
   - 过程式程序设计
+    - 程序由一个或多个过程（函数或子程序）组成。
+    - 每个过程执行一个特定的任务，可以被其他过程调用。
+    - 数据和过程是分开的，数据通常通过参数传递到过程。
   - 面向对象程序设计
+    - 面向对象程序设计是一种基于对象的编程范式。对象是类的实例，类定义了对象的属性和行为。
+    - 强调通过类和对象进行模块化和复用。
 
 ## 声明式程序设计
 
@@ -1298,9 +1296,7 @@ void sort(RanIt first, RanIt last);
 ### 函数式程序设计
 
 - 是指把程序组织成一组数学函数，计算过程体现为基于一系列函数应用（把函数作用于数据）的表达式求值。
-
 - 特征
-
   - “纯”函数：
     - 以相同的参数调用一个函数总得到相同的值。（引用透明）
     - 除了产生计算结果，不会改变其他任何东西。（无副作用）
@@ -1373,7 +1369,10 @@ int main() {
 	return 0;
 }
 ```
-
+### 逻辑式程序设计
+- 基于形式逻辑的编程范式
+- 程序由逻辑声明（事实和规则）组成
+- 推理引擎根据声明和查询进行推理并生成结果
 # 补
 
 ## 宏定义
