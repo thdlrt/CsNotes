@@ -1,218 +1,118 @@
-## Spring-Bash与数据处理
+### 系统机构设计
 
-#### 数据下载
+<img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20240524151400192.png" alt="image-20240524151400192" style="zoom: 33%;" />
 
-- 从提供的云盘链接（https://box.nju.edu.cn/d/3e125ec5ca2f476db822/）下载商品元数据和评论数据。
+### 消息传递
 
-#### 定义数据模型
+#### 配置中间件RabbitMQ
 
-定义User、Product和Review三类对象，并设置关联关系。
+`application.yml`文件的配置
+
+```yml
+spring:
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+  cloud:
+    stream:
+      bindings:
+        order-out:
+          destination: orders
+          content-type: application/json
+        delivery-in:
+          destination: orders
+          content-type: application/json
+```
+
+### 定义消息通道
+
+创建一个接口定义消息通道，用于发送和接收订单事件。
+
+`OrderProcessor`接口定义了两个通道：一个用于输出（`order-out`），另一个用于输入（`delivery-in`）。通过使用`@Output`和`@Input`注解，Spring Cloud Stream将这些通道与RabbitMQ绑定，以实现消息的发送和接收。
+
+```java
+public interface OrderProcessor {
+    String OUTPUT = "order-out";
+    String INPUT = "delivery-in";
+
+    @Output(OUTPUT)
+    MessageChannel output();
+
+    @Input(INPUT)
+    SubscribableChannel input();
+}
+```
+
+### Order Service发送事件
+
+在Order Service中实现订单事件的发送逻辑，当订单生成后，将订单事件发送到RabbitMQ。
+
+`OrderEvent`类定义了订单事件的结构，这里仅包含订单ID。可以根据需要扩展此类以包含更多订单信息。
+
+```java
+public class OrderEvent {
+    private String orderId;
+    public OrderEvent() {}
+    public OrderEvent(String orderId) {
+        this.orderId = orderId;
+    }
+}
+```
+
+在`OrderService`中，定义了一个`createOrder`方法用于创建订单。创建订单后，生成一个`OrderEvent`对象，并通过`orderProcessor`将该事件发送到RabbitMQ。这里使用了`MessageBuilder`来构建消息并发送。
+
+### Delivery Service接收事件
+
+在Delivery Service中实现接收订单事件的逻辑，当接收到订单事件后，生成相应的配送条目并存储。
+
+`Delivery`类定义了配送条目的结构，包括ID、订单ID和状态。
 
 ```java
 @Entity
-public class User {
+public class Delivery {
     @Id
-    private String userId;
-    private String profileName;
-    // Getters and Setters
-}
-
-@Entity
-public class Product {
-    @Id
-    private String productId;
-    private String mainCategory;
-    private String title;
-    private Double averageRating;
-    private Integer ratingNumber;
-    private String description;
-    private String features;
-    private String price;
-    private String store;
-    private String categories;
-    private String details;
-    // Getters and Setters
-}
-
-@Entity
-public class Review {
-    @Id
-    private String reviewId;
-    private Double rating;
-    private String title;
-    private String text;
-    private String translatedText;
-    private String asin;
-    private String parentAsin;
-    private String userId;
-    private Long timestamp;
-    private Integer helpfulVote;
-    private Boolean verifiedPurchase;
-    // Getters and Setters
-}
-
-```
-
-#### **配置Spring Batch**
-
-创建Spring Batch配置，读取JSONL文件，将数据转换为对象，并保存到数据库。
-
-```java
-@Configuration
-@EnableBatchProcessing
-public class BatchConfig {
-    @Autowired
-    private JobRepository jobRepository;
-
-    @Autowired
-    private PlatformTransactionManager transactionManager;
-
-    @Autowired
-    private DataSource dataSource;
-
-    @Bean
-    public Job importJob() {
-        return new JobBuilder("importJob", jobRepository)
-                .incrementer(new RunIdIncrementer())
-                .start(step1())
-                .next(step2())
-                .build();
-    }
-
-    @Bean
-    public Step step1() {
-        return new StepBuilder("step1", jobRepository)
-                .<Product, Product>chunk(10, transactionManager)
-                .reader(productItemReader())
-                .processor(productItemProcessor())
-                .writer(productItemWriter())
-                .build();
-    }
-
-    @Bean
-    public Step step2() {
-        return new StepBuilder("step2", jobRepository)
-                .<Review, Review>chunk(10, transactionManager)
-                .reader(reviewItemReader())
-                .processor(reviewItemProcessor())
-                .writer(reviewItemWriter())
-                .build();
-    }
-    
-    // Define ItemReader, ItemProcessor, ItemWriter for Product and Review
-    ...
-}
-
-```
-
-#### 数据高级处理
-
-##### 图片URL验证
-
-在ProductItemProcessor中处理数据转换，进行图片的URL验证。
-
-尝试通过http获取图片，如果URL无效，将其设为null。
-
-```java
-@Component
-public class ProductItemProcessor implements ItemProcessor<Product, Product> {
-
-    @Override
-    public Product process(Product product) throws Exception {
-        for (ProductImage image : product.getImages()) {
-            if (!isValidURL(image.getLarge())) {
-                image.setLarge(null); // 如果URL无效，将其设为null
-            }
-        }
-        return product;
-    }
-
-    private boolean isValidURL(String url) {
-        try (CloseableHttpClient httpClient = HttpClients.createDefault()) {
-            HttpHead request = new HttpHead(url);
-            HttpResponse response = httpClient.execute(request);
-            return response.getStatusLine().getStatusCode() == 200;
-        } catch (IOException e) {
-            return false;
-        }
-    }
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    private String orderId;
+    private String status;
 }
 ```
 
-##### 评论的翻译
+`DeliveryRepository`接口继承自`JpaRepository`，提供了基本的CRUD操作，并定义了一个自定义方法`findByOrderId`用于根据订单ID查询配送条目。
 
-这里使用谷歌翻译的API实现
+在`DeliveryService`中，定义了一个方法`handleOrderEvent`来处理订单事件。当接收到订单事件时，生成一个新的`Delivery`对象并将其状态设置为"Processing"，然后保存到数据库中。
 
-这部分通过在ReviewItemProcessor中对数据进行处理实现
+### 查询配送状态
 
-```java
-private final Translate translate;
-
-    public ReviewItemProcessor() {
-        translate = TranslateOptions.getDefaultInstance().getService();
-    }
-
-    @Override
-    public Review process(Review review) throws Exception {
-        // 翻译评论文本
-        Translation translation = translate.translate(
-                review.getText(),
-                Translate.TranslateOption.sourceLanguage("en"),
-                Translate.TranslateOption.targetLanguage("zh")
-        );
-        review.setText(translation.getTranslatedText());
-
-        // 验证图片URL
-        for (ReviewImage image : review.getImages()) {
-            if (!isValidURL(image.getLargeImageUrl())) {
-                image.setLargeImageUrl(null); // 如果URL无效，将其设为null或进行其他处理
-            }
-        }
-        return review;
-    }
-```
-
-#### h2数据库中数据展示
-
-![image-20240524132837953](https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20240524132837953.png)
-
-![image-20240524132854099](https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20240524132854099.png)
-
-![image-20240524132912017](https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20240524132912017.png)
-
-## POS机的修改
-
-> 由于对前端不太熟悉，发现原先的图片路径计算方式不适用于网络图片，但是没能成功解决图片的显示问题
-
-首先对存储层、服务层以及原先的数据model进行修改，实现对接到新的数据库
-
-![image-20240524140817459](https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20240524140817459.png)
-
-- 扩展现有的ProductService和ProductController，添加获取产品评论的功能，并创建新的API
+创建API端点，允许用户查询订单的配送状态。
 
 ```java
 @RestController
-@RequestMapping("/productsService")
-public class ProductController implements ProductsServiceApi {
-    @Autowired
-    private ProductService posService;
+@RequestMapping("/deliveryService")
+public class DeliveryController {
 
-    @GetMapping("/products/{productId}/details")
-    @CrossOrigin(value = "*", maxAge = 1800, allowedHeaders = "*")
-    public ResponseEntity<ProductDetailsDto> showProductDetailsById(@PathVariable String productId) {
-        Product product = posService.getProduct(productId);
-        if (product == null) {
+    @Autowired
+    private DeliveryService deliveryService;
+
+    @GetMapping("/orders/{orderId}")
+    public ResponseEntity<List<Delivery>> getDeliveryByOrderId(@PathVariable String orderId) {
+        List<Delivery> deliveries = deliveryService.getDeliveryByOrderId(orderId);
+        if (deliveries.isEmpty()) {
             return ResponseEntity.notFound().build();
         }
-        List<Review> reviews = posService.getProductReviews(productId);
-        ProductDetailsDto productDetailsDto = new ProductDetailsDto();
-        productDetailsDto.setProduct(productMapper.toProductDto(product));
-        productDetailsDto.setReviews(reviews);
-        return ResponseEntity.ok(productDetailsDto);
+        return ResponseEntity.ok(deliveries);
     }
 }
 ```
 
-- 点击商品后的评论展示界面
+在`DeliveryController`中，我们定义了一个GET端点，用于根据订单ID查询配送状态。如果找到相应的配送条目，则返回其列表；否则返回404 Not Found。
 
-![image-20240524141205352](https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20240524141205352.png)
+### 实验总结
+
+通过上述步骤，成功扩展了MicroPOS系统，实现了用户下单后自动生成配送信息，并支持用户查询订单的配送状态。
+
+- 下面是一个输出的测试，不过由于前端没有完全改好，只能实现订单信息的一个示例
+
+<img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20240524152335200.png" alt="image-20240524152335200" style="zoom: 33%;" />
