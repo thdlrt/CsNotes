@@ -56,7 +56,7 @@
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -130,7 +130,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/保研/面试/问题.md",
+                "file": "docs/c++/C++基础.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -147,7 +147,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/保研/面试/问题.md",
+                "file": "docs/c++/C++基础.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -170,7 +170,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/保研/面试/问题.md"
+                "file": "docs/c++/C++基础.md"
               }
             }
           },
@@ -204,12 +204,12 @@
       "obsidian-advanced-slides:Show Slide Preview": false
     }
   },
-  "active": "8e0bf9c94d32f676",
+  "active": "4256bf728cf955c4",
   "lastOpenFiles": [
     "docs/保研/面试/simpread-2022 南大 cs 夏令营笔试面试准备.md",
+    "docs/保研/面试/问题.md",
     "docs/c++/C++基础.md",
     "docs/c++/八股.md",
-    "docs/保研/面试/问题.md",
     "docs/保研/计算机科学/计算机组成原理.md",
     "docs/保研/计算机科学/补充.md",
     "docs/保研/计算机科学/编译原理.md",

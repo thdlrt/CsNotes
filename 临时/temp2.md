@@ -26,7 +26,7 @@ spring:
           content-type: application/json
 ```
 
-### 定义消息通道
+#### 定义消息通道
 
 创建一个接口定义消息通道，用于发送和接收订单事件。
 
@@ -45,7 +45,7 @@ public interface OrderProcessor {
 }
 ```
 
-### Order Service发送事件
+#### Order Service发送事件
 
 在Order Service中实现订单事件的发送逻辑，当订单生成后，将订单事件发送到RabbitMQ。
 
@@ -63,7 +63,7 @@ public class OrderEvent {
 
 在`OrderService`中，定义了一个`createOrder`方法用于创建订单。创建订单后，生成一个`OrderEvent`对象，并通过`orderProcessor`将该事件发送到RabbitMQ。这里使用了`MessageBuilder`来构建消息并发送。
 
-### Delivery Service接收事件
+#### Delivery Service接收事件
 
 在Delivery Service中实现接收订单事件的逻辑，当接收到订单事件后，生成相应的配送条目并存储。
 
@@ -113,6 +113,6 @@ public class DeliveryController {
 
 通过上述步骤，成功扩展了MicroPOS系统，实现了用户下单后自动生成配送信息，并支持用户查询订单的配送状态。
 
-- 下面是一个输出的测试，不过由于前端没有完全改好，只能实现订单信息的一个示例
+- 下面是一个输出的测试，不过由于前后端及对接没有完全改好，目前只能实现订单信息的一个示例
 
 <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20240524152335200.png" alt="image-20240524152335200" style="zoom: 33%;" />
