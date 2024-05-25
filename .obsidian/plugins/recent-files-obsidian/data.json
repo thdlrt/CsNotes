@@ -5,6 +5,10 @@
       "path": "docs/保研/面试/英语/【英语】问题准备.md"
     },
     {
+      "basename": "图论",
+      "path": "docs/算法/图论.md"
+    },
+    {
       "basename": "simpread-2022 南大 cs 夏令营笔试面试准备",
       "path": "docs/保研/面试/simpread-2022 南大 cs 夏令营笔试面试准备.md"
     },
@@ -195,10 +199,6 @@
     {
       "basename": "笔记",
       "path": "pdf/笔记.pdf"
-    },
-    {
-      "basename": "运行时刻环境",
-      "path": "docs/课程/编译原理/笔记/运行时刻环境.md"
     }
   ],
   "omittedPaths": [],
