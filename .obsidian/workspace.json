@@ -72,7 +72,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "tag:#TODO拓扑排序",
+                "query": "tag:#TODO冯诺依曼架构",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -192,7 +192,7 @@
       "obsidian-advanced-slides:Show Slide Preview": false
     }
   },
-  "active": "5abcdef68ded4ab2",
+  "active": "24063adb5be26e38",
   "lastOpenFiles": [
     "docs/面试(实习)/自我介绍/腾讯天美游戏端开发.md",
     "docs/保研/面试/英语/【英语】问题准备.md",
