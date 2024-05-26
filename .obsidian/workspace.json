@@ -8,30 +8,6 @@
         "type": "tabs",
         "children": [
           {
-            "id": "5abcdef68ded4ab2",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "docs/保研/英语/问题准备.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "a8c7c3b93c462973",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "docs/保研/英语/相关词汇.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
             "id": "6800d8d9323b3831",
             "type": "leaf",
             "state": {
@@ -42,21 +18,8 @@
                 "source": false
               }
             }
-          },
-          {
-            "id": "15fcded757700a6d",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "docs/保研/英语/问题准备.md",
-                "mode": "source",
-                "source": false
-              }
-            }
           }
-        ],
-        "currentTab": 3
+        ]
       }
     ],
     "direction": "vertical"
@@ -130,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/保研/英语/问题准备.md",
+                "file": "临时/学术背景与研究动机问卷.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -147,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/保研/英语/问题准备.md",
+                "file": "临时/学术背景与研究动机问卷.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -170,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/保研/英语/问题准备.md"
+                "file": "临时/学术背景与研究动机问卷.md"
               }
             }
           },
@@ -204,15 +167,23 @@
       "obsidian-advanced-slides:Show Slide Preview": false
     }
   },
-  "active": "15fcded757700a6d",
+  "active": "6800d8d9323b3831",
   "lastOpenFiles": [
-    "docs/保研/笔试/simpread-2022 南大 cs 夏令营笔试面试准备.md",
-    "docs/保研/英语/问题准备.md",
-    "docs/保研/英语/相关词汇.md",
+    "conflict-files-obsidian-git.md",
     "临时/学术背景与研究动机问卷.md",
+    "docs/保研/英语/问题准备.md",
+    "docs/课程/编译原理/作业/p12.md",
+    "docs/保研/面试/问题.md",
+    "docs/保研/面试/英语/【英语】问题准备.md",
+    "docs/保研/面试/英语/相关词汇.md",
+    "docs/保研/面试/英语",
+    "docs/保研/面试/simpread-2022 南大 cs 夏令营笔试面试准备.md",
+    "docs/保研/机试/笔记.md",
+    "docs/保研/数学/概率论.md",
+    "docs/保研/笔试/simpread-2022 南大 cs 夏令营笔试面试准备.md",
+    "docs/保研/英语/相关词汇.md",
     "docs/保研/面试/面试.pdf",
     "docs/保研/面试/南大复试面试题答案汇总.pdf",
-    "conflict-files-obsidian-git.md",
     "docs/课程/编译原理/作业/p11.pdf",
     "docs/课程/编译原理/作业/p11.md",
     "Excalidraw/Drawing 2024-05-18 23.24.21.excalidraw.md",
@@ -232,17 +203,9 @@
     "Blog/【操作系统】选择题汇总大全_操作系统选择题 - CSDN 博客.md",
     "docs/保研/笔试/补充习题/编译原理期末考试选择题汇总.doc.pdf",
     "docs/保研/笔试/c96536f112a74024be9f595f007a2763.jpg",
-    "docs/保研/计算机科学/数据结构与算法.md",
-    "docs/保研/计算机科学/编译原理.md",
-    "docs/保研/计算机科学/操作系统.md",
-    "docs/课程/操作系统/笔记/持久化.md",
-    "docs/保研/计算机科学/计算机网络.md",
-    "docs/保研/计算机科学/计算机组成原理.md",
-    "docs/保研/笔试/simpread-南京大学计院夏令营历年机试笔试题汇总（刷题版）_南京大学计算机夏令营笔试 - CSDN 博客.md",
     "docs/课程/编译原理/课件/Review.pdf",
     "docs/课程/编译原理/课件/Chapter_9.pdf",
     "docs/课程/编译原理/课件/Chapter_8.pdf",
-    "docs/保研/面试",
     "CsNotes/2021-11-22-22-54-02.png",
     "CsNotes/2021-11-22-22-52-49.png",
     "CsNotes/2021-11-22-22-49-26.png",
