@@ -72,7 +72,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "tag:#TODO介绍一个做过的项目",
+                "query": "tag:#TODO拓扑排序",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -97,7 +97,8 @@
               "state": {}
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
