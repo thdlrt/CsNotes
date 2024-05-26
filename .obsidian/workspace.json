@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/保研/面试/英语/【英语】问题准备.md",
+                "file": "docs/算法/动态规划.md",
                 "mode": "source",
                 "source": false
               }
@@ -97,8 +97,7 @@
               "state": {}
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -118,7 +117,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/保研/面试/英语/【英语】问题准备.md",
+                "file": "docs/算法/动态规划.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -135,7 +134,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/保研/面试/英语/【英语】问题准备.md",
+                "file": "docs/算法/动态规划.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -158,7 +157,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/保研/面试/英语/【英语】问题准备.md"
+                "file": "docs/算法/动态规划.md"
               }
             }
           },
@@ -192,10 +191,10 @@
       "obsidian-advanced-slides:Show Slide Preview": false
     }
   },
-  "active": "24063adb5be26e38",
+  "active": "5abcdef68ded4ab2",
   "lastOpenFiles": [
-    "docs/面试(实习)/自我介绍/腾讯天美游戏端开发.md",
     "docs/保研/面试/英语/【英语】问题准备.md",
+    "docs/面试(实习)/自我介绍/腾讯天美游戏端开发.md",
     "docs/保研/面试/问题.md",
     "docs/算法/图论.md",
     "docs/保研/面试/simpread-2022 南大 cs 夏令营笔试面试准备.md",
