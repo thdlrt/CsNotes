@@ -50,18 +50,6 @@
             }
           },
           {
-            "id": "e9b6e0ef336fbb84",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "docs/课程/操作系统/笔记/虚拟化.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
             "id": "9a9bd7743c3c280b",
             "type": "leaf",
             "state": {
@@ -73,8 +61,7 @@
               }
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -148,7 +135,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/课程/操作系统/笔记/虚拟化.md",
+                "file": "docs/课程/操作系统/笔记/持久化.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -165,7 +152,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/课程/操作系统/笔记/虚拟化.md",
+                "file": "docs/课程/操作系统/笔记/持久化.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -188,7 +175,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/课程/操作系统/笔记/虚拟化.md"
+                "file": "docs/课程/操作系统/笔记/持久化.md"
               }
             }
           },
@@ -222,20 +209,20 @@
       "obsidian-advanced-slides:Show Slide Preview": false
     }
   },
-  "active": "e9b6e0ef336fbb84",
+  "active": "e5c493b9a7674754",
   "lastOpenFiles": [
+    "docs/保研/面试/英语/【英语】问题准备.md",
     "docs/课程/操作系统/笔记/持久化.md",
+    "docs/保研/面试/simpread-2022 南大 cs 夏令营笔试面试准备.md",
+    "docs/课程/操作系统/笔记/虚拟化.md",
     "docs/课程/操作系统/笔记/并发.md",
     "docs/保研/面试/问题.md",
     "docs/保研/机试/笔记.md",
     "docs/课程/操作系统/代码/fish/fish.c",
-    "docs/课程/操作系统/笔记/虚拟化.md",
     "docs/面试(实习)/计算机科学/并发编程.md",
     "docs/面试(实习)/计算机科学/操作系统.md",
     "docs/课程/操作系统/代码/os-model/os-model.py",
     "docs/课程/操作系统/笔记/绪论.md",
-    "docs/保研/面试/英语/【英语】问题准备.md",
-    "docs/保研/面试/simpread-2022 南大 cs 夏令营笔试面试准备.md",
     "docs/保研/计算机科学/操作系统.md",
     "docs/保研/机试/使用 VSCode 编写 C++ 单文件程序 (Windows 系统)_md · main · 田 昊东 _ NJUCS-BAOYAN · GitLab.md",
     "docs/课程/操作系统/笔记/内核.md",
