@@ -5,6 +5,22 @@
       "path": "docs/课程/操作系统/笔记/绪论.md"
     },
     {
+      "basename": "问题",
+      "path": "docs/保研/面试/问题.md"
+    },
+    {
+      "basename": "【英语】问题准备",
+      "path": "docs/保研/面试/英语/【英语】问题准备.md"
+    },
+    {
+      "basename": "simpread-2022 南大 cs 夏令营笔试面试准备",
+      "path": "docs/保研/面试/simpread-2022 南大 cs 夏令营笔试面试准备.md"
+    },
+    {
+      "basename": "操作系统",
+      "path": "docs/保研/计算机科学/操作系统.md"
+    },
+    {
       "basename": "笔记",
       "path": "docs/保研/机试/笔记.md"
     },
@@ -23,10 +39,6 @@
     {
       "basename": "并发",
       "path": "docs/课程/操作系统/笔记/并发.md"
-    },
-    {
-      "basename": "操作系统",
-      "path": "docs/保研/计算机科学/操作系统.md"
     },
     {
       "basename": "Chapter_4",
@@ -49,24 +61,12 @@
       "path": "docs/算法/动态规划.md"
     },
     {
-      "basename": "【英语】问题准备",
-      "path": "docs/保研/面试/英语/【英语】问题准备.md"
-    },
-    {
       "basename": "腾讯天美游戏端开发",
       "path": "docs/面试(实习)/自我介绍/腾讯天美游戏端开发.md"
     },
     {
-      "basename": "问题",
-      "path": "docs/保研/面试/问题.md"
-    },
-    {
       "basename": "图论",
       "path": "docs/算法/图论.md"
-    },
-    {
-      "basename": "simpread-2022 南大 cs 夏令营笔试面试准备",
-      "path": "docs/保研/面试/simpread-2022 南大 cs 夏令营笔试面试准备.md"
     },
     {
       "basename": "C++基础",
