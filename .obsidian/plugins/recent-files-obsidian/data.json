@@ -1,6 +1,18 @@
 {
   "recentFiles": [
     {
+      "basename": "虚拟化",
+      "path": "docs/课程/操作系统/笔记/虚拟化.md"
+    },
+    {
+      "basename": "持久化",
+      "path": "docs/课程/操作系统/笔记/持久化.md"
+    },
+    {
+      "basename": "并发",
+      "path": "docs/课程/操作系统/笔记/并发.md"
+    },
+    {
       "basename": "问题",
       "path": "docs/保研/面试/问题.md"
     },
@@ -9,20 +21,8 @@
       "path": "docs/保研/机试/笔记.md"
     },
     {
-      "basename": "并发",
-      "path": "docs/课程/操作系统/笔记/并发.md"
-    },
-    {
       "basename": "fish",
       "path": "docs/课程/操作系统/代码/fish/fish.c"
-    },
-    {
-      "basename": "虚拟化",
-      "path": "docs/课程/操作系统/笔记/虚拟化.md"
-    },
-    {
-      "basename": "持久化",
-      "path": "docs/课程/操作系统/笔记/持久化.md"
     },
     {
       "basename": "并发编程",
