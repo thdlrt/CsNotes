@@ -5,6 +5,10 @@
       "path": "docs/保研/面试/英语/【英语】问题准备.md"
     },
     {
+      "basename": "图论",
+      "path": "docs/算法/图论.md"
+    },
+    {
       "basename": "树",
       "path": "docs/算法/树.md"
     },
@@ -195,10 +199,6 @@
     {
       "basename": "Spring",
       "path": "docs/课程/软件体系结构/笔记/Spring.md"
-    },
-    {
-      "basename": "设计模式",
-      "path": "docs/软件工程/设计模式.md"
     }
   ],
   "omittedPaths": [],
