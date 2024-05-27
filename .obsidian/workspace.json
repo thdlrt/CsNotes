@@ -18,6 +18,18 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "905acfae68cf5c04",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "docs/保研/面试/英语/相关词汇.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
         ]
       }
@@ -73,8 +85,7 @@
               "state": {}
             }
           }
-        ],
-        "currentTab": 3
+        ]
       }
     ],
     "direction": "horizontal",
@@ -170,8 +181,9 @@
   },
   "active": "6800d8d9323b3831",
   "lastOpenFiles": [
-    "docs/算法/图论.md",
+    "docs/保研/面试/英语/相关词汇.md",
     "docs/保研/面试/英语/【英语】问题准备.md",
+    "docs/算法/图论.md",
     "docs/算法/树.md",
     "docs/算法/使用VSCode编写C++单文件程序(Windows系统).md",
     "docs/算法/数据结构.md",
@@ -185,7 +197,6 @@
     "docs/保研/英语/问题准备.md",
     "docs/课程/编译原理/作业/p12.md",
     "docs/保研/面试/问题.md",
-    "docs/保研/面试/英语/相关词汇.md",
     "docs/保研/面试/英语",
     "docs/保研/面试/simpread-2022 南大 cs 夏令营笔试面试准备.md",
     "docs/保研/机试/笔记.md",
