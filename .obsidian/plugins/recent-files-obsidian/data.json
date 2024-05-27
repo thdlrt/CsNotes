@@ -1,52 +1,92 @@
 {
   "recentFiles": [
     {
-      "basename": "【英语】问题准备",
-      "path": "docs/保研/面试/英语/【英语】问题准备.md"
+      "basename": "绪论",
+      "path": "docs/课程/操作系统/笔记/绪论.md"
     },
     {
-      "basename": "相关词汇",
-      "path": "docs/保研/面试/英语/相关词汇.md"
-    },
-    {
-      "basename": "图论",
-      "path": "docs/算法/图论.md"
-    },
-    {
-      "basename": "树",
-      "path": "docs/算法/树.md"
-    },
-    {
-      "basename": "使用VSCode编写C++单文件程序(Windows系统)",
-      "path": "docs/算法/使用VSCode编写C++单文件程序(Windows系统).md"
-    },
-    {
-      "basename": "数据结构",
-      "path": "docs/算法/数据结构.md"
-    },
-    {
-      "basename": "二分&倍增",
-      "path": "docs/算法/二分&倍增.md"
-    },
-    {
-      "basename": "前缀和与差分",
-      "path": "docs/算法/前缀和与差分.md"
-    },
-    {
-      "basename": "排序&选择",
-      "path": "docs/算法/排序&选择.md"
-    },
-    {
-      "basename": "并发",
-      "path": "docs/课程/操作系统/笔记/并发.md"
+      "basename": "笔记",
+      "path": "docs/保研/机试/笔记.md"
     },
     {
       "basename": "虚拟化",
       "path": "docs/课程/操作系统/笔记/虚拟化.md"
     },
     {
-      "basename": "学术背景与研究动机问卷",
-      "path": "临时/学术背景与研究动机问卷.md"
+      "basename": "持久化",
+      "path": "docs/课程/操作系统/笔记/持久化.md"
+    },
+    {
+      "basename": "内核",
+      "path": "docs/课程/操作系统/笔记/内核.md"
+    },
+    {
+      "basename": "并发",
+      "path": "docs/课程/操作系统/笔记/并发.md"
+    },
+    {
+      "basename": "操作系统",
+      "path": "docs/保研/计算机科学/操作系统.md"
+    },
+    {
+      "basename": "Chapter_4",
+      "path": "docs/课程/编译原理/课件/Chapter_4.pdf"
+    },
+    {
+      "basename": "Chapter_3",
+      "path": "docs/课程/编译原理/课件/Chapter_3.pdf"
+    },
+    {
+      "basename": "Chapter_1",
+      "path": "docs/课程/编译原理/课件/Chapter_1.pdf"
+    },
+    {
+      "basename": "操作系统",
+      "path": "docs/面试(实习)/计算机科学/操作系统.md"
+    },
+    {
+      "basename": "动态规划",
+      "path": "docs/算法/动态规划.md"
+    },
+    {
+      "basename": "【英语】问题准备",
+      "path": "docs/保研/面试/英语/【英语】问题准备.md"
+    },
+    {
+      "basename": "腾讯天美游戏端开发",
+      "path": "docs/面试(实习)/自我介绍/腾讯天美游戏端开发.md"
+    },
+    {
+      "basename": "问题",
+      "path": "docs/保研/面试/问题.md"
+    },
+    {
+      "basename": "图论",
+      "path": "docs/算法/图论.md"
+    },
+    {
+      "basename": "simpread-2022 南大 cs 夏令营笔试面试准备",
+      "path": "docs/保研/面试/simpread-2022 南大 cs 夏令营笔试面试准备.md"
+    },
+    {
+      "basename": "C++基础",
+      "path": "docs/c++/C++基础.md"
+    },
+    {
+      "basename": "八股",
+      "path": "docs/c++/八股.md"
+    },
+    {
+      "basename": "计算机组成原理",
+      "path": "docs/保研/计算机科学/计算机组成原理.md"
+    },
+    {
+      "basename": "补充",
+      "path": "docs/保研/计算机科学/补充.md"
+    },
+    {
+      "basename": "编译原理",
+      "path": "docs/保研/计算机科学/编译原理.md"
     },
     {
       "basename": "面试",
@@ -55,6 +95,74 @@
     {
       "basename": "南大复试面试题答案汇总",
       "path": "docs/保研/面试/南大复试面试题答案汇总.pdf"
+    },
+    {
+      "basename": "作业",
+      "path": "docs/课程/金融工程学/作业.md"
+    },
+    {
+      "basename": "郑振龙《金融工程》（第5版）笔记和课后习题（含考研真题）详解答案",
+      "path": "docs/课程/金融工程学/郑振龙《金融工程》（第5版）笔记和课后习题（含考研真题）详解答案.pdf"
+    },
+    {
+      "basename": "机器无关优化",
+      "path": "docs/课程/编译原理/笔记/机器无关优化.md"
+    },
+    {
+      "basename": "中间代码生成",
+      "path": "docs/课程/编译原理/笔记/中间代码生成.md"
+    },
+    {
+      "basename": "代码生成",
+      "path": "docs/课程/编译原理/笔记/代码生成.md"
+    },
+    {
+      "basename": "8.5",
+      "path": "docs/课程/编译原理/作业/答案/dragon-book-exercise-answers-master/ch08/8.5/8.5.md"
+    },
+    {
+      "basename": "p12",
+      "path": "docs/课程/编译原理/作业/p12.md"
+    },
+    {
+      "basename": "p10",
+      "path": "docs/课程/编译原理/作业/p10.md"
+    },
+    {
+      "basename": "p11",
+      "path": "docs/课程/编译原理/作业/p11.md"
+    },
+    {
+      "basename": "概率论",
+      "path": "docs/保研/数学/概率论.md"
+    },
+    {
+      "basename": "离散数学",
+      "path": "docs/保研/数学/离散数学.md"
+    },
+    {
+      "basename": "线性代数",
+      "path": "docs/保研/数学/线性代数.md"
+    },
+    {
+      "basename": "概率论",
+      "path": "pdf/概率论.pdf"
+    },
+    {
+      "basename": "离散数学",
+      "path": "docs/保研/笔试/补充习题/离散数学.md"
+    },
+    {
+      "basename": "相关词汇",
+      "path": "docs/保研/面试/英语/相关词汇.md"
+    },
+    {
+      "basename": "知识图谱",
+      "path": "docs/面试(实习)/知识图谱.md"
+    },
+    {
+      "basename": "学术背景与研究动机问卷",
+      "path": "临时/学术背景与研究动机问卷.md"
     },
     {
       "basename": "2021年南京大学计算机科学与技术系本科生开放日7月8日线上考核",
@@ -85,120 +193,12 @@
       "path": "docs/保研/计算机科学/数据结构与算法.md"
     },
     {
-      "basename": "编译原理",
-      "path": "docs/保研/计算机科学/编译原理.md"
-    },
-    {
-      "basename": "操作系统",
-      "path": "docs/保研/计算机科学/操作系统.md"
-    },
-    {
-      "basename": "持久化",
-      "path": "docs/课程/操作系统/笔记/持久化.md"
-    },
-    {
       "basename": "计算机网络",
       "path": "docs/保研/计算机科学/计算机网络.md"
     },
     {
-      "basename": "计算机组成原理",
-      "path": "docs/保研/计算机科学/计算机组成原理.md"
-    },
-    {
       "basename": "simpread-南京大学计院夏令营历年机试笔试题汇总（刷题版）_南京大学计算机夏令营笔试 - CSDN 博客",
       "path": "docs/保研/笔试/simpread-南京大学计院夏令营历年机试笔试题汇总（刷题版）_南京大学计算机夏令营笔试 - CSDN 博客.md"
-    },
-    {
-      "basename": "3",
-      "path": "docs/归档课程/计算机系统基础/data/3.md"
-    },
-    {
-      "basename": "6",
-      "path": "docs/归档课程/计算机系统基础/data/6.md"
-    },
-    {
-      "basename": "Drawing 2024-05-16 14.11.03.excalidraw",
-      "path": "Excalidraw/Drawing 2024-05-16 14.11.03.excalidraw.md"
-    },
-    {
-      "basename": "数学语法",
-      "path": "docs/杂项/latex/数学语法.md"
-    },
-    {
-      "basename": "腾讯天美游戏端开发",
-      "path": "docs/面试(实习)/自我介绍/腾讯天美游戏端开发.md"
-    },
-    {
-      "basename": "temp2",
-      "path": "临时/temp2.md"
-    },
-    {
-      "basename": "temp",
-      "path": "临时/temp.md"
-    },
-    {
-      "basename": "笔记",
-      "path": "pdf/笔记.pdf"
-    },
-    {
-      "basename": "运行时刻环境",
-      "path": "docs/课程/编译原理/笔记/运行时刻环境.md"
-    },
-    {
-      "basename": "性能优化",
-      "path": "docs/游戏开发/性能优化.md"
-    },
-    {
-      "basename": "八股",
-      "path": "docs/游戏开发/八股.md"
-    },
-    {
-      "basename": "网络联机",
-      "path": "docs/游戏开发/网络联机.md"
-    },
-    {
-      "basename": "游戏安全",
-      "path": "docs/游戏开发/游戏安全.md"
-    },
-    {
-      "basename": "游戏设计",
-      "path": "docs/游戏开发/游戏设计.md"
-    },
-    {
-      "basename": "Chapter_7",
-      "path": "docs/课程/编译原理/课件/Chapter_7.pdf"
-    },
-    {
-      "basename": "计算机网络",
-      "path": "docs/面试(实习)/计算机科学/计算机网络.md"
-    },
-    {
-      "basename": "计算机图形学",
-      "path": "docs/面试(实习)/计算机科学/计算机图形学.md"
-    },
-    {
-      "basename": "操作系统",
-      "path": "docs/面试(实习)/计算机科学/操作系统.md"
-    },
-    {
-      "basename": "并发编程",
-      "path": "docs/面试(实习)/计算机科学/并发编程.md"
-    },
-    {
-      "basename": "软件体系结构(Spring)",
-      "path": "docs/课程/软件体系结构/软件体系结构(Spring).md"
-    },
-    {
-      "basename": "操作系统：三个简单的部分（OSTEP） (it-ebooks) (Z-Library)",
-      "path": "docs/课程/操作系统/操作系统：三个简单的部分（OSTEP） (it-ebooks) (Z-Library).pdf"
-    },
-    {
-      "basename": "SpringMVC",
-      "path": "docs/课程/软件体系结构/笔记/SSM/SpringMVC.md"
-    },
-    {
-      "basename": "Drawing 2024-04-11 14.02.59.excalidraw",
-      "path": "Excalidraw/Drawing 2024-04-11 14.02.59.excalidraw.md"
     }
   ],
   "omittedPaths": [],
