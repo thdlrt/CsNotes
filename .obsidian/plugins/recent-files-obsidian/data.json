@@ -1,12 +1,36 @@
 {
   "recentFiles": [
     {
-      "basename": "绪论",
-      "path": "docs/课程/操作系统/笔记/绪论.md"
-    },
-    {
       "basename": "问题",
       "path": "docs/保研/面试/问题.md"
+    },
+    {
+      "basename": "并发",
+      "path": "docs/课程/操作系统/笔记/并发.md"
+    },
+    {
+      "basename": "fish",
+      "path": "docs/课程/操作系统/代码/fish/fish.c"
+    },
+    {
+      "basename": "虚拟化",
+      "path": "docs/课程/操作系统/笔记/虚拟化.md"
+    },
+    {
+      "basename": "持久化",
+      "path": "docs/课程/操作系统/笔记/持久化.md"
+    },
+    {
+      "basename": "并发编程",
+      "path": "docs/面试(实习)/计算机科学/并发编程.md"
+    },
+    {
+      "basename": "os-model",
+      "path": "docs/课程/操作系统/代码/os-model/os-model.py"
+    },
+    {
+      "basename": "绪论",
+      "path": "docs/课程/操作系统/笔记/绪论.md"
     },
     {
       "basename": "【英语】问题准备",
@@ -25,20 +49,8 @@
       "path": "docs/保研/机试/笔记.md"
     },
     {
-      "basename": "虚拟化",
-      "path": "docs/课程/操作系统/笔记/虚拟化.md"
-    },
-    {
-      "basename": "持久化",
-      "path": "docs/课程/操作系统/笔记/持久化.md"
-    },
-    {
       "basename": "内核",
       "path": "docs/课程/操作系统/笔记/内核.md"
-    },
-    {
-      "basename": "并发",
-      "path": "docs/课程/操作系统/笔记/并发.md"
     },
     {
       "basename": "Chapter_4",
@@ -51,10 +63,6 @@
     {
       "basename": "Chapter_1",
       "path": "docs/课程/编译原理/课件/Chapter_1.pdf"
-    },
-    {
-      "basename": "操作系统",
-      "path": "docs/面试(实习)/计算机科学/操作系统.md"
     },
     {
       "basename": "动态规划",
@@ -191,14 +199,6 @@
     {
       "basename": "数据结构与算法",
       "path": "docs/保研/计算机科学/数据结构与算法.md"
-    },
-    {
-      "basename": "计算机网络",
-      "path": "docs/保研/计算机科学/计算机网络.md"
-    },
-    {
-      "basename": "simpread-南京大学计院夏令营历年机试笔试题汇总（刷题版）_南京大学计算机夏令营笔试 - CSDN 博客",
-      "path": "docs/保研/笔试/simpread-南京大学计院夏令营历年机试笔试题汇总（刷题版）_南京大学计算机夏令营笔试 - CSDN 博客.md"
     }
   ],
   "omittedPaths": [],
