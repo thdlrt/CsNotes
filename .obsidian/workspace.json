@@ -4,11 +4,23 @@
     "type": "split",
     "children": [
       {
-        "id": "8fb0eb3b0422f537",
+        "id": "953e547ff0a1e734",
         "type": "tabs",
         "children": [
           {
-            "id": "6800d8d9323b3831",
+            "id": "4f777c83ca304f50",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "docs/保研/面试/问题.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "d6c629a5531cf58a",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -18,16 +30,21 @@
                 "source": false
               }
             }
-          },
+          }
+        ],
+        "currentTab": 1
+      },
+      {
+        "id": "8fb0eb3b0422f537",
+        "type": "tabs",
+        "children": [
           {
-            "id": "905acfae68cf5c04",
+            "id": "b1943455f2086e56",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "pdf",
               "state": {
-                "file": "docs/保研/面试/英语/相关词汇.md",
-                "mode": "source",
-                "source": false
+                "file": "docs/保研/面试/南大复试面试题答案汇总.pdf"
               }
             }
           }
@@ -60,7 +77,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "数学",
+                "query": "tag:#TODO冯诺依曼架构",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -179,45 +196,44 @@
       "obsidian-advanced-slides:Show Slide Preview": false
     }
   },
-  "active": "6800d8d9323b3831",
+  "active": "d6c629a5531cf58a",
   "lastOpenFiles": [
-    "docs/保研/机试/使用 VSCode 编写 C++ 单文件程序 (Windows 系统)_md · main · 田 昊东 _ NJUCS-BAOYAN · GitLab.md",
-    "docs/保研/面试/英语/相关词汇.md",
-    "docs/保研/面试/英语/【英语】问题准备.md",
-    "docs/算法/图论.md",
-    "docs/算法/树.md",
-    "docs/算法/使用VSCode编写C++单文件程序(Windows系统).md",
-    "docs/算法/数据结构.md",
-    "docs/算法/二分&倍增.md",
-    "docs/算法/前缀和与差分.md",
-    "docs/算法/排序&选择.md",
-    "docs/课程/操作系统/笔记/并发.md",
-    "docs/课程/操作系统/笔记/虚拟化.md",
-    "临时/学术背景与研究动机问卷.md",
-    "conflict-files-obsidian-git.md",
-    "docs/保研/英语/问题准备.md",
-    "docs/课程/编译原理/作业/p12.md",
     "docs/保研/面试/问题.md",
-    "docs/保研/面试/英语",
-    "docs/保研/面试/simpread-2022 南大 cs 夏令营笔试面试准备.md",
-    "docs/保研/机试/笔记.md",
-    "docs/保研/数学/概率论.md",
-    "docs/保研/笔试/simpread-2022 南大 cs 夏令营笔试面试准备.md",
-    "docs/保研/英语/相关词汇.md",
-    "docs/保研/面试/面试.pdf",
     "docs/保研/面试/南大复试面试题答案汇总.pdf",
-    "docs/课程/编译原理/作业/p11.pdf",
-    "docs/课程/编译原理/作业/p11.md",
-    "Excalidraw/Drawing 2024-05-18 23.24.21.excalidraw.md",
-    "docs/保研/笔试/2021年南京大学计算机科学与技术系本科生开放日7月8日线上考核.pdf",
-    "docs/课程/编译原理/笔记/语法分析.md",
-    "docs/课程/编译原理/笔记/词法分析.md",
-    "docs/归档课程/软件工程",
-    "docs/保研/笔试/补充习题/编译原理期末考试选择题汇总.doc.pdf",
+    "docs/面试(实习)/计算机科学/并发编程.md",
+    "docs/保研/面试/英语/【英语】问题准备.md",
+    "docs/课程/操作系统/笔记/持久化.md",
+    "docs/保研/计算机科学/数据结构与算法.md",
+    "docs/保研/面试/面试.pdf",
+    "docs/保研/面试/simpread-2022 南大 cs 夏令营笔试面试准备.md",
+    "docs/保研/计算机科学/计算机网络.md",
+    "docs/java/工具/jvm.md",
+    "docs/算法/数学.md",
+    "docs/课程/操作系统/笔记/虚拟化.md",
+    "docs/课程/操作系统/笔记/并发.md",
+    "docs/保研/机试/笔记.md",
+    "docs/课程/操作系统/代码/fish/fish.c",
+    "docs/面试(实习)/计算机科学/操作系统.md",
+    "docs/课程/操作系统/代码/os-model/os-model.py",
+    "docs/课程/操作系统/笔记/绪论.md",
+    "docs/保研/计算机科学/操作系统.md",
+    "docs/保研/机试/使用 VSCode 编写 C++ 单文件程序 (Windows 系统)_md · main · 田 昊东 _ NJUCS-BAOYAN · GitLab.md",
+    "docs/课程/操作系统/笔记/内核.md",
+    "docs/课程/编译原理/课件/Chapter_4.pdf",
+    "docs/课程/编译原理/课件/Chapter_3.pdf",
+    "docs/课程/编译原理/课件/Chapter_1.pdf",
+    "docs/算法/动态规划.md",
+    "docs/面试(实习)/自我介绍/腾讯天美游戏端开发.md",
+    "docs/算法/图论.md",
+    "docs/c++/C++基础.md",
+    "docs/c++/八股.md",
+    "docs/保研/计算机科学/计算机组成原理.md",
+    "docs/保研/计算机科学/补充.md",
+    "docs/保研/计算机科学/编译原理.md",
+    "docs/课程/金融工程学/郑振龙《金融工程》（第5版）笔记和课后习题（含考研真题）详解答案.pdf",
+    "pdf/概率论.pdf",
+    "pdf/线性代数.pdf",
     "docs/保研/笔试/c96536f112a74024be9f595f007a2763.jpg",
-    "docs/课程/编译原理/课件/Review.pdf",
-    "docs/课程/编译原理/课件/Chapter_9.pdf",
-    "docs/课程/编译原理/课件/Chapter_8.pdf",
     "CsNotes/2021-11-22-22-54-02.png",
     "CsNotes/2021-11-22-22-52-49.png",
     "CsNotes/2021-11-22-22-49-26.png",
