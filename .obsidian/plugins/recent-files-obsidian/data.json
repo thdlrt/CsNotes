@@ -1,10 +1,6 @@
 {
   "recentFiles": [
     {
-      "basename": "面试",
-      "path": "docs/保研/面试/面试.pdf"
-    },
-    {
       "basename": "simpread-2022 南大 cs 夏令营笔试面试准备",
       "path": "docs/保研/面试/simpread-2022 南大 cs 夏令营笔试面试准备.md"
     },
@@ -13,8 +9,16 @@
       "path": "docs/保研/面试/南大复试面试题答案汇总.pdf"
     },
     {
+      "basename": "面试",
+      "path": "docs/保研/面试/面试.pdf"
+    },
+    {
       "basename": "问题",
       "path": "docs/保研/面试/问题.md"
+    },
+    {
+      "basename": "数学",
+      "path": "docs/算法/数学.md"
     },
     {
       "basename": "持久化",
@@ -195,10 +199,6 @@
     {
       "basename": "c96536f112a74024be9f595f007a2763",
       "path": "docs/保研/笔试/c96536f112a74024be9f595f007a2763.jpg"
-    },
-    {
-      "basename": "数据结构与算法",
-      "path": "docs/保研/计算机科学/数据结构与算法.md"
     }
   ],
   "omittedPaths": [],

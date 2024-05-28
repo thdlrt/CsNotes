@@ -69,8 +69,7 @@
               }
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -144,7 +143,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/保研/面试/面试.pdf",
+                "file": "docs/保研/面试/simpread-2022 南大 cs 夏令营笔试面试准备.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -161,7 +160,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/保研/面试/面试.pdf",
+                "file": "docs/保研/面试/simpread-2022 南大 cs 夏令营笔试面试准备.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -184,7 +183,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/保研/面试/面试.pdf"
+                "file": "docs/保研/面试/simpread-2022 南大 cs 夏令营笔试面试准备.md"
               }
             }
           },
@@ -218,12 +217,13 @@
       "obsidian-advanced-slides:Show Slide Preview": false
     }
   },
-  "active": "24d011f819242ef1",
+  "active": "9a9bd7743c3c280b",
   "lastOpenFiles": [
-    "docs/保研/面试/simpread-2022 南大 cs 夏令营笔试面试准备.md",
-    "docs/保研/面试/面试.pdf",
     "docs/保研/面试/南大复试面试题答案汇总.pdf",
+    "docs/保研/面试/面试.pdf",
     "docs/保研/面试/问题.md",
+    "docs/保研/面试/simpread-2022 南大 cs 夏令营笔试面试准备.md",
+    "docs/算法/数学.md",
     "docs/课程/操作系统/笔记/持久化.md",
     "docs/保研/面试/英语/【英语】问题准备.md",
     "docs/课程/操作系统/笔记/虚拟化.md",
@@ -252,7 +252,6 @@
     "docs/课程/金融工程学/作业.md",
     "docs/课程/金融工程学/郑振龙《金融工程》（第5版）笔记和课后习题（含考研真题）详解答案.pdf",
     "docs/课程/编译原理/笔记/机器无关优化.md",
-    "docs/课程/编译原理/笔记/中间代码生成.md",
     "pdf/概率论.pdf",
     "pdf/线性代数.pdf",
     "docs/保研/笔试/c96536f112a74024be9f595f007a2763.jpg",
