@@ -5,6 +5,10 @@
       "path": "docs/保研/面试/问题.md"
     },
     {
+      "basename": "持久化",
+      "path": "docs/课程/操作系统/笔记/持久化.md"
+    },
+    {
       "basename": "南大复试面试题答案汇总",
       "path": "docs/保研/面试/南大复试面试题答案汇总.pdf"
     },
@@ -39,10 +43,6 @@
     {
       "basename": "数学",
       "path": "docs/算法/数学.md"
-    },
-    {
-      "basename": "持久化",
-      "path": "docs/课程/操作系统/笔记/持久化.md"
     },
     {
       "basename": "虚拟化",
