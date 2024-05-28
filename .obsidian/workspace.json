@@ -143,7 +143,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/保研/面试/simpread-2022 南大 cs 夏令营笔试面试准备.md",
+                "file": "docs/保研/面试/问题.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -160,7 +160,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/保研/面试/simpread-2022 南大 cs 夏令营笔试面试准备.md",
+                "file": "docs/保研/面试/问题.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -183,7 +183,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/保研/面试/simpread-2022 南大 cs 夏令营笔试面试准备.md"
+                "file": "docs/保研/面试/问题.md"
               }
             }
           },
@@ -217,20 +217,20 @@
       "obsidian-advanced-slides:Show Slide Preview": false
     }
   },
-  "active": "9a9bd7743c3c280b",
+  "active": "4f777c83ca304f50",
   "lastOpenFiles": [
-    "docs/保研/面试/南大复试面试题答案汇总.pdf",
-    "docs/保研/面试/面试.pdf",
+    "docs/面试(实习)/计算机科学/并发编程.md",
+    "docs/保研/面试/英语/【英语】问题准备.md",
     "docs/保研/面试/问题.md",
     "docs/保研/面试/simpread-2022 南大 cs 夏令营笔试面试准备.md",
+    "docs/保研/面试/南大复试面试题答案汇总.pdf",
+    "docs/保研/面试/面试.pdf",
     "docs/算法/数学.md",
     "docs/课程/操作系统/笔记/持久化.md",
-    "docs/保研/面试/英语/【英语】问题准备.md",
     "docs/课程/操作系统/笔记/虚拟化.md",
     "docs/课程/操作系统/笔记/并发.md",
     "docs/保研/机试/笔记.md",
     "docs/课程/操作系统/代码/fish/fish.c",
-    "docs/面试(实习)/计算机科学/并发编程.md",
     "docs/面试(实习)/计算机科学/操作系统.md",
     "docs/课程/操作系统/代码/os-model/os-model.py",
     "docs/课程/操作系统/笔记/绪论.md",
