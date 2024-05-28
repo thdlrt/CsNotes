@@ -1,6 +1,10 @@
 {
   "recentFiles": [
     {
+      "basename": "数据结构与算法",
+      "path": "docs/保研/计算机科学/数据结构与算法.md"
+    },
+    {
       "basename": "问题",
       "path": "docs/保研/面试/问题.md"
     },
@@ -19,10 +23,6 @@
     {
       "basename": "持久化",
       "path": "docs/课程/操作系统/笔记/持久化.md"
-    },
-    {
-      "basename": "数据结构与算法",
-      "path": "docs/保研/计算机科学/数据结构与算法.md"
     },
     {
       "basename": "面试",
