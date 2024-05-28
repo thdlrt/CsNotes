@@ -5,16 +5,8 @@
       "path": "docs/保研/面试/问题.md"
     },
     {
-      "basename": "simpread-2022 南大 cs 夏令营笔试面试准备",
-      "path": "docs/保研/面试/simpread-2022 南大 cs 夏令营笔试面试准备.md"
-    },
-    {
-      "basename": "jvm",
-      "path": "docs/java/工具/jvm.md"
-    },
-    {
-      "basename": "并发编程",
-      "path": "docs/面试(实习)/计算机科学/并发编程.md"
+      "basename": "数据结构与算法",
+      "path": "docs/保研/计算机科学/数据结构与算法.md"
     },
     {
       "basename": "【英语】问题准备",
@@ -25,8 +17,24 @@
       "path": "docs/保研/面试/南大复试面试题答案汇总.pdf"
     },
     {
+      "basename": "并发编程",
+      "path": "docs/面试(实习)/计算机科学/并发编程.md"
+    },
+    {
+      "basename": "simpread-2022 南大 cs 夏令营笔试面试准备",
+      "path": "docs/保研/面试/simpread-2022 南大 cs 夏令营笔试面试准备.md"
+    },
+    {
       "basename": "面试",
       "path": "docs/保研/面试/面试.pdf"
+    },
+    {
+      "basename": "计算机网络",
+      "path": "docs/保研/计算机科学/计算机网络.md"
+    },
+    {
+      "basename": "jvm",
+      "path": "docs/java/工具/jvm.md"
     },
     {
       "basename": "数学",
@@ -191,14 +199,6 @@
     {
       "basename": "词法分析",
       "path": "docs/课程/编译原理/笔记/词法分析.md"
-    },
-    {
-      "basename": "编译原理期末复习题 (选择)_编译原理选择题 - CSDN 博客",
-      "path": "docs/保研/笔试/补充习题/编译原理期末复习题 (选择)_编译原理选择题 - CSDN 博客.md"
-    },
-    {
-      "basename": "编译原理期末考试选择题汇总.doc",
-      "path": "docs/保研/笔试/补充习题/编译原理期末考试选择题汇总.doc.pdf"
     }
   ],
   "omittedPaths": [],
