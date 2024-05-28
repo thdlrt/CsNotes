@@ -180,8 +180,8 @@
 - Full GC/Major GC:指发生在老年代的垃圾收集动作，出现了Major GC，经常会伴随至少一次的Minor GC。Major GC的速度一般会比Minor GC慢10倍以上。
 
 - JVM中分为年轻代和老年代。
-  - HotSpot JVM把年轻代分为了三部分：1个Eden区和2个Survivor区（分别叫from和to）。默认比例为8：1
-    - 一般新创建的对象会被分配到**Eden 区**，在 GC 开始的时候，对象只会存在于 Eden 区和名为“From”的 Survivor 区，紧接着进行 GC，Eden 区中所有存活的对象都会被复制到“To”，而在“From”区中，仍存活的对象会根据他们的年龄值来决定去向。年龄达到一定值(年龄阈值，可以通过-XX: MaxTenuringThreshold 来设置)的对象会被移动到**年老代**中，没有达到阈值的对象会被复制到 **“To”区域**。经过这次 GC 后，Eden 区和 From 区已经被清空。这个时候，“From”和“To”会交换他们的角色，保证名为 To 的 Survivor 区域是空的。
+  - HotSpot JVM 把年轻代分为了三部分：1个 Eden 区和2个 Survivor 区（分别叫 from 和 to）。默认比例为8：1：1
+    - 一般新创建的对象会被分配到**Eden 区**，在 GC 开始的时候，对象只会存在于 Eden 区和名为“From”的 Survivor 区，紧接着进行 GC，Eden 区中所有存活的对象都会被复制到“To”，而在“From”区中，仍存活的对象会根据他们的年龄值来决定去向。年龄达到一定值的对象会被移动到**年老代**中，没有达到阈值的对象会被复制到 **“To”区域**。经过这次 GC 后，Eden 区和 From 区已经被清空。最后“From”和“To”会交换他们的角色。
 - 空间分配担保
   - 在发生Minor GC之前，虚拟机会**先检查老年代最大可用的连续空间是否大于新生代所有对象的总空间**，如果这个条件成立，那么Minor GC可以 确保是安全的。如果不成立，则虚拟机**会查看HandlePromotionFailure设置值是否允许担保失败**。如果允许，那会继续检查老年代最大可用的连续空间**是否大于历次晋升到老年代对象的平均大小，如果大于，则将尝试进行一次Minor GC**，尽管这个Minor GC是有风险的。如果小于，或者HandlePromotionFailure设置不允许冒险，那这时也要改为进行一次Full GC。
 

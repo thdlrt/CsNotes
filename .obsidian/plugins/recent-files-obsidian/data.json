@@ -5,16 +5,20 @@
       "path": "docs/保研/面试/问题.md"
     },
     {
+      "basename": "simpread-2022 南大 cs 夏令营笔试面试准备",
+      "path": "docs/保研/面试/simpread-2022 南大 cs 夏令营笔试面试准备.md"
+    },
+    {
+      "basename": "jvm",
+      "path": "docs/java/工具/jvm.md"
+    },
+    {
       "basename": "并发编程",
       "path": "docs/面试(实习)/计算机科学/并发编程.md"
     },
     {
       "basename": "【英语】问题准备",
       "path": "docs/保研/面试/英语/【英语】问题准备.md"
-    },
-    {
-      "basename": "simpread-2022 南大 cs 夏令营笔试面试准备",
-      "path": "docs/保研/面试/simpread-2022 南大 cs 夏令营笔试面试准备.md"
     },
     {
       "basename": "南大复试面试题答案汇总",
@@ -195,10 +199,6 @@
     {
       "basename": "编译原理期末考试选择题汇总.doc",
       "path": "docs/保研/笔试/补充习题/编译原理期末考试选择题汇总.doc.pdf"
-    },
-    {
-      "basename": "c96536f112a74024be9f595f007a2763",
-      "path": "docs/保研/笔试/c96536f112a74024be9f595f007a2763.jpg"
     }
   ],
   "omittedPaths": [],
