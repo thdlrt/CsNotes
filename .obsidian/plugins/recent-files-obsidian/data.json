@@ -5,16 +5,16 @@
       "path": "docs/保研/数学/线性代数.md"
     },
     {
+      "basename": "问题",
+      "path": "docs/保研/面试/问题.md"
+    },
+    {
       "basename": "笔记",
       "path": "docs/保研/机试/笔记.md"
     },
     {
       "basename": "数据结构与算法",
       "path": "docs/保研/计算机科学/数据结构与算法.md"
-    },
-    {
-      "basename": "问题",
-      "path": "docs/保研/面试/问题.md"
     },
     {
       "basename": "概率论",
