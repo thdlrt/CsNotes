@@ -1,12 +1,8 @@
 {
   "recentFiles": [
     {
-      "basename": "【英语】问题准备",
-      "path": "docs/保研/面试/英语/【英语】问题准备.md"
-    },
-    {
-      "basename": "虚拟化",
-      "path": "docs/课程/操作系统/笔记/虚拟化.md"
+      "basename": "概率论",
+      "path": "docs/保研/数学/概率论.md"
     },
     {
       "basename": "问题",
@@ -17,20 +13,20 @@
       "path": "docs/保研/数学/线性代数.md"
     },
     {
-      "basename": "设计模式",
-      "path": "docs/软件工程/设计模式.md"
-    },
-    {
-      "basename": "并发编程",
-      "path": "docs/面试(实习)/计算机科学/并发编程.md"
-    },
-    {
       "basename": "数据结构与算法",
       "path": "docs/保研/计算机科学/数据结构与算法.md"
     },
     {
+      "basename": "【英语】问题准备",
+      "path": "docs/保研/面试/英语/【英语】问题准备.md"
+    },
+    {
       "basename": "南大复试面试题答案汇总",
       "path": "docs/保研/面试/南大复试面试题答案汇总.pdf"
+    },
+    {
+      "basename": "并发编程",
+      "path": "docs/面试(实习)/计算机科学/并发编程.md"
     },
     {
       "basename": "持久化",
@@ -55,6 +51,10 @@
     {
       "basename": "数学",
       "path": "docs/算法/数学.md"
+    },
+    {
+      "basename": "虚拟化",
+      "path": "docs/课程/操作系统/笔记/虚拟化.md"
     },
     {
       "basename": "并发",
@@ -165,10 +165,6 @@
       "path": "docs/课程/编译原理/作业/p11.md"
     },
     {
-      "basename": "概率论",
-      "path": "docs/保研/数学/概率论.md"
-    },
-    {
       "basename": "离散数学",
       "path": "docs/保研/数学/离散数学.md"
     },
@@ -199,6 +195,10 @@
     {
       "basename": "语法分析",
       "path": "docs/课程/编译原理/笔记/语法分析.md"
+    },
+    {
+      "basename": "词法分析",
+      "path": "docs/课程/编译原理/笔记/词法分析.md"
     }
   ],
   "omittedPaths": [],
