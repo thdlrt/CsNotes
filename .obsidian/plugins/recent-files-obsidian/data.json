@@ -5,6 +5,10 @@
       "path": "docs/保研/数学/线性代数.md"
     },
     {
+      "basename": "笔记",
+      "path": "docs/保研/机试/笔记.md"
+    },
+    {
       "basename": "数据结构与算法",
       "path": "docs/保研/计算机科学/数据结构与算法.md"
     },
@@ -59,10 +63,6 @@
     {
       "basename": "并发",
       "path": "docs/课程/操作系统/笔记/并发.md"
-    },
-    {
-      "basename": "笔记",
-      "path": "docs/保研/机试/笔记.md"
     },
     {
       "basename": "fish",
