@@ -1,12 +1,20 @@
 {
   "recentFiles": [
     {
-      "basename": "线性代数",
-      "path": "docs/保研/数学/线性代数.md"
-    },
-    {
       "basename": "问题",
       "path": "docs/保研/面试/问题.md"
+    },
+    {
+      "basename": "操作系统",
+      "path": "docs/保研/计算机科学/操作系统.md"
+    },
+    {
+      "basename": "持久化",
+      "path": "docs/课程/操作系统/笔记/持久化.md"
+    },
+    {
+      "basename": "线性代数",
+      "path": "docs/保研/数学/线性代数.md"
     },
     {
       "basename": "笔记",
@@ -31,10 +39,6 @@
     {
       "basename": "并发编程",
       "path": "docs/面试(实习)/计算机科学/并发编程.md"
-    },
-    {
-      "basename": "持久化",
-      "path": "docs/课程/操作系统/笔记/持久化.md"
     },
     {
       "basename": "面试",
@@ -75,10 +79,6 @@
     {
       "basename": "绪论",
       "path": "docs/课程/操作系统/笔记/绪论.md"
-    },
-    {
-      "basename": "操作系统",
-      "path": "docs/保研/计算机科学/操作系统.md"
     },
     {
       "basename": "内核",
