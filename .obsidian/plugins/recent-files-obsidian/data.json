@@ -1,56 +1,52 @@
 {
   "recentFiles": [
     {
-      "basename": "离散数学",
-      "path": "docs/保研/数学/离散数学.md"
+      "basename": "计算机网络",
+      "path": "docs/保研/计算机科学/计算机网络.md"
     },
     {
-      "basename": "语法分析",
-      "path": "docs/课程/编译原理/笔记/语法分析.md"
+      "basename": "计算机组成原理",
+      "path": "docs/保研/计算机科学/计算机组成原理.md"
     },
     {
-      "basename": "语法制导的编译技术",
-      "path": "docs/课程/编译原理/笔记/语法制导的编译技术.md"
-    },
-    {
-      "basename": "问题",
-      "path": "docs/保研/面试/问题.md"
-    },
-    {
-      "basename": "操作系统",
-      "path": "docs/保研/计算机科学/操作系统.md"
-    },
-    {
-      "basename": "持久化",
-      "path": "docs/课程/操作系统/笔记/持久化.md"
-    },
-    {
-      "basename": "线性代数",
-      "path": "docs/保研/数学/线性代数.md"
-    },
-    {
-      "basename": "笔记",
-      "path": "docs/保研/机试/笔记.md"
-    },
-    {
-      "basename": "数据结构与算法",
-      "path": "docs/保研/计算机科学/数据结构与算法.md"
-    },
-    {
-      "basename": "概率论",
-      "path": "docs/保研/数学/概率论.md"
+      "basename": "计算机网络",
+      "path": "docs/面试(实习)/计算机科学/计算机网络.md"
     },
     {
       "basename": "【英语】问题准备",
       "path": "docs/保研/面试/英语/【英语】问题准备.md"
     },
     {
-      "basename": "南大复试面试题答案汇总",
-      "path": "docs/保研/面试/南大复试面试题答案汇总.pdf"
+      "basename": "问题",
+      "path": "docs/保研/面试/问题.md"
+    },
+    {
+      "basename": "虚拟化",
+      "path": "docs/课程/操作系统/笔记/虚拟化.md"
+    },
+    {
+      "basename": "线性代数",
+      "path": "docs/保研/数学/线性代数.md"
+    },
+    {
+      "basename": "设计模式",
+      "path": "docs/软件工程/设计模式.md"
     },
     {
       "basename": "并发编程",
       "path": "docs/面试(实习)/计算机科学/并发编程.md"
+    },
+    {
+      "basename": "数据结构与算法",
+      "path": "docs/保研/计算机科学/数据结构与算法.md"
+    },
+    {
+      "basename": "南大复试面试题答案汇总",
+      "path": "docs/保研/面试/南大复试面试题答案汇总.pdf"
+    },
+    {
+      "basename": "持久化",
+      "path": "docs/课程/操作系统/笔记/持久化.md"
     },
     {
       "basename": "面试",
@@ -61,10 +57,6 @@
       "path": "docs/保研/面试/simpread-2022 南大 cs 夏令营笔试面试准备.md"
     },
     {
-      "basename": "计算机网络",
-      "path": "docs/保研/计算机科学/计算机网络.md"
-    },
-    {
       "basename": "jvm",
       "path": "docs/java/工具/jvm.md"
     },
@@ -73,12 +65,12 @@
       "path": "docs/算法/数学.md"
     },
     {
-      "basename": "虚拟化",
-      "path": "docs/课程/操作系统/笔记/虚拟化.md"
-    },
-    {
       "basename": "并发",
       "path": "docs/课程/操作系统/笔记/并发.md"
+    },
+    {
+      "basename": "笔记",
+      "path": "docs/保研/机试/笔记.md"
     },
     {
       "basename": "fish",
@@ -91,6 +83,10 @@
     {
       "basename": "绪论",
       "path": "docs/课程/操作系统/笔记/绪论.md"
+    },
+    {
+      "basename": "操作系统",
+      "path": "docs/保研/计算机科学/操作系统.md"
     },
     {
       "basename": "内核",
@@ -127,10 +123,6 @@
     {
       "basename": "八股",
       "path": "docs/c++/八股.md"
-    },
-    {
-      "basename": "计算机组成原理",
-      "path": "docs/保研/计算机科学/计算机组成原理.md"
     },
     {
       "basename": "补充",
@@ -175,6 +167,14 @@
     {
       "basename": "p11",
       "path": "docs/课程/编译原理/作业/p11.md"
+    },
+    {
+      "basename": "概率论",
+      "path": "docs/保研/数学/概率论.md"
+    },
+    {
+      "basename": "离散数学",
+      "path": "docs/保研/数学/离散数学.md"
     },
     {
       "basename": "概率论",
