@@ -1,12 +1,16 @@
 {
   "recentFiles": [
     {
-      "basename": "tinyrender",
-      "path": "docs/计算机图形学/实验/tinyrender.md"
+      "basename": "离散数学",
+      "path": "docs/保研/数学/离散数学.md"
     },
     {
       "basename": "tinyraytracer",
       "path": "docs/计算机图形学/实验/tinyraytracer.md"
+    },
+    {
+      "basename": "tinyrender",
+      "path": "docs/计算机图形学/实验/tinyrender.md"
     },
     {
       "basename": "计算机图形学",
@@ -19,10 +23,6 @@
     {
       "basename": "线性代数",
       "path": "docs/保研/数学/线性代数.md"
-    },
-    {
-      "basename": "离散数学",
-      "path": "docs/保研/数学/离散数学.md"
     },
     {
       "basename": "问题",
