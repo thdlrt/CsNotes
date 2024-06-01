@@ -1,20 +1,20 @@
 {
   "recentFiles": [
     {
-      "basename": "离散数学",
-      "path": "docs/保研/数学/离散数学.md"
-    },
-    {
       "basename": "【英语】问题准备",
       "path": "docs/保研/面试/英语/【英语】问题准备.md"
     },
     {
-      "basename": "问题",
-      "path": "docs/保研/面试/问题.md"
+      "basename": "数据结构与算法",
+      "path": "docs/保研/计算机科学/数据结构与算法.md"
     },
     {
       "basename": "计算机网络",
       "path": "docs/保研/计算机科学/计算机网络.md"
+    },
+    {
+      "basename": "问题",
+      "path": "docs/保研/面试/问题.md"
     },
     {
       "basename": "计算机组成原理",
@@ -39,10 +39,6 @@
     {
       "basename": "并发编程",
       "path": "docs/面试(实习)/计算机科学/并发编程.md"
-    },
-    {
-      "basename": "数据结构与算法",
-      "path": "docs/保研/计算机科学/数据结构与算法.md"
     },
     {
       "basename": "南大复试面试题答案汇总",
@@ -175,6 +171,10 @@
     {
       "basename": "概率论",
       "path": "docs/保研/数学/概率论.md"
+    },
+    {
+      "basename": "离散数学",
+      "path": "docs/保研/数学/离散数学.md"
     },
     {
       "basename": "概率论",
