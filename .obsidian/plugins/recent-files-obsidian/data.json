@@ -5,6 +5,10 @@
       "path": "docs/保研/面试/问题.md"
     },
     {
+      "basename": "计算机网络",
+      "path": "docs/保研/计算机科学/计算机网络.md"
+    },
+    {
       "basename": "数据结构与算法",
       "path": "docs/保研/计算机科学/数据结构与算法.md"
     },
@@ -15,10 +19,6 @@
     {
       "basename": "离散数学",
       "path": "docs/保研/数学/离散数学.md"
-    },
-    {
-      "basename": "计算机网络",
-      "path": "docs/保研/计算机科学/计算机网络.md"
     },
     {
       "basename": "计算机组成原理",
