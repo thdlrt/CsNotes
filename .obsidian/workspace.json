@@ -4,59 +4,18 @@
     "type": "split",
     "children": [
       {
-        "id": "953e547ff0a1e734",
+        "id": "fe6c1f18d960703d",
         "type": "tabs",
         "children": [
           {
-            "id": "4f777c83ca304f50",
+            "id": "a7edc757eb1b3d12",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "docs/保研/面试/英语/【英语】问题准备.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "2cca4e8846f4ff23",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "conflict-files-obsidian-git.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "0549d50748133440",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "docs/保研/面试/问题.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "bfb8004304f57530",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "docs/保研/计算机科学/数据结构与算法.md",
-                "mode": "source",
-                "source": false
-              }
+              "type": "empty",
+              "state": {}
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -114,7 +73,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 344.5
   },
   "right": {
     "id": "d615b65a4ccf8a6a",
@@ -130,7 +89,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "conflict-files-obsidian-git.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -147,7 +105,6 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "conflict-files-obsidian-git.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -169,9 +126,7 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "conflict-files-obsidian-git.md"
-              }
+              "state": {}
             }
           },
           {
@@ -182,12 +137,12 @@
               "state": {}
             }
           }
-        ],
-        "currentTab": 3
+        ]
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 374.5,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -204,44 +159,43 @@
       "obsidian-advanced-slides:Show Slide Preview": false
     }
   },
-  "active": "2cca4e8846f4ff23",
+  "active": "96e173acdf249e6c",
   "lastOpenFiles": [
-    "docs/保研/面试/英语/【英语】问题准备.md",
-    "conflict-files-obsidian-git.md",
+    "docs/课程/编译原理/课件/Chapter_9.pdf",
+    "docs/课程/编译原理/笔记/机器无关优化.md",
     "docs/课程/编译原理/作业/p13.md",
+    "docs/课程/编译原理/作业/答案/dragon-book-exercise-answers-master/ch12/12.3/12.3.md",
+    "docs/课程/编译原理/作业/答案/dragon-book-exercise-answers-master/ch12/12.7/12.7.md",
+    "docs/课程/编译原理/作业/答案/dragon-book-exercise-answers-master/ch08/8.2/8.2.md",
+    "docs/课程/编译原理/作业/p12.md",
+    "docs/保研/机试/笔记.md",
+    "docs/保研/机试/使用 VSCode 编写 C++ 单文件程序 (Windows 系统)_md · main · 田 昊东 _ NJUCS-BAOYAN · GitLab.md",
+    "临时/temp.md",
+    "临时/学术背景与研究动机问卷.md",
+    "临时/temp2.md",
+    "docs/算法/数组与字符串.md",
     "docs/Blog/P5410 【模板】扩展 KMP_exKMP（Z 函数） - 洛谷 _ 计算机科学教育新生态.md",
     "docs/Blog",
+    "pdf/金融风险管理/syllabus-2024.3本科-与frm的详细对应关系.pdf",
+    "pdf/金融风险管理/on the rise of fintechs-credit scoring using digital footprints.pdf",
+    "pdf/金融风险管理/basel协议.pdf",
+    "pdf/金融风险管理/12 信用风险价值cvar.pdf",
+    "pdf/金融风险管理/11 信用风险暴露和违约损失率的估计.pdf",
+    "pdf/金融风险管理/10 违约概率的估计.pdf",
+    "pdf/金融风险管理/8 情景分析和压力测试.pdf",
+    "pdf/金融风险管理/7 基于var的组合风险来源分析和风险预算.pdf",
+    "Blog/【操作系统】选择题汇总大全_操作系统选择题 - CSDN 博客.md",
+    "docs/课程/编译原理/笔记/中间代码生成.md",
+    "docs/保研/数学/离散数学.md",
+    "docs/保研/面试/英语/【英语】问题准备.md",
     "docs/保研/面试/问题.md",
-    "docs/保研/计算机科学/数据结构与算法.md",
-    "docs/保研/计算机科学/计算机网络.md",
-    "docs/保研/计算机科学/计算机组成原理.md",
-    "docs/面试(实习)/计算机科学/计算机网络.md",
-    "docs/课程/操作系统/笔记/虚拟化.md",
-    "docs/保研/数学/线性代数.md",
-    "docs/软件工程/设计模式.md",
-    "docs/面试(实习)/计算机科学/并发编程.md",
-    "docs/保研/面试/南大复试面试题答案汇总.pdf",
-    "docs/课程/操作系统/笔记/持久化.md",
-    "docs/保研/面试/面试.pdf",
-    "docs/保研/面试/simpread-2022 南大 cs 夏令营笔试面试准备.md",
-    "docs/java/工具/jvm.md",
-    "docs/算法/数学.md",
-    "docs/课程/操作系统/笔记/并发.md",
-    "docs/保研/机试/笔记.md",
-    "docs/课程/操作系统/代码/fish/fish.c",
-    "docs/面试(实习)/计算机科学/操作系统.md",
-    "docs/课程/操作系统/代码/os-model/os-model.py",
-    "docs/课程/操作系统/笔记/绪论.md",
-    "docs/保研/计算机科学/操作系统.md",
-    "docs/保研/机试/使用 VSCode 编写 C++ 单文件程序 (Windows 系统)_md · main · 田 昊东 _ NJUCS-BAOYAN · GitLab.md",
-    "docs/课程/操作系统/笔记/内核.md",
-    "docs/课程/编译原理/课件/Chapter_4.pdf",
-    "docs/课程/编译原理/课件/Chapter_3.pdf",
-    "docs/课程/编译原理/课件/Chapter_1.pdf",
-    "docs/算法/动态规划.md",
+    "docs/数据库/关系数据库/MySQL.md",
+    "docs/面试(实习)/知识图谱.md",
     "docs/面试(实习)/自我介绍/腾讯天美游戏端开发.md",
-    "docs/课程/金融工程学/郑振龙《金融工程》（第5版）笔记和课后习题（含考研真题）详解答案.pdf",
-    "pdf/概率论.pdf",
+    "docs/面试(实习)/计算机科学/计算机网络.md",
+    "docs/面试(实习)/计算机科学/计算机图形学.md",
+    "docs/面试(实习)/计算机科学/并发编程.md",
+    "docs/面试(实习)/计算机科学/杂项.md",
     "docs/保研/笔试/c96536f112a74024be9f595f007a2763.jpg",
     "CsNotes/2021-11-22-22-54-02.png",
     "CsNotes/2021-11-22-22-52-49.png",
