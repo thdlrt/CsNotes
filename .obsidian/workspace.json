@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "临时/temp.md",
+                "file": "docs/课程/编译原理/作业/p12.md",
                 "mode": "source",
                 "source": false
               }
@@ -93,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "临时/temp.md",
+                "file": "docs/课程/编译原理/作业/p12.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "临时/temp.md",
+                "file": "docs/课程/编译原理/作业/p12.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "临时/temp.md"
+                "file": "docs/课程/编译原理/作业/p12.md"
               }
             }
           },
@@ -166,10 +166,14 @@
       "obsidian-advanced-slides:Show Slide Preview": false
     }
   },
-  "active": "96e173acdf249e6c",
+  "active": "40011e6bc41509d4",
   "lastOpenFiles": [
-    "临时/学术背景与研究动机问卷.md",
+    "docs/课程/编译原理/作业/p13.md",
+    "docs/课程/编译原理/作业/p12.md",
+    "docs/保研/机试/笔记.md",
+    "docs/保研/机试/使用 VSCode 编写 C++ 单文件程序 (Windows 系统)_md · main · 田 昊东 _ NJUCS-BAOYAN · GitLab.md",
     "临时/temp.md",
+    "临时/学术背景与研究动机问卷.md",
     "临时/temp2.md",
     "docs/算法/数组与字符串.md",
     "docs/Blog/P5410 【模板】扩展 KMP_exKMP（Z 函数） - 洛谷 _ 计算机科学教育新生态.md",
@@ -200,10 +204,6 @@
     "docs/归档课程/大数据/期末复习.md",
     "docs/保研/数学/线性代数.md",
     "docs/保研/计算机科学/数据结构与算法.md",
-    "docs/保研/计算机科学/计算机网络.md",
-    "docs/保研/计算机科学/计算机组成原理.md",
-    "docs/课程/操作系统/笔记/虚拟化.md",
-    "docs/软件工程/设计模式.md",
     "docs/保研/笔试/c96536f112a74024be9f595f007a2763.jpg",
     "CsNotes/2021-11-22-22-54-02.png",
     "CsNotes/2021-11-22-22-52-49.png",

@@ -1,6 +1,22 @@
 {
   "recentFiles": [
     {
+      "basename": "p12",
+      "path": "docs/课程/编译原理/作业/p12.md"
+    },
+    {
+      "basename": "p13",
+      "path": "docs/课程/编译原理/作业/p13.md"
+    },
+    {
+      "basename": "笔记",
+      "path": "docs/保研/机试/笔记.md"
+    },
+    {
+      "basename": "使用 VSCode 编写 C++ 单文件程序 (Windows 系统)_md · main · 田 昊东 _ NJUCS-BAOYAN · GitLab",
+      "path": "docs/保研/机试/使用 VSCode 编写 C++ 单文件程序 (Windows 系统)_md · main · 田 昊东 _ NJUCS-BAOYAN · GitLab.md"
+    },
+    {
       "basename": "temp",
       "path": "临时/temp.md"
     },
@@ -125,10 +141,6 @@
       "path": "docs/课程/操作系统/笔记/并发.md"
     },
     {
-      "basename": "笔记",
-      "path": "docs/保研/机试/笔记.md"
-    },
-    {
       "basename": "fish",
       "path": "docs/课程/操作系统/代码/fish/fish.c"
     },
@@ -187,14 +199,6 @@
     {
       "basename": "作业",
       "path": "docs/课程/金融工程学/作业.md"
-    },
-    {
-      "basename": "郑振龙《金融工程》（第5版）笔记和课后习题（含考研真题）详解答案",
-      "path": "docs/课程/金融工程学/郑振龙《金融工程》（第5版）笔记和课后习题（含考研真题）详解答案.pdf"
-    },
-    {
-      "basename": "机器无关优化",
-      "path": "docs/课程/编译原理/笔记/机器无关优化.md"
     }
   ],
   "omittedPaths": [],
