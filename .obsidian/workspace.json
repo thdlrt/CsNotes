@@ -11,8 +11,12 @@
             "id": "a7edc757eb1b3d12",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {}
+              "type": "markdown",
+              "state": {
+                "file": "docs/课程/软件体系结构/笔记/SSM/SpringMVC.md",
+                "mode": "source",
+                "source": false
+              }
             }
           }
         ]
@@ -89,6 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "docs/课程/软件体系结构/笔记/SSM/SpringMVC.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -105,6 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "docs/课程/软件体系结构/笔记/SSM/SpringMVC.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -126,7 +132,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "docs/课程/软件体系结构/笔记/SSM/SpringMVC.md"
+              }
             }
           },
           {
@@ -159,8 +167,9 @@
       "obsidian-advanced-slides:Show Slide Preview": false
     }
   },
-  "active": "96e173acdf249e6c",
+  "active": "a7edc757eb1b3d12",
   "lastOpenFiles": [
+    "docs/课程/金融工程学/作业.md",
     "docs/课程/编译原理/课件/Chapter_9.pdf",
     "docs/课程/编译原理/笔记/机器无关优化.md",
     "docs/课程/编译原理/作业/p13.md",
