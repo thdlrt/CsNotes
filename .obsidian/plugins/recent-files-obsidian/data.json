@@ -1,6 +1,26 @@
 {
   "recentFiles": [
     {
+      "basename": "temp",
+      "path": "临时/temp.md"
+    },
+    {
+      "basename": "temp2",
+      "path": "临时/temp2.md"
+    },
+    {
+      "basename": "数组与字符串",
+      "path": "docs/算法/数组与字符串.md"
+    },
+    {
+      "basename": "P5410 【模板】扩展 KMP_exKMP（Z 函数） - 洛谷 _ 计算机科学教育新生态",
+      "path": "docs/Blog/P5410 【模板】扩展 KMP_exKMP（Z 函数） - 洛谷 _ 计算机科学教育新生态.md"
+    },
+    {
+      "basename": "中间代码生成",
+      "path": "docs/课程/编译原理/笔记/中间代码生成.md"
+    },
+    {
       "basename": "离散数学",
       "path": "docs/保研/数学/离散数学.md"
     },
@@ -175,30 +195,6 @@
     {
       "basename": "机器无关优化",
       "path": "docs/课程/编译原理/笔记/机器无关优化.md"
-    },
-    {
-      "basename": "中间代码生成",
-      "path": "docs/课程/编译原理/笔记/中间代码生成.md"
-    },
-    {
-      "basename": "代码生成",
-      "path": "docs/课程/编译原理/笔记/代码生成.md"
-    },
-    {
-      "basename": "8.5",
-      "path": "docs/课程/编译原理/作业/答案/dragon-book-exercise-answers-master/ch08/8.5/8.5.md"
-    },
-    {
-      "basename": "p12",
-      "path": "docs/课程/编译原理/作业/p12.md"
-    },
-    {
-      "basename": "p10",
-      "path": "docs/课程/编译原理/作业/p10.md"
-    },
-    {
-      "basename": "p11",
-      "path": "docs/课程/编译原理/作业/p11.md"
     }
   ],
   "omittedPaths": [],

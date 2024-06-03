@@ -4,16 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "953e547ff0a1e734",
+        "id": "84dfe16c3b988eb9",
         "type": "tabs",
         "children": [
           {
-            "id": "3e7c776302497040",
+            "id": "40011e6bc41509d4",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/保研/数学/离散数学.md",
+                "file": "临时/temp.md",
                 "mode": "source",
                 "source": false
               }
@@ -93,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/保研/数学/离散数学.md",
+                "file": "临时/temp.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/保研/数学/离散数学.md",
+                "file": "临时/temp.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/保研/数学/离散数学.md"
+                "file": "临时/temp.md"
               }
             }
           },
@@ -145,12 +145,11 @@
               "state": {}
             }
           }
-        ],
-        "currentTab": 3
+        ]
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 374.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -167,8 +166,26 @@
       "obsidian-advanced-slides:Show Slide Preview": false
     }
   },
-  "active": "3e7c776302497040",
+  "active": "96e173acdf249e6c",
   "lastOpenFiles": [
+    "临时/学术背景与研究动机问卷.md",
+    "临时/temp.md",
+    "临时/temp2.md",
+    "docs/算法/数组与字符串.md",
+    "docs/Blog/P5410 【模板】扩展 KMP_exKMP（Z 函数） - 洛谷 _ 计算机科学教育新生态.md",
+    "docs/Blog",
+    "pdf/金融风险管理/syllabus-2024.3本科-与frm的详细对应关系.pdf",
+    "pdf/金融风险管理/on the rise of fintechs-credit scoring using digital footprints.pdf",
+    "pdf/金融风险管理/basel协议.pdf",
+    "pdf/金融风险管理/12 信用风险价值cvar.pdf",
+    "pdf/金融风险管理/11 信用风险暴露和违约损失率的估计.pdf",
+    "pdf/金融风险管理/10 违约概率的估计.pdf",
+    "pdf/金融风险管理/8 情景分析和压力测试.pdf",
+    "pdf/金融风险管理/7 基于var的组合风险来源分析和风险预算.pdf",
+    "pdf/金融风险管理/6 资产组合的var计算.pdf",
+    "Blog/【操作系统】选择题汇总大全_操作系统选择题 - CSDN 博客.md",
+    "docs/课程/编译原理/笔记/中间代码生成.md",
+    "docs/保研/数学/离散数学.md",
     "docs/保研/面试/英语/【英语】问题准备.md",
     "docs/保研/面试/问题.md",
     "docs/数据库/关系数据库/MySQL.md",
@@ -178,7 +195,6 @@
     "docs/面试(实习)/计算机科学/计算机图形学.md",
     "docs/面试(实习)/计算机科学/并发编程.md",
     "docs/面试(实习)/计算机科学/杂项.md",
-    "docs/保研/数学/离散数学.md",
     "docs/计算机图形学/实验/tinyraytracer.md",
     "docs/计算机图形学/实验/tinyrender.md",
     "docs/归档课程/大数据/期末复习.md",
@@ -188,23 +204,6 @@
     "docs/保研/计算机科学/计算机组成原理.md",
     "docs/课程/操作系统/笔记/虚拟化.md",
     "docs/软件工程/设计模式.md",
-    "docs/保研/面试/南大复试面试题答案汇总.pdf",
-    "docs/课程/操作系统/笔记/持久化.md",
-    "docs/保研/面试/面试.pdf",
-    "docs/保研/面试/simpread-2022 南大 cs 夏令营笔试面试准备.md",
-    "docs/java/工具/jvm.md",
-    "docs/算法/数学.md",
-    "docs/课程/操作系统/笔记/并发.md",
-    "docs/保研/机试/笔记.md",
-    "docs/课程/操作系统/代码/fish/fish.c",
-    "docs/面试(实习)/计算机科学/操作系统.md",
-    "docs/课程/操作系统/代码/os-model/os-model.py",
-    "docs/课程/编译原理/课件/Chapter_4.pdf",
-    "docs/课程/编译原理/课件/Chapter_3.pdf",
-    "docs/课程/编译原理/课件/Chapter_1.pdf",
-    "docs/课程/金融工程学/郑振龙《金融工程》（第5版）笔记和课后习题（含考研真题）详解答案.pdf",
-    "pdf/概率论.pdf",
-    "pdf/线性代数.pdf",
     "docs/保研/笔试/c96536f112a74024be9f595f007a2763.jpg",
     "CsNotes/2021-11-22-22-54-02.png",
     "CsNotes/2021-11-22-22-52-49.png",
