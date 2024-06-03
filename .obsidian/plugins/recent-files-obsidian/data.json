@@ -1,6 +1,22 @@
 {
   "recentFiles": [
     {
+      "basename": "抽象ADT",
+      "path": "docs/软件工程/编程思想与规范/抽象ADT.md"
+    },
+    {
+      "basename": "Collections工具类",
+      "path": "docs/java/java基础/Util/集合/Collections工具类.md"
+    },
+    {
+      "basename": "Math类",
+      "path": "docs/java/java基础/Util/Math类.md"
+    },
+    {
+      "basename": "腾讯天美游戏端开发",
+      "path": "_private_/个人相关/腾讯天美游戏端开发.md"
+    },
+    {
       "basename": "thread-sync",
       "path": "docs/课程/操作系统/代码/thread-lib/thread-sync.h"
     },
@@ -38,15 +54,11 @@
     },
     {
       "basename": "temp",
-      "path": "_temp_/temp.md"
+      "path": "_private_/临时/temp.md"
     },
     {
       "basename": "index",
       "path": "docs/index.md"
-    },
-    {
-      "basename": "腾讯天美游戏端开发",
-      "path": "docs/面试(实习)/_自我介绍_/腾讯天美游戏端开发.md"
     },
     {
       "basename": "SpringMVC",
@@ -187,18 +199,6 @@
     {
       "basename": "面试",
       "path": "docs/保研/面试/面试.pdf"
-    },
-    {
-      "basename": "simpread-2022 南大 cs 夏令营笔试面试准备",
-      "path": "docs/保研/面试/simpread-2022 南大 cs 夏令营笔试面试准备.md"
-    },
-    {
-      "basename": "jvm",
-      "path": "docs/java/工具/jvm.md"
-    },
-    {
-      "basename": "并发",
-      "path": "docs/课程/操作系统/笔记/并发.md"
     }
   ],
   "omittedPaths": [],
