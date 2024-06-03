@@ -4,47 +4,15 @@
     "type": "split",
     "children": [
       {
-        "id": "84dfe16c3b988eb9",
+        "id": "fe6c1f18d960703d",
         "type": "tabs",
         "children": [
           {
-            "id": "40011e6bc41509d4",
+            "id": "a7edc757eb1b3d12",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "docs/课程/编译原理/作业/p13.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          }
-        ]
-      },
-      {
-        "id": "5174b6de9697047b",
-        "type": "tabs",
-        "children": [
-          {
-            "id": "f174bd01ecc23097",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "docs/课程/编译原理/笔记/机器无关优化.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "c0f0251790592585",
-            "type": "leaf",
-            "state": {
-              "type": "pdf",
-              "state": {
-                "file": "docs/课程/编译原理/课件/Chapter_9.pdf"
-              }
+              "type": "empty",
+              "state": {}
             }
           }
         ]
@@ -121,7 +89,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/课程/编译原理/作业/p13.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -138,7 +105,6 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/课程/编译原理/作业/p13.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -160,9 +126,7 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "docs/课程/编译原理/作业/p13.md"
-              }
+              "state": {}
             }
           },
           {
@@ -195,12 +159,12 @@
       "obsidian-advanced-slides:Show Slide Preview": false
     }
   },
-  "active": "40011e6bc41509d4",
+  "active": "a7edc757eb1b3d12",
   "lastOpenFiles": [
-    "docs/课程/编译原理/笔记/机器无关优化.md",
-    "docs/课程/编译原理/作业/答案/dragon-book-exercise-answers-master/ch12/12.3/12.3.md",
     "docs/课程/编译原理/课件/Chapter_9.pdf",
+    "docs/课程/编译原理/笔记/机器无关优化.md",
     "docs/课程/编译原理/作业/p13.md",
+    "docs/课程/编译原理/作业/答案/dragon-book-exercise-answers-master/ch12/12.3/12.3.md",
     "docs/课程/编译原理/作业/答案/dragon-book-exercise-answers-master/ch12/12.7/12.7.md",
     "docs/课程/编译原理/作业/答案/dragon-book-exercise-answers-master/ch08/8.2/8.2.md",
     "docs/课程/编译原理/作业/p12.md",
