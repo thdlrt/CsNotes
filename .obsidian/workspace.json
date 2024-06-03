@@ -4,19 +4,15 @@
     "type": "split",
     "children": [
       {
-        "id": "fe6c1f18d960703d",
+        "id": "66f060f4f163f9ac",
         "type": "tabs",
         "children": [
           {
-            "id": "a7edc757eb1b3d12",
+            "id": "d3d580502754b554",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "docs/index.md",
-                "mode": "source",
-                "source": false
-              }
+              "type": "empty",
+              "state": {}
             }
           }
         ]
@@ -72,8 +68,17 @@
               "type": "recent-files",
               "state": {}
             }
+          },
+          {
+            "id": "1ed5045d58c2a1eb",
+            "type": "leaf",
+            "state": {
+              "type": "file-tree-view",
+              "state": {}
+            }
           }
-        ]
+        ],
+        "currentTab": 4
       }
     ],
     "direction": "horizontal",
@@ -93,7 +98,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/index.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +114,6 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/index.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -132,9 +135,7 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "docs/index.md"
-              }
+              "state": {}
             }
           },
           {
@@ -167,9 +168,19 @@
       "obsidian-advanced-slides:Show Slide Preview": false
     }
   },
-  "active": "a7edc757eb1b3d12",
+  "active": "d3d580502754b554",
   "lastOpenFiles": [
+    "docs/课程/操作系统/代码/thread-lib/thread-sync.h",
+    "docs/课程/操作系统/代码/thread-lib/hello.c",
+    "docs/课程/操作系统/代码/os-model/hello.py",
+    "docs/课程/操作系统/代码/fish/fish.c",
+    "docs/算法/数学.md",
+    "docs/c++/库/线性代数engin.md",
+    "docs/c++/笔记（整理前）/2.md",
+    "Slide/金融大数据p4.md",
+    "Slide/金融大数据p2.md",
     "_temp_/temp.md",
+    "docs/index.md",
     "_temp_",
     "新建文件夹",
     "临时/temp2.md",
@@ -194,17 +205,7 @@
     "pdf/金融风险管理/syllabus-2024.3本科-与frm的详细对应关系.pdf",
     "pdf/金融风险管理/on the rise of fintechs-credit scoring using digital footprints.pdf",
     "pdf/金融风险管理/basel协议.pdf",
-    "pdf/金融风险管理/12 信用风险价值cvar.pdf",
-    "pdf/金融风险管理/11 信用风险暴露和违约损失率的估计.pdf",
-    "pdf/金融风险管理/10 违约概率的估计.pdf",
     "Blog/【操作系统】选择题汇总大全_操作系统选择题 - CSDN 博客.md",
-    "docs/课程/编译原理/笔记/中间代码生成.md",
-    "docs/保研/数学/离散数学.md",
-    "docs/保研/面试/英语/【英语】问题准备.md",
-    "docs/保研/面试/问题.md",
-    "docs/数据库/关系数据库/MySQL.md",
-    "docs/面试(实习)/知识图谱.md",
-    "docs/面试(实习)/计算机科学/计算机网络.md",
     "docs/保研/笔试/c96536f112a74024be9f595f007a2763.jpg",
     "CsNotes/2021-11-22-22-54-02.png",
     "CsNotes/2021-11-22-22-52-49.png",

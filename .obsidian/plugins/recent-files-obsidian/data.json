@@ -1,6 +1,46 @@
 {
   "recentFiles": [
     {
+      "basename": "thread-sync",
+      "path": "docs/课程/操作系统/代码/thread-lib/thread-sync.h"
+    },
+    {
+      "basename": "hello",
+      "path": "docs/课程/操作系统/代码/thread-lib/hello.c"
+    },
+    {
+      "basename": "hello",
+      "path": "docs/课程/操作系统/代码/os-model/hello.py"
+    },
+    {
+      "basename": "fish",
+      "path": "docs/课程/操作系统/代码/fish/fish.c"
+    },
+    {
+      "basename": "数学",
+      "path": "docs/算法/数学.md"
+    },
+    {
+      "basename": "线性代数engin",
+      "path": "docs/c++/库/线性代数engin.md"
+    },
+    {
+      "basename": "2",
+      "path": "docs/c++/笔记（整理前）/2.md"
+    },
+    {
+      "basename": "金融大数据p4",
+      "path": "Slide/金融大数据p4.md"
+    },
+    {
+      "basename": "金融大数据p2",
+      "path": "Slide/金融大数据p2.md"
+    },
+    {
+      "basename": "temp",
+      "path": "_temp_/temp.md"
+    },
+    {
       "basename": "index",
       "path": "docs/index.md"
     },
@@ -157,44 +197,8 @@
       "path": "docs/java/工具/jvm.md"
     },
     {
-      "basename": "数学",
-      "path": "docs/算法/数学.md"
-    },
-    {
       "basename": "并发",
       "path": "docs/课程/操作系统/笔记/并发.md"
-    },
-    {
-      "basename": "fish",
-      "path": "docs/课程/操作系统/代码/fish/fish.c"
-    },
-    {
-      "basename": "os-model",
-      "path": "docs/课程/操作系统/代码/os-model/os-model.py"
-    },
-    {
-      "basename": "绪论",
-      "path": "docs/课程/操作系统/笔记/绪论.md"
-    },
-    {
-      "basename": "操作系统",
-      "path": "docs/保研/计算机科学/操作系统.md"
-    },
-    {
-      "basename": "内核",
-      "path": "docs/课程/操作系统/笔记/内核.md"
-    },
-    {
-      "basename": "Chapter_4",
-      "path": "docs/课程/编译原理/课件/Chapter_4.pdf"
-    },
-    {
-      "basename": "Chapter_3",
-      "path": "docs/课程/编译原理/课件/Chapter_3.pdf"
-    },
-    {
-      "basename": "Chapter_1",
-      "path": "docs/课程/编译原理/课件/Chapter_1.pdf"
     }
   ],
   "omittedPaths": [],
