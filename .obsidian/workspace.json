@@ -1,46 +1,18 @@
 {
   "main": {
-    "id": "3bf91ed0d25eca77",
+    "id": "51ddab8483f58ddb",
     "type": "split",
     "children": [
       {
-        "id": "953e547ff0a1e734",
+        "id": "dc5b74c6e0b22b95",
         "type": "tabs",
         "children": [
           {
-            "id": "4f777c83ca304f50",
+            "id": "4d63d934cd415116",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "docs/保研/面试/英语/【英语】问题准备.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "0549d50748133440",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "docs/保研/面试/问题.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "bfb8004304f57530",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "docs/保研/计算机科学/数据结构与算法.md",
-                "mode": "source",
-                "source": false
-              }
+              "type": "empty",
+              "state": {}
             }
           }
         ]
@@ -49,15 +21,23 @@
     "direction": "vertical"
   },
   "left": {
-    "id": "ddc18e91108c4f9f",
+    "id": "cc854cdda9fd007b",
     "type": "split",
     "children": [
       {
-        "id": "f228e3e380c645f9",
+        "id": "7def979f5b3c1e7f",
         "type": "tabs",
         "children": [
           {
-            "id": "96e173acdf249e6c",
+            "id": "a4cd1651f8ae0b33",
+            "type": "leaf",
+            "state": {
+              "type": "recent-files",
+              "state": {}
+            }
+          },
+          {
+            "id": "8d0d2ae406ec3076",
             "type": "leaf",
             "state": {
               "type": "file-explorer",
@@ -67,12 +47,12 @@
             }
           },
           {
-            "id": "24063adb5be26e38",
+            "id": "414a7625d457a386",
             "type": "leaf",
             "state": {
               "type": "search",
               "state": {
-                "query": "tag:#TODO冯诺依曼架构",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -82,7 +62,7 @@
             }
           },
           {
-            "id": "7cb1e0bd8fbfc91f",
+            "id": "0e41e78d55325832",
             "type": "leaf",
             "state": {
               "type": "bookmarks",
@@ -90,59 +70,57 @@
             }
           },
           {
-            "id": "0a9cd0319ddd3dbc",
+            "id": "036eb9da7be0c7ec",
             "type": "leaf",
             "state": {
-              "type": "recent-files",
+              "type": "file-tree-view",
               "state": {}
             }
           }
-        ]
+        ],
+        "currentTab": 4
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 300
   },
   "right": {
-    "id": "d615b65a4ccf8a6a",
+    "id": "f89dd6c65324a7ad",
     "type": "split",
     "children": [
       {
-        "id": "cd2e3e794c190243",
+        "id": "ebc23d27abc4387d",
         "type": "tabs",
         "children": [
           {
-            "id": "2208db6412c2caff",
+            "id": "10da24c239d0f441",
             "type": "leaf",
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/保研/面试/英语/【英语】问题准备.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
                 "showSearch": false,
                 "searchQuery": "",
                 "backlinkCollapsed": false,
-                "unlinkedCollapsed": false
+                "unlinkedCollapsed": true
               }
             }
           },
           {
-            "id": "4aa9436462af2a50",
+            "id": "06381169ae5b8ecc",
             "type": "leaf",
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/保研/面试/英语/【英语】问题准备.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
             }
           },
           {
-            "id": "d9423a8b603d19bf",
+            "id": "ad5e9b35a47ddce7",
             "type": "leaf",
             "state": {
               "type": "tag",
@@ -153,93 +131,39 @@
             }
           },
           {
-            "id": "6c7418c521ab7a68",
+            "id": "2a5976d4fa005d7c",
             "type": "leaf",
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/保研/面试/英语/【英语】问题准备.md"
+                "file": "conflict-files-obsidian-git.md"
               }
             }
-          },
-          {
-            "id": "541551cc93ddceea",
-            "type": "leaf",
-            "state": {
-              "type": "calendar",
-              "state": {}
-            }
           }
-        ],
-        "currentTab": 3
+        ]
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 300,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
+      "obsidian-excalidraw-plugin:新建绘图文件": false,
+      "vscode-editor:新建代码文件": false,
+      "omnisearch:Omnisearch": false,
+      "obsidian-advanced-slides:Show Slide Preview": false,
       "switcher:打开快速切换": false,
       "graph:查看关系图谱": false,
       "canvas:新建白板": false,
       "templates:插入模板": false,
       "command-palette:打开命令面板": false,
-      "workspaces:管理工作区布局": false,
       "audio-recorder:开始/结束录音": false,
-      "obsidian-excalidraw-plugin:新建绘图文件": false,
-      "omnisearch:Omnisearch": false,
-      "vscode-editor:新建代码文件": false,
-      "obsidian-advanced-slides:Show Slide Preview": false
+      "workspaces:管理工作区布局": false
     }
   },
-  "active": "96e173acdf249e6c",
+  "active": "036eb9da7be0c7ec",
   "lastOpenFiles": [
-    "conflict-files-obsidian-git.md",
-    "docs/保研/面试/英语/【英语】问题准备.md",
-    "docs/课程/编译原理/作业/p13.md",
-    "docs/Blog/P5410 【模板】扩展 KMP_exKMP（Z 函数） - 洛谷 _ 计算机科学教育新生态.md",
-    "docs/Blog",
-    "docs/保研/面试/问题.md",
-    "docs/保研/计算机科学/数据结构与算法.md",
-    "docs/保研/计算机科学/计算机网络.md",
-    "docs/保研/计算机科学/计算机组成原理.md",
-    "docs/面试(实习)/计算机科学/计算机网络.md",
-    "docs/课程/操作系统/笔记/虚拟化.md",
-    "docs/保研/数学/线性代数.md",
-    "docs/软件工程/设计模式.md",
-    "docs/面试(实习)/计算机科学/并发编程.md",
-    "docs/保研/面试/南大复试面试题答案汇总.pdf",
-    "docs/课程/操作系统/笔记/持久化.md",
-    "docs/保研/面试/面试.pdf",
-    "docs/保研/面试/simpread-2022 南大 cs 夏令营笔试面试准备.md",
-    "docs/java/工具/jvm.md",
-    "docs/算法/数学.md",
-    "docs/课程/操作系统/笔记/并发.md",
-    "docs/保研/机试/笔记.md",
-    "docs/课程/操作系统/代码/fish/fish.c",
-    "docs/面试(实习)/计算机科学/操作系统.md",
-    "docs/课程/操作系统/代码/os-model/os-model.py",
-    "docs/课程/操作系统/笔记/绪论.md",
-    "docs/保研/计算机科学/操作系统.md",
-    "docs/保研/机试/使用 VSCode 编写 C++ 单文件程序 (Windows 系统)_md · main · 田 昊东 _ NJUCS-BAOYAN · GitLab.md",
-    "docs/课程/操作系统/笔记/内核.md",
-    "docs/课程/编译原理/课件/Chapter_4.pdf",
-    "docs/课程/编译原理/课件/Chapter_3.pdf",
-    "docs/课程/编译原理/课件/Chapter_1.pdf",
-    "docs/算法/动态规划.md",
-    "docs/面试(实习)/自我介绍/腾讯天美游戏端开发.md",
-    "docs/课程/金融工程学/郑振龙《金融工程》（第5版）笔记和课后习题（含考研真题）详解答案.pdf",
-    "pdf/概率论.pdf",
-    "docs/保研/笔试/c96536f112a74024be9f595f007a2763.jpg",
-    "CsNotes/2021-11-22-22-54-02.png",
-    "CsNotes/2021-11-22-22-52-49.png",
-    "CsNotes/2021-11-22-22-49-26.png",
-    "未命名.canvas",
-    "Pasted image 20231227111944.png",
-    "export/金融大数据p4/plugin/chalkboard/img/whiteboard.png",
-    "export/金融大数据p4/plugin/chalkboard/img/sponge.png",
-    "export/金融大数据p4/plugin/chalkboard/img/chalk-yellow.png",
-    "export/金融大数据p4/plugin/chalkboard/img/chalk-white.png",
-    "export/金融大数据p4/plugin/chalkboard/img/chalk-red.png"
+    "conflict-files-obsidian-git.md"
   ]
 }

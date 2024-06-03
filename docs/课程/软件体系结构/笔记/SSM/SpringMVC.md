@@ -14,7 +14,7 @@
 - Fat Clients
 	- 应用系统是在 Client 端运行的
 	- Client 知道 Sever 上的数据组织方式，调用 API 从服务器获取部分信息
-	- 用户端程序设计有较大灵活性
+	- 用户端程序设计有较大灵活性 ^jr9qnu
 	- ![image.png|500](https://thdlrt.oss-cn-beijing.aliyuncs.com/20240401141022.png)
 	- 相对**较难管理**，因为业务逻辑在终端运行，所以如果需要修改业务逻辑就需要**修改每一个客户端的程序**
 - Fat Severs（现在使用更为广泛）

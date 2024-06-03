@@ -3,7 +3,6 @@
   "obsidian-excalidraw-plugin",
   "obsidian-pandoc",
   "media-extended",
-  "mx-bili-plugin",
   "recent-files-obsidian",
   "obsidian-image-auto-upload-plugin",
   "obsidian-local-rest-api",
@@ -15,5 +14,9 @@
   "omnisearch",
   "text-extractor",
   "vscode-editor",
-  "obsidian-advanced-slides"
+  "obsidian-advanced-slides",
+  "obsidian-copy-block-link",
+  "obsidian-icon-folder",
+  "editing-toolbar",
+  "file-tree-alternative"
 ]
