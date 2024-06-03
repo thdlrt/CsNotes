@@ -13,9 +13,37 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/课程/编译原理/作业/p12.md",
+                "file": "docs/课程/编译原理/作业/p13.md",
                 "mode": "source",
                 "source": false
+              }
+            }
+          }
+        ]
+      },
+      {
+        "id": "5174b6de9697047b",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "f174bd01ecc23097",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "docs/课程/编译原理/笔记/机器无关优化.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "c0f0251790592585",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "docs/课程/编译原理/课件/Chapter_9.pdf"
               }
             }
           }
@@ -93,7 +121,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/课程/编译原理/作业/p12.md",
+                "file": "docs/课程/编译原理/作业/p13.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +138,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/课程/编译原理/作业/p12.md",
+                "file": "docs/课程/编译原理/作业/p13.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +161,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/课程/编译原理/作业/p12.md"
+                "file": "docs/课程/编译原理/作业/p13.md"
               }
             }
           },
@@ -149,7 +177,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 374.5
+    "width": 374.5,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -168,7 +197,12 @@
   },
   "active": "40011e6bc41509d4",
   "lastOpenFiles": [
+    "docs/课程/编译原理/笔记/机器无关优化.md",
+    "docs/课程/编译原理/作业/答案/dragon-book-exercise-answers-master/ch12/12.3/12.3.md",
+    "docs/课程/编译原理/课件/Chapter_9.pdf",
     "docs/课程/编译原理/作业/p13.md",
+    "docs/课程/编译原理/作业/答案/dragon-book-exercise-answers-master/ch12/12.7/12.7.md",
+    "docs/课程/编译原理/作业/答案/dragon-book-exercise-answers-master/ch08/8.2/8.2.md",
     "docs/课程/编译原理/作业/p12.md",
     "docs/保研/机试/笔记.md",
     "docs/保研/机试/使用 VSCode 编写 C++ 单文件程序 (Windows 系统)_md · main · 田 昊东 _ NJUCS-BAOYAN · GitLab.md",
@@ -186,7 +220,6 @@
     "pdf/金融风险管理/10 违约概率的估计.pdf",
     "pdf/金融风险管理/8 情景分析和压力测试.pdf",
     "pdf/金融风险管理/7 基于var的组合风险来源分析和风险预算.pdf",
-    "pdf/金融风险管理/6 资产组合的var计算.pdf",
     "Blog/【操作系统】选择题汇总大全_操作系统选择题 - CSDN 博客.md",
     "docs/课程/编译原理/笔记/中间代码生成.md",
     "docs/保研/数学/离散数学.md",
@@ -199,11 +232,6 @@
     "docs/面试(实习)/计算机科学/计算机图形学.md",
     "docs/面试(实习)/计算机科学/并发编程.md",
     "docs/面试(实习)/计算机科学/杂项.md",
-    "docs/计算机图形学/实验/tinyraytracer.md",
-    "docs/计算机图形学/实验/tinyrender.md",
-    "docs/归档课程/大数据/期末复习.md",
-    "docs/保研/数学/线性代数.md",
-    "docs/保研/计算机科学/数据结构与算法.md",
     "docs/保研/笔试/c96536f112a74024be9f595f007a2763.jpg",
     "CsNotes/2021-11-22-22-54-02.png",
     "CsNotes/2021-11-22-22-52-49.png",
