@@ -26,22 +26,12 @@
         "type": "tabs",
         "children": [
           {
-            "id": "f208345d4017f2ba",
+            "id": "b4508d63780d3ae8",
             "type": "leaf",
             "state": {
               "type": "pdf",
               "state": {
                 "file": "docs/课程/金融工程学/郑振龙《金融工程》（第5版）笔记和课后习题（含考研真题）详解答案.pdf"
-              }
-            }
-          },
-          {
-            "id": "e966c63835283106",
-            "type": "leaf",
-            "state": {
-              "type": "pdf",
-              "state": {
-                "file": "pdf/金融工程/金融工程导学课程.pdf"
               }
             }
           },
@@ -52,6 +42,36 @@
               "type": "pdf",
               "state": {
                 "file": "pdf/金融工程/金融工程课件（1）.pdf"
+              }
+            }
+          },
+          {
+            "id": "07f6026a35290b9a",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "pdf/金融工程/金融工程课件（2）.pdf"
+              }
+            }
+          },
+          {
+            "id": "00736cc6bbf4ce23",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "pdf/金融工程/金融工程课件（4）.pdf"
+              }
+            }
+          },
+          {
+            "id": "e72e84b064350341",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "pdf/金融工程/金融工程课件（3）.pdf"
               }
             }
           }
@@ -215,11 +235,14 @@
   },
   "active": "d3d580502754b554",
   "lastOpenFiles": [
-    "conflict-files-obsidian-git.md",
-    "docs/课程/金融工程学/笔记.md",
-    "pdf/金融工程/金融工程导学课程.pdf",
-    "docs/课程/金融工程学/郑振龙《金融工程》（第5版）笔记和课后习题（含考研真题）详解答案.pdf",
     "pdf/金融工程/金融工程课件（1）.pdf",
+    "docs/课程/金融工程学/郑振龙《金融工程》（第5版）笔记和课后习题（含考研真题）详解答案.pdf",
+    "docs/课程/金融工程学/笔记.md",
+    "pdf/金融工程/金融工程课件（2）.pdf",
+    "pdf/金融工程/金融工程课件（4）.pdf",
+    "pdf/金融工程/金融工程课件（3）.pdf",
+    "pdf/金融工程/金融工程导学课程.pdf",
+    "conflict-files-obsidian-git.md",
     "docs/pc日常/数据备份/数据迁移更换硬盘.md",
     "docs/pc日常/数据备份/数据备份.md",
     "docs/课程/编译原理/作业/答案/dragon-book-exercise-answers-master/ch02/2.3/2.3.md",
@@ -230,9 +253,6 @@
     "pdf/金融工程/金融工程课件（10）.pdf",
     "pdf/金融工程/金融工程课件（16）.pdf",
     "pdf/金融工程/金融工程课件（11）.pdf",
-    "pdf/金融工程/金融工程课件（14）.pdf",
-    "pdf/金融工程/金融工程课件（12）.pdf",
-    "pdf/金融工程/金融工程课件（13）.pdf",
     "_private_/个人相关/腾讯天美游戏端开发.md",
     "_private_/临时/temp.md",
     "docs/软件工程/编程思想与规范/抽象ADT.md",

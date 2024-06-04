@@ -5,16 +5,28 @@
       "path": "docs/课程/金融工程学/笔记.md"
     },
     {
-      "basename": "金融工程导学课程",
-      "path": "pdf/金融工程/金融工程导学课程.pdf"
+      "basename": "金融工程课件（1）",
+      "path": "pdf/金融工程/金融工程课件（1）.pdf"
     },
     {
       "basename": "郑振龙《金融工程》（第5版）笔记和课后习题（含考研真题）详解答案",
       "path": "docs/课程/金融工程学/郑振龙《金融工程》（第5版）笔记和课后习题（含考研真题）详解答案.pdf"
     },
     {
-      "basename": "金融工程课件（1）",
-      "path": "pdf/金融工程/金融工程课件（1）.pdf"
+      "basename": "金融工程课件（2）",
+      "path": "pdf/金融工程/金融工程课件（2）.pdf"
+    },
+    {
+      "basename": "金融工程课件（4）",
+      "path": "pdf/金融工程/金融工程课件（4）.pdf"
+    },
+    {
+      "basename": "金融工程课件（3）",
+      "path": "pdf/金融工程/金融工程课件（3）.pdf"
+    },
+    {
+      "basename": "金融工程导学课程",
+      "path": "pdf/金融工程/金融工程导学课程.pdf"
     },
     {
       "basename": "数据迁移更换硬盘",
@@ -187,14 +199,6 @@
     {
       "basename": "并发编程",
       "path": "docs/面试(实习)/计算机科学/并发编程.md"
-    },
-    {
-      "basename": "杂项",
-      "path": "docs/面试(实习)/计算机科学/杂项.md"
-    },
-    {
-      "basename": "tinyraytracer",
-      "path": "docs/计算机图形学/实验/tinyraytracer.md"
     }
   ],
   "omittedPaths": [],
