@@ -1,6 +1,14 @@
 {
   "recentFiles": [
     {
+      "basename": "p13",
+      "path": "docs/课程/编译原理/作业/p13.md"
+    },
+    {
+      "basename": "机器无关优化",
+      "path": "docs/课程/编译原理/笔记/机器无关优化.md"
+    },
+    {
       "basename": "金融工程课件（1）",
       "path": "pdf/金融工程/金融工程课件（1）.pdf"
     },
@@ -127,14 +135,6 @@
     {
       "basename": "Chapter_9",
       "path": "docs/课程/编译原理/课件/Chapter_9.pdf"
-    },
-    {
-      "basename": "机器无关优化",
-      "path": "docs/课程/编译原理/笔记/机器无关优化.md"
-    },
-    {
-      "basename": "p13",
-      "path": "docs/课程/编译原理/作业/p13.md"
     },
     {
       "basename": "12.3",
