@@ -1,6 +1,50 @@
 {
   "recentFiles": [
     {
+      "basename": "笔记",
+      "path": "docs/课程/金融工程学/笔记.md"
+    },
+    {
+      "basename": "金融工程导学课程",
+      "path": "pdf/金融工程/金融工程导学课程.pdf"
+    },
+    {
+      "basename": "郑振龙《金融工程》（第5版）笔记和课后习题（含考研真题）详解答案",
+      "path": "docs/课程/金融工程学/郑振龙《金融工程》（第5版）笔记和课后习题（含考研真题）详解答案.pdf"
+    },
+    {
+      "basename": "金融工程课件（1）",
+      "path": "pdf/金融工程/金融工程课件（1）.pdf"
+    },
+    {
+      "basename": "数据迁移更换硬盘",
+      "path": "docs/pc日常/数据备份/数据迁移更换硬盘.md"
+    },
+    {
+      "basename": "数据备份",
+      "path": "docs/pc日常/数据备份/数据备份.md"
+    },
+    {
+      "basename": "2.3",
+      "path": "docs/课程/编译原理/作业/答案/dragon-book-exercise-answers-master/ch02/2.3/2.3.md"
+    },
+    {
+      "basename": "2.4",
+      "path": "docs/课程/编译原理/作业/答案/dragon-book-exercise-answers-master/ch02/2.4/2.4.md"
+    },
+    {
+      "basename": "编译原理",
+      "path": "docs/课程/编译原理/编译原理.md"
+    },
+    {
+      "basename": "2.2.3-4",
+      "path": "docs/课程/编译原理/作业/答案/dragon-book-exercise-answers-master/ch02/2.2/assets/2.2.3-4.png"
+    },
+    {
+      "basename": "hello",
+      "path": "docs/课程/操作系统/代码/os-model/hello.py"
+    },
+    {
       "basename": "腾讯天美游戏端开发",
       "path": "_private_/个人相关/腾讯天美游戏端开发.md"
     },
@@ -27,10 +71,6 @@
     {
       "basename": "hello",
       "path": "docs/课程/操作系统/代码/thread-lib/hello.c"
-    },
-    {
-      "basename": "hello",
-      "path": "docs/课程/操作系统/代码/os-model/hello.py"
     },
     {
       "basename": "fish",
@@ -155,50 +195,6 @@
     {
       "basename": "tinyraytracer",
       "path": "docs/计算机图形学/实验/tinyraytracer.md"
-    },
-    {
-      "basename": "tinyrender",
-      "path": "docs/计算机图形学/实验/tinyrender.md"
-    },
-    {
-      "basename": "期末复习",
-      "path": "docs/归档课程/大数据/期末复习.md"
-    },
-    {
-      "basename": "线性代数",
-      "path": "docs/保研/数学/线性代数.md"
-    },
-    {
-      "basename": "数据结构与算法",
-      "path": "docs/保研/计算机科学/数据结构与算法.md"
-    },
-    {
-      "basename": "计算机网络",
-      "path": "docs/保研/计算机科学/计算机网络.md"
-    },
-    {
-      "basename": "计算机组成原理",
-      "path": "docs/保研/计算机科学/计算机组成原理.md"
-    },
-    {
-      "basename": "虚拟化",
-      "path": "docs/课程/操作系统/笔记/虚拟化.md"
-    },
-    {
-      "basename": "设计模式",
-      "path": "docs/软件工程/设计模式.md"
-    },
-    {
-      "basename": "南大复试面试题答案汇总",
-      "path": "docs/保研/面试/南大复试面试题答案汇总.pdf"
-    },
-    {
-      "basename": "持久化",
-      "path": "docs/课程/操作系统/笔记/持久化.md"
-    },
-    {
-      "basename": "面试",
-      "path": "docs/保研/面试/面试.pdf"
     }
   ],
   "omittedPaths": [],
