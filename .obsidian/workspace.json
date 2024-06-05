@@ -40,22 +40,22 @@
             }
           },
           {
-            "id": "76bf26d199ad6dd9",
-            "type": "leaf",
-            "state": {
-              "type": "pdf",
-              "state": {
-                "file": "pdf/金融工程/金融工程课件（1）.pdf"
-              }
-            }
-          },
-          {
             "id": "07f6026a35290b9a",
             "type": "leaf",
             "state": {
               "type": "pdf",
               "state": {
                 "file": "pdf/金融工程/金融工程课件（2）.pdf"
+              }
+            }
+          },
+          {
+            "id": "e72e84b064350341",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "pdf/金融工程/金融工程课件（3）.pdf"
               }
             }
           },
@@ -70,12 +70,12 @@
             }
           },
           {
-            "id": "e72e84b064350341",
+            "id": "a6e32cab08978263",
             "type": "leaf",
             "state": {
               "type": "pdf",
               "state": {
-                "file": "pdf/金融工程/金融工程课件（3）.pdf"
+                "file": "pdf/金融工程/金融工程课件（5）.pdf"
               }
             }
           }
@@ -239,12 +239,14 @@
   },
   "active": "47bf08bf3b61479e",
   "lastOpenFiles": [
-    "pdf/金融工程/金融工程课件（1）.pdf",
-    "docs/课程/金融工程学/作业.md",
-    "docs/课程/金融工程学/笔记.md",
     "pdf/金融工程/金融工程课件（2）.pdf",
     "pdf/金融工程/金融工程课件（3）.pdf",
+    "pdf/金融工程/金融工程课件（5）.pdf",
+    "docs/课程/金融工程学/笔记.md",
+    "pdf/金融工程/金融工程课件（6）.pdf",
     "pdf/金融工程/金融工程课件（4）.pdf",
+    "docs/课程/金融工程学/作业.md",
+    "pdf/金融工程/金融工程课件（1）.pdf",
     "docs/课程/金融工程学/郑振龙《金融工程》（第5版）笔记和课后习题（含考研真题）详解答案.pdf",
     "pdf/金融工程/金融工程导学课程.pdf",
     "docs/课程/软件体系结构/笔记/可扩展.md",
@@ -261,8 +263,6 @@
     "docs/课程/编译原理/作业/答案/dragon-book-exercise-answers-master/ch02/2.2/assets/2.2.3-4.png",
     "docs/课程/操作系统/代码/os-model/hello.py",
     "pdf/金融工程/金融工程课件（10）.pdf",
-    "pdf/金融工程/金融工程课件（16）.pdf",
-    "pdf/金融工程/金融工程课件（11）.pdf",
     "_private_/个人相关/腾讯天美游戏端开发.md",
     "_private_/临时/temp.md",
     "docs/软件工程/编程思想与规范/抽象ADT.md",

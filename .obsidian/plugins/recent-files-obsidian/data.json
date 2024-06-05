@@ -5,14 +5,6 @@
       "path": "docs/课程/金融工程学/笔记.md"
     },
     {
-      "basename": "金融工程课件（1）",
-      "path": "pdf/金融工程/金融工程课件（1）.pdf"
-    },
-    {
-      "basename": "作业",
-      "path": "docs/课程/金融工程学/作业.md"
-    },
-    {
       "basename": "金融工程课件（2）",
       "path": "pdf/金融工程/金融工程课件（2）.pdf"
     },
@@ -21,8 +13,24 @@
       "path": "pdf/金融工程/金融工程课件（3）.pdf"
     },
     {
+      "basename": "金融工程课件（5）",
+      "path": "pdf/金融工程/金融工程课件（5）.pdf"
+    },
+    {
+      "basename": "金融工程课件（6）",
+      "path": "pdf/金融工程/金融工程课件（6）.pdf"
+    },
+    {
       "basename": "金融工程课件（4）",
       "path": "pdf/金融工程/金融工程课件（4）.pdf"
+    },
+    {
+      "basename": "作业",
+      "path": "docs/课程/金融工程学/作业.md"
+    },
+    {
+      "basename": "金融工程课件（1）",
+      "path": "pdf/金融工程/金融工程课件（1）.pdf"
     },
     {
       "basename": "郑振龙《金融工程》（第5版）笔记和课后习题（含考研真题）详解答案",
@@ -191,14 +199,6 @@
     {
       "basename": "MySQL",
       "path": "docs/数据库/关系数据库/MySQL.md"
-    },
-    {
-      "basename": "知识图谱",
-      "path": "docs/面试(实习)/知识图谱.md"
-    },
-    {
-      "basename": "计算机网络",
-      "path": "docs/面试(实习)/计算机科学/计算机网络.md"
     }
   ],
   "omittedPaths": [],
