@@ -1,6 +1,10 @@
 {
   "recentFiles": [
     {
+      "basename": "可扩展",
+      "path": "docs/课程/软件体系结构/笔记/可扩展.md"
+    },
+    {
       "basename": "SpringMVC",
       "path": "docs/课程/软件体系结构/笔记/SSM/SpringMVC.md"
     },
@@ -195,10 +199,6 @@
     {
       "basename": "计算机网络",
       "path": "docs/面试(实习)/计算机科学/计算机网络.md"
-    },
-    {
-      "basename": "计算机图形学",
-      "path": "docs/面试(实习)/计算机科学/计算机图形学.md"
     }
   ],
   "omittedPaths": [],
