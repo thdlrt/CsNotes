@@ -1,6 +1,10 @@
 {
   "recentFiles": [
     {
+      "basename": "SpringMVC",
+      "path": "docs/课程/软件体系结构/笔记/SSM/SpringMVC.md"
+    },
+    {
       "basename": "p13",
       "path": "docs/课程/编译原理/作业/p13.md"
     },
@@ -11,10 +15,6 @@
     {
       "basename": "金融工程课件（1）",
       "path": "pdf/金融工程/金融工程课件（1）.pdf"
-    },
-    {
-      "basename": "SpringMVC",
-      "path": "docs/课程/软件体系结构/笔记/SSM/SpringMVC.md"
     },
     {
       "basename": "SpringBoot",
