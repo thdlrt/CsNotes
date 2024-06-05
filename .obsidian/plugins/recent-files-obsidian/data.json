@@ -1,6 +1,18 @@
 {
   "recentFiles": [
     {
+      "basename": "笔记",
+      "path": "docs/课程/金融工程学/笔记.md"
+    },
+    {
+      "basename": "金融工程课件（1）",
+      "path": "pdf/金融工程/金融工程课件（1）.pdf"
+    },
+    {
+      "basename": "金融工程导学课程",
+      "path": "pdf/金融工程/金融工程导学课程.pdf"
+    },
+    {
       "basename": "郑振龙《金融工程》（第5版）笔记和课后习题（含考研真题）详解答案",
       "path": "docs/课程/金融工程学/郑振龙《金融工程》（第5版）笔记和课后习题（含考研真题）详解答案.pdf"
     },
@@ -21,16 +33,8 @@
       "path": "docs/课程/编译原理/笔记/机器无关优化.md"
     },
     {
-      "basename": "金融工程课件（1）",
-      "path": "pdf/金融工程/金融工程课件（1）.pdf"
-    },
-    {
       "basename": "SpringBoot",
       "path": "docs/课程/软件体系结构/笔记/SpringBoot.md"
-    },
-    {
-      "basename": "笔记",
-      "path": "docs/课程/金融工程学/笔记.md"
     },
     {
       "basename": "金融工程课件（2）",
@@ -43,10 +47,6 @@
     {
       "basename": "金融工程课件（3）",
       "path": "pdf/金融工程/金融工程课件（3）.pdf"
-    },
-    {
-      "basename": "金融工程导学课程",
-      "path": "pdf/金融工程/金融工程导学课程.pdf"
     },
     {
       "basename": "数据迁移更换硬盘",

@@ -4,6 +4,24 @@
     "type": "split",
     "children": [
       {
+        "id": "f30e43f10979cf74",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "47bf08bf3b61479e",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "docs/课程/金融工程学/笔记.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          }
+        ]
+      },
+      {
         "id": "7f0f6dd73141788d",
         "type": "tabs",
         "children": [
@@ -14,6 +32,16 @@
               "type": "pdf",
               "state": {
                 "file": "docs/课程/金融工程学/郑振龙《金融工程》（第5版）笔记和课后习题（含考研真题）详解答案.pdf"
+              }
+            }
+          },
+          {
+            "id": "0bd91ee6e68b2d05",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "pdf/金融工程/金融工程课件（1）.pdf"
               }
             }
           },
@@ -47,7 +75,8 @@
               }
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -110,7 +139,7 @@
             }
           }
         ],
-        "currentTab": 4
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
@@ -130,7 +159,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/课程/金融工程学/郑振龙《金融工程》（第5版）笔记和课后习题（含考研真题）详解答案.pdf",
+                "file": "docs/课程/金融工程学/笔记.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -147,7 +176,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/课程/金融工程学/郑振龙《金融工程》（第5版）笔记和课后习题（含考研真题）详解答案.pdf",
+                "file": "docs/课程/金融工程学/笔记.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -170,7 +199,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/课程/金融工程学/郑振龙《金融工程》（第5版）笔记和课后习题（含考研真题）详解答案.pdf"
+                "file": "docs/课程/金融工程学/笔记.md"
               }
             }
           },
@@ -204,20 +233,20 @@
       "obsidian-advanced-slides:Show Slide Preview": false
     }
   },
-  "active": "b4508d63780d3ae8",
+  "active": "47bf08bf3b61479e",
   "lastOpenFiles": [
+    "pdf/金融工程/金融工程课件（1）.pdf",
+    "pdf/金融工程/金融工程导学课程.pdf",
+    "docs/课程/金融工程学/郑振龙《金融工程》（第5版）笔记和课后习题（含考研真题）详解答案.pdf",
     "docs/课程/软件体系结构/笔记/可扩展.md",
     "docs/课程/软件体系结构/笔记/SSM/SpringMVC.md",
     "docs/课程/编译原理/作业/p13.md",
     "docs/课程/编译原理/笔记/机器无关优化.md",
-    "pdf/金融工程/金融工程课件（1）.pdf",
     "docs/课程/软件体系结构/笔记/SpringBoot.md",
     "docs/课程/金融工程学/笔记.md",
-    "docs/课程/金融工程学/郑振龙《金融工程》（第5版）笔记和课后习题（含考研真题）详解答案.pdf",
     "pdf/金融工程/金融工程课件（2）.pdf",
     "pdf/金融工程/金融工程课件（4）.pdf",
     "pdf/金融工程/金融工程课件（3）.pdf",
-    "pdf/金融工程/金融工程导学课程.pdf",
     "conflict-files-obsidian-git.md",
     "docs/pc日常/数据备份/数据迁移更换硬盘.md",
     "docs/pc日常/数据备份/数据备份.md",
@@ -242,7 +271,6 @@
     "Slide/金融大数据p2.md",
     "docs/index.md",
     "临时/temp2.md",
-    "临时/temp.md",
     "docs/保研/笔试/c96536f112a74024be9f595f007a2763.jpg",
     "CsNotes/2021-11-22-22-54-02.png",
     "CsNotes/2021-11-22-22-52-49.png",
