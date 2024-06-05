@@ -1,16 +1,28 @@
 {
   "recentFiles": [
     {
-      "basename": "作业",
-      "path": "docs/课程/金融工程学/作业.md"
-    },
-    {
       "basename": "金融工程课件（1）",
       "path": "pdf/金融工程/金融工程课件（1）.pdf"
     },
     {
+      "basename": "金融工程课件（2）",
+      "path": "pdf/金融工程/金融工程课件（2）.pdf"
+    },
+    {
+      "basename": "金融工程课件（3）",
+      "path": "pdf/金融工程/金融工程课件（3）.pdf"
+    },
+    {
+      "basename": "金融工程课件（4）",
+      "path": "pdf/金融工程/金融工程课件（4）.pdf"
+    },
+    {
       "basename": "笔记",
       "path": "docs/课程/金融工程学/笔记.md"
+    },
+    {
+      "basename": "作业",
+      "path": "docs/课程/金融工程学/作业.md"
     },
     {
       "basename": "郑振龙《金融工程》（第5版）笔记和课后习题（含考研真题）详解答案",
@@ -39,18 +51,6 @@
     {
       "basename": "SpringBoot",
       "path": "docs/课程/软件体系结构/笔记/SpringBoot.md"
-    },
-    {
-      "basename": "金融工程课件（2）",
-      "path": "pdf/金融工程/金融工程课件（2）.pdf"
-    },
-    {
-      "basename": "金融工程课件（4）",
-      "path": "pdf/金融工程/金融工程课件（4）.pdf"
-    },
-    {
-      "basename": "金融工程课件（3）",
-      "path": "pdf/金融工程/金融工程课件（3）.pdf"
     },
     {
       "basename": "数据迁移更换硬盘",

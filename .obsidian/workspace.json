@@ -6,6 +6,7 @@
       {
         "id": "f30e43f10979cf74",
         "type": "tabs",
+        "dimension": 50,
         "children": [
           {
             "id": "47bf08bf3b61479e",
@@ -24,6 +25,7 @@
       {
         "id": "7f0f6dd73141788d",
         "type": "tabs",
+        "dimension": 50,
         "children": [
           {
             "id": "3e83a0aacfa9d305",
@@ -77,7 +79,8 @@
               }
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -160,7 +163,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/课程/金融工程学/作业.md",
+                "file": "pdf/金融工程/金融工程课件（1）.pdf",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -177,7 +180,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/课程/金融工程学/作业.md",
+                "file": "pdf/金融工程/金融工程课件（1）.pdf",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -200,7 +203,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/课程/金融工程学/作业.md"
+                "file": "pdf/金融工程/金融工程课件（1）.pdf"
               }
             }
           },
@@ -234,11 +237,14 @@
       "obsidian-advanced-slides:Show Slide Preview": false
     }
   },
-  "active": "3e83a0aacfa9d305",
+  "active": "0bd91ee6e68b2d05",
   "lastOpenFiles": [
+    "pdf/金融工程/金融工程课件（2）.pdf",
     "pdf/金融工程/金融工程课件（1）.pdf",
-    "docs/课程/金融工程学/作业.md",
+    "pdf/金融工程/金融工程课件（3）.pdf",
+    "pdf/金融工程/金融工程课件（4）.pdf",
     "docs/课程/金融工程学/笔记.md",
+    "docs/课程/金融工程学/作业.md",
     "docs/课程/金融工程学/郑振龙《金融工程》（第5版）笔记和课后习题（含考研真题）详解答案.pdf",
     "pdf/金融工程/金融工程导学课程.pdf",
     "docs/课程/软件体系结构/笔记/可扩展.md",
@@ -246,9 +252,6 @@
     "docs/课程/编译原理/作业/p13.md",
     "docs/课程/编译原理/笔记/机器无关优化.md",
     "docs/课程/软件体系结构/笔记/SpringBoot.md",
-    "pdf/金融工程/金融工程课件（2）.pdf",
-    "pdf/金融工程/金融工程课件（4）.pdf",
-    "pdf/金融工程/金融工程课件（3）.pdf",
     "conflict-files-obsidian-git.md",
     "docs/pc日常/数据备份/数据迁移更换硬盘.md",
     "docs/pc日常/数据备份/数据备份.md",
