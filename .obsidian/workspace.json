@@ -164,7 +164,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/课程/金融工程学/笔记.md",
+                "file": "pdf/金融工程/金融工程课件（6）.pdf",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -181,7 +181,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/课程/金融工程学/笔记.md",
+                "file": "pdf/金融工程/金融工程课件（6）.pdf",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -204,7 +204,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/课程/金融工程学/笔记.md"
+                "file": "pdf/金融工程/金融工程课件（6）.pdf"
               }
             }
           },
@@ -239,11 +239,11 @@
       "obsidian-advanced-slides:Show Slide Preview": false
     }
   },
-  "active": "47bf08bf3b61479e",
+  "active": "b5f3fe7edeaf7d3e",
   "lastOpenFiles": [
+    "docs/课程/金融工程学/作业.md",
     "pdf/金融工程/金融工程课件（6）.pdf",
     "docs/课程/金融工程学/笔记.md",
-    "docs/课程/金融工程学/作业.md",
     "pdf/金融工程/金融工程课件（8）.pdf",
     "pdf/金融工程/金融工程课件（7）.pdf",
     "pdf/金融工程/金融工程课件（5）.pdf",
