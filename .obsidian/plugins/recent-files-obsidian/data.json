@@ -2,23 +2,91 @@
   "recentFiles": [
     {
       "basename": "笔记",
-      "path": "docs/课程/金融工程学/笔记.md"
+      "path": "docs/课程/金融风险管理/笔记.md"
     },
     {
-      "basename": "金融工程课件（8）",
-      "path": "pdf/金融工程/金融工程课件（8）.pdf"
+      "basename": "1 绪论",
+      "path": "pdf/金融风险管理/1 绪论.pdf"
+    },
+    {
+      "basename": "2 衍生品的风险管理——希腊字母",
+      "path": "pdf/金融风险管理/2 衍生品的风险管理——希腊字母.pdf"
+    },
+    {
+      "basename": "syllabus-2024.3本科-与frm的详细对应关系",
+      "path": "pdf/金融风险管理/syllabus-2024.3本科-与frm的详细对应关系.pdf"
+    },
+    {
+      "basename": "0 课程介绍",
+      "path": "pdf/金融风险管理/0 课程介绍.pdf"
+    },
+    {
+      "basename": "13 操作风险管理",
+      "path": "pdf/金融风险管理/13 操作风险管理.pdf"
+    },
+    {
+      "basename": "4 var基础",
+      "path": "pdf/金融风险管理/4 var基础.pdf"
+    },
+    {
+      "basename": "3  利率风险",
+      "path": "pdf/金融风险管理/3  利率风险.pdf"
+    },
+    {
+      "basename": "basel协议",
+      "path": "pdf/金融风险管理/basel协议.pdf"
+    },
+    {
+      "basename": "12 信用风险价值cvar",
+      "path": "pdf/金融风险管理/12 信用风险价值cvar.pdf"
+    },
+    {
+      "basename": "11 信用风险暴露和违约损失率的估计",
+      "path": "pdf/金融风险管理/11 信用风险暴露和违约损失率的估计.pdf"
+    },
+    {
+      "basename": "10 违约概率的估计",
+      "path": "pdf/金融风险管理/10 违约概率的估计.pdf"
+    },
+    {
+      "basename": "8 情景分析和压力测试",
+      "path": "pdf/金融风险管理/8 情景分析和压力测试.pdf"
+    },
+    {
+      "basename": "7 基于var的组合风险来源分析和风险预算",
+      "path": "pdf/金融风险管理/7 基于var的组合风险来源分析和风险预算.pdf"
+    },
+    {
+      "basename": "6 资产组合的var计算",
+      "path": "pdf/金融风险管理/6 资产组合的var计算.pdf"
+    },
+    {
+      "basename": "5 波动率和相关性的估计",
+      "path": "pdf/金融风险管理/5 波动率和相关性的估计.pdf"
+    },
+    {
+      "basename": "笔记",
+      "path": "docs/课程/金融工程学/笔记.md"
     },
     {
       "basename": "郑振龙《金融工程》（第5版）笔记和课后习题（含考研真题）详解答案",
       "path": "docs/课程/金融工程学/郑振龙《金融工程》（第5版）笔记和课后习题（含考研真题）详解答案.pdf"
     },
     {
-      "basename": "金融工程课件（5）",
-      "path": "pdf/金融工程/金融工程课件（5）.pdf"
-    },
-    {
       "basename": "作业",
       "path": "docs/课程/金融工程学/作业.md"
+    },
+    {
+      "basename": "金融工程课件（9）",
+      "path": "pdf/金融工程/金融工程课件（9）.pdf"
+    },
+    {
+      "basename": "金融工程课件（8）",
+      "path": "pdf/金融工程/金融工程课件（8）.pdf"
+    },
+    {
+      "basename": "金融工程课件（5）",
+      "path": "pdf/金融工程/金融工程课件（5）.pdf"
     },
     {
       "basename": "金融工程课件（7）",
@@ -51,10 +119,6 @@
     {
       "basename": "金融工程课件（10）",
       "path": "pdf/金融工程/金融工程课件（10）.pdf"
-    },
-    {
-      "basename": "金融工程课件（9）",
-      "path": "pdf/金融工程/金融工程课件（9）.pdf"
     },
     {
       "basename": "金融工程课件（6）",
@@ -135,70 +199,6 @@
     {
       "basename": "temp",
       "path": "_private_/临时/temp.md"
-    },
-    {
-      "basename": "抽象ADT",
-      "path": "docs/软件工程/编程思想与规范/抽象ADT.md"
-    },
-    {
-      "basename": "Collections工具类",
-      "path": "docs/java/java基础/Util/集合/Collections工具类.md"
-    },
-    {
-      "basename": "Math类",
-      "path": "docs/java/java基础/Util/Math类.md"
-    },
-    {
-      "basename": "thread-sync",
-      "path": "docs/课程/操作系统/代码/thread-lib/thread-sync.h"
-    },
-    {
-      "basename": "hello",
-      "path": "docs/课程/操作系统/代码/thread-lib/hello.c"
-    },
-    {
-      "basename": "fish",
-      "path": "docs/课程/操作系统/代码/fish/fish.c"
-    },
-    {
-      "basename": "数学",
-      "path": "docs/算法/数学.md"
-    },
-    {
-      "basename": "线性代数engin",
-      "path": "docs/c++/库/线性代数engin.md"
-    },
-    {
-      "basename": "2",
-      "path": "docs/c++/笔记（整理前）/2.md"
-    },
-    {
-      "basename": "金融大数据p4",
-      "path": "Slide/金融大数据p4.md"
-    },
-    {
-      "basename": "金融大数据p2",
-      "path": "Slide/金融大数据p2.md"
-    },
-    {
-      "basename": "index",
-      "path": "docs/index.md"
-    },
-    {
-      "basename": "Chapter_9",
-      "path": "docs/课程/编译原理/课件/Chapter_9.pdf"
-    },
-    {
-      "basename": "12.3",
-      "path": "docs/课程/编译原理/作业/答案/dragon-book-exercise-answers-master/ch12/12.3/12.3.md"
-    },
-    {
-      "basename": "12.7",
-      "path": "docs/课程/编译原理/作业/答案/dragon-book-exercise-answers-master/ch12/12.7/12.7.md"
-    },
-    {
-      "basename": "8.2",
-      "path": "docs/课程/编译原理/作业/答案/dragon-book-exercise-answers-master/ch08/8.2/8.2.md"
     }
   ],
   "omittedPaths": [],
