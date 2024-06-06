@@ -11,8 +11,12 @@
             "id": "5c2c9ce7d92e7494",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {}
+              "type": "markdown",
+              "state": {
+                "file": "conflict-files-obsidian-git.md",
+                "mode": "source",
+                "source": false
+              }
             }
           }
         ]
@@ -98,6 +102,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "conflict-files-obsidian-git.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -114,6 +119,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "conflict-files-obsidian-git.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -135,7 +141,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "conflict-files-obsidian-git.md"
+              }
             }
           }
         ]
@@ -160,8 +168,9 @@
       "workspaces:管理工作区布局": false
     }
   },
-  "active": "036eb9da7be0c7ec",
+  "active": "5c2c9ce7d92e7494",
   "lastOpenFiles": [
-    "conflict-files-obsidian-git.md"
+    "conflict-files-obsidian-git.md",
+    "docs/课程/金融工程学/笔记.md"
   ]
 }
