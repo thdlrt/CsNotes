@@ -40,22 +40,42 @@
             }
           },
           {
-            "id": "00736cc6bbf4ce23",
-            "type": "leaf",
-            "state": {
-              "type": "pdf",
-              "state": {
-                "file": "pdf/金融工程/金融工程课件（4）.pdf"
-              }
-            }
-          },
-          {
             "id": "a6e32cab08978263",
             "type": "leaf",
             "state": {
               "type": "pdf",
               "state": {
                 "file": "pdf/金融工程/金融工程课件（5）.pdf"
+              }
+            }
+          },
+          {
+            "id": "b5f3fe7edeaf7d3e",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "pdf/金融工程/金融工程课件（6）.pdf"
+              }
+            }
+          },
+          {
+            "id": "13e5084a83c6db3c",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "pdf/金融工程/金融工程课件（7）.pdf"
+              }
+            }
+          },
+          {
+            "id": "627a1a411127e7a1",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "pdf/金融工程/金融工程课件（8）.pdf"
               }
             }
           }
@@ -127,7 +147,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 261.5
   },
   "right": {
     "id": "d615b65a4ccf8a6a",
@@ -143,7 +163,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "pdf/金融工程/金融工程课件（4）.pdf",
+                "file": "pdf/金融工程/金融工程课件（5）.pdf",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -160,7 +180,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "pdf/金融工程/金融工程课件（4）.pdf",
+                "file": "pdf/金融工程/金融工程课件（5）.pdf",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -183,7 +203,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "pdf/金融工程/金融工程课件（4）.pdf"
+                "file": "pdf/金融工程/金融工程课件（5）.pdf"
               }
             }
           },
@@ -217,14 +237,15 @@
       "obsidian-advanced-slides:Show Slide Preview": false
     }
   },
-  "active": "00736cc6bbf4ce23",
+  "active": "a6e32cab08978263",
   "lastOpenFiles": [
     "docs/课程/金融工程学/笔记.md",
     "docs/课程/金融工程学/作业.md",
-    "pdf/金融工程/金融工程课件（4）.pdf",
-    "pdf/金融工程/金融工程课件（6）.pdf",
+    "pdf/金融工程/金融工程课件（8）.pdf",
     "pdf/金融工程/金融工程课件（7）.pdf",
+    "pdf/金融工程/金融工程课件（6）.pdf",
     "pdf/金融工程/金融工程课件（5）.pdf",
+    "pdf/金融工程/金融工程课件（4）.pdf",
     "pdf/金融工程/金融工程课件（3）.pdf",
     "pdf/金融工程/金融工程课件（2）.pdf",
     "pdf/金融工程/金融工程课件（1）.pdf",
@@ -242,7 +263,6 @@
     "docs/课程/编译原理/作业/答案/dragon-book-exercise-answers-master/ch02/2.4/2.4.md",
     "docs/课程/编译原理/编译原理.md",
     "docs/课程/编译原理/作业/答案/dragon-book-exercise-answers-master/ch02/2.2/assets/2.2.3-4.png",
-    "docs/课程/操作系统/代码/os-model/hello.py",
     "_private_/个人相关/腾讯天美游戏端开发.md",
     "_private_/临时/temp.md",
     "docs/软件工程/编程思想与规范/抽象ADT.md",
