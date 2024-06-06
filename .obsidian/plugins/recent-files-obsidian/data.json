@@ -5,8 +5,48 @@
       "path": "docs/课程/金融工程学/笔记.md"
     },
     {
+      "basename": "郑振龙《金融工程》（第5版）笔记和课后习题（含考研真题）详解答案",
+      "path": "docs/课程/金融工程学/郑振龙《金融工程》（第5版）笔记和课后习题（含考研真题）详解答案.pdf"
+    },
+    {
+      "basename": "金融工程课件（16）",
+      "path": "pdf/金融工程/金融工程课件（16）.pdf"
+    },
+    {
+      "basename": "金融工程课件（15）",
+      "path": "pdf/金融工程/金融工程课件（15）.pdf"
+    },
+    {
+      "basename": "金融工程课件（14）",
+      "path": "pdf/金融工程/金融工程课件（14）.pdf"
+    },
+    {
+      "basename": "金融工程课件（13）",
+      "path": "pdf/金融工程/金融工程课件（13）.pdf"
+    },
+    {
+      "basename": "金融工程课件（12）",
+      "path": "pdf/金融工程/金融工程课件（12）.pdf"
+    },
+    {
+      "basename": "金融工程课件（11）",
+      "path": "pdf/金融工程/金融工程课件（11）.pdf"
+    },
+    {
+      "basename": "金融工程课件（10）",
+      "path": "pdf/金融工程/金融工程课件（10）.pdf"
+    },
+    {
+      "basename": "金融工程课件（9）",
+      "path": "pdf/金融工程/金融工程课件（9）.pdf"
+    },
+    {
       "basename": "金融工程课件（7）",
       "path": "pdf/金融工程/金融工程课件（7）.pdf"
+    },
+    {
+      "basename": "金融工程课件（8）",
+      "path": "pdf/金融工程/金融工程课件（8）.pdf"
     },
     {
       "basename": "作业",
@@ -15,14 +55,6 @@
     {
       "basename": "金融工程课件（6）",
       "path": "pdf/金融工程/金融工程课件（6）.pdf"
-    },
-    {
-      "basename": "金融工程课件（8）",
-      "path": "pdf/金融工程/金融工程课件（8）.pdf"
-    },
-    {
-      "basename": "郑振龙《金融工程》（第5版）笔记和课后习题（含考研真题）详解答案",
-      "path": "docs/课程/金融工程学/郑振龙《金融工程》（第5版）笔记和课后习题（含考研真题）详解答案.pdf"
     },
     {
       "basename": "金融工程课件（5）",
@@ -167,34 +199,6 @@
     {
       "basename": "8.2",
       "path": "docs/课程/编译原理/作业/答案/dragon-book-exercise-answers-master/ch08/8.2/8.2.md"
-    },
-    {
-      "basename": "p12",
-      "path": "docs/课程/编译原理/作业/p12.md"
-    },
-    {
-      "basename": "笔记",
-      "path": "docs/保研/机试/笔记.md"
-    },
-    {
-      "basename": "使用 VSCode 编写 C++ 单文件程序 (Windows 系统)_md · main · 田 昊东 _ NJUCS-BAOYAN · GitLab",
-      "path": "docs/保研/机试/使用 VSCode 编写 C++ 单文件程序 (Windows 系统)_md · main · 田 昊东 _ NJUCS-BAOYAN · GitLab.md"
-    },
-    {
-      "basename": "数组与字符串",
-      "path": "docs/算法/数组与字符串.md"
-    },
-    {
-      "basename": "P5410 【模板】扩展 KMP_exKMP（Z 函数） - 洛谷 _ 计算机科学教育新生态",
-      "path": "docs/Blog/P5410 【模板】扩展 KMP_exKMP（Z 函数） - 洛谷 _ 计算机科学教育新生态.md"
-    },
-    {
-      "basename": "中间代码生成",
-      "path": "docs/课程/编译原理/笔记/中间代码生成.md"
-    },
-    {
-      "basename": "离散数学",
-      "path": "docs/保研/数学/离散数学.md"
     }
   ],
   "omittedPaths": [],
