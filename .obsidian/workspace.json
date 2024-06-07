@@ -36,16 +36,6 @@
         "type": "tabs",
         "children": [
           {
-            "id": "90c712d062254895",
-            "type": "leaf",
-            "state": {
-              "type": "pdf",
-              "state": {
-                "file": "pdf/金融风险管理/3  利率风险.pdf"
-              }
-            }
-          },
-          {
             "id": "ef70c62cce373f86",
             "type": "leaf",
             "state": {
@@ -138,7 +128,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/课程/金融风险管理/笔记.md",
+                "file": "pdf/金融风险管理/4 var基础.pdf",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -155,7 +145,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/课程/金融风险管理/笔记.md",
+                "file": "pdf/金融风险管理/4 var基础.pdf",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -178,7 +168,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/课程/金融风险管理/笔记.md"
+                "file": "pdf/金融风险管理/4 var基础.pdf"
               }
             }
           },
@@ -213,7 +203,7 @@
       "obsidian-advanced-slides:Show Slide Preview": false
     }
   },
-  "active": "3f02fd754b929256",
+  "active": "ef70c62cce373f86",
   "lastOpenFiles": [
     "pdf/金融风险管理/3  利率风险.pdf",
     "docs/课程/金融风险管理/笔记.md",
