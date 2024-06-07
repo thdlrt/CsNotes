@@ -9,6 +9,10 @@
       "path": "pdf/金融风险管理/3  利率风险.pdf"
     },
     {
+      "basename": "![Uploading",
+      "path": "![Uploading.md"
+    },
+    {
       "basename": "4 var基础",
       "path": "pdf/金融风险管理/4 var基础.pdf"
     },
@@ -195,10 +199,6 @@
     {
       "basename": "腾讯天美游戏端开发",
       "path": "_private_/个人相关/腾讯天美游戏端开发.md"
-    },
-    {
-      "basename": "temp",
-      "path": "_private_/临时/temp.md"
     }
   ],
   "omittedPaths": [],
