@@ -138,7 +138,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "pdf/金融风险管理/3  利率风险.pdf",
+                "file": "docs/课程/金融风险管理/笔记.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -155,7 +155,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "pdf/金融风险管理/3  利率风险.pdf",
+                "file": "docs/课程/金融风险管理/笔记.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -178,7 +178,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "pdf/金融风险管理/3  利率风险.pdf"
+                "file": "docs/课程/金融风险管理/笔记.md"
               }
             }
           },
@@ -213,11 +213,11 @@
       "obsidian-advanced-slides:Show Slide Preview": false
     }
   },
-  "active": "90c712d062254895",
+  "active": "3f02fd754b929256",
   "lastOpenFiles": [
+    "pdf/金融风险管理/3  利率风险.pdf",
     "docs/课程/金融风险管理/笔记.md",
     "pdf/金融风险管理/4 var基础.pdf",
-    "pdf/金融风险管理/3  利率风险.pdf",
     "pdf/金融风险管理/2 衍生品的风险管理——希腊字母.pdf",
     "pdf/金融风险管理/syllabus-2024.3本科-与frm的详细对应关系.pdf",
     "pdf/金融风险管理/1 绪论.pdf",
