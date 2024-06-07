@@ -5,16 +5,24 @@
       "path": "docs/课程/金融风险管理/笔记.md"
     },
     {
+      "basename": "6 资产组合的var计算",
+      "path": "pdf/金融风险管理/6 资产组合的var计算.pdf"
+    },
+    {
+      "basename": "5 波动率和相关性的估计",
+      "path": "pdf/金融风险管理/5 波动率和相关性的估计.pdf"
+    },
+    {
+      "basename": "4 var基础",
+      "path": "pdf/金融风险管理/4 var基础.pdf"
+    },
+    {
       "basename": "syllabus-2024.3本科-与frm的详细对应关系",
       "path": "pdf/金融风险管理/syllabus-2024.3本科-与frm的详细对应关系.pdf"
     },
     {
       "basename": "3  利率风险",
       "path": "pdf/金融风险管理/3  利率风险.pdf"
-    },
-    {
-      "basename": "4 var基础",
-      "path": "pdf/金融风险管理/4 var基础.pdf"
     },
     {
       "basename": "![Uploading",
@@ -59,14 +67,6 @@
     {
       "basename": "7 基于var的组合风险来源分析和风险预算",
       "path": "pdf/金融风险管理/7 基于var的组合风险来源分析和风险预算.pdf"
-    },
-    {
-      "basename": "6 资产组合的var计算",
-      "path": "pdf/金融风险管理/6 资产组合的var计算.pdf"
-    },
-    {
-      "basename": "5 波动率和相关性的估计",
-      "path": "pdf/金融风险管理/5 波动率和相关性的估计.pdf"
     },
     {
       "basename": "笔记",
