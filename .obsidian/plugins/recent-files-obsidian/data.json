@@ -5,6 +5,14 @@
       "path": "docs/课程/金融风险管理/笔记.md"
     },
     {
+      "basename": "3  利率风险",
+      "path": "pdf/金融风险管理/3  利率风险.pdf"
+    },
+    {
+      "basename": "4 var基础",
+      "path": "pdf/金融风险管理/4 var基础.pdf"
+    },
+    {
       "basename": "2 衍生品的风险管理——希腊字母",
       "path": "pdf/金融风险管理/2 衍生品的风险管理——希腊字母.pdf"
     },
@@ -23,14 +31,6 @@
     {
       "basename": "13 操作风险管理",
       "path": "pdf/金融风险管理/13 操作风险管理.pdf"
-    },
-    {
-      "basename": "4 var基础",
-      "path": "pdf/金融风险管理/4 var基础.pdf"
-    },
-    {
-      "basename": "3  利率风险",
-      "path": "pdf/金融风险管理/3  利率风险.pdf"
     },
     {
       "basename": "basel协议",
