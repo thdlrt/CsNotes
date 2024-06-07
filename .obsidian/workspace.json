@@ -30,22 +30,6 @@
             }
           }
         ]
-      },
-      {
-        "id": "382c27ce270c7f16",
-        "type": "tabs",
-        "children": [
-          {
-            "id": "ef70c62cce373f86",
-            "type": "leaf",
-            "state": {
-              "type": "pdf",
-              "state": {
-                "file": "pdf/金融风险管理/4 var基础.pdf"
-              }
-            }
-          }
-        ]
       }
     ],
     "direction": "vertical"
@@ -112,7 +96,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 261.5
+    "width": 261.5,
+    "collapsed": true
   },
   "right": {
     "id": "d615b65a4ccf8a6a",
@@ -128,7 +113,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "pdf/金融风险管理/4 var基础.pdf",
+                "file": "docs/课程/金融风险管理/笔记.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -145,7 +130,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "pdf/金融风险管理/4 var基础.pdf",
+                "file": "docs/课程/金融风险管理/笔记.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -168,7 +153,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "pdf/金融风险管理/4 var基础.pdf"
+                "file": "docs/课程/金融风险管理/笔记.md"
               }
             }
           },
@@ -203,13 +188,13 @@
       "obsidian-advanced-slides:Show Slide Preview": false
     }
   },
-  "active": "ef70c62cce373f86",
+  "active": "3f02fd754b929256",
   "lastOpenFiles": [
-    "pdf/金融风险管理/3  利率风险.pdf",
+    "pdf/金融风险管理/4 var基础.pdf",
     "docs/课程/金融风险管理/笔记.md",
+    "pdf/金融风险管理/3  利率风险.pdf",
     "pdf/金融风险管理/syllabus-2024.3本科-与frm的详细对应关系.pdf",
     "![Uploading.md",
-    "pdf/金融风险管理/4 var基础.pdf",
     "pdf/金融风险管理/2 衍生品的风险管理——希腊字母.pdf",
     "pdf/金融风险管理/1 绪论.pdf",
     "pdf/金融风险管理/0 课程介绍.pdf",
