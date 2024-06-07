@@ -55,7 +55,8 @@
               }
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -215,9 +216,9 @@
   },
   "active": "3f02fd754b929256",
   "lastOpenFiles": [
-    "pdf/金融风险管理/3  利率风险.pdf",
-    "docs/课程/金融风险管理/笔记.md",
     "pdf/金融风险管理/4 var基础.pdf",
+    "docs/课程/金融风险管理/笔记.md",
+    "pdf/金融风险管理/3  利率风险.pdf",
     "pdf/金融风险管理/2 衍生品的风险管理——希腊字母.pdf",
     "pdf/金融风险管理/syllabus-2024.3本科-与frm的详细对应关系.pdf",
     "pdf/金融风险管理/1 绪论.pdf",
