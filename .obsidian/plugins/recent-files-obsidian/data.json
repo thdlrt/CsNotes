@@ -1,12 +1,16 @@
 {
   "recentFiles": [
     {
-      "basename": "笔记",
-      "path": "docs/课程/金融风险管理/笔记.md"
+      "basename": "机器无关优化",
+      "path": "docs/课程/编译原理/笔记/机器无关优化.md"
     },
     {
       "basename": "5 波动率和相关性的估计",
       "path": "pdf/金融风险管理/5 波动率和相关性的估计.pdf"
+    },
+    {
+      "basename": "笔记",
+      "path": "docs/课程/金融风险管理/笔记.md"
     },
     {
       "basename": "4 var基础",
@@ -159,10 +163,6 @@
     {
       "basename": "p13",
       "path": "docs/课程/编译原理/作业/p13.md"
-    },
-    {
-      "basename": "机器无关优化",
-      "path": "docs/课程/编译原理/笔记/机器无关优化.md"
     },
     {
       "basename": "SpringBoot",

@@ -28,9 +28,21 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "47d16250391bff28",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "docs/课程/编译原理/笔记/机器无关优化.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       },
       {
         "id": "8c0b932d5a1add41",
@@ -129,7 +141,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/课程/金融风险管理/笔记.md",
+                "file": "docs/课程/编译原理/笔记/机器无关优化.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -146,7 +158,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/课程/金融风险管理/笔记.md",
+                "file": "docs/课程/编译原理/笔记/机器无关优化.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -169,7 +181,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/课程/金融风险管理/笔记.md"
+                "file": "docs/课程/编译原理/笔记/机器无关优化.md"
               }
             }
           },
@@ -186,8 +198,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 200
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -204,9 +215,10 @@
       "obsidian-advanced-slides:Show Slide Preview": false
     }
   },
-  "active": "e6c9af1b10efc087",
+  "active": "47d16250391bff28",
   "lastOpenFiles": [
     "pdf/金融风险管理/5 波动率和相关性的估计.pdf",
+    "docs/课程/编译原理/笔记/机器无关优化.md",
     "docs/课程/金融风险管理/笔记.md",
     "pdf/金融风险管理/4 var基础.pdf",
     "pdf/金融风险管理/6 资产组合的var计算.pdf",
@@ -224,7 +236,6 @@
     "docs/课程/软件体系结构/笔记/可扩展.md",
     "docs/课程/软件体系结构/笔记/SSM/SpringMVC.md",
     "docs/课程/编译原理/作业/p13.md",
-    "docs/课程/编译原理/笔记/机器无关优化.md",
     "docs/课程/软件体系结构/笔记/SpringBoot.md",
     "docs/pc日常/数据备份/数据迁移更换硬盘.md",
     "docs/pc日常/数据备份/数据备份.md",
