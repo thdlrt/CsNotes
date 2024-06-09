@@ -46,19 +46,8 @@
                 "file": "pdf/金融风险管理/7 基于var的组合风险来源分析和风险预算.pdf"
               }
             }
-          },
-          {
-            "id": "9d034f06de7d723f",
-            "type": "leaf",
-            "state": {
-              "type": "pdf",
-              "state": {
-                "file": "pdf/金融风险管理/8 情景分析和压力测试.pdf"
-              }
-            }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -217,10 +206,10 @@
   },
   "active": "2e2c51a979f3df24",
   "lastOpenFiles": [
-    "pdf/金融风险管理/8 情景分析和压力测试.pdf",
-    "docs/课程/金融风险管理/笔记.md",
-    "pdf/金融风险管理/basel协议.pdf",
     "pdf/金融风险管理/7 基于var的组合风险来源分析和风险预算.pdf",
+    "docs/课程/金融风险管理/笔记.md",
+    "pdf/金融风险管理/8 情景分析和压力测试.pdf",
+    "pdf/金融风险管理/basel协议.pdf",
     "pdf/金融风险管理/syllabus-2024.3本科-与frm的详细对应关系.pdf",
     "pdf/金融风险管理/13 操作风险管理.pdf",
     "pdf/金融风险管理/10 违约概率的估计.pdf",
