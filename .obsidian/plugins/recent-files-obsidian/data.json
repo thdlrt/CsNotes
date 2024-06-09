@@ -1,6 +1,10 @@
 {
   "recentFiles": [
     {
+      "basename": "笔记",
+      "path": "docs/课程/金融风险管理/笔记.md"
+    },
+    {
       "basename": "6 资产组合的var计算",
       "path": "pdf/金融风险管理/6 资产组合的var计算.pdf"
     },
@@ -11,10 +15,6 @@
     {
       "basename": "7 基于var的组合风险来源分析和风险预算",
       "path": "pdf/金融风险管理/7 基于var的组合风险来源分析和风险预算.pdf"
-    },
-    {
-      "basename": "笔记",
-      "path": "docs/课程/金融风险管理/笔记.md"
     },
     {
       "basename": "5 波动率和相关性的估计",
