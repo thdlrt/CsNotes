@@ -6,7 +6,7 @@
       {
         "id": "15872fdebd5a9fce",
         "type": "tabs",
-        "dimension": 50.634696755994355,
+        "dimension": 54.724964739069115,
         "children": [
           {
             "id": "2e2c51a979f3df24",
@@ -35,19 +35,30 @@
       {
         "id": "8c0b932d5a1add41",
         "type": "tabs",
-        "dimension": 49.365303244005645,
+        "dimension": 45.27503526093089,
         "children": [
           {
-            "id": "6104977eeb681564",
+            "id": "ae319fff1ef6a022",
             "type": "leaf",
             "state": {
               "type": "pdf",
               "state": {
-                "file": "pdf/金融风险管理/7 基于var的组合风险来源分析和风险预算.pdf"
+                "file": "pdf/金融风险管理/13 操作风险管理.pdf"
+              }
+            }
+          },
+          {
+            "id": "7c830e539ba7dc8f",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "pdf/金融风险管理/6 资产组合的var计算.pdf"
               }
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -206,18 +217,18 @@
   },
   "active": "2e2c51a979f3df24",
   "lastOpenFiles": [
-    "pdf/金融风险管理/7 基于var的组合风险来源分析和风险预算.pdf",
+    "pdf/金融风险管理/6 资产组合的var计算.pdf",
     "docs/课程/金融风险管理/笔记.md",
+    "pdf/金融风险管理/13 操作风险管理.pdf",
+    "pdf/金融风险管理/7 基于var的组合风险来源分析和风险预算.pdf",
+    "pdf/金融风险管理/12 信用风险价值cvar.pdf",
+    "pdf/金融风险管理/11 信用风险暴露和违约损失率的估计.pdf",
+    "pdf/金融风险管理/10 违约概率的估计.pdf",
     "pdf/金融风险管理/8 情景分析和压力测试.pdf",
     "pdf/金融风险管理/basel协议.pdf",
     "pdf/金融风险管理/syllabus-2024.3本科-与frm的详细对应关系.pdf",
-    "pdf/金融风险管理/13 操作风险管理.pdf",
-    "pdf/金融风险管理/10 违约概率的估计.pdf",
-    "pdf/金融风险管理/6 资产组合的var计算.pdf",
     "pdf/金融风险管理/5 波动率和相关性的估计.pdf",
     "docs/课程/编译原理/笔记/机器无关优化.md",
-    "pdf/金融风险管理/4 var基础.pdf",
-    "pdf/金融风险管理/3  利率风险.pdf",
     "![Uploading.md",
     "docs/课程/金融工程学/笔记.md",
     "docs/课程/金融工程学/作业.md",

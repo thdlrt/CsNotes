@@ -5,8 +5,28 @@
       "path": "docs/课程/金融风险管理/笔记.md"
     },
     {
+      "basename": "6 资产组合的var计算",
+      "path": "pdf/金融风险管理/6 资产组合的var计算.pdf"
+    },
+    {
+      "basename": "13 操作风险管理",
+      "path": "pdf/金融风险管理/13 操作风险管理.pdf"
+    },
+    {
       "basename": "7 基于var的组合风险来源分析和风险预算",
       "path": "pdf/金融风险管理/7 基于var的组合风险来源分析和风险预算.pdf"
+    },
+    {
+      "basename": "12 信用风险价值cvar",
+      "path": "pdf/金融风险管理/12 信用风险价值cvar.pdf"
+    },
+    {
+      "basename": "11 信用风险暴露和违约损失率的估计",
+      "path": "pdf/金融风险管理/11 信用风险暴露和违约损失率的估计.pdf"
+    },
+    {
+      "basename": "10 违约概率的估计",
+      "path": "pdf/金融风险管理/10 违约概率的估计.pdf"
     },
     {
       "basename": "8 情景分析和压力测试",
@@ -19,18 +39,6 @@
     {
       "basename": "syllabus-2024.3本科-与frm的详细对应关系",
       "path": "pdf/金融风险管理/syllabus-2024.3本科-与frm的详细对应关系.pdf"
-    },
-    {
-      "basename": "13 操作风险管理",
-      "path": "pdf/金融风险管理/13 操作风险管理.pdf"
-    },
-    {
-      "basename": "10 违约概率的估计",
-      "path": "pdf/金融风险管理/10 违约概率的估计.pdf"
-    },
-    {
-      "basename": "6 资产组合的var计算",
-      "path": "pdf/金融风险管理/6 资产组合的var计算.pdf"
     },
     {
       "basename": "5 波动率和相关性的估计",
@@ -63,14 +71,6 @@
     {
       "basename": "0 课程介绍",
       "path": "pdf/金融风险管理/0 课程介绍.pdf"
-    },
-    {
-      "basename": "12 信用风险价值cvar",
-      "path": "pdf/金融风险管理/12 信用风险价值cvar.pdf"
-    },
-    {
-      "basename": "11 信用风险暴露和违约损失率的估计",
-      "path": "pdf/金融风险管理/11 信用风险暴露和违约损失率的估计.pdf"
     },
     {
       "basename": "笔记",
