@@ -28,21 +28,9 @@
                 "source": false
               }
             }
-          },
-          {
-            "id": "47d16250391bff28",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "docs/课程/编译原理/笔记/机器无关优化.md",
-                "mode": "source",
-                "source": false
-              }
-            }
           }
         ],
-        "currentTab": 2
+        "currentTab": 1
       },
       {
         "id": "8c0b932d5a1add41",
@@ -141,7 +129,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/课程/编译原理/笔记/机器无关优化.md",
+                "file": "pdf/金融风险管理/5 波动率和相关性的估计.pdf",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -158,7 +146,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/课程/编译原理/笔记/机器无关优化.md",
+                "file": "pdf/金融风险管理/5 波动率和相关性的估计.pdf",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -181,7 +169,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/课程/编译原理/笔记/机器无关优化.md"
+                "file": "pdf/金融风险管理/5 波动率和相关性的估计.pdf"
               }
             }
           },
@@ -215,11 +203,11 @@
       "obsidian-advanced-slides:Show Slide Preview": false
     }
   },
-  "active": "47d16250391bff28",
+  "active": "9276321b53efac07",
   "lastOpenFiles": [
+    "docs/课程/金融风险管理/笔记.md",
     "pdf/金融风险管理/5 波动率和相关性的估计.pdf",
     "docs/课程/编译原理/笔记/机器无关优化.md",
-    "docs/课程/金融风险管理/笔记.md",
     "pdf/金融风险管理/4 var基础.pdf",
     "pdf/金融风险管理/6 资产组合的var计算.pdf",
     "pdf/金融风险管理/syllabus-2024.3本科-与frm的详细对应关系.pdf",
