@@ -6,6 +6,7 @@
       {
         "id": "57829a39b5f95d56",
         "type": "tabs",
+        "dimension": 74.04795486600845,
         "children": [
           {
             "id": "d6e756a8d1bf7499",
@@ -35,17 +36,8 @@
       {
         "id": "8c0b932d5a1add41",
         "type": "tabs",
+        "dimension": 25.952045133991536,
         "children": [
-          {
-            "id": "2008082dda04ae35",
-            "type": "leaf",
-            "state": {
-              "type": "pdf",
-              "state": {
-                "file": "pdf/金融风险管理/6 资产组合的var计算.pdf"
-              }
-            }
-          },
           {
             "id": "6104977eeb681564",
             "type": "leaf",
