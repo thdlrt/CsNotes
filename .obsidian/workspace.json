@@ -48,17 +48,36 @@
             }
           },
           {
-            "id": "7c830e539ba7dc8f",
+            "id": "d069155be8ff5793",
             "type": "leaf",
             "state": {
               "type": "pdf",
               "state": {
-                "file": "pdf/金融风险管理/6 资产组合的var计算.pdf"
+                "file": "pdf/金融风险管理/10 违约概率的估计.pdf"
+              }
+            }
+          },
+          {
+            "id": "89ad6f9a2d065267",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "pdf/金融风险管理/11 信用风险暴露和违约损失率的估计.pdf"
+              }
+            }
+          },
+          {
+            "id": "1bf70a94e774d6bd",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "pdf/金融风险管理/12 信用风险价值cvar.pdf"
               }
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -141,7 +160,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/课程/金融风险管理/笔记.md",
+                "file": "pdf/金融风险管理/13 操作风险管理.pdf",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -158,7 +177,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/课程/金融风险管理/笔记.md",
+                "file": "pdf/金融风险管理/13 操作风险管理.pdf",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -181,7 +200,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/课程/金融风险管理/笔记.md"
+                "file": "pdf/金融风险管理/13 操作风险管理.pdf"
               }
             }
           },
@@ -215,18 +234,18 @@
       "obsidian-advanced-slides:Show Slide Preview": false
     }
   },
-  "active": "2e2c51a979f3df24",
+  "active": "ae319fff1ef6a022",
   "lastOpenFiles": [
-    "pdf/金融风险管理/6 资产组合的var计算.pdf",
-    "pdf/金融风险管理/13 操作风险管理.pdf",
+    "pdf/金融风险管理/10 违约概率的估计.pdf",
     "docs/课程/金融风险管理/笔记.md",
-    "pdf/金融风险管理/7 基于var的组合风险来源分析和风险预算.pdf",
+    "pdf/金融风险管理/syllabus-2024.3本科-与frm的详细对应关系.pdf",
+    "pdf/金融风险管理/13 操作风险管理.pdf",
     "pdf/金融风险管理/12 信用风险价值cvar.pdf",
     "pdf/金融风险管理/11 信用风险暴露和违约损失率的估计.pdf",
-    "pdf/金融风险管理/10 违约概率的估计.pdf",
+    "pdf/金融风险管理/6 资产组合的var计算.pdf",
+    "pdf/金融风险管理/7 基于var的组合风险来源分析和风险预算.pdf",
     "pdf/金融风险管理/8 情景分析和压力测试.pdf",
     "pdf/金融风险管理/basel协议.pdf",
-    "pdf/金融风险管理/syllabus-2024.3本科-与frm的详细对应关系.pdf",
     "pdf/金融风险管理/5 波动率和相关性的估计.pdf",
     "docs/课程/编译原理/笔记/机器无关优化.md",
     "![Uploading.md",
