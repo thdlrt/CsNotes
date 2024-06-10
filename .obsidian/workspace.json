@@ -48,16 +48,6 @@
             }
           },
           {
-            "id": "0c7842e13929b061",
-            "type": "leaf",
-            "state": {
-              "type": "release-notes",
-              "state": {
-                "currentVersion": "1.6.3"
-              }
-            }
-          },
-          {
             "id": "d069155be8ff5793",
             "type": "leaf",
             "state": {
@@ -87,8 +77,7 @@
               }
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -245,7 +234,7 @@
       "obsidian-advanced-slides:Show Slide Preview": false
     }
   },
-  "active": "0c7842e13929b061",
+  "active": "ae319fff1ef6a022",
   "lastOpenFiles": [
     "pdf/金融风险管理/10 违约概率的估计.pdf",
     "pdf/金融风险管理/12 信用风险价值cvar.pdf",
