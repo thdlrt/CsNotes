@@ -9,6 +9,10 @@
       "path": "pdf/金融风险管理/10 违约概率的估计.pdf"
     },
     {
+      "basename": "p12",
+      "path": "docs/课程/编译原理/作业/p12.md"
+    },
+    {
       "basename": "12 信用风险价值cvar",
       "path": "pdf/金融风险管理/12 信用风险价值cvar.pdf"
     },
@@ -195,10 +199,6 @@
     {
       "basename": "hello",
       "path": "docs/课程/操作系统/代码/os-model/hello.py"
-    },
-    {
-      "basename": "腾讯天美游戏端开发",
-      "path": "_private_/个人相关/腾讯天美游戏端开发.md"
     }
   ],
   "omittedPaths": [],
