@@ -81,7 +81,8 @@
               "state": {}
             }
           }
-        ]
+        ],
+        "currentTab": 4
       }
     ],
     "direction": "horizontal",
@@ -177,6 +178,9 @@
   },
   "active": "da190fe8c27be1b4",
   "lastOpenFiles": [
+    "pdf/金融风险管理/5 波动率和相关性的估计.pdf",
+    "pdf/金融风险管理/3  利率风险.pdf",
+    "docs/课程/金融风险管理/笔记.md",
     "docs/课程/操作系统/实验笔记.md",
     "docs/课程/操作系统/操作系统：三个简单的部分（OSTEP） (it-ebooks) (Z-Library).pdf",
     "pdf/金融工程/金融工程课件（16）.pdf",
@@ -186,9 +190,7 @@
     "pdf/金融工程/金融工程课件（10）.pdf",
     "pdf/金融工程/金融工程课件（9）.pdf",
     "pdf/金融工程/金融工程课件（8）.pdf",
-    "docs/课程/金融风险管理/笔记.md",
     "docs/课程/编译原理/课件/Review.pdf",
-    "pdf/金融风险管理/12 信用风险价值cvar.pdf",
     "docs/课程/编译原理/往年题.md",
     "docs/课程/编译原理/Untitled.md",
     "docs/课程/编译原理/作业/p12.md",
@@ -213,7 +215,6 @@
     "docs/java/java基础/Util/集合/Collections工具类.md",
     "docs/java/java基础/Util/Math类.md",
     "_private_/个人相关.md",
-    "docs/算法/数学.md",
     "docs/保研/笔试/c96536f112a74024be9f595f007a2763.jpg",
     "CsNotes/2021-11-22-22-54-02.png",
     "CsNotes/2021-11-22-22-52-49.png",

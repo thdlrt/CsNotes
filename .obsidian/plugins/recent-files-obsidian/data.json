@@ -5,6 +5,14 @@
       "path": "docs/课程/金融风险管理/笔记.md"
     },
     {
+      "basename": "5 波动率和相关性的估计",
+      "path": "pdf/金融风险管理/5 波动率和相关性的估计.pdf"
+    },
+    {
+      "basename": "3  利率风险",
+      "path": "pdf/金融风险管理/3  利率风险.pdf"
+    },
+    {
       "basename": "实验笔记",
       "path": "docs/课程/操作系统/实验笔记.md"
     },
@@ -85,20 +93,12 @@
       "path": "pdf/金融风险管理/basel协议.pdf"
     },
     {
-      "basename": "5 波动率和相关性的估计",
-      "path": "pdf/金融风险管理/5 波动率和相关性的估计.pdf"
-    },
-    {
       "basename": "机器无关优化",
       "path": "docs/课程/编译原理/笔记/机器无关优化.md"
     },
     {
       "basename": "4 var基础",
       "path": "pdf/金融风险管理/4 var基础.pdf"
-    },
-    {
-      "basename": "3  利率风险",
-      "path": "pdf/金融风险管理/3  利率风险.pdf"
     },
     {
       "basename": "![Uploading",
