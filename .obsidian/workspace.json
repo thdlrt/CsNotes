@@ -6,7 +6,7 @@
       {
         "id": "15872fdebd5a9fce",
         "type": "tabs",
-        "dimension": 44.72843450479233,
+        "dimension": 78.16593886462883,
         "children": [
           {
             "id": "2e2c51a979f3df24",
@@ -35,7 +35,7 @@
       {
         "id": "8c0b932d5a1add41",
         "type": "tabs",
-        "dimension": 55.27156549520767,
+        "dimension": 21.83406113537118,
         "children": [
           {
             "id": "89ad6f9a2d065267",
@@ -124,7 +124,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 229.5
+    "width": 229.5,
+    "collapsed": true
   },
   "right": {
     "id": "d615b65a4ccf8a6a",
@@ -218,8 +219,8 @@
   "active": "2e2c51a979f3df24",
   "lastOpenFiles": [
     "pdf/金融风险管理/11 信用风险暴露和违约损失率的估计.pdf",
-    "docs/课程/金融风险管理/笔记.md",
     "pdf/金融风险管理/12 信用风险价值cvar.pdf",
+    "docs/课程/金融风险管理/笔记.md",
     "pdf/金融风险管理/10 违约概率的估计.pdf",
     "docs/课程/编译原理/往年题.md",
     "docs/课程/编译原理/Untitled.md",
