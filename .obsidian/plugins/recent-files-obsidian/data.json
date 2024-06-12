@@ -1,16 +1,12 @@
 {
   "recentFiles": [
     {
-      "basename": "笔记",
-      "path": "docs/课程/金融风险管理/笔记.md"
-    },
-    {
       "basename": "10 违约概率的估计",
       "path": "pdf/金融风险管理/10 违约概率的估计.pdf"
     },
     {
-      "basename": "p12",
-      "path": "docs/课程/编译原理/作业/p12.md"
+      "basename": "笔记",
+      "path": "docs/课程/金融风险管理/笔记.md"
     },
     {
       "basename": "12 信用风险价值cvar",
@@ -19,6 +15,14 @@
     {
       "basename": "11 信用风险暴露和违约损失率的估计",
       "path": "pdf/金融风险管理/11 信用风险暴露和违约损失率的估计.pdf"
+    },
+    {
+      "basename": "往年题",
+      "path": "docs/课程/编译原理/往年题.md"
+    },
+    {
+      "basename": "p12",
+      "path": "docs/课程/编译原理/作业/p12.md"
     },
     {
       "basename": "13 操作风险管理",
@@ -195,10 +199,6 @@
     {
       "basename": "2.2.3-4",
       "path": "docs/课程/编译原理/作业/答案/dragon-book-exercise-answers-master/ch02/2.2/assets/2.2.3-4.png"
-    },
-    {
-      "basename": "hello",
-      "path": "docs/课程/操作系统/代码/os-model/hello.py"
     }
   ],
   "omittedPaths": [],

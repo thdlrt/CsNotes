@@ -134,8 +134,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 229.5,
-    "collapsed": true
+    "width": 229.5
   },
   "right": {
     "id": "d615b65a4ccf8a6a",
@@ -151,7 +150,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/课程/金融风险管理/笔记.md",
+                "file": "pdf/金融风险管理/10 违约概率的估计.pdf",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -168,7 +167,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/课程/金融风险管理/笔记.md",
+                "file": "pdf/金融风险管理/10 违约概率的估计.pdf",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -191,7 +190,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/课程/金融风险管理/笔记.md"
+                "file": "pdf/金融风险管理/10 违约概率的估计.pdf"
               }
             }
           },
@@ -226,13 +225,15 @@
       "obsidian-advanced-slides:Show Slide Preview": false
     }
   },
-  "active": "2e2c51a979f3df24",
+  "active": "d069155be8ff5793",
   "lastOpenFiles": [
-    "pdf/金融风险管理/10 违约概率的估计.pdf",
     "docs/课程/金融风险管理/笔记.md",
-    "docs/课程/编译原理/作业/p12.md",
+    "pdf/金融风险管理/10 违约概率的估计.pdf",
     "pdf/金融风险管理/12 信用风险价值cvar.pdf",
     "pdf/金融风险管理/11 信用风险暴露和违约损失率的估计.pdf",
+    "docs/课程/编译原理/往年题.md",
+    "docs/课程/编译原理/Untitled.md",
+    "docs/课程/编译原理/作业/p12.md",
     "pdf/金融风险管理/13 操作风险管理.pdf",
     "pdf/金融风险管理/syllabus-2024.3本科-与frm的详细对应关系.pdf",
     "pdf/金融风险管理/6 资产组合的var计算.pdf",
@@ -262,8 +263,6 @@
     "docs/java/java基础/Util/Math类.md",
     "_private_/个人相关.md",
     "docs/算法/数学.md",
-    "docs/c++/库/线性代数engin.md",
-    "docs/c++/笔记（整理前）/2.md",
     "docs/保研/笔试/c96536f112a74024be9f595f007a2763.jpg",
     "CsNotes/2021-11-22-22-54-02.png",
     "CsNotes/2021-11-22-22-52-49.png",
