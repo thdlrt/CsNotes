@@ -5,12 +5,52 @@
       "path": "docs/课程/金融风险管理/笔记.md"
     },
     {
-      "basename": "11 信用风险暴露和违约损失率的估计",
-      "path": "pdf/金融风险管理/11 信用风险暴露和违约损失率的估计.pdf"
+      "basename": "实验笔记",
+      "path": "docs/课程/操作系统/实验笔记.md"
+    },
+    {
+      "basename": "操作系统：三个简单的部分（OSTEP） (it-ebooks) (Z-Library)",
+      "path": "docs/课程/操作系统/操作系统：三个简单的部分（OSTEP） (it-ebooks) (Z-Library).pdf"
+    },
+    {
+      "basename": "金融工程课件（16）",
+      "path": "pdf/金融工程/金融工程课件（16）.pdf"
+    },
+    {
+      "basename": "金融工程课件（14）",
+      "path": "pdf/金融工程/金融工程课件（14）.pdf"
+    },
+    {
+      "basename": "金融工程课件（12）",
+      "path": "pdf/金融工程/金融工程课件（12）.pdf"
+    },
+    {
+      "basename": "金融工程课件（13）",
+      "path": "pdf/金融工程/金融工程课件（13）.pdf"
+    },
+    {
+      "basename": "金融工程课件（10）",
+      "path": "pdf/金融工程/金融工程课件（10）.pdf"
+    },
+    {
+      "basename": "金融工程课件（9）",
+      "path": "pdf/金融工程/金融工程课件（9）.pdf"
+    },
+    {
+      "basename": "金融工程课件（8）",
+      "path": "pdf/金融工程/金融工程课件（8）.pdf"
     },
     {
       "basename": "12 信用风险价值cvar",
       "path": "pdf/金融风险管理/12 信用风险价值cvar.pdf"
+    },
+    {
+      "basename": "syllabus-2024.3本科-与frm的详细对应关系",
+      "path": "pdf/金融风险管理/syllabus-2024.3本科-与frm的详细对应关系.pdf"
+    },
+    {
+      "basename": "11 信用风险暴露和违约损失率的估计",
+      "path": "pdf/金融风险管理/11 信用风险暴露和违约损失率的估计.pdf"
     },
     {
       "basename": "10 违约概率的估计",
@@ -27,10 +67,6 @@
     {
       "basename": "13 操作风险管理",
       "path": "pdf/金融风险管理/13 操作风险管理.pdf"
-    },
-    {
-      "basename": "syllabus-2024.3本科-与frm的详细对应关系",
-      "path": "pdf/金融风险管理/syllabus-2024.3本科-与frm的详细对应关系.pdf"
     },
     {
       "basename": "6 资产组合的var计算",
@@ -93,14 +129,6 @@
       "path": "docs/课程/金融工程学/作业.md"
     },
     {
-      "basename": "金融工程课件（9）",
-      "path": "pdf/金融工程/金融工程课件（9）.pdf"
-    },
-    {
-      "basename": "金融工程课件（8）",
-      "path": "pdf/金融工程/金融工程课件（8）.pdf"
-    },
-    {
       "basename": "金融工程课件（5）",
       "path": "pdf/金融工程/金融工程课件（5）.pdf"
     },
@@ -109,32 +137,12 @@
       "path": "pdf/金融工程/金融工程课件（7）.pdf"
     },
     {
-      "basename": "金融工程课件（16）",
-      "path": "pdf/金融工程/金融工程课件（16）.pdf"
-    },
-    {
       "basename": "金融工程课件（15）",
       "path": "pdf/金融工程/金融工程课件（15）.pdf"
     },
     {
-      "basename": "金融工程课件（14）",
-      "path": "pdf/金融工程/金融工程课件（14）.pdf"
-    },
-    {
-      "basename": "金融工程课件（13）",
-      "path": "pdf/金融工程/金融工程课件（13）.pdf"
-    },
-    {
-      "basename": "金融工程课件（12）",
-      "path": "pdf/金融工程/金融工程课件（12）.pdf"
-    },
-    {
       "basename": "金融工程课件（11）",
       "path": "pdf/金融工程/金融工程课件（11）.pdf"
-    },
-    {
-      "basename": "金融工程课件（10）",
-      "path": "pdf/金融工程/金融工程课件（10）.pdf"
     },
     {
       "basename": "金融工程课件（6）",
@@ -162,11 +170,11 @@
     },
     {
       "basename": "可扩展",
-      "path": "docs/课程/软件体系结构/笔记/可扩展.md"
+      "path": "docs/归档课程/软件体系结构/笔记/可扩展.md"
     },
     {
       "basename": "SpringMVC",
-      "path": "docs/课程/软件体系结构/笔记/SSM/SpringMVC.md"
+      "path": "docs/归档课程/软件体系结构/笔记/SSM/SpringMVC.md"
     },
     {
       "basename": "p13",
@@ -174,7 +182,7 @@
     },
     {
       "basename": "SpringBoot",
-      "path": "docs/课程/软件体系结构/笔记/SpringBoot.md"
+      "path": "docs/归档课程/软件体系结构/笔记/SpringBoot.md"
     },
     {
       "basename": "数据迁移更换硬盘",
@@ -191,14 +199,6 @@
     {
       "basename": "2.4",
       "path": "docs/课程/编译原理/作业/答案/dragon-book-exercise-answers-master/ch02/2.4/2.4.md"
-    },
-    {
-      "basename": "编译原理",
-      "path": "docs/课程/编译原理/编译原理.md"
-    },
-    {
-      "basename": "2.2.3-4",
-      "path": "docs/课程/编译原理/作业/答案/dragon-book-exercise-answers-master/ch02/2.2/assets/2.2.3-4.png"
     }
   ],
   "omittedPaths": [],

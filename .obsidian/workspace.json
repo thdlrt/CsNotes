@@ -4,12 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "15872fdebd5a9fce",
+        "id": "181354fc1d91be69",
         "type": "tabs",
-        "dimension": 50.90618336886994,
         "children": [
           {
-            "id": "2e2c51a979f3df24",
+            "id": "da190fe8c27be1b4",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -17,43 +16,6 @@
                 "file": "docs/课程/金融风险管理/笔记.md",
                 "mode": "source",
                 "source": false
-              }
-            }
-          },
-          {
-            "id": "d6e756a8d1bf7499",
-            "type": "leaf",
-            "state": {
-              "type": "pdf",
-              "state": {
-                "file": "pdf/金融风险管理/syllabus-2024.3本科-与frm的详细对应关系.pdf"
-              }
-            }
-          }
-        ]
-      },
-      {
-        "id": "8c0b932d5a1add41",
-        "type": "tabs",
-        "dimension": 49.09381663113007,
-        "children": [
-          {
-            "id": "89ad6f9a2d065267",
-            "type": "leaf",
-            "state": {
-              "type": "pdf",
-              "state": {
-                "file": "pdf/金融风险管理/11 信用风险暴露和违约损失率的估计.pdf"
-              }
-            }
-          },
-          {
-            "id": "1bf70a94e774d6bd",
-            "type": "leaf",
-            "state": {
-              "type": "pdf",
-              "state": {
-                "file": "pdf/金融风险管理/12 信用风险价值cvar.pdf"
               }
             }
           }
@@ -119,8 +81,7 @@
               "state": {}
             }
           }
-        ],
-        "currentTab": 4
+        ]
       }
     ],
     "direction": "horizontal",
@@ -197,8 +158,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 200
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -215,31 +175,32 @@
       "obsidian-advanced-slides:Show Slide Preview": false
     }
   },
-  "active": "2e2c51a979f3df24",
+  "active": "da190fe8c27be1b4",
   "lastOpenFiles": [
-    "pdf/金融风险管理/11 信用风险暴露和违约损失率的估计.pdf",
+    "docs/课程/操作系统/实验笔记.md",
+    "docs/课程/操作系统/操作系统：三个简单的部分（OSTEP） (it-ebooks) (Z-Library).pdf",
+    "pdf/金融工程/金融工程课件（16）.pdf",
+    "pdf/金融工程/金融工程课件（14）.pdf",
+    "pdf/金融工程/金融工程课件（12）.pdf",
+    "pdf/金融工程/金融工程课件（13）.pdf",
+    "pdf/金融工程/金融工程课件（10）.pdf",
+    "pdf/金融工程/金融工程课件（9）.pdf",
+    "pdf/金融工程/金融工程课件（8）.pdf",
     "docs/课程/金融风险管理/笔记.md",
+    "docs/课程/编译原理/课件/Review.pdf",
     "pdf/金融风险管理/12 信用风险价值cvar.pdf",
-    "pdf/金融风险管理/10 违约概率的估计.pdf",
     "docs/课程/编译原理/往年题.md",
     "docs/课程/编译原理/Untitled.md",
     "docs/课程/编译原理/作业/p12.md",
-    "pdf/金融风险管理/13 操作风险管理.pdf",
-    "pdf/金融风险管理/syllabus-2024.3本科-与frm的详细对应关系.pdf",
-    "pdf/金融风险管理/6 资产组合的var计算.pdf",
-    "pdf/金融风险管理/7 基于var的组合风险来源分析和风险预算.pdf",
-    "pdf/金融风险管理/8 情景分析和压力测试.pdf",
-    "pdf/金融风险管理/basel协议.pdf",
-    "pdf/金融风险管理/5 波动率和相关性的估计.pdf",
     "docs/课程/编译原理/笔记/机器无关优化.md",
     "![Uploading.md",
     "docs/课程/金融工程学/笔记.md",
     "docs/课程/金融工程学/作业.md",
     "conflict-files-obsidian-git.md",
-    "docs/课程/软件体系结构/笔记/可扩展.md",
-    "docs/课程/软件体系结构/笔记/SSM/SpringMVC.md",
+    "docs/归档课程/软件体系结构/笔记/可扩展.md",
+    "docs/归档课程/软件体系结构/笔记/SSM/SpringMVC.md",
     "docs/课程/编译原理/作业/p13.md",
-    "docs/课程/软件体系结构/笔记/SpringBoot.md",
+    "docs/归档课程/软件体系结构/笔记/SpringBoot.md",
     "docs/pc日常/数据备份/数据迁移更换硬盘.md",
     "docs/pc日常/数据备份/数据备份.md",
     "docs/课程/编译原理/作业/答案/dragon-book-exercise-answers-master/ch02/2.3/2.3.md",
