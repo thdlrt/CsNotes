@@ -31,16 +31,6 @@
                 "source": false
               }
             }
-          },
-          {
-            "id": "4690d7c0553087cb",
-            "type": "leaf",
-            "state": {
-              "type": "pdf",
-              "state": {
-                "file": "docs/课程/金融工程学/郑振龙《金融工程》（第5版）笔记和课后习题（含考研真题）详解答案.pdf"
-              }
-            }
           }
         ]
       },
@@ -212,7 +202,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/课程/金融工程学/笔记.md",
+                "file": "pdf/金融工程/金融工程课件（9）.pdf",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -229,7 +219,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/课程/金融工程学/笔记.md",
+                "file": "pdf/金融工程/金融工程课件（9）.pdf",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -252,7 +242,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/课程/金融工程学/笔记.md"
+                "file": "pdf/金融工程/金融工程课件（9）.pdf"
               }
             }
           },
@@ -286,20 +276,20 @@
       "obsidian-advanced-slides:Show Slide Preview": false
     }
   },
-  "active": "da190fe8c27be1b4",
+  "active": "f0d3ac35a7fae17d",
   "lastOpenFiles": [
-    "pdf/金融工程/金融工程课件（9）.pdf",
     "pdf/金融工程/金融工程课件（10）.pdf",
     "docs/课程/金融工程学/笔记.md",
+    "docs/课程/金融工程学/作业.md",
+    "pdf/金融风险管理/3  利率风险.pdf",
+    "docs/课程/金融工程学/郑振龙《金融工程》（第5版）笔记和课后习题（含考研真题）详解答案.pdf",
+    "pdf/金融工程/金融工程课件（9）.pdf",
     "pdf/金融工程/金融工程课件（11）.pdf",
     "pdf/金融工程/金融工程课件（12）.pdf",
     "pdf/金融工程/金融工程课件（13）.pdf",
     "pdf/金融工程/金融工程课件（14）.pdf",
     "pdf/金融工程/金融工程课件（15）.pdf",
     "pdf/金融工程/金融工程课件（16）.pdf",
-    "docs/课程/金融工程学/郑振龙《金融工程》（第5版）笔记和课后习题（含考研真题）详解答案.pdf",
-    "docs/课程/金融工程学/作业.md",
-    "pdf/金融工程/金融工程课件（8）.pdf",
     "docs/课程/金融风险管理/笔记.md",
     "docs/课程/操作系统/实验笔记.md",
     "docs/课程/编译原理/往年题.md",
