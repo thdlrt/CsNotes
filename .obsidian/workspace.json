@@ -81,7 +81,8 @@
               "state": {}
             }
           }
-        ]
+        ],
+        "currentTab": 4
       }
     ],
     "direction": "horizontal",
@@ -175,8 +176,9 @@
       "obsidian-advanced-slides:Show Slide Preview": false
     }
   },
-  "active": "96e173acdf249e6c",
+  "active": "1ed5045d58c2a1eb",
   "lastOpenFiles": [
+    "pdf/金融风险管理/14 流动性风险管理.pdf",
     "pdf/金融风险管理/5 波动率和相关性的估计.pdf",
     "pdf/金融风险管理/3  利率风险.pdf",
     "docs/课程/金融风险管理/笔记.md",
@@ -189,7 +191,6 @@
     "pdf/金融工程/金融工程课件（10）.pdf",
     "pdf/金融工程/金融工程课件（9）.pdf",
     "pdf/金融工程/金融工程课件（8）.pdf",
-    "docs/课程/编译原理/课件/Review.pdf",
     "docs/课程/编译原理/往年题.md",
     "docs/课程/编译原理/Untitled.md",
     "docs/课程/编译原理/作业/p12.md",
