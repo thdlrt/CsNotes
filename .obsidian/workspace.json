@@ -6,7 +6,7 @@
       {
         "id": "26d3758ae5a1e2eb",
         "type": "tabs",
-        "dimension": 52.214765100671144,
+        "dimension": 53.11203319502075,
         "children": [
           {
             "id": "da190fe8c27be1b4",
@@ -25,10 +25,10 @@
       {
         "id": "181354fc1d91be69",
         "type": "tabs",
-        "dimension": 47.78523489932886,
+        "dimension": 46.88796680497925,
         "children": [
           {
-            "id": "f0d3ac35a7fae17d",
+            "id": "08208a9236291919",
             "type": "leaf",
             "state": {
               "type": "pdf",
@@ -38,7 +38,7 @@
             }
           },
           {
-            "id": "2c7dffbf4d89ec42",
+            "id": "e4f40a5fc5640f1f",
             "type": "leaf",
             "state": {
               "type": "pdf",
@@ -170,7 +170,7 @@
             }
           }
         ],
-        "currentTab": 4
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
@@ -303,13 +303,13 @@
   },
   "active": "da190fe8c27be1b4",
   "lastOpenFiles": [
-    "docs/课程/金融工程学/作业.md",
-    "docs/课程/金融工程学/笔记.md",
     "pdf/金融工程/金融工程课件（9）.pdf",
     "pdf/金融工程/金融工程课件（10）.pdf",
+    "pdf/金融工程/金融工程课件（11）.pdf",
+    "docs/课程/金融工程学/笔记.md",
+    "docs/课程/金融工程学/作业.md",
     "pdf/金融风险管理/3  利率风险.pdf",
     "docs/课程/金融工程学/郑振龙《金融工程》（第5版）笔记和课后习题（含考研真题）详解答案.pdf",
-    "pdf/金融工程/金融工程课件（11）.pdf",
     "pdf/金融工程/金融工程课件（12）.pdf",
     "pdf/金融工程/金融工程课件（13）.pdf",
     "pdf/金融工程/金融工程课件（14）.pdf",
