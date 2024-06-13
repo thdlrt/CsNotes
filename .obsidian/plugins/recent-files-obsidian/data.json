@@ -1,6 +1,10 @@
 {
   "recentFiles": [
     {
+      "basename": "14 流动性风险管理",
+      "path": "pdf/金融风险管理/14 流动性风险管理.pdf"
+    },
+    {
       "basename": "笔记",
       "path": "docs/课程/金融风险管理/笔记.md"
     },
@@ -195,10 +199,6 @@
     {
       "basename": "2.3",
       "path": "docs/课程/编译原理/作业/答案/dragon-book-exercise-answers-master/ch02/2.3/2.3.md"
-    },
-    {
-      "basename": "2.4",
-      "path": "docs/课程/编译原理/作业/答案/dragon-book-exercise-answers-master/ch02/2.4/2.4.md"
     }
   ],
   "omittedPaths": [],

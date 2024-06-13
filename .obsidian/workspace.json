@@ -20,6 +20,22 @@
             }
           }
         ]
+      },
+      {
+        "id": "b36b322c380f9843",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "cc8765357ca41862",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "pdf/金融风险管理/14 流动性风险管理.pdf"
+              }
+            }
+          }
+        ]
       }
     ],
     "direction": "vertical"
@@ -102,7 +118,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/课程/金融风险管理/笔记.md",
+                "file": "pdf/金融风险管理/14 流动性风险管理.pdf",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -119,7 +135,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/课程/金融风险管理/笔记.md",
+                "file": "pdf/金融风险管理/14 流动性风险管理.pdf",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -142,7 +158,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/课程/金融风险管理/笔记.md"
+                "file": "pdf/金融风险管理/14 流动性风险管理.pdf"
               }
             }
           },
@@ -176,12 +192,12 @@
       "obsidian-advanced-slides:Show Slide Preview": false
     }
   },
-  "active": "1ed5045d58c2a1eb",
+  "active": "cc8765357ca41862",
   "lastOpenFiles": [
+    "docs/课程/金融风险管理/笔记.md",
     "pdf/金融风险管理/14 流动性风险管理.pdf",
     "pdf/金融风险管理/5 波动率和相关性的估计.pdf",
     "pdf/金融风险管理/3  利率风险.pdf",
-    "docs/课程/金融风险管理/笔记.md",
     "docs/课程/操作系统/实验笔记.md",
     "docs/课程/操作系统/操作系统：三个简单的部分（OSTEP） (it-ebooks) (Z-Library).pdf",
     "pdf/金融工程/金融工程课件（16）.pdf",
@@ -190,7 +206,6 @@
     "pdf/金融工程/金融工程课件（13）.pdf",
     "pdf/金融工程/金融工程课件（10）.pdf",
     "pdf/金融工程/金融工程课件（9）.pdf",
-    "pdf/金融工程/金融工程课件（8）.pdf",
     "docs/课程/编译原理/往年题.md",
     "docs/课程/编译原理/Untitled.md",
     "docs/课程/编译原理/作业/p12.md",
