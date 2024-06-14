@@ -26,16 +26,6 @@
         "type": "tabs",
         "children": [
           {
-            "id": "f95ca4d25d0ffc0c",
-            "type": "leaf",
-            "state": {
-              "type": "pdf",
-              "state": {
-                "file": "pdf/金融工程/金融工程课件（11）.pdf"
-              }
-            }
-          },
-          {
             "id": "42a22ca6baf9c05c",
             "type": "leaf",
             "state": {
@@ -281,15 +271,15 @@
   },
   "active": "5eabc40b2f09c8ef",
   "lastOpenFiles": [
-    "pdf/金融工程/金融工程课件（11）.pdf",
-    "docs/课程/金融工程学/笔记.md",
     "pdf/金融工程/金融工程课件（12）.pdf",
-    "pdf/金融工程/金融工程课件（13）.pdf",
+    "docs/课程/金融工程学/作业.md",
+    "docs/课程/金融工程学/笔记.md",
     "pdf/金融工程/金融工程课件（14）.pdf",
     "pdf/金融工程/金融工程课件（15）.pdf",
-    "docs/课程/金融工程学/作业.md",
-    "pdf/金融工程/金融工程课件（10）.pdf",
     "pdf/金融工程/金融工程课件（16）.pdf",
+    "pdf/金融工程/金融工程课件（13）.pdf",
+    "pdf/金融工程/金融工程课件（11）.pdf",
+    "pdf/金融工程/金融工程课件（10）.pdf",
     "docs/课程/金融风险管理/笔记.md",
     "pdf/金融工程/金融工程课件（9）.pdf",
     "pdf/金融风险管理/3  利率风险.pdf",
