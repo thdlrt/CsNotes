@@ -5,6 +5,10 @@
       "path": "docs/课程/金融工程学/笔记.md"
     },
     {
+      "basename": "作业",
+      "path": "docs/课程/金融工程学/作业.md"
+    },
+    {
       "basename": "金融工程课件（10）",
       "path": "pdf/金融工程/金融工程课件（10）.pdf"
     },
@@ -19,10 +23,6 @@
     {
       "basename": "金融工程课件（11）",
       "path": "pdf/金融工程/金融工程课件（11）.pdf"
-    },
-    {
-      "basename": "作业",
-      "path": "docs/课程/金融工程学/作业.md"
     },
     {
       "basename": "笔记",
