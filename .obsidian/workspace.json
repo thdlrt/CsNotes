@@ -178,7 +178,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/课程/金融工程学/作业.md",
+                "file": "docs/课程/金融工程学/笔记.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -195,7 +195,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/课程/金融工程学/作业.md",
+                "file": "docs/课程/金融工程学/笔记.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -218,7 +218,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/课程/金融工程学/作业.md"
+                "file": "docs/课程/金融工程学/笔记.md"
               }
             }
           },
@@ -257,15 +257,15 @@
     "type": "floating",
     "children": [
       {
-        "id": "e5042796db6a2ed9",
+        "id": "26e446ff1ba90659",
         "type": "window",
         "children": [
           {
-            "id": "b79e38d0042548b9",
+            "id": "8b76f9f0a5efad25",
             "type": "tabs",
             "children": [
               {
-                "id": "e7fc4ae8e693d1fc",
+                "id": "40425e31abd18e4e",
                 "type": "leaf",
                 "state": {
                   "type": "markdown",
@@ -280,23 +280,23 @@
           }
         ],
         "direction": "vertical",
-        "x": 533,
-        "y": 18,
-        "width": 778,
+        "x": 538,
+        "y": 21,
+        "width": 725,
         "height": 992,
-        "maximize": true,
+        "maximize": false,
         "zoom": 0
       }
     ]
   },
-  "active": "e7fc4ae8e693d1fc",
+  "active": "5eabc40b2f09c8ef",
   "lastOpenFiles": [
+    "docs/课程/金融工程学/作业.md",
     "docs/课程/金融工程学/笔记.md",
     "pdf/金融工程/金融工程课件（10）.pdf",
     "docs/课程/金融风险管理/笔记.md",
     "pdf/金融工程/金融工程课件（9）.pdf",
     "pdf/金融工程/金融工程课件（11）.pdf",
-    "docs/课程/金融工程学/作业.md",
     "pdf/金融风险管理/3  利率风险.pdf",
     "docs/课程/金融工程学/郑振龙《金融工程》（第5版）笔记和课后习题（含考研真题）详解答案.pdf",
     "pdf/金融工程/金融工程课件（12）.pdf",
