@@ -284,16 +284,16 @@
         "y": 21,
         "width": 725,
         "height": 992,
-        "maximize": true,
+        "maximize": false,
         "zoom": 0
       }
     ]
   },
   "active": "5eabc40b2f09c8ef",
   "lastOpenFiles": [
-    "docs/课程/金融工程学/作业.md",
-    "docs/课程/金融工程学/笔记.md",
     "pdf/金融工程/金融工程课件（10）.pdf",
+    "docs/课程/金融工程学/笔记.md",
+    "docs/课程/金融工程学/作业.md",
     "docs/课程/金融风险管理/笔记.md",
     "pdf/金融工程/金融工程课件（9）.pdf",
     "pdf/金融工程/金融工程课件（11）.pdf",
