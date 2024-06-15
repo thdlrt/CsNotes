@@ -26,16 +26,6 @@
         "type": "tabs",
         "children": [
           {
-            "id": "073d986909d9609a",
-            "type": "leaf",
-            "state": {
-              "type": "pdf",
-              "state": {
-                "file": "pdf/金融工程/金融工程课件（14）.pdf"
-              }
-            }
-          },
-          {
             "id": "bc8e94a939319198",
             "type": "leaf",
             "state": {
@@ -211,49 +201,13 @@
       "obsidian-advanced-slides:Show Slide Preview": false
     }
   },
-  "floating": {
-    "id": "a59b76bf793cabef",
-    "type": "floating",
-    "children": [
-      {
-        "id": "180471ac81d37004",
-        "type": "window",
-        "children": [
-          {
-            "id": "9fa83002db8958f5",
-            "type": "tabs",
-            "children": [
-              {
-                "id": "54f1cb1e977aa6b6",
-                "type": "leaf",
-                "state": {
-                  "type": "markdown",
-                  "state": {
-                    "file": "docs/课程/金融工程学/作业.md",
-                    "mode": "source",
-                    "source": false
-                  }
-                }
-              }
-            ]
-          }
-        ],
-        "direction": "vertical",
-        "x": 558,
-        "y": 17,
-        "width": 738,
-        "height": 992,
-        "maximize": true,
-        "zoom": 0
-      }
-    ]
-  },
   "active": "43549b5f537e56bf",
   "lastOpenFiles": [
-    "pdf/金融工程/金融工程课件（14）.pdf",
+    "pdf/金融工程/金融工程课件（15）.pdf",
+    "pdf/金融工程/金融工程课件（16）.pdf",
     "docs/课程/金融工程学/笔记.md",
     "docs/课程/金融工程学/作业.md",
-    "pdf/金融工程/金融工程课件（15）.pdf",
+    "pdf/金融工程/金融工程课件（14）.pdf",
     "pdf/金融工程/金融工程课件（13）.pdf",
     "pdf/金融工程/金融工程课件（12）.pdf",
     "docs/保研/面试/英语/【英语】问题准备.md",
@@ -261,7 +215,6 @@
     "docs/保研/面试/问题.md",
     "docs/保研/计算机科学/编译原理.md",
     "docs/保研/计算机科学/操作系统.md",
-    "pdf/金融工程/金融工程课件（16）.pdf",
     "pdf/金融工程/金融工程课件（11）.pdf",
     "pdf/金融工程/金融工程课件（10）.pdf",
     "docs/课程/金融风险管理/笔记.md",
