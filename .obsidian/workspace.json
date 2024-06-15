@@ -158,7 +158,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/课程/金融工程学/笔记.md",
+                "file": "pdf/金融工程/金融工程课件（12）.pdf",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -175,7 +175,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/课程/金融工程学/笔记.md",
+                "file": "pdf/金融工程/金融工程课件（12）.pdf",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -198,7 +198,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/课程/金融工程学/笔记.md"
+                "file": "pdf/金融工程/金融工程课件（12）.pdf"
               }
             }
           },
@@ -269,15 +269,15 @@
       }
     ]
   },
-  "active": "5eabc40b2f09c8ef",
+  "active": "42a22ca6baf9c05c",
   "lastOpenFiles": [
-    "pdf/金融工程/金融工程课件（12）.pdf",
-    "docs/课程/金融工程学/作业.md",
-    "docs/课程/金融工程学/笔记.md",
-    "pdf/金融工程/金融工程课件（14）.pdf",
     "pdf/金融工程/金融工程课件（15）.pdf",
-    "pdf/金融工程/金融工程课件（16）.pdf",
+    "pdf/金融工程/金融工程课件（12）.pdf",
     "pdf/金融工程/金融工程课件（13）.pdf",
+    "pdf/金融工程/金融工程课件（14）.pdf",
+    "docs/课程/金融工程学/笔记.md",
+    "docs/课程/金融工程学/作业.md",
+    "pdf/金融工程/金融工程课件（16）.pdf",
     "pdf/金融工程/金融工程课件（11）.pdf",
     "pdf/金融工程/金融工程课件（10）.pdf",
     "docs/课程/金融风险管理/笔记.md",
