@@ -4,19 +4,18 @@
     "type": "split",
     "children": [
       {
-        "id": "2172f1aaa5132256",
+        "id": "472ad42053be6e3d",
         "type": "tabs",
-        "dimension": 50,
         "children": [
           {
-            "id": "5eabc40b2f09c8ef",
+            "id": "d29ac4bef744f4d0",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
                 "file": "docs/课程/金融工程学/笔记.md",
                 "mode": "source",
-                "source": false
+                "source": true
               }
             }
           }
@@ -25,7 +24,6 @@
       {
         "id": "181354fc1d91be69",
         "type": "tabs",
-        "dimension": 50,
         "children": [
           {
             "id": "fc2c35595f6f112a",
@@ -130,7 +128,7 @@
             }
           }
         ],
-        "currentTab": 4
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
@@ -261,11 +259,11 @@
       }
     ]
   },
-  "active": "5eabc40b2f09c8ef",
+  "active": "d29ac4bef744f4d0",
   "lastOpenFiles": [
-    "docs/课程/金融工程学/作业.md",
-    "docs/课程/金融工程学/笔记.md",
     "pdf/金融工程/金融工程课件（13）.pdf",
+    "docs/课程/金融工程学/笔记.md",
+    "docs/课程/金融工程学/作业.md",
     "pdf/金融工程/金融工程课件（14）.pdf",
     "pdf/金融工程/金融工程课件（12）.pdf",
     "docs/保研/面试/英语/【英语】问题准备.md",
