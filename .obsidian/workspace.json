@@ -18,21 +18,8 @@
                 "source": false
               }
             }
-          },
-          {
-            "id": "c4bfdb10df821197",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "docs/保研/面试/英语/【英语】问题准备.md",
-                "mode": "source",
-                "source": false
-              }
-            }
           }
-        ],
-        "currentTab": 1
+        ]
       },
       {
         "id": "181354fc1d91be69",
@@ -150,11 +137,12 @@
               "state": {}
             }
           }
-        ]
+        ],
+        "currentTab": 4
       }
     ],
     "direction": "horizontal",
-    "width": 451.5
+    "width": 200
   },
   "right": {
     "id": "d615b65a4ccf8a6a",
@@ -170,7 +158,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/保研/面试/英语/【英语】问题准备.md",
+                "file": "docs/课程/金融工程学/作业.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -187,7 +175,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/保研/面试/英语/【英语】问题准备.md",
+                "file": "docs/课程/金融工程学/作业.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -210,7 +198,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/保研/面试/英语/【英语】问题准备.md"
+                "file": "docs/课程/金融工程学/作业.md"
               }
             }
           },
@@ -281,10 +269,10 @@
       }
     ]
   },
-  "active": "c4bfdb10df821197",
+  "active": "1ed5045d58c2a1eb",
   "lastOpenFiles": [
-    "docs/课程/金融工程学/作业.md",
     "docs/保研/面试/英语/【英语】问题准备.md",
+    "docs/课程/金融工程学/作业.md",
     "docs/保研/面试/英语/相关词汇.md",
     "docs/课程/金融工程学/笔记.md",
     "docs/保研/面试/问题.md",
