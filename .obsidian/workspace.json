@@ -13,35 +13,9 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/课程/金融工程学/笔记.md",
+                "file": "docs/课程/金融风险管理/笔记.md",
                 "mode": "source",
                 "source": false
-              }
-            }
-          }
-        ]
-      },
-      {
-        "id": "181354fc1d91be69",
-        "type": "tabs",
-        "children": [
-          {
-            "id": "bc8e94a939319198",
-            "type": "leaf",
-            "state": {
-              "type": "pdf",
-              "state": {
-                "file": "pdf/金融工程/金融工程课件（15）.pdf"
-              }
-            }
-          },
-          {
-            "id": "472ff91160b704da",
-            "type": "leaf",
-            "state": {
-              "type": "pdf",
-              "state": {
-                "file": "pdf/金融工程/金融工程课件（16）.pdf"
               }
             }
           }
@@ -74,7 +48,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "tag:#作业",
+                "query": "两张",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -127,7 +101,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/课程/金融工程学/笔记.md",
+                "file": "docs/课程/金融风险管理/笔记.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -144,7 +118,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/课程/金融工程学/笔记.md",
+                "file": "docs/课程/金融风险管理/笔记.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -167,7 +141,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/课程/金融工程学/笔记.md"
+                "file": "docs/课程/金融风险管理/笔记.md"
               }
             }
           },
@@ -203,9 +177,9 @@
   },
   "active": "43549b5f537e56bf",
   "lastOpenFiles": [
-    "pdf/金融工程/金融工程课件（15）.pdf",
-    "pdf/金融工程/金融工程课件（16）.pdf",
     "docs/课程/金融工程学/笔记.md",
+    "pdf/金融工程/金融工程课件（16）.pdf",
+    "pdf/金融工程/金融工程课件（15）.pdf",
     "docs/课程/金融工程学/作业.md",
     "pdf/金融工程/金融工程课件（14）.pdf",
     "pdf/金融工程/金融工程课件（13）.pdf",
