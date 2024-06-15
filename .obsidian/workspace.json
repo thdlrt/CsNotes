@@ -75,8 +75,7 @@
               }
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -159,7 +158,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "pdf/金融工程/金融工程课件（13）.pdf",
+                "file": "docs/课程/金融工程学/笔记.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -176,7 +175,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "pdf/金融工程/金融工程课件（13）.pdf",
+                "file": "docs/课程/金融工程学/笔记.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -199,7 +198,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "pdf/金融工程/金融工程课件（13）.pdf"
+                "file": "docs/课程/金融工程学/笔记.md"
               }
             }
           },
@@ -270,19 +269,19 @@
       }
     ]
   },
-  "active": "fc2c35595f6f112a",
+  "active": "5eabc40b2f09c8ef",
   "lastOpenFiles": [
+    "pdf/金融工程/金融工程课件（12）.pdf",
     "docs/课程/金融工程学/笔记.md",
+    "pdf/金融工程/金融工程课件（13）.pdf",
     "docs/课程/金融工程学/作业.md",
     "docs/保研/面试/英语/【英语】问题准备.md",
     "docs/保研/面试/英语/相关词汇.md",
     "docs/保研/面试/问题.md",
     "docs/保研/计算机科学/编译原理.md",
     "docs/保研/计算机科学/操作系统.md",
-    "pdf/金融工程/金融工程课件（12）.pdf",
     "pdf/金融工程/金融工程课件（14）.pdf",
     "pdf/金融工程/金融工程课件（15）.pdf",
-    "pdf/金融工程/金融工程课件（13）.pdf",
     "pdf/金融工程/金融工程课件（16）.pdf",
     "pdf/金融工程/金融工程课件（11）.pdf",
     "pdf/金融工程/金融工程课件（10）.pdf",
@@ -308,7 +307,6 @@
     "docs/课程/编译原理/编译原理.md",
     "docs/课程/编译原理/作业/答案/dragon-book-exercise-answers-master/ch02/2.2/assets/2.2.3-4.png",
     "_private_/个人相关/腾讯天美游戏端开发.md",
-    "_private_/临时/temp.md",
     "docs/保研/笔试/c96536f112a74024be9f595f007a2763.jpg",
     "CsNotes/2021-11-22-22-54-02.png",
     "CsNotes/2021-11-22-22-52-49.png",
