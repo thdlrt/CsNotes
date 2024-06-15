@@ -127,8 +127,7 @@
               "state": {}
             }
           }
-        ],
-        "currentTab": 3
+        ]
       }
     ],
     "direction": "horizontal",
@@ -148,7 +147,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "pdf/金融工程/金融工程课件（13）.pdf",
+                "file": "docs/课程/金融工程学/笔记.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -165,7 +164,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "pdf/金融工程/金融工程课件（13）.pdf",
+                "file": "docs/课程/金融工程学/笔记.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -188,7 +187,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "pdf/金融工程/金融工程课件（13）.pdf"
+                "file": "docs/课程/金融工程学/笔记.md"
               }
             }
           },
@@ -259,12 +258,12 @@
       }
     ]
   },
-  "active": "fc2c35595f6f112a",
+  "active": "43549b5f537e56bf",
   "lastOpenFiles": [
+    "docs/课程/金融工程学/作业.md",
     "docs/课程/金融工程学/笔记.md",
     "pdf/金融工程/金融工程课件（13）.pdf",
     "pdf/金融工程/金融工程课件（14）.pdf",
-    "docs/课程/金融工程学/作业.md",
     "pdf/金融工程/金融工程课件（12）.pdf",
     "docs/保研/面试/英语/【英语】问题准备.md",
     "docs/保研/面试/英语/相关词汇.md",
