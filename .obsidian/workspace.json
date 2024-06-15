@@ -154,7 +154,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 451.5
   },
   "right": {
     "id": "d615b65a4ccf8a6a",
@@ -170,7 +170,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/课程/金融工程学/作业.md",
+                "file": "docs/保研/面试/英语/【英语】问题准备.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -187,7 +187,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/课程/金融工程学/作业.md",
+                "file": "docs/保研/面试/英语/【英语】问题准备.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -210,7 +210,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/课程/金融工程学/作业.md"
+                "file": "docs/保研/面试/英语/【英语】问题准备.md"
               }
             }
           },
@@ -281,15 +281,15 @@
       }
     ]
   },
-  "active": "54f1cb1e977aa6b6",
+  "active": "c4bfdb10df821197",
   "lastOpenFiles": [
+    "docs/课程/金融工程学/作业.md",
     "docs/保研/面试/英语/【英语】问题准备.md",
     "docs/保研/面试/英语/相关词汇.md",
     "docs/课程/金融工程学/笔记.md",
     "docs/保研/面试/问题.md",
     "docs/保研/计算机科学/编译原理.md",
     "docs/保研/计算机科学/操作系统.md",
-    "docs/课程/金融工程学/作业.md",
     "pdf/金融工程/金融工程课件（12）.pdf",
     "pdf/金融工程/金融工程课件（14）.pdf",
     "pdf/金融工程/金融工程课件（15）.pdf",
