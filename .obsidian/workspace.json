@@ -6,6 +6,7 @@
       {
         "id": "2172f1aaa5132256",
         "type": "tabs",
+        "dimension": 50,
         "children": [
           {
             "id": "5eabc40b2f09c8ef",
@@ -24,17 +25,8 @@
       {
         "id": "181354fc1d91be69",
         "type": "tabs",
+        "dimension": 50,
         "children": [
-          {
-            "id": "42a22ca6baf9c05c",
-            "type": "leaf",
-            "state": {
-              "type": "pdf",
-              "state": {
-                "file": "pdf/金融工程/金融工程课件（12）.pdf"
-              }
-            }
-          },
           {
             "id": "fc2c35595f6f112a",
             "type": "leaf",
@@ -271,16 +263,16 @@
   },
   "active": "5eabc40b2f09c8ef",
   "lastOpenFiles": [
-    "pdf/金融工程/金融工程课件（12）.pdf",
+    "docs/课程/金融工程学/作业.md",
     "docs/课程/金融工程学/笔记.md",
     "pdf/金融工程/金融工程课件（13）.pdf",
-    "docs/课程/金融工程学/作业.md",
+    "pdf/金融工程/金融工程课件（14）.pdf",
+    "pdf/金融工程/金融工程课件（12）.pdf",
     "docs/保研/面试/英语/【英语】问题准备.md",
     "docs/保研/面试/英语/相关词汇.md",
     "docs/保研/面试/问题.md",
     "docs/保研/计算机科学/编译原理.md",
     "docs/保研/计算机科学/操作系统.md",
-    "pdf/金融工程/金融工程课件（14）.pdf",
     "pdf/金融工程/金融工程课件（15）.pdf",
     "pdf/金融工程/金融工程课件（16）.pdf",
     "pdf/金融工程/金融工程课件（11）.pdf",
