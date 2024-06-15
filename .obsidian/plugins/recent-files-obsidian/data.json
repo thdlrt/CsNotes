@@ -1,16 +1,36 @@
 {
   "recentFiles": [
     {
+      "basename": "作业",
+      "path": "docs/课程/金融工程学/作业.md"
+    },
+    {
+      "basename": "【英语】问题准备",
+      "path": "docs/保研/面试/英语/【英语】问题准备.md"
+    },
+    {
+      "basename": "相关词汇",
+      "path": "docs/保研/面试/英语/相关词汇.md"
+    },
+    {
       "basename": "笔记",
       "path": "docs/课程/金融工程学/笔记.md"
     },
     {
-      "basename": "金融工程课件（12）",
-      "path": "pdf/金融工程/金融工程课件（12）.pdf"
+      "basename": "问题",
+      "path": "docs/保研/面试/问题.md"
     },
     {
-      "basename": "作业",
-      "path": "docs/课程/金融工程学/作业.md"
+      "basename": "编译原理",
+      "path": "docs/保研/计算机科学/编译原理.md"
+    },
+    {
+      "basename": "操作系统",
+      "path": "docs/保研/计算机科学/操作系统.md"
+    },
+    {
+      "basename": "金融工程课件（12）",
+      "path": "pdf/金融工程/金融工程课件（12）.pdf"
     },
     {
       "basename": "金融工程课件（14）",
@@ -179,26 +199,6 @@
     {
       "basename": "SpringMVC",
       "path": "docs/归档课程/软件体系结构/笔记/SSM/SpringMVC.md"
-    },
-    {
-      "basename": "p13",
-      "path": "docs/课程/编译原理/作业/p13.md"
-    },
-    {
-      "basename": "SpringBoot",
-      "path": "docs/归档课程/软件体系结构/笔记/SpringBoot.md"
-    },
-    {
-      "basename": "数据迁移更换硬盘",
-      "path": "docs/pc日常/数据备份/数据迁移更换硬盘.md"
-    },
-    {
-      "basename": "数据备份",
-      "path": "docs/pc日常/数据备份/数据备份.md"
-    },
-    {
-      "basename": "2.3",
-      "path": "docs/课程/编译原理/作业/答案/dragon-book-exercise-answers-master/ch02/2.3/2.3.md"
     }
   ],
   "omittedPaths": [],
