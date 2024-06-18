@@ -81,13 +81,11 @@
               "state": {}
             }
           }
-        ],
-        "currentTab": 4
+        ]
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 200
   },
   "right": {
     "id": "d615b65a4ccf8a6a",
@@ -177,8 +175,9 @@
       "obsidian-advanced-slides:Show Slide Preview": false
     }
   },
-  "active": "69dfeec79379c9ab",
+  "active": "96e173acdf249e6c",
   "lastOpenFiles": [
+    "chrome_100_percent.pak",
     "docs/课程/金融工程学/笔记.md",
     "pdf/金融工程/金融工程课件（16）.pdf",
     "pdf/金融工程/金融工程课件（15）.pdf",
