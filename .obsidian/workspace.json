@@ -93,8 +93,7 @@
               }
             }
           }
-        ],
-        "currentTab": 4
+        ]
       }
     ],
     "direction": "horizontal",
@@ -189,8 +188,10 @@
   },
   "active": "69dfeec79379c9ab",
   "lastOpenFiles": [
-    "Excalidraw/Drawing 2024-06-19 16.26.17.excalidraw.md",
+    "docs/课程/操作系统/笔记/内核.md",
+    "docs/课程/操作系统/笔记/持久化.md",
     "docs/课程/操作系统/笔记/虚拟化.md",
+    "Excalidraw/Drawing 2024-06-19 16.26.17.excalidraw.md",
     "docs/归档课程/金融风险管理/笔记.md",
     "chrome_100_percent.pak",
     "docs/课程/金融工程学/笔记.md",
@@ -223,8 +224,6 @@
     "docs/pc日常/数据备份/数据迁移更换硬盘.md",
     "docs/pc日常/数据备份/数据备份.md",
     "docs/课程/编译原理/作业/答案/dragon-book-exercise-answers-master/ch02/2.3/2.3.md",
-    "docs/课程/编译原理/作业/答案/dragon-book-exercise-answers-master/ch02/2.4/2.4.md",
-    "docs/课程/编译原理/编译原理.md",
     "docs/课程/编译原理/作业/答案/dragon-book-exercise-answers-master/ch02/2.2/assets/2.2.3-4.png",
     "docs/保研/笔试/c96536f112a74024be9f595f007a2763.jpg",
     "CsNotes/2021-11-22-22-54-02.png",
