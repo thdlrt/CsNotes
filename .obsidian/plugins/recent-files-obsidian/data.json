@@ -5,6 +5,10 @@
       "path": "docs/课程/操作系统/笔记/虚拟化.md"
     },
     {
+      "basename": "4",
+      "path": "docs/归档课程/计算机系统基础/data/4.md"
+    },
+    {
       "basename": "内核",
       "path": "docs/课程/操作系统/笔记/内核.md"
     },
