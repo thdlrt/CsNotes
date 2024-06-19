@@ -1,8 +1,12 @@
 {
   "recentFiles": [
     {
+      "basename": "虚拟化",
+      "path": "docs/课程/操作系统/笔记/虚拟化.md"
+    },
+    {
       "basename": "笔记",
-      "path": "docs/课程/金融风险管理/笔记.md"
+      "path": "docs/归档课程/金融风险管理/笔记.md"
     },
     {
       "basename": "笔记",
@@ -195,10 +199,6 @@
     {
       "basename": "可扩展",
       "path": "docs/归档课程/软件体系结构/笔记/可扩展.md"
-    },
-    {
-      "basename": "SpringMVC",
-      "path": "docs/归档课程/软件体系结构/笔记/SSM/SpringMVC.md"
     }
   ],
   "omittedPaths": [],
