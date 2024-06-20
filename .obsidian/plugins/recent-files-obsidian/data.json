@@ -5,16 +5,20 @@
       "path": "docs/课程/操作系统/笔记/虚拟化.md"
     },
     {
-      "basename": "4",
-      "path": "docs/归档课程/计算机系统基础/data/4.md"
+      "basename": "持久化",
+      "path": "docs/课程/操作系统/笔记/持久化.md"
+    },
+    {
+      "basename": "并发",
+      "path": "docs/课程/操作系统/笔记/并发.md"
     },
     {
       "basename": "内核",
       "path": "docs/课程/操作系统/笔记/内核.md"
     },
     {
-      "basename": "持久化",
-      "path": "docs/课程/操作系统/笔记/持久化.md"
+      "basename": "4",
+      "path": "docs/归档课程/计算机系统基础/data/4.md"
     },
     {
       "basename": "Drawing 2024-06-19 16.26.17.excalidraw",
