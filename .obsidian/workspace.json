@@ -83,7 +83,8 @@
               }
             }
           }
-        ]
+        ],
+        "currentTab": 4
       }
     ],
     "direction": "horizontal",
@@ -176,7 +177,7 @@
       "obsidian-advanced-slides:Show Slide Preview": false
     }
   },
-  "active": "69dfeec79379c9ab",
+  "active": "6c7418c521ab7a68",
   "lastOpenFiles": [
     "docs/课程/操作系统/笔记/虚拟化.md",
     "docs/课程/操作系统/笔记/持久化.md",
