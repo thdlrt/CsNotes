@@ -18,18 +18,6 @@
                 "source": false
               }
             }
-          },
-          {
-            "id": "e37aa308acc5645b",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "docs/归档课程/计算机系统基础/data/4.md",
-                "mode": "source",
-                "source": false
-              }
-            }
           }
         ]
       }
@@ -189,14 +177,14 @@
       "obsidian-advanced-slides:Show Slide Preview": false
     }
   },
-  "active": "6c7418c521ab7a68",
+  "active": "69dfeec79379c9ab",
   "lastOpenFiles": [
+    "docs/归档课程/计算机系统基础/data/4.md",
+    "docs/课程/操作系统/笔记/持久化.md",
     "docs/课程/操作系统/笔记/虚拟化.md",
     "docs/课程/操作系统/笔记/绪论.md",
-    "docs/课程/操作系统/笔记/持久化.md",
     "docs/课程/操作系统/笔记/并发.md",
     "docs/课程/操作系统/笔记/内核.md",
-    "docs/归档课程/计算机系统基础/data/4.md",
     "Excalidraw/Drawing 2024-06-19 16.26.17.excalidraw.md",
     "docs/归档课程/金融风险管理/笔记.md",
     "chrome_100_percent.pak",
