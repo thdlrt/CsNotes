@@ -96,8 +96,7 @@
               "state": {}
             }
           }
-        ],
-        "currentTab": 3
+        ]
       }
     ],
     "direction": "horizontal",
@@ -190,11 +189,12 @@
       "obsidian-advanced-slides:Show Slide Preview": false
     }
   },
-  "active": "6c7418c521ab7a68",
+  "active": "2d91d93d0fc9683b",
   "lastOpenFiles": [
-    "docs/课程/操作系统/笔记/持久化.md",
     "_待办事项_/竞赛信息.md",
+    "docs/课程/金融工程学/笔记.md",
     "_待办事项_",
+    "docs/课程/操作系统/笔记/持久化.md",
     "CsNotes/竞赛信息.md",
     "CsNotes",
     "docs/课程/操作系统/笔记/绪论.md",
@@ -205,7 +205,6 @@
     "Excalidraw/Drawing 2024-06-19 16.26.17.excalidraw.md",
     "docs/归档课程/金融风险管理/笔记.md",
     "chrome_100_percent.pak",
-    "docs/课程/金融工程学/笔记.md",
     "pdf/金融工程/金融工程课件（16）.pdf",
     "pdf/金融工程/金融工程课件（15）.pdf",
     "docs/课程/金融工程学/作业.md",
