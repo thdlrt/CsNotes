@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "CsNotes/竞赛信息.md",
+                "file": "docs/课程/操作系统/笔记/持久化.md",
                 "mode": "source",
                 "source": false
               }
@@ -79,11 +79,12 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "CsNotes/竞赛信息.md"
+                "file": "docs/课程/操作系统/笔记/持久化.md"
               }
             }
           }
-        ]
+        ],
+        "currentTab": 4
       }
     ],
     "direction": "horizontal",
@@ -103,7 +104,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "CsNotes/竞赛信息.md",
+                "file": "docs/课程/操作系统/笔记/持久化.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -120,7 +121,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "CsNotes/竞赛信息.md",
+                "file": "docs/课程/操作系统/笔记/持久化.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -176,8 +177,10 @@
       "obsidian-advanced-slides:Show Slide Preview": false
     }
   },
-  "active": "69dfeec79379c9ab",
+  "active": "6c7418c521ab7a68",
   "lastOpenFiles": [
+    "_待办事项_/竞赛信息.md",
+    "_待办事项_",
     "docs/课程/操作系统/笔记/持久化.md",
     "CsNotes/竞赛信息.md",
     "CsNotes",
@@ -203,7 +206,6 @@
     "docs/保研/计算机科学/操作系统.md",
     "pdf/金融工程/金融工程课件（11）.pdf",
     "pdf/金融工程/金融工程课件（10）.pdf",
-    "pdf/金融工程/金融工程课件（9）.pdf",
     "docs/课程/操作系统/实验笔记.md",
     "docs/课程/编译原理/往年题.md",
     "docs/课程/编译原理/Untitled.md",
@@ -212,8 +214,6 @@
     "![Uploading.md",
     "conflict-files-obsidian-git.md",
     "docs/归档课程/软件体系结构/笔记/可扩展.md",
-    "docs/归档课程/软件体系结构/笔记/SSM/SpringMVC.md",
-    "docs/课程/编译原理/作业/p13.md",
     "docs/课程/编译原理/作业/答案/dragon-book-exercise-answers-master/ch02/2.2/assets/2.2.3-4.png",
     "docs/保研/笔试/c96536f112a74024be9f595f007a2763.jpg",
     "CsNotes/2021-11-22-22-54-02.png",
