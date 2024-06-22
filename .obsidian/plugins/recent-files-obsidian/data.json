@@ -1,6 +1,10 @@
 {
   "recentFiles": [
     {
+      "basename": "笔记",
+      "path": "docs/课程/金融工程学/笔记.md"
+    },
+    {
       "basename": "持久化",
       "path": "docs/课程/操作系统/笔记/持久化.md"
     },
@@ -35,10 +39,6 @@
     {
       "basename": "笔记",
       "path": "docs/归档课程/金融风险管理/笔记.md"
-    },
-    {
-      "basename": "笔记",
-      "path": "docs/课程/金融工程学/笔记.md"
     },
     {
       "basename": "金融工程课件（16）",

@@ -18,8 +18,21 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "2d91d93d0fc9683b",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "docs/课程/金融工程学/笔记.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -66,25 +79,25 @@
             }
           },
           {
+            "id": "6c7418c521ab7a68",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "docs/课程/金融工程学/笔记.md"
+              }
+            }
+          },
+          {
             "id": "1ed5045d58c2a1eb",
             "type": "leaf",
             "state": {
               "type": "file-tree-view",
               "state": {}
             }
-          },
-          {
-            "id": "6c7418c521ab7a68",
-            "type": "leaf",
-            "state": {
-              "type": "outline",
-              "state": {
-                "file": "docs/课程/操作系统/笔记/持久化.md"
-              }
-            }
           }
         ],
-        "currentTab": 4
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
@@ -104,7 +117,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/课程/操作系统/笔记/持久化.md",
+                "file": "docs/课程/金融工程学/笔记.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -121,7 +134,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/课程/操作系统/笔记/持久化.md",
+                "file": "docs/课程/金融工程学/笔记.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -179,9 +192,9 @@
   },
   "active": "6c7418c521ab7a68",
   "lastOpenFiles": [
+    "docs/课程/操作系统/笔记/持久化.md",
     "_待办事项_/竞赛信息.md",
     "_待办事项_",
-    "docs/课程/操作系统/笔记/持久化.md",
     "CsNotes/竞赛信息.md",
     "CsNotes",
     "docs/课程/操作系统/笔记/绪论.md",
