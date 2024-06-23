@@ -30,6 +30,18 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "33ad724203d40f28",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "docs/课程/金融工程学/作业.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
         ],
         "currentTab": 1
@@ -84,7 +96,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/课程/操作系统/笔记/持久化.md"
+                "file": "docs/课程/金融工程学/笔记.md"
               }
             }
           },
@@ -97,7 +109,7 @@
             }
           }
         ],
-        "currentTab": 4
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
@@ -117,7 +129,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/课程/操作系统/笔记/持久化.md",
+                "file": "docs/课程/金融工程学/笔记.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -134,7 +146,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/课程/操作系统/笔记/持久化.md",
+                "file": "docs/课程/金融工程学/笔记.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -190,12 +202,13 @@
       "obsidian-advanced-slides:Show Slide Preview": false
     }
   },
-  "active": "6c7418c521ab7a68",
+  "active": "2d91d93d0fc9683b",
   "lastOpenFiles": [
-    "_待办事项_/竞赛信息.md",
+    "docs/课程/金融工程学/作业.md",
     "docs/课程/金融工程学/笔记.md",
-    "_待办事项_",
     "docs/课程/操作系统/笔记/持久化.md",
+    "_待办事项_/竞赛信息.md",
+    "_待办事项_",
     "CsNotes/竞赛信息.md",
     "CsNotes",
     "docs/课程/操作系统/笔记/绪论.md",
@@ -208,7 +221,6 @@
     "chrome_100_percent.pak",
     "pdf/金融工程/金融工程课件（16）.pdf",
     "pdf/金融工程/金融工程课件（15）.pdf",
-    "docs/课程/金融工程学/作业.md",
     "pdf/金融工程/金融工程课件（14）.pdf",
     "pdf/金融工程/金融工程课件（13）.pdf",
     "pdf/金融工程/金融工程课件（12）.pdf",
