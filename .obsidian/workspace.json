@@ -73,7 +73,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "两张",
+                "query": "tag:#作业",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -108,7 +108,8 @@
               "state": {}
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -201,11 +202,11 @@
       "obsidian-advanced-slides:Show Slide Preview": false
     }
   },
-  "active": "2d91d93d0fc9683b",
+  "active": "24063adb5be26e38",
   "lastOpenFiles": [
-    "_待办事项_/竞赛信息.md",
-    "docs/课程/金融工程学/笔记.md",
     "docs/课程/金融工程学/作业.md",
+    "docs/课程/金融工程学/笔记.md",
+    "_待办事项_/竞赛信息.md",
     "docs/课程/操作系统/笔记/持久化.md",
     "_待办事项_",
     "CsNotes/竞赛信息.md",
