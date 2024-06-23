@@ -44,7 +44,7 @@
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -96,7 +96,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/课程/金融工程学/作业.md"
+                "file": "docs/课程/金融工程学/笔记.md"
               }
             }
           },
@@ -129,7 +129,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/课程/金融工程学/作业.md",
+                "file": "docs/课程/金融工程学/笔记.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -146,7 +146,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/课程/金融工程学/作业.md",
+                "file": "docs/课程/金融工程学/笔记.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -202,8 +202,9 @@
       "obsidian-advanced-slides:Show Slide Preview": false
     }
   },
-  "active": "33ad724203d40f28",
+  "active": "6c7418c521ab7a68",
   "lastOpenFiles": [
+    "docs/归档课程/计算机系统基础/data/6.md",
     "docs/课程/金融工程学/笔记.md",
     "docs/课程/金融工程学/作业.md",
     "_待办事项_/竞赛信息.md",
