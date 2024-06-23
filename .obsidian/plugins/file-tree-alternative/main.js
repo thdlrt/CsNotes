@@ -4220,14 +4220,17 @@ function MainTreeComponent(props) {
     }, [ozFileList$1]);
     // Custom Event Handler Function
     function handleRevealFileEvent(evt) {
-        // @ts-ignore
-        const file = evt.detail.file;
-        if (file && file instanceof obsidian.TFile) {
-            revealFileInFileTree(TFile2OZFile(file));
-        }
-        else {
-            new obsidian.Notice('File not found');
-        }
+        return __awaiter(this, void 0, void 0, function* () {
+            // @ts-ignore
+            const file = evt.detail.file;
+            if (file && file instanceof obsidian.TFile) {
+                yield plugin.openFileTreeLeaf(true);
+                revealFileInFileTree(TFile2OZFile(file));
+            }
+            else {
+                new obsidian.Notice('File not found');
+            }
+        });
     }
     function handleRevealFolderEvent(evt) {
         // @ts-ignore
