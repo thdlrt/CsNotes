@@ -5,6 +5,14 @@
       "path": "docs/课程/金融工程学/笔记.md"
     },
     {
+      "basename": "竞赛信息",
+      "path": "_待办事项_/竞赛信息.md"
+    },
+    {
+      "basename": "作业",
+      "path": "docs/课程/金融工程学/作业.md"
+    },
+    {
       "basename": "金融经济学背诵部分",
       "path": "_private_/金融经济学背诵部分.md"
     },
@@ -17,10 +25,6 @@
       "path": "docs/课程/金融工程学/公式速记.md"
     },
     {
-      "basename": "作业",
-      "path": "docs/课程/金融工程学/作业.md"
-    },
-    {
       "basename": "金融工程课件（9）",
       "path": "_pdf_/金融工程/金融工程课件（9）.pdf"
     },
@@ -31,10 +35,6 @@
     {
       "basename": "6",
       "path": "docs/归档课程/计算机系统基础/data/6.md"
-    },
-    {
-      "basename": "竞赛信息",
-      "path": "_待办事项_/竞赛信息.md"
     },
     {
       "basename": "绪论",
