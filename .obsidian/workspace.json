@@ -20,12 +20,12 @@
             }
           },
           {
-            "id": "2d91d93d0fc9683b",
+            "id": "f4b12323704383f5",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/课程/金融工程学/笔记.md",
+                "file": "_private_/金融经济学背诵部分.md",
                 "mode": "source",
                 "source": false
               }
@@ -96,7 +96,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/课程/金融工程学/笔记.md"
+                "file": "_private_/金融经济学背诵部分.md"
               }
             }
           },
@@ -108,8 +108,7 @@
               "state": {}
             }
           }
-        ],
-        "currentTab": 3
+        ]
       }
     ],
     "direction": "horizontal",
@@ -129,7 +128,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/课程/金融工程学/笔记.md",
+                "file": "_private_/金融经济学背诵部分.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -146,7 +145,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/课程/金融工程学/笔记.md",
+                "file": "_private_/金融经济学背诵部分.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -203,15 +202,17 @@
       "omnisearch:Omnisearch": false
     }
   },
-  "active": "2d91d93d0fc9683b",
+  "active": "f4b12323704383f5",
   "lastOpenFiles": [
-    "docs/课程/金融工程学/作业.md",
+    "docs/课程/操作系统/笔记/持久化.md",
     "docs/课程/金融工程学/笔记.md",
+    "_private_/金融经济学背诵部分.md",
+    "docs/课程/金融工程学/公式速记.md",
+    "docs/课程/金融工程学/作业.md",
     "pdf/金融工程/金融工程课件（9）.pdf",
     "pdf/金融工程/金融工程课件（10）.pdf",
     "docs/归档课程/计算机系统基础/data/6.md",
     "_待办事项_/竞赛信息.md",
-    "docs/课程/操作系统/笔记/持久化.md",
     "_待办事项_",
     "CsNotes/竞赛信息.md",
     "CsNotes",
@@ -239,7 +240,6 @@
     "docs/课程/编译原理/作业/p12.md",
     "docs/课程/编译原理/笔记/机器无关优化.md",
     "![Uploading.md",
-    "conflict-files-obsidian-git.md",
     "docs/课程/编译原理/作业/答案/dragon-book-exercise-answers-master/ch02/2.2/assets/2.2.3-4.png",
     "docs/保研/笔试/c96536f112a74024be9f595f007a2763.jpg",
     "CsNotes/2021-11-22-22-54-02.png",

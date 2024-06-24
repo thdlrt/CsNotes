@@ -1,8 +1,20 @@
 {
   "recentFiles": [
     {
+      "basename": "金融经济学背诵部分",
+      "path": "_private_/金融经济学背诵部分.md"
+    },
+    {
+      "basename": "持久化",
+      "path": "docs/课程/操作系统/笔记/持久化.md"
+    },
+    {
       "basename": "笔记",
       "path": "docs/课程/金融工程学/笔记.md"
+    },
+    {
+      "basename": "公式速记",
+      "path": "docs/课程/金融工程学/公式速记.md"
     },
     {
       "basename": "作业",
@@ -23,10 +35,6 @@
     {
       "basename": "竞赛信息",
       "path": "_待办事项_/竞赛信息.md"
-    },
-    {
-      "basename": "持久化",
-      "path": "docs/课程/操作系统/笔记/持久化.md"
     },
     {
       "basename": "绪论",
