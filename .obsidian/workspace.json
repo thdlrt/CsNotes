@@ -25,7 +25,19 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "_private_/金融经济学背诵部分.md",
+                "file": "docs/课程/金融工程学/笔记.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "76618b2f9dcb809a",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "docs/课程/金融工程学/笔记.md",
                 "mode": "source",
                 "source": false
               }
@@ -96,7 +108,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "_private_/金融经济学背诵部分.md"
+                "file": "docs/课程/金融工程学/笔记.md"
               }
             }
           },
@@ -109,7 +121,7 @@
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 2
       }
     ],
     "direction": "horizontal",
@@ -129,7 +141,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "_private_/金融经济学背诵部分.md",
+                "file": "docs/课程/金融工程学/笔记.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -146,7 +158,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "_private_/金融经济学背诵部分.md",
+                "file": "docs/课程/金融工程学/笔记.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -203,15 +215,15 @@
       "omnisearch:Omnisearch": false
     }
   },
-  "active": "6c7418c521ab7a68",
+  "active": "f4b12323704383f5",
   "lastOpenFiles": [
-    "docs/课程/操作系统/笔记/持久化.md",
-    "docs/课程/金融工程学/笔记.md",
     "_private_/金融经济学背诵部分.md",
+    "docs/课程/金融工程学/笔记.md",
+    "docs/课程/操作系统/笔记/持久化.md",
     "docs/课程/金融工程学/公式速记.md",
     "docs/课程/金融工程学/作业.md",
-    "pdf/金融工程/金融工程课件（9）.pdf",
-    "pdf/金融工程/金融工程课件（10）.pdf",
+    "_pdf_/金融工程/金融工程课件（9）.pdf",
+    "_pdf_/金融工程/金融工程课件（10）.pdf",
     "docs/归档课程/计算机系统基础/data/6.md",
     "_待办事项_/竞赛信息.md",
     "_待办事项_",
@@ -225,11 +237,11 @@
     "Excalidraw/Drawing 2024-06-19 16.26.17.excalidraw.md",
     "docs/归档课程/金融风险管理/笔记.md",
     "chrome_100_percent.pak",
-    "pdf/金融工程/金融工程课件（16）.pdf",
-    "pdf/金融工程/金融工程课件（15）.pdf",
-    "pdf/金融工程/金融工程课件（14）.pdf",
-    "pdf/金融工程/金融工程课件（13）.pdf",
-    "pdf/金融工程/金融工程课件（12）.pdf",
+    "_pdf_/金融工程/金融工程课件（16）.pdf",
+    "_pdf_/金融工程/金融工程课件（15）.pdf",
+    "_pdf_/金融工程/金融工程课件（14）.pdf",
+    "_pdf_/金融工程/金融工程课件（13）.pdf",
+    "_pdf_/金融工程/金融工程课件（12）.pdf",
     "docs/保研/面试/英语/【英语】问题准备.md",
     "docs/保研/面试/英语/相关词汇.md",
     "docs/保研/面试/问题.md",
