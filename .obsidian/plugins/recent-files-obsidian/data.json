@@ -2,11 +2,47 @@
   "recentFiles": [
     {
       "basename": "ABC321",
-      "path": "docs/blog/posts/ABC321.md"
+      "path": "docs/blog/posts/算法竞赛/ABC321.md"
     },
     {
       "basename": "ARC165",
-      "path": "docs/自学内容/算法竞赛/ARC165.md"
+      "path": "docs/blog/posts/算法竞赛/ARC165.md"
+    },
+    {
+      "basename": "CodeforcesRound899(Div.2)",
+      "path": "docs/blog/posts/算法竞赛/CodeforcesRound899(Div.2).md"
+    },
+    {
+      "basename": "CodeforcesRound900(Div.3)",
+      "path": "docs/blog/posts/算法竞赛/CodeforcesRound900(Div.3).md"
+    },
+    {
+      "basename": "CodeTONRound6",
+      "path": "docs/blog/posts/算法竞赛/CodeTONRound6.md"
+    },
+    {
+      "basename": "EducationalCodeforcesRound155(Div.2)",
+      "path": "docs/blog/posts/算法竞赛/EducationalCodeforcesRound155(Div.2).md"
+    },
+    {
+      "basename": "index",
+      "path": "docs/blog/index.md"
+    },
+    {
+      "basename": "编译原理",
+      "path": "docs/学校课程/课程/编译原理/编译原理.md"
+    },
+    {
+      "basename": "temp2",
+      "path": "_private_/临时/temp2.md"
+    },
+    {
+      "basename": "temp",
+      "path": "_private_/临时/temp.md"
+    },
+    {
+      "basename": "金融经济学背诵部分",
+      "path": "_private_/金融经济学背诵部分.md"
     },
     {
       "basename": "引论",
@@ -17,16 +53,8 @@
       "path": "docs/学校课程/课程/编译原理/题目/往年题.md"
     },
     {
-      "basename": "编译原理",
-      "path": "docs/学校课程/课程/编译原理/编译原理.md"
-    },
-    {
       "basename": "index",
       "path": "docs/index.md"
-    },
-    {
-      "basename": "index",
-      "path": "docs/blog/index.md"
     },
     {
       "basename": "jupyter",
@@ -47,10 +75,6 @@
     {
       "basename": "郑振龙《金融工程》（第5版）笔记和课后习题（含考研真题）详解答案",
       "path": "docs/学校课程/归档课程/金融工程学/郑振龙《金融工程》（第5版）笔记和课后习题（含考研真题）详解答案.pdf"
-    },
-    {
-      "basename": "金融经济学背诵部分",
-      "path": "_private_/金融经济学背诵部分.md"
     },
     {
       "basename": "P5410 【模板】扩展 KMP_exKMP（Z 函数） - 洛谷 _ 计算机科学教育新生态",

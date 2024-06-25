@@ -1,3 +1,11 @@
+---
+title: CodeTON Round 6
+date: 2023-01-01
+tags:
+  - Contest
+  - Codeforces
+---
+
 # CodeTON Round 6
 
 ## 概述

@@ -1,3 +1,11 @@
+---
+title: Educational Codeforces Round 155 (Div. 2)
+date: 2023/1/1
+tags:
+  - Contest
+  - Codeforces
+---
+
 # [Educational Codeforces Round 155 (Rated for Div. 2)](https://codeforces.com/contest/1879)
 
 ## 概述
