@@ -13,26 +13,13 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/课程/操作系统/笔记/持久化.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "f4b12323704383f5",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "docs/课程/金融工程学/笔记.md",
+                "file": "docs/学校课程/归档课程/金融工程学/笔记.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -84,7 +71,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/课程/金融工程学/笔记.md"
+                "file": "docs/学校课程/归档课程/金融工程学/笔记.md"
               }
             }
           },
@@ -96,12 +83,11 @@
               "state": {}
             }
           }
-        ],
-        "currentTab": 4
+        ]
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 803.5
   },
   "right": {
     "id": "d615b65a4ccf8a6a",
@@ -117,7 +103,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/课程/金融工程学/笔记.md",
+                "file": "docs/学校课程/归档课程/金融工程学/笔记.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -134,7 +120,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/课程/金融工程学/笔记.md",
+                "file": "docs/学校课程/归档课程/金融工程学/笔记.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -191,46 +177,46 @@
       "omnisearch:Omnisearch": false
     }
   },
-  "active": "f4b12323704383f5",
+  "active": "96e173acdf249e6c",
   "lastOpenFiles": [
-    "docs/课程/操作系统/笔记/持久化.md",
-    "docs/课程/金融工程学/笔记.md",
-    "docs/课程/金融工程学/作业.md",
-    "_待办事项_/竞赛信息.md",
+    "docs/编程语言",
+    "docs/自学内容",
+    "docs/八股（保研&工作）",
+    "docs/自学内容/Web开发（前后端）",
+    "docs/自学内容/游戏开发&图形学",
+    "docs/学校课程",
+    "docs/学校课程/归档课程/金融工程学/公式速记.md",
+    "docs/学校课程/归档课程/金融工程学/作业.md",
+    "docs/学校课程/归档课程/金融工程学/郑振龙《金融工程》（第5版）笔记和课后习题（含考研真题）详解答案.pdf",
+    "docs/学校课程/归档课程/金融工程学/笔记.md",
     "_private_/金融经济学背诵部分.md",
-    "docs/课程/金融工程学/公式速记.md",
+    "docs/javascripts/mathjax.js",
+    "docs/Blog/P5410 【模板】扩展 KMP_exKMP（Z 函数） - 洛谷 _ 计算机科学教育新生态.md",
+    "docs/学校课程/课程/操作系统/笔记/持久化.md",
+    "docs/Blog/index.md",
+    "docs/算法竞赛/竞赛/EducationalCodeforcesRound155(Div.2).md",
+    "docs/算法/竞赛/EducationalCodeforcesRound155(Div. 2) .md",
+    "docs/算法竞赛/竞赛/CodeTONRound6.md",
+    "docs/算法竞赛/竞赛/CodeforcesRound899(Div.2).md",
+    "docs/算法竞赛/竞赛/CodeforcesRound900(Div.3).md",
+    "docs/算法/竞赛/CodeforcesRound899(Div. 2).md",
+    "docs/自学内容/游戏开发&图形学/游戏开发/游戏引擎/unreal.md",
+    "docs/游戏开发/游戏引擎/LibGDX .md",
+    "docs/自学内容/游戏开发&图形学/游戏开发/游戏引擎/LibGDX.md",
+    "README.md",
+    "docs/Blog/posts",
+    "_待办事项_/竞赛信息.md",
     "_pdf_/金融工程/金融工程课件（9）.pdf",
     "_pdf_/金融工程/金融工程课件（10）.pdf",
-    "docs/归档课程/计算机系统基础/data/6.md",
-    "_待办事项_",
+    "docs/学校课程/归档课程/计算机系统基础/data/6.md",
     "CsNotes/竞赛信息.md",
-    "CsNotes",
-    "docs/课程/操作系统/笔记/绪论.md",
-    "docs/课程/操作系统/笔记/虚拟化.md",
-    "docs/归档课程/计算机系统基础/data/4.md",
-    "docs/课程/操作系统/笔记/并发.md",
-    "docs/课程/操作系统/笔记/内核.md",
-    "Excalidraw/Drawing 2024-06-19 16.26.17.excalidraw.md",
-    "docs/归档课程/金融风险管理/笔记.md",
-    "chrome_100_percent.pak",
-    "_pdf_/金融工程/金融工程课件（16）.pdf",
-    "_pdf_/金融工程/金融工程课件（15）.pdf",
-    "_pdf_/金融工程/金融工程课件（14）.pdf",
-    "_pdf_/金融工程/金融工程课件（13）.pdf",
-    "_pdf_/金融工程/金融工程课件（12）.pdf",
-    "docs/保研/面试/英语/【英语】问题准备.md",
-    "docs/保研/面试/英语/相关词汇.md",
-    "docs/保研/面试/问题.md",
-    "docs/保研/计算机科学/编译原理.md",
-    "docs/保研/计算机科学/操作系统.md",
-    "docs/课程/操作系统/实验笔记.md",
-    "docs/课程/编译原理/往年题.md",
-    "docs/课程/编译原理/Untitled.md",
-    "docs/课程/编译原理/作业/p12.md",
-    "docs/课程/编译原理/笔记/机器无关优化.md",
-    "![Uploading.md",
-    "docs/课程/编译原理/作业/答案/dragon-book-exercise-answers-master/ch02/2.2/assets/2.2.3-4.png",
-    "docs/保研/笔试/c96536f112a74024be9f595f007a2763.jpg",
+    "docs/学校课程/课程/操作系统/笔记/绪论.md",
+    "docs/学校课程/课程/操作系统/笔记/虚拟化.md",
+    "docs/学校课程/归档课程/计算机系统基础/data/4.md",
+    "docs/学校课程/课程/操作系统/笔记/并发.md",
+    "docs/学校课程/课程/操作系统/笔记/内核.md",
+    "docs/学校课程/课程/编译原理/作业/答案/dragon-book-exercise-answers-master/ch02/2.2/assets/2.2.3-4.png",
+    "docs/八股（保研&工作）/保研/笔试/c96536f112a74024be9f595f007a2763.jpg",
     "CsNotes/2021-11-22-22-54-02.png",
     "CsNotes/2021-11-22-22-52-49.png",
     "CsNotes/2021-11-22-22-49-26.png",

@@ -2,27 +2,43 @@
   "recentFiles": [
     {
       "basename": "笔记",
-      "path": "docs/课程/金融工程学/笔记.md"
+      "path": "docs/学校课程/归档课程/金融工程学/笔记.md"
     },
     {
-      "basename": "持久化",
-      "path": "docs/课程/操作系统/笔记/持久化.md"
+      "basename": "公式速记",
+      "path": "docs/学校课程/归档课程/金融工程学/公式速记.md"
     },
     {
       "basename": "作业",
-      "path": "docs/课程/金融工程学/作业.md"
+      "path": "docs/学校课程/归档课程/金融工程学/作业.md"
     },
     {
-      "basename": "竞赛信息",
-      "path": "_待办事项_/竞赛信息.md"
+      "basename": "郑振龙《金融工程》（第5版）笔记和课后习题（含考研真题）详解答案",
+      "path": "docs/学校课程/归档课程/金融工程学/郑振龙《金融工程》（第5版）笔记和课后习题（含考研真题）详解答案.pdf"
     },
     {
       "basename": "金融经济学背诵部分",
       "path": "_private_/金融经济学背诵部分.md"
     },
     {
-      "basename": "公式速记",
-      "path": "docs/课程/金融工程学/公式速记.md"
+      "basename": "P5410 【模板】扩展 KMP_exKMP（Z 函数） - 洛谷 _ 计算机科学教育新生态",
+      "path": "docs/Blog/P5410 【模板】扩展 KMP_exKMP（Z 函数） - 洛谷 _ 计算机科学教育新生态.md"
+    },
+    {
+      "basename": "持久化",
+      "path": "docs/学校课程/课程/操作系统/笔记/持久化.md"
+    },
+    {
+      "basename": "unreal",
+      "path": "docs/自学内容/游戏开发&图形学/游戏开发/游戏引擎/unreal.md"
+    },
+    {
+      "basename": "README",
+      "path": "README.md"
+    },
+    {
+      "basename": "竞赛信息",
+      "path": "_待办事项_/竞赛信息.md"
     },
     {
       "basename": "金融工程课件（9）",
@@ -34,27 +50,27 @@
     },
     {
       "basename": "6",
-      "path": "docs/归档课程/计算机系统基础/data/6.md"
+      "path": "docs/学校课程/归档课程/计算机系统基础/data/6.md"
     },
     {
       "basename": "绪论",
-      "path": "docs/课程/操作系统/笔记/绪论.md"
+      "path": "docs/学校课程/课程/操作系统/笔记/绪论.md"
     },
     {
       "basename": "虚拟化",
-      "path": "docs/课程/操作系统/笔记/虚拟化.md"
+      "path": "docs/学校课程/课程/操作系统/笔记/虚拟化.md"
     },
     {
       "basename": "4",
-      "path": "docs/归档课程/计算机系统基础/data/4.md"
+      "path": "docs/学校课程/归档课程/计算机系统基础/data/4.md"
     },
     {
       "basename": "并发",
-      "path": "docs/课程/操作系统/笔记/并发.md"
+      "path": "docs/学校课程/课程/操作系统/笔记/并发.md"
     },
     {
       "basename": "内核",
-      "path": "docs/课程/操作系统/笔记/内核.md"
+      "path": "docs/学校课程/课程/操作系统/笔记/内核.md"
     },
     {
       "basename": "Drawing 2024-06-19 16.26.17.excalidraw",
@@ -62,7 +78,7 @@
     },
     {
       "basename": "笔记",
-      "path": "docs/归档课程/金融风险管理/笔记.md"
+      "path": "docs/学校课程/归档课程/金融风险管理/笔记.md"
     },
     {
       "basename": "金融工程课件（16）",
@@ -86,31 +102,27 @@
     },
     {
       "basename": "【英语】问题准备",
-      "path": "docs/保研/面试/英语/【英语】问题准备.md"
+      "path": "docs/八股（保研&工作）/保研/面试/英语/【英语】问题准备.md"
     },
     {
       "basename": "相关词汇",
-      "path": "docs/保研/面试/英语/相关词汇.md"
+      "path": "docs/八股（保研&工作）/保研/面试/英语/相关词汇.md"
     },
     {
       "basename": "问题",
-      "path": "docs/保研/面试/问题.md"
+      "path": "docs/八股（保研&工作）/保研/面试/问题.md"
     },
     {
       "basename": "编译原理",
-      "path": "docs/保研/计算机科学/编译原理.md"
+      "path": "docs/八股（保研&工作）/保研/计算机科学/编译原理.md"
     },
     {
       "basename": "操作系统",
-      "path": "docs/保研/计算机科学/操作系统.md"
+      "path": "docs/八股（保研&工作）/保研/计算机科学/操作系统.md"
     },
     {
       "basename": "金融工程课件（11）",
       "path": "_pdf_/金融工程/金融工程课件（11）.pdf"
-    },
-    {
-      "basename": "郑振龙《金融工程》（第5版）笔记和课后习题（含考研真题）详解答案",
-      "path": "docs/课程/金融工程学/郑振龙《金融工程》（第5版）笔记和课后习题（含考研真题）详解答案.pdf"
     },
     {
       "basename": "金融工程课件（8）",
@@ -118,23 +130,23 @@
     },
     {
       "basename": "实验笔记",
-      "path": "docs/课程/操作系统/实验笔记.md"
+      "path": "docs/学校课程/课程/操作系统/实验笔记.md"
     },
     {
       "basename": "操作系统：三个简单的部分（OSTEP） (it-ebooks) (Z-Library)",
-      "path": "docs/课程/操作系统/操作系统：三个简单的部分（OSTEP） (it-ebooks) (Z-Library).pdf"
+      "path": "docs/学校课程/课程/操作系统/操作系统：三个简单的部分（OSTEP） (it-ebooks) (Z-Library).pdf"
     },
     {
       "basename": "往年题",
-      "path": "docs/课程/编译原理/往年题.md"
+      "path": "docs/学校课程/课程/编译原理/往年题.md"
     },
     {
       "basename": "p12",
-      "path": "docs/课程/编译原理/作业/p12.md"
+      "path": "docs/学校课程/课程/编译原理/作业/p12.md"
     },
     {
       "basename": "机器无关优化",
-      "path": "docs/课程/编译原理/笔记/机器无关优化.md"
+      "path": "docs/学校课程/课程/编译原理/笔记/机器无关优化.md"
     },
     {
       "basename": "![Uploading",
@@ -174,7 +186,7 @@
     },
     {
       "basename": "可扩展",
-      "path": "docs/归档课程/软件体系结构/笔记/可扩展.md"
+      "path": "docs/学校课程/归档课程/软件体系结构/笔记/可扩展.md"
     }
   ],
   "omittedPaths": [],
