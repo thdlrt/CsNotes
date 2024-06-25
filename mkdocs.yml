@@ -3,6 +3,10 @@ site_name: thdlrt CsNotes
 theme:
     logo: https://thdlrt.oss-cn-beijing.aliyuncs.com/android-chrome-512x512.png
     name: 'material'
+    icon:
+      repo: fontawesome/brands/github
+    repo_url: https://github.com/thdlrt/CsNotes
+    repo_name: CsNotes
     features:
     - content.code.select
     palette:
