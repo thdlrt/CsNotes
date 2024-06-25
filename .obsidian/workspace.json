@@ -126,16 +126,6 @@
             }
           },
           {
-            "id": "6c7418c521ab7a68",
-            "type": "leaf",
-            "state": {
-              "type": "outline",
-              "state": {
-                "file": "docs/学校课程/课程/编译原理/笔记/语法分析.md"
-              }
-            }
-          },
-          {
             "id": "b65b48028a8c5eaf",
             "type": "leaf",
             "state": {
@@ -198,19 +188,21 @@
             }
           },
           {
-            "id": "541551cc93ddceea",
-            "type": "leaf",
-            "state": {
-              "type": "calendar",
-              "state": {}
-            }
-          },
-          {
             "id": "7cb1e0bd8fbfc91f",
             "type": "leaf",
             "state": {
               "type": "bookmarks",
               "state": {}
+            }
+          },
+          {
+            "id": "6c7418c521ab7a68",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "docs/学校课程/课程/编译原理/笔记/语法分析.md"
+              }
             }
           }
         ],
@@ -218,8 +210,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 304.5,
-    "collapsed": true
+    "width": 257.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -239,17 +230,17 @@
   },
   "active": "5f7a9a1ebd732bbe",
   "lastOpenFiles": [
+    "docs/学校课程/课程/编译原理/笔记/语法制导的编译技术.md",
+    "docs/学校课程/课程/编译原理/笔记/语法分析.md",
+    "docs/学校课程/课程/编译原理/笔记/代码生成.md",
+    "docs/学校课程/课程/编译原理/笔记/运行时刻环境.md",
+    "docs/学校课程/课程/编译原理/题目/往年题.md",
     "docs/学校课程/课程/编译原理/编译原理.md",
     "docs/学校课程/课程/编译原理/作业/p2.md",
     "docs/学校课程/课程/编译原理/笔记/词法分析.md",
     "docs/学校课程/课程/编译原理/作业/p1.md",
-    "docs/学校课程/课程/编译原理/笔记/语法分析.md",
-    "docs/学校课程/课程/编译原理/题目/往年题.md",
     "docs/index.md",
     "docs/学校课程/课程/编译原理/笔记/机器无关优化.md",
-    "docs/学校课程/课程/编译原理/笔记/代码生成.md",
-    "docs/学校课程/课程/编译原理/笔记/运行时刻环境.md",
-    "docs/学校课程/课程/编译原理/笔记/语法制导的编译技术.md",
     "docs/学校课程/课程/编译原理/笔记/引论.md",
     "docs/blog/index.md",
     "docs/blog/posts/算法竞赛/ABC321.md",
