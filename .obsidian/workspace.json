@@ -20,24 +20,84 @@
             }
           },
           {
-            "id": "79d90e40bd61ce53",
+            "id": "e8107bc8c1dfd05b",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/blog/posts/算法竞赛/ABC321.md",
+                "file": "docs/学校课程/课程/编译原理/笔记/词法分析.md",
                 "mode": "source",
                 "source": false
               }
             }
           },
           {
-            "id": "c7b86396729fc138",
+            "id": "99a27140d94dd703",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/学校课程/课程/编译原理/笔记/引论.md",
+                "file": "docs/学校课程/课程/编译原理/作业/p1.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "5f7a9a1ebd732bbe",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "docs/学校课程/课程/编译原理/笔记/语法分析.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "18c12a87331c203e",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "docs/学校课程/课程/编译原理/笔记/语法制导的编译技术.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "faea2891527c45c7",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "docs/学校课程/课程/编译原理/笔记/运行时刻环境.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "129d03abf698b16a",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "docs/学校课程/课程/编译原理/笔记/代码生成.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "da06d21297fe160a",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "docs/学校课程/课程/编译原理/笔记/机器无关优化.md",
                 "mode": "source",
                 "source": false
               }
@@ -56,7 +116,7 @@
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -108,7 +168,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/blog/posts/算法竞赛/ABC321.md"
+                "file": "docs/学校课程/课程/编译原理/作业/p1.md"
               }
             }
           },
@@ -140,7 +200,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/blog/posts/算法竞赛/ABC321.md",
+                "file": "docs/学校课程/课程/编译原理/作业/p1.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -157,7 +217,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/blog/posts/算法竞赛/ABC321.md",
+                "file": "docs/学校课程/课程/编译原理/作业/p1.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -214,19 +274,26 @@
       "omnisearch:Omnisearch": false
     }
   },
-  "active": "79d90e40bd61ce53",
+  "active": "99a27140d94dd703",
   "lastOpenFiles": [
+    "docs/学校课程/课程/编译原理/笔记/词法分析.md",
+    "docs/学校课程/课程/编译原理/笔记/语法分析.md",
+    "docs/学校课程/课程/编译原理/题目/往年题.md",
+    "docs/index.md",
+    "docs/学校课程/课程/编译原理/笔记/机器无关优化.md",
+    "docs/学校课程/课程/编译原理/笔记/代码生成.md",
+    "docs/学校课程/课程/编译原理/笔记/运行时刻环境.md",
+    "docs/学校课程/课程/编译原理/笔记/语法制导的编译技术.md",
+    "docs/学校课程/课程/编译原理/编译原理.md",
+    "docs/学校课程/课程/编译原理/笔记/引论.md",
+    "docs/blog/index.md",
+    "docs/blog/posts/算法竞赛/ABC321.md",
     "docs/blog/新建 文本文档.txt",
     "docs/blog/posts/算法竞赛/ARC165.md",
     "docs/blog/posts/算法竞赛/CodeforcesRound899(Div.2).md",
     "docs/blog/posts/算法竞赛/CodeforcesRound900(Div.3).md",
     "docs/blog/posts/算法竞赛/CodeTONRound6.md",
     "docs/blog/posts/算法竞赛/EducationalCodeforcesRound155(Div.2).md",
-    "docs/blog/posts/算法竞赛/ABC321.md",
-    "docs/blog/index.md",
-    "docs/学校课程/课程/编译原理/编译原理.md",
-    "docs/学校课程/课程/编译原理/笔记/引论.md",
-    "docs/学校课程/课程/编译原理/题目/往年题.md",
     "docs/算法竞赛/图论.md",
     "docs/算法竞赛/数学.md",
     "docs/算法竞赛/数组与字符串.md",
@@ -236,13 +303,7 @@
     "docs/算法竞赛/数据结构.md",
     "docs/算法竞赛/链表.md",
     "docs/算法竞赛/模板.md",
-    "docs/算法竞赛/哈希.md",
     "docs/学校课程/课程/编译原理/实验/p1/Project_1.pdf",
-    "docs/学校课程/课程/编译原理/实验/p1/实验报告p1.md",
-    "_private_/临时/temp2.md",
-    "_private_/临时/temp.md",
-    "_private_/金融经济学背诵部分.md",
-    "docs/index.md",
     "docs/学校课程/课程/编译原理/题目/编译原理-2023春.pdf",
     "docs/学校课程/课程/编译原理/题目/编译原理-2022春.pdf",
     "docs/学校课程/课程/编译原理/题目",
@@ -251,7 +312,6 @@
     "docs/javascripts/mathjax.js",
     "docs/javascripts",
     "_mkdocs1_.yml",
-    "docs/javascripts/新建 文本文档.txt",
     "docs/学校课程/课程/编译原理/作业/答案/dragon-book-exercise-answers-master/ch02/2.2/assets/2.2.3-4.png",
     "docs/八股（保研&工作）/保研/笔试/c96536f112a74024be9f595f007a2763.jpg",
     "CsNotes/2021-11-22-22-54-02.png",

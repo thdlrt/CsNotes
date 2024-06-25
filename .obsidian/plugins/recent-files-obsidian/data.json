@@ -1,6 +1,54 @@
 {
   "recentFiles": [
     {
+      "basename": "p1",
+      "path": "docs/学校课程/课程/编译原理/作业/p1.md"
+    },
+    {
+      "basename": "词法分析",
+      "path": "docs/学校课程/课程/编译原理/笔记/词法分析.md"
+    },
+    {
+      "basename": "语法分析",
+      "path": "docs/学校课程/课程/编译原理/笔记/语法分析.md"
+    },
+    {
+      "basename": "往年题",
+      "path": "docs/学校课程/课程/编译原理/题目/往年题.md"
+    },
+    {
+      "basename": "index",
+      "path": "docs/index.md"
+    },
+    {
+      "basename": "机器无关优化",
+      "path": "docs/学校课程/课程/编译原理/笔记/机器无关优化.md"
+    },
+    {
+      "basename": "代码生成",
+      "path": "docs/学校课程/课程/编译原理/笔记/代码生成.md"
+    },
+    {
+      "basename": "运行时刻环境",
+      "path": "docs/学校课程/课程/编译原理/笔记/运行时刻环境.md"
+    },
+    {
+      "basename": "语法制导的编译技术",
+      "path": "docs/学校课程/课程/编译原理/笔记/语法制导的编译技术.md"
+    },
+    {
+      "basename": "编译原理",
+      "path": "docs/学校课程/课程/编译原理/编译原理.md"
+    },
+    {
+      "basename": "引论",
+      "path": "docs/学校课程/课程/编译原理/笔记/引论.md"
+    },
+    {
+      "basename": "index",
+      "path": "docs/blog/index.md"
+    },
+    {
       "basename": "ABC321",
       "path": "docs/blog/posts/算法竞赛/ABC321.md"
     },
@@ -23,22 +71,6 @@
     {
       "basename": "EducationalCodeforcesRound155(Div.2)",
       "path": "docs/blog/posts/算法竞赛/EducationalCodeforcesRound155(Div.2).md"
-    },
-    {
-      "basename": "index",
-      "path": "docs/blog/index.md"
-    },
-    {
-      "basename": "编译原理",
-      "path": "docs/学校课程/课程/编译原理/编译原理.md"
-    },
-    {
-      "basename": "引论",
-      "path": "docs/学校课程/课程/编译原理/笔记/引论.md"
-    },
-    {
-      "basename": "往年题",
-      "path": "docs/学校课程/课程/编译原理/题目/往年题.md"
     },
     {
       "basename": "图论",
@@ -91,10 +123,6 @@
     {
       "basename": "金融经济学背诵部分",
       "path": "_private_/金融经济学背诵部分.md"
-    },
-    {
-      "basename": "index",
-      "path": "docs/index.md"
     },
     {
       "basename": "jupyter",
@@ -171,34 +199,6 @@
     {
       "basename": "【英语】问题准备",
       "path": "docs/八股（保研&工作）/保研/面试/英语/【英语】问题准备.md"
-    },
-    {
-      "basename": "相关词汇",
-      "path": "docs/八股（保研&工作）/保研/面试/英语/相关词汇.md"
-    },
-    {
-      "basename": "问题",
-      "path": "docs/八股（保研&工作）/保研/面试/问题.md"
-    },
-    {
-      "basename": "编译原理",
-      "path": "docs/八股（保研&工作）/保研/计算机科学/编译原理.md"
-    },
-    {
-      "basename": "操作系统",
-      "path": "docs/八股（保研&工作）/保研/计算机科学/操作系统.md"
-    },
-    {
-      "basename": "实验笔记",
-      "path": "docs/学校课程/课程/操作系统/实验笔记.md"
-    },
-    {
-      "basename": "操作系统：三个简单的部分（OSTEP） (it-ebooks) (Z-Library)",
-      "path": "docs/学校课程/课程/操作系统/操作系统：三个简单的部分（OSTEP） (it-ebooks) (Z-Library).pdf"
-    },
-    {
-      "basename": "p12",
-      "path": "docs/学校课程/课程/编译原理/作业/p12.md"
     }
   ],
   "omittedPaths": [],
