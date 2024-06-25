@@ -1,6 +1,14 @@
 {
   "recentFiles": [
     {
+      "basename": "ABC321",
+      "path": "docs/blog/posts/ABC321.md"
+    },
+    {
+      "basename": "ARC165",
+      "path": "docs/自学内容/算法竞赛/ARC165.md"
+    },
+    {
       "basename": "引论",
       "path": "docs/学校课程/课程/编译原理/笔记/引论.md"
     },
@@ -15,10 +23,6 @@
     {
       "basename": "index",
       "path": "docs/index.md"
-    },
-    {
-      "basename": "ABC321",
-      "path": "docs/blog/posts/算法竞赛/ABC321.md"
     },
     {
       "basename": "index",
