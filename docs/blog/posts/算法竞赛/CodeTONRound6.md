@@ -1,7 +1,7 @@
 ---
 title: CodeTON Round 6
 date: 2023-01-01
-tags:
+categories:
   - Contest
   - Codeforces
 ---

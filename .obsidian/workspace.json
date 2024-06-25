@@ -25,7 +25,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/blog/index.md",
+                "file": "docs/blog/posts/算法竞赛/ABC321.md",
                 "mode": "source",
                 "source": false
               }
@@ -108,7 +108,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/blog/index.md"
+                "file": "docs/blog/posts/算法竞赛/ABC321.md"
               }
             }
           },
@@ -140,7 +140,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/blog/index.md",
+                "file": "docs/blog/posts/算法竞赛/ABC321.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -157,7 +157,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/blog/index.md",
+                "file": "docs/blog/posts/算法竞赛/ABC321.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -216,6 +216,14 @@
   },
   "active": "79d90e40bd61ce53",
   "lastOpenFiles": [
+    "docs/blog/新建 文本文档.txt",
+    "docs/blog/posts/算法竞赛/ARC165.md",
+    "docs/blog/posts/算法竞赛/CodeforcesRound899(Div.2).md",
+    "docs/blog/posts/算法竞赛/CodeforcesRound900(Div.3).md",
+    "docs/blog/posts/算法竞赛/CodeTONRound6.md",
+    "docs/blog/posts/算法竞赛/EducationalCodeforcesRound155(Div.2).md",
+    "docs/blog/posts/算法竞赛/ABC321.md",
+    "docs/blog/index.md",
     "docs/学校课程/课程/编译原理/编译原理.md",
     "docs/学校课程/课程/编译原理/笔记/引论.md",
     "docs/学校课程/课程/编译原理/题目/往年题.md",
@@ -225,13 +233,6 @@
     "docs/算法竞赛/前缀和与差分.md",
     "docs/算法竞赛/位运算.md",
     "docs/算法竞赛/贪心.md",
-    "docs/blog/posts/算法竞赛/ABC321.md",
-    "docs/blog/posts/算法竞赛/ARC165.md",
-    "docs/blog/posts/算法竞赛/CodeforcesRound899(Div.2).md",
-    "docs/blog/posts/算法竞赛/CodeforcesRound900(Div.3).md",
-    "docs/blog/posts/算法竞赛/CodeTONRound6.md",
-    "docs/blog/posts/算法竞赛/EducationalCodeforcesRound155(Div.2).md",
-    "docs/blog/index.md",
     "docs/算法竞赛/数据结构.md",
     "docs/算法竞赛/链表.md",
     "docs/算法竞赛/模板.md",
@@ -245,7 +246,6 @@
     "docs/学校课程/课程/编译原理/题目/编译原理-2023春.pdf",
     "docs/学校课程/课程/编译原理/题目/编译原理-2022春.pdf",
     "docs/学校课程/课程/编译原理/题目",
-    "docs/技能&工具/折腾/jupyter.md",
     "docs/blog/posts",
     "docs/blog",
     "docs/javascripts/mathjax.js",
