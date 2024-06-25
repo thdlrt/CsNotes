@@ -83,8 +83,7 @@
               "state": {}
             }
           }
-        ],
-        "currentTab": 4
+        ]
       }
     ],
     "direction": "horizontal",
@@ -178,8 +177,10 @@
       "omnisearch:Omnisearch": false
     }
   },
-  "active": "69dfeec79379c9ab",
+  "active": "96e173acdf249e6c",
   "lastOpenFiles": [
+    "Blog/马原复习提纲 - Yunzinan 的知识库.md",
+    "Blog",
     "docs/主页/index.md",
     "docs/主页",
     "CreateTab.py",
@@ -190,7 +191,6 @@
     "docs/自学内容",
     "docs/八股（保研&工作）",
     "docs/自学内容/Web开发（前后端）",
-    "docs/自学内容/游戏开发&图形学",
     "docs/学校课程/归档课程/金融工程学/公式速记.md",
     "docs/学校课程/归档课程/金融工程学/作业.md",
     "docs/学校课程/归档课程/金融工程学/笔记.md",
@@ -215,7 +215,6 @@
     "docs/学校课程/课程/操作系统/笔记/虚拟化.md",
     "docs/学校课程/归档课程/计算机系统基础/data/4.md",
     "docs/学校课程/课程/操作系统/笔记/并发.md",
-    "docs/学校课程/课程/操作系统/笔记/内核.md",
     "docs/学校课程/课程/编译原理/作业/答案/dragon-book-exercise-answers-master/ch02/2.2/assets/2.2.3-4.png",
     "docs/八股（保研&工作）/保研/笔试/c96536f112a74024be9f595f007a2763.jpg",
     "CsNotes/2021-11-22-22-54-02.png",

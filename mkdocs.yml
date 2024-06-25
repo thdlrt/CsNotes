@@ -8,10 +8,7 @@ theme:
     repo: fontawesome/brands/github
   features:
   - content.code.select
-  - navigation.tabs
-  - search.suggest
-  - search.share
-  - navigation.top
+
   palette:
 
     # Light mode
