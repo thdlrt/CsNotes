@@ -1,16 +1,24 @@
 {
   "recentFiles": [
     {
-      "basename": "p1",
-      "path": "docs/学校课程/课程/编译原理/作业/p1.md"
+      "basename": "语法分析",
+      "path": "docs/学校课程/课程/编译原理/笔记/语法分析.md"
+    },
+    {
+      "basename": "编译原理",
+      "path": "docs/学校课程/课程/编译原理/编译原理.md"
+    },
+    {
+      "basename": "p2",
+      "path": "docs/学校课程/课程/编译原理/作业/p2.md"
     },
     {
       "basename": "词法分析",
       "path": "docs/学校课程/课程/编译原理/笔记/词法分析.md"
     },
     {
-      "basename": "语法分析",
-      "path": "docs/学校课程/课程/编译原理/笔记/语法分析.md"
+      "basename": "p1",
+      "path": "docs/学校课程/课程/编译原理/作业/p1.md"
     },
     {
       "basename": "往年题",
@@ -35,10 +43,6 @@
     {
       "basename": "语法制导的编译技术",
       "path": "docs/学校课程/课程/编译原理/笔记/语法制导的编译技术.md"
-    },
-    {
-      "basename": "编译原理",
-      "path": "docs/学校课程/课程/编译原理/编译原理.md"
     },
     {
       "basename": "引论",
@@ -195,10 +199,6 @@
     {
       "basename": "笔记",
       "path": "docs/学校课程/归档课程/金融风险管理/笔记.md"
-    },
-    {
-      "basename": "【英语】问题准备",
-      "path": "docs/八股（保研&工作）/保研/面试/英语/【英语】问题准备.md"
     }
   ],
   "omittedPaths": [],
