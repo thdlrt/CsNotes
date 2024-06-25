@@ -28,6 +28,10 @@ theme:
         icon: material/toggle-switch
         name: Switch to light mode
 
+nav:
+  - 首页: index.md
+  - ...
+
 # Extensions
 markdown_extensions:
   - footnotes
@@ -57,6 +61,7 @@ markdown_extensions:
 plugins:
   - search
   - roamlinks
+  - awesome-pages
 
 extra_javascript:
   - https://polyfill.io/v3/polyfill.min.js?features=es6
