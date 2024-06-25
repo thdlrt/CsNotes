@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/学校课程/归档课程/金融工程学/笔记.md",
+                "file": "docs/主页.md",
                 "mode": "source",
                 "source": false
               }
@@ -71,7 +71,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/学校课程/归档课程/金融工程学/笔记.md"
+                "file": "docs/主页.md"
               }
             }
           },
@@ -103,7 +103,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/学校课程/归档课程/金融工程学/笔记.md",
+                "file": "docs/主页.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -120,7 +120,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/学校课程/归档课程/金融工程学/笔记.md",
+                "file": "docs/主页.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -179,6 +179,7 @@
   },
   "active": "69dfeec79379c9ab",
   "lastOpenFiles": [
+    "docs/学校课程/归档课程/金融工程学/笔记.md",
     "docs/javascripts/mathjax.js",
     "docs/javascripts",
     "docs/blog/index.md",
@@ -194,7 +195,6 @@
     "CreateTab.py",
     "docs/学校课程/归档课程/金融工程学/公式速记.md",
     "docs/学校课程/归档课程/金融工程学/作业.md",
-    "docs/学校课程/归档课程/金融工程学/笔记.md",
     "_private_/金融经济学背诵部分.md",
     "linkdata/P5410 【模板】扩展 KMP_exKMP（Z 函数） - 洛谷 _ 计算机科学教育新生态.md",
     "docs/学校课程/课程/操作系统/笔记/持久化.md",
