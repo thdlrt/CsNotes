@@ -1,6 +1,6 @@
 ---
 title: Educational Codeforces Round 155 (Div. 2)
-date: 2023/1/1
+date: 2023-01-01
 tags:
   - Contest
   - Codeforces

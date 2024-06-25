@@ -23,6 +23,6 @@
     "excalidraw-autoexport": "text",
     "excalidraw-embeddable-theme": "text",
     "excalidraw-open-md": "checkbox",
-    "date": "date"
+    "date": "text"
   }
 }

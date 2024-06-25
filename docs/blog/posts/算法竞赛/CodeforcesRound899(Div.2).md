@@ -1,6 +1,6 @@
 ---
-title: "Codeforces Round 899 (Div. 2)"
-date: 2023
+title: Codeforces Round 899 (Div. 2)
+date: 2023-01-01
 tags:
   - Contest
   - Codeforces

@@ -29,6 +29,22 @@
       "path": "docs/blog/index.md"
     },
     {
+      "basename": "数据结构",
+      "path": "docs/算法竞赛/数据结构.md"
+    },
+    {
+      "basename": "链表",
+      "path": "docs/算法竞赛/链表.md"
+    },
+    {
+      "basename": "模板",
+      "path": "docs/算法竞赛/模板.md"
+    },
+    {
+      "basename": "哈希",
+      "path": "docs/算法竞赛/哈希.md"
+    },
+    {
       "basename": "编译原理",
       "path": "docs/学校课程/课程/编译原理/编译原理.md"
     },
