@@ -1,6 +1,34 @@
 {
   "recentFiles": [
     {
+      "basename": "引论",
+      "path": "docs/学校课程/课程/编译原理/笔记/引论.md"
+    },
+    {
+      "basename": "往年题",
+      "path": "docs/学校课程/课程/编译原理/题目/往年题.md"
+    },
+    {
+      "basename": "编译原理",
+      "path": "docs/学校课程/课程/编译原理/编译原理.md"
+    },
+    {
+      "basename": "index",
+      "path": "docs/index.md"
+    },
+    {
+      "basename": "ABC321",
+      "path": "docs/blog/posts/算法竞赛/ABC321.md"
+    },
+    {
+      "basename": "index",
+      "path": "docs/blog/index.md"
+    },
+    {
+      "basename": "jupyter",
+      "path": "docs/技能&工具/折腾/jupyter.md"
+    },
+    {
       "basename": "笔记",
       "path": "docs/学校课程/归档课程/金融工程学/笔记.md"
     },
@@ -99,10 +127,6 @@
     {
       "basename": "操作系统：三个简单的部分（OSTEP） (it-ebooks) (Z-Library)",
       "path": "docs/学校课程/课程/操作系统/操作系统：三个简单的部分（OSTEP） (it-ebooks) (Z-Library).pdf"
-    },
-    {
-      "basename": "往年题",
-      "path": "docs/学校课程/课程/编译原理/往年题.md"
     },
     {
       "basename": "p12",
