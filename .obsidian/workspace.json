@@ -83,11 +83,12 @@
               "state": {}
             }
           }
-        ]
+        ],
+        "currentTab": 4
       }
     ],
     "direction": "horizontal",
-    "width": 803.5
+    "width": 200
   },
   "right": {
     "id": "d615b65a4ccf8a6a",
@@ -177,8 +178,12 @@
       "omnisearch:Omnisearch": false
     }
   },
-  "active": "96e173acdf249e6c",
+  "active": "69dfeec79379c9ab",
   "lastOpenFiles": [
+    "docs/主页/index.md",
+    "docs/主页",
+    "CreateTab.py",
+    "CreateTab,py",
     "tempCodeRunnerFile.py",
     "createpages.py",
     "docs/编程语言",
@@ -186,13 +191,10 @@
     "docs/八股（保研&工作）",
     "docs/自学内容/Web开发（前后端）",
     "docs/自学内容/游戏开发&图形学",
-    "docs/学校课程",
     "docs/学校课程/归档课程/金融工程学/公式速记.md",
     "docs/学校课程/归档课程/金融工程学/作业.md",
-    "docs/学校课程/归档课程/金融工程学/郑振龙《金融工程》（第5版）笔记和课后习题（含考研真题）详解答案.pdf",
     "docs/学校课程/归档课程/金融工程学/笔记.md",
     "_private_/金融经济学背诵部分.md",
-    "docs/javascripts/mathjax.js",
     "linkdata/P5410 【模板】扩展 KMP_exKMP（Z 函数） - 洛谷 _ 计算机科学教育新生态.md",
     "docs/学校课程/课程/操作系统/笔记/持久化.md",
     "docs/Blog/index.md",
@@ -206,7 +208,6 @@
     "docs/游戏开发/游戏引擎/LibGDX .md",
     "docs/自学内容/游戏开发&图形学/游戏开发/游戏引擎/LibGDX.md",
     "README.md",
-    "linkdata/posts",
     "_待办事项_/竞赛信息.md",
     "docs/学校课程/归档课程/计算机系统基础/data/6.md",
     "CsNotes/竞赛信息.md",
