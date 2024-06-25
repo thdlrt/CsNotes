@@ -61,7 +61,14 @@ markdown_extensions:
 plugins:
   - search
   - roamlinks
-  - blog
+  - blog:
+      blog_toc: true
+      post_date_format: full
+      archive_toc: true
+      categories_toc: true
+      pagination_format: "$link_first $link_previous ~2~ $link_next $link_last"
+      pagination_keep_content: true
+      draft_if_future_date: true
 
 extra_javascript:
   - javascripts/mathjax.js

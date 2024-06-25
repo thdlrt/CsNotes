@@ -1,6 +1,46 @@
 {
   "recentFiles": [
     {
+      "basename": "index",
+      "path": "docs/blog/index.md"
+    },
+    {
+      "basename": "编译原理",
+      "path": "docs/学校课程/课程/编译原理/编译原理.md"
+    },
+    {
+      "basename": "引论",
+      "path": "docs/学校课程/课程/编译原理/笔记/引论.md"
+    },
+    {
+      "basename": "往年题",
+      "path": "docs/学校课程/课程/编译原理/题目/往年题.md"
+    },
+    {
+      "basename": "图论",
+      "path": "docs/算法竞赛/图论.md"
+    },
+    {
+      "basename": "数学",
+      "path": "docs/算法竞赛/数学.md"
+    },
+    {
+      "basename": "数组与字符串",
+      "path": "docs/算法竞赛/数组与字符串.md"
+    },
+    {
+      "basename": "前缀和与差分",
+      "path": "docs/算法竞赛/前缀和与差分.md"
+    },
+    {
+      "basename": "位运算",
+      "path": "docs/算法竞赛/位运算.md"
+    },
+    {
+      "basename": "贪心",
+      "path": "docs/算法竞赛/贪心.md"
+    },
+    {
       "basename": "ABC321",
       "path": "docs/blog/posts/算法竞赛/ABC321.md"
     },
@@ -25,10 +65,6 @@
       "path": "docs/blog/posts/算法竞赛/EducationalCodeforcesRound155(Div.2).md"
     },
     {
-      "basename": "index",
-      "path": "docs/blog/index.md"
-    },
-    {
       "basename": "数据结构",
       "path": "docs/算法竞赛/数据结构.md"
     },
@@ -45,10 +81,6 @@
       "path": "docs/算法竞赛/哈希.md"
     },
     {
-      "basename": "编译原理",
-      "path": "docs/学校课程/课程/编译原理/编译原理.md"
-    },
-    {
       "basename": "temp2",
       "path": "_private_/临时/temp2.md"
     },
@@ -59,14 +91,6 @@
     {
       "basename": "金融经济学背诵部分",
       "path": "_private_/金融经济学背诵部分.md"
-    },
-    {
-      "basename": "引论",
-      "path": "docs/学校课程/课程/编译原理/笔记/引论.md"
-    },
-    {
-      "basename": "往年题",
-      "path": "docs/学校课程/课程/编译原理/题目/往年题.md"
     },
     {
       "basename": "index",
@@ -175,18 +199,6 @@
     {
       "basename": "p12",
       "path": "docs/学校课程/课程/编译原理/作业/p12.md"
-    },
-    {
-      "basename": "机器无关优化",
-      "path": "docs/学校课程/课程/编译原理/笔记/机器无关优化.md"
-    },
-    {
-      "basename": "![Uploading",
-      "path": "![Uploading.md"
-    },
-    {
-      "basename": "可扩展",
-      "path": "docs/学校课程/归档课程/软件体系结构/笔记/可扩展.md"
     }
   ],
   "omittedPaths": [],
