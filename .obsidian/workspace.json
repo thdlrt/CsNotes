@@ -8,18 +8,6 @@
         "type": "tabs",
         "children": [
           {
-            "id": "129d03abf698b16a",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "docs/学校课程/课程/编译原理/笔记/代码生成.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
             "id": "da06d21297fe160a",
             "type": "leaf",
             "state": {
@@ -117,7 +105,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/学校课程/课程/编译原理/笔记/代码生成.md",
+                "file": "docs/学校课程/课程/编译原理/笔记/机器无关优化.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -134,7 +122,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/学校课程/课程/编译原理/笔记/代码生成.md",
+                "file": "docs/学校课程/课程/编译原理/笔记/机器无关优化.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -165,7 +153,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/学校课程/课程/编译原理/笔记/代码生成.md"
+                "file": "docs/学校课程/课程/编译原理/笔记/机器无关优化.md"
               }
             }
           }
@@ -192,12 +180,12 @@
       "omnisearch:Omnisearch": false
     }
   },
-  "active": "129d03abf698b16a",
+  "active": "da06d21297fe160a",
   "lastOpenFiles": [
-    "docs/学校课程/课程/编译原理/笔记/运行时刻环境.md",
     "docs/学校课程/课程/编译原理/笔记/代码生成.md",
     "docs/学校课程/课程/编译原理/笔记/机器无关优化.md",
     "docs/学校课程/课程/编译原理/题目/往年题.md",
+    "docs/学校课程/课程/编译原理/笔记/运行时刻环境.md",
     "docs/学校课程/课程/编译原理/课件/Chapter_7.pdf",
     "docs/学校课程/课程/编译原理/笔记/中间代码生成.md",
     "docs/学校课程/课程/编译原理/作业/答案/dragon-book-exercise-answers-master/ch07/7.2/7.2.md",

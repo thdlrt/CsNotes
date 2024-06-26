@@ -1,20 +1,20 @@
 {
   "recentFiles": [
     {
-      "basename": "代码生成",
-      "path": "docs/学校课程/课程/编译原理/笔记/代码生成.md"
-    },
-    {
-      "basename": "运行时刻环境",
-      "path": "docs/学校课程/课程/编译原理/笔记/运行时刻环境.md"
-    },
-    {
       "basename": "机器无关优化",
       "path": "docs/学校课程/课程/编译原理/笔记/机器无关优化.md"
     },
     {
+      "basename": "代码生成",
+      "path": "docs/学校课程/课程/编译原理/笔记/代码生成.md"
+    },
+    {
       "basename": "往年题",
       "path": "docs/学校课程/课程/编译原理/题目/往年题.md"
+    },
+    {
+      "basename": "运行时刻环境",
+      "path": "docs/学校课程/课程/编译原理/笔记/运行时刻环境.md"
     },
     {
       "basename": "Chapter_7",
