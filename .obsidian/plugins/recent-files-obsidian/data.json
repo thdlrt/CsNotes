@@ -5,6 +5,18 @@
       "path": "docs/学校课程/课程/编译原理/笔记/语法分析.md"
     },
     {
+      "basename": "编译原理-2023春",
+      "path": "docs/学校课程/课程/编译原理/题目/编译原理-2023春.pdf"
+    },
+    {
+      "basename": "编译原理-2022春",
+      "path": "docs/学校课程/课程/编译原理/题目/编译原理-2022春.pdf"
+    },
+    {
+      "basename": "往年题",
+      "path": "docs/学校课程/课程/编译原理/题目/往年题.md"
+    },
+    {
       "basename": "语法制导的编译技术",
       "path": "docs/学校课程/课程/编译原理/笔记/语法制导的编译技术.md"
     },
@@ -15,10 +27,6 @@
     {
       "basename": "运行时刻环境",
       "path": "docs/学校课程/课程/编译原理/笔记/运行时刻环境.md"
-    },
-    {
-      "basename": "往年题",
-      "path": "docs/学校课程/课程/编译原理/题目/往年题.md"
     },
     {
       "basename": "编译原理",
@@ -191,14 +199,6 @@
     {
       "basename": "内核",
       "path": "docs/学校课程/课程/操作系统/笔记/内核.md"
-    },
-    {
-      "basename": "Drawing 2024-06-19 16.26.17.excalidraw",
-      "path": "Excalidraw/Drawing 2024-06-19 16.26.17.excalidraw.md"
-    },
-    {
-      "basename": "笔记",
-      "path": "docs/学校课程/归档课程/金融风险管理/笔记.md"
     }
   ],
   "omittedPaths": [],
