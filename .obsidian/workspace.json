@@ -8,18 +8,6 @@
         "type": "tabs",
         "children": [
           {
-            "id": "faea2891527c45c7",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "docs/学校课程/课程/编译原理/笔记/运行时刻环境.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
             "id": "129d03abf698b16a",
             "type": "leaf",
             "state": {
@@ -129,7 +117,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/学校课程/课程/编译原理/笔记/运行时刻环境.md",
+                "file": "docs/学校课程/课程/编译原理/笔记/代码生成.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -146,7 +134,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/学校课程/课程/编译原理/笔记/运行时刻环境.md",
+                "file": "docs/学校课程/课程/编译原理/笔记/代码生成.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -177,7 +165,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/学校课程/课程/编译原理/笔记/运行时刻环境.md"
+                "file": "docs/学校课程/课程/编译原理/笔记/代码生成.md"
               }
             }
           }
@@ -204,13 +192,14 @@
       "omnisearch:Omnisearch": false
     }
   },
-  "active": "faea2891527c45c7",
+  "active": "129d03abf698b16a",
   "lastOpenFiles": [
-    "docs/学校课程/课程/编译原理/课件/Chapter_7.pdf",
     "docs/学校课程/课程/编译原理/笔记/运行时刻环境.md",
     "docs/学校课程/课程/编译原理/笔记/代码生成.md",
-    "docs/学校课程/课程/编译原理/笔记/中间代码生成.md",
+    "docs/学校课程/课程/编译原理/笔记/机器无关优化.md",
     "docs/学校课程/课程/编译原理/题目/往年题.md",
+    "docs/学校课程/课程/编译原理/课件/Chapter_7.pdf",
+    "docs/学校课程/课程/编译原理/笔记/中间代码生成.md",
     "docs/学校课程/课程/编译原理/作业/答案/dragon-book-exercise-answers-master/ch07/7.2/7.2.md",
     "docs/学校课程/课程/编译原理/作业/答案/dragon-book-exercise-answers-master/ch06/6.7/6.7.md",
     "docs/学校课程/课程/编译原理/笔记/语法制导的编译技术.md",
@@ -223,7 +212,6 @@
     "docs/学校课程/课程/编译原理/笔记/词法分析.md",
     "docs/学校课程/课程/编译原理/作业/p1.md",
     "docs/index.md",
-    "docs/学校课程/课程/编译原理/笔记/机器无关优化.md",
     "docs/学校课程/课程/编译原理/笔记/引论.md",
     "docs/blog/index.md",
     "docs/blog/posts/算法竞赛/ABC321.md",
@@ -241,7 +229,6 @@
     "docs/blog",
     "docs/javascripts/mathjax.js",
     "docs/javascripts",
-    "_mkdocs1_.yml",
     "docs/学校课程/课程/编译原理/作业/答案/dragon-book-exercise-answers-master/ch02/2.2/assets/2.2.3-4.png",
     "docs/八股（保研&工作）/保研/笔试/c96536f112a74024be9f595f007a2763.jpg",
     "CsNotes/2021-11-22-22-54-02.png",
