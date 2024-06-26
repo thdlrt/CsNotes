@@ -5,12 +5,28 @@
       "path": "docs/学校课程/课程/编译原理/笔记/中间代码生成.md"
     },
     {
-      "basename": "p7",
-      "path": "docs/学校课程/课程/编译原理/作业/p7.md"
+      "basename": "代码生成",
+      "path": "docs/学校课程/课程/编译原理/笔记/代码生成.md"
+    },
+    {
+      "basename": "运行时刻环境",
+      "path": "docs/学校课程/课程/编译原理/笔记/运行时刻环境.md"
+    },
+    {
+      "basename": "7.2",
+      "path": "docs/学校课程/课程/编译原理/作业/答案/dragon-book-exercise-answers-master/ch07/7.2/7.2.md"
+    },
+    {
+      "basename": "6.7",
+      "path": "docs/学校课程/课程/编译原理/作业/答案/dragon-book-exercise-answers-master/ch06/6.7/6.7.md"
     },
     {
       "basename": "语法制导的编译技术",
       "path": "docs/学校课程/课程/编译原理/笔记/语法制导的编译技术.md"
+    },
+    {
+      "basename": "p7",
+      "path": "docs/学校课程/课程/编译原理/作业/p7.md"
     },
     {
       "basename": "往年题",
@@ -25,20 +41,12 @@
       "path": "docs/学校课程/课程/编译原理/题目/编译原理-2022春.pdf"
     },
     {
-      "basename": "运行时刻环境",
-      "path": "docs/学校课程/课程/编译原理/笔记/运行时刻环境.md"
-    },
-    {
       "basename": "编译原理",
       "path": "docs/学校课程/课程/编译原理/编译原理.md"
     },
     {
       "basename": "语法分析",
       "path": "docs/学校课程/课程/编译原理/笔记/语法分析.md"
-    },
-    {
-      "basename": "代码生成",
-      "path": "docs/学校课程/课程/编译原理/笔记/代码生成.md"
     },
     {
       "basename": "p2",
@@ -191,14 +199,6 @@
     {
       "basename": "绪论",
       "path": "docs/学校课程/课程/操作系统/笔记/绪论.md"
-    },
-    {
-      "basename": "虚拟化",
-      "path": "docs/学校课程/课程/操作系统/笔记/虚拟化.md"
-    },
-    {
-      "basename": "4",
-      "path": "docs/学校课程/归档课程/计算机系统基础/data/4.md"
     }
   ],
   "omittedPaths": [],
