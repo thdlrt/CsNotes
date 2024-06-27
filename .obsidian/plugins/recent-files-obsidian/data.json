@@ -1,28 +1,40 @@
 {
   "recentFiles": [
     {
-      "basename": "机器无关优化",
-      "path": "docs/学校课程/课程/编译原理/笔记/机器无关优化.md"
-    },
-    {
-      "basename": "代码生成",
-      "path": "docs/学校课程/课程/编译原理/笔记/代码生成.md"
-    },
-    {
       "basename": "往年题",
       "path": "docs/学校课程/课程/编译原理/题目/往年题.md"
+    },
+    {
+      "basename": "机器无关优化",
+      "path": "docs/学校课程/课程/编译原理/笔记/机器无关优化.md"
     },
     {
       "basename": "运行时刻环境",
       "path": "docs/学校课程/课程/编译原理/笔记/运行时刻环境.md"
     },
     {
-      "basename": "Chapter_7",
-      "path": "docs/学校课程/课程/编译原理/课件/Chapter_7.pdf"
+      "basename": "Review",
+      "path": "docs/学校课程/课程/编译原理/课件/Review.pdf"
     },
     {
       "basename": "中间代码生成",
       "path": "docs/学校课程/课程/编译原理/笔记/中间代码生成.md"
+    },
+    {
+      "basename": "Chapter_7",
+      "path": "docs/学校课程/课程/编译原理/课件/Chapter_7.pdf"
+    },
+    {
+      "basename": "Chapter_8",
+      "path": "docs/学校课程/课程/编译原理/课件/Chapter_8.pdf"
+    },
+    {
+      "basename": "编译原理-2023春",
+      "path": "docs/学校课程/课程/编译原理/题目/编译原理-2023春.pdf"
+    },
+    {
+      "basename": "代码生成",
+      "path": "docs/学校课程/课程/编译原理/笔记/代码生成.md"
     },
     {
       "basename": "7.2",
@@ -39,10 +51,6 @@
     {
       "basename": "p7",
       "path": "docs/学校课程/课程/编译原理/作业/p7.md"
-    },
-    {
-      "basename": "编译原理-2023春",
-      "path": "docs/学校课程/课程/编译原理/题目/编译原理-2023春.pdf"
     },
     {
       "basename": "编译原理-2022春",
@@ -191,14 +199,6 @@
     {
       "basename": "README",
       "path": "README.md"
-    },
-    {
-      "basename": "竞赛信息",
-      "path": "_待办事项_/竞赛信息.md"
-    },
-    {
-      "basename": "6",
-      "path": "docs/学校课程/归档课程/计算机系统基础/data/6.md"
     }
   ],
   "omittedPaths": [],
