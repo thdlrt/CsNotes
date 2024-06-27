@@ -1,8 +1,32 @@
 {
   "recentFiles": [
     {
+      "basename": "并发",
+      "path": "docs/学校课程/课程/操作系统/笔记/并发.md"
+    },
+    {
+      "basename": "虚拟化",
+      "path": "docs/学校课程/课程/操作系统/笔记/虚拟化.md"
+    },
+    {
       "basename": "绪论",
       "path": "docs/学校课程/课程/操作系统/笔记/绪论.md"
+    },
+    {
+      "basename": "持久化",
+      "path": "docs/学校课程/课程/操作系统/笔记/持久化.md"
+    },
+    {
+      "basename": "thread",
+      "path": "docs/学校课程/课程/操作系统/代码/thread-lib/thread.h"
+    },
+    {
+      "basename": "os-model",
+      "path": "docs/学校课程/课程/操作系统/代码/os-model/os-model.py"
+    },
+    {
+      "basename": "补充",
+      "path": "docs/学校课程/课程/操作系统/笔记/补充.md"
     },
     {
       "basename": "index",
@@ -99,10 +123,6 @@
     {
       "basename": "P5410 【模板】扩展 KMP_exKMP（Z 函数） - 洛谷 _ 计算机科学教育新生态",
       "path": "linkdata/P5410 【模板】扩展 KMP_exKMP（Z 函数） - 洛谷 _ 计算机科学教育新生态.md"
-    },
-    {
-      "basename": "持久化",
-      "path": "docs/学校课程/课程/操作系统/笔记/持久化.md"
     },
     {
       "basename": "unreal",
