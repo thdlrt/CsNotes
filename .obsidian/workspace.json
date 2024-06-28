@@ -42,21 +42,9 @@
                 "source": false
               }
             }
-          },
-          {
-            "id": "2b6f796eac05c0c9",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "docs/学校课程/课程/操作系统/笔记/并发.md",
-                "mode": "source",
-                "source": false
-              }
-            }
           }
         ],
-        "currentTab": 3
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -114,7 +102,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 200,
+    "collapsed": true
   },
   "right": {
     "id": "d615b65a4ccf8a6a",
@@ -130,7 +119,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/学校课程/课程/操作系统/笔记/并发.md",
+                "file": "docs/学校课程/课程/操作系统/笔记/虚拟化.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -147,7 +136,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/学校课程/课程/操作系统/笔记/并发.md",
+                "file": "docs/学校课程/课程/操作系统/笔记/虚拟化.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -178,7 +167,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/学校课程/课程/操作系统/笔记/并发.md"
+                "file": "docs/学校课程/课程/操作系统/笔记/虚拟化.md"
               }
             }
           }
@@ -187,7 +176,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 257.5
+    "width": 226.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -205,17 +194,17 @@
       "omnisearch:Omnisearch": false
     }
   },
-  "active": "2b6f796eac05c0c9",
+  "active": "90b40ee481179a3c",
   "lastOpenFiles": [
-    "docs/学校课程/课程/操作系统/笔记/虚拟化.md",
+    "docs/学校课程/课程/操作系统/笔记/持久化.md",
     "docs/学校课程/课程/操作系统/笔记/并发.md",
+    "docs/学校课程/课程/操作系统/笔记/补充.md",
+    "docs/学校课程/课程/操作系统/笔记/虚拟化.md",
     "docs/学校课程/课程/操作系统/代码/fish/fish.c",
     "docs/学校课程/课程/操作系统/笔记/绪论.md",
-    "docs/学校课程/课程/操作系统/笔记/持久化.md",
     "docs/学校课程/课程/操作系统/代码/thread-lib/thread.h",
     "docs/学校课程/课程/操作系统/笔记/内核.md",
     "docs/学校课程/课程/操作系统/代码/os-model/os-model.py",
-    "docs/学校课程/课程/操作系统/笔记/补充.md",
     "_private_/金融经济学背诵部分.md",
     "_draft_",
     "_实习_",
