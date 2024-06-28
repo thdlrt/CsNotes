@@ -9,6 +9,10 @@
       "path": "docs/学校课程/课程/操作系统/笔记/虚拟化.md"
     },
     {
+      "basename": "fish",
+      "path": "docs/学校课程/课程/操作系统/代码/fish/fish.c"
+    },
+    {
       "basename": "绪论",
       "path": "docs/学校课程/课程/操作系统/笔记/绪论.md"
     },
