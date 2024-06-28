@@ -43,8 +43,7 @@
               }
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -119,7 +118,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/学校课程/课程/操作系统/笔记/虚拟化.md",
+                "file": "docs/学校课程/课程/操作系统/笔记/补充.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -136,7 +135,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/学校课程/课程/操作系统/笔记/虚拟化.md",
+                "file": "docs/学校课程/课程/操作系统/笔记/补充.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -167,7 +166,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/学校课程/课程/操作系统/笔记/虚拟化.md"
+                "file": "docs/学校课程/课程/操作系统/笔记/补充.md"
               }
             }
           }
@@ -194,11 +193,11 @@
       "omnisearch:Omnisearch": false
     }
   },
-  "active": "90b40ee481179a3c",
+  "active": "b75b3edd981d2399",
   "lastOpenFiles": [
+    "docs/学校课程/课程/操作系统/笔记/虚拟化.md",
     "docs/学校课程/课程/操作系统/笔记/持久化.md",
     "docs/学校课程/课程/操作系统/笔记/补充.md",
-    "docs/学校课程/课程/操作系统/笔记/虚拟化.md",
     "docs/学校课程/课程/操作系统/笔记/并发.md",
     "docs/学校课程/课程/操作系统/代码/fish/fish.c",
     "docs/学校课程/课程/操作系统/笔记/绪论.md",
