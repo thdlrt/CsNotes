@@ -20,24 +20,24 @@
             }
           },
           {
-            "id": "90b40ee481179a3c",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "docs/学校课程/课程/操作系统/笔记/虚拟化.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
             "id": "2e3a80a9f49aefe0",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
                 "file": "docs/学校课程/课程/操作系统/笔记/持久化.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "3d88ecbd0bcffe28",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "docs/学校课程/课程/操作系统/笔记/虚拟化.md",
                 "mode": "source",
                 "source": false
               }
@@ -196,8 +196,10 @@
   "active": "b75b3edd981d2399",
   "lastOpenFiles": [
     "docs/学校课程/课程/操作系统/笔记/虚拟化.md",
-    "docs/学校课程/课程/操作系统/笔记/持久化.md",
     "docs/学校课程/课程/操作系统/笔记/补充.md",
+    "docs/学校课程/归档课程/计算机系统基础/data/7.md",
+    "docs/学校课程/归档课程/计算机系统基础/data/8.md",
+    "docs/学校课程/课程/操作系统/笔记/持久化.md",
     "docs/学校课程/课程/操作系统/笔记/并发.md",
     "docs/学校课程/课程/操作系统/代码/fish/fish.c",
     "docs/学校课程/课程/操作系统/笔记/绪论.md",
@@ -239,7 +241,6 @@
     "docs/学校课程/归档课程/编译原理/作业/答案/dragon-book-exercise-answers-master/ch07/7.4/7.4.md",
     "docs/学校课程/归档课程/编译原理/作业/答案/dragon-book-exercise-answers-master/ch07/7.3/7.3.md",
     "docs/学校课程/归档课程/编译原理/作业/答案/dragon-book-exercise-answers-master/ch07/7.2/7.2.md",
-    "docs/学校课程/归档课程/编译原理/作业/答案/dragon-book-exercise-answers-master/ch06/6.7/6.7.md",
     "未命名.canvas"
   ]
 }
