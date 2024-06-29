@@ -25,7 +25,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/学校课程/课程/操作系统/笔记/持久化.md",
+                "file": "docs/学校课程/课程/操作系统/笔记/并发.md",
                 "mode": "source",
                 "source": false
               }
@@ -86,8 +86,7 @@
               "state": {}
             }
           }
-        ],
-        "currentTab": 3
+        ]
       }
     ],
     "direction": "horizontal",
@@ -107,7 +106,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/学校课程/课程/操作系统/笔记/持久化.md",
+                "file": "docs/学校课程/课程/操作系统/笔记/并发.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -124,7 +123,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/学校课程/课程/操作系统/笔记/持久化.md",
+                "file": "docs/学校课程/课程/操作系统/笔记/并发.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -155,7 +154,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/学校课程/课程/操作系统/笔记/持久化.md"
+                "file": "docs/学校课程/课程/操作系统/笔记/并发.md"
               }
             }
           }
@@ -184,8 +183,8 @@
   },
   "active": "83d67564a6c2b288",
   "lastOpenFiles": [
-    "docs/学校课程/课程/操作系统/笔记/虚拟化.md",
     "docs/学校课程/课程/操作系统/笔记/持久化.md",
+    "docs/学校课程/课程/操作系统/笔记/虚拟化.md",
     "docs/学校课程/课程/操作系统/笔记/补充.md",
     "docs/学校课程/课程/操作系统/笔记/绪论.md",
     "docs/学校课程/归档课程/计算机系统基础/data/7.md",
