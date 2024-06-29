@@ -1,8 +1,20 @@
 {
   "recentFiles": [
     {
+      "basename": "补充",
+      "path": "docs/学校课程/课程/操作系统/笔记/补充.md"
+    },
+    {
+      "basename": "4",
+      "path": "docs/学校课程/归档课程/计算机系统基础/data/4.md"
+    },
+    {
       "basename": "并发",
       "path": "docs/学校课程/课程/操作系统/笔记/并发.md"
+    },
+    {
+      "basename": "fish",
+      "path": "docs/学校课程/课程/操作系统/代码/fish/fish.c"
     },
     {
       "basename": "持久化",
@@ -11,10 +23,6 @@
     {
       "basename": "虚拟化",
       "path": "docs/学校课程/课程/操作系统/笔记/虚拟化.md"
-    },
-    {
-      "basename": "补充",
-      "path": "docs/学校课程/课程/操作系统/笔记/补充.md"
     },
     {
       "basename": "绪论",
@@ -27,10 +35,6 @@
     {
       "basename": "8",
       "path": "docs/学校课程/归档课程/计算机系统基础/data/8.md"
-    },
-    {
-      "basename": "fish",
-      "path": "docs/学校课程/课程/操作系统/代码/fish/fish.c"
     },
     {
       "basename": "thread",

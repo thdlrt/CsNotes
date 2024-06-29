@@ -17,7 +17,7 @@ struct rule {
     {D, '_', A},
 };
 
-int current = A, quota = 1;
+int current = A;
 
 mutex_t lk = MUTEX_INIT();
 cond_t cv = COND_INIT();
@@ -33,7 +33,7 @@ int next(char ch) {
 }
 
 static int can_print(char ch) {
-    return next(ch) != 0 && quota > 0;
+    return next(ch) != 0;
 }
 
 const char roles[] = ".<<<<<>>>>___";
