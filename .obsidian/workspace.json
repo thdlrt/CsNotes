@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/学校课程/课程/操作系统/笔记/补充.md",
+                "file": "_待办事项_/竞赛信息.md",
                 "mode": "source",
                 "source": false
               }
@@ -106,7 +106,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/学校课程/课程/操作系统/笔记/补充.md",
+                "file": "_待办事项_/竞赛信息.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -123,7 +123,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/学校课程/课程/操作系统/笔记/补充.md",
+                "file": "_待办事项_/竞赛信息.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -154,7 +154,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/学校课程/课程/操作系统/笔记/补充.md"
+                "file": "_待办事项_/竞赛信息.md"
               }
             }
           }
@@ -183,8 +183,8 @@
   },
   "active": "b75b3edd981d2399",
   "lastOpenFiles": [
-    "docs/学校课程/归档课程/计算机系统基础/data/4.md",
     "docs/学校课程/课程/操作系统/笔记/补充.md",
+    "docs/学校课程/归档课程/计算机系统基础/data/4.md",
     "docs/学校课程/课程/操作系统/笔记/并发.md",
     "docs/学校课程/课程/操作系统/代码/fish/fish.c",
     "docs/学校课程/课程/操作系统/笔记/持久化.md",
