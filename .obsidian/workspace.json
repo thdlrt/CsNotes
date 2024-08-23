@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "_draft_/金融工程/金融工程论文寻找.md",
+                "file": "_待办事项_/竞赛信息.md",
                 "mode": "source",
                 "source": false
               }
@@ -73,7 +73,8 @@
               "state": {}
             }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
@@ -93,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "_draft_/金融工程/金融工程论文寻找.md",
+                "file": "_待办事项_/竞赛信息.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +111,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "_draft_/金融工程/金融工程论文寻找.md",
+                "file": "_待办事项_/竞赛信息.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -141,7 +142,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "_draft_/金融工程/金融工程论文寻找.md"
+                "file": "_待办事项_/竞赛信息.md"
               }
             }
           }
@@ -168,8 +169,9 @@
       "omnisearch:Omnisearch": false
     }
   },
-  "active": "96e173acdf249e6c",
+  "active": "b75b3edd981d2399",
   "lastOpenFiles": [
+    "_draft_/金融工程/金融工程论文寻找.md",
     "_draft_/金融工程.rar",
     "_待办事项_/竞赛信息.md",
     "_draft_/金融工程/高频信息下沪深300指数的波动率分析及套期保值研究_周梓君.caj",
@@ -191,7 +193,6 @@
     "docs/学校课程/课程/操作系统/代码/os-model/os-model.py",
     "_private_/金融经济学背诵部分.md",
     "_draft_",
-    "_实习_",
     "docs/学校课程/归档课程/编译原理/作业/答案/dragon-book-exercise-answers-master/ch12/12.7/assets/12.7.2.png",
     "docs/学校课程/归档课程/编译原理/作业/答案/dragon-book-exercise-answers-master/ch12/12.7/assets/12.7.1.png",
     "docs/学校课程/归档课程/编译原理/作业/答案/dragon-book-exercise-answers-master/ch08/8.5/assets/8.5.3.gif",
