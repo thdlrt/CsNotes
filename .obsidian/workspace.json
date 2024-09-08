@@ -13,13 +13,24 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "_待办事项_/竞赛信息.md",
+                "file": "_draft_/FAT32.md",
                 "mode": "source",
                 "source": false
               }
             }
+          },
+          {
+            "id": "8672cf7ad0a77393",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.6.7"
+              }
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -94,7 +105,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "_待办事项_/竞赛信息.md",
+                "file": "_draft_/FAT32.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -111,7 +122,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "_待办事项_/竞赛信息.md",
+                "file": "_draft_/FAT32.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -142,7 +153,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "_待办事项_/竞赛信息.md"
+                "file": "_draft_/FAT32.md"
               }
             }
           }
@@ -169,11 +180,11 @@
       "omnisearch:Omnisearch": false
     }
   },
-  "active": "b75b3edd981d2399",
+  "active": "8672cf7ad0a77393",
   "lastOpenFiles": [
+    "_待办事项_/竞赛信息.md",
     "_draft_/金融工程/金融工程论文寻找.md",
     "_draft_/金融工程.rar",
-    "_待办事项_/竞赛信息.md",
     "_draft_/金融工程/高频信息下沪深300指数的波动率分析及套期保值研究_周梓君.caj",
     "_draft_/金融工程/沪深300股指期货套期保值模型选择与实证研究_陈程.pdf",
     "_draft_/金融工程/沪深300指数期权仿真交易跨市场套利有效性研究_孙桂平.pdf",
