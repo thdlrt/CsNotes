@@ -11,9 +11,11 @@
             "id": "f0ee1dea8ea8cd54",
             "type": "leaf",
             "state": {
-              "type": "pdf",
+              "type": "markdown",
               "state": {
-                "file": "docs/八股（保研&工作）/保研/笔试/2021年南京大学计算机科学与技术系本科生开放日7月8日线上考核.pdf"
+                "file": "docs/编程语言/c++/笔记（整理前）/1.md",
+                "mode": "source",
+                "source": false
               }
             }
           }
@@ -83,7 +85,7 @@
         "state": {
           "type": "backlink",
           "state": {
-            "file": "docs/八股（保研&工作）/保研/笔试/2021年南京大学计算机科学与技术系本科生开放日7月8日线上考核.pdf",
+            "file": "docs/编程语言/c++/笔记（整理前）/1.md",
             "collapseAll": false,
             "extraContext": false,
             "sortOrder": "alphabetical",
@@ -100,7 +102,7 @@
         "state": {
           "type": "outgoing-link",
           "state": {
-            "file": "docs/八股（保研&工作）/保研/笔试/2021年南京大学计算机科学与技术系本科生开放日7月8日线上考核.pdf",
+            "file": "docs/编程语言/c++/笔记（整理前）/1.md",
             "linksCollapsed": false,
             "unlinkedCollapsed": true
           }
@@ -112,7 +114,7 @@
         "state": {
           "type": "outline",
           "state": {
-            "file": "docs/八股（保研&工作）/保研/笔试/2021年南京大学计算机科学与技术系本科生开放日7月8日线上考核.pdf"
+            "file": "docs/编程语言/c++/笔记（整理前）/1.md"
           }
         }
       }
@@ -131,6 +133,8 @@
   },
   "active": "f0ee1dea8ea8cd54",
   "lastOpenFiles": [
+    "docs/八股（保研&工作）/保研/笔试/simpread-南京大学计院夏令营历年机试笔试题汇总（刷题版）_南京大学计算机夏令营笔试 - CSDN 博客.md",
+    "docs/八股（保研&工作）/保研/笔试/2021年南京大学计算机科学与技术系本科生开放日7月8日线上考核.pdf",
     "linkdata/P5410 【模板】扩展 KMP_exKMP（Z 函数） - 洛谷 _ 计算机科学教育新生态.md",
     "linkdata",
     "README.md",
@@ -152,7 +156,6 @@
     "docs/学校课程/归档课程/编译原理/作业/答案/dragon-book-exercise-answers-master/ch03/3.6/assets/3.6.1.graphml",
     "docs/学校课程/归档课程/编译原理/作业/答案/dragon-book-exercise-answers-master/ch03/3.8/assets/3.8.1-nfa.graphml",
     "docs/学校课程/归档课程/编译原理/作业/答案/dragon-book-exercise-answers-master/ch03/3.8/assets/3.8.3-2.graphml",
-    "docs/学校课程/归档课程/编译原理/作业/答案/dragon-book-exercise-answers-master/ch03/3.8/assets/3.8.1-dfa.graphml",
     "docs/学校课程/归档课程/编译原理/作业/答案/dragon-book-exercise-answers-master/ch05/5.3/5.3.md",
     "docs/学校课程/归档课程/编译原理/作业/答案/dragon-book-exercise-answers-master/ch05/5.4/5.4.md",
     "docs/学校课程/归档课程/编译原理/作业/答案/dragon-book-exercise-answers-master/ch05/5.5/5.5.md",
@@ -175,7 +178,6 @@
     "docs/学校课程/归档课程/编译原理/作业/答案/dragon-book-exercise-answers-master/ch03/3.3/3.3.md",
     "docs/学校课程/归档课程/编译原理/作业/答案/dragon-book-exercise-answers-master/ch04/4.7/4.7.md",
     "docs/学校课程/归档课程/编译原理/作业/答案/dragon-book-exercise-answers-master/ch04/4.6/4.6.md",
-    "docs/学校课程/归档课程/编译原理/作业/答案/dragon-book-exercise-answers-master/ch04/key-point/key-point.md",
-    "docs/学校课程/归档课程/编译原理/作业/答案/dragon-book-exercise-answers-master/ch04/4.4/4.4.md"
+    "docs/学校课程/归档课程/编译原理/作业/答案/dragon-book-exercise-answers-master/ch04/key-point/key-point.md"
   ]
 }
