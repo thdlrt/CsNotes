@@ -4,33 +4,18 @@
     "type": "split",
     "children": [
       {
-        "id": "1a252bff1ef9709c",
+        "id": "94b6b0a3e049d66a",
         "type": "tabs",
         "children": [
           {
-            "id": "b75b3edd981d2399",
+            "id": "34f848085362c538",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "_draft_/FAT32.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "8672cf7ad0a77393",
-            "type": "leaf",
-            "state": {
-              "type": "release-notes",
-              "state": {
-                "currentVersion": "1.6.7"
-              }
+              "type": "empty",
+              "state": {}
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -105,7 +90,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "_draft_/FAT32.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -122,7 +106,6 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "_draft_/FAT32.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -152,9 +135,7 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "_draft_/FAT32.md"
-              }
+              "state": {}
             }
           }
         ],
@@ -180,8 +161,9 @@
       "omnisearch:Omnisearch": false
     }
   },
-  "active": "8672cf7ad0a77393",
+  "active": "34f848085362c538",
   "lastOpenFiles": [
+    "_draft_/FAT32.md",
     "_待办事项_/竞赛信息.md",
     "_draft_/金融工程/金融工程论文寻找.md",
     "_draft_/金融工程.rar",
@@ -227,7 +209,6 @@
     "docs/学校课程/归档课程/编译原理/作业/答案/dragon-book-exercise-answers-master/ch05/5.1/5.1.md",
     "docs/学校课程/归档课程/编译原理/作业/答案/dragon-book-exercise-answers-master/ch07/7.6/7.6.md",
     "docs/学校课程/归档课程/编译原理/作业/答案/dragon-book-exercise-answers-master/ch07/7.7/7.7.md",
-    "docs/学校课程/归档课程/编译原理/作业/答案/dragon-book-exercise-answers-master/ch07/7.5/7.5.md",
     "未命名.canvas"
   ]
 }
