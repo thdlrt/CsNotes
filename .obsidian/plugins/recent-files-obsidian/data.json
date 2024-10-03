@@ -1,6 +1,10 @@
 {
   "recentFiles": [
     {
+      "basename": "世嘉新人培训教材",
+      "path": "docs/自学内容/游戏开发&图形学/阅读/世嘉新人培训教材.md"
+    },
+    {
       "basename": "fairyGui(UnitySDK)",
       "path": "docs/自学内容/游戏开发&图形学/游戏开发/游戏引擎/unity/fairyGui(UnitySDK).md"
     },
@@ -10,7 +14,7 @@
     },
     {
       "basename": "实验笔记",
-      "path": "docs/学校课程/课程/操作系统/实验笔记.md"
+      "path": "docs/学校课程/归档课程/操作系统/实验笔记.md"
     },
     {
       "basename": "unity",
@@ -30,7 +34,7 @@
     },
     {
       "basename": "补充",
-      "path": "docs/学校课程/课程/操作系统/笔记/补充.md"
+      "path": "docs/学校课程/归档课程/操作系统/笔记/补充.md"
     },
     {
       "basename": "4",
@@ -38,23 +42,23 @@
     },
     {
       "basename": "并发",
-      "path": "docs/学校课程/课程/操作系统/笔记/并发.md"
+      "path": "docs/学校课程/归档课程/操作系统/笔记/并发.md"
     },
     {
       "basename": "fish",
-      "path": "docs/学校课程/课程/操作系统/代码/fish/fish.c"
+      "path": "docs/学校课程/归档课程/操作系统/代码/fish/fish.c"
     },
     {
       "basename": "持久化",
-      "path": "docs/学校课程/课程/操作系统/笔记/持久化.md"
+      "path": "docs/学校课程/归档课程/操作系统/笔记/持久化.md"
     },
     {
       "basename": "虚拟化",
-      "path": "docs/学校课程/课程/操作系统/笔记/虚拟化.md"
+      "path": "docs/学校课程/归档课程/操作系统/笔记/虚拟化.md"
     },
     {
       "basename": "绪论",
-      "path": "docs/学校课程/课程/操作系统/笔记/绪论.md"
+      "path": "docs/学校课程/归档课程/操作系统/笔记/绪论.md"
     },
     {
       "basename": "7",
@@ -66,11 +70,11 @@
     },
     {
       "basename": "thread",
-      "path": "docs/学校课程/课程/操作系统/代码/thread-lib/thread.h"
+      "path": "docs/学校课程/归档课程/操作系统/代码/thread-lib/thread.h"
     },
     {
       "basename": "os-model",
-      "path": "docs/学校课程/课程/操作系统/代码/os-model/os-model.py"
+      "path": "docs/学校课程/归档课程/操作系统/代码/os-model/os-model.py"
     },
     {
       "basename": "index",

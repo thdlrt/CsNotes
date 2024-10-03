@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/自学内容/游戏开发&图形学/游戏开发/游戏引擎/unity/fairyGui(UnitySDK).md",
+                "file": "docs/自学内容/游戏开发&图形学/阅读/世嘉新人培训教材.md",
                 "mode": "source",
                 "source": false
               }
@@ -73,8 +73,7 @@
               "state": {}
             }
           }
-        ],
-        "currentTab": 3
+        ]
       }
     ],
     "direction": "horizontal",
@@ -94,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/自学内容/游戏开发&图形学/游戏开发/游戏引擎/unity/fairyGui(UnitySDK).md",
+                "file": "docs/自学内容/游戏开发&图形学/阅读/世嘉新人培训教材.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -111,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/自学内容/游戏开发&图形学/游戏开发/游戏引擎/unity/fairyGui(UnitySDK).md",
+                "file": "docs/自学内容/游戏开发&图形学/阅读/世嘉新人培训教材.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -142,7 +141,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/自学内容/游戏开发&图形学/游戏开发/游戏引擎/unity/fairyGui(UnitySDK).md"
+                "file": "docs/自学内容/游戏开发&图形学/阅读/世嘉新人培训教材.md"
               }
             }
           }
@@ -171,11 +170,13 @@
   },
   "active": "ac7cf3d210bf6fd2",
   "lastOpenFiles": [
-    "docs/自学内容/游戏开发&图形学/lua/xlua.md",
     "docs/自学内容/游戏开发&图形学/游戏开发/游戏引擎/unity/fairyGui(UnitySDK).md",
+    "docs/自学内容/游戏开发&图形学/阅读/世嘉新人培训教材.md",
+    "docs/自学内容/游戏开发&图形学/阅读",
+    "docs/自学内容/游戏开发&图形学/lua/xlua.md",
     "docs/自学内容/游戏开发&图形学/lua/未命名.md",
     "docs/自学内容/游戏开发&图形学/lua",
-    "docs/学校课程/课程/操作系统/实验笔记.md",
+    "docs/学校课程/归档课程/操作系统/实验笔记.md",
     "docs/自学内容/游戏开发&图形学/游戏开发/游戏引擎/unity/unity.md",
     "_draft_/FAT32.md",
     "_待办事项_/竞赛信息.md",
@@ -186,18 +187,17 @@
     "_draft_/金融工程/沪深300指数期权仿真交易跨市场套利有效性研究_孙桂平.pdf",
     "_draft_/金融工程/中国沪深300股指期货最优套期保值率的实证研究_武司琪.pdf",
     "_draft_/金融工程",
-    "docs/学校课程/课程/操作系统/笔记/补充.md",
+    "docs/学校课程/归档课程/操作系统/笔记/补充.md",
     "docs/学校课程/归档课程/计算机系统基础/data/4.md",
-    "docs/学校课程/课程/操作系统/笔记/并发.md",
-    "docs/学校课程/课程/操作系统/代码/fish/fish.c",
-    "docs/学校课程/课程/操作系统/笔记/持久化.md",
-    "docs/学校课程/课程/操作系统/笔记/虚拟化.md",
-    "docs/学校课程/课程/操作系统/笔记/绪论.md",
+    "docs/学校课程/归档课程/操作系统/笔记/并发.md",
+    "docs/学校课程/归档课程/操作系统/代码/fish/fish.c",
+    "docs/学校课程/归档课程/操作系统/笔记/持久化.md",
+    "docs/学校课程/归档课程/操作系统/笔记/虚拟化.md",
+    "docs/学校课程/归档课程/操作系统/笔记/绪论.md",
     "docs/学校课程/归档课程/计算机系统基础/data/7.md",
     "docs/学校课程/归档课程/计算机系统基础/data/8.md",
-    "docs/学校课程/课程/操作系统/代码/thread-lib/thread.h",
+    "docs/学校课程/归档课程/操作系统/代码/thread-lib/thread.h",
     "docs/学校课程/课程/操作系统/笔记/内核.md",
-    "docs/学校课程/课程/操作系统/代码/os-model/os-model.py",
     "_private_/金融经济学背诵部分.md",
     "docs/学校课程/归档课程/编译原理/作业/答案/dragon-book-exercise-answers-master/ch12/12.7/assets/12.7.2.png",
     "docs/学校课程/归档课程/编译原理/作业/答案/dragon-book-exercise-answers-master/ch12/12.7/assets/12.7.1.png",
@@ -216,7 +216,6 @@
     "docs/学校课程/归档课程/编译原理/作业/答案/dragon-book-exercise-answers-master/ch08/8.3/8.3.md",
     "docs/学校课程/归档课程/编译原理/作业/答案/dragon-book-exercise-answers-master/ch08/8.2/8.2.md",
     "docs/学校课程/归档课程/编译原理/作业/答案/dragon-book-exercise-answers-master/ch05/5.5/5.5.md",
-    "docs/学校课程/归档课程/编译原理/作业/答案/dragon-book-exercise-answers-master/ch05/5.4/5.4.md",
     "未命名.canvas"
   ]
 }
