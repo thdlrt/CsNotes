@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/自学内容/游戏开发&图形学/阅读/世嘉新人培训教材.md",
+                "file": "docs/编程语言/c++/C++Primer.md",
                 "mode": "source",
                 "source": false
               }
@@ -48,7 +48,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "tag:Codeforces",
+                "query": "path:\"docs/编程语言/c++/笔记（整理前）/\" ",
                 "matchingCase": true,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -73,8 +73,7 @@
               "state": {}
             }
           }
-        ],
-        "currentTab": 3
+        ]
       }
     ],
     "direction": "horizontal",
@@ -94,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/自学内容/游戏开发&图形学/阅读/世嘉新人培训教材.md",
+                "file": "docs/编程语言/c++/C++Primer.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -111,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/自学内容/游戏开发&图形学/阅读/世嘉新人培训教材.md",
+                "file": "docs/编程语言/c++/C++Primer.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -142,7 +141,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/自学内容/游戏开发&图形学/阅读/世嘉新人培训教材.md"
+                "file": "docs/编程语言/c++/C++Primer.md"
               }
             }
           }
@@ -151,7 +150,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 226.5
+    "width": 226.5,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -171,8 +171,12 @@
   },
   "active": "ac7cf3d210bf6fd2",
   "lastOpenFiles": [
-    "docs/自学内容/游戏开发&图形学/游戏开发/游戏引擎/unity/fairyGui(UnitySDK).md",
+    "docs/编程语言/c++/笔记（整理前）/1.md",
+    "docs/编程语言/c++/笔记（整理前）/16.md",
+    "docs/编程语言/c++/C++Primer.md",
+    "docs/编程语言/c++/C++基础.md",
     "docs/自学内容/游戏开发&图形学/阅读/世嘉新人培训教材.md",
+    "docs/自学内容/游戏开发&图形学/游戏开发/游戏引擎/unity/fairyGui(UnitySDK).md",
     "docs/自学内容/游戏开发&图形学/阅读",
     "docs/自学内容/游戏开发&图形学/lua/xlua.md",
     "docs/自学内容/游戏开发&图形学/lua/未命名.md",
@@ -213,10 +217,6 @@
     "docs/学校课程/归档课程/编译原理/作业/答案/dragon-book-exercise-answers-master/ch12/12.7/12.7.md",
     "docs/学校课程/归档课程/编译原理/作业/答案/dragon-book-exercise-answers-master/ch12/12.3/12.3.md",
     "docs/学校课程/归档课程/编译原理/作业/答案/dragon-book-exercise-answers-master/ch08/8.5/8.5.md",
-    "docs/学校课程/归档课程/编译原理/作业/答案/dragon-book-exercise-answers-master/ch08/8.4/8.4.md",
-    "docs/学校课程/归档课程/编译原理/作业/答案/dragon-book-exercise-answers-master/ch08/8.3/8.3.md",
-    "docs/学校课程/归档课程/编译原理/作业/答案/dragon-book-exercise-answers-master/ch08/8.2/8.2.md",
-    "docs/学校课程/归档课程/编译原理/作业/答案/dragon-book-exercise-answers-master/ch05/5.5/5.5.md",
     "未命名.canvas"
   ]
 }
