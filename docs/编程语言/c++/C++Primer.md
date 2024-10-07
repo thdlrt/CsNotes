@@ -33,3 +33,24 @@ void err_msg(ErrCode e, initializer_list<string> il){
 }
 err_msg(ErrCode(0), {"functionX", "okay"});
 ```
+- 在变量声明中加mutable关键字,即使在一个const成员函数内也可以修改类的某个数据成员
+```cpp
+class Screen{
+public:
+    void som_member() const;
+private:
+    mutable size_t access_ctr;
+};
+void Screen::some_member() const{
+    ++access_ctr;
+}
+```
+- 类在**声明后定义前**是一个**不完全类型**。
+	- 可以定义指向这种类型的指针或引用
+	- 可以**声明**（不能定义）不完全类型作为参数或返回类型的函数。
+- 如果构造函数**只接受一个实参**，则它实际上定义了转换为此类类型的**隐式转换机制**。
+	- 编译器只会自动地执行**仅一步**类型转换。
+	-  explicit 只对一个实参的构造函数有效，用于禁止自动隐式转换
+	- `explicit Sales_data(std::istream);`
+- 在类**外部**定义静态成员时**不能重复 static 关键字**，该关键字只出现在类内部的声明语句
+- 不能在类内部初始化静态成员，必须在**类外部定义和初始化每个静态成员**（const、constexpr 类型可以类内初始化）
