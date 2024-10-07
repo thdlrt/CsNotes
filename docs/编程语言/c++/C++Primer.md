@@ -16,3 +16,11 @@ extern const  int bufSize ;//与file_1.cc中定义的bufSize是同一个
 	- 新标准别名：`using SI = Sales_item;`
 - 从表达式的类型推断出要定义的变量的类型。
 	- `decltype(f()) sum = x;` 推断 `sum` 的类型是函数 `f` 的返回类型。
+```cpp
+//指针数组
+int*ptrs[10];
+//数组指针
+int(*ptrs)[10];
+```
+- `decltype(*p)` 的结果是int&(**左值是引用**)
+- 
