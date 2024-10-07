@@ -23,4 +23,13 @@ int*ptrs[10];
 int(*ptrs)[10];
 ```
 - `decltype(*p)` 的结果是int&(**左值是引用**)
-- 
+- 可变形参 `initializer_list<T> lst` 得到一个相同类型数据组成的 vector
+```cpp
+void err_msg(ErrCode e, initializer_list<string> il){
+    cout << e.msg << endl;
+    for (auto bed = il.begin(); beg != il.end(); ++ beg)
+        cout << *beg << " ";
+    cout << endl;
+}
+err_msg(ErrCode(0), {"functionX", "okay"});
+```
