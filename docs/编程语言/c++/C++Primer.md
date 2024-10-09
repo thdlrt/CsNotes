@@ -54,3 +54,4 @@ void Screen::some_member() const{
 	- `explicit Sales_data(std::istream);`
 - 在类**外部**定义静态成员时**不能重复 static 关键字**，该关键字只出现在类内部的声明语句
 - 不能在类内部初始化静态成员，必须在**类外部定义和初始化每个静态成员**（const、constexpr 类型可以类内初始化）
+- 刷新缓冲区的几种方式
