@@ -55,3 +55,12 @@ void Screen::some_member() const{
 - 在类**外部**定义静态成员时**不能重复 static 关键字**，该关键字只出现在类内部的声明语句
 - 不能在类内部初始化静态成员，必须在**类外部定义和初始化每个静态成员**（const、constexpr 类型可以类内初始化）
 - 刷新缓冲区的几种方式
+	- ends 附加空字符
+	- endl 附加换行
+	- flush 不附加
+- 利用插入迭代器添加元素 `fill_n(back_inserter(vec),10,0);` 添加 10 个 0 到末尾
+- 常见的三迭代器算法（begin 1, end 1, begin 2）
+	- copy
+	- equal
+- 希望改变被 lambda 捕获的值，则添加 mutable 关键字
+	- `auto f = [v1] () mutable { return ++v1; };`
