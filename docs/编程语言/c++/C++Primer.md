@@ -96,3 +96,8 @@ int main() {
 - ref 生成一个**可以传递的引用类型**，可以用于创建引用类型的容器
 	- `std::reference_wrapper<T> std::ref(T& t);`
 	- `std::vector<std::reference_wrapper<int>> vec = {std::ref(a), std::ref(b), std::ref(c)};`
+
+### 智能指针
+- 创建一个只能指针 `make_shared<T>(args)`
+- 获取共享对象的指针数量 `p.use_count()`
+### 泛型
