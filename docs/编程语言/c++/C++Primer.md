@@ -58,9 +58,41 @@ void Screen::some_member() const{
 	- ends 附加空字符
 	- endl 附加换行
 	- flush 不附加
+### 标准库
 - 利用插入迭代器添加元素 `fill_n(back_inserter(vec),10,0);` 添加 10 个 0 到末尾
 - 常见的三迭代器算法（begin 1, end 1, begin 2）
 	- copy
 	- equal
 - 希望改变被 lambda 捕获的值，则添加 mutable 关键字
 	- `auto f = [v1] () mutable { return ++v1; };`
+
+- `bind` 用于将函数或函数对象与一组参数绑定，生成一个具有部分参数的可调用对象
+```cpp
+#include <iostream>
+#include <functional>
+
+void print_sum(int a, int b) {
+    std::cout << "Sum: " << a + b << std::endl;
+}
+
+int main() {
+    // 使用 std::bind 将第一个参数固定为 10
+    auto bound_func = std::bind(print_sum, 10, std::placeholders::_1);
+    // 调用 bound_func 时只需要提供第二个参数
+    bound_func(20);  // 输出: Sum: 30
+    return 0;
+}
+//_n表示待定参数的位置
+```
+- 可以作为一个函数对象传递，有时可以替代 lambda 表达式
+ ```cpp
+ //使用bind可将原来lambda的find_if
+ auto wc = find_if(words.begin(),words.end(),[sz](const string& a));
+ //替换为
+ auto wc = find_if(words.begin(),words.end(),bind(check_size,_1,sz));
+ ```
+- 用占位符实现颠倒参数`bind (isShorter,_2,_1)`
+
+- ref 生成一个**可以传递的引用类型**，可以用于创建引用类型的容器
+	- `std::reference_wrapper<T> std::ref(T& t);`
+	- `std::vector<std::reference_wrapper<int>> vec = {std::ref(a), std::ref(b), std::ref(c)};`
