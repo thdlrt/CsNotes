@@ -99,5 +99,6 @@ int main() {
 
 ### 智能指针
 - 创建一个只能指针 `make_shared<T>(args)`
+- `shared_ptr ` 的构造函数可以传入指针、`unique_ptr` 、`shared_ptr`
 - 获取共享对象的指针数量 `p.use_count()`
 ### 泛型
