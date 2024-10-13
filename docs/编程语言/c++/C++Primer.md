@@ -97,9 +97,17 @@ int main() {
 	- `std::reference_wrapper<T> std::ref(T& t);`
 	- `std::vector<std::reference_wrapper<int>> vec = {std::ref(a), std::ref(b), std::ref(c)};`
 
+- 创建动态数组时进行初始化 `new int[10](); ` 即额外加一组小括号
 ### 智能指针
 - 创建一个只能指针 `make_shared<T>(args)`
 - `shared_ptr ` 的构造函数可以传入指针、`unique_ptr` 、`shared_ptr`
 - 获取共享对象的指针数量 `p.use_count()`；获取指针 `.get()`
 - 指向新对象 `p.reset(new int(1024)); `
+
+- `unique_ptr `：`release` 放弃对指针的控制权，返回指针并置空；`reset` 释放指向的对象；`reset(q)` 令指向 q 指向的对象 
+
+- `weak_ptr`：用一个 `shared_ptr` 来初始化， 一旦最后一个指向对象的 shared_ptr 被销毁，对象就会被释放。
+	- `use_count` 获取与其共享的 share_ptr 的数量
+	- `expired` 若use_count () 为 0，返回 true，否则返回 false 
+	- `lock` 如果expired为true，则返回一个空shared_ptr；否则返回一个指向w的对象的shared_ptr。（weak_ptr 不能直接访问对象，不许使用 lock）
 ### 泛型
