@@ -110,4 +110,9 @@ int main() {
 	- `use_count` 获取与其共享的 share_ptr 的数量
 	- `expired` 若use_count () 为 0，返回 true，否则返回 false 
 	- `lock` 如果expired为true，则返回一个空shared_ptr；否则返回一个指向w的对象的shared_ptr。（weak_ptr 不能直接访问对象，不许使用 lock）
+### OOP
+- 禁止拷贝&赋值：可以将拷贝构造函数和拷贝赋值函数定义为删除的函数来阻止使用，如 `NoCopy &operator=(const NoCopy&) = delete;`
+	- 删除了析构函数的类只能动态创建而且不能被释放
+	- 如果一个类**有数据成员**不能默认构造、拷贝、复制或销毁
+则**对应的成员函数**将被定义为删除的。
 ### 泛型
