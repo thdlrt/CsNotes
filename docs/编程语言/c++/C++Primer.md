@@ -124,4 +124,25 @@ int main() {
 - 成员函数也可以定义右值引用版本来进行优化
 - 重载类型转换（转化为其他类型）：`operator int() const { return val; }`
 	- 添加 `explicit` 可以禁止隐式自动转换
+
+- 虚函数的默认实参：如果某次函数调用使用了默认实参，则该实参值由本次调用的**静态类型**决定。（即使是通过指针动态调用**也是使用基类的默认参数**）
+- 指明执行特定版本的虚函数 `baseP->Quote::net_price(42);`
+
+- 改变基类成员的可访问性
+```C++
+class Base {
+public:
+    std::size_t size() const { return n; }
+protected:
+    std::size_t n;
+};
+class Derived : private Base {    //  note: private inheritance
+public:
+    //改变可见性
+    using Base::size;
+protected:
+    using Base::n;
+};
+```
+
 ### 泛型
