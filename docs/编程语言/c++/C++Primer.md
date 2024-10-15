@@ -146,3 +146,16 @@ protected:
 ```
 
 ### 泛型
+- 可以定义模版类型别名
+```c++
+template<typename T> using twin = pair<T, T>;
+twin<string> authors;
+```
+
+- **相同模版类型**的模版类共享静态成员
+- 静态成员的类外初始化
+```c++
+template <typename T> int MyClass<T>::staticVar = 0;
+```
+
+- 
