@@ -158,4 +158,47 @@ twin<string> authors;
 template <typename T> int MyClass<T>::staticVar = 0;
 ```
 
-- 
+- 返回类型
+```c++
+template <typename T>
+typename T::value_type top(const T& c)
+{
+    if (!c.empty())
+        return c.back();
+    else
+        return typename T::value_type();
+}
+```
+
+- 类模板的成员模板函数
+```c++
+template <typename T> class Blob {
+    template <typename It> Blob(It b, It e);
+    // ...
+};
+
+template <typename T>     // type parameter for the class
+template <typename It>    // type parameter for the constructor
+    Blob<T>::Blob(It b, It e):
+              data(std::make_shared<std::vector<T>>(b, e)) {
+}
+```
+
+- 显示实例化：明确是否生成一个模板的实例而不依赖编译器自动生成
+	- 生成模板实例的代码 `template class MyClass<int>;  // 生成 MyClass<int> 的实例`
+	- 声明模板实例已在其他地方生成，不在当前翻译单元中生成实例 `extern template class MyClass<int>;  // 不生成 MyClass<int> 实例`
+	- 显式实例化常用于大型项目中，帮助优化编译和管理模板代码。
+
+- 自定义返回类型
+```C++
+template <typename It>
+auto fcn(It beg, It end) -> decltype(*beg)
+{
+// process the range
+return *beg; // return a reference to an element from the range 
+}
+```
+
+- 当一个函数参数是一个右值引用（形如 T&&）时，如果**传递一个左值对象(如 int)** 此时有 `int&` ，为 ` int& && ` 即双重引用
+-  双重引用会进行**引用折叠**成一个普通引用，除了右值引用的右值引用 `X&& &&` 为右值引用外**均会被折叠为左值引用**
+	- 这也就是说可以传递任意类型的数据给 `T&`（传入左值时会通过引用折叠转化为左值引用）
