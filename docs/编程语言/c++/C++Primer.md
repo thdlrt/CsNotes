@@ -58,6 +58,21 @@ void Screen::some_member() const{
 	- ends 附加空字符
 	- endl 附加换行
 	- flush 不附加
+
+- 命名空间
+```
+namespace name{
+...
+}
+```
+- 命名空间可以是不连续的，同一名称的命名空间可以在不同文件中，属于一个
+- 外部定义成员 `name:x;`
+- 使用全局作用域 `::x;`
+- 命名空间也是可以嵌套的
+- 内联命名空间：添加 `inline` 关键字，使得通过外层命名空间可以直接访问内层成员
+- 设置别名 `namespace name2 = name1`
+
+- 运行时类型识别
 ### 标准库
 - 利用插入迭代器添加元素 `fill_n(back_inserter(vec),10,0);` 添加 10 个 0 到末尾
 - 常见的三迭代器算法（begin 1, end 1, begin 2）
@@ -98,6 +113,18 @@ int main() {
 	- `std::vector<std::reference_wrapper<int>> vec = {std::ref(a), std::ref(b), std::ref(c)};`
 
 - 创建动态数组时进行初始化 `new int[10](); ` 即额外加一组小括号
+
+- tuple 类型：可以有任意数目成员的 pair
+```C++
+tuple<T1,T2,...,Tn>t(v1,v2,...,vn);
+//返回t的第i个数据成员的引用
+get<i>(t)
+//获取成员数目
+tuple_size<trans>::value
+//成员类型
+tuple_element<1,trans>::type
+```
+- 可以用 `make_tuple` 创建
 ### 智能指针
 - 创建一个只能指针 `make_shared<T>(args)`
 - `shared_ptr ` 的构造函数可以传入指针、`unique_ptr` 、`shared_ptr`
@@ -290,6 +317,14 @@ ostream &print(ostream &os, const T &t, const Args&... rest)
 ```
 
 - 包扩展：直接展开可变参数，**对每个参数应用特定的操作**，形成一组独立的结果。
-	- 
+```C++
+print(ostream &os, const T &t, const Args&... rest)
+{
+    os << t << ", ";
+    return print(os, rest...);
+}
+```
+- `...` 来展开一个可变参数（展开为一系列参数通过逗号间隔的形式）
+- `debug_rep(rest)...` 相当于对每个元素调用方法，并将结果用逗号分割
 
 - 模版特例化

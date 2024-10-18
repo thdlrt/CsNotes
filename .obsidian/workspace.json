@@ -20,21 +20,8 @@
               "icon": "lucide-file",
               "title": "C++Primer"
             }
-          },
-          {
-            "id": "1aa56287d4ad226d",
-            "type": "leaf",
-            "state": {
-              "type": "release-notes",
-              "state": {
-                "currentVersion": "1.7.4"
-              },
-              "icon": "lucide-file",
-              "title": "Release Notes 1.7.4"
-            }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -203,7 +190,7 @@
       "omnisearch:Omnisearch": false
     }
   },
-  "active": "1aa56287d4ad226d",
+  "active": "ac7cf3d210bf6fd2",
   "lastOpenFiles": [
     "docs/编程语言/c++/笔记（整理前）/1.md",
     "docs/编程语言/c++/笔记（整理前）/16.md",
