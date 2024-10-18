@@ -288,7 +288,8 @@ ostream &print(ostream &os, const T &t, const Args&... rest)
     return print(os, rest...);
 }
 ```
-- 包扩展：直接展开可变参数
+
+- 包扩展：直接展开可变参数，**对每个参数应用特定的操作**，形成一组独立的结果。
 	- 
 
 - 模版特例化
