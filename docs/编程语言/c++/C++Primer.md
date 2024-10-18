@@ -73,7 +73,8 @@ namespace name{
 - 设置别名 `namespace name2 = name1`
 
 - 运行时类型识别
-	- `typeid` 用于返回
+	- `typeid` 用于返回表达式的类型，可以用于类型检查
+	- `dynamic_cast` 用于安全的进行类型转换（如基类->派生类），只能用于**具有虚函数的基类**。这确保了基类有虚函数表，使得在运行时可以获得对象的实际类型信息。
 ### 标准库
 - 利用插入迭代器添加元素 `fill_n(back_inserter(vec),10,0);` 添加 10 个 0 到末尾
 - 常见的三迭代器算法（begin 1, end 1, begin 2）
@@ -329,3 +330,46 @@ print(ostream &os, const T &t, const Args&... rest)
 - `debug_rep(rest)...` 相当于对每个元素调用方法，并将结果用逗号分割
 
 - 模版特例化
+- 当特例化一个函数模板时，必须为原模板中的**每个模板参数**都提供实参。
+```C++
+template <typename t> int compare(const t&, const t&);
+//特例化
+template <>
+int compare(const char* const &p1, const char* const &p2)
+{
+    return strcmp(p1, p2);
+}
+```
+- **完全特例化**：为某个具体的类型提供完全不同的实现。
+- **部分特例化**：为一类特定的类型提供部分实现，保留部分模板参数。
+```C++
+template <typename T>
+class Foo {
+public:
+    Foo(T val) : value(val) {}
+    void display() { std::cout << "Generic template: " << value << std::endl; }
+private:
+    T value;
+};
+
+// 完全特例化版本，用于 int 类型
+template <>
+class Foo<int> {
+public:
+    Foo(int val) : value(val) {}
+    void display() { std::cout << "Specialized template for int: " << value << std::endl; }
+private:
+    int value;
+};
+// 部分特例化，当两个参数类型相同时
+template <typename T>
+class Pair<T, T> {
+public:
+    Pair(T a, T b) : first(a), second(b) {}
+    void display() { std::cout << "Specialized Pair: " << first << ", " << second << std::endl; }
+private:
+    T first;
+    T second;
+};
+```
+- 如果为某个类型提供了**非模板版本**，编译器会**优先选择非模板版本**，因为非模板函数的匹配优先级更高。
