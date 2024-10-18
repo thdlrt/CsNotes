@@ -73,6 +73,7 @@ namespace name{
 - 设置别名 `namespace name2 = name1`
 
 - 运行时类型识别
+	- `typeid` 用于返回
 ### 标准库
 - 利用插入迭代器添加元素 `fill_n(back_inserter(vec),10,0);` 添加 10 个 0 到末尾
 - 常见的三迭代器算法（begin 1, end 1, begin 2）
