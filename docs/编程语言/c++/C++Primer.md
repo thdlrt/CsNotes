@@ -201,4 +201,94 @@ return *beg; // return a reference to an element from the range
 
 - 当一个函数参数是一个右值引用（形如 T&&）时，如果**传递一个左值对象(如 int)** 此时有 `int&` ，为 ` int& && ` 即双重引用
 -  双重引用会进行**引用折叠**成一个普通引用，除了右值引用的右值引用 `X&& &&` 为右值引用外**均会被折叠为左值引用**
-	- 这也就是说可以传递任意类型的数据给 `T&`（传入左值时会通过引用折叠转化为左值引用）
+	- 这也就是说可以传递任意类型的数据给 `T&`（传入左值时会通过引用折叠转化为左值引用） 
+
+- `move` 函数工作原理
+```C++
+template <typename T>
+typename remove_reference<T>::type&& move(T&& t)
+{
+   // static_cast covered in § 4.11.3 
+    return static_cast<typename remove_reference<T>::type&&>(t);
+}
+```
+- 通过引用折叠使得 move 既可以接受一个左值也可以接受一个右值
+- 传递一个右值时，推断出 T 为非引用，即 `T&&` 为右值引用
+	- remove_reference\<string>的 type 成员是 string。move 的返回类型是 string\&\&
+- 传递一个左值时，推断出 T 为 `string&`， remove_reference<string&>的type成员是string，move的返回类型仍是string&&。
+	- 折叠后的 t 为 string&类型，转化后为 string&&
+	- **可以用 static_cast 显式地将一个左值转换为一个右值引用。**
+
+- 参数转发：将函数的一个或多个实参连同类型不变的转发给其他函数
+	- 用于解决**传递引用类型参数**的问题
+	- 引用折叠可以保持原始实参的引用类型
+```C++
+template <typename F, typename T1, typename T2>
+void flip2(F f, T1 &&t1, T2 &&t2)
+{
+    f(t2, t1);
+}
+```
+- 传入左值引用类型参数后，T1 就是一个 int&类型的
+- 如果一个函数参数是指向模板类型参数的右值引用（如 T&&），它对应的实参的 const 属性和左值/右值属性将得到保持。
+- 此外还需要 `std::forward` 转发，因为无论参数原本是左值还是右值，因为在函数体中，函数参数本身总是左值。
+```C++
+#include <iostream>
+#include <utility>  // std::forward
+
+void g(int&& x) {
+    std::cout << "g(int&&): " << x << std::endl;
+}
+
+void g(int& x) {
+    std::cout << "g(int&): " << x << std::endl;
+}
+
+template <typename T>
+void caller(T&& t) {
+    g(std::forward<T>(t));  // 使用 forward 来转发参数
+}
+
+int main() {
+    int a = 10;
+    
+    caller(a);      // 调用时传入左值
+    caller(20);     // 调用时传入右值
+}
+
+```
+
+- 模版方法与非模版方法也可以重载
+	- 如果参数匹配同样好的函数中只有一个是非模板函数，则选择此函数。
+
+- 可变参数模板
+	- 可变数目的参数称为参数包：**模板参数包**表示零个或多个模板参数；**函数参数包**表示零个或多个函数参数
+- 一般模版参数可变同时也有函数参数可变
+```C++
+template <typename T, typename... Args>
+void foo(const T &t, const Args& ... rest);
+int i = 0; double d = 3.14; string s = "how now brown cow";
+foo(i, s, 42, d);
+//实例化为
+void foo(const int&, const string&, const int&, double&);
+```
+- 可变参数函数通常递归调用，每次处理包中的第一个实参，然后用剩余的参数递归调用
+	- 注意要有非可变参数版本作为停止条件，否则会无限递归
+```C++
+template<typename T>
+ostream &print(ostream &os, const T &t)
+{
+    return os << t;
+}
+
+template <typename T, typename... Args>
+ostream &print(ostream &os, const T &t, const Args&... rest)
+{
+    os << t << ", ";
+    return print(os, rest...);
+}
+```
+- 包扩展：直接展开可变参数
+	- 
+
+- 模版特例化
