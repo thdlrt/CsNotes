@@ -16,10 +16,25 @@
                 "file": "docs/编程语言/c++/C++Primer.md",
                 "mode": "source",
                 "source": false
-              }
+              },
+              "icon": "lucide-file",
+              "title": "C++Primer"
+            }
+          },
+          {
+            "id": "1aa56287d4ad226d",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.7.4"
+              },
+              "icon": "lucide-file",
+              "title": "Release Notes 1.7.4"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -39,7 +54,9 @@
               "type": "file-explorer",
               "state": {
                 "sortOrder": "alphabetical"
-              }
+              },
+              "icon": "lucide-folder-closed",
+              "title": "文件列表"
             }
           },
           {
@@ -54,7 +71,9 @@
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical"
-              }
+              },
+              "icon": "lucide-search",
+              "title": "搜索"
             }
           },
           {
@@ -62,7 +81,9 @@
             "type": "leaf",
             "state": {
               "type": "recent-files",
-              "state": {}
+              "state": {},
+              "icon": "clock",
+              "title": "Recent Files"
             }
           },
           {
@@ -70,7 +91,9 @@
             "type": "leaf",
             "state": {
               "type": "file-tree-view",
-              "state": {}
+              "state": {},
+              "icon": "sheets-in-box",
+              "title": "File Tree"
             }
           }
         ],
@@ -102,7 +125,9 @@
                 "searchQuery": "",
                 "backlinkCollapsed": false,
                 "unlinkedCollapsed": false
-              }
+              },
+              "icon": "links-coming-in",
+              "title": "C++Primer 的反向链接列表"
             }
           },
           {
@@ -114,7 +139,9 @@
                 "file": "docs/编程语言/c++/C++Primer.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
-              }
+              },
+              "icon": "links-going-out",
+              "title": "C++Primer 的出链列表"
             }
           },
           {
@@ -125,7 +152,9 @@
               "state": {
                 "sortOrder": "frequency",
                 "useHierarchy": true
-              }
+              },
+              "icon": "lucide-tags",
+              "title": "标签"
             }
           },
           {
@@ -133,7 +162,9 @@
             "type": "leaf",
             "state": {
               "type": "bookmarks",
-              "state": {}
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "书签"
             }
           },
           {
@@ -143,7 +174,9 @@
               "type": "outline",
               "state": {
                 "file": "docs/编程语言/c++/C++Primer.md"
-              }
+              },
+              "icon": "lucide-list",
+              "title": "C++Primer 的大纲"
             }
           }
         ],
@@ -170,7 +203,7 @@
       "omnisearch:Omnisearch": false
     }
   },
-  "active": "ac7cf3d210bf6fd2",
+  "active": "1aa56287d4ad226d",
   "lastOpenFiles": [
     "docs/编程语言/c++/笔记（整理前）/1.md",
     "docs/编程语言/c++/笔记（整理前）/16.md",
