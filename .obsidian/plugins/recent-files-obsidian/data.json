@@ -1,6 +1,10 @@
 {
   "recentFiles": [
     {
+      "basename": "世嘉新人培训教材",
+      "path": "docs/自学内容/游戏开发&图形学/阅读/世嘉新人培训教材.md"
+    },
+    {
       "basename": "C++Primer",
       "path": "docs/编程语言/c++/C++Primer.md"
     },
@@ -15,10 +19,6 @@
     {
       "basename": "C++基础",
       "path": "docs/编程语言/c++/C++基础.md"
-    },
-    {
-      "basename": "世嘉新人培训教材",
-      "path": "docs/自学内容/游戏开发&图形学/阅读/世嘉新人培训教材.md"
     },
     {
       "basename": "fairyGui(UnitySDK)",
