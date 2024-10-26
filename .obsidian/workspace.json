@@ -16,9 +16,7 @@
                 "file": "docs/自学内容/游戏开发&图形学/阅读/世嘉新人培训教材.md",
                 "mode": "source",
                 "source": false
-              },
-              "icon": "lucide-file",
-              "title": "世嘉新人培训教材"
+              }
             }
           }
         ]
@@ -41,9 +39,7 @@
               "type": "file-explorer",
               "state": {
                 "sortOrder": "alphabetical"
-              },
-              "icon": "lucide-folder-closed",
-              "title": "文件列表"
+              }
             }
           },
           {
@@ -58,9 +54,7 @@
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical"
-              },
-              "icon": "lucide-search",
-              "title": "搜索"
+              }
             }
           },
           {
@@ -68,9 +62,7 @@
             "type": "leaf",
             "state": {
               "type": "recent-files",
-              "state": {},
-              "icon": "clock",
-              "title": "Recent Files"
+              "state": {}
             }
           },
           {
@@ -78,9 +70,7 @@
             "type": "leaf",
             "state": {
               "type": "file-tree-view",
-              "state": {},
-              "icon": "sheets-in-box",
-              "title": "File Tree"
+              "state": {}
             }
           }
         ],
@@ -104,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/编程语言/c++/C++Primer.md",
+                "file": "docs/自学内容/游戏开发&图形学/阅读/世嘉新人培训教材.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -112,9 +102,7 @@
                 "searchQuery": "",
                 "backlinkCollapsed": false,
                 "unlinkedCollapsed": false
-              },
-              "icon": "links-coming-in",
-              "title": "C++Primer 的反向链接列表"
+              }
             }
           },
           {
@@ -123,12 +111,10 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/编程语言/c++/C++Primer.md",
+                "file": "docs/自学内容/游戏开发&图形学/阅读/世嘉新人培训教材.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
-              },
-              "icon": "links-going-out",
-              "title": "C++Primer 的出链列表"
+              }
             }
           },
           {
@@ -139,9 +125,7 @@
               "state": {
                 "sortOrder": "frequency",
                 "useHierarchy": true
-              },
-              "icon": "lucide-tags",
-              "title": "标签"
+              }
             }
           },
           {
@@ -149,9 +133,7 @@
             "type": "leaf",
             "state": {
               "type": "bookmarks",
-              "state": {},
-              "icon": "lucide-bookmark",
-              "title": "书签"
+              "state": {}
             }
           },
           {
@@ -160,10 +142,8 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/编程语言/c++/C++Primer.md"
-              },
-              "icon": "lucide-list",
-              "title": "C++Primer 的大纲"
+                "file": "docs/自学内容/游戏开发&图形学/阅读/世嘉新人培训教材.md"
+              }
             }
           }
         ],
@@ -182,12 +162,7 @@
       "templates:插入模板": false,
       "command-palette:打开命令面板": false,
       "workspaces:管理工作区布局": false,
-      "audio-recorder:开始/结束录音": false,
-      "vscode-editor:新建代码文件": false,
-      "obsidian-advanced-slides:Show Slide Preview": false,
-      "media-extended:Open media": false,
-      "obsidian-excalidraw-plugin:新建绘图文件": false,
-      "omnisearch:Omnisearch": false
+      "audio-recorder:开始/结束录音": false
     }
   },
   "active": "24063adb5be26e38",
