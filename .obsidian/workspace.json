@@ -20,21 +20,8 @@
               "icon": "lucide-file",
               "title": "世嘉新人培训教材"
             }
-          },
-          {
-            "id": "a8491d5d77ff3650",
-            "type": "leaf",
-            "state": {
-              "type": "release-notes",
-              "state": {
-                "currentVersion": "1.7.4"
-              },
-              "icon": "lucide-file",
-              "title": "Release Notes 1.7.4"
-            }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -203,7 +190,7 @@
       "obsidian-advanced-slides:Show Slide Preview": false
     }
   },
-  "active": "a8491d5d77ff3650",
+  "active": "0a9cd0319ddd3dbc",
   "lastOpenFiles": [
     "docs/编程语言/c++/C++Primer.md",
     "docs/编程语言/c++/笔记（整理前）/1.md",
