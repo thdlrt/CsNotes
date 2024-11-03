@@ -1,9 +1,41 @@
 ## Package Manager
 - 用于管理Unity项目中所需的各种库、插件和工具包
-## 资源加载方式
-### Resource
-- 
+## 资源加载
+![image.png](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefined20241103171530.png)
+### 文件结构
+#### 资源存储
+**Resource**
+- Resources文件夹是一个**只读**的文件夹，通过Resources.Load()来读取对象。
+- 这里的文件会被**全部**打到发布包中
+	- 打包时会进行压缩和加密
+- 适合存放 prefab 等对象
+
+**streamingAssets**
+- **只读**，资源不会被加密，是原封不动进行打包
+- 适合存储一些二进制文件
+
+**Application**.dataPath
+- 只读，防止资源数据
+
+**Application**.persistentDataPath
+- 可读可写，存储配置文件等
+- 在PC上的地址是：C:\Users\用户名 \AppData\LocalLow\DefaultCompany\test
+#### Editor
+- 存储的资源和脚本不会被打包进发布包，脚本也只在编辑时使用，用于存放工具类的脚本以及一些编辑时使用的 DLL
+#### Scripts
+- 存储游戏脚本
+#### Scenes
+- 存储场景数据，以及灯光烘培、导航数据等
+#### plugins
+- 存储第三方 SDK 以及库
+#### Shaders
+- 存储 shader
 ### AssetBundle
+- AssetBundle可以将多个资源**打包**为单个文件，通过StreamingAssets分发，且可以从该目录直接加载AssetBundle资源。这种方式避免了资源的解压和重组，加载速度更**快**。
+- 先手动或通过编辑器脚本进行打包，得到 AssetBundle，用于游戏中加载以及获取数据
+
+- 手动设置 assetbundle
+	- ![image.png|300](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefined20241103172649.png)
 - 
 ### ASS 系统
 - 优势
