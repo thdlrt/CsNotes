@@ -1,6 +1,14 @@
 {
   "recentFiles": [
     {
+      "basename": "unity资源管理",
+      "path": "docs/自学内容/游戏开发&图形学/游戏开发/游戏引擎/unity/unity资源管理.md"
+    },
+    {
+      "basename": "unity",
+      "path": "docs/自学内容/游戏开发&图形学/游戏开发/游戏引擎/unity/unity.md"
+    },
+    {
       "basename": "learnOpengl",
       "path": "docs/自学内容/游戏开发&图形学/计算机图形学/API编程/opengl/learnOpengl.md"
     },
@@ -35,10 +43,6 @@
     {
       "basename": "实验笔记",
       "path": "docs/学校课程/归档课程/操作系统/实验笔记.md"
-    },
-    {
-      "basename": "unity",
-      "path": "docs/自学内容/游戏开发&图形学/游戏开发/游戏引擎/unity/unity.md"
     },
     {
       "basename": "FAT32",
@@ -187,14 +191,6 @@
     {
       "basename": "郑振龙《金融工程》（第5版）笔记和课后习题（含考研真题）详解答案",
       "path": "docs/学校课程/归档课程/金融工程学/郑振龙《金融工程》（第5版）笔记和课后习题（含考研真题）详解答案.pdf"
-    },
-    {
-      "basename": "P5410 【模板】扩展 KMP_exKMP（Z 函数） - 洛谷 _ 计算机科学教育新生态",
-      "path": "linkdata/P5410 【模板】扩展 KMP_exKMP（Z 函数） - 洛谷 _ 计算机科学教育新生态.md"
-    },
-    {
-      "basename": "unreal",
-      "path": "docs/自学内容/游戏开发&图形学/游戏开发/游戏引擎/unreal.md"
     }
   ],
   "omittedPaths": [],
