@@ -33,10 +33,127 @@
 ### AssetBundle
 - AssetBundle可以将多个资源**打包**为单个文件，通过StreamingAssets分发，且可以从该目录直接加载AssetBundle资源。这种方式避免了资源的解压和重组，加载速度更**快**。
 - 先手动或通过编辑器脚本进行打包，得到 AssetBundle，用于游戏中加载以及获取数据
+- AssetBundle 可以更好的进行平台优化和按需加载
 
 - 手动设置 assetbundle
 	- ![image.png|300](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefined20241103172649.png)
-- 
+- 一个简易的打包工具代码
+	- 加载 `AssetBundle` 的时候，如果 `AssetBundle` 依赖了另一个 `AssetBundle`，则**需要加载依赖的**这个 `AssetBundle`（不加载会造成连接缺失等）
+	- 如果依赖文件不打包进其他 assetbundle，则会被打包进该 assetbundle，也就不存在依赖问题
+	- 打包时可以自动生成这种依赖关系
+```c
+using UnityEngine;
+using UnityEditor;
+
+public class BuildAB
+{
+    [MenuItem("Tools/BuildAB")]
+    public static void StartBuild()
+    {
+    //打包AssetBundle，输出目录Application.streamingAssetsPath
+        BuildPipeline.BuildAssetBundles(Application.streamingAssetsPath, 
+        BuildAssetBundleOptions.ChunkBasedCompression, 
+        BuildTarget.StandaloneWindows);
+    }
+}
+```
+- 一个简单的管理系统
+```csharp
+using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
+using System.IO;
+
+public class AssetBundleLoaderMgr
+{
+    /// <summary>
+    /// 初始化，加载AssetBundleManifest，方便后面查找依赖
+    /// </summary>
+    public void Init()
+    {
+        string streamingAssetsAbPath = Path.Combine(Application.streamingAssetsPath, "StreamingAssets");
+        AssetBundle streamingAssetsAb = AssetBundle.LoadFromFile(streamingAssetsAbPath);
+        m_manifest = streamingAssetsAb.LoadAsset<AssetBundleManifest>("AssetBundleManifest");
+    }
+
+    /// <summary>
+    /// 加载AssetBundle
+    /// </summary>
+    /// <param name="abName">AssetBundle名称</param>
+    /// <returns></returns>
+    public AssetBundle LoadAssetBundle(string abName)
+    {
+        AssetBundle ab = null;
+        if (!m_abDic.ContainsKey(abName))
+        {
+            string abResPath = Path.Combine(Application.streamingAssetsPath, abName);
+            ab = AssetBundle.LoadFromFile(abResPath);
+            m_abDic[abName] = ab;
+        }
+        else
+        {
+            ab = m_abDic[abName];
+        }
+
+        //加载依赖
+        string[] dependences = m_manifest.GetAllDependencies(abName);
+        int dependenceLen = dependences.Length;
+        if (dependenceLen > 0)
+        {
+            for (int i = 0; i < dependenceLen; i++)
+            {
+                string dependenceAbName = dependences[i];
+                if (!m_abDic.ContainsKey(dependenceAbName))
+                {
+                    AssetBundle dependenceAb = LoadAssetBundle(dependenceAbName);
+                    m_abDic[dependenceAbName] = dependenceAb;
+                }
+            }
+        }
+
+        return ab;
+    }
+
+    /// <summary>
+    /// 从AssetBundle中加载Asset
+    /// </summary>
+    /// <typeparam name="T">类型</typeparam>
+    /// <param name="abName">AssetBundle名</param>
+    /// <param name="assetName">Asset名</param>
+    /// <returns></returns>
+    public T LoadAsset<T>(string abName, string assetName) where T : Object
+    {
+        AssetBundle ab = LoadAssetBundle(abName);
+        T t = ab.LoadAsset<T>(assetName);
+        return t;
+    }
+
+    /// <summary>
+    /// 缓存加载的AssetBundle，防止多次加载
+    /// </summary>
+    private Dictionary<string, AssetBundle> m_abDic = new Dictionary<string, AssetBundle>();
+
+    /// <summary>
+    /// 它保存了各个AssetBundle的依赖信息
+    /// </summary>
+    private AssetBundleManifest m_manifest;
+
+    /// <summary>
+    /// 单例
+    /// </summary>
+    private static AssetBundleLoaderMgr s_instance;
+    public static AssetBundleLoaderMgr instance
+    {
+        get
+        {
+            if (null == s_instance)
+                s_instance = new AssetBundleLoaderMgr();
+            return s_instance;
+        }
+    }
+}
+
+```
 ### ASS 系统
 - 优势
 	- **解耦资源路径与加载逻辑**：资源的路径变动不会影响到代码加载逻辑。

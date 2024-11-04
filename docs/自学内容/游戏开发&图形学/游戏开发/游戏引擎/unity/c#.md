@@ -21,6 +21,20 @@ foreach(string item in strings)
     - **委托 (Delegates)**
     - **接口 (Interfaces)**
 
+- 正常 int、bool 等不能为 null，可以声明为可空类型 `int? i;`
+- `num3 = num1 ?? num2;`如果第一个操作数的值为 null，则运算符返回第二个操作数的值，否则返回第一个操作数的值。
+
+- 引用参数传递
+```csharp
+public void swap(ref int x, ref int y)  
+{
+    int temp;  
+    temp = x; /* 保存 x 的值 */  
+    x = y;    /* 把 y 赋值给 x */  
+    y = temp; /* 把 temp 赋值给 y */  
+}
+```
+
 - 类型转化`as`
 - 命名空间
   - 同一命名空间不能使用相同的名称，通过使用命名空间限定，可以使用不同的具有相同名称的属性/方法

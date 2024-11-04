@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/自学内容/游戏开发&图形学/游戏开发/游戏引擎/unity/unity资源管理.md",
+                "file": "docs/自学内容/游戏开发&图形学/游戏开发/游戏引擎/unity/c#.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "unity资源管理"
+              "title": "c#"
             }
           }
         ]
@@ -189,12 +189,12 @@
       "obsidian-advanced-slides:Show Slide Preview": false
     }
   },
-  "active": "ac7cf3d210bf6fd2",
+  "active": "96e173acdf249e6c",
   "lastOpenFiles": [
+    "docs/自学内容/游戏开发&图形学/游戏开发/游戏引擎/unity/unity资源管理.md",
     "docs/自学内容/游戏开发&图形学/游戏开发/游戏引擎/unity/unity基础.md",
     "docs/自学内容/游戏开发&图形学/游戏开发/游戏引擎/unity/simpread-【游戏开发探究】Unity Addressables 资源管理方式用起来太爽了，资源打包、加载、热更变得如此轻松（Addressable Asset System  简称 AA）_unity aa-CSDN 博客.md",
     "img-6.md",
-    "docs/自学内容/游戏开发&图形学/游戏开发/游戏引擎/unity/unity资源管理.md",
     "docs/自学内容/游戏开发&图形学/计算机图形学/API编程/opengl/learnOpengl.md",
     "docs/自学内容/游戏开发&图形学/计算机图形学/API编程/opengl.md",
     "docs/自学内容/游戏开发&图形学/计算机图形学/API编程/opengl",
