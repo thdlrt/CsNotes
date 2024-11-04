@@ -124,3 +124,150 @@ if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress)) {
 - **函数指针的地址**只有在创建了 OpenGL 上下文后才能正确获取。GLFW 负责初始化和创建这个 OpenGL 上下文，这是 GLAD 开始加载 OpenGL 函数的前提条件。(提供了获取函数地址的方法)
 - GLAD 就可以通过 `glfwGetProcAddress` 动态加载所有 OpenGL 函数，而不需要开发者关心平台差异。
 - 基本流程就是：**使用 GLFW 创建 OpenGL 上下文->使用 GLAD 加载 OpenGL 函数->程序可以调用 OpenGL 函数**
+## opengl 基础
+### 着色器
+- 渲染管线接受一组 3 D 坐标，最终转化为屏幕上的 2 D 画面
+- 渲染管线包含一系列**着色器**，流水线处理数据，opengl 中的着色器使用 GLSL 语言
+![image.png](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefined20241104153939.png)
+- **图元**用于指示 opengl 如何处理输入，如把一系列点绘制成三角形？线？等。即传递绘制指令，如 `GL_POINTS、GL_TRIANGLES、GL_LINE_STRIP`
+
+基本流程
+- **顶点着色器**接受单独的顶点作为输入，将 3 D 坐标进行转化(比如转换到 opengl 的可视区域)，并对顶点的属性进行一些基本处理
+- **几何着色器**接受顶点着色器的输出，通过输入的顶点形成图元
+- **图元装配**阶段将预处理的顶点装配成图元的形状
+- **片段着色器**就散像素的颜色（结合光照等信息）
+- **测试与混合阶段**进行深度测试，以及不透明度的混合
+
+- opengl 中至少要配置顶点着色器和判断着色器
+- opengl 只处理-1~1 立方范围内的信息
+- 使用 GLSL 编写着色器，编译之后就可以在程序中使用
+#### 设置缓冲区
+- 通过 **VBO** **顶点缓冲对象**管理存储顶点数据的内存（由 cpu 发送到 gpu 并存储在**显存**中），之后顶点着色器就能迅速访问显存中的顶点数据
+```c
+//定义顶点坐标
+float vertices[] = {
+-0.5f, -0.5f, 0.0f,
+ 0.5f, -0.5f, 0.0f,
+ 0.0f,  0.5f, 0.0f
+};
+//存储缓冲区对象id
+unsigned int VBO;
+//生成缓冲区对象并获取id
+glGenBuffers(1, &VBO);
+//将缓冲对象绑定到上下文，作为数组缓冲区
+glBindBuffer(GL_ARRAY_BUFFER, VBO);
+//复制数据到缓冲区
+glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
+
+```
+- 复制数据的选项：
+	- GL_STATIC_DRAW ：数据不会或几乎不会改变。
+	- GL_DYNAMIC_DRAW：数据会被改变很多。
+	- GL_STREAM_DRAW ：数据每次绘制时都会改变。
+#### 链接顶点属性
+
+- 
+
+#### 顶点着色器
+
+- 创建并编译着色器
+
+```c
+//着色器代码
+const char *vertexShaderSource = "#version 330 core\n"
+    "layout (location = 0) in vec3 aPos;\n"
+    "void main()\n"
+    "{\n"
+    "   gl_Position = vec4(aPos.x, aPos.y, aPos.z, 1.0);\n"
+    "}\0";
+//创建点着色器，同样用id表示
+unsigned int vertexShader;
+vertexShader = glCreateShader(GL_VERTEX_SHADER);
+//传入并编译着色器（要编译的着色器，字符串树木，字符参数）
+glShaderSource(vertexShader, 1, &vertexShaderSource, NULL);
+glCompileShader(vertexShader);
+```
+
+- 检查编译错误并输出错误信息
+
+```c
+int  success;
+char infoLog[512];
+glGetShaderiv(vertexShader, GL_COMPILE_STATUS, &success);
+if(!success)
+{
+    glGetShaderInfoLog(vertexShader, 512, NULL, infoLog);
+    std::cout << "ERROR::SHADER::VERTEX::COMPILATION_FAILED\n" << infoLog << std::endl;
+}
+```
+
+#### 片段着色器
+
+- 创建与编译与点着色器同理
+
+```c
+const char* fragmentShaderSource = "#version 330 core\n"
+	"out vec4 FragColor;\n"
+	"void main()\n"
+	"{\n"
+	"   FragColor = vec4(1.0f, 0.5f, 0.2f, 1.0f);\n"
+	"}\n\0";
+unsigned int fragmentShader;
+fragmentShader = glCreateShader(GL_FRAGMENT_SHADER);
+glShaderSource(fragmentShader, 1, &fragmentShaderSource, NULL);
+glCompileShader(fragmentShader);
+```
+
+#### 链接着色器
+
+- 将编译好的着色器对象**链接**到用于渲染的**程序对象**
+
+```c
+//创建着色器
+unsigned int shaderProgram;
+shaderProgram = glCreateProgram();
+//附加编译好的着色器
+glAttachShader(shaderProgram, vertexShader);
+glAttachShader(shaderProgram, fragmentShader);
+//链接
+glLinkProgram(shaderProgram);
+//同样可以检查是否成功
+glGetProgramiv(shaderProgram, GL_LINK_STATUS, &success);
+if(!success) {
+    glGetProgramInfoLog(shaderProgram, 512, NULL, infoLog);
+    ...
+}
+```
+
+- 创建好之后激活**程序对象**`glUseProgram(shaderProgram);`
+  - 之后每个着色器调用和渲染调用都会使用这个程序对象
+  - 创建之后可以释放之前的着色器对象`glDeleteShader(vertexShader); glDeleteShader(fragmentShader);`
+
+## GLSL
+- glsl 代码与 c 接近，开始于版本声明，与 opengl 类似，如 3.3 版本对应 330 `#version 330 core`
+- 点着色器示例
+```glsl
+#version 330 core
+//定义一个三维向量变量，用来接收输入的坐标，同时绑定在位置0
+layout (location = 0) in vec3 aPos;
+
+void main()
+{
+    //简单的转化为四元坐标
+    gl_Position = vec4(aPos.x, aPos.y, aPos.z, 1.0);
+}
+```
+
+- 片段着色器示例
+
+```glsl
+#version 330 core
+out vec4 FragColor;
+
+void main()
+{
+    //全部输出为橙色
+    FragColor = vec4(1.0f, 0.5f, 0.2f, 1.0f);
+} 
+```
+
