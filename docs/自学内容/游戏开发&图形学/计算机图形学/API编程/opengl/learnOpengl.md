@@ -277,6 +277,20 @@ glUseProgram(shaderProgram);
 someOpenGLFunctionThatDrawsOurTriangle();
 ```
 
+- 当然也可以使用更多的属性，比如位置+颜色
+  - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/undefinedimage-20241105132752122.png" alt="image-20241105132752122" style="zoom: 50%;" />
+
+```glsl
+// 位置属性
+glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(float), (void*)0);
+glEnableVertexAttribArray(0);
+// 颜色属性
+glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(float), (void*)(3* sizeof(float)));
+glEnableVertexAttribArray(1);
+```
+
+
+
 ##### 顶点数组对象VAO
 
 - 每次都重新进行绑定设置很麻烦，使用**顶点数组对象VAO**可以像顶点缓冲对象那样被绑定，任何随后的**顶点属性调用**都会储存在这个VAO中。
@@ -499,20 +513,83 @@ int main()
 
 ```
 ## 着色器
-
+- 一些**运行在 GPU 上**的小程序，着色器的功能比较简单，只是接受输入并产生输出
 ### GLSL
-
-- glsl 代码与 c 接近，开始于版本声明，与 opengl 类似，如 3.3 版本对应 330 `#version 330 core`
-- 点着色器示例
+- 着色器程序通常的结构
 ```glsl
-#version 330 core
-//定义一个三维向量变量，用来接收输入的坐标，同时绑定在位置0
-layout (location = 0) in vec3 aPos;
+#version version_number
+in type in_variable_name;
+in type in_variable_name;
+
+out type out_variable_name;
+
+uniform type uniform_name;
 
 void main()
 {
-    //简单的转化为四元坐标
-    gl_Position = vec4(aPos.x, aPos.y, aPos.z, 1.0);
+  // 处理输入并进行一些图形操作
+  ...
+  // 输出处理过的结果到输出变量
+  out_variable_name = weird_stuff_we_processed;
+}
+```
+- 能声明的顶点属性是有上限的，它一般由硬件来决定，OpenGL确保至少有16个包含4分量的顶点属性可用
+  - 查询`glGetIntegerv(GL_MAX_VERTEX_ATTRIBS, &nrAttributes);`
+
+- glsl 代码与 c 接近，开始于版本声明，与 opengl 类似，如 3.3 版本对应 330 `#version 330 core`
+#### 数据类
+
+- 除了基本数据类型int、float、double、bool等，有两种容器类型：vector和matrix
+
+
+
+- 向量可以包含2~4个分量
+
+| 类型    | 含义                            |
+| :------ | :------------------------------ |
+| `vecn`  | 包含`n`个float分量的默认向量    |
+| `bvecn` | 包含`n`个bool分量的向量         |
+| `ivecn` | 包含`n`个int分量的向量          |
+| `uvecn` | 包含`n`个unsigned int分量的向量 |
+| `dvecn` | 包含`n`个double分量的向量       |
+
+- 大部分时候使用vecn即可
+- 通过`.x`、`.y`、`.z`和`.w`来获取分量
+  - GLSL也允许对颜色使用`rgba`，或是对纹理坐标使用`stpq`访问相同的分量。
+
+```glsl
+//灵活的组合运算
+vec2 someVec;
+vec4 differentVec = someVec.xyxx;
+vec3 anotherVec = differentVec.zyw;
+vec4 otherVec = someVec.xxxx + anotherVec.yxzy;
+//创建变量
+vec2 vect = vec2(0.5, 0.7);
+vec4 result = vec4(vect, 0.0, 0.0);
+vec4 otherResult = vec4(result.xyz, 1.0);
+
+```
+
+
+
+#### 输入输出
+
+- 使用`in`和`out`关键字来定义输入输出
+- 每个着色器使用这两个关键字设定输入和输出，只要一个输出变量与下一个着色器阶段的输入**匹配**，它就会传递下去。
+  - **特殊输入**：其中顶点着色器是从缓冲区获取顶点元数据，通过设置`location`来获取CPU配置的属性，如`layout (location = 0)`
+  - **特殊输出**：片段着色器的输出为`vec4`(RGBA)
+- 点着色器示例
+
+```glsl
+#version 330 core
+layout (location = 0) in vec3 aPos; // 位置变量的属性位置值为0
+
+out vec4 vertexColor; // 为片段着色器指定一个颜色输出
+
+void main()
+{
+    gl_Position = vec4(aPos, 1.0); // 注意我们如何把一个vec3作为vec4的构造器的参数
+    vertexColor = vec4(0.5, 0.0, 0.0, 1.0); // 把输出变量设置为暗红色
 }
 ```
 
@@ -522,10 +599,207 @@ void main()
 #version 330 core
 out vec4 FragColor;
 
+in vec4 vertexColor; // 从顶点着色器传来的输入变量（名称相同、类型相同）
+
 void main()
 {
-    //全部输出为橙色
-    FragColor = vec4(1.0f, 0.5f, 0.2f, 1.0f);
-} 
+    FragColor = vertexColor;
+}
 ```
 
+#### uniform
+
+- 实现从CPU传递数据到GPU上的着色器（如从应用程序直接发送一个颜色给片段着色器）
+- uniform是全局作用域的，因此在所有着色器程序中都不能重名
+  - `uniform vec4 ourColor;`
+
+```glsl
+//在片段着色器中使用uniform变量
+#version 330 core
+out vec4 FragColor;
+uniform vec4 ourColor; // 在OpenGL程序代码中设定这个变量
+void main()
+{
+    FragColor = ourColor;
+}
+//在程序循环中设置颜色
+float timeValue = glfwGetTime();
+float greenValue = (sin(timeValue) / 2.0f) + 0.5f;
+int vertexColorLocation = glGetUniformLocation(shaderProgram, "ourColor");//获取uniform变量的位置值
+glUseProgram(shaderProgram);
+//参数位置+参数(4个)
+glUniform4f(vertexColorLocation, 0.0f, greenValue, 0.0f, 1.0f);
+```
+
+> glsl中通常的表示类型的后缀
+
+| 后缀 | 含义                                 |
+| :--- | :----------------------------------- |
+| `f`  | 函数需要一个float作为它的值          |
+| `i`  | 函数需要一个int作为它的值            |
+| `ui` | 函数需要一个unsigned int作为它的值   |
+| `3f` | 函数需要3个float作为它的值           |
+| `fv` | 函数需要一个float向量/数组作为它的值 |
+
+#### 附：着色器管理类
+
+- 从硬盘读取着色器，编译、链接、检查
+
+```c
+#ifndef SHADER_H
+#define SHADER_H
+
+#include <glad/glad.h>
+
+#include <string>
+#include <fstream>
+#include <sstream>
+#include <iostream>
+
+class Shader
+{
+public:
+    unsigned int ID;
+    // constructor generates the shader on the fly
+    // ------------------------------------------------------------------------
+    Shader(const char* vertexPath, const char* fragmentPath)
+    {
+        // 1. retrieve the vertex/fragment source code from filePath
+        std::string vertexCode;
+        std::string fragmentCode;
+        std::ifstream vShaderFile;
+        std::ifstream fShaderFile;
+        // ensure ifstream objects can throw exceptions:
+        vShaderFile.exceptions (std::ifstream::failbit | std::ifstream::badbit);
+        fShaderFile.exceptions (std::ifstream::failbit | std::ifstream::badbit);
+        try 
+        {
+            // open files
+            vShaderFile.open(vertexPath);
+            fShaderFile.open(fragmentPath);
+            std::stringstream vShaderStream, fShaderStream;
+            // read file's buffer contents into streams
+            vShaderStream << vShaderFile.rdbuf();
+            fShaderStream << fShaderFile.rdbuf();
+            // close file handlers
+            vShaderFile.close();
+            fShaderFile.close();
+            // convert stream into string
+            vertexCode   = vShaderStream.str();
+            fragmentCode = fShaderStream.str();
+        }
+        catch (std::ifstream::failure& e)
+        {
+            std::cout << "ERROR::SHADER::FILE_NOT_SUCCESSFULLY_READ: " << e.what() << std::endl;
+        }
+        const char* vShaderCode = vertexCode.c_str();
+        const char * fShaderCode = fragmentCode.c_str();
+        // 2. compile shaders
+        unsigned int vertex, fragment;
+        // vertex shader
+        vertex = glCreateShader(GL_VERTEX_SHADER);
+        glShaderSource(vertex, 1, &vShaderCode, NULL);
+        glCompileShader(vertex);
+        checkCompileErrors(vertex, "VERTEX");
+        // fragment Shader
+        fragment = glCreateShader(GL_FRAGMENT_SHADER);
+        glShaderSource(fragment, 1, &fShaderCode, NULL);
+        glCompileShader(fragment);
+        checkCompileErrors(fragment, "FRAGMENT");
+        // shader Program
+        ID = glCreateProgram();
+        glAttachShader(ID, vertex);
+        glAttachShader(ID, fragment);
+        glLinkProgram(ID);
+        checkCompileErrors(ID, "PROGRAM");
+        // delete the shaders as they're linked into our program now and no longer necessary
+        glDeleteShader(vertex);
+        glDeleteShader(fragment);
+    }
+    // activate the shader
+    // ------------------------------------------------------------------------
+    void use() 
+    { 
+        glUseProgram(ID); 
+    }
+    // utility uniform functions
+    // ------------------------------------------------------------------------
+    void setBool(const std::string &name, bool value) const
+    {         
+        glUniform1i(glGetUniformLocation(ID, name.c_str()), (int)value); 
+    }
+    // ------------------------------------------------------------------------
+    void setInt(const std::string &name, int value) const
+    { 
+        glUniform1i(glGetUniformLocation(ID, name.c_str()), value); 
+    }
+    // ------------------------------------------------------------------------
+    void setFloat(const std::string &name, float value) const
+    { 
+        glUniform1f(glGetUniformLocation(ID, name.c_str()), value); 
+    }
+
+private:
+    // utility function for checking shader compilation/linking errors.
+    // ------------------------------------------------------------------------
+    void checkCompileErrors(unsigned int shader, std::string type)
+    {
+        int success;
+        char infoLog[1024];
+        if (type != "PROGRAM")
+        {
+            glGetShaderiv(shader, GL_COMPILE_STATUS, &success);
+            if (!success)
+            {
+                glGetShaderInfoLog(shader, 1024, NULL, infoLog);
+                std::cout << "ERROR::SHADER_COMPILATION_ERROR of type: " << type << "\n" << infoLog << "\n -- --------------------------------------------------- -- " << std::endl;
+            }
+        }
+        else
+        {
+            glGetProgramiv(shader, GL_LINK_STATUS, &success);
+            if (!success)
+            {
+                glGetProgramInfoLog(shader, 1024, NULL, infoLog);
+                std::cout << "ERROR::PROGRAM_LINKING_ERROR of type: " << type << "\n" << infoLog << "\n -- --------------------------------------------------- -- " << std::endl;
+            }
+        }
+    }
+};
+#endif
+
+//创建对象
+Shader myShader("path/to/vertex_shader.glsl", "path/to/fragment_shader.glsl");
+//激活程序
+myShader.use();
+//设置Uniform变量
+myShader.setFloat("ourColor", 0.0f, 1.0f, 0.0f, 1.0f);
+//渲染循环中使用
+while (!glfwWindowShouldClose(window))
+{
+    // 清除屏幕
+    glClear(GL_COLOR_BUFFER_BIT);
+    
+    // 激活着色器
+    myShader.use();
+    
+    // 动态设置 Uniform 颜色
+    float timeValue = glfwGetTime();
+    float greenValue = (sin(timeValue) / 2.0f) + 0.5f;
+    myShader.setFloat("ourColor", 0.0f, greenValue, 0.0f, 1.0f); // 颜色随时间变化
+    
+    // 绘制操作
+    glBindVertexArray(VAO);
+    glDrawArrays(GL_TRIANGLES, 0, 3);
+    
+    // 交换缓冲
+    glfwSwapBuffers(window);
+    glfwPollEvents();
+}
+```
+
+### 纹理
+
+- 为了在图像上显示问题，需要给出图像上坐标和纹理文件的对应关系
+  - 对于三角形，每个顶点附带一个纹理坐标，用于表示从纹理图像的哪个部分进行采样，其他部分**插值**处理进行填充
+  - 纹理（uv）坐标为二维，范围
