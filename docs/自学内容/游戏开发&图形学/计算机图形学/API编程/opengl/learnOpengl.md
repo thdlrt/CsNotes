@@ -935,8 +935,10 @@ void main()
   - 首先激活纹理单元，然后为纹理单元绑定数据
 
 ```c
-glActiveTexture(GL_TEXTURE0); // 在绑定纹理之前先激活纹理单元
-glBindTexture(GL_TEXTURE_2D, texture);
+glActiveTexture(GL_TEXTURE0);
+glBindTexture(GL_TEXTURE_2D, texture1);
+glActiveTexture(GL_TEXTURE1);
+glBindTexture(GL_TEXTURE_2D, texture2);
 ```
 
 - opengl至少保证有16个纹理单元可以使用
@@ -955,4 +957,211 @@ void main()
     FragColor = mix(texture(texture1, TexCoord), texture(texture2, TexCoord), 0.2);
 }
 ```
+
+- 默认情况下uniform会自动绑定纹理单元0,也可以手动指定
+
+```c
+    glUniform1i(glGetUniformLocation(shader.ID, "texture1"), 0); // 手动设置
+    shader.setInt("texture2", 1); // 或者使用着色器类设置
+```
+
+- <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/undefinedimage-20241105154439987.png" alt="image-20241105154439987" style="zoom:33%;" />
+
+#### 完整代码
+
+```c
+
+#include "utils.h"
+#define STB_IMAGE_IMPLEMENTATION
+#include "stb_image.h"
+#include <glad\glad.h> 
+#include <GLFW\glfw3.h>
+#include <iostream>
+void framebuffer_size_callback(GLFWwindow* window, int width, int height)
+{
+    glViewport(0, 0, width, height);
+}
+
+void processInput(GLFWwindow* window)
+{
+    if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
+        glfwSetWindowShouldClose(window, true);
+}
+
+int main()
+{
+    //参数设置
+    glfwInit();
+    glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
+    glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
+    glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
+    //创建上下文
+    GLFWwindow* window = glfwCreateWindow(800, 600, "LearnOpenGL", NULL, NULL);
+    if (window == NULL)
+    {
+        std::cout << "Failed to create GLFW window" << std::endl;
+        glfwTerminate();
+        return -1;
+    }
+    glfwMakeContextCurrent(window);
+    //板顶函数
+    if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))
+    {
+        std::cout << "Failed to initialize GLAD" << std::endl;
+        return -1;
+    }
+    //设置视口大小
+    glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
+
+    float vertices[] = {
+        //     ---- 位置 ----       ---- 颜色 ----     - 纹理坐标 -
+             0.5f,  0.5f, 0.0f,   1.0f, 0.0f, 0.0f,   1.0f, 1.0f,   // 右上
+             0.5f, -0.5f, 0.0f,   0.0f, 1.0f, 0.0f,   1.0f, 0.0f,   // 右下
+            -0.5f, -0.5f, 0.0f,   0.0f, 0.0f, 1.0f,   0.0f, 0.0f,   // 左下
+            -0.5f,  0.5f, 0.0f,   1.0f, 1.0f, 0.0f,   0.0f, 1.0f    // 左上
+    };
+    unsigned int indices[] = {
+        // 注意索引从0开始! 
+        // 此例的索引(0,1,2,3)就是顶点数组vertices的下标，
+        // 这样可以由下标代表顶点组合成矩形
+
+        0, 1, 3, // 第一个三角形
+        1, 2, 3  // 第二个三角形
+    };
+
+    unsigned int VAO;
+    glGenVertexArrays(1, &VAO);
+    glBindVertexArray(VAO);
+    //存储缓冲区对象id
+    unsigned int VBO;
+    //生成缓冲区对象并获取id
+    glGenBuffers(1, &VBO);
+    //将缓冲对象绑定到上下文，作为数组缓冲区
+    glBindBuffer(GL_ARRAY_BUFFER, VBO);
+    //复制数据到缓冲区
+    glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
+
+    unsigned int EBO;
+    glGenBuffers(1, &EBO);
+    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO);
+    glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices), indices, GL_STATIC_DRAW);
+    
+	Shader shader("vertex_shader.glsl", "fragment_shader.glsl");
+    shader.use();
+
+    // 位置属性
+    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)0);
+    glEnableVertexAttribArray(0);
+    // 颜色属性
+    glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)(3 * sizeof(float)));
+    glEnableVertexAttribArray(1);
+	//uv属性
+    glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)(6 * sizeof(float)));
+    glEnableVertexAttribArray(2);
+
+    int width, height, nrChannels;
+    stbi_set_flip_vertically_on_load(true);
+    unsigned char* data1 = stbi_load("container.jpg", &width, &height, &nrChannels, 0);
+
+    unsigned int texture1;
+    glGenTextures(1, &texture1);
+    glBindTexture(GL_TEXTURE_2D, texture1);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+    glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, data1);
+    glGenerateMipmap(GL_TEXTURE_2D);
+    stbi_image_free(data1);
+
+    unsigned char* data2 = stbi_load("awesomeface.png", &width, &height, &nrChannels, 0);
+    unsigned int texture2;
+    glGenTextures(2, &texture2);
+    glBindTexture(GL_TEXTURE_2D, texture2);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+    glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGBA, GL_UNSIGNED_BYTE, data2);
+    glGenerateMipmap(GL_TEXTURE_2D);
+    stbi_image_free(data2);
+
+    glUniform1i(glGetUniformLocation(shader.ID, "texture1"), 0); // 手动设置
+    shader.setInt("texture2", 1); // 或者使用着色器类设置
+
+
+    while (!glfwWindowShouldClose(window))
+    {
+        // 输入
+        processInput(window);
+
+        // 渲染
+        // 清除颜色缓冲
+        glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
+        glClear(GL_COLOR_BUFFER_BIT);
+
+        // 记得激活着色器
+        shader.use();
+
+        // 更新uniform颜色
+        float timeValue = glfwGetTime();
+        float greenValue = sin(timeValue) / 2.0f + 0.5f;
+
+		shader.setVec4("ourColor", 0.0f, greenValue, 0.0f, 1.0f);
+
+        // 绘制三角形
+        glActiveTexture(GL_TEXTURE0);
+        glBindTexture(GL_TEXTURE_2D, texture1);
+        glActiveTexture(GL_TEXTURE1);
+        glBindTexture(GL_TEXTURE_2D, texture2);
+
+        glBindVertexArray(VAO);
+        glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
+
+        // 交换缓冲并查询IO事件
+        glfwSwapBuffers(window);
+        glfwPollEvents();
+    }
+
+    //释放资源
+    glfwTerminate();
+
+    return 0;
+}
+//点着色器
+#version 330 core
+layout (location = 0) in vec3 aPos;
+layout (location = 1) in vec3 aColor;
+layout (location = 2) in vec2 aTexCoord;
+out vec3 ourColor;
+out vec2 TexCoord;
+void main()
+{
+	gl_Position = vec4(aPos, 1.0);
+	ourColor = aColor;
+	TexCoord = aTexCoord;
+}
+//片段着色器
+#version 330 core
+out vec4 FragColor;
+
+in vec3 ourColor;
+in vec2 TexCoord;
+
+uniform sampler2D texture1;
+uniform sampler2D texture2;
+
+void main()
+{
+   FragColor = mix(texture(texture1, TexCoord), texture(texture2, TexCoord), 0.2);
+}
+```
+
+
+
+## 变换
+
+
+
+## 摄像机
 
