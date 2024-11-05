@@ -802,4 +802,157 @@ while (!glfwWindowShouldClose(window))
 
 - 为了在图像上显示问题，需要给出图像上坐标和纹理文件的对应关系
   - 对于三角形，每个顶点附带一个纹理坐标，用于表示从纹理图像的哪个部分进行采样，其他部分**插值**处理进行填充
-  - 纹理（uv）坐标为二维，范围
+  - 纹理（uv）坐标为二维，范围0~1
+  - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/undefinedimage-20241105140259126.png" alt="image-20241105140259126" style="zoom: 50%;" />
+
+#### 重复纹理
+
+- 坐标**超出纹理范围**（0~1）时，有如下处理方式
+  - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/undefinedimage-20241105140518522.png" alt="image-20241105140518522" style="zoom:67%;" />
+  - 重复、镜像、拉伸、特定颜色
+- 可以对每个坐标轴分别进行设置
+
+```c
+glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_MIRRORED_REPEAT);
+glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_MIRRORED_REPEAT);
+```
+
+#### 纹理过滤
+
+- 决定如何将纹理像素映射到纹理坐标（尤其是纹理分辨率较低的情况）
+- `GL_NEAREST`临近过滤（默认），OpenGL会选择中心点**最接**近纹理坐标的那个像素作为样本颜色，效果上更加清晰（颗粒感）
+  - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/undefinedimage-20241105141329442.png" alt="image-20241105141329442" style="zoom:33%;" />
+- GL_LINEAR线性过滤会：于纹理坐标附近的纹理像素，计算出一个插值，近似出这些纹理像素之间的颜色。产生更加平滑的图像
+  - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/undefinedimage-20241105141340563.png" alt="image-20241105141340563" style="zoom:33%;" />
+- <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/undefinedimage-20241105141425518.png" alt="image-20241105141425518" style="zoom:50%;" />
+
+- 对放大、缩小纹理的情况分别设置
+
+```c
+glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
+glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+```
+
+#### 多级渐远纹理
+
+- 准备一系列分别率不同（1/2每级）的贴图素材，用于不同显示大小的物体
+  - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/undefinedmipmaps.png" alt="img" style="zoom: 67%;" />
+- 注意：**只能用于纹理被缩小的情况**
+- 通过`glGenerateMipmap`进行创建
+- 在不同大小纹理图之间还可以制定不同的过滤方式
+
+| 过滤方式                  | 描述                                                         |
+| :------------------------ | :----------------------------------------------------------- |
+| GL_NEAREST_MIPMAP_NEAREST | 使用最邻近的多级渐远纹理来匹配像素大小，并使用邻近插值进行纹理采样 |
+| GL_LINEAR_MIPMAP_NEAREST  | 使用最邻近的多级渐远纹理级别，并使用线性插值进行采样         |
+| GL_NEAREST_MIPMAP_LINEAR  | 在两个最匹配像素大小的多级渐远纹理之间进行线性插值，使用邻近插值进行采样 |
+| GL_LINEAR_MIPMAP_LINEAR   | 在两个邻近的多级渐远纹理之间使用线性插值，并使用线性插值进行采样 |
+
+#### 加载与使用
+
+- 可以使用`stb_image.h`[下载](https://github.com/nothings/stb/blob/master/stb_image.h)来进行文件图像加载
+
+```c
+#define STB_IMAGE_IMPLEMENTATION
+#include "stb_image.h"
+```
+
+- 加载图片为字节码
+
+```c
+int width, height, nrChannels;//宽度、高度、颜色通道个数
+unsigned char *data = stbi_load("container.jpg", &width, &height, &nrChannels, 0);
+```
+
+- 生成纹理
+
+```c
+//创建纹理对象
+unsigned int texture;
+glGenTextures(1, &texture);
+//绑定为当前使用的纹理
+glBindTexture(GL_TEXTURE_2D, texture);
+//设置环绕、过滤模式
+glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);   
+glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
+glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+//绑定读取的数据
+glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, data);
+glGenerateMipmap(GL_TEXTURE_2D);
+//释放内存
+stbi_image_free(data);
+```
+
+- 第一个参数指定了纹理目标(Target)。设置为GL_TEXTURE_2D意味着会生成与当前绑定的纹理对象在同一个目标上的纹理（任何绑定到GL_TEXTURE_1D和GL_TEXTURE_3D的纹理不会受到影响）。
+- 第二个参数为纹理指定多级渐远纹理的级别，如果你希望单独手动设置每个多级渐远纹理的级别的话。这里我们填0，也就是基本级别。
+- 第三个参数告诉OpenGL我们希望把纹理储存为何种格式。我们的图像只有`RGB`值，因此我们也把纹理储存为`RGB`值。
+- 第四个和第五个参数设置最终的纹理的宽度和高度。我们之前加载图像的时候储存了它们，所以我们使用对应的变量。
+- 下个参数应该总是被设为`0`（历史遗留的问题）。
+- 第七第八个参数定义了源图的格式和数据类型。我们使用RGB值加载这个图像，并把它们储存为`char`(byte)数组，我们将会传入对应值。
+- 最后一个参数是真正的图像数据。
+
+
+
+- 应用纹理，顶点还要给出纹理坐标
+  - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/undefinedvertex_attribute_pointer_interleaved_textures.png" alt="img" style="zoom: 67%;" />
+
+```c
+float vertices[] = {
+//     ---- 位置 ----       ---- 颜色 ----     - 纹理坐标 -
+     0.5f,  0.5f, 0.0f,   1.0f, 0.0f, 0.0f,   1.0f, 1.0f,   // 右上
+     0.5f, -0.5f, 0.0f,   0.0f, 1.0f, 0.0f,   1.0f, 0.0f,   // 右下
+    -0.5f, -0.5f, 0.0f,   0.0f, 0.0f, 1.0f,   0.0f, 0.0f,   // 左下
+    -0.5f,  0.5f, 0.0f,   1.0f, 1.0f, 0.0f,   0.0f, 1.0f    // 左上
+};
+//配置VAO属性
+    // 位置属性
+    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)0);
+    glEnableVertexAttribArray(0);
+    // 颜色属性
+    glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)(3 * sizeof(float)));
+    glEnableVertexAttribArray(1);
+	//uv属性
+    glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)(6 * sizeof(float)));
+    glEnableVertexAttribArray(2);
+```
+
+
+
+- 着色器中获取纹理
+
+```c
+uniform sampler2D ourTexture;
+
+void main()
+{
+   FragColor = texture(ourTexture, TexCoord)
+}
+```
+
+- 这个uniform不需要手动传入
+- 通过**纹理单元**还可以实现将**多个纹理用于同一个片段着色器**
+  - 首先激活纹理单元，然后为纹理单元绑定数据
+
+```c
+glActiveTexture(GL_TEXTURE0); // 在绑定纹理之前先激活纹理单元
+glBindTexture(GL_TEXTURE_2D, texture);
+```
+
+- opengl至少保证有16个纹理单元可以使用
+
+- 在着色器中使用两个纹理单元
+
+```c
+#version 330 core
+...
+
+uniform sampler2D texture1;
+uniform sampler2D texture2;
+
+void main()
+{
+    FragColor = mix(texture(texture1, TexCoord), texture(texture2, TexCoord), 0.2);
+}
+```
+
