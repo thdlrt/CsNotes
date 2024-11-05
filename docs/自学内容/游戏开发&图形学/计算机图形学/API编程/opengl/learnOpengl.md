@@ -124,8 +124,34 @@ if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress)) {
 - **函数指针的地址**只有在创建了 OpenGL 上下文后才能正确获取。GLFW 负责初始化和创建这个 OpenGL 上下文，这是 GLAD 开始加载 OpenGL 函数的前提条件。(提供了获取函数地址的方法)
 - GLAD 就可以通过 `glfwGetProcAddress` 动态加载所有 OpenGL 函数，而不需要开发者关心平台差异。
 - 基本流程就是：**使用 GLFW 创建 OpenGL 上下文->使用 GLAD 加载 OpenGL 函数->程序可以调用 OpenGL 函数**
-## opengl 基础
-### 工作流程
+
+### stb_image
+
+- 可以使用`stb_image.h`[下载](https://github.com/nothings/stb/blob/master/stb_image.h)来进行文件图像加载，加载为char*字节量
+
+### GLM
+
+- 用于opengl的数学库
+- GLM库从0.9.9版本起，默认会将矩阵类型初始化为一个零矩阵（所有元素均为0），而不是单位矩阵
+  - 需要初始化为单位矩阵`glm::mat4 mat = glm::mat4(1.0f)`
+  - `glm` 是一个头文件库，它不生成动态链接库（.dll）或静态库（.lib）,可以直接在项目中包含 `glm` 的头文件来使用它。
+- 常用头文件内容
+
+```c
+#include <glm/glm.hpp>
+#include <glm/gtc/matrix_transform.hpp>
+#include <glm/gtc/type_ptr.hpp>
+```
+
+
+
+- 
+
+# opengl 基础
+
+## 工作流程
+
+- [环境配置]([创建窗口 - LearnOpenGL CN](https://learnopengl-cn.github.io/01 Getting started/02 Creating a window/))
 
 - 几个重要概念
   - 顶点数组对象：Vertex Array Object，**VAO**
@@ -150,7 +176,7 @@ if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress)) {
 
 
 
-#### 顶点着色器
+### 顶点着色器
 
 - 创建并编译着色器
 
@@ -183,7 +209,7 @@ if(!success)
 }
 ```
 
-#### 片段着色器
+### 片段着色器
 
 - 创建与编译与点着色器同理
 
@@ -200,7 +226,7 @@ glShaderSource(fragmentShader, 1, &fragmentShaderSource, NULL);
 glCompileShader(fragmentShader);
 ```
 
-#### 链接着色器
+### 链接着色器
 
 - 将编译好的着色器对象**链接**到用于渲染的**程序对象**
 
@@ -225,7 +251,7 @@ if(!success) {
   - 之后每个着色器调用和渲染调用都会使用这个程序对象
   - 创建之后可以释放之前的着色器对象`glDeleteShader(vertexShader); glDeleteShader(fragmentShader);`
 
-#### 设置缓冲区
+### 设置缓冲区
 
 - 通过 **VBO** **顶点缓冲对象**管理存储顶点数据的内存（由 cpu 发送到 gpu 并存储在**显存**中），之后顶点着色器就能迅速访问显存中的顶点数据
 ```c
@@ -249,7 +275,7 @@ glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
 	- GL_STATIC_DRAW ：数据不会或几乎不会改变。
 	- GL_DYNAMIC_DRAW：数据会被改变很多。
 	- GL_STREAM_DRAW ：数据每次绘制时都会改变。
-#### 链接顶点属性
+### 链接顶点属性
 
 - 上面的三个点以float来存储
   - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/undefinedimage-20241104202631131.png" alt="image-20241104202631131" style="zoom: 50%;" />
@@ -291,7 +317,7 @@ glEnableVertexAttribArray(1);
 
 
 
-##### 顶点数组对象VAO
+#### 顶点数组对象VAO
 
 - 每次都重新进行绑定设置很麻烦，使用**顶点数组对象VAO**可以像顶点缓冲对象那样被绑定，任何随后的**顶点属性调用**都会储存在这个VAO中。
   - VAO是一个容器，用于保存多个VBO的**状态**以及**如何解释**这些VBO中的数据。它记录了**如何将VBO中的数据绑定到顶点属性上。**
@@ -312,7 +338,7 @@ glBindVertexArray(VAO);
 glBindVertexArray(0);
 ```
 
-##### 元素缓冲对象EBO
+#### 元素缓冲对象EBO
 
 - EBO是一个缓冲区，就像一个顶点缓冲区对象一样，它存储 OpenGL 用来决定要**绘制哪些顶点的索引**（决定点的绘制顺序避免性能浪费，比如两个三角拼接成一个矩形）
 
@@ -372,7 +398,7 @@ glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
 glBindVertexArray(0);
 ```
 
-#### 完整代码
+### 完整代码
 ```cpp
 #include <glad\glad.h> 
 #include <GLFW\glfw3.h>
@@ -1161,7 +1187,19 @@ void main()
 
 ## 变换
 
+### 坐标系统
 
+### 摄像机
 
-## 摄像机
+## 光照
+
+## 模型加载
+
+## PBR
+
+## 高级
+
+### 高级opengl
+
+### 高级光照
 
