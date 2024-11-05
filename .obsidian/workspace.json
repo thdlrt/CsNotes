@@ -20,8 +20,21 @@
               "icon": "lucide-file",
               "title": "learnOpengl"
             }
+          },
+          {
+            "id": "5dde3ef2f8f40a99",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.7.5"
+              },
+              "icon": "lucide-file",
+              "title": "Release Notes 1.7.5"
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -69,8 +82,8 @@
             "state": {
               "type": "recent-files",
               "state": {},
-              "icon": "clock",
-              "title": "Recent Files"
+              "icon": "lucide-file",
+              "title": "插件不再活动"
             }
           },
           {
@@ -79,12 +92,22 @@
             "state": {
               "type": "file-tree-view",
               "state": {},
-              "icon": "sheets-in-box",
-              "title": "File Tree"
+              "icon": "lucide-file",
+              "title": "插件不再活动"
+            }
+          },
+          {
+            "id": "7f9e279672fe6459",
+            "type": "leaf",
+            "state": {
+              "type": "recent-files",
+              "state": {},
+              "icon": "clock",
+              "title": "Recent Files"
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 4
       }
     ],
     "direction": "horizontal",
@@ -186,12 +209,10 @@
       "audio-recorder:开始/结束录音": false,
       "obsidian-excalidraw-plugin:新建绘图文件": false,
       "media-extended:Open media": false,
-      "vscode-editor:新建代码文件": false,
-      "omnisearch:Omnisearch": false,
-      "obsidian-advanced-slides:Show Slide Preview": false
+      "omnisearch:Omnisearch": false
     }
   },
-  "active": "ac7cf3d210bf6fd2",
+  "active": "7f9e279672fe6459",
   "lastOpenFiles": [
     "docs/自学内容/游戏开发&图形学/计算机图形学/API编程/opengl/代码/第一个图像绘制.cpp",
     "docs/自学内容/游戏开发&图形学/计算机图形学/API编程/opengl/learnOpengl.md",
