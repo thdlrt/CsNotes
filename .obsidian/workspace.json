@@ -83,7 +83,8 @@
               "title": "File Tree"
             }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
@@ -189,7 +190,7 @@
       "obsidian-advanced-slides:Show Slide Preview": false
     }
   },
-  "active": "ac7cf3d210bf6fd2",
+  "active": "0a9cd0319ddd3dbc",
   "lastOpenFiles": [
     "docs/自学内容/游戏开发&图形学/计算机图形学/API编程/opengl/代码/第一个图像绘制.cpp",
     "docs/自学内容/游戏开发&图形学/计算机图形学/API编程/opengl/learnOpengl.md",
