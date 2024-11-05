@@ -88,7 +88,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 291.49999618530273
+    "width": 291.49999618530273,
+    "collapsed": true
   },
   "right": {
     "id": "d615b65a4ccf8a6a",
@@ -190,7 +191,7 @@
       "obsidian-advanced-slides:Show Slide Preview": false
     }
   },
-  "active": "0a9cd0319ddd3dbc",
+  "active": "ac7cf3d210bf6fd2",
   "lastOpenFiles": [
     "docs/自学内容/游戏开发&图形学/计算机图形学/API编程/opengl/代码/第一个图像绘制.cpp",
     "docs/自学内容/游戏开发&图形学/计算机图形学/API编程/opengl/learnOpengl.md",
