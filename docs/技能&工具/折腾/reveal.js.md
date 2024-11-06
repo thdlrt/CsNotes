@@ -10,7 +10,7 @@
 - 部署到github
   - 命名为index.html上传到一个新分支，如show
   - 设置page，选择新创建的分支以及.root
-  - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/image-20231115175922293.png" alt="image-20231115175922293" style="zoom: 33%;" />
+ 
 
 #### 配置及语法
 

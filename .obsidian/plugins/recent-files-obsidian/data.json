@@ -1,6 +1,42 @@
 {
   "recentFiles": [
     {
+      "basename": "本校保研流程（计算机系夏令营）",
+      "path": "docs/_draft_/本校保研流程（计算机系夏令营）.md"
+    },
+    {
+      "basename": "计算机网络",
+      "path": "docs/知识点（保研&工作）/保研/计算机科学/计算机网络.md"
+    },
+    {
+      "basename": "计算机组成原理",
+      "path": "docs/知识点（保研&工作）/保研/计算机科学/计算机组成原理.md"
+    },
+    {
+      "basename": "补充",
+      "path": "docs/知识点（保研&工作）/保研/计算机科学/补充.md"
+    },
+    {
+      "basename": "编译原理",
+      "path": "docs/知识点（保研&工作）/保研/计算机科学/编译原理.md"
+    },
+    {
+      "basename": "数据结构与算法",
+      "path": "docs/知识点（保研&工作）/保研/计算机科学/数据结构与算法.md"
+    },
+    {
+      "basename": "操作系统",
+      "path": "docs/知识点（保研&工作）/保研/计算机科学/操作系统.md"
+    },
+    {
+      "basename": "【英语】问题准备",
+      "path": "docs/知识点（保研&工作）/保研/面试/英语/【英语】问题准备.md"
+    },
+    {
+      "basename": "reveal.js",
+      "path": "docs/技能&工具/折腾/reveal.js.md"
+    },
+    {
       "basename": "openwrt软路由",
       "path": "docs/技能&工具/折腾/openwrt软路由.md"
     },
@@ -163,42 +199,6 @@
     {
       "basename": "贪心",
       "path": "docs/算法竞赛/贪心.md"
-    },
-    {
-      "basename": "数据结构",
-      "path": "docs/算法竞赛/数据结构.md"
-    },
-    {
-      "basename": "链表",
-      "path": "docs/算法竞赛/链表.md"
-    },
-    {
-      "basename": "模板",
-      "path": "docs/算法竞赛/模板.md"
-    },
-    {
-      "basename": "哈希",
-      "path": "docs/算法竞赛/哈希.md"
-    },
-    {
-      "basename": "jupyter",
-      "path": "docs/技能&工具/折腾/jupyter.md"
-    },
-    {
-      "basename": "笔记",
-      "path": "docs/学校课程/归档课程/金融工程学/笔记.md"
-    },
-    {
-      "basename": "公式速记",
-      "path": "docs/学校课程/归档课程/金融工程学/公式速记.md"
-    },
-    {
-      "basename": "作业",
-      "path": "docs/学校课程/归档课程/金融工程学/作业.md"
-    },
-    {
-      "basename": "郑振龙《金融工程》（第5版）笔记和课后习题（含考研真题）详解答案",
-      "path": "docs/学校课程/归档课程/金融工程学/郑振龙《金融工程》（第5版）笔记和课后习题（含考研真题）详解答案.pdf"
     }
   ],
   "omittedPaths": [],
