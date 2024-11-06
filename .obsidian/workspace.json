@@ -24,11 +24,11 @@
         ]
       },
       {
-        "id": "f759a72a67698fe1",
+        "id": "073e9ee358bf9ad2",
         "type": "tabs",
         "children": [
           {
-            "id": "2022badff8b388fa",
+            "id": "bc5912b868ee2636",
             "type": "leaf",
             "state": {
               "type": "reveal-preview-view",
@@ -85,8 +85,8 @@
             "state": {
               "type": "recent-files",
               "state": {},
-              "icon": "lucide-file",
-              "title": "插件不再活动"
+              "icon": "clock",
+              "title": "Recent Files"
             }
           },
           {
@@ -95,8 +95,8 @@
             "state": {
               "type": "file-tree-view",
               "state": {},
-              "icon": "lucide-file",
-              "title": "插件不再活动"
+              "icon": "sheets-in-box",
+              "title": "File Tree"
             }
           },
           {
@@ -115,8 +115,8 @@
             "state": {
               "type": "file-tree-view",
               "state": {},
-              "icon": "lucide-file",
-              "title": "插件不再活动"
+              "icon": "sheets-in-box",
+              "title": "File Tree"
             }
           },
           {
@@ -246,7 +246,7 @@
       "obsidian-advanced-slides:Show Slide Preview": false
     }
   },
-  "active": "e7448f2e3ed093cf",
+  "active": "0a9cd0319ddd3dbc",
   "lastOpenFiles": [
     "docs/知识点（保研&工作）/保研/计算机科学/计算机网络.md",
     "docs/知识点（保研&工作）/保研/计算机科学/计算机组成原理.md",
