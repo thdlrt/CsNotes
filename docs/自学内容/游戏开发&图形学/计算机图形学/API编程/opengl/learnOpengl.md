@@ -151,7 +151,7 @@ if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress)) {
 
 ## 工作流程
 
-- [环境配置]([创建窗口 - LearnOpenGL CN](https://learnopengl-cn.github.io/01 Getting started/02 Creating a window/))
+- [环境配置](https://learnopengl-cn.github.io/01 Getting started/02 Creating a window/)
 
 - 几个重要概念
   - 顶点数组对象：Vertex Array Object，**VAO**
