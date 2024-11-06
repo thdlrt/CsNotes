@@ -65,8 +65,8 @@
             "state": {
               "type": "recent-files",
               "state": {},
-              "icon": "clock",
-              "title": "Recent Files"
+              "icon": "lucide-file",
+              "title": "插件不再活动"
             }
           },
           {
@@ -75,8 +75,8 @@
             "state": {
               "type": "file-tree-view",
               "state": {},
-              "icon": "sheets-in-box",
-              "title": "File Tree"
+              "icon": "lucide-file",
+              "title": "插件不再活动"
             }
           },
           {
@@ -85,8 +85,8 @@
             "state": {
               "type": "recent-files",
               "state": {},
-              "icon": "clock",
-              "title": "Recent Files"
+              "icon": "lucide-file",
+              "title": "插件不再活动"
             }
           },
           {
@@ -95,12 +95,22 @@
             "state": {
               "type": "file-tree-view",
               "state": {},
-              "icon": "sheets-in-box",
-              "title": "File Tree"
+              "icon": "lucide-file",
+              "title": "插件不再活动"
+            }
+          },
+          {
+            "id": "92cd72639cd9fada",
+            "type": "leaf",
+            "state": {
+              "type": "recent-files",
+              "state": {},
+              "icon": "clock",
+              "title": "Recent Files"
             }
           }
         ],
-        "currentTab": 5
+        "currentTab": 6
       }
     ],
     "direction": "horizontal",
@@ -202,16 +212,16 @@
       "obsidian-excalidraw-plugin:新建绘图文件": false,
       "media-extended:Open media": false,
       "omnisearch:Omnisearch": false,
-      "vscode-editor:新建代码文件": false,
-      "obsidian-advanced-slides:Show Slide Preview": false
+      "vscode-editor:新建代码文件": false
     }
   },
-  "active": "0a9cd0319ddd3dbc",
+  "active": "92cd72639cd9fada",
   "lastOpenFiles": [
+    "docs/_private_",
+    "docs/新建文件夹",
     "docs/_draft_/本校保研流程（计算机系夏令营）.md",
     "docs/_draft_",
     "docs/技能&工具/折腾/openwrt软路由.md",
-    "docs/新建文件夹",
     "docs/自学内容/游戏开发&图形学/计算机图形学/API编程/opengl/learnOpengl.md",
     "docs/自学内容/游戏开发&图形学/计算机图形学/API编程/opengl/代码/第一个图像绘制.cpp",
     "docs/自学内容/游戏开发&图形学/计算机图形学/API编程/opengl/代码",
