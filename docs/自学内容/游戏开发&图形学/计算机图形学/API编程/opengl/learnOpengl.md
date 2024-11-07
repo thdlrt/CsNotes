@@ -1362,11 +1362,55 @@ void processInput(GLFWwindow* window)
 
 
 
-- 通过鼠标输入实现旋转控制
-- 
+- 通过鼠标输入实现旋转控制：水平的移动影响偏航角，竖直的移动影响俯仰角
+  - 通过比较两帧之间坐标差距，决定角度的偏移
+
+
+
+- 捕捉光标，在窗口内不显示（但是记录位置用于操控）`glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);`
+
+- 注册监听`glfwSetCursorPosCallback(window, mouse_callback);`
+
+```c
+void mouse_callback(GLFWwindow* window, double xpos, double ypos) {
+    if (firstMouse)
+    {
+        lastX = xpos;
+        lastY = ypos;
+        firstMouse = false;
+    }
+
+    float xoffset = xpos - lastX;
+    float yoffset = lastY - ypos;
+    lastX = xpos;
+    lastY = ypos;
+
+    float sensitivity = 0.05;
+    xoffset *= sensitivity;
+    yoffset *= sensitivity;
+
+    yaw += xoffset;
+    pitch += yoffset;
+
+    if (pitch > 89.0f)
+        pitch = 89.0f;
+    if (pitch < -89.0f)
+        pitch = -89.0f;
+
+    glm::vec3 front;
+    front.x = cos(glm::radians(yaw)) * cos(glm::radians(pitch));
+    front.y = sin(glm::radians(pitch));
+    front.z = sin(glm::radians(yaw)) * cos(glm::radians(pitch));
+    cameraFront = glm::normalize(front);
+
+}
+```
+
+
 
 #### 缩放
 
+- 通过监听滚轮调整fov来实现
 - 
 
 #### 示例：摄像机类
