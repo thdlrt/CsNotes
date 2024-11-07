@@ -22,22 +22,6 @@
             }
           }
         ]
-      },
-      {
-        "id": "ae4345630f8adf39",
-        "type": "tabs",
-        "children": [
-          {
-            "id": "6cc26c3da02b217d",
-            "type": "leaf",
-            "state": {
-              "type": "reveal-preview-view",
-              "state": {},
-              "icon": "lucide-file",
-              "title": "Slide Preview"
-            }
-          }
-        ]
       }
     ],
     "direction": "vertical"
@@ -246,8 +230,11 @@
       "obsidian-advanced-slides:Show Slide Preview": false
     }
   },
-  "active": "6cc26c3da02b217d",
+  "active": "e7448f2e3ed093cf",
   "lastOpenFiles": [
+    "docs/自学内容/移动端开发/鸿蒙",
+    "docs/自学内容/移动端开发/Untitled Folder",
+    "docs/_export_/slide/本校保研流程（计算机系夏令营）.zip",
     "docs/_export_/slide/本校保研流程（计算机系夏令营）/plugin/chalkboard/img/whiteboard.png",
     "docs/_export_/slide/本校保研流程（计算机系夏令营）/plugin/chalkboard/img/boardmarker-green.png",
     "docs/_export_/slide/本校保研流程（计算机系夏令营）/plugin/chalkboard/img/sponge.png",
@@ -258,7 +245,6 @@
     "docs/_export_/slide/本校保研流程（计算机系夏令营）/plugin/chalkboard/img/chalk-orange.png",
     "docs/_export_/slide/本校保研流程（计算机系夏令营）/plugin/chalkboard/img/chalk-green.png",
     "docs/_export_/slide/本校保研流程（计算机系夏令营）/plugin/chalkboard/img/boardmarker-yellow.png",
-    "docs/_export_/slide/本校保研流程（计算机系夏令营）/plugin/chalkboard/img/chalk-blue.png",
     "docs/_export_/slide/本校保研流程（计算机系夏令营）/plugin/chalkboard/README.md",
     "docs/_export_/slide/本校保研流程（计算机系夏令营）/plugin/chalkboard/plugin.js",
     "docs/_export_/slide/本校保研流程（计算机系夏令营）/plugin/chalkboard/plugin (copy).js",
@@ -269,8 +255,6 @@
     "docs/_export_/slide/本校保研流程（计算机系夏令营）/plugin/chart/plugin.js",
     "docs/_export_/slide/本校保研流程（计算机系夏令营）/plugin/chart/README.md",
     "docs/_export_/slide/本校保研流程（计算机系夏令营）/plugin/chart/chart.min.js",
-    "docs/_export_/slide/本校保研流程（计算机系夏令营）/plugin/chart",
-    "docs/_export_/slide/本校保研流程（计算机系夏令营）/plugin/customcontrols/style.css",
     "docs/_export_/slide/本校保研流程（计算机系夏令营）/plugin/customcontrols/README.md",
     "docs/_export_/slide/本校保研流程（计算机系夏令营）/plugin/menu/README.md",
     "docs/_export_/slide/本校保研流程（计算机系夏令营）/plugin/menu/CONTRIBUTING.md",

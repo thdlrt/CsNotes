@@ -143,9 +143,54 @@ if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress)) {
 #include <glm/gtc/type_ptr.hpp>
 ```
 
+- 可以用glm快速**创建各种变换矩阵**
+
+```c
+glm::vec4 vec(1.0f, 0.0f, 0.0f, 1.0f);
+// 译注：下面就是矩阵初始化的一个例子，如果使用的是0.9.9及以上版本
+// 下面这行代码就需要改为:
+// glm::mat4 trans = glm::mat4(1.0f)
+// 之后将不再进行提示
+glm::mat4 trans;
+trans = glm::translate(trans, glm::vec3(1.0f, 1.0f, 0.0f));
+vec = trans * vec;
+//glm::radians(90.0f)将角度转化为弧度
+//glm::vec3(0.0, 0.0, 1.0)指定旋转方向
+trans = glm::rotate(trans, glm::radians(90.0f), glm::vec3(0.0, 0.0, 1.0));
+trans = glm::scale(trans, glm::vec3(0.5, 0.5, 0.5));
+```
+
+- 用同一个矩阵`trans`可以进行不同的变化，glm会自动将变化乘到`trans`上，最终用`trans`乘以目标矩阵就可以实现所有变化（注意变化**倒序**执行，上面就是先缩放再旋转）
 
 
-- 
+
+- 将变化矩阵传递给着色器
+  - `uniform mat4 transform;`就可以传递一个四维矩阵
+
+```glsl
+#version 330 core
+layout (location = 0) in vec3 aPos;
+layout (location = 1) in vec2 aTexCoord;
+
+out vec2 TexCoord;
+
+uniform mat4 transform;
+
+void main()
+{
+    gl_Position = transform * vec4(aPos, 1.0f);
+    TexCoord = vec2(aTexCoord.x, 1.0 - aTexCoord.y);
+}
+```
+
+```c
+unsigned int transformLoc = glGetUniformLocation(ourShader.ID, "transform");
+glUniformMatrix4fv(transformLoc, 1, GL_FALSE, glm::value_ptr(trans));
+```
+
+- 1表示要传递的矩阵数目
+- GL_FALSE表示是否需要转置矩阵
+- value_ptr将glm矩阵转化为opengl可以接受的
 
 # opengl 基础
 
@@ -1188,6 +1233,40 @@ void main()
 ## 变换
 
 ### 坐标系统
+
+<img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/undefinedcoordinate_systems_right_handed.png" alt="coordinate_systems_right_handed" style="zoom: 80%;" />
+
+<img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/undefinedimage-20241107145529476.png" alt="image-20241107145529476" style="zoom:67%;" />
+
+- **局部空间**(Local Space)：对象相对于局部原点的坐标
+  - 适合对物体自身进行操作(如调整模型)
+  - 通过**模型**矩阵转换
+- **世界空间**(World Space)：相当于世界的全局原点
+  - 物体之间的位置关系，对物体进行移动、缩放、旋转等，场景布置
+  - 通过**观察**矩阵转换
+- **观察空间**(View Space)：从摄像机/观察者角度观察
+  - 通过**投影**矩阵转换
+- **裁剪空间**(Clip Space)：裁剪到 -1~1的范围
+  - 将大范围坐标转化到小范围，比如在每个维度上的-1000到1000。投影矩阵接着会将在这个指定的范围内的坐标变换为标准化设备坐标的范围(-1.0, 1.0)。所有在范围外的坐标不会被映射到在-1.0到1.0的范围之间，所以**会被裁剪**掉。
+  - 裁剪之后进行投影映射到屏幕空间
+- **屏幕空间**(Screen Space)：屏幕上的坐标
+
+
+
+- **正交投影**
+  - 可以使用glm创建投影矩阵`glm::ortho(0.0f, 800.0f, 0.0f, 600.0f, 0.1f, 100.0f);`
+  - 参数给出了宽度，长度，远近平面的范围
+  - 主要用于二维渲染、建筑工程
+- **透视投影**
+  - `glm::mat4 proj = glm::perspective(glm::radians(45.0f), (float)width/(float)height, 0.1f, 100.0f);`
+  - 参数给出fov视野角度，宽高比，远近平面
+  - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/undefinedperspective_frustum.png" alt=" perspective_frustum" style="zoom: 67%;" />
+
+
+
+- 完整的变换$V_{clip}=M_{projection}\cdot M_{view}\cdot M_{model}\cdot V_{local}$
+  - 着色器中`gl_Position = projection * view * model * vec4(aPos, 1.0);`
+
 
 ### 摄像机
 
