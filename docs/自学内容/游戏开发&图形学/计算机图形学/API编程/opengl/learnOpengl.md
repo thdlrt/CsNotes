@@ -1245,7 +1245,9 @@ void main()
   - 物体之间的位置关系，对物体进行移动、缩放、旋转等，场景布置
   - 通过**观察**矩阵转换
 - **观察空间**(View Space)：从摄像机/观察者角度观察
+  - opengl本身没有摄像机的概念，通过相反移动物体来实现模拟摄像机
   - 通过**投影**矩阵转换
+
 - **裁剪空间**(Clip Space)：裁剪到 -1~1的范围
   - 将大范围坐标转化到小范围，比如在每个维度上的-1000到1000。投影矩阵接着会将在这个指定的范围内的坐标变换为标准化设备坐标的范围(-1.0, 1.0)。所有在范围外的坐标不会被映射到在-1.0到1.0的范围之间，所以**会被裁剪**掉。
   - 裁剪之后进行投影映射到屏幕空间
@@ -1268,7 +1270,87 @@ void main()
   - 着色器中`gl_Position = projection * view * model * vec4(aPos, 1.0);`
 
 
+
+
+#### 深度缓冲
+
+- 开启深度缓冲`glEnable(GL_DEPTH_TEST);`
+- 附加每帧清楚缓冲`glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);`
+
 ### 摄像机
+
+- 通过构建摄像机三维坐标系矩阵，来对物体进行变换
+
+<img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/undefinedcamera_axes.png" alt="img" style="zoom: 80%;" />
+
+- 首先摄像机的**坐标**`glm::vec3 cameraPos = glm::vec3(0.0f, 0.0f, 3.0f);`
+- 结合指向计算得到摄像机**指向**（反方向，图中蓝色）
+
+```c
+glm::vec3 cameraTarget = glm::vec3(0.0f, 0.0f, 0.0f);
+glm::vec3 cameraDirection = glm::normalize(cameraPos - cameraTarget);
+```
+
+- **右轴**：摄像机空间的x轴正方向
+  - ​	通过定义上向量，与指向叉乘就可以得到右轴
+
+```c
+glm::vec3 up = glm::vec3(0.0f, 1.0f, 0.0f); 
+glm::vec3 cameraRight = glm::normalize(glm::cross(up, cameraDirection));
+```
+
+- **上轴**：摄像机空间的y轴正方向
+  - 可以由另外两个轴计算得到`glm::vec3 cameraUp = glm::cross(cameraDirection, cameraRight);`
+
+
+
+- 用这三个向量，和摄像机坐标就能构建变换矩阵Lookat矩阵
+  - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/undefinedimage-20241107160228888.png" alt="image-20241107160228888" style="zoom:67%;" />
+- 只需要提供摄像机**位置、目标位置、上向量**就可以用glm创建出lookat矩阵
+
+```c
+glm::mat4 view;
+view = glm::lookAt(glm::vec3(0.0f, 0.0f, 3.0f), 
+           glm::vec3(0.0f, 0.0f, 0.0f), 
+           glm::vec3(0.0f, 1.0f, 0.0f));
+```
+
+- 实现一个简单的摄像机环绕
+
+```c
+float radius = 10.0f;
+float camX = sin(glfwGetTime()) * radius;
+float camZ = cos(glfwGetTime()) * radius;
+glm::mat4 view;
+view = glm::lookAt(glm::vec3(camX, 0.0, camZ), glm::vec3(0.0, 0.0, 0.0), glm::vec3(0.0, 1.0, 0.0));
+```
+
+- 要想实现平移效果，可以让目标点与摄像机坐标相关，比如始终值指向前面
+
+```c
+glm::vec3 cameraPos   = glm::vec3(0.0f, 0.0f,  3.0f);
+glm::vec3 cameraFront = glm::vec3(0.0f, 0.0f, -1.0f);
+glm::vec3 cameraUp    = glm::vec3(0.0f, 1.0f,  0.0f);
+view = glm::lookAt(cameraPos, cameraPos + cameraFront, cameraUp);
+//用键盘
+void processInput(GLFWwindow* window)
+{
+    if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
+        glfwSetWindowShouldClose(window, true);
+
+    float cameraSpeed = 0.05f; // adjust accordingly
+    if (glfwGetKey(window, GLFW_KEY_W) == GLFW_PRESS)
+        cameraPos += cameraSpeed * cameraFront;
+    if (glfwGetKey(window, GLFW_KEY_S) == GLFW_PRESS)
+        cameraPos -= cameraSpeed * cameraFront;
+    if (glfwGetKey(window, GLFW_KEY_A) == GLFW_PRESS)
+        cameraPos -= glm::normalize(glm::cross(cameraFront, cameraUp)) * cameraSpeed;
+    if (glfwGetKey(window, GLFW_KEY_D) == GLFW_PRESS)
+        cameraPos += glm::normalize(glm::cross(cameraFront, cameraUp)) * cameraSpeed;
+}
+```
+
+
 
 ## 光照
 
