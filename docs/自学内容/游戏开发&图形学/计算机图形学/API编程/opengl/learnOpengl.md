@@ -1875,9 +1875,27 @@ void main()
 #### 漫反射
 
 - 光源与平面的夹角决定漫反射的强度
-- 
+
+```c
+vec3 norm = normalize(Normal);//发现
+vec3 lightDir = normalize(lightPos - FragPos);//根据输入的光源位置和着色点计算出入射光线向量
+float diff = max(dot(norm, lightDir), 0.0);//计算夹角
+vec3 diffuse = diff * lightColor;
+```
+
+- `FragPos`通过输入顶点着色器的点经过模型变换得到（世界坐标系，为了方便的与灯光等计算）
+
+##### 法向量与变换
+
+- 由于法向量没有齐次坐标，因此不会进行平移操作，只能缩放和旋转
+- 如果模型进行了不等比缩放，法向量可能不再垂直与表面，也就是说通过这样的模型矩阵不能得到正确的法向量
+- 因此通过特殊的**法线矩阵**（模型矩阵左上角3x3部分的逆矩阵的转置矩阵）来进行变换更为恰当
+  - `Normal = mat3(transpose(inverse(model))) * aNormal;`
+  - 矩阵求逆对着色器开销较大，因此在CPU进行计算之后求逆更为恰当
 
 #### 镜面反射
+
+  
 
 #### 代码示例
 
