@@ -1859,7 +1859,23 @@ glm::vec3 result = lightColor * toyColor; // = (0.0f, 0.5f, 0.0f);
 
 #### 环境光
 
+- 简单的将一个**很小的常量颜色**添加到物体片段的最终颜色
+
+```c
+void main()
+{
+    float ambientStrength = 0.1;
+    vec3 ambient = ambientStrength * lightColor;
+
+    vec3 result = ambient * objectColor;
+    FragColor = vec4(result, 1.0);
+}
+```
+
 #### 漫反射
+
+- 光源与平面的夹角决定漫反射的强度
+- 
 
 #### 镜面反射
 
