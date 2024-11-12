@@ -1895,9 +1895,41 @@ vec3 diffuse = diff * lightColor;
 
 #### 镜面反射
 
-  
+- 由表面发现，光源，摄像机位置共同决定
+
+```c
+float specularStrength = 0.5;
+vec3 viewDir = normalize(viewPos - FragPos);
+vec3 reflectDir = reflect(-lightDir, norm);
+float spec = pow(max(dot(viewDir, reflectDir), 0.0), 32);
+vec3 specular = specularStrength * spec * lightColor;
+```
 
 #### 代码示例
+
+```c
+//FragPos = vec3(model * vec4(aPos, 1.0));
+void main()
+{
+    //环境光
+    float ambientStrength = 0.1;
+    vec3 ambient = ambientStrength * lightColor;
+    //漫反射
+    vec3 norm = normalize(Normal);
+    vec3 lightDir = normalize(lightPos - FragPos);
+    float diff = max(dot(norm, lightDir), 0.0);
+    vec3 diffuse = diff * lightColor;
+    //镜面反射
+    float specularStrength = 0.5;
+    vec3 viewDir = normalize(viewPos - FragPos);
+    vec3 reflectDir = reflect(-lightDir, norm);
+    float spec = pow(max(dot(viewDir, reflectDir), 0.0), 32);
+    vec3 specular = specularStrength * spec * lightColor;
+    //汇总
+    vec3 result = (ambient + diffuse + specular) * objectColor;
+    FragColor = vec4(result, 1.0);
+}
+```
 
 ### 材质
 
