@@ -2055,7 +2055,7 @@ vec3 specular = light.specular * (spec * material.specular);
 ```c
 struct Material {
     sampler2D diffuse;
-    vec3      specular;
+    sampler2D      specular;
     float     shininess;
 }; 
 in vec2 TexCoords;
