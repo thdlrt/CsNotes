@@ -20,8 +20,21 @@
               "icon": "lucide-file",
               "title": "learnOpengl"
             }
+          },
+          {
+            "id": "51f1b4964d4dbdd4",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.7.6"
+              },
+              "icon": "lucide-file",
+              "title": "Release Notes 1.7.6"
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -230,7 +243,7 @@
       "obsidian-advanced-slides:Show Slide Preview": false
     }
   },
-  "active": "e7448f2e3ed093cf",
+  "active": "0a9cd0319ddd3dbc",
   "lastOpenFiles": [
     "docs/_draft_/本校保研流程（计算机系夏令营）.md",
     "docs/自学内容/移动端开发/鸿蒙",
