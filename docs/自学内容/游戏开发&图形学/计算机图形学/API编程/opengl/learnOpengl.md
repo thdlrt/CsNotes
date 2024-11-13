@@ -134,6 +134,49 @@ if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress)) {
 
 - 可以使用`stb_image.h`[下载](https://github.com/nothings/stb/blob/master/stb_image.h)来进行文件图像加载，加载为char*字节量
 
+```c
+unsigned int loadTexture(char const* path)
+{
+    unsigned int textureID;
+    glGenTextures(1, &textureID);
+
+    int width, height, nrComponents;
+    unsigned char* data = stbi_load(path, &width, &height, &nrComponents, 0);
+    if (data)
+    {
+        GLenum format;
+        if (nrComponents == 1)
+            format = GL_RED;
+        else if (nrComponents == 3)
+            format = GL_RGB;
+        else if (nrComponents == 4)
+            format = GL_RGBA;
+
+        glBindTexture(GL_TEXTURE_2D, textureID);
+        glTexImage2D(GL_TEXTURE_2D, 0, format, width, height, 0, format, GL_UNSIGNED_BYTE, data);
+        glGenerateMipmap(GL_TEXTURE_2D);
+
+        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
+        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
+        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
+        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+
+        stbi_image_free(data);
+    }
+    else
+    {
+        std::cout << "Texture failed to load at path: " << path << std::endl;
+        stbi_image_free(data);
+    }
+
+    return textureID;
+}
+
+unsigned int diffuseMap = loadTexture("container2.png");
+```
+
+
+
 ### GLM
 
 - 用于opengl的数学库
@@ -1933,11 +1976,95 @@ void main()
 
 ### 材质
 
+- 创建一个材质结构，将其作为参数进行传递
+
+```c
+struct Material {
+    vec3 ambient;
+    vec3 diffuse;
+    vec3 specular;
+    float shininess;
+}; 
+
+uniform Material material;
+```
+
+- 分别表示环境光照、漫反射光照、镜面光照、反光度
+
+```c
+void main()
+{    
+    // 环境光
+    vec3 ambient = lightColor * material.ambient;
+
+    // 漫反射 
+    vec3 norm = normalize(Normal);
+    vec3 lightDir = normalize(lightPos - FragPos);
+    float diff = max(dot(norm, lightDir), 0.0);
+    vec3 diffuse = lightColor * (diff * material.diffuse);
+
+    // 镜面光
+    vec3 viewDir = normalize(viewPos - FragPos);
+    vec3 reflectDir = reflect(-lightDir, norm);  
+    float spec = pow(max(dot(viewDir, reflectDir), 0.0), material.shininess);
+    vec3 specular = lightColor * (spec * material.specular);  
+
+    vec3 result = ambient + diffuse + specular;
+    FragColor = vec4(result, 1.0);
+}
+//传递数据
+lightingShader.setVec3("material.ambient",  1.0f, 0.5f, 0.31f);
+lightingShader.setVec3("material.diffuse",  1.0f, 0.5f, 0.31f);
+lightingShader.setVec3("material.specular", 0.5f, 0.5f, 0.5f);
+lightingShader.setFloat("material.shininess", 32.0f);
+
+```
+
+### 光照
+
+#### 光照属性
+
+- 通过光照属性影响显示的样式
+
+```c
+struct Light {
+    vec3 position;
+
+    vec3 ambient;
+    vec3 diffuse;
+    vec3 specular;
+};
+```
+
+- 这样计算时就还需要乘以光源属性
+
+```c
+vec3 ambient  = light.ambient * material.ambient;
+vec3 diffuse  = light.diffuse * (diff * material.diffuse);
+vec3 specular = light.specular * (spec * material.specular);
+```
 
 
-### 光照贴图
 
+#### 光照贴图
 
+- 漫反射贴图
+  - 希望对不同的物体片段跟别设置漫反射颜色
+- 使用贴图来存储更为详细的漫反射量
+
+```c
+struct Material {
+    sampler2D diffuse;
+    vec3      specular;
+    float     shininess;
+}; 
+in vec2 TexCoords;
+//环境光和漫反射都进行设置
+vec3 diffuse = light.diffuse * diff * vec3(texture(material.diffuse, TexCoords));
+vec3 ambient = light.ambient * vec3(texture(material.diffuse, TexCoords));
+```
+
+- 类似的也可以使用贴图来控制镜面反射
 
 ### 投光物
 
