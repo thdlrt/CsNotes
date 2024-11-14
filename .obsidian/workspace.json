@@ -22,24 +22,6 @@
             }
           }
         ]
-      },
-      {
-        "id": "32072a42f92b0e2a",
-        "type": "tabs",
-        "children": [
-          {
-            "id": "51f1b4964d4dbdd4",
-            "type": "leaf",
-            "state": {
-              "type": "release-notes",
-              "state": {
-                "currentVersion": "1.7.6"
-              },
-              "icon": "lucide-file",
-              "title": "Release Notes 1.7.6"
-            }
-          }
-        ]
       }
     ],
     "direction": "vertical"
