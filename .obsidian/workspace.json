@@ -4,7 +4,7 @@
     "type": "split",
     "children": [
       {
-        "id": "32072a42f92b0e2a",
+        "id": "e222fb4d3180a398",
         "type": "tabs",
         "children": [
           {
@@ -20,7 +20,13 @@
               "icon": "lucide-file",
               "title": "learnOpengl"
             }
-          },
+          }
+        ]
+      },
+      {
+        "id": "32072a42f92b0e2a",
+        "type": "tabs",
+        "children": [
           {
             "id": "51f1b4964d4dbdd4",
             "type": "leaf",
@@ -33,8 +39,7 @@
               "title": "Release Notes 1.7.6"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"

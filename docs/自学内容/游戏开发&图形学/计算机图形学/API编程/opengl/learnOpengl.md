@@ -240,6 +240,15 @@ glUniformMatrix4fv(transformLoc, 1, GL_FALSE, glm::value_ptr(trans));
 - GL_FALSE表示是否需要转置矩阵
 - value_ptr将glm矩阵转化为opengl可以接受的
 
+### Assimp
+
+- 用于模型的加载
+- 当使用Assimp导入一个模型的时候，它通常会将整个模型加载进一个**场景**(Scene)对象，它会包含导入的模型/场景中的所有数据。Assimp会将场景载入为一系列的节点(Node)，每个节点包含了场景对象中所储存数据的索引，每个节点都可以有任意数量的子节点。
+  - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/undefinedassimp_structure.png" alt="img" style="zoom:67%;" />
+- rootnode存储子节点引用（模型通常不是一个整体，而是由许多子部分组成）
+- mesh存储网格信息，如顶点位置、法向量、纹理坐标、面等
+- material
+
 # opengl 基础
 
 ## 工作流程
@@ -2068,11 +2077,75 @@ vec3 ambient = light.ambient * vec3(texture(material.diffuse, TexCoords));
 
 ### 投光物
 
+- 投光物就是将光投射到物体的光源
+
+#### 平行光
+
+- 无线远的光源的光通常可以视为平行光
+- 物体与光源的相对位置不重要，每个物体的光照计算方式是类似的
+- 片段着色器计算时直接使用**固定的方向向量**进行计算
+
+#### 点光源
+
+- 照亮光源附近的区域，存在距离衰减
+- 计算公式$F_{att}=\frac{1.0}{K_c+K_l*d+K_q*d^2}$
+  - 实现这样的衰减曲线：![img](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefinedattenuation.png)
+- 着色器代码
+
+```glsl
+struct Light {
+    vec3 position;  
+
+    vec3 ambient;
+    vec3 diffuse;
+    vec3 specular;
+
+    float constant;
+    float linear;
+    float quadratic;
+};
+
+float distance    = length(light.position - FragPos);
+float attenuation = 1.0 / (light.constant + light.linear * distance + light.quadratic * (distance * distance));
+```
 
 
-### 多光源
 
+#### 聚光
 
+- 向特定方向发射光线
+  - 一个坐标，一个方向和一个切光角
+  - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/undefinedlight_casters_spotlight_angles.png" alt="img" style="zoom: 80%;" />
+- 通过比较一点与光源连线和聚光方向的夹角和切光角来判断光照的强弱
+
+```glsl
+struct Light {
+    vec3  position;
+    vec3  direction;
+    float cutOff;
+    ...
+};
+    
+float theta = dot(lightDir, normalize(-light.direction));
+
+if(theta > light.cutOff) 
+{       
+  // 执行光照计算
+}
+else  // 否则，使用环境光，让场景在聚光之外时不至于完全黑暗
+  color = vec4(light.ambient * vec3(texture(material.diffuse, TexCoords)), 1.0);
+```
+
+- 添加边缘羽化
+  - 除了完全照亮的内圆锥额外添加一个外圆锥
+  - 光从内圆锥逐渐减弱直到外圆锥边界
+  - $I=\frac{\theta-\gamma}\epsilon $即夹角减去内角除以外角和内角的差值
+
+```glsl
+float theta     = dot(lightDir, normalize(-light.direction));
+float epsilon   = light.cutOff - light.outerCutOff;
+float intensity = clamp((theta - light.outerCutOff) / epsilon, 0.0, 1.0);    
+```
 
 ## 模型加载
 
