@@ -1,6 +1,10 @@
 {
   "recentFiles": [
     {
+      "basename": "UE基础",
+      "path": "docs/_private_/腾讯公开课/UE基础.md"
+    },
+    {
       "basename": "openwrt软路由",
       "path": "docs/技能&工具/折腾/openwrt软路由.md"
     },
@@ -195,10 +199,6 @@
     {
       "basename": "位运算",
       "path": "docs/算法竞赛/位运算.md"
-    },
-    {
-      "basename": "贪心",
-      "path": "docs/算法竞赛/贪心.md"
     }
   ],
   "omittedPaths": [],
