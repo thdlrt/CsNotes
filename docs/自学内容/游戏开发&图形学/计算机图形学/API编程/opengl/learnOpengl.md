@@ -249,6 +249,45 @@ glUniformMatrix4fv(transformLoc, 1, GL_FALSE, glm::value_ptr(trans));
 - mesh存储网格信息，如顶点位置、法向量、纹理坐标、面等
 - material
 
+#### 网格加载
+
+- 网格数据类
+
+```c++
+//网格中一点至少包含位置坐标、法向量、uv坐标
+struct Vertex {
+    glm::vec3 Position;
+    glm::vec3 Normal;
+    glm::vec2 TexCoords;
+};
+//储存纹理的id以及它的类型
+struct Texture {
+    unsigned int id;
+    string type;
+};
+class Mesh {
+    public:
+        /*  网格数据  */
+        vector<Vertex> vertices;//顶点数据
+        vector<unsigned int> indices;//索引数据
+        vector<Texture> textures;//贴图
+        /*  函数  */
+        Mesh(vector<Vertex> vertices, vector<unsigned int> indices, vector<Texture> textures);
+        void Draw(Shader shader);
+    private:
+        /*  渲染数据  */
+        unsigned int VAO, VBO, EBO;
+        /*  函数  */
+        void setupMesh();
+}; 
+```
+
+
+
+#### 模型加载
+
+- 
+
 # opengl 基础
 
 ## 工作流程
