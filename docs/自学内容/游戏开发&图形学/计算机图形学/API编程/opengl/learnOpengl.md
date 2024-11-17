@@ -270,7 +270,7 @@ class Mesh {
         /*  网格数据  */
         vector<Vertex> vertices;//顶点数据
         vector<unsigned int> indices;//索引数据
-        vector<Texture> textures;//贴图
+        vector<Texture> textures;//贴图数据
         /*  函数  */
         Mesh(vector<Vertex> vertices, vector<unsigned int> indices, vector<Texture> textures);
         void Draw(Shader shader);
