@@ -249,6 +249,11 @@ glUniformMatrix4fv(transformLoc, 1, GL_FALSE, glm::value_ptr(trans));
 - mesh存储网格信息，如顶点位置、法向量、纹理坐标、面等
 - material
 
+
+
+- Scene中的mMeshes数组是一个全局变量，存储整个场景中**所有**的网格数据
+- 而node中的mMeshes等数组存储的是当前节点所包含的网格数据的索引（实际的数据还是在scene中）
+
 #### 网格加载
 
 - 网格数据类
@@ -532,13 +537,86 @@ class Model
                                              string typeName);
 };
 
-void Draw(Shader &shader)
+void Model::Draw(Shader &shader)
 {
     for(unsigned int i = 0; i < meshes.size(); i++)
         meshes[i].Draw(shader);
 }
 
 
+```
+
+- 使用assimp来加载模型：
+  - `aiProcess_Triangulate`表示将模型的所有图元变换为三角形
+  - `aiProcess_FlipUVs`表示在处理时翻转y轴纹理坐标
+  - `aiProcess_GenNormals`如果模型不包含法向量的话，就为每个顶点创建法线
+  - `aiProcess_SplitLargeMeshes`将比较大的网格分割成更小的子网格
+  - `aiProcess_OptimizeMeshes`将多个小网格拼接为一个大的网格，减少绘制调用从而进行优化
+
+```c++
+void Model::loadModel(string path)
+{
+    Assimp::Importer import;
+    const aiScene *scene = import.ReadFile(path, aiProcess_Triangulate | aiProcess_FlipUVs);    
+
+    //检查是否加载出错
+    if(!scene || scene->mFlags & AI_SCENE_FLAGS_INCOMPLETE || !scene->mRootNode) 
+    {
+        cout << "ERROR::ASSIMP::" << import.GetErrorString() << endl;
+        return;
+    }
+    directory = path.substr(0, path.find_last_of('/'));
+	//遍历assimp节点树
+    processNode(scene->mRootNode, scene);
+}
+
+void processNode(aiNode *node, const aiScene *scene)
+{
+    // 处理节点所有的网格（如果有的话）
+    for(unsigned int i = 0; i < node->mNumMeshes; i++)
+    {
+        //根据索引从全局数据中取出mesh数据
+        aiMesh *mesh = scene->mMeshes[node->mMeshes[i]]; 
+        meshes.push_back(processMesh(mesh, scene));         
+    }
+    // 接下来对它的子节点重复这一过程
+    for(unsigned int i = 0; i < node->mNumChildren; i++)
+    {
+        processNode(node->mChildren[i], scene);
+    }
+}
+```
+
+- 实际上可以忽略节点，直接对全局数据中的mesh遍历渲染，但是保留节点层次结构，可以便于进行更多操作
+
+```c++
+Mesh processMesh(aiMesh *mesh, const aiScene *scene)
+{
+    vector<Vertex> vertices;
+    vector<unsigned int> indices;
+    vector<Texture> textures;
+
+    for(unsigned int i = 0; i < mesh->mNumVertices; i++)
+    {
+        Vertex vertex;
+        glm::vec3 vector; 
+        vector.x = mesh->mVertices[i].x;
+        vector.y = mesh->mVertices[i].y;
+        vector.z = mesh->mVertices[i].z; 
+        vertex.Position = vector;
+        
+        vertices.push_back(vertex);
+    }
+    // 处理索引
+    ...
+        // 处理材质
+        if(mesh->mMaterialIndex >= 0)
+        {
+            ...
+        }
+
+    return Mesh(vertices, indices, textures);
+}
 ```
 
 
