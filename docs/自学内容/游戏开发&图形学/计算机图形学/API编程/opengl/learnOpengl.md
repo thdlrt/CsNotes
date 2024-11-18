@@ -2908,7 +2908,115 @@ glStencilMask(0xFF);
 
 #### 混合
 
-- 
+##### 含透明通道贴图
+
+- 使用有透明分量的纹理时`glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, width, height, 0, GL_RGBA, GL_UNSIGNED_BYTE, data);`
+  - 要注意使用`GL_RGBA`
+- 在着色器中可以根据alpha的值来判断是否丢弃像素（这个点显示为透明）
+
+```c++
+void main()
+{             
+    vec4 texColor = texture(texture1, TexCoords);
+    if(texColor.a < 0.1)
+        discard;
+    FragColor = texColor;
+}
+```
+
+- 要注意的是，如果使用GL_REPEAT等环绕方式，由于OpenGL会对边缘的值和纹理下一个重复的值进行插值导致边框具有颜色， 这就可能产生一个半透明有色边框，对于这种图片就要使用GL_CLAMP_TO_EDGE环绕方式
+
+##### 颜色混合
+
+- 开启混合`glEnable(GL_BLEND);`
+- 混合方程$\bar{C}_{result}=\bar{C}_{source}*F_{source}+\bar{C}_{destination}*F_{destination}$
+  - 颜色1\*源因子值+颜色2\*目标因子值
+- `glBlendFunc(GLenum sfactor, GLenum dfactor)`函数接受两个参数，来设置源和目标因子
+  - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/undefinedimage-20241118202421466.png" alt="image-20241118202421466" style="zoom:50%;" />
+- 比如使用源的alpha、1-alpha：`glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);`
+- 也可以使用`glBlendFuncSeparate`来分别设置RGBA四个通道
+- `glBlendEquation(GLenum mode)`设置颜色的运算方式
+  - GL_FUNC_ADD：默认选项，将两个分量相加
+  - GL_FUNC_SUBTRACT：将两个分量相减
+  - GL_FUNC_REVERSE_SUBTRACT：将两个分量相减，但顺序相反
+
+
+
+- 同时使用深度测试和混合会存在问题，导致不该被丢弃的内容被丢弃
+  - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/undefinedblending_incorrect_order.png" alt="img" style="zoom:50%;" />
+  - 对于每一个片段，深度测试会比较它的深度值与深度缓冲的当前值。如果深度测试失败该片段会被丢弃，即使当前值所在的贴图是半透明的！这就丢失了数据
+  - 要想保证窗户中能够显示它们背后的窗户，我们需要首先绘制背后的这部分窗户。这也就是说在绘制的时候，我们必须先**手动**将窗户按照**最远到最近**来排序，再按照顺序渲染。
+
+- 使用混合时的渲染原则
+  - 先绘制所有不透明的物体。
+  - 对所有透明的物体排序。
+  - 按顺序绘制所有透明的物体。
+
+
+
+- 排序透明物体：观察者视角获取物体的距离，可以通过计算摄像机位置向量和物体的位置向量之间的距离所获得
+
+```c++
+std::map<float, glm::vec3> sorted;
+for (unsigned int i = 0; i < windows.size(); i++)
+{
+    float distance = glm::length(camera.Position - windows[i]);
+    sorted[distance] = windows[i];
+}
+```
+
+
+
+- 渲染时直接从map读取排好序的
+
+```c++
+for(std::map<float,glm::vec3>::reverse_iterator it = sorted.rbegin(); it != sorted.rend(); ++it) 
+{
+    model = glm::mat4();
+    model = glm::translate(model, it->second);              
+    shader.setMat4("model", model);
+    glDrawArrays(GL_TRIANGLES, 0, 6);
+}
+```
+
+#### 面剔除
+
+- 丢弃背对观察者的面，只渲染面向观察者的面，节省开销
+
+
+
+- 以环绕顺序来定义三角形的顶点
+  - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/undefinedfaceculling_windingorder.png" alt="img" style="zoom:50%;" />
+  - 全部按照逆时针规则进行定义（对顶点数据的要求）
+- 这样从正面看为逆时针的三角形就是面向观察者的面，顺时针的就是背对的面，可以进行剔除
+
+
+
+- 启用面剔除：`glEnable(GL_CULL_FACE);`
+- 剔除的面的类型`glCullFace(GL_FRONT);`
+  - `GL_BACK`：只剔除背向面。
+  - `GL_FRONT`：只剔除正向面。
+  - `GL_FRONT_AND_BACK`：剔除正向面和背向面。
+- 正面的方向`glFrontFace(GL_CCW);`
+  - GL_CCW表示逆时针环绕
+  - GL_CW表示顺时针环绕
+
+#### 帧缓冲
+
+- 颜色缓冲、深度信息缓冲等各种缓冲结合再起来就是帧缓冲，默认的真缓冲是窗口时生成和配置的
+
+
+
+- 创建帧缓冲对象
+
+```c++
+unsigned int fbo;
+glGenFramebuffers(1, &fbo);
+```
+
+
 
 ### 高级光照
+
+
 
