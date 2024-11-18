@@ -2827,5 +2827,24 @@ float intensity = clamp((theta - light.outerCutOff) / epsilon, 0.0, 1.0);
 
 ### 高级opengl
 
+#### 深度测试
+
+- 通常深度测试是在片段着色器运行之后在屏幕空间进行的
+  - 提前深度测试：在片段着色器之前运行，提前丢弃永远不可见的片段，减少计算量
+- 开启深度测试`glEnable(GL_DEPTH_TEST);`
+  - 使用深度测试时，清除缓存是还要清除深度数据`glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);`
+- 将深度缓冲数据设置为只读，禁止修改`glDepthMask(GL_FALSE);`
+- 自定义深度测试比较函数`glDepthFunc(GL_LESS);`
+  - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/undefinedimage-20241118161429326.png" alt="image-20241118161429326" style="zoom: 50%;" />
+- 通常根据近远平面的值来计算深度值
+  - 一种线性方程$F_{depth}=\frac{z-near}{far-near}$
+  - 更常用的是非线性方程，与$1/z$成正比，即z值较小时具有较高的精度$F_{depth}=\frac{1/z-1/near}{1/far-1/near}$
+  - 深度缓冲精度不足时就会出现**深度冲突**，结果就是这两个形状不断地在切换前后顺序，这会导致很奇怪的花纹。
+- 着色器中通过`gl_FragCoord.z`可以直接获取到深度缓冲的值
+
+#### 模板测试
+
+- 模版测试是在深度测试之前进行的，
+
 ### 高级光照
 
