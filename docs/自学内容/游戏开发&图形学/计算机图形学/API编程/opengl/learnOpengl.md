@@ -3004,6 +3004,8 @@ for(std::map<float,glm::vec3>::reverse_iterator it = sorted.rbegin(); it != sort
 #### 帧缓冲
 
 - 颜色缓冲、深度信息缓冲等各种缓冲结合再起来就是帧缓冲，默认的真缓冲是窗口时生成和配置的
+- 帧缓冲是一种容器对象，用于管理多个附件
+- 可以用于**离屏渲染**：将渲染结果输出到纹理或其他附件上而不是直接显示在屏幕
 
 
 
@@ -3027,6 +3029,70 @@ glBindFramebuffer(GL_FRAMEBUFFER, fbo);
   - 所有的附件都必须是完整的（保留了内存）。
   - 每个缓冲都应该有相同的样本数(sample)。
 - 检查帧缓冲是否完整`if(glCheckFramebufferStatus(GL_FRAMEBUFFER) == GL_FRAMEBUFFER_COMPLETE)`
+
+- 之后所有的渲染操作将会渲染到当前绑定帧缓冲的附件中,要保证所有的渲染操作在主窗口中有视觉效果，我们需要再次激活默认帧缓冲，将它绑定到`0`。
+  - `glBindFramebuffer(GL_FRAMEBUFFER, 0);`
+
+
+
+##### 纹理附件
+
+- 可以**直接采样**，适合需要**后续处理**的情况
+
+- 当把一个纹理附加到帧缓冲的时候，所有的渲染指令将会写入到这个纹理中，所有渲染操作的结果将会被储存在一个纹理图像中
+
+```c++
+unsigned int texture;
+glGenTextures(1, &texture);
+glBindTexture(GL_TEXTURE_2D, texture);
+//只分配空间，并没有设置纹理数据
+glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, 800, 600, 0, GL_RGB, GL_UNSIGNED_BYTE, NULL);
+
+glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+glFramebufferTexture2D(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, GL_TEXTURE_2D, texture, 0);
+
+//创建一个深度&模板缓冲的纹理（正好24+8=32）
+glTexImage2D(
+  GL_TEXTURE_2D, 0, GL_DEPTH24_STENCIL8, 800, 600, 0, 
+  GL_DEPTH_STENCIL, GL_UNSIGNED_INT_24_8, NULL
+);
+glFramebufferTexture2D(GL_FRAMEBUFFER, GL_DEPTH_STENCIL_ATTACHMENT, GL_TEXTURE_2D, texture, 0);
+```
+
+- 将纹理附加到帧缓冲`glFramebufferTexture2D(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, GL_TEXTURE_2D, texture, 0);`
+  - `target`：帧缓冲的目标（绘制、读取或者两者皆有）
+  - `attachment`：我们想要附加的附件类型。当前我们正在附加一个颜色附件。注意最后的`0`意味着我们可以附加多个颜色附件。我们将在之后的教程中提到。
+  - `textarget`：你希望附加的纹理类型
+  - `texture`：要附加的纹理本身
+  - `level`：多级渐远纹理的级别。我们将它保留为0。
+
+
+
+##### 渲染缓冲对象附件
+
+- 用于存储渲染过程中生成的数据，**不能直接采样**，主要用于**中间渲染结果的存储**，实际存储了渲染数据
+  - 直接将多有的渲染数据存储到缓冲中，不进行任何转换，效率很高
+  - 渲染缓冲对象通常都是**只写**的：不能采样（通过纹理坐标进行访问），但是可以将数据复制到纹理再进行访问
+
+```c++
+unsigned int rbo;
+glGenRenderbuffers(1, &rbo);
+//绑定帧缓冲对象
+glBindRenderbuffer(GL_RENDERBUFFER, rbo);
+//为渲染缓冲对象分配存储空间
+glRenderbufferStorage(GL_RENDERBUFFER, GL_DEPTH24_STENCIL8, 800, 600);
+//将渲染缓冲对象附加到帧缓冲对象
+glFramebufferRenderbuffer(GL_FRAMEBUFFER, GL_DEPTH_STENCIL_ATTACHMENT, GL_RENDERBUFFER, rbo);
+```
+
+##### 渲染到纹理
+
+- 
+
+##### 后期处理
+
+- 
 
 ### 高级光照
 
