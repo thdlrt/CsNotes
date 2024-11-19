@@ -3088,11 +3088,225 @@ glFramebufferRenderbuffer(GL_FRAMEBUFFER, GL_DEPTH_STENCIL_ATTACHMENT, GL_RENDER
 
 ##### 渲染到纹理
 
-- 
+- 将一个场景附加到帧缓冲对象上的颜色纹理并在图形上绘制这个纹理
+
+```c++
+//创建帧缓冲对象
+unsigned int framebuffer;
+glGenFramebuffers(1, &framebuffer);
+glBindFramebuffer(GL_FRAMEBUFFER, framebuffer);
+
+// 生成纹理(颜色纹理需要采样、显示，因此使用纹理附件)
+unsigned int texColorBuffer;
+glGenTextures(1, &texColorBuffer);
+glBindTexture(GL_TEXTURE_2D, texColorBuffer);
+glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, 800, 600, 0, GL_RGB, GL_UNSIGNED_BYTE, NULL);
+glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR );
+glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+glBindTexture(GL_TEXTURE_2D, 0);
+// 将它附加到当前绑定的帧缓冲对象
+glFramebufferTexture2D(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, GL_TEXTURE_2D, texColorBuffer, 0);  
+
+//深度、模板缓冲不需要采样，因此使用帧缓冲对象
+unsigned int rbo;
+glGenRenderbuffers(1, &rbo);
+glBindRenderbuffer(GL_RENDERBUFFER, rbo); 
+glRenderbufferStorage(GL_RENDERBUFFER, GL_DEPTH24_STENCIL8, 800, 600);  
+glBindRenderbuffer(GL_RENDERBUFFER, 0);
+glFramebufferRenderbuffer(GL_FRAMEBUFFER, GL_DEPTH_STENCIL_ATTACHMENT, GL_RENDERBUFFER, rbo);
+
+//检查是否完整
+if(glCheckFramebufferStatus(GL_FRAMEBUFFER) != GL_FRAMEBUFFER_COMPLETE)
+    std::cout << "ERROR::FRAMEBUFFER:: Framebuffer is not complete!" << std::endl;
+//接下来将新的帧缓冲绑定为激活的帧缓冲
+glBindFramebuffer(GL_FRAMEBUFFER, 0);
+```
+
+- 离屏渲染
+
+```c++
+glBindFramebuffer(GL_FRAMEBUFFER, framebuffer);  // 绑定自定义帧缓冲
+glClearColor(0.1f, 0.1f, 0.1f, 1.0f);            // 设置清屏颜色
+glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT); // 清空颜色缓冲和深度缓冲
+glEnable(GL_DEPTH_TEST);                         // 启用深度测试
+DrawScene();                                     // 渲染场景
+```
+
+- 屏幕渲染
+
+```c++
+glBindFramebuffer(GL_FRAMEBUFFER, 0);            // 绑定默认帧缓冲（屏幕帧缓冲）
+glClearColor(1.0f, 1.0f, 1.0f, 1.0f);            // 设置屏幕清屏颜色为白色
+glClear(GL_COLOR_BUFFER_BIT);                    // 清空屏幕的颜色缓冲
+screenShader.use();                              // 使用屏幕渲染的着色器
+glBindVertexArray(quadVAO);                      // 绑定渲染屏幕四边形的VAO
+glDisable(GL_DEPTH_TEST);                        // 禁用深度测试
+glBindTexture(GL_TEXTURE_2D, textureColorbuffer);// 绑定第一阶段的颜色缓冲纹理
+glDrawArrays(GL_TRIANGLES, 0, 6);                // 绘制屏幕四边形
+
+```
 
 ##### 后期处理
 
-- 
+- 可以在离屏渲染后，切换使用后期处理着色器，即实现在屏幕渲染阶段的后期处理
+  - 此时可以实现很多效果，因为可以获得一个像素及其周边像素的数据(核采样时要小心环绕扩展方式造成的影响)
+- 如模糊效果$\begin{bmatrix}1&2&1\\2&4&2\\1&2&1\end{bmatrix}/16$
+
+#### 立方体贴图
+
+- 立方体贴图由6个普通的平面贴图组成
+  - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/undefinedimage-20241119160505281.png" alt="image-20241119160505281" style="zoom:67%;" />
+- 创建并绑定立方体贴图的面
+
+```c++
+unsigned int loadCubemap(vector<std::string> faces)
+{
+    unsigned int textureID;
+    glGenTextures(1, &textureID);
+    glBindTexture(GL_TEXTURE_CUBE_MAP, textureID);
+
+    int width, height, nrChannels;
+    for (unsigned int i = 0; i < faces.size(); i++)
+    {
+        unsigned char *data = stbi_load(faces[i].c_str(), &width, &height, &nrChannels, 0);
+        if (data)
+        {
+            glTexImage2D(GL_TEXTURE_CUBE_MAP_POSITIVE_X + i, 
+                         0, GL_RGB, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, data
+            );
+            stbi_image_free(data);
+        }
+        else
+        {
+            std::cout << "Cubemap texture failed to load at path: " << faces[i] << std::endl;
+            stbi_image_free(data);
+        }
+    }
+    glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+    glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+    glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
+    glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
+    glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_WRAP_R, GL_CLAMP_TO_EDGE);
+
+    return textureID;
+}
+
+vector<std::string> faces
+{
+    "right.jpg",
+    "left.jpg",
+    "top.jpg",
+    "bottom.jpg",
+    "front.jpg",
+    "back.jpg"
+};
+unsigned int cubemapTexture = loadCubemap(faces);
+```
+
+- 片段着色器中要使用samplerCube
+
+```glsl
+#version 330 core
+layout (location = 0) in vec3 aPos;
+
+out vec3 TexCoords;
+
+uniform mat4 projection;
+uniform mat4 view;
+
+void main()
+{
+    TexCoords = aPos;
+    gl_Position = projection * view * vec4(aPos, 1.0);
+}
+
+
+
+#version 330 core
+out vec4 FragColor;
+
+in vec3 TexCoords;
+
+uniform samplerCube skybox;
+
+void main()
+{    
+    FragColor = texture(skybox, TexCoords);
+}
+```
+
+##### 天空盒
+
+- 立方体贴图可以用于实现天空盒
+- 为了在天空盒中有移动效果，可以消除调控和的位移效果（即不因摄像机动而动），但是保留旋转效果
+- 先渲染场景物体，最后再渲染天空盒；通过**提前深度测试**，在天空盒渲染阶段快速丢弃被场景物体遮挡的像素，从而减少片段着色器的运行。（天空盒的深度始终为最大的1.0）
+  - 要将条件从小于改为小于等于`glDepthFunc(GL_LEQUAL);`
+
+##### 环境映射
+
+- 通过环境的立方体贴图，给物体反射和折射属性
+
+- 当立方体位于(0,0,0)时每个位置向量都是**从原点出发的方向向量**，这个方向向量正是获取立方体上**特定位置的纹理值**所需要的（即**通过方向向量来获取数据**）
+
+###### 反射
+
+<img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/undefinedcubemaps_reflection_theory.png" alt="img" style="zoom:67%;" />
+
+- 计算得到反射向量，通过反射向量采样立方体贴图，返回环境的颜色值
+
+```glsl
+#version 330 core
+layout (location = 0) in vec3 aPos;
+layout (location = 1) in vec3 aNormal;
+
+out vec3 Normal;
+out vec3 Position;
+
+uniform mat4 model;
+uniform mat4 view;
+uniform mat4 projection;
+
+void main()
+{
+    Normal = mat3(transpose(inverse(model))) * aNormal;
+    Position = vec3(model * vec4(aPos, 1.0));
+    gl_Position = projection * view * model * vec4(aPos, 1.0);
+}
+
+
+
+#version 330 core
+out vec4 FragColor;
+
+in vec3 Normal;
+in vec3 Position;
+
+uniform vec3 cameraPos;
+uniform samplerCube skybox;
+
+void main()
+{             
+    vec3 I = normalize(Position - cameraPos);
+    vec3 R = reflect(I, normalize(Normal));
+    FragColor = vec4(texture(skybox, R).rgb, 1.0);
+}
+```
+
+###### 折射
+
+- 类似的，通过折射定律获取方向获取法向量，进而获取材质数据
+
+```glsl
+void main()
+{             
+    float ratio = 1.00 / 1.52;
+    vec3 I = normalize(Position - cameraPos);
+    vec3 R = refract(I, normalize(Normal), ratio);
+    FragColor = vec4(texture(skybox, R).rgb, 1.0);
+}
+```
+
+
 
 ### 高级光照
 
