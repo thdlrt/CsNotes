@@ -3306,7 +3306,186 @@ void main()
 }
 ```
 
+#### 高级数据
 
+- 通过`glBufferData`可以创建缓冲对象，并用数据立即进行填充
+- 也可以通过`glBufferSubData`来填充特定的缓冲区域
+  - `glBufferSubData(GL_ARRAY_BUFFER, 24, sizeof(data), &data);`
+  - 缓冲目标、偏移量、数据大小、数据源
+  - 要保证缓冲区有足够大的内存
+- 也可以直接`void *ptr = glMapBuffer(GL_ARRAY_BUFFER, GL_WRITE_ONLY);`获取缓冲区内存的指针，再通过`memcpy`等直接修改缓冲区的内容
+  - 释放指针`glUnmapBuffer(GL_ARRAY_BUFFER);`
+
+
+
+- 除了使用类似结构体那样交替存储顶点数据（123123123123），采用分批的方式进行存储（111122223333）
+  - 有时获得的时这种分批方式存储的数据
+
+```c++
+float positions[] = { ... };
+float normals[] = { ... };
+float tex[] = { ... };
+// 填充缓冲
+glBufferSubData(GL_ARRAY_BUFFER, 0, sizeof(positions), &positions);
+glBufferSubData(GL_ARRAY_BUFFER, sizeof(positions), sizeof(normals), &normals);
+glBufferSubData(GL_ARRAY_BUFFER, sizeof(positions) + sizeof(normals), sizeof(tex), &tex);
+//绑定
+glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), 0);  
+glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)(sizeof(positions)));  
+glVertexAttribPointer(
+  2, 2, GL_FLOAT, GL_FALSE, 2 * sizeof(float), (void*)(sizeof(positions) + sizeof(normals)));
+```
+
+
+
+- 复制缓冲`void glCopyBufferSubData(GLenum readtarget, GLenum writetarget, GLintptr readoffset, GLintptr writeoffset, GLsizeiptr size);`
+  - `readtarget`和`writetarget`参数需要填入复制源和复制目标的缓冲目标。比如说，我们可以将VERTEX_ARRAY_BUFFER缓冲复制到VERTEX_ELEMENT_ARRAY_BUFFER缓冲
+- 也可以使用提供的专供复制的GL_COPY_READ_BUFFER和GL_COPY_WRITE_BUFFER
+
+```c++
+float vertexData[] = { ... };
+glBindBuffer(GL_COPY_READ_BUFFER, vbo1);
+glBindBuffer(GL_COPY_WRITE_BUFFER, vbo2);
+glCopyBufferSubData(GL_COPY_READ_BUFFER, GL_COPY_WRITE_BUFFER, 0, 0, sizeof(vertexData));
+```
+
+
+
+#### 高级glsl
+
+##### 着色器的内建变量
+
+###### 顶点着色器
+
+- `gl_PointSize`：输出变量，float，可以用于设置点的宽高（像素）、
+  - 默认禁用，需要先`glEnable(GL_PROGRAM_POINT_SIZE);`
+  - 可以动态设置，比如根据z进行设置，就可以实现距离变远点增大等
+- `gl_VertexID`：输入变量，存储了正在绘制的顶点的ID，使用索引绘制时，这个值就等于索引值；否则为从渲染调用开始的已处理的顶点数量
+
+###### 片段着色器
+
+- `gl_FragCoord`：输入变量，Vec3，xy分量为片段的窗口坐标（左下角为原点），z为片段的深度值（**只读**）
+- `gl_FrontFacing`：输入百年来那个，bool，可以获取当前片段式属于正向面还是属于北背向面的想（如果你开启了面剔除，你就看不到箱子内部的面了，所以现在再使用gl_FrontFacing就没有意义了。）
+- `gl_FragDepth`：输出变量，float，可以设置深度值
+  - 使用了则会禁用提前深度测试
+  - 可以使用深度条件进行声明`layout (depth_<condition>) out float gl_FragDepth;`
+  - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/undefinedimage-20241119174156028.png" alt="image-20241119174156028" style="zoom:50%;" />
+  - 这样就能保留部分的提前深度测试
+
+##### 接口块
+
+- 通过接口快可以**组合**要从顶点着色器发送到片段着色器的数据
+
+```glsl
+#version 330 core
+layout (location = 0) in vec3 aPos;
+layout (location = 1) in vec2 aTexCoords;
+
+uniform mat4 model;
+uniform mat4 view;
+uniform mat4 projection;
+
+out VS_OUT
+{
+    vec2 TexCoords;
+} vs_out;
+
+void main()
+{
+    gl_Position = projection * view * model * vec4(aPos, 1.0);    
+    vs_out.TexCoords = aTexCoords;
+}  
+//片段着色器中
+in VS_OUT
+{
+    vec2 TexCoords;
+} fs_in;
+```
+
+- 这就生命力一个`vs_out`接口块，打包了要发送的所有输出变量
+- 输入和输出的块名（VS_OUT）要一样，但是实例名可以不一样
+
+##### Uniform缓冲对象
+
+- 使用Uniform缓冲对象可以定义协议系列在**多个着色器程序中相同的全局Uniform变量**，这样就只需要设置相关的uniform一次，只需要手动设置每个着色器中不同的uniform
+- 通过glGenBuffers创建缓冲，并绑定到GL_UNIFORM_BUFFER缓冲目标，并将所有相关的uniform数据存入缓冲。
+
+
+
+- uniform块
+  - Uniform块中的变量可以直接访问，不需要加块名作为前缀。
+  - layout (std140)表示当前定义的Uniform块对它的内容使用一个特定的内存布局
+
+```glsl
+layout (std140) uniform ExampleBlock
+{
+    float value;
+    vec3  vector;
+    mat4  matrix;
+    float values[3];
+    bool  boolean;
+    int   integer;
+};
+```
+
+- uniform块的内容是存储在缓冲对象上的，我们还需要告诉opengl缓冲对象内存的那一部分对应哪一个uniform块成员变量
+
+  - 我们需要知道的是每个变量的大小（字节）和（从块起始位置的）偏移量，来让我们能够按顺序将它们放进缓冲中。
+
+- 通常使用**std布局**：std140布局声明了每个变量的偏移量都是由一系列规则所决定的。同时允许手动计算变量的偏移量
+
+  - 在默认的**共享布局**（Shared Layout）中，变量的实际偏移量需要通过`glGetUniformLocation`等**API动态查询**，不仅复杂，而且增加了运行时开销。
+
+    `std140`布局通过明确的规则直接决定偏移量，使得我们可以**手动计算偏移**，省去了查询的麻烦。
+
+  - **基准对齐量**：变量在Uniform块中所需的最小对齐空间，包括潜在的填充字节
+
+  - **对齐偏移量**：变量在块中的实际偏移量，必须是其基准对齐量的整数倍。
+
+  - ![image-20241119181452165](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefinedimage-20241119181452165.png)
+
+    - 通常N=4B
+
+```glsl
+layout (std140) uniform ExampleBlock
+{
+                     // 基准对齐量       // 对齐偏移量
+    float value;     // 4               // 0 
+    vec3 vector;     // 16              // 16  (必须是16的倍数，所以 4->16)
+    mat4 matrix;     // 16              // 32  (列 0)
+                     // 16              // 48  (列 1)
+                     // 16              // 64  (列 2)
+                     // 16              // 80  (列 3)
+    float values[3]; // 16              // 96  (values[0])
+                     // 16              // 112 (values[1])
+                     // 16              // 128 (values[2])
+    bool boolean;    // 4               // 144
+    int integer;     // 4               // 148
+}; 
+```
+
+- 通过将多个Uniform块绑定到相同的缓冲上，就可以实现数据的共享（如果定义了相同的Uniform块）
+  - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/undefinedadvanced_glsl_binding_points.png" alt="img" style="zoom:67%;" />
+
+```glsl
+unsigned int uboExampleBlock;
+glGenBuffers(1, &uboExampleBlock);
+glBindBuffer(GL_UNIFORM_BUFFER, uboExampleBlock);
+glBufferData(GL_UNIFORM_BUFFER, 152, NULL, GL_STATIC_DRAW); // 分配152字节的内存
+glBindBuffer(GL_UNIFORM_BUFFER, 0);
+
+
+```
+
+
+
+#### 实例化
+
+- 
+
+#### 抗锯齿
+
+- 
 
 ### 高级光照
 
