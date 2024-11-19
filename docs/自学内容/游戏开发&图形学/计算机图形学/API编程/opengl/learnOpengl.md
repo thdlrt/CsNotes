@@ -3464,17 +3464,42 @@ layout (std140) uniform ExampleBlock
 }; 
 ```
 
+
+
+- uniform**缓冲对象ubo**：GPU显存中的缓冲区，用于存储uniform块的数据
+- **Uniform块**是GLSL中的一个结构，用于统一管理多个`uniform`变量
+- 绑定点起到了**桥梁**作用，沟通ubo和uniform块
 - 通过将多个Uniform块绑定到相同的缓冲上，就可以实现数据的共享（如果定义了相同的Uniform块）
   - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/undefinedadvanced_glsl_binding_points.png" alt="img" style="zoom:67%;" />
 
 ```glsl
+//创建缓冲UBO
 unsigned int uboExampleBlock;
 glGenBuffers(1, &uboExampleBlock);
 glBindBuffer(GL_UNIFORM_BUFFER, uboExampleBlock);
 glBufferData(GL_UNIFORM_BUFFER, 152, NULL, GL_STATIC_DRAW); // 分配152字节的内存
 glBindBuffer(GL_UNIFORM_BUFFER, 0);
 
+//Uniform块绑定到一个特定的绑定点中
+//获取uniform块的索引
+unsigned int lights_index = glGetUniformBlockIndex(shaderA.ID, "Lights");   
+//将uniform块绑定到2绑定点
+glUniformBlockBinding(shaderA.ID, lights_index, 2);
+//将ubo绑定到绑定点
+glBindBufferBase(GL_UNIFORM_BUFFER, 2, uboExampleBlock); 
+```
 
+- 也可以这样讲uniform块绑定到绑定点`layout(std140, binding = 2) uniform Lights { ... };`
+
+
+
+- 修改uniform缓冲中的内容
+
+```c++
+glBindBuffer(GL_UNIFORM_BUFFER, uboExampleBlock);
+int b = true; // GLSL中的bool是4字节
+glBufferSubData(GL_UNIFORM_BUFFER, 144, 4, &b);
+glBindBuffer(GL_UNIFORM_BUFFER, 0);
 ```
 
 
