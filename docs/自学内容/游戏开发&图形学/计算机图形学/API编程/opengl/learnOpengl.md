@@ -3507,9 +3507,81 @@ glBindBuffer(GL_UNIFORM_BUFFER, 0);
 - 介于顶点着色器和片段着色器之间
 - 
 
-#### 实例化
+#### 实例化渲染
 
-- 
+- 实例化渲染通常会用于渲染草、植被、粒子，基本上只要场景中有很多重复的形状，都能够使用实例化渲染来提高性能。
+
+- 反复绑定VAO，由cpu去告诉gpu如何绘制，这样绘制多个物体是较慢的，如果我们能够将数据**一次性发送**给GPU，然后使用**一个绘制函数**让OpenGL利用这些数据绘制多个物体，就会更方便了。这就是实例化。
+  - 即一个渲染调用来绘制多个物体，接受CPU->GPU通信
+- 有一个额外参数，告诉GPU渲染的次数；微粒让物体渲染不同（而不是重复一个位置），着色器中有一个in变量`gl_InstanceID`
+  - 这个值从0开始，每个示例被渲染时递增1
+  - `glDrawArraysInstanced(GL_TRIANGLES, 0, 6, 100);`即渲染100次
+
+
+
+- 利用这个值很容易实现矩阵排列
+
+```c++
+#version 330 core
+layout (location = 0) in vec2 aPos;
+layout (location = 1) in vec3 aColor;
+
+out vec3 fColor;
+
+uniform vec2 offsets[100];
+
+void main()
+{
+    vec2 offset = offsets[gl_InstanceID];
+    gl_Position = vec4(aPos + offset, 0.0, 1.0);
+    fColor = aColor;
+}
+```
+
+<img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/undefinedinstancing_quads.png" alt="img" style="zoom:50%;" />
+
+- 使用`uniform`数组传递偏移数据时，当实例数量较多时会受到GPU硬件对`uniform`变量数量限制的制约。并且每次绘制都需要根据`gl_InstanceID`从`uniform`数组中索引数据，这种方式受限于数据带宽和硬件能力。
+- 实例化数组：将逐实例的数据存储为顶点属性并通过**顶点缓冲对象（VBO）**传递，可以突破`uniform`数量限制。通过设置更新频率在每个顶点计算时进行更新
+
+```glsl
+#version 330 core
+layout (location = 0) in vec2 aPos;       // 顶点位置
+layout (location = 1) in vec3 aColor;     // 颜色
+layout (location = 2) in vec2 aOffset;    // 偏移量（实例化数组）
+
+out vec3 fColor;
+
+void main()
+{
+    gl_Position = vec4(aPos + aOffset, 0.0, 1.0); // 使用偏移量
+    fColor = aColor;
+}
+
+```
+
+- 创建实例化VBO
+
+```glsl
+unsigned int instanceVBO;
+glGenBuffers(1, &instanceVBO);
+glBindBuffer(GL_ARRAY_BUFFER, instanceVBO);
+// 将偏移量数组的数据传递到VBO
+glBufferData(GL_ARRAY_BUFFER, sizeof(glm::vec2) * 100, &translations[0], GL_STATIC_DRAW);
+glBindBuffer(GL_ARRAY_BUFFER, 0);
+
+glEnableVertexAttribArray(2); // 启用属性位置 2（aOffset）
+glBindBuffer(GL_ARRAY_BUFFER, instanceVBO);
+glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, 2 * sizeof(float), (void*)0);
+glBindBuffer(GL_ARRAY_BUFFER, 0);
+
+glVertexAttribDivisor(2, 1);//设置更新频率1
+
+glBindVertexArray(quadVAO);
+glDrawArraysInstanced(GL_TRIANGLES, 0, 6, 100);
+
+```
+
+- 即索引获取值的工作从着色器转移到了CPU
 
 #### 抗锯齿
 
@@ -3570,6 +3642,9 @@ glBlitFramebuffer(0, 0, width, height, 0, 0, width, height, GL_COLOR_BUFFER_BIT,
 ```
 
 
+
+- 由于多重采样纹理无法直接在片段着色器中采样，因此无法直接用于后期处理
+  - 通过将多重采样帧缓冲的内容还原到普通的帧缓冲生成可采样的2D纹理，然后使用该纹理作为输入进行后期处理。
 
 ### 高级光照
 
