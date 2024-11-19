@@ -3012,9 +3012,21 @@ for(std::map<float,glm::vec3>::reverse_iterator it = sorted.rbegin(); it != sort
 ```c++
 unsigned int fbo;
 glGenFramebuffers(1, &fbo);
+//绑定为当前激活的帧缓冲
+glBindFramebuffer(GL_FRAMEBUFFER, fbo);
 ```
 
+- 绑定帧缓冲之后，所有的读取和写入帧缓冲的操作都会影响绑定的帧缓冲
+  - 也可以用GL_READ_FRAMEBUFFER或GL_DRAW_FRAMEBUFFER分别进行绑定
 
+
+
+- 完整的帧缓冲：
+  - 附加至少一个缓冲（颜色、深度或模板缓冲）。
+  - 至少有一个颜色附件(Attachment)。
+  - 所有的附件都必须是完整的（保留了内存）。
+  - 每个缓冲都应该有相同的样本数(sample)。
+- 检查帧缓冲是否完整`if(glCheckFramebufferStatus(GL_FRAMEBUFFER) == GL_FRAMEBUFFER_COMPLETE)`
 
 ### 高级光照
 
