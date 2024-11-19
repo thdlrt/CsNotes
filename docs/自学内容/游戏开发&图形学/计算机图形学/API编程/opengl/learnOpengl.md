@@ -3502,7 +3502,10 @@ glBufferSubData(GL_UNIFORM_BUFFER, 144, 4, &b);
 glBindBuffer(GL_UNIFORM_BUFFER, 0);
 ```
 
+#### 几何着色器
 
+- 介于顶点着色器和片段着色器之间
+- 
 
 #### 实例化
 
@@ -3510,7 +3513,63 @@ glBindBuffer(GL_UNIFORM_BUFFER, 0);
 
 #### 抗锯齿
 
-- 
+- 要使用MSAA需要在每个像素中存储**大于1个颜色值**的颜色缓冲，即多重采样缓冲
+
+
+
+- 通过GLFW可以快速实现MSAA
+
+- `glfwWindowHint(GLFW_SAMPLES, 4);`之后再创建渲染窗口，每个屏幕坐标就会有一个包含4个子采样点的颜色缓冲了。
+  - 之后确保开启多重采样`glEnable(GL_MULTISAMPLE);`
+
+
+
+##### 离屏MSAA
+
+- 通过帧缓冲来实现
+
+- 创建支持多采样点的纹理
+
+```c++
+// 1. 创建多重采样帧缓冲
+GLuint multisampledFBO;
+glGenFramebuffers(1, &multisampledFBO);
+glBindFramebuffer(GL_FRAMEBUFFER, multisampledFBO);
+
+// 1.1 创建并附加多重采样纹理附件
+GLuint tex;
+glGenTextures(1, &tex);
+glBindTexture(GL_TEXTURE_2D_MULTISAMPLE, tex);
+glTexImage2DMultisample(GL_TEXTURE_2D_MULTISAMPLE, 4, GL_RGB, width, height, GL_TRUE);
+glFramebufferTexture2D(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, GL_TEXTURE_2D_MULTISAMPLE, tex, 0);
+
+// 1.2 创建并附加多重采样渲染缓冲（深度和模板缓冲）
+GLuint rbo;
+glGenRenderbuffers(1, &rbo);
+glBindRenderbuffer(GL_RENDERBUFFER, rbo);
+glRenderbufferStorageMultisample(GL_RENDERBUFFER, 4, GL_DEPTH24_STENCIL8, width, height);
+glFramebufferRenderbuffer(GL_FRAMEBUFFER, GL_DEPTH_STENCIL_ATTACHMENT, GL_RENDERBUFFER, rbo);
+
+// 检查帧缓冲完整性
+if (glCheckFramebufferStatus(GL_FRAMEBUFFER) != GL_FRAMEBUFFER_COMPLETE)
+    std::cout << "ERROR::FRAMEBUFFER:: Framebuffer is not complete!" << std::endl;
+glBindFramebuffer(GL_FRAMEBUFFER, 0);
+
+// 2. 渲染到多重采样帧缓冲
+glBindFramebuffer(GL_FRAMEBUFFER, multisampledFBO);
+glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+glEnable(GL_DEPTH_TEST);
+RenderScene();
+glBindFramebuffer(GL_FRAMEBUFFER, 0);
+
+// 3. 解析多重采样图像并显示
+glBindFramebuffer(GL_READ_FRAMEBUFFER, multisampledFBO);
+glBindFramebuffer(GL_DRAW_FRAMEBUFFER, 0);
+glBlitFramebuffer(0, 0, width, height, 0, 0, width, height, GL_COLOR_BUFFER_BIT, GL_NEAREST);
+
+```
+
+
 
 ### 高级光照
 
