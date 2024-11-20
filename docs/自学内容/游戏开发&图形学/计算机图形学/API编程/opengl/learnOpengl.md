@@ -3504,8 +3504,72 @@ glBindBuffer(GL_UNIFORM_BUFFER, 0);
 
 #### 几何着色器
 
+- 图元是图形渲染管线中绘制几何图形的基本单位
+  - 点
+  - 线
+  - 三角形
+
 - 介于顶点着色器和片段着色器之间
-- 
+  - 给予输入的图元生成**新的图元或修改现有的图元**
+  - 比如将点转化为边
+
+
+
+
+```glsl
+#version 330 core
+    layout (points) in;//输入的图元
+layout (line_strip, max_vertices = 2) out;//输出的图元
+
+void main() {    
+    //设置第一个点
+    gl_Position = gl_in[0].gl_Position + vec4(-0.1, 0.0, 0.0, 0.0); 
+    EmitVertex();//发射（即gl_position中的向量会被添加到图元中）
+	//设置第二个点
+    gl_Position = gl_in[0].gl_Position + vec4( 0.1, 0.0, 0.0, 0.0);
+    EmitVertex();//发射
+	//图元结束
+    EndPrimitive();
+}
+```
+
+- 这里的in和out不是具体的变量，而是类型，用于指定集合着色器处理图元的方式
+- 几何着色器接受的图元输入
+  - `points`：绘制GL_POINTS图元时（1）。
+  - `lines`：绘制GL_LINES或GL_LINE_STRIP时（2）
+  - `lines_adjacency`：GL_LINES_ADJACENCY或GL_LINE_STRIP_ADJACENCY（4）
+  - `triangles`：GL_TRIANGLES、GL_TRIANGLE_STRIP或GL_TRIANGLE_FAN（3）
+  - `triangles_adjacency`：GL_TRIANGLES_ADJACENCY或GL_TRIANGLE_STRIP_ADJACENCY（6）
+
+
+
+- 通过glsl内建变量`gl_in[]`获取数据
+
+```glsl
+in gl_Vertex
+{
+    vec4  gl_Position;
+    float gl_PointSize;
+    float gl_ClipDistance[];
+} gl_in[];
+```
+
+
+
+- 编译和链接几何着色器
+
+```c++
+geometryShader = glCreateShader(GL_GEOMETRY_SHADER);
+glShaderSource(geometryShader, 1, &gShaderCode, NULL);
+glCompileShader(geometryShader);  
+...
+glAttachShader(program, geometryShader);
+glLinkProgram(program);
+```
+
+
+
+
 
 #### 实例化渲染
 
