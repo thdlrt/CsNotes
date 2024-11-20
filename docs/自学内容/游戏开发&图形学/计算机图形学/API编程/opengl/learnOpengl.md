@@ -3895,7 +3895,8 @@ float ShadowCalculation(vec4 fragPosLightSpace)
 ##### 点光源阴影（万向阴影贴图）
 
 - 点光源会向各个方向发射光，也就是说阴影可以处于四周，不能像平行光那样使用一张深度贴图
-- 
+  - 使用立方体贴图，存储6个面的环境数据、
+- [原教程](https://learnopengl-cn.github.io/05%20Advanced%20Lighting/03%20Shadows/02%20Point%20Shadows/)
 
 ##### 阴影失真
 
@@ -3969,6 +3970,70 @@ shadow /= 9.0;
 ```
 
 #### 法线贴图
+
+- 可以使用2D纹理来存储法线数据，xyz三个方向分辨对应颜色的rgb
+- 通常切线都是指向Z轴，因此看起来为蓝色
+
+```glsl
+// 从法线贴图范围[0,1]获取法线
+normal = texture(normalMap, fs_in.TexCoords).rgb;
+// 将法线向量转换为范围[-1,1]
+normal = normalize(normal * 2.0 - 1.0); 
+```
+
+- 物体有旋转等变换时不能直接使用法线贴图
+
+##### 切线空间
+
+- 在切线空间中，法线指向z方向，法线贴图被定义在切线空间
+  - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/undefinednormal_mapping_tbn_vectors.png" alt="img" style="zoom:50%;" />
+- 从一个三角形的顶点计算切线空间
+  - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/undefinednormal_mapping_surface_edges.png" alt="img" style="zoom:50%;" />
+  - $\begin{aligned}(E_{1x},E_{1y},E_{1z})&=\Delta U_1(T_x,T_y,T_z)+\Delta V_1(B_x,B_y,B_z)\\(E_{2x},E_{2y},E_{2z})&=\Delta U_2(T_x,T_y,T_z)+\Delta V_2(B_x,B_y,B_z)\end{aligned}$
+  - 计算公式$\begin{bmatrix}T_x&T_y&T_z\\B_x&B_y&B_z\end{bmatrix}=\frac1{\Delta U_1\Delta V_2-\Delta U_2\Delta V_1}\begin{bmatrix}\Delta V_2&-\Delta V_1\\-\Delta U_2&\Delta U_1\end{bmatrix}\begin{bmatrix}E_{1x}&E_{1y}&E_{1z}\\E_{2x}&E_{2y}&E_{2z}\end{bmatrix}$
+
+```C++
+glm::vec3 edge1 = pos2 - pos1;
+glm::vec3 edge2 = pos3 - pos1;
+glm::vec2 deltaUV1 = uv2 - uv1;
+glm::vec2 deltaUV2 = uv3 - uv1;
+
+GLfloat f = 1.0f / (deltaUV1.x * deltaUV2.y - deltaUV2.x * deltaUV1.y);
+
+tangent1.x = f * (deltaUV2.y * edge1.x - deltaUV1.y * edge2.x);
+tangent1.y = f * (deltaUV2.y * edge1.y - deltaUV1.y * edge2.y);
+tangent1.z = f * (deltaUV2.y * edge1.z - deltaUV1.y * edge2.z);
+tangent1 = glm::normalize(tangent1);
+
+bitangent1.x = f * (-deltaUV2.x * edge1.x + deltaUV1.x * edge2.x);
+bitangent1.y = f * (-deltaUV2.x * edge1.y + deltaUV1.x * edge2.y);
+bitangent1.z = f * (-deltaUV2.x * edge1.z + deltaUV1.x * edge2.z);
+bitangent1 = glm::normalize(bitangent1);  
+
+[...] // 对平面的第二个三角形采用类似步骤计算切线和副切线
+```
+
+- 通过参数传递在着色器中获取tbn矩阵
+
+```C++
+#version 330 core
+layout (location = 0) in vec3 position;
+layout (location = 1) in vec3 normal;
+layout (location = 2) in vec2 texCoords;
+layout (location = 3) in vec3 tangent;
+layout (location = 4) in vec3 bitangent;
+
+void main()
+{
+   [...]
+   vec3 T = normalize(vec3(model * vec4(tangent,   0.0)));
+   vec3 B = normalize(vec3(model * vec4(bitangent, 0.0)));
+   vec3 N = normalize(vec3(model * vec4(normal,    0.0)));
+   mat3 TBN = mat3(T, B, N)
+}
+```
+
+
 
 #### 视差贴图
 
