@@ -3541,6 +3541,8 @@ void main() {
   - `triangles`：GL_TRIANGLES、GL_TRIANGLE_STRIP或GL_TRIANGLE_FAN（3）
   - `triangles_adjacency`：GL_TRIANGLES_ADJACENCY或GL_TRIANGLE_STRIP_ADJACENCY（6）
 
+- 如果定义了几何着色器，那么要**手动**将顶点着色器的out传递给**片段着色器**
+
 
 
 - 通过glsl内建变量`gl_in[]`获取数据
@@ -3569,7 +3571,32 @@ glLinkProgram(program);
 
 
 
+- 在调用 `EmitVertex()` 时，几何着色器会将当前设置的顶点属性（如 `gl_Position` 和自定义的 `out` 变量）作为一个新的顶点，保存到输出缓冲区中。
+  - 也就是说out变量也会进行传递
 
+```c++
+fColor = gs_in[0].color; 
+gl_Position = position + vec4(-0.2, -0.2, 0.0, 0.0);    // 1:左下 
+EmitVertex();   
+gl_Position = position + vec4( 0.2, -0.2, 0.0, 0.0);    // 2:右下
+EmitVertex();
+gl_Position = position + vec4(-0.2,  0.2, 0.0, 0.0);    // 3:左上
+EmitVertex();
+gl_Position = position + vec4( 0.2,  0.2, 0.0, 0.0);    // 4:右上
+EmitVertex();
+gl_Position = position + vec4( 0.0,  0.4, 0.0, 0.0);    // 5:顶部
+fColor = vec3(1.0, 1.0, 1.0);
+EmitVertex();
+EndPrimitive();  
+```
+
+- 这就实现了最后一个点和前面的点颜色不同
+
+
+
+- 可以实现很多效果：
+  - 面位移实现爆破效果
+  - 显示所有面的法线等等
 
 #### 实例化渲染
 
@@ -3712,5 +3739,78 @@ glBlitFramebuffer(0, 0, width, height, 0, 0, width, height, GL_COLOR_BUFFER_BIT,
 
 ### 高级光照
 
+#### Gamma矫正
+
+- Gamma用于描述非线性颜色空间中的输入与输出关系（如亮度）
+  - $V_{{\mathrm{out}}}=V_{{\mathrm{in}}}^{{\frac1\gamma}}$
+  - **Gamma = 1.0**：线性关系，输入值与输出值成正比。
+  - **Gamma > 1.0**：输出值的暗部被压缩，高光部分更明亮。
+  - **Gamma < 1.0**：输出值的暗部被拉升，图像整体更亮。
+- 物理亮度：物理亮度是指光源发射光子的数量，与光子数量成正比。
+  - 线性的，比如从亮度值 0.10.10.1 增加到 0.20.20.2，光子数量翻倍。
+- 人眼感知亮度：人眼对亮度的感知是**非线性的**，对暗部亮度变化更敏感，对高亮区域的变化则不敏感。
+  - 从亮度 0.10.10.1 增加到 0.20.20.2，我们会感受到亮度翻倍。
+  - 但从亮度 0.40.40.4 增加到 0.80.80.8，感知到的变化程度与前者类似。
+  - 显示器亮度通常是**指数映射**（2.2）而不是线性映射（早期技术限制，现在微粒兼容sRGB）
+- <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/undefinedgamma_correction_gamma_curves.png" alt="img" style="zoom: 67%;" />
+  - 因为显示器指数调整亮度，会导致中间值被压暗，因此通过gamma矫正进行修正
+  - 加上个`1/2.2`次幂，与显示器的指数中和
 
 
+
+- 使用自带的gamma矫正`glEnable(GL_FRAMEBUFFER_SRGB);`
+- 手动在着色器中进行矫正
+
+```c++
+void main()
+{
+    // do super fancy lighting 
+    [...]
+    // apply gamma correction
+    float gamma = 2.2;
+    fragColor.rgb = pow(fragColor.rgb, vec3(1.0/gamma));
+}
+```
+
+- 要注意的事对于sRGB空间中的纹理不需要再次进行gamma矫正
+- 可以在创建时指出是SRGB纹理`glTexImage2D(GL_TEXTURE_2D, 0, GL_SRGB, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, image);`这样opengl就会自动把颜色矫正到线性空间
+  - 有透明通道则要设置为：`GL_SRGB_ALPHA`
+
+##### 光线衰减
+
+- 物理上光照的衰减和光源的距离的平方成反比
+- 但是由于gamma矫正，双曲线衰减`float attenuation = 1.0 / distance;`在矫正后为$(1.0/distance^2)^{2.2}$更加额规则
+
+#### 阴影
+
+##### 阴影映射
+
+- 
+
+##### 点阴影
+
+- 
+
+##### CSM
+
+- 
+
+#### 法线贴图
+
+#### 视差贴图
+
+#### HDR
+
+#### 泛光
+
+#### 延迟着色法
+
+#### SSAO
+
+### PBR
+
+#### 理论
+
+#### 光照
+
+#### IBL
