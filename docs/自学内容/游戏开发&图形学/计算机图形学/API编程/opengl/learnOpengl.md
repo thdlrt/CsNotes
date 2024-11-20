@@ -3783,17 +3783,190 @@ void main()
 
 #### 阴影
 
-##### 阴影映射
+##### 平行光阴影
 
+- 与深度缓冲类似，只是**从光源出发**
+  - 对于平行光还要使用正交投影
+  - 使用帧缓冲渲染到深度纹理贴图供之后使用
+
+```glsl
+#version 330 core
+layout (location = 0) in vec3 position;
+layout (location = 1) in vec3 normal;
+layout (location = 2) in vec2 texCoords;
+
+out vec2 TexCoords;
+
+out VS_OUT {
+    vec3 FragPos;
+    vec3 Normal;
+    vec2 TexCoords;
+    vec4 FragPosLightSpace;
+} vs_out;
+
+uniform mat4 projection;
+uniform mat4 view;
+uniform mat4 model;
+uniform mat4 lightSpaceMatrix;
+
+void main()
+{
+    gl_Position = projection * view * model * vec4(position, 1.0f);
+    vs_out.FragPos = vec3(model * vec4(position, 1.0));
+    vs_out.Normal = transpose(inverse(mat3(model))) * normal;
+    vs_out.TexCoords = texCoords;
+    //根据传入的变换矩阵得到光空间下点的对应坐标
+    vs_out.FragPosLightSpace = lightSpaceMatrix * vec4(vs_out.FragPos, 1.0);
+}
+
+
+```
+
+- 在片段着色器中，如果根据深度判断一个点在阴影中，则将漫反射和镜面反射的值乘以0
+
+```glsl
+#version 330 core
+out vec4 FragColor;
+
+in VS_OUT {
+    vec3 FragPos;
+    vec3 Normal;
+    vec2 TexCoords;
+    vec4 FragPosLightSpace;
+} fs_in;
+
+uniform sampler2D diffuseTexture;
+uniform sampler2D shadowMap;
+
+uniform vec3 lightPos;
+uniform vec3 viewPos;
+
+float ShadowCalculation(vec4 fragPosLightSpace)
+{
+    [...]
+}
+
+void main()
+{           
+    vec3 color = texture(diffuseTexture, fs_in.TexCoords).rgb;
+    vec3 normal = normalize(fs_in.Normal);
+    vec3 lightColor = vec3(1.0);
+    // Ambient
+    vec3 ambient = 0.15 * color;
+    // Diffuse
+    vec3 lightDir = normalize(lightPos - fs_in.FragPos);
+    float diff = max(dot(lightDir, normal), 0.0);
+    vec3 diffuse = diff * lightColor;
+    // Specular
+    vec3 viewDir = normalize(viewPos - fs_in.FragPos);
+    vec3 reflectDir = reflect(-lightDir, normal);
+    float spec = 0.0;
+    vec3 halfwayDir = normalize(lightDir + viewDir);  
+    spec = pow(max(dot(normal, halfwayDir), 0.0), 64.0);
+    vec3 specular = spec * lightColor;    
+    // 计算阴影
+    float shadow = ShadowCalculation(fs_in.FragPosLightSpace);       
+    vec3 lighting = (ambient + (1.0 - shadow) * (diffuse + specular)) * color;    
+
+    FragColor = vec4(lighting, 1.0f);
+}
+//shdow的计算
+float ShadowCalculation(vec4 fragPosLightSpace)
+{
+    // 执行透视除法
+    vec3 projCoords = fragPosLightSpace.xyz / fragPosLightSpace.w;
+    // 变换到[0,1]的范围
+    projCoords = projCoords * 0.5 + 0.5;
+    // 取得最近点的深度(使用[0,1]范围下的fragPosLight当坐标)
+    float closestDepth = texture(shadowMap, projCoords.xy).r; 
+    // 取得当前片段在光源视角下的深度
+    float currentDepth = projCoords.z;
+    // 检查当前片段是否在阴影中
+    float shadow = currentDepth > closestDepth  ? 1.0 : 0.0;
+
+    return shadow;
+}
+```
+
+- 正交投影阴影通常用于平行光；透视投影阴影通常用于点光源和聚光灯
+
+
+
+##### 点光源阴影（万向阴影贴图）
+
+- 点光源会向各个方向发射光，也就是说阴影可以处于四周，不能像平行光那样使用一张深度贴图
 - 
 
-##### 点阴影
+##### 阴影失真
 
-- 
+###### 条纹
 
-##### CSM
+- **阴影失真**：出现交替黑线
+  - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/undefinedshadow_mapping_acne.png" alt="img" style="zoom: 80%;" />
+  - 原因：阴影分辨率不足，多个临近片段从深度贴图的同一个值中采样
+  - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/undefinedshadow_mapping_acne_diagram.png" alt="img" style="zoom:50%;" />
+- 解决方法：添加一个偏移小量：防止片段被阴影被错误添加
+  - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/undefinedshadow_mapping_acne_bias.png" alt="img" style="zoom:67%;" />
 
-- 
+```glsl
+float bias = 0.005;
+float shadow = currentDepth - bias > closestDepth  ? 1.0 : 0.0;
+```
+
+- 但是由于箱单与对物体的深度进行了平移，可能造成阴影相对实际物体位置的偏移（称为悬浮）
+
+
+
+- 另一种解决失真的方式是使用peter panning即在渲染深度贴图时使用正面剔除（这样就能使得条纹等渲染错误不会显现出来）
+  - 但是只适用于不会对外开口的实体物体（如完整的正方体）
+
+###### 超出边界的阴影
+
+- 超出深度贴图的区域由于距离超过阈值，会全部处于阴影之中
+  - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/undefinedshadow_mapping_outside_frustum.png" alt="img" style="zoom: 67%;" />
+- 可以将深度贴图中超出范围的深度设置为1.0(通过设置环绕方式实现)
+
+```c++
+glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_BORDER);
+glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_BORDER);
+GLfloat borderColor[] = { 1.0, 1.0, 1.0, 1.0 };
+glTexParameterfv(GL_TEXTURE_2D, GL_TEXTURE_BORDER_COLOR, borderColor);
+```
+
+- 不过处于远平面外的部分要单独丢弃（大于1了）
+
+```c++
+float ShadowCalculation(vec4 fragPosLightSpace)
+{
+    [...]
+    if(projCoords.z > 1.0)
+        shadow = 0.0;
+
+    return shadow;
+}
+```
+
+###### PCF
+
+- ![img](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefinedshadow_mapping_zoom.png)
+  - 阴影的边缘可能存在较多的锯齿：因为深度贴图有一个固定的分辨率，多个片段对应于一个纹理像素。结果就是多个片段会从深度贴图的同一个深度值进行采样，这几个片段便得到的是同一个阴影，这就会产生锯齿边。
+- 可以通过增大阴影纹理的分辨率来改善
+- 也可以通过pcf来实现更柔和的阴影：核心思想是从深度贴图中**多次采样**，每一次采样的纹理坐标都稍有不同。每个独立的样本可能在也可能不再阴影中。所有的次生结果接着结合在一起，进行**平均化**，我们就得到了柔和阴影。
+  - 如采集九宫格
+
+```c++
+float shadow = 0.0;
+vec2 texelSize = 1.0 / textureSize(shadowMap, 0);
+for(int x = -1; x <= 1; ++x)
+{
+    for(int y = -1; y <= 1; ++y)
+    {
+        float pcfDepth = texture(shadowMap, projCoords.xy + vec2(x, y) * texelSize).r; 
+        shadow += currentDepth - bias > pcfDepth ? 1.0 : 0.0;        
+    }    
+}
+shadow /= 9.0;
+```
 
 #### 法线贴图
 
