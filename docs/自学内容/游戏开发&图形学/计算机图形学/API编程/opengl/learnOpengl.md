@@ -4033,6 +4033,26 @@ void main()
 }
 ```
 
+- 法线贴图是在TBN坐标系中定义的，要将其转化到世界空间来进行渲染
+  - 切线空间 → 世界空间：$\mathrm{Normal}_{{\mathrm{world}}}=\mathrm{TBN}\cdot\mathrm{Normal}_{{\mathrm{tangent}}}$：将贴图的法线转换到世界空间与光照等进行计算
+  - 世界空间 → 切线空间：$\mathrm{LightDir}_{{\mathrm{tangent}}}=\mathrm{TBN}^{-1}\cdot\mathrm{LightDir}_{{\mathrm{world}}}$：将光照等转换到切线空间与贴图的法线进行计算
+    - 更常用：减少片段着色器的计算量，总体上效率更高
+
+###### 使用assimp实现复杂物体的切线空间计算
+
+- 加载时添加`aiProcess_CalcTangentSpace`Assimp会为每个加载的顶点计算出柔和的切线和副切线向量
+
+```C++
+const aiScene* scene = importer.ReadFile(
+    path, aiProcess_Triangulate | aiProcess_FlipUVs | aiProcess_CalcTangentSpace
+);
+//获取并保存
+vector.x = mesh->mTangents[i].x;
+vector.y = mesh->mTangents[i].y;
+vector.z = mesh->mTangents[i].z;
+vertex.Tangent = vector;
+```
+
 
 
 #### 视差贴图
