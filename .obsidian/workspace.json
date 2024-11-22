@@ -20,8 +20,21 @@
               "icon": "lucide-file",
               "title": "learnOpengl"
             }
+          },
+          {
+            "id": "1f574b4fa1362f93",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.7.7"
+              },
+              "icon": "lucide-file",
+              "title": "Release Notes 1.7.7"
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -230,7 +243,7 @@
       "obsidian-advanced-slides:Show Slide Preview": false
     }
   },
-  "active": "e7448f2e3ed093cf",
+  "active": "0a9cd0319ddd3dbc",
   "lastOpenFiles": [
     "docs/_private_/腾讯公开课/UE基础.md",
     "docs/技能&工具/折腾/openwrt软路由.md",
