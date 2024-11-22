@@ -4068,10 +4068,127 @@ vertex.Tangent = vector;
 - 一个算法是取$P=AH(A)$按照这个高度沿方向偏移，得到点$H(P)$作为便宜后的问题
   - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/undefinedparallax_mapping_scaled_height.png" alt="img" style="zoom: 67%;" />
 - 这个方法并不精确，有时会产生较大误差
+- 因为要计算每个点的说色，因此在片段着色器中进行计算
+
+```glsl
+void main()
+{           
+    // Offset texture coordinates with Parallax Mapping
+    vec3 viewDir   = normalize(fs_in.TangentViewPos - fs_in.TangentFragPos);
+    vec2 texCoords = ParallaxMapping(fs_in.TexCoords,  viewDir);
+
+    //丢弃错误数据
+    texCoords = ParallaxMapping(fs_in.TexCoords,  viewDir);
+	if(texCoords.x > 1.0 || texCoords.y > 1.0 || texCoords.x < 0.0 || texCoords.y < 0.0)
+    discard;
+    
+    // then sample textures with new texture coords
+    vec3 diffuse = texture(diffuseMap, texCoords);
+    vec3 normal  = texture(normalMap, texCoords);
+    normal = normalize(normal * 2.0 - 1.0);
+    // proceed with lighting code
+    [...]    
+}
+
+vec2 ParallaxMapping(vec2 texCoords, vec3 viewDir, sampler2D heightMap)
+{
+    // 从深度贴图中获取高度值
+    float height = texture(heightMap, texCoords).r;  // 高度值范围是 [0, 1]
+
+    // 根据高度值和视角方向计算偏移量
+    vec2 p = viewDir.xy / viewDir.z * (height * scale - bias);
+    //scale控制视差效果的强度（比例因子）
+    //bias用于微调，使纹理偏移的起点更自然
+    
+    // 调整纹理坐标(加还是减取决于view是从摄像机发出还是反之)
+    vec2 offsetTexCoords = texCoords - p;
+
+    // 返回调整后的纹理坐标
+    return offsetTexCoords;
+}
+```
+
+##### 陡峭视差映射
+
+- 使用更多的样本来确定从向量到便宜点B，在陡峭高度变化下有更好的表现
+  - 即通过增加采样的数目提高了精确性
+
+<img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/undefinedparallax_mapping_steep_parallax_mapping_diagram.png" alt="img" style="zoom: 67%;" />
+
+- 将总深度或分为多层，分别与视线方向产生交点
+  - 从上到下遍历深度层，直到找到第一个层深度大于深度贴图的点（图中的T3）
+
+```glsl
+vec2 ParallaxMapping(vec2 texCoords, vec3 viewDir)
+{ 
+    // number of depth layers
+    const float numLayers = 10;
+    // calculate the size of each layer
+    float layerDepth = 1.0 / numLayers;
+    // depth of current layer
+    float currentLayerDepth = 0.0;
+    // the amount to shift the texture coordinates per layer (from vector P)
+    vec2 P = viewDir.xy * height_scale; 
+    vec2 deltaTexCoords = P / numLayers;
+
+    // get initial values
+    vec2  currentTexCoords     = texCoords;
+    float currentDepthMapValue = texture(depthMap, currentTexCoords).r;
+
+    while(currentLayerDepth < currentDepthMapValue)
+    {
+        // shift texture coordinates along direction of P
+        currentTexCoords -= deltaTexCoords;
+        // get depthmap value at current texture coordinates
+        currentDepthMapValue = texture(depthMap, currentTexCoords).r;  
+        // get depth of next layer
+        currentLayerDepth += layerDepth;  
+    }
+
+    return currentTexCoords;
+
+}
+```
+
+- 由于采样点固定，可能会出现锯齿和断层
+  - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/undefinedparallax_mapping_steep_artifact.png" alt="img" style="zoom: 67%;" />
+  - 可以通过增加采样数目来解决
+  - 也可以通过下面方法
+
+##### 视差遮蔽映射
+
+- <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/undefinedparallax_mapping_parallax_occlusion_mapping_diagram.png" alt="img" style="zoom: 80%;" />
+  - 取边缘的两个点并根据表面高度距离深度层深度值的距离进行线性插值
+
+```glsl
+[...] // steep parallax mapping code here
+
+// get texture coordinates before collision (reverse operations)
+vec2 prevTexCoords = currentTexCoords + deltaTexCoords;
+
+// get depth after and before collision for linear interpolation
+float afterDepth  = currentDepthMapValue - currentLayerDepth;
+float beforeDepth = texture(depthMap, prevTexCoords).r - currentLayerDepth + layerDepth;
+
+// interpolation of texture coordinates
+float weight = afterDepth / (afterDepth - beforeDepth);
+vec2 finalTexCoords = prevTexCoords * weight + currentTexCoords * (1.0 - weight);
+
+return finalTexCoords;
+```
 
 #### HDR
 
+- 解决：多个两光源叠加使得亮度值超过了1.0，导致高光混成一片难以分辨
+- hdr允许片段的颜色超过1，最终在映射到0~1显示在显示器上（HDR->LDR**色调映射**）
+  - 亮的东西可以变得非常亮，暗的东西可以变得非常暗，而且充满细节。
+  - HDR渲染的关键就是指如何将HDR转换到LDR
+
+- 
+
 #### 泛光
+
+- 
 
 #### 延迟着色法
 
