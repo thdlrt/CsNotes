@@ -4366,9 +4366,19 @@ void main()
   - 渲染一个代表光体积的球体，其位置为光源位置，大小根据光体积半径缩放。
   - **只有球体投影到屏幕上的像素**会触发光照计算，大大减少了无关像素的计算。
   - 每个光源的光照结果独立计算，并最终叠加到帧缓冲中。
-- 
 
 #### SSAO
+
+- **环境光遮蔽AO**：通过将褶皱、孔洞和非常靠近的墙面变暗的方法近似模拟出间接光照。这些区域很大程度上是被周围的几何体遮蔽的，光线会很难流失，所以这些地方看起来会更**暗**一些。
+  - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/undefinedundefinedssao_example.png" style="zoom:50%;" />
+- SSAO使用了屏幕空间场景的深度而不是真实的几何体数据来确定遮蔽量,会根据周边深度值**估计**一个**遮蔽因子**用来减少或者抵消片段的环境光照分量。
+- 计算遮蔽因子
+  - 以像素为中心点的一个半球形（结合像素所在平面（**法向半球体**）），在这个范围内进行采样
+    - ​	<img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/undefinedssao_hemisphere.png" alt="img" style="zoom:67%;" />
+  - 如果采样点比当前像素**更靠近**摄像机（即深度值较小），则认为这个点对环境光有遮挡作用。
+  - 遮蔽因子会根据采样点的距离和角度进行加权。
+  - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/undefinedimage-20241122191708467.png" alt="image-20241122191708467" style="zoom: 50%;" />
+  - 此外还要对生成的AO图进行平滑处理，如使用高斯模糊
 
 ### PBR
 
