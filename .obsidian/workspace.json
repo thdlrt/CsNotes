@@ -20,21 +20,8 @@
               "icon": "lucide-file",
               "title": "learnOpengl"
             }
-          },
-          {
-            "id": "1f574b4fa1362f93",
-            "type": "leaf",
-            "state": {
-              "type": "release-notes",
-              "state": {
-                "currentVersion": "1.7.7"
-              },
-              "icon": "lucide-file",
-              "title": "Release Notes 1.7.7"
-            }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"

@@ -4057,6 +4057,18 @@ vertex.Tangent = vector;
 
 #### 视差贴图
 
+- 视差贴图是一种位移贴图
+
+<img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/undefinedimage-20241122122601050.png" alt="image-20241122122601050" style="zoom:50%;" />
+
+<img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/undefinedundefinedparallax_mapping_plane_height.png" style="zoom:50%;" />
+
+- 在以$V$方向看向$A$时通过加一个偏移，使得看到的内容贴近实际应该看到的$B$处
+
+- 一个算法是取$P=AH(A)$按照这个高度沿方向偏移，得到点$H(P)$作为便宜后的问题
+  - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/undefinedparallax_mapping_scaled_height.png" alt="img" style="zoom: 67%;" />
+- 这个方法并不精确，有时会产生较大误差
+
 #### HDR
 
 #### 泛光
