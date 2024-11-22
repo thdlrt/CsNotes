@@ -4184,11 +4184,166 @@ return finalTexCoords;
   - 亮的东西可以变得非常亮，暗的东西可以变得非常暗，而且充满细节。
   - HDR渲染的关键就是指如何将HDR转换到LDR
 
-- 
+
+
+- 使用**浮点帧缓冲**，即用`GL_RGB16F(GL_RGB32F)`替代`GL_RGB`，`GL_RGB16F`为半精度浮点数，可表达的范围比`GL_RGB`大得多
+
+```glsl
+glBindTexture(GL_TEXTURE_2D, colorBuffer);
+glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB16F, SCR_WIDTH, SCR_HEIGHT, 0, GL_RGB, GL_FLOAT, NULL);  
+```
+
+
+
+##### 色调映射
+
+- 尽可能小损失的准换浮点颜色值到LDR范围
+- 最简单的办法是进行线性映射
+
+```glsl
+void main()
+{             
+    const float gamma = 2.2;
+    vec3 hdrColor = texture(hdrBuffer, TexCoords).rgb;
+
+    // Reinhard色调映射
+    vec3 mapped = hdrColor / (hdrColor + vec3(1.0));
+
+    color = vec4(mapped, 1.0);
+}   
+```
+
+
+
+- 曝光调色算法：调整曝光值可以调整hdr渲染的结果
+
+```glsl
+uniform float exposure;
+
+void main()
+{             
+    const float gamma = 2.2;
+    vec3 hdrColor = texture(hdrBuffer, TexCoords).rgb;
+    // 曝光色调映射
+    vec3 mapped = vec3(1.0) - exp(-hdrColor * exposure);
+    color = vec4(mapped, 1.0);
+}  
+```
+
+<img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/undefinedhdr_exposure.png" alt="img" style="zoom:67%;" />
 
 #### 泛光
 
+- 通过让明亮的光源（如灯）产生泛光效果，来让用户产生错觉，感觉区域很亮
+- 实现思路：提取**超过**一定亮度阈值的纹理进行**模糊处理**
+  - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/undefinedbloom_steps.png" alt="img" style="zoom:50%;" />
+
 - 
+
+##### 多渲染目标MRT
+
+- 允许像素着色器的多个输出变量同时写入帧缓冲中的**不同颜色缓冲区**
+
+```C++
+//为帧缓冲附加两个颜色附件
+GLuint hdrFBO;
+glGenFramebuffers(1, &hdrFBO);
+glBindFramebuffer(GL_FRAMEBUFFER, hdrFBO);
+GLuint colorBuffers[2];
+glGenTextures(2, colorBuffers);
+
+for (GLuint i = 0; i < 2; i++)
+{
+    glBindTexture(GL_TEXTURE_2D, colorBuffers[i]);
+    glTexImage2D(
+        GL_TEXTURE_2D, 0, GL_RGB16F, SCR_WIDTH, SCR_HEIGHT, 0, GL_RGB, GL_FLOAT, NULL
+    );
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
+    glFramebufferTexture2D(
+        GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0 + i, GL_TEXTURE_2D, colorBuffers[i], 0
+    );
+}
+//当前要渲染到哪些附件
+GLuint attachments[2] = { GL_COLOR_ATTACHMENT0, GL_COLOR_ATTACHMENT1 };
+glDrawBuffers(2, attachments);
+//着色器中输出
+#version 330 core
+layout (location = 0) out vec4 FragColor;
+layout (location = 1) out vec4 BrightColor;
+
+void main()
+{            
+    // 普通光照计算
+    vec3 lighting = ...; // 你的光照计算代码
+    FragColor = vec4(lighting, 1.0f);
+
+    // 计算亮度
+    float brightness = dot(FragColor.rgb, vec3(0.2126, 0.7152, 0.0722)); // 转灰度
+    if (brightness > 1.0) // 超过阈值
+        BrightColor = vec4(FragColor.rgb, 1.0);
+    else
+        BrightColor = vec4(0.0);
+}
+```
+
+##### **高斯模糊**
+
+- 高斯模糊也是对一定范围的点做平均，不过是加权平均，中心权值大，四周小
+  - ![img](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefinedbloom_gaussian.png)
+- 对于面上的高斯模糊，可以对不同方向分别进行，这样复杂度就从$n^2$到$2n$
+  - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/undefinedbloom_gaussian_two_pass.png" alt="img" style="zoom:50%;" />
+  - 对每个点进行如上操作最后将结果叠加
+
+
+
+- 乒乓球渲染：两个帧缓冲对象交替渲染：每次渲染将一个帧缓冲的颜色缓冲作为输入纹理，输出到另一个帧缓冲的颜色缓冲。
+  - 第一步：将 `FBO1` 的颜色缓冲作为输入，渲染到 `FBO2`。
+  - 第二步：将 `FBO2` 的颜色缓冲作为输入，渲染到 `FBO1`。
+- 对于高斯模糊
+  - **第一步：水平模糊**，使用 `FBO1` 的颜色缓冲作为输入纹理，渲染到 `FBO2`，应用水平模糊的着色器。
+  - **第二步：垂直模糊**，使用 `FBO2` 的颜色缓冲作为输入纹理，渲染到 `FBO1`，应用垂直模糊的着色器。
+  - 根据需求迭代多次，增强模糊效果。
+- 高斯模糊的片段着色器
+
+```glsl
+#version 330 core
+out vec4 FragColor;
+in vec2 TexCoords;
+
+uniform sampler2D image;
+
+uniform bool horizontal;
+
+uniform float weight[5] = float[] (0.227027, 0.1945946, 0.1216216, 0.054054, 0.016216);
+
+void main()
+{             
+    vec2 tex_offset = 1.0 / textureSize(image, 0); // gets size of single texel
+    vec3 result = texture(image, TexCoords).rgb * weight[0]; // current fragment's contribution
+    if(horizontal)
+    {
+        for(int i = 1; i < 5; ++i)
+        {
+            result += texture(image, TexCoords + vec2(tex_offset.x * i, 0.0)).rgb * weight[i];
+            result += texture(image, TexCoords - vec2(tex_offset.x * i, 0.0)).rgb * weight[i];
+        }
+    }
+    else
+    {
+        for(int i = 1; i < 5; ++i)
+        {
+            result += texture(image, TexCoords + vec2(0.0, tex_offset.y * i)).rgb * weight[i];
+            result += texture(image, TexCoords - vec2(0.0, tex_offset.y * i)).rgb * weight[i];
+        }
+    }
+    FragColor = vec4(result, 1.0);
+}
+```
+
+
 
 #### 延迟着色法
 
