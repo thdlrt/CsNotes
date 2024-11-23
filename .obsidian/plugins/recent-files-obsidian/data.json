@@ -5,6 +5,10 @@
       "path": "docs/自学内容/游戏开发&图形学/计算机图形学/API编程/opengl/learnOpengl.md"
     },
     {
+      "basename": "全球游戏市场进化论",
+      "path": "docs/自学内容/游戏开发&图形学/游戏开发/游戏设计/信息/全球游戏市场进化论.pdf"
+    },
+    {
       "basename": "信息整理",
       "path": "docs/自学内容/游戏开发&图形学/游戏开发/游戏设计/信息/信息整理.md"
     },
@@ -195,10 +199,6 @@
     {
       "basename": "数组与字符串",
       "path": "docs/算法竞赛/数组与字符串.md"
-    },
-    {
-      "basename": "前缀和与差分",
-      "path": "docs/算法竞赛/前缀和与差分.md"
     }
   ],
   "omittedPaths": [],

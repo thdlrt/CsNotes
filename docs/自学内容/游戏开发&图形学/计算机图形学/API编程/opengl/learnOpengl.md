@@ -918,10 +918,9 @@ unsigned int TextureFromFile(const char *path, const string &directory, bool gam
 }
 #endif
 ```
-
-
-
 # opengl 基础
+## 常用的数据类型
+- Opengl 中的数据类型，为无符号整数（unsigned int），通常用于对象的标识符 ID
 
 ## 工作流程
 

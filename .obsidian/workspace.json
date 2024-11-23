@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "e222fb4d3180a398",
+        "id": "52b737b90da07d8b",
         "type": "tabs",
         "children": [
           {
-            "id": "e7448f2e3ed093cf",
+            "id": "92d88f209ca266ca",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -93,8 +93,7 @@
               "title": "Recent Files"
             }
           }
-        ],
-        "currentTab": 2
+        ]
       }
     ],
     "direction": "horizontal",
@@ -200,14 +199,14 @@
       "obsidian-advanced-slides:Show Slide Preview": false
     }
   },
-  "active": "0a9cd0319ddd3dbc",
+  "active": "92d88f209ca266ca",
   "lastOpenFiles": [
-    "docs/自学内容/游戏开发&图形学/游戏开发/游戏设计/信息/信息整理.md",
     "docs/自学内容/游戏开发&图形学/游戏开发/游戏设计/信息/全球游戏市场进化论.pdf",
+    "docs/自学内容/游戏开发&图形学/计算机图形学/API编程/opengl/learnOpengl.md",
+    "docs/自学内容/游戏开发&图形学/游戏开发/游戏设计/信息/信息整理.md",
     "docs/自学内容/游戏开发&图形学/游戏开发/游戏设计/信息",
     "docs/_private_/腾讯公开课/UE基础.md",
     "docs/自学内容/游戏开发&图形学/游戏开发/游戏设计",
-    "docs/自学内容/游戏开发&图形学/计算机图形学/API编程/opengl/learnOpengl.md",
     "docs/_private_/腾讯公开课/游戏模式.md",
     "docs/技能&工具/折腾/openwrt软路由.md",
     "docs/自学内容/游戏开发&图形学/游戏开发/游戏引擎/UE5/UE基础.md",
