@@ -93,7 +93,8 @@
               "title": "Recent Files"
             }
           }
-        ]
+        ],
+        "currentTab": 2
       }
     ],
     "direction": "horizontal",
@@ -199,7 +200,7 @@
       "obsidian-advanced-slides:Show Slide Preview": false
     }
   },
-  "active": "e7448f2e3ed093cf",
+  "active": "0a9cd0319ddd3dbc",
   "lastOpenFiles": [
     "docs/自学内容/游戏开发&图形学/游戏开发/游戏设计/信息/信息整理.md",
     "docs/自学内容/游戏开发&图形学/游戏开发/游戏设计/信息/全球游戏市场进化论.pdf",
