@@ -920,7 +920,8 @@ unsigned int TextureFromFile(const char *path, const string &directory, bool gam
 ```
 # opengl 基础
 ## 常用的数据类型
-- Opengl 中的数据类型，为无符号整数（unsigned int），通常用于对象的标识符 ID
+![image.png](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefined20241123190804.png)
+- 最好使用 opengl 提供的数据类型，这样就能避免在不同版本 opengl 之间一直代码出现不匹配的问题
 
 ## 工作流程
 
@@ -947,6 +948,142 @@ unsigned int TextureFromFile(const char *path, const string &directory, bool gam
 - opengl 只处理-1~1 立方范围内的信息
 - 使用 GLSL 编写着色器，编译之后就可以在程序中使用
 
+### 链接顶点属性
+
+- 上面的三个点以 float 来存储
+  - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/undefinedimage-20241104202631131.png" alt="image-20241104202631131" style="zoom: 50%;" />
+- 指出如何来解析顶点数据 `glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0); glEnableVertexAttribArray(0);`
+  - `0` 表示顶点属性所在的位置（对应编译器中的位置 `location=0`）
+  - `3` 表示参数类型的大小（由几个值组成），即 Vec 3
+  - `GL_FLOAT` 制定参数的类型
+  - `GL_FALSE` 表示是否要进行标准化（0~1）映射
+  - `3 * sizeof(float)` 表示连续的属性之间的存储间隔，为 0 时由 opengl 自动决定（连续紧密排列）
+  - `(void*)0` 表示数据在缓冲中的起始位置的偏移量
+- 顶点属性是从之前绑定了 `GL_ARRAY_BUFFER` 的 VBO 顶点缓冲对象来获取的
+
+- 基本工作流程如下
+
+```c
+// 0. 复制顶点数组到缓冲中供OpenGL使用
+glBindBuffer(GL_ARRAY_BUFFER, VBO);
+glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
+// 1. 设置顶点属性指针
+glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);
+glEnableVertexAttribArray(0);
+// 2. 当我们渲染一个物体时要使用着色器程序
+glUseProgram(shaderProgram);
+// 3. 绘制物体
+someOpenGLFunctionThatDrawsOurTriangle();
+```
+
+- 当然也可以使用更多的属性，比如位置+颜色
+  - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/undefinedimage-20241105132752122.png" alt="image-20241105132752122" style="zoom: 50%;" />
+
+```glsl
+// 位置属性
+glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(float), (void*)0);
+glEnableVertexAttribArray(0);
+// 颜色属性
+glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(float), (void*)(3* sizeof(float)));
+glEnableVertexAttribArray(1);
+```
+
+
+
+#### 顶点数组对象 VAO
+
+- 每次都重新进行绑定设置很麻烦，使用**顶点数组对象 VAO**可以像顶点缓冲对象那样被绑定，任何随后的**顶点属性调用**都会储存在这个 VAO 中。
+  - VAO 是一个容器，用于保存多个 VBO 的**状态**以及**如何解释**这些 VBO 中的数据。它记录了**如何将 VBO 中的数据绑定到顶点属性上。**
+    - VAO 可以看作是一个“顶点属性的配置**快照**”。一旦配置好，VAO 会记录下所有与顶点属性相关的状态（例如顶点数据的格式、位置、是否启用等）。
+    - VAO 本身不直接存储顶点数据，而是保存了 VBO 和顶点属性之间的关联。当绑定 VAO 时，OpenGL 会自动按照配置好的顶点属性状态读取数据。
+    - VAO 允许我们在绘制不同物体时只需绑定不同的 VAO 就能快速切换顶点属性的配置，方便管理多个物体的不同顶点属性。
+    - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/undefinedimage-20241107211438589.png" alt="image-20241107211438589" style="zoom: 50%;" />
+  - opengl 可以通过 VAO 获取要使用的数据和读取方式
+  - 即**VBO 提供实际的顶点数据，而 VAO 则定义了如何使用这些数据。**
+  - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/undefinedimage-20241104204009412.png" alt="image-20241104204009412" style="zoom:50%;" />
+- 只需要使用 glBindVertexArray 绑定 VAO
+  - 绑定之后，所有与顶点属性的设置操作（例如，绑定 VBO、设置顶点属性指针等）都将与这个 VAO 关联。
+  - 之后通过绑定不同的 VAO，快速切换不同的顶点数据和状态，而无需重新配置顶点属性指针。
+
+```c
+//创建VAO
+unsigned int VAO;
+glGenVertexArrays(1, &VAO);//创建之后还需要进行绑定才能初始化
+//glCreateVertexArrays直接创建并初始化 VAO，无需绑定,可以直接通过id进行操作
+/*
+for (int i = 0; i < 3; ++i) {
+    // 配置VAO，而无需绑定
+    glVertexArrayAttribBinding(vaos[i], 0, 0); // 配置属性绑定
+    glVertexArrayAttribFormat(vaos[i], 0, 3, GL_FLOAT, GL_FALSE, 0);
+    glEnableVertexArrayAttrib(vaos[i], 0);
+}
+*/
+
+//绑定VAO
+glBindVertexArray(VAO);
+//解除绑定
+glBindVertexArray(0);
+```
+
+#### 元素缓冲对象 EBO
+
+- EBO 是一个缓冲区，就像一个顶点缓冲区对象一样，它存储 OpenGL 用来决定要**绘制哪些顶点的索引**（决定点的绘制顺序避免性能浪费，比如两个三角拼接成一个矩形）
+
+
+
+- 使用索引来用更少的点进行绘制
+
+```c
+float vertices[] = {
+    0.5f, 0.5f, 0.0f,   // 右上角
+    0.5f, -0.5f, 0.0f,  // 右下角
+    -0.5f, -0.5f, 0.0f, // 左下角
+    -0.5f, 0.5f, 0.0f   // 左上角
+};
+
+unsigned int indices[] = {
+    // 注意索引从0开始! 
+    // 此例的索引(0,1,2,3)就是顶点数组vertices的下标，
+    // 这样可以由下标代表顶点组合成矩形
+
+    0, 1, 3, // 第一个三角形
+    1, 2, 3  // 第二个三角形
+};
+//创建EBO
+unsigned int EBO;
+glGenBuffers(1, &EBO);
+//把索引复制到缓冲里
+glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO);
+glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices), indices, GL_STATIC_DRAW);
+//使用索引进行绘制
+glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
+```
+
+- 当目标是 GL_ELEMENT_ARRAY_BUFFER 的时候，V**AO 会储存 glBindBuffer 的函数调用**，这样使用时就只需要绑定 VAO 而不再需要绑定 EBO
+  - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/undefinedimage-20241104205920696.png" alt="image-20241104205920696" style="zoom: 50%;" />
+
+```c
+// ..:: 初始化代码 :: ..
+// 1. 绑定顶点数组对象
+glBindVertexArray(VAO);
+// 2. 把我们的顶点数组复制到一个顶点缓冲中，供OpenGL使用
+glBindBuffer(GL_ARRAY_BUFFER, VBO);
+glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
+// 3. 复制我们的索引数组到一个索引缓冲中，供OpenGL使用
+glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO);
+glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices), indices, GL_STATIC_DRAW);
+// 4. 设定顶点属性指针
+glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);
+glEnableVertexAttribArray(0);
+
+[...]
+
+// ..:: 绘制代码（渲染循环中） :: ..
+glUseProgram(shaderProgram);
+glBindVertexArray(VAO);
+glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
+glBindVertexArray(0);
+```
 
 
 ### 顶点着色器
@@ -1048,133 +1185,6 @@ glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
 	- GL_STATIC_DRAW ：数据不会或几乎不会改变。
 	- GL_DYNAMIC_DRAW：数据会被改变很多。
 	- GL_STREAM_DRAW ：数据每次绘制时都会改变。
-### 链接顶点属性
-
-- 上面的三个点以float来存储
-  - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/undefinedimage-20241104202631131.png" alt="image-20241104202631131" style="zoom: 50%;" />
-- 指出如何来解析顶点数据`glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0); glEnableVertexAttribArray(0);`
-  - `0`表示顶点属性所在的位置（对应编译器中的位置`location=0`）
-  - `3`表示参数类型的大小（由几个值组成），即Vec3
-  - `GL_FLOAT`制定参数的类型
-  - `GL_FALSE`表示是否要进行标准化（0~1）映射
-  - `3 * sizeof(float)`表示连续的属性之间的存储间隔，为0时由opengl自动决定（连续紧密排列）
-  - `(void*)0`表示数据在缓冲中的起始位置的偏移量
-- 顶点属性是从之前绑定了`GL_ARRAY_BUFFER`的VBO顶点缓冲对象来获取的
-
-- 基本工作流程如下
-
-```c
-// 0. 复制顶点数组到缓冲中供OpenGL使用
-glBindBuffer(GL_ARRAY_BUFFER, VBO);
-glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
-// 1. 设置顶点属性指针
-glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);
-glEnableVertexAttribArray(0);
-// 2. 当我们渲染一个物体时要使用着色器程序
-glUseProgram(shaderProgram);
-// 3. 绘制物体
-someOpenGLFunctionThatDrawsOurTriangle();
-```
-
-- 当然也可以使用更多的属性，比如位置+颜色
-  - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/undefinedimage-20241105132752122.png" alt="image-20241105132752122" style="zoom: 50%;" />
-
-```glsl
-// 位置属性
-glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(float), (void*)0);
-glEnableVertexAttribArray(0);
-// 颜色属性
-glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(float), (void*)(3* sizeof(float)));
-glEnableVertexAttribArray(1);
-```
-
-
-
-#### 顶点数组对象VAO
-
-- 每次都重新进行绑定设置很麻烦，使用**顶点数组对象VAO**可以像顶点缓冲对象那样被绑定，任何随后的**顶点属性调用**都会储存在这个VAO中。
-  - VAO是一个容器，用于保存多个VBO的**状态**以及**如何解释**这些VBO中的数据。它记录了**如何将VBO中的数据绑定到顶点属性上。**
-    - VAO 可以看作是一个“顶点属性的配置**快照**”。一旦配置好，VAO 会记录下所有与顶点属性相关的状态（例如顶点数据的格式、位置、是否启用等）。
-    - VAO 本身不直接存储顶点数据，而是保存了 VBO 和顶点属性之间的关联。当绑定 VAO 时，OpenGL 会自动按照配置好的顶点属性状态读取数据。
-    - VAO 允许我们在绘制不同物体时只需绑定不同的 VAO 就能快速切换顶点属性的配置，方便管理多个物体的不同顶点属性。
-    - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/undefinedimage-20241107211438589.png" alt="image-20241107211438589" style="zoom: 50%;" />
-  - opengl可以通过VAO获取要使用的数据和读取方式
-  - 即**VBO提供实际的顶点数据，而VAO则定义了如何使用这些数据。**
-  - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/undefinedimage-20241104204009412.png" alt="image-20241104204009412" style="zoom:50%;" />
-- 只需要使用glBindVertexArray绑定VAO
-  - 绑定之后，所有与顶点属性的设置操作（例如，绑定VBO、设置顶点属性指针等）都将与这个VAO关联。
-  - 之后通过绑定不同的VAO，快速切换不同的顶点数据和状态，而无需重新配置顶点属性指针。
-
-```c
-//创建VAO
-unsigned int VAO;
-glGenVertexArrays(1, &VAO);
-//绑定VAO
-glBindVertexArray(VAO);
-//解除绑定
-glBindVertexArray(0);
-```
-
-#### 元素缓冲对象EBO
-
-- EBO是一个缓冲区，就像一个顶点缓冲区对象一样，它存储 OpenGL 用来决定要**绘制哪些顶点的索引**（决定点的绘制顺序避免性能浪费，比如两个三角拼接成一个矩形）
-
-
-
-- 使用索引来用更少的点进行绘制
-
-```c
-float vertices[] = {
-    0.5f, 0.5f, 0.0f,   // 右上角
-    0.5f, -0.5f, 0.0f,  // 右下角
-    -0.5f, -0.5f, 0.0f, // 左下角
-    -0.5f, 0.5f, 0.0f   // 左上角
-};
-
-unsigned int indices[] = {
-    // 注意索引从0开始! 
-    // 此例的索引(0,1,2,3)就是顶点数组vertices的下标，
-    // 这样可以由下标代表顶点组合成矩形
-
-    0, 1, 3, // 第一个三角形
-    1, 2, 3  // 第二个三角形
-};
-//创建EBO
-unsigned int EBO;
-glGenBuffers(1, &EBO);
-//把索引复制到缓冲里
-glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO);
-glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices), indices, GL_STATIC_DRAW);
-//使用索引进行绘制
-glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
-```
-
-- 当目标是GL_ELEMENT_ARRAY_BUFFER的时候，V**AO会储存glBindBuffer的函数调用**，这样使用时就只需要绑定VAO而不再需要绑定EBO
-  - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/undefinedimage-20241104205920696.png" alt="image-20241104205920696" style="zoom: 50%;" />
-
-```c
-// ..:: 初始化代码 :: ..
-// 1. 绑定顶点数组对象
-glBindVertexArray(VAO);
-// 2. 把我们的顶点数组复制到一个顶点缓冲中，供OpenGL使用
-glBindBuffer(GL_ARRAY_BUFFER, VBO);
-glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
-// 3. 复制我们的索引数组到一个索引缓冲中，供OpenGL使用
-glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO);
-glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices), indices, GL_STATIC_DRAW);
-// 4. 设定顶点属性指针
-glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);
-glEnableVertexAttribArray(0);
-
-[...]
-
-// ..:: 绘制代码（渲染循环中） :: ..
-glUseProgram(shaderProgram);
-glBindVertexArray(VAO);
-glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
-glBindVertexArray(0);
-```
-
 ### 完整代码
 ```cpp
 #include <glad\glad.h> 
