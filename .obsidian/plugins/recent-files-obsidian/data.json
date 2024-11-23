@@ -1,12 +1,12 @@
 {
   "recentFiles": [
     {
-      "basename": "learnOpengl",
-      "path": "docs/自学内容/游戏开发&图形学/计算机图形学/API编程/opengl/learnOpengl.md"
-    },
-    {
       "basename": "UE基础",
       "path": "docs/_private_/腾讯公开课/UE基础.md"
+    },
+    {
+      "basename": "learnOpengl",
+      "path": "docs/自学内容/游戏开发&图形学/计算机图形学/API编程/opengl/learnOpengl.md"
     },
     {
       "basename": "openwrt软路由",
@@ -195,10 +195,6 @@
     {
       "basename": "前缀和与差分",
       "path": "docs/算法竞赛/前缀和与差分.md"
-    },
-    {
-      "basename": "位运算",
-      "path": "docs/算法竞赛/位运算.md"
     }
   ],
   "omittedPaths": [],
