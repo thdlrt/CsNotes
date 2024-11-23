@@ -1008,7 +1008,7 @@ glEnableVertexAttribArray(1);
 ```c
 //创建VAO
 unsigned int VAO;
-glGenVertexArrays(1, &VAO);//创建之后还需要进行绑定才能初始化
+glGenVertexArrays(1, &VAO);//创建之后还需要进行绑定才能初始化(可以创建指定多个对象，并存储在数组中)
 //glCreateVertexArrays直接创建并初始化 VAO，无需绑定,可以直接通过id进行操作
 /*
 for (int i = 0; i < 3; ++i) {
@@ -1353,8 +1353,7 @@ void main()
 #### 数据类
 
 - 除了基本数据类型int、float、double、bool等，有两种容器类型：vector和matrix
-
-
+  - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/undefinedimage-20241123204158356.png" alt="image-20241123204158356" style="zoom:50%;" />
 
 - 向量可以包含2~4个分量
 
