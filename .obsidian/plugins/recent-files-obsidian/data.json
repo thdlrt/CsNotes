@@ -1,12 +1,16 @@
 {
   "recentFiles": [
     {
-      "basename": "UE基础",
-      "path": "docs/_private_/腾讯公开课/UE基础.md"
-    },
-    {
       "basename": "learnOpengl",
       "path": "docs/自学内容/游戏开发&图形学/计算机图形学/API编程/opengl/learnOpengl.md"
+    },
+    {
+      "basename": "信息整理",
+      "path": "docs/自学内容/游戏开发&图形学/游戏开发/游戏设计/信息/信息整理.md"
+    },
+    {
+      "basename": "UE基础",
+      "path": "docs/_private_/腾讯公开课/UE基础.md"
     },
     {
       "basename": "openwrt软路由",

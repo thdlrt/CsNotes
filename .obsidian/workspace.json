@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/_private_/腾讯公开课/UE基础.md",
+                "file": "docs/自学内容/游戏开发&图形学/计算机图形学/API编程/opengl/learnOpengl.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "UE基础"
+              "title": "learnOpengl"
             }
           }
         ]
@@ -74,16 +74,6 @@
             }
           },
           {
-            "id": "b65b48028a8c5eaf",
-            "type": "leaf",
-            "state": {
-              "type": "file-tree-view",
-              "state": {},
-              "icon": "sheets-in-box",
-              "title": "File Tree"
-            }
-          },
-          {
             "id": "7f9e279672fe6459",
             "type": "leaf",
             "state": {
@@ -91,16 +81,6 @@
               "state": {},
               "icon": "lucide-file",
               "title": "插件不再活动"
-            }
-          },
-          {
-            "id": "df4e738f39b88073",
-            "type": "leaf",
-            "state": {
-              "type": "file-tree-view",
-              "state": {},
-              "icon": "sheets-in-box",
-              "title": "File Tree"
             }
           },
           {
@@ -112,19 +92,8 @@
               "icon": "clock",
               "title": "Recent Files"
             }
-          },
-          {
-            "id": "7c2341b0eb0caebd",
-            "type": "leaf",
-            "state": {
-              "type": "file-tree-view",
-              "state": {},
-              "icon": "sheets-in-box",
-              "title": "File Tree"
-            }
           }
-        ],
-        "currentTab": 7
+        ]
       }
     ],
     "direction": "horizontal",
@@ -201,10 +170,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/_private_/腾讯公开课/UE基础.md"
+                "file": "docs/自学内容/游戏开发&图形学/计算机图形学/API编程/opengl/learnOpengl.md"
               },
               "icon": "lucide-list",
-              "title": "UE基础 的大纲"
+              "title": "learnOpengl 的大纲"
             }
           }
         ],
@@ -230,11 +199,15 @@
       "obsidian-advanced-slides:Show Slide Preview": false
     }
   },
-  "active": "6c7418c521ab7a68",
+  "active": "e7448f2e3ed093cf",
   "lastOpenFiles": [
+    "docs/自学内容/游戏开发&图形学/游戏开发/游戏设计/信息/信息整理.md",
+    "docs/自学内容/游戏开发&图形学/游戏开发/游戏设计/信息/全球游戏市场进化论.pdf",
+    "docs/自学内容/游戏开发&图形学/游戏开发/游戏设计/信息",
+    "docs/_private_/腾讯公开课/UE基础.md",
+    "docs/自学内容/游戏开发&图形学/游戏开发/游戏设计",
     "docs/自学内容/游戏开发&图形学/计算机图形学/API编程/opengl/learnOpengl.md",
     "docs/_private_/腾讯公开课/游戏模式.md",
-    "docs/_private_/腾讯公开课/UE基础.md",
     "docs/技能&工具/折腾/openwrt软路由.md",
     "docs/自学内容/游戏开发&图形学/游戏开发/游戏引擎/UE5/UE基础.md",
     "docs/_private_/腾讯公开课",
@@ -256,9 +229,6 @@
     "docs/_export_/slide/本校保研流程（计算机系夏令营）/plugin/chalkboard/README.md",
     "docs/_export_/slide/本校保研流程（计算机系夏令营）/plugin/chalkboard/plugin.js",
     "docs/_export_/slide/本校保研流程（计算机系夏令营）/plugin/chalkboard/plugin (copy).js",
-    "docs/_export_/slide/本校保研流程（计算机系夏令营）/plugin/chalkboard/_style.css",
-    "docs/_export_/slide/本校保研流程（计算机系夏令营）/plugin/chalkboard/style.css",
-    "docs/_export_/slide/本校保研流程（计算机系夏令营）/plugin/chalkboard/img",
     "docs/_export_/slide/本校保研流程（计算机系夏令营）/plugin/chart/README.md",
     "docs/_export_/slide/本校保研流程（计算机系夏令营）/plugin/customcontrols/README.md",
     "docs/_export_/slide/本校保研流程（计算机系夏令营）/plugin/menu/README.md",
@@ -276,8 +246,6 @@
     "docs/_export_/本校保研流程（计算机系夏令营）/plugin/customcontrols/README.md",
     "docs/_export_/本校保研流程（计算机系夏令营）/plugin/menu/README.md",
     "docs/_export_/本校保研流程（计算机系夏令营）/plugin/menu/CONTRIBUTING.md",
-    "export/reveal.js/plugin/chalkboard/README.md",
-    "export/reveal.js/plugin/chart/README.md",
     "未命名.canvas"
   ]
 }
