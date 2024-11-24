@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/自学内容/游戏开发&图形学/计算机图形学/API编程/opengl/learnOpengl.md",
+                "file": "docs/自学内容/游戏开发&图形学/游戏开发/游戏引擎/unity/c#.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "learnOpengl"
+              "title": "c#"
             }
           }
         ]
@@ -93,13 +93,11 @@
               "title": "Recent Files"
             }
           }
-        ],
-        "currentTab": 2
+        ]
       }
     ],
     "direction": "horizontal",
-    "width": 291.49999618530273,
-    "collapsed": true
+    "width": 291.49999618530273
   },
   "right": {
     "id": "d615b65a4ccf8a6a",
@@ -171,10 +169,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/自学内容/游戏开发&图形学/计算机图形学/API编程/opengl/learnOpengl.md"
+                "file": "docs/自学内容/游戏开发&图形学/游戏开发/游戏引擎/unity/c#.md"
               },
               "icon": "lucide-list",
-              "title": "learnOpengl 的大纲"
+              "title": "c# 的大纲"
             }
           }
         ],
@@ -200,11 +198,14 @@
       "obsidian-advanced-slides:Show Slide Preview": false
     }
   },
-  "active": "0a9cd0319ddd3dbc",
+  "active": "92d88f209ca266ca",
   "lastOpenFiles": [
+    "docs/自学内容/游戏开发&图形学/游戏开发/游戏引擎/unity/unity基础.md",
+    "docs/自学内容/游戏开发&图形学/游戏开发/游戏引擎/unity/unity资源管理.md",
+    "docs/自学内容/游戏开发&图形学/游戏开发/游戏引擎/unity/fairyGui(UnitySDK).md",
+    "docs/自学内容/游戏开发&图形学/计算机图形学/API编程/opengl/learnOpengl.md",
     "docs/自学内容/游戏开发&图形学/游戏开发/游戏设计/信息/2024腾讯游戏运营加餐包——《游戏活动与商业化运营》笔记(2).pdf",
     "docs/自学内容/游戏开发&图形学/游戏开发/游戏设计/信息/全球游戏市场进化论.pdf",
-    "docs/自学内容/游戏开发&图形学/计算机图形学/API编程/opengl/learnOpengl.md",
     "docs/自学内容/游戏开发&图形学/游戏开发/游戏设计/信息/信息整理.md",
     "docs/自学内容/游戏开发&图形学/游戏开发/游戏设计/信息",
     "docs/_private_/腾讯公开课/UE基础.md",
@@ -230,7 +231,6 @@
     "docs/_export_/slide/本校保研流程（计算机系夏令营）/plugin/chalkboard/img/boardmarker-yellow.png",
     "docs/_export_/slide/本校保研流程（计算机系夏令营）/plugin/chalkboard/README.md",
     "docs/_export_/slide/本校保研流程（计算机系夏令营）/plugin/chalkboard/plugin.js",
-    "docs/_export_/slide/本校保研流程（计算机系夏令营）/plugin/chalkboard/plugin (copy).js",
     "docs/_export_/slide/本校保研流程（计算机系夏令营）/plugin/chart/README.md",
     "docs/_export_/slide/本校保研流程（计算机系夏令营）/plugin/customcontrols/README.md",
     "docs/_export_/slide/本校保研流程（计算机系夏令营）/plugin/menu/README.md",
@@ -246,8 +246,6 @@
     "docs/_export_/本校保研流程（计算机系夏令营）/plugin/chalkboard/README.md",
     "docs/_export_/本校保研流程（计算机系夏令营）/plugin/chart/README.md",
     "docs/_export_/本校保研流程（计算机系夏令营）/plugin/customcontrols/README.md",
-    "docs/_export_/本校保研流程（计算机系夏令营）/plugin/menu/README.md",
-    "docs/_export_/本校保研流程（计算机系夏令营）/plugin/menu/CONTRIBUTING.md",
     "未命名.canvas"
   ]
 }

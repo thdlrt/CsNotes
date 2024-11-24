@@ -1,6 +1,22 @@
 {
   "recentFiles": [
     {
+      "basename": "c#",
+      "path": "docs/自学内容/游戏开发&图形学/游戏开发/游戏引擎/unity/c#.md"
+    },
+    {
+      "basename": "unity基础",
+      "path": "docs/自学内容/游戏开发&图形学/游戏开发/游戏引擎/unity/unity基础.md"
+    },
+    {
+      "basename": "unity资源管理",
+      "path": "docs/自学内容/游戏开发&图形学/游戏开发/游戏引擎/unity/unity资源管理.md"
+    },
+    {
+      "basename": "fairyGui(UnitySDK)",
+      "path": "docs/自学内容/游戏开发&图形学/游戏开发/游戏引擎/unity/fairyGui(UnitySDK).md"
+    },
+    {
       "basename": "learnOpengl",
       "path": "docs/自学内容/游戏开发&图形学/计算机图形学/API编程/opengl/learnOpengl.md"
     },
@@ -57,18 +73,6 @@
       "path": "docs/技能&工具/折腾/reveal.js.md"
     },
     {
-      "basename": "c#",
-      "path": "docs/自学内容/游戏开发&图形学/游戏开发/游戏引擎/unity/c#.md"
-    },
-    {
-      "basename": "unity资源管理",
-      "path": "docs/自学内容/游戏开发&图形学/游戏开发/游戏引擎/unity/unity资源管理.md"
-    },
-    {
-      "basename": "unity基础",
-      "path": "docs/自学内容/游戏开发&图形学/游戏开发/游戏引擎/unity/unity基础.md"
-    },
-    {
       "basename": "世嘉新人培训教材",
       "path": "docs/自学内容/游戏开发&图形学/阅读/世嘉新人培训教材.md"
     },
@@ -87,10 +91,6 @@
     {
       "basename": "C++基础",
       "path": "docs/编程语言/c++/C++基础.md"
-    },
-    {
-      "basename": "fairyGui(UnitySDK)",
-      "path": "docs/自学内容/游戏开发&图形学/游戏开发/游戏引擎/unity/fairyGui(UnitySDK).md"
     },
     {
       "basename": "xlua",
