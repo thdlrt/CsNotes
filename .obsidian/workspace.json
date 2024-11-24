@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/自学内容/游戏开发&图形学/游戏开发/游戏引擎/unity/c#.md",
+                "file": "docs/自学内容/游戏开发&图形学/计算机图形学/API编程/opengl/learnOpengl.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "c#"
+              "title": "learnOpengl"
             }
           }
         ]
@@ -97,7 +97,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 291.49999618530273
+    "width": 291.49999618530273,
+    "collapsed": true
   },
   "right": {
     "id": "d615b65a4ccf8a6a",
@@ -169,10 +170,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/自学内容/游戏开发&图形学/游戏开发/游戏引擎/unity/c#.md"
+                "file": "docs/自学内容/游戏开发&图形学/计算机图形学/API编程/opengl/learnOpengl.md"
               },
               "icon": "lucide-list",
-              "title": "c# 的大纲"
+              "title": "learnOpengl 的大纲"
             }
           }
         ],
@@ -200,6 +201,7 @@
   },
   "active": "92d88f209ca266ca",
   "lastOpenFiles": [
+    "docs/自学内容/游戏开发&图形学/游戏开发/游戏引擎/unity/c#.md",
     "docs/自学内容/游戏开发&图形学/游戏开发/游戏引擎/unity/unity基础.md",
     "docs/自学内容/游戏开发&图形学/游戏开发/游戏引擎/unity/unity资源管理.md",
     "docs/自学内容/游戏开发&图形学/游戏开发/游戏引擎/unity/fairyGui(UnitySDK).md",
@@ -245,7 +247,6 @@
     "docs/技能&工具/折腾/reveal.js.md",
     "docs/_export_/本校保研流程（计算机系夏令营）/plugin/chalkboard/README.md",
     "docs/_export_/本校保研流程（计算机系夏令营）/plugin/chart/README.md",
-    "docs/_export_/本校保研流程（计算机系夏令营）/plugin/customcontrols/README.md",
     "未命名.canvas"
   ]
 }

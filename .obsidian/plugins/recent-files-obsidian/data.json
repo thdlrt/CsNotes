@@ -1,6 +1,10 @@
 {
   "recentFiles": [
     {
+      "basename": "learnOpengl",
+      "path": "docs/自学内容/游戏开发&图形学/计算机图形学/API编程/opengl/learnOpengl.md"
+    },
+    {
       "basename": "c#",
       "path": "docs/自学内容/游戏开发&图形学/游戏开发/游戏引擎/unity/c#.md"
     },
@@ -15,10 +19,6 @@
     {
       "basename": "fairyGui(UnitySDK)",
       "path": "docs/自学内容/游戏开发&图形学/游戏开发/游戏引擎/unity/fairyGui(UnitySDK).md"
-    },
-    {
-      "basename": "learnOpengl",
-      "path": "docs/自学内容/游戏开发&图形学/计算机图形学/API编程/opengl/learnOpengl.md"
     },
     {
       "basename": "全球游戏市场进化论",
