@@ -43,6 +43,28 @@ void OnClick()
 
 ```
 
+- 通过广播进行函数调用
+  - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/undefinedimage-20241125234739477.png" alt="image-20241125234739477" style="zoom:67%;" />
+
+```c#
+//gameObject.SendMessage("MethodName", optionalParameter, SendMessageOptions.RequireReceiver);
+
+void Update()
+{
+    if (Input.GetKeyDown(KeyCode.Space))
+    {
+        SendMessage("Jump", SendMessageOptions.RequireReceiver);
+    }
+}
+
+void Jump()
+{
+    Debug.Log("Jump called on " + gameObject.name);
+}
+```
+
+- 最多只能传递一个
+
 #### UI组件
 
 
