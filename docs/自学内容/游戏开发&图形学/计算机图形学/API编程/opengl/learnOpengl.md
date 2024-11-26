@@ -1350,6 +1350,20 @@ void main()
   - 查询`glGetIntegerv(GL_MAX_VERTEX_ATTRIBS, &nrAttributes);`
 
 - glsl 代码与 c 接近，开始于版本声明，与 opengl 类似，如 3.3 版本对应 330 `#version 330 core`
+
+- `invariant` 添加在 out 变量前面，保证使用相同输入进行相同计算总是得到相同的结果，用于保证多个着色器阶段输出一致
+	- `#pragma STDGL invariant(all)` 全局开启
+	- 会关闭一些优化，解决插值、浮点数计算的微小误差
+- `precise` 保证变量的计算遵循最高的精度标准，避免因为优化引入的不精确计算
+	- 在指定的变量前添加 `precise`
+
+| 修饰符         | 作用范围      | 主要功能               | 优势             | 注意事项          |
+| ----------- | --------- | ------------------ | -------------- | ------------- |
+| `invariant` | 输出变量      | 保证跨着色器阶段的一致性       | 避免几何边界上插值出现不连续 | 性能可能降低，慎用     |
+| `precise`   | 局部变量、计算过程 | 提升计算过程的精度，避免优化引入误差 | 确保高精度计算（如物理模拟） | 可能影响性能，影响有限场景 |
+|             |           |                    |                |               |
+- 控制着色器编译优化 `pragma optimize(on/off)`
+- 额外诊断信息 `pragma debug(on/off)`
 #### 数据类
 
 - 除了基本数据类型int、float、double、bool等，有两种容器类型：vector和matrix
@@ -1381,8 +1395,6 @@ vec4 result = vec4(vect, 0.0, 0.0);
 vec4 otherResult = vec4(result.xyz, 1.0);
 
 ```
-
-
 
 #### 输入输出
 
@@ -1418,7 +1430,23 @@ void main()
     FragColor = vertexColor;
 }
 ```
+##### 函数的参数传递
+- glsl 没有指针类型，通过参数的访问修饰符来进行设定
+	- 同与外部的通讯 in、out 是类似的
+- **`in`**：仅作输入，用于从调用者向函数传递数据。
+- **`out`**：仅作输出，用于从函数向调用者传递数据。
+- **`inout`**：作为输入和输出，用于修改调用者提供的数据。（类似引用传递）
+```c++
+void example(inout float value) {
+    value *= 2.0; // 修改 value
+}
 
+void main() {
+    float value = 21.0;
+    example(value);
+    // value 被修改为 42.0
+}
+```
 #### uniform
 
 - 实现从CPU传递数据到GPU上的着色器（如从应用程序直接发送一个颜色给片段着色器）
@@ -1454,6 +1482,95 @@ glUniform4f(vertexColorLocation, 0.0f, greenValue, 0.0f, 1.0f);
 | `ui` | 函数需要一个unsigned int作为它的值   |
 | `3f` | 函数需要3个float作为它的值           |
 | `fv` | 函数需要一个float向量/数组作为它的值 |
+##### uniform 块
+
+- 使用 Uniform 缓冲对象可以定义协议系列在**多个着色器程序中相同的全局 Uniform 变量**，这样就只需要设置相关的 uniform 一次，只需要手动设置每个着色器中不同的 uniform
+- 通过 glGenBuffers 创建缓冲，并绑定到 GL_UNIFORM_BUFFER 缓冲目标，并将所有相关的 uniform 数据存入缓冲。
+
+- uniform 块
+  - Uniform 块中的变量可以直接访问，不需要加块名作为前缀。
+  - layout (std 140) 表示当前定义的 Uniform 块对它的内容使用一个特定的内存布局
+
+```glsl
+layout (std140) uniform ExampleBlock
+{
+    float value;
+    vec3  vector;
+    mat4  matrix;
+    float values[3];
+    bool  boolean;
+    int   integer;
+};
+```
+
+- uniform 块的内容是存储在缓冲对象上的，我们还需要告诉 opengl 缓冲对象内存的那一部分对应哪一个 uniform 块成员变量
+
+  - 我们需要知道的是每个变量的大小（字节）和（从块起始位置的）偏移量，来让我们能够按顺序将它们放进缓冲中。
+
+- 通常使用**std 布局**：std 140 布局声明了每个变量的偏移量都是由一系列规则所决定的。同时允许手动计算变量的偏移量
+
+  - 在默认的**共享布局**（Shared Layout）中，变量的实际偏移量需要通过 `glGetUniformLocation` 等**API 动态查询**，不仅复杂，而且增加了运行时开销。
+
+    `std140` 布局通过明确的规则直接决定偏移量，使得我们可以**手动计算偏移**，省去了查询的麻烦。
+
+  - **基准对齐量**：变量在 Uniform 块中所需的最小对齐空间，包括潜在的填充字节
+
+  - **对齐偏移量**：变量在块中的实际偏移量，必须是其基准对齐量的整数倍。
+
+  - ![image-20241119181452165](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefinedundefinedimage-20241119181452165.png)
+    - 通常 N=4 B
+
+```glsl
+layout (std140) uniform ExampleBlock
+{
+                     // 基准对齐量       // 对齐偏移量
+    float value;     // 4               // 0 
+    vec3 vector;     // 16              // 16  (必须是16的倍数，所以 4->16)
+    mat4 matrix;     // 16              // 32  (列 0)
+                     // 16              // 48  (列 1)
+                     // 16              // 64  (列 2)
+                     // 16              // 80  (列 3)
+    float values[3]; // 16              // 96  (values[0])
+                     // 16              // 112 (values[1])
+                     // 16              // 128 (values[2])
+    bool boolean;    // 4               // 144
+    int integer;     // 4               // 148
+}; 
+```
+
+- uniform**缓冲对象 ubo**：GPU 显存中的缓冲区，用于存储 uniform 块的数据
+- **Uniform 块**是 GLSL 中的一个结构，用于统一管理多个 `uniform` 变量
+- 绑定点起到了**桥梁**作用，沟通 ubo 和 uniform 块
+- 通过将多个 Uniform 块绑定到相同的缓冲上，就可以实现数据的共享（如果定义了相同的 Uniform 块）
+  - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/undefinedadvanced_glsl_binding_points.png" alt="img" style="zoom:67%;" />
+
+```glsl
+//创建缓冲UBO
+unsigned int uboExampleBlock;
+glGenBuffers(1, &uboExampleBlock);
+glBindBuffer(GL_UNIFORM_BUFFER, uboExampleBlock);
+glBufferData(GL_UNIFORM_BUFFER, 152, NULL, GL_STATIC_DRAW); // 分配152字节的内存
+glBindBuffer(GL_UNIFORM_BUFFER, 0);
+
+//Uniform块绑定到一个特定的绑定点中
+//获取uniform块的索引
+unsigned int lights_index = glGetUniformBlockIndex(shaderA.ID, "Lights");   
+//将uniform块绑定到2绑定点
+glUniformBlockBinding(shaderA.ID, lights_index, 2);
+//将ubo绑定到绑定点
+glBindBufferBase(GL_UNIFORM_BUFFER, 2, uboExampleBlock); 
+```
+
+- 也可以这样讲 uniform 块绑定到绑定点 `layout(std140, binding = 2) uniform Lights { ... };`
+
+- 修改 uniform 缓冲中的内容
+
+```c++
+glBindBuffer(GL_UNIFORM_BUFFER, uboExampleBlock);
+int b = true; // GLSL中的bool是4字节
+glBufferSubData(GL_UNIFORM_BUFFER, 144, 4, &b);
+glBindBuffer(GL_UNIFORM_BUFFER, 0);
+```
 
 #### 附：着色器管理类
 
@@ -3412,104 +3529,6 @@ in VS_OUT
 
 - 这就生命力一个`vs_out`接口块，打包了要发送的所有输出变量
 - 输入和输出的块名（VS_OUT）要一样，但是实例名可以不一样
-
-##### Uniform缓冲对象
-
-- 使用Uniform缓冲对象可以定义协议系列在**多个着色器程序中相同的全局Uniform变量**，这样就只需要设置相关的uniform一次，只需要手动设置每个着色器中不同的uniform
-- 通过glGenBuffers创建缓冲，并绑定到GL_UNIFORM_BUFFER缓冲目标，并将所有相关的uniform数据存入缓冲。
-
-
-
-- uniform块
-  - Uniform块中的变量可以直接访问，不需要加块名作为前缀。
-  - layout (std140)表示当前定义的Uniform块对它的内容使用一个特定的内存布局
-
-```glsl
-layout (std140) uniform ExampleBlock
-{
-    float value;
-    vec3  vector;
-    mat4  matrix;
-    float values[3];
-    bool  boolean;
-    int   integer;
-};
-```
-
-- uniform块的内容是存储在缓冲对象上的，我们还需要告诉opengl缓冲对象内存的那一部分对应哪一个uniform块成员变量
-
-  - 我们需要知道的是每个变量的大小（字节）和（从块起始位置的）偏移量，来让我们能够按顺序将它们放进缓冲中。
-
-- 通常使用**std布局**：std140布局声明了每个变量的偏移量都是由一系列规则所决定的。同时允许手动计算变量的偏移量
-
-  - 在默认的**共享布局**（Shared Layout）中，变量的实际偏移量需要通过`glGetUniformLocation`等**API动态查询**，不仅复杂，而且增加了运行时开销。
-
-    `std140`布局通过明确的规则直接决定偏移量，使得我们可以**手动计算偏移**，省去了查询的麻烦。
-
-  - **基准对齐量**：变量在Uniform块中所需的最小对齐空间，包括潜在的填充字节
-
-  - **对齐偏移量**：变量在块中的实际偏移量，必须是其基准对齐量的整数倍。
-
-  - ![image-20241119181452165](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefinedimage-20241119181452165.png)
-
-    - 通常N=4B
-
-```glsl
-layout (std140) uniform ExampleBlock
-{
-                     // 基准对齐量       // 对齐偏移量
-    float value;     // 4               // 0 
-    vec3 vector;     // 16              // 16  (必须是16的倍数，所以 4->16)
-    mat4 matrix;     // 16              // 32  (列 0)
-                     // 16              // 48  (列 1)
-                     // 16              // 64  (列 2)
-                     // 16              // 80  (列 3)
-    float values[3]; // 16              // 96  (values[0])
-                     // 16              // 112 (values[1])
-                     // 16              // 128 (values[2])
-    bool boolean;    // 4               // 144
-    int integer;     // 4               // 148
-}; 
-```
-
-
-
-- uniform**缓冲对象ubo**：GPU显存中的缓冲区，用于存储uniform块的数据
-- **Uniform块**是GLSL中的一个结构，用于统一管理多个`uniform`变量
-- 绑定点起到了**桥梁**作用，沟通ubo和uniform块
-- 通过将多个Uniform块绑定到相同的缓冲上，就可以实现数据的共享（如果定义了相同的Uniform块）
-  - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/undefinedadvanced_glsl_binding_points.png" alt="img" style="zoom:67%;" />
-
-```glsl
-//创建缓冲UBO
-unsigned int uboExampleBlock;
-glGenBuffers(1, &uboExampleBlock);
-glBindBuffer(GL_UNIFORM_BUFFER, uboExampleBlock);
-glBufferData(GL_UNIFORM_BUFFER, 152, NULL, GL_STATIC_DRAW); // 分配152字节的内存
-glBindBuffer(GL_UNIFORM_BUFFER, 0);
-
-//Uniform块绑定到一个特定的绑定点中
-//获取uniform块的索引
-unsigned int lights_index = glGetUniformBlockIndex(shaderA.ID, "Lights");   
-//将uniform块绑定到2绑定点
-glUniformBlockBinding(shaderA.ID, lights_index, 2);
-//将ubo绑定到绑定点
-glBindBufferBase(GL_UNIFORM_BUFFER, 2, uboExampleBlock); 
-```
-
-- 也可以这样讲uniform块绑定到绑定点`layout(std140, binding = 2) uniform Lights { ... };`
-
-
-
-- 修改uniform缓冲中的内容
-
-```c++
-glBindBuffer(GL_UNIFORM_BUFFER, uboExampleBlock);
-int b = true; // GLSL中的bool是4字节
-glBufferSubData(GL_UNIFORM_BUFFER, 144, 4, &b);
-glBindBuffer(GL_UNIFORM_BUFFER, 0);
-```
-
 #### 几何着色器
 
 - 图元是图形渲染管线中绘制几何图形的基本单位
