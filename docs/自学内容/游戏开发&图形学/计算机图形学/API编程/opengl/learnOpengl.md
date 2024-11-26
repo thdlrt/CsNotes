@@ -3302,6 +3302,8 @@ void main()
 ## 绘制方式
 ### 图元
 - opengl 主要支持点、线、三角形图元
+- ![image.png|550](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefined20241126230658.png)
+
 #### 点
 - 在屏幕上以一个二维的纹理图像或颜色方块呈现
 - 在程序中设置点的大小 `glPointSize(10.0f); // 设置点大小为10像素`
@@ -3311,6 +3313,15 @@ void main()
 - 线由两个顶点表示
 - 开放的多段线叫条带线；闭合的叫循环线
 - 通过 `glLineWidth()` 来设置线段宽度
+#### 三角形
+- 三角形的渲染是通过三个顶点到屏幕以及三条边的链接来完成
+- 三角形条带
+	- ![image.png|500](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefined20241126230506.png)
+- 三角形扇面
+	- ![image.png|195](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefined20241126230514.png)
+### 缓存数据
+
+### 绘制命令
 ## 着色器的内建变量
 
 ### 顶点着色器
