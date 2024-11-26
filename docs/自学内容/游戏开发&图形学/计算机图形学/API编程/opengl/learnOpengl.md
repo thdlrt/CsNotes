@@ -1327,6 +1327,26 @@ int main()
 ```
 ## 着色器
 - 一些**运行在 GPU 上**的小程序，着色器的功能比较简单，只是接受输入并产生输出
+### 编译着色器
+- 创建着色器对象 `Gluint glCreateShader(GLenum type)`
+	- type 可以有 `GL_VERTEX_SHADER GL_FRAGMENT_SHADER` 等
+- 关联着色器代码 `void glShaderSource(Gluint shader,GLsizer count,const GLchar** string,const GLint* length)`
+- 编译着色器 `void glCompileShader(GLuint shader)`
+	- 查询结果 `glGetShaderiv()`，GL_TRUE 即编译成功
+	- 查询日志 `glGetShaderInfoLog(GLuint shader,GLsizei bufSize,GLsizei*length,char*infoLog)`
+
+- 创建着色器程序 `Gluint glCreateProgram(void)`
+- 将着色器附加到着色器程序 `void glAttachShader(GLuint program, GLuint shader)`
+	- 移除着色器 `void glDetchShader(GLuint program,GLuint shader)`
+- 链接生成可执行程序 `void GlLinkProgram(GLuint program)`
+	- 结果查询 `glGetProgramiv()`
+	- 日志 `glGetProgramInfoLog()`
+- 绑定着色器程序 `void glUseProgram(GLuint program)`
+- 得到可执行程序 program 后可以释放着色器对象了 `glDeleteShader ()`
+	- 标记为可删除，当对应的着色器程序不再使用时会自动进行删除
+- 删除着色器程序 `void glDeleteProgram(Gluint program)`
+### 独立着色器对象
+
 ### GLSL
 - 着色器程序通常的结构
 ```glsl
@@ -1364,6 +1384,7 @@ void main()
 |             |           |                    |                |               |
 - 控制着色器编译优化 `pragma optimize(on/off)`
 - 额外诊断信息 `pragma debug(on/off)`
+
 #### 数据类
 
 - 除了基本数据类型int、float、double、bool等，有两种容器类型：vector和matrix
@@ -1482,7 +1503,39 @@ glUniform4f(vertexColorLocation, 0.0f, greenValue, 0.0f, 1.0f);
 | `ui` | 函数需要一个unsigned int作为它的值   |
 | `3f` | 函数需要3个float作为它的值           |
 | `fv` | 函数需要一个float向量/数组作为它的值 |
-##### uniform 块
+##### 接口块
+
+- 通过接口快可以**组合**要从顶点着色器发送到片段着色器的数据
+
+```glsl
+#version 330 core
+layout (location = 0) in vec3 aPos;
+layout (location = 1) in vec2 aTexCoords;
+
+uniform mat4 model;
+uniform mat4 view;
+uniform mat4 projection;
+
+out VS_OUT
+{
+    vec2 TexCoords;
+} vs_out;
+
+void main()
+{
+    gl_Position = projection * view * model * vec4(aPos, 1.0);    
+    vs_out.TexCoords = aTexCoords;
+}  
+//片段着色器中
+in VS_OUT
+{
+    vec2 TexCoords;
+} fs_in;
+```
+
+- 这就生命力一个 `vs_out` 接口块，打包了要发送的所有输出变量
+- 输入和输出的块名（VS_OUT）要一样，但是实例名可以不一样
+##### 数据块接口
 
 - 使用 Uniform 缓冲对象可以定义协议系列在**多个着色器程序中相同的全局 Uniform 变量**，这样就只需要设置相关的 uniform 一次，只需要手动设置每个着色器中不同的 uniform
 - 通过 glGenBuffers 创建缓冲，并绑定到 GL_UNIFORM_BUFFER 缓冲目标，并将所有相关的 uniform 数据存入缓冲。
@@ -1571,7 +1624,18 @@ int b = true; // GLSL中的bool是4字节
 glBufferSubData(GL_UNIFORM_BUFFER, 144, 4, &b);
 glBindBuffer(GL_UNIFORM_BUFFER, 0);
 ```
+##### buffer 块
+- 着色器的存储缓存对象，比 uniform 块更强大，着色器可以写入块，修改内容并呈现给其他着色器调用、应用程序本身。
+	- 可以在渲染之前决定大小而不是在编译和链接的时候
+```c++
+buffer BufferObject {
+	int mode;
+	vec points[];//最后一个元素可以是未定大小的数组
+}
 
+```
+- 上面的数组就可以在渲染之前再设置大小，着色器中可以使用 `length()` 来获取数组的大小
+- 
 #### 附：着色器管理类
 
 - 从硬盘读取着色器，编译、链接、检查
@@ -3497,38 +3561,6 @@ glCopyBufferSubData(GL_COPY_READ_BUFFER, GL_COPY_WRITE_BUFFER, 0, 0, sizeof(vert
   - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/undefinedimage-20241119174156028.png" alt="image-20241119174156028" style="zoom:50%;" />
   - 这样就能保留部分的提前深度测试
 
-##### 接口块
-
-- 通过接口快可以**组合**要从顶点着色器发送到片段着色器的数据
-
-```glsl
-#version 330 core
-layout (location = 0) in vec3 aPos;
-layout (location = 1) in vec2 aTexCoords;
-
-uniform mat4 model;
-uniform mat4 view;
-uniform mat4 projection;
-
-out VS_OUT
-{
-    vec2 TexCoords;
-} vs_out;
-
-void main()
-{
-    gl_Position = projection * view * model * vec4(aPos, 1.0);    
-    vs_out.TexCoords = aTexCoords;
-}  
-//片段着色器中
-in VS_OUT
-{
-    vec2 TexCoords;
-} fs_in;
-```
-
-- 这就生命力一个`vs_out`接口块，打包了要发送的所有输出变量
-- 输入和输出的块名（VS_OUT）要一样，但是实例名可以不一样
 #### 几何着色器
 
 - 图元是图形渲染管线中绘制几何图形的基本单位
