@@ -918,7 +918,7 @@ unsigned int TextureFromFile(const char *path, const string &directory, bool gam
 }
 #endif
 ```
-# opengl 基础
+# opengl
 ## 常用的数据类型
 ![image.png](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefined20241123190804.png)
 - 最好使用 opengl 提供的数据类型，这样就能避免在不同版本 opengl 之间一直代码出现不匹配的问题
@@ -1185,7 +1185,7 @@ glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
 	- GL_STATIC_DRAW ：数据不会或几乎不会改变。
 	- GL_DYNAMIC_DRAW：数据会被改变很多。
 	- GL_STREAM_DRAW ：数据每次绘制时都会改变。
-### 完整代码
+#### 完整代码
 ```cpp
 #include <glad\glad.h> 
 #include <GLFW\glfw3.h>
@@ -1325,7 +1325,1120 @@ int main()
 }
 
 ```
-## 着色器
+
+## 深度测试
+
+- 通常深度测试是在片段着色器运行之后在屏幕空间进行的
+  - 提前深度测试：在片段着色器之前运行，提前丢弃永远不可见的片段，减少计算量
+- 开启深度测试 `glEnable(GL_DEPTH_TEST);`
+  - 使用深度测试时，清除缓存是还要清除深度数据 `glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);`
+- 将深度缓冲数据设置为只读，禁止修改 `glDepthMask(GL_FALSE);`
+- 自定义深度测试比较函数 `glDepthFunc(GL_LESS);`
+  - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/undefinedimage-20241118161429326.png" alt="image-20241118161429326" style="zoom: 50%;" />
+- 通常根据近远平面的值来计算深度值
+  - 一种线性方程 $F_{depth}=\frac{z-near}{far-near}$
+  - 更常用的是非线性方程，与 $1/z$ 成正比，即 z 值较小时具有较高的精度 $F_{depth}=\frac{1/z-1/near}{1/far-1/near}$
+  - 深度缓冲精度不足时就会出现**深度冲突**，结果就是这两个形状不断地在切换前后顺序，这会导致很奇怪的花纹。
+- 着色器中通过 `gl_FragCoord.z` 可以直接获取到深度缓冲的值
+
+## 模板测试
+
+- 模版测试是在深度测试之前进行的，每个模板值是 8 位的，可以丢弃或保留具有特定模板值的片段
+- 模板测试的目的：利用已经本次绘制的物体，产生一个区域，在**下次绘制**中利用这个区域做一些效果。
+  - 启用模板缓冲的写入。
+  - 渲染物体，**更新模板缓冲**的内容。
+  - 禁用模板缓冲的写入。
+  - 渲染（其它）物体，这次**根据模板缓冲的内容**丢弃特定的片段。
+- 启用模板测试 `glEnable(GL_STENCIL_TEST);`
+- 清除模板缓冲 `glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT | GL_STENCIL_BUFFER_BIT);`
+- `glStencilMask` 允许我们设置一个位掩码，它会与将要写入缓冲的模板值进行与 (AND) 运算
+
+```c++
+glStencilMask(0xFF); // 每一位写入模板缓冲时都保持原样
+glStencilMask(0x00); // 每一位在写入模板缓冲时都会变成0（禁用写入）
+```
+
+### 模板函数
+
+- 控制模板缓冲通过还是失败，以及如何影响模板缓冲
+- 对模板缓冲做什么 (配置模版缓冲条件)：`glStencilFunc(GLenum func, GLint ref, GLuint mask)`
+  - `func`：设置模板测试函数 (Stencil Test Function)。这个测试函数将会应用到已储存的模板值上和 glStencilFunc 函数的 `ref` 值上。可用的选项有：GL_NEVER、GL_LESS、GL_LEQUAL、GL_GREATER、GL_GEQUAL、GL_EQUAL、GL_NOTEQUAL 和 GL_ALWAYS。它们的语义和深度缓冲的函数类似。
+  - `ref`：设置了模板测试的参考值, 模板缓冲的内容将会与这个值进行比较。
+  - `mask`：设置一个掩码，它将会与参考值和储存的模板值在测试比较它们之前进行与 (AND) 运算。初始情况下所有位都为 1。
+  - 如 `glStencilFunc(GL_EQUAL, 1, 0xFF)`
+- 更新模板缓冲的值 `glStencilOp(GLenum sfail, GLenum dpfail, GLenum dppass)`
+  - `sfail`：模板测试失败时采取的行为。
+  - `dpfail`：模板测试通过，但深度测试失败时采取的行为。
+  - `dppass`：模板测试和深度测试都通过时采取的行为。
+  - ![image-20241118173453758](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefinedundefinedimage-20241118173453758.png)
+
+### 用模板测试实现物体描边
+
+<img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/undefinedstencil_object_outlining.png" alt="img" style="zoom: 67%;" />
+
+- 先绘制物体（原箱子）
+
+```c++
+glEnable(GL_STENCIL_TEST);
+glStencilOp(GL_KEEP, GL_KEEP, GL_REPLACE);//如果模板测试和深度测试都通过了，那么我们希望将储存的模板值设置为参考值（1）
+glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT | GL_STENCIL_BUFFER_BIT); 
+
+glStencilMask(0x00); // 绘制不需要描边的物体
+normalShader.use();
+DrawFloor()  
+
+//绘制需要描边的物体
+glStencilFunc(GL_ALWAYS, 1, 0xFF); // 所有的片段都应该更新模板缓冲
+glStencilMask(0xFF); // 启用模板缓冲写入
+DrawTwoContainers();
+```
+
+- 接下来绘制大一号的箱子作为描边，这次要禁用描边
+
+```c++
+//绘制描边
+glStencilFunc(GL_NOTEQUAL, 1, 0xFF);//GL_NOTEQUAL只绘制模板值不为1的区域
+glStencilMask(0x00); // 禁止模板缓冲的写入
+glDisable(GL_DEPTH_TEST);
+shaderSingleColor.use(); 
+DrawTwoScaledUpContainers();
+glStencilMask(0xFF);
+```
+
+## 混合
+
+### 含透明通道贴图
+
+- 使用有透明分量的纹理时 `glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, width, height, 0, GL_RGBA, GL_UNSIGNED_BYTE, data);`
+  - 要注意使用 `GL_RGBA`
+- 在着色器中可以根据 alpha 的值来判断是否丢弃像素（这个点显示为透明）
+
+```c++
+void main()
+{             
+    vec4 texColor = texture(texture1, TexCoords);
+    if(texColor.a < 0.1)
+        discard;
+    FragColor = texColor;
+}
+```
+
+- 要注意的是，如果使用 GL_REPEAT 等环绕方式，由于 OpenGL 会对边缘的值和纹理下一个重复的值进行插值导致边框具有颜色，这就可能产生一个半透明有色边框，对于这种图片就要使用 GL_CLAMP_TO_EDGE 环绕方式
+
+### 颜色混合
+
+- 开启混合 `glEnable(GL_BLEND);`
+- 混合方程 $\bar{C}_{result}=\bar{C}_{source}*F_{source}+\bar{C}_{destination}*F_{destination}$
+  - 颜色 1\*源因子值+颜色 2\*目标因子值
+- `glBlendFunc(GLenum sfactor, GLenum dfactor)` 函数接受两个参数，来设置源和目标因子
+  - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/undefinedimage-20241118202421466.png" alt="image-20241118202421466" style="zoom:50%;" />
+- 比如使用源的 alpha、1-alpha：`glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);`
+- 也可以使用 `glBlendFuncSeparate` 来分别设置 RGBA 四个通道
+- `glBlendEquation(GLenum mode)` 设置颜色的运算方式
+  - GL_FUNC_ADD：默认选项，将两个分量相加
+  - GL_FUNC_SUBTRACT：将两个分量相减
+  - GL_FUNC_REVERSE_SUBTRACT：将两个分量相减，但顺序相反
+
+
+
+- 同时使用深度测试和混合会存在问题，导致不该被丢弃的内容被丢弃
+  - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/undefinedblending_incorrect_order.png" alt="img" style="zoom:50%;" />
+  - 对于每一个片段，深度测试会比较它的深度值与深度缓冲的当前值。如果深度测试失败该片段会被丢弃，即使当前值所在的贴图是半透明的！这就丢失了数据
+  - 要想保证窗户中能够显示它们背后的窗户，我们需要首先绘制背后的这部分窗户。这也就是说在绘制的时候，我们必须先**手动**将窗户按照**最远到最近**来排序，再按照顺序渲染。
+
+- 使用混合时的渲染原则
+  - 先绘制所有不透明的物体。
+  - 对所有透明的物体排序。
+  - 按顺序绘制所有透明的物体。
+
+
+
+- 排序透明物体：观察者视角获取物体的距离，可以通过计算摄像机位置向量和物体的位置向量之间的距离所获得
+
+```c++
+std::map<float, glm::vec3> sorted;
+for (unsigned int i = 0; i < windows.size(); i++)
+{
+    float distance = glm::length(camera.Position - windows[i]);
+    sorted[distance] = windows[i];
+}
+```
+
+
+
+- 渲染时直接从 map 读取排好序的
+
+```c++
+for(std::map<float,glm::vec3>::reverse_iterator it = sorted.rbegin(); it != sorted.rend(); ++it) 
+{
+    model = glm::mat4();
+    model = glm::translate(model, it->second);              
+    shader.setMat4("model", model);
+    glDrawArrays(GL_TRIANGLES, 0, 6);
+}
+```
+
+### 面剔除
+
+- 丢弃背对观察者的面，只渲染面向观察者的面，节省开销
+
+
+
+- 以环绕顺序来定义三角形的顶点
+  - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/undefinedfaceculling_windingorder.png" alt="img" style="zoom:50%;" />
+  - 全部按照逆时针规则进行定义（对顶点数据的要求）
+- 这样从正面看为逆时针的三角形就是面向观察者的面，顺时针的就是背对的面，可以进行剔除
+
+
+
+- 启用面剔除：`glEnable(GL_CULL_FACE);`
+- 剔除的面的类型 `glCullFace(GL_FRONT);`
+  - `GL_BACK`：只剔除背向面。
+  - `GL_FRONT`：只剔除正向面。
+  - `GL_FRONT_AND_BACK`：剔除正向面和背向面。
+- 正面的方向 `glFrontFace(GL_CCW);`
+  - GL_CCW 表示逆时针环绕
+  - GL_CW 表示顺时针环绕
+
+## 帧缓冲
+
+- 颜色缓冲、深度信息缓冲等各种缓冲结合再起来就是帧缓冲，默认的真缓冲是窗口时生成和配置的
+- 帧缓冲是一种容器对象，用于管理多个附件
+- 可以用于**离屏渲染**：将渲染结果输出到纹理或其他附件上而不是直接显示在屏幕
+
+
+
+- 创建帧缓冲对象
+
+```c++
+unsigned int fbo;
+glGenFramebuffers(1, &fbo);
+//绑定为当前激活的帧缓冲
+glBindFramebuffer(GL_FRAMEBUFFER, fbo);
+```
+
+- 绑定帧缓冲之后，所有的读取和写入帧缓冲的操作都会影响绑定的帧缓冲
+  - 也可以用 GL_READ_FRAMEBUFFER 或 GL_DRAW_FRAMEBUFFER 分别进行绑定
+
+
+
+- 完整的帧缓冲：
+  - 附加至少一个缓冲（颜色、深度或模板缓冲）。
+  - 至少有一个颜色附件 (Attachment)。
+  - 所有的附件都必须是完整的（保留了内存）。
+  - 每个缓冲都应该有相同的样本数 (sample)。
+- 检查帧缓冲是否完整 `if(glCheckFramebufferStatus(GL_FRAMEBUFFER) == GL_FRAMEBUFFER_COMPLETE)`
+
+- 之后所有的渲染操作将会渲染到当前绑定帧缓冲的附件中, 要保证所有的渲染操作在主窗口中有视觉效果，我们需要再次激活默认帧缓冲，将它绑定到 `0`。
+  - `glBindFramebuffer(GL_FRAMEBUFFER, 0);`
+
+
+
+### 纹理附件
+
+- 可以**直接采样**，适合需要**后续处理**的情况
+
+- 当把一个纹理附加到帧缓冲的时候，所有的渲染指令将会写入到这个纹理中，所有渲染操作的结果将会被储存在一个纹理图像中
+
+```c++
+unsigned int texture;
+glGenTextures(1, &texture);
+glBindTexture(GL_TEXTURE_2D, texture);
+//只分配空间，并没有设置纹理数据
+glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, 800, 600, 0, GL_RGB, GL_UNSIGNED_BYTE, NULL);
+
+glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+glFramebufferTexture2D(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, GL_TEXTURE_2D, texture, 0);
+
+//创建一个深度&模板缓冲的纹理（正好24+8=32）
+glTexImage2D(
+  GL_TEXTURE_2D, 0, GL_DEPTH24_STENCIL8, 800, 600, 0, 
+  GL_DEPTH_STENCIL, GL_UNSIGNED_INT_24_8, NULL
+);
+glFramebufferTexture2D(GL_FRAMEBUFFER, GL_DEPTH_STENCIL_ATTACHMENT, GL_TEXTURE_2D, texture, 0);
+```
+
+- 将纹理附加到帧缓冲 `glFramebufferTexture2D(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, GL_TEXTURE_2D, texture, 0);`
+  - `target`：帧缓冲的目标（绘制、读取或者两者皆有）
+  - `attachment`：我们想要附加的附件类型。当前我们正在附加一个颜色附件。注意最后的 `0` 意味着我们可以附加多个颜色附件。我们将在之后的教程中提到。
+  - `textarget`：你希望附加的纹理类型
+  - `texture`：要附加的纹理本身
+  - `level`：多级渐远纹理的级别。我们将它保留为 0。
+
+
+
+### 渲染缓冲对象附件
+
+- 用于存储渲染过程中生成的数据，**不能直接采样**，主要用于**中间渲染结果的存储**，实际存储了渲染数据
+  - 直接将多有的渲染数据存储到缓冲中，不进行任何转换，效率很高
+  - 渲染缓冲对象通常都是**只写**的：不能采样（通过纹理坐标进行访问），但是可以将数据复制到纹理再进行访问
+
+```c++
+unsigned int rbo;
+glGenRenderbuffers(1, &rbo);
+//绑定帧缓冲对象
+glBindRenderbuffer(GL_RENDERBUFFER, rbo);
+//为渲染缓冲对象分配存储空间
+glRenderbufferStorage(GL_RENDERBUFFER, GL_DEPTH24_STENCIL8, 800, 600);
+//将渲染缓冲对象附加到帧缓冲对象
+glFramebufferRenderbuffer(GL_FRAMEBUFFER, GL_DEPTH_STENCIL_ATTACHMENT, GL_RENDERBUFFER, rbo);
+```
+
+### 渲染到纹理
+
+- 将一个场景附加到帧缓冲对象上的颜色纹理并在图形上绘制这个纹理
+
+```c++
+//创建帧缓冲对象
+unsigned int framebuffer;
+glGenFramebuffers(1, &framebuffer);
+glBindFramebuffer(GL_FRAMEBUFFER, framebuffer);
+
+// 生成纹理(颜色纹理需要采样、显示，因此使用纹理附件)
+unsigned int texColorBuffer;
+glGenTextures(1, &texColorBuffer);
+glBindTexture(GL_TEXTURE_2D, texColorBuffer);
+glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, 800, 600, 0, GL_RGB, GL_UNSIGNED_BYTE, NULL);
+glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR );
+glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+glBindTexture(GL_TEXTURE_2D, 0);
+// 将它附加到当前绑定的帧缓冲对象
+glFramebufferTexture2D(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, GL_TEXTURE_2D, texColorBuffer, 0);  
+
+//深度、模板缓冲不需要采样，因此使用帧缓冲对象
+unsigned int rbo;
+glGenRenderbuffers(1, &rbo);
+glBindRenderbuffer(GL_RENDERBUFFER, rbo); 
+glRenderbufferStorage(GL_RENDERBUFFER, GL_DEPTH24_STENCIL8, 800, 600);  
+glBindRenderbuffer(GL_RENDERBUFFER, 0);
+glFramebufferRenderbuffer(GL_FRAMEBUFFER, GL_DEPTH_STENCIL_ATTACHMENT, GL_RENDERBUFFER, rbo);
+
+//检查是否完整
+if(glCheckFramebufferStatus(GL_FRAMEBUFFER) != GL_FRAMEBUFFER_COMPLETE)
+    std::cout << "ERROR::FRAMEBUFFER:: Framebuffer is not complete!" << std::endl;
+//接下来将新的帧缓冲绑定为激活的帧缓冲
+glBindFramebuffer(GL_FRAMEBUFFER, 0);
+```
+
+- 离屏渲染
+
+```c++
+glBindFramebuffer(GL_FRAMEBUFFER, framebuffer);  // 绑定自定义帧缓冲
+glClearColor(0.1f, 0.1f, 0.1f, 1.0f);            // 设置清屏颜色
+glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT); // 清空颜色缓冲和深度缓冲
+glEnable(GL_DEPTH_TEST);                         // 启用深度测试
+DrawScene();                                     // 渲染场景
+```
+
+- 屏幕渲染
+
+```c++
+glBindFramebuffer(GL_FRAMEBUFFER, 0);            // 绑定默认帧缓冲（屏幕帧缓冲）
+glClearColor(1.0f, 1.0f, 1.0f, 1.0f);            // 设置屏幕清屏颜色为白色
+glClear(GL_COLOR_BUFFER_BIT);                    // 清空屏幕的颜色缓冲
+screenShader.use();                              // 使用屏幕渲染的着色器
+glBindVertexArray(quadVAO);                      // 绑定渲染屏幕四边形的VAO
+glDisable(GL_DEPTH_TEST);                        // 禁用深度测试
+glBindTexture(GL_TEXTURE_2D, textureColorbuffer);// 绑定第一阶段的颜色缓冲纹理
+glDrawArrays(GL_TRIANGLES, 0, 6);                // 绘制屏幕四边形
+
+```
+
+### 后期处理
+
+- 可以在离屏渲染后，切换使用后期处理着色器，即实现在屏幕渲染阶段的后期处理
+  - 此时可以实现很多效果，因为可以获得一个像素及其周边像素的数据 (核采样时要小心环绕扩展方式造成的影响)
+- 如模糊效果 $\begin{bmatrix}1&2&1\\2&4&2\\1&2&1\end{bmatrix}/16$
+
+## 立方体贴图
+
+- 立方体贴图由 6 个普通的平面贴图组成
+  - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/undefinedimage-20241119160505281.png" alt="image-20241119160505281" style="zoom:67%;" />
+- 创建并绑定立方体贴图的面
+
+```c++
+unsigned int loadCubemap(vector<std::string> faces)
+{
+    unsigned int textureID;
+    glGenTextures(1, &textureID);
+    glBindTexture(GL_TEXTURE_CUBE_MAP, textureID);
+
+    int width, height, nrChannels;
+    for (unsigned int i = 0; i < faces.size(); i++)
+    {
+        unsigned char *data = stbi_load(faces[i].c_str(), &width, &height, &nrChannels, 0);
+        if (data)
+        {
+            glTexImage2D(GL_TEXTURE_CUBE_MAP_POSITIVE_X + i, 
+                         0, GL_RGB, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, data
+            );
+            stbi_image_free(data);
+        }
+        else
+        {
+            std::cout << "Cubemap texture failed to load at path: " << faces[i] << std::endl;
+            stbi_image_free(data);
+        }
+    }
+    glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+    glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+    glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
+    glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
+    glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_WRAP_R, GL_CLAMP_TO_EDGE);
+
+    return textureID;
+}
+
+vector<std::string> faces
+{
+    "right.jpg",
+    "left.jpg",
+    "top.jpg",
+    "bottom.jpg",
+    "front.jpg",
+    "back.jpg"
+};
+unsigned int cubemapTexture = loadCubemap(faces);
+```
+
+- 片段着色器中要使用 samplerCube
+
+```glsl
+#version 330 core
+layout (location = 0) in vec3 aPos;
+
+out vec3 TexCoords;
+
+uniform mat4 projection;
+uniform mat4 view;
+
+void main()
+{
+    TexCoords = aPos;
+    gl_Position = projection * view * vec4(aPos, 1.0);
+}
+
+
+
+#version 330 core
+out vec4 FragColor;
+
+in vec3 TexCoords;
+
+uniform samplerCube skybox;
+
+void main()
+{    
+    FragColor = texture(skybox, TexCoords);
+}
+```
+
+### 天空盒
+
+- 立方体贴图可以用于实现天空盒
+- 为了在天空盒中有移动效果，可以消除调控和的位移效果（即不因摄像机动而动），但是保留旋转效果
+- 先渲染场景物体，最后再渲染天空盒；通过**提前深度测试**，在天空盒渲染阶段快速丢弃被场景物体遮挡的像素，从而减少片段着色器的运行。（天空盒的深度始终为最大的 1.0）
+  - 要将条件从小于改为小于等于 `glDepthFunc(GL_LEQUAL);`
+
+## 环境映射
+
+- 通过环境的立方体贴图，给物体反射和折射属性
+
+- 当立方体位于 (0,0,0) 时每个位置向量都是**从原点出发的方向向量**，这个方向向量正是获取立方体上**特定位置的纹理值**所需要的（即**通过方向向量来获取数据**）
+
+### 反射
+
+<img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/undefinedcubemaps_reflection_theory.png" alt="img" style="zoom:67%;" />
+
+- 计算得到反射向量，通过反射向量采样立方体贴图，返回环境的颜色值
+
+```glsl
+#version 330 core
+layout (location = 0) in vec3 aPos;
+layout (location = 1) in vec3 aNormal;
+
+out vec3 Normal;
+out vec3 Position;
+
+uniform mat4 model;
+uniform mat4 view;
+uniform mat4 projection;
+
+void main()
+{
+    Normal = mat3(transpose(inverse(model))) * aNormal;
+    Position = vec3(model * vec4(aPos, 1.0));
+    gl_Position = projection * view * model * vec4(aPos, 1.0);
+}
+
+
+
+#version 330 core
+out vec4 FragColor;
+
+in vec3 Normal;
+in vec3 Position;
+
+uniform vec3 cameraPos;
+uniform samplerCube skybox;
+
+void main()
+{             
+    vec3 I = normalize(Position - cameraPos);
+    vec3 R = reflect(I, normalize(Normal));
+    FragColor = vec4(texture(skybox, R).rgb, 1.0);
+}
+```
+
+### 折射
+
+- 类似的，通过折射定律获取方向获取法向量，进而获取材质数据
+
+```glsl
+void main()
+{             
+    float ratio = 1.00 / 1.52;
+    vec3 I = normalize(Position - cameraPos);
+    vec3 R = refract(I, normalize(Normal), ratio);
+    FragColor = vec4(texture(skybox, R).rgb, 1.0);
+}
+```
+
+## 高级数据
+
+- 通过 `glBufferData` 可以创建缓冲对象，并用数据立即进行填充
+- 也可以通过 `glBufferSubData` 来填充特定的缓冲区域
+  - `glBufferSubData(GL_ARRAY_BUFFER, 24, sizeof(data), &data);`
+  - 缓冲目标、偏移量、数据大小、数据源
+  - 要保证缓冲区有足够大的内存
+- 也可以直接 `void *ptr = glMapBuffer(GL_ARRAY_BUFFER, GL_WRITE_ONLY);` 获取缓冲区内存的指针，再通过 `memcpy` 等直接修改缓冲区的内容
+  - 释放指针 `glUnmapBuffer(GL_ARRAY_BUFFER);`
+
+
+
+- 除了使用类似结构体那样交替存储顶点数据（123123123123），采用分批的方式进行存储（111122223333）
+  - 有时获得的时这种分批方式存储的数据
+
+```c++
+float positions[] = { ... };
+float normals[] = { ... };
+float tex[] = { ... };
+// 填充缓冲
+glBufferSubData(GL_ARRAY_BUFFER, 0, sizeof(positions), &positions);
+glBufferSubData(GL_ARRAY_BUFFER, sizeof(positions), sizeof(normals), &normals);
+glBufferSubData(GL_ARRAY_BUFFER, sizeof(positions) + sizeof(normals), sizeof(tex), &tex);
+//绑定
+glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), 0);  
+glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)(sizeof(positions)));  
+glVertexAttribPointer(
+  2, 2, GL_FLOAT, GL_FALSE, 2 * sizeof(float), (void*)(sizeof(positions) + sizeof(normals)));
+```
+
+
+
+- 复制缓冲 `void glCopyBufferSubData(GLenum readtarget, GLenum writetarget, GLintptr readoffset, GLintptr writeoffset, GLsizeiptr size);`
+  - `readtarget` 和 `writetarget` 参数需要填入复制源和复制目标的缓冲目标。比如说，我们可以将 VERTEX_ARRAY_BUFFER 缓冲复制到 VERTEX_ELEMENT_ARRAY_BUFFER缓冲
+- 也可以使用提供的专供复制的 GL_COPY_READ_BUFFER 和 GL_COPY_WRITE_BUFFER
+
+```c++
+float vertexData[] = { ... };
+glBindBuffer(GL_COPY_READ_BUFFER, vbo1);
+glBindBuffer(GL_COPY_WRITE_BUFFER, vbo2);
+glCopyBufferSubData(GL_COPY_READ_BUFFER, GL_COPY_WRITE_BUFFER, 0, 0, sizeof(vertexData));
+```
+## 变换
+
+### 坐标系统
+
+<img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/undefinedcoordinate_systems_right_handed.png" alt="coordinate_systems_right_handed" style="zoom: 80%;" />
+
+<img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/undefinedimage-20241107145529476.png" alt="image-20241107145529476" style="zoom:67%;" />
+
+- **局部空间**(Local Space)：对象相对于局部原点的坐标
+  - 适合对物体自身进行操作 (如调整模型)
+  - 通过**模型**矩阵转换
+- **世界空间**(World Space)：相当于世界的全局原点
+  - 物体之间的位置关系，对物体进行移动、缩放、旋转等，场景布置
+  - 通过**观察**矩阵转换
+- **观察空间**(View Space)：从摄像机/观察者角度观察
+  - opengl 本身没有摄像机的概念，通过相反移动物体来实现模拟摄像机
+  - 通过**投影**矩阵转换
+
+- **裁剪空间**(Clip Space)：裁剪到 -1~1 的范围
+  - 将大范围坐标转化到小范围，比如在每个维度上的-1000 到 1000。投影矩阵接着会将在这个指定的范围内的坐标变换为标准化设备坐标的范围 (-1.0, 1.0)。所有在范围外的坐标不会被映射到在-1.0 到 1.0 的范围之间，所以**会被裁剪**掉。
+  - 裁剪之后进行投影映射到屏幕空间
+- **屏幕空间**(Screen Space)：屏幕上的坐标
+
+
+
+- **正交投影**
+  - 可以使用 glm 创建投影矩阵 `glm::ortho(0.0f, 800.0f, 0.0f, 600.0f, 0.1f, 100.0f);`
+  - 参数给出了宽度，长度，远近平面的范围
+  - 主要用于二维渲染、建筑工程
+- **透视投影**
+  - `glm::mat4 proj = glm::perspective(glm::radians(45.0f), (float)width/(float)height, 0.1f, 100.0f);`
+  - 参数给出 fov 视野角度，宽高比，远近平面
+  - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/undefinedperspective_frustum.png" alt=" perspective_frustum" style="zoom: 67%;" />
+
+
+
+- 完整的变换 $V_{clip}=M_{projection}\cdot M_{view}\cdot M_{model}\cdot V_{local}$
+  - 着色器中 `gl_Position = projection * view * model * vec4(aPos, 1.0);`
+
+
+
+
+#### 深度缓冲
+
+- 开启深度缓冲 `glEnable(GL_DEPTH_TEST);`
+- 附加每帧清楚缓冲 `glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);`
+
+### 摄像机
+
+- 通过构建摄像机三维坐标系矩阵，来对物体进行变换
+
+<img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/undefinedcamera_axes.png" alt="img" style="zoom: 80%;" />
+
+- 首先摄像机的**坐标**`glm::vec3 cameraPos = glm::vec3(0.0f, 0.0f, 3.0f);`
+- 结合指向计算得到摄像机**指向**（反方向，图中蓝色）
+
+```c
+glm::vec3 cameraTarget = glm::vec3(0.0f, 0.0f, 0.0f);
+glm::vec3 cameraDirection = glm::normalize(cameraPos - cameraTarget);
+```
+
+- **右轴**：摄像机空间的 x 轴正方向
+  - ​	通过定义上向量，与指向叉乘就可以得到右轴
+
+```c
+glm::vec3 up = glm::vec3(0.0f, 1.0f, 0.0f); 
+glm::vec3 cameraRight = glm::normalize(glm::cross(up, cameraDirection));
+```
+
+- **上轴**：摄像机空间的 y 轴正方向
+  - 可以由另外两个轴计算得到 `glm::vec3 cameraUp = glm::cross(cameraDirection, cameraRight);`
+
+
+
+- 用这三个向量，和摄像机坐标就能构建变换矩阵 Lookat 矩阵
+  - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/undefinedimage-20241107160228888.png" alt="image-20241107160228888" style="zoom:67%;" />
+- 只需要提供摄像机**位置、目标位置、上向量**就可以用 glm 创建出 lookat 矩阵
+
+```c
+glm::mat4 view;
+view = glm::lookAt(glm::vec3(0.0f, 0.0f, 3.0f), 
+           glm::vec3(0.0f, 0.0f, 0.0f), 
+           glm::vec3(0.0f, 1.0f, 0.0f));
+```
+
+- 实现一个简单的摄像机环绕
+
+```c
+float radius = 10.0f;
+float camX = sin(glfwGetTime()) * radius;
+float camZ = cos(glfwGetTime()) * radius;
+glm::mat4 view;
+view = glm::lookAt(glm::vec3(camX, 0.0, camZ), glm::vec3(0.0, 0.0, 0.0), glm::vec3(0.0, 1.0, 0.0));
+```
+
+#### 平移
+
+- 要想实现平移效果，可以让目标点与摄像机坐标相关，比如始终值指向前面
+
+```c
+glm::vec3 cameraPos   = glm::vec3(0.0f, 0.0f,  3.0f);
+glm::vec3 cameraFront = glm::vec3(0.0f, 0.0f, -1.0f);
+glm::vec3 cameraUp    = glm::vec3(0.0f, 1.0f,  0.0f);
+view = glm::lookAt(cameraPos, cameraPos + cameraFront, cameraUp);
+//用键盘来控制移动
+void processInput(GLFWwindow* window)
+{
+    if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
+        glfwSetWindowShouldClose(window, true);
+
+    float cameraSpeed = 0.05f; // adjust accordingly
+    if (glfwGetKey(window, GLFW_KEY_W) == GLFW_PRESS)
+        cameraPos += cameraSpeed * cameraFront;
+    if (glfwGetKey(window, GLFW_KEY_S) == GLFW_PRESS)
+        cameraPos -= cameraSpeed * cameraFront;
+    if (glfwGetKey(window, GLFW_KEY_A) == GLFW_PRESS)
+        cameraPos -= glm::normalize(glm::cross(cameraFront, cameraUp)) * cameraSpeed;
+    if (glfwGetKey(window, GLFW_KEY_D) == GLFW_PRESS)
+        cameraPos += glm::normalize(glm::cross(cameraFront, cameraUp)) * cameraSpeed;
+}
+```
+
+- 左右移动方向是根据叉乘再标准化得到的
+- 注意这种移动速度和刷新率相关，想要恒定速度要计算时间
+
+#### 旋转
+
+- 三种旋转角：俯仰角、偏航角、滚转角
+  - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/undefinedcamera_pitch_yaw_roll.png" alt="img" style="zoom:80%;" />
+
+
+
+- 通过鼠标输入实现旋转控制：水平的移动影响偏航角，竖直的移动影响俯仰角
+  - 通过比较两帧之间坐标差距，决定角度的偏移
+
+
+
+- 捕捉光标，在窗口内不显示（但是记录位置用于操控）`glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);`
+
+- 注册监听 `glfwSetCursorPosCallback(window, mouse_callback);`
+
+```c
+void mouse_callback(GLFWwindow* window, double xpos, double ypos) {
+    if (firstMouse)
+    {
+        lastX = xpos;
+        lastY = ypos;
+        firstMouse = false;
+    }
+
+    float xoffset = xpos - lastX;
+    float yoffset = lastY - ypos;
+    lastX = xpos;
+    lastY = ypos;
+
+    float sensitivity = 0.05;
+    xoffset *= sensitivity;
+    yoffset *= sensitivity;
+
+    yaw += xoffset;
+    pitch += yoffset;
+
+    if (pitch > 89.0f)
+        pitch = 89.0f;
+    if (pitch < -89.0f)
+        pitch = -89.0f;
+
+    glm::vec3 front;
+    front.x = cos(glm::radians(yaw)) * cos(glm::radians(pitch));
+    front.y = sin(glm::radians(pitch));
+    front.z = sin(glm::radians(yaw)) * cos(glm::radians(pitch));
+    cameraFront = glm::normalize(front);
+
+}
+```
+
+
+
+#### 缩放
+
+- 通过监听滚轮调整 fov 来实现
+- 
+
+#### 示例：摄像机类
+
+```c
+#ifndef CAMERA_H
+#define CAMERA_H
+
+#include <glad/glad.h>
+#include <glm/glm.hpp>
+#include <glm/gtc/matrix_transform.hpp>
+
+// Defines several possible options for camera movement. Used as abstraction to stay away from window-system specific input methods
+enum Camera_Movement {
+    FORWARD,
+    BACKWARD,
+    LEFT,
+    RIGHT
+};
+
+// Default camera values
+const float YAW         = -90.0f;
+const float PITCH       =  0.0f;
+const float SPEED       =  2.5f;
+const float SENSITIVITY =  0.1f;
+const float ZOOM        =  45.0f;
+
+
+// An abstract camera class that processes input and calculates the corresponding Euler Angles, Vectors and Matrices for use in OpenGL
+class Camera
+{
+public:
+    // camera Attributes
+    glm::vec3 Position;
+    glm::vec3 Front;
+    glm::vec3 Up;
+    glm::vec3 Right;
+    glm::vec3 WorldUp;
+    // euler Angles
+    float Yaw;
+    float Pitch;
+    // camera options
+    float MovementSpeed;
+    float MouseSensitivity;
+    float Zoom;
+
+    // constructor with vectors
+    Camera(glm::vec3 position = glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3 up = glm::vec3(0.0f, 1.0f, 0.0f), float yaw = YAW, float pitch = PITCH) : Front(glm::vec3(0.0f, 0.0f, -1.0f)), MovementSpeed(SPEED), MouseSensitivity(SENSITIVITY), Zoom(ZOOM)
+    {
+        Position = position;
+        WorldUp = up;
+        Yaw = yaw;
+        Pitch = pitch;
+        updateCameraVectors();
+    }
+    // constructor with scalar values
+    Camera(float posX, float posY, float posZ, float upX, float upY, float upZ, float yaw, float pitch) : Front(glm::vec3(0.0f, 0.0f, -1.0f)), MovementSpeed(SPEED), MouseSensitivity(SENSITIVITY), Zoom(ZOOM)
+    {
+        Position = glm::vec3(posX, posY, posZ);
+        WorldUp = glm::vec3(upX, upY, upZ);
+        Yaw = yaw;
+        Pitch = pitch;
+        updateCameraVectors();
+    }
+
+    // returns the view matrix calculated using Euler Angles and the LookAt Matrix
+    glm::mat4 GetViewMatrix()
+    {
+        return glm::lookAt(Position, Position + Front, Up);
+    }
+
+    // processes input received from any keyboard-like input system. Accepts input parameter in the form of camera defined ENUM (to abstract it from windowing systems)
+    void ProcessKeyboard(Camera_Movement direction, float deltaTime)
+    {
+        float velocity = MovementSpeed * deltaTime;
+        if (direction == FORWARD)
+            Position += Front * velocity;
+        if (direction == BACKWARD)
+            Position -= Front * velocity;
+        if (direction == LEFT)
+            Position -= Right * velocity;
+        if (direction == RIGHT)
+            Position += Right * velocity;
+    }
+
+    // processes input received from a mouse input system. Expects the offset value in both the x and y direction.
+    void ProcessMouseMovement(float xoffset, float yoffset, GLboolean constrainPitch = true)
+    {
+        xoffset *= MouseSensitivity;
+        yoffset *= MouseSensitivity;
+
+        Yaw   += xoffset;
+        Pitch += yoffset;
+
+        // make sure that when pitch is out of bounds, screen doesn't get flipped
+        if (constrainPitch)
+        {
+            if (Pitch > 89.0f)
+                Pitch = 89.0f;
+            if (Pitch < -89.0f)
+                Pitch = -89.0f;
+        }
+
+        // update Front, Right and Up Vectors using the updated Euler angles
+        updateCameraVectors();
+    }
+
+    // processes input received from a mouse scroll-wheel event. Only requires input on the vertical wheel-axis
+    void ProcessMouseScroll(float yoffset)
+    {
+        Zoom -= (float)yoffset;
+        if (Zoom < 1.0f)
+            Zoom = 1.0f;
+        if (Zoom > 45.0f)
+            Zoom = 45.0f;
+    }
+
+private:
+    // calculates the front vector from the Camera's (updated) Euler Angles
+    void updateCameraVectors()
+    {
+        // calculate the new Front vector
+        glm::vec3 front;
+        front.x = cos(glm::radians(Yaw)) * cos(glm::radians(Pitch));
+        front.y = sin(glm::radians(Pitch));
+        front.z = sin(glm::radians(Yaw)) * cos(glm::radians(Pitch));
+        Front = glm::normalize(front);
+        // also re-calculate the Right and Up vector
+        Right = glm::normalize(glm::cross(Front, WorldUp));  // normalize the vectors, because their length gets closer to 0 the more you look up or down which results in slower movement.
+        Up    = glm::normalize(glm::cross(Right, Front));
+    }
+};
+#endif
+1
+```
+
+- 程序代码
+
+```c
+
+#include "shader.h"
+#include "camera.h"
+#define STB_IMAGE_IMPLEMENTATION
+#include "stb_image.h"
+#include <glad\glad.h> 
+#include <GLFW\glfw3.h>
+#include <iostream>
+#include <glm/glm.hpp>
+#include <glm/gtc/matrix_transform.hpp>
+#include <glm/gtc/type_ptr.hpp>
+
+glm::vec3 cameraPos = glm::vec3(0.0f, 0.0f, 3.0f);
+glm::vec3 cameraFront = glm::vec3(0.0f, 0.0f, -1.0f);
+glm::vec3 cameraUp = glm::vec3(0.0f, 1.0f, 0.0f);
+float screenWidth = 800;
+float screenHeight = 600;
+float lastX = screenWidth/2, lastY = screenHeight/2;
+float deltaTime = 0.0f;
+float lastFrame = 0.0f;
+bool firstMouse = true;
+Camera camera(glm::vec3(0.0f, 0.0f, 3.0f));
+
+
+void framebuffer_size_callback(GLFWwindow* window, int width, int height)
+{
+    glViewport(0, 0, width, height);
+}
+
+void processInput(GLFWwindow* window)
+{
+    if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
+        glfwSetWindowShouldClose(window, true);
+
+    if (glfwGetKey(window, GLFW_KEY_W) == GLFW_PRESS)
+        camera.ProcessKeyboard(FORWARD, deltaTime);
+    if (glfwGetKey(window, GLFW_KEY_S) == GLFW_PRESS)
+        camera.ProcessKeyboard(BACKWARD, deltaTime);
+    if (glfwGetKey(window, GLFW_KEY_A) == GLFW_PRESS)
+        camera.ProcessKeyboard(LEFT, deltaTime);
+    if (glfwGetKey(window, GLFW_KEY_D) == GLFW_PRESS)
+        camera.ProcessKeyboard(RIGHT, deltaTime);
+}
+void mouse_callback(GLFWwindow* window, double xpos, double ypos) {
+    if (firstMouse)
+    {
+        lastX = xpos;
+        lastY = ypos;
+        firstMouse = false;
+    }
+
+    float xoffset = xpos - lastX;
+    float yoffset = lastY - ypos;
+    lastX = xpos;
+    lastY = ypos;
+
+    camera.ProcessMouseMovement(xoffset, yoffset);
+}
+
+void scroll_callback(GLFWwindow* window, double xoffset, double yoffset)
+{
+    camera.ProcessMouseScroll(static_cast<float>(yoffset));
+}
+
+int main()
+{
+    //参数设置
+    glfwInit();
+    glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
+    glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
+    glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
+    //创建上下文
+    GLFWwindow* window = glfwCreateWindow(screenWidth, screenHeight, "LearnOpenGL", NULL, NULL);
+    if (window == NULL)
+    {
+        std::cout << "Failed to create GLFW window" << std::endl;
+        glfwTerminate();
+        return -1;
+    }
+    glfwMakeContextCurrent(window);
+    //板顶函数
+    if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))
+    {
+        std::cout << "Failed to initialize GLAD" << std::endl;
+        return -1;
+    }
+    //设置视口大小
+    glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
+    glfwSetCursorPosCallback(window, mouse_callback);
+    glfwSetScrollCallback(window, scroll_callback);
+
+
+    float vertices[] = {
+    -0.5f, -0.5f, -0.5f,  0.0f, 0.0f,
+     0.5f, -0.5f, -0.5f,  1.0f, 0.0f,
+     0.5f,  0.5f, -0.5f,  1.0f, 1.0f,
+     0.5f,  0.5f, -0.5f,  1.0f, 1.0f,
+    -0.5f,  0.5f, -0.5f,  0.0f, 1.0f,
+    -0.5f, -0.5f, -0.5f,  0.0f, 0.0f,
+
+    -0.5f, -0.5f,  0.5f,  0.0f, 0.0f,
+     0.5f, -0.5f,  0.5f,  1.0f, 0.0f,
+     0.5f,  0.5f,  0.5f,  1.0f, 1.0f,
+     0.5f,  0.5f,  0.5f,  1.0f, 1.0f,
+    -0.5f,  0.5f,  0.5f,  0.0f, 1.0f,
+    -0.5f, -0.5f,  0.5f,  0.0f, 0.0f,
+
+    -0.5f,  0.5f,  0.5f,  1.0f, 0.0f,
+    -0.5f,  0.5f, -0.5f,  1.0f, 1.0f,
+    -0.5f, -0.5f, -0.5f,  0.0f, 1.0f,
+    -0.5f, -0.5f, -0.5f,  0.0f, 1.0f,
+    -0.5f, -0.5f,  0.5f,  0.0f, 0.0f,
+    -0.5f,  0.5f,  0.5f,  1.0f, 0.0f,
+
+     0.5f,  0.5f,  0.5f,  1.0f, 0.0f,
+     0.5f,  0.5f, -0.5f,  1.0f, 1.0f,
+     0.5f, -0.5f, -0.5f,  0.0f, 1.0f,
+     0.5f, -0.5f, -0.5f,  0.0f, 1.0f,
+     0.5f, -0.5f,  0.5f,  0.0f, 0.0f,
+     0.5f,  0.5f,  0.5f,  1.0f, 0.0f,
+
+    -0.5f, -0.5f, -0.5f,  0.0f, 1.0f,
+     0.5f, -0.5f, -0.5f,  1.0f, 1.0f,
+     0.5f, -0.5f,  0.5f,  1.0f, 0.0f,
+     0.5f, -0.5f,  0.5f,  1.0f, 0.0f,
+    -0.5f, -0.5f,  0.5f,  0.0f, 0.0f,
+    -0.5f, -0.5f, -0.5f,  0.0f, 1.0f,
+
+    -0.5f,  0.5f, -0.5f,  0.0f, 1.0f,
+     0.5f,  0.5f, -0.5f,  1.0f, 1.0f,
+     0.5f,  0.5f,  0.5f,  1.0f, 0.0f,
+     0.5f,  0.5f,  0.5f,  1.0f, 0.0f,
+    -0.5f,  0.5f,  0.5f,  0.0f, 0.0f,
+    -0.5f,  0.5f, -0.5f,  0.0f, 1.0f
+    };
+
+    glm::vec3 cubePositions[] = {
+  glm::vec3(0.0f,  0.0f,  0.0f),
+  glm::vec3(2.0f,  5.0f, -15.0f),
+  glm::vec3(-1.5f, -2.2f, -2.5f),
+  glm::vec3(-3.8f, -2.0f, -12.3f),
+  glm::vec3(2.4f, -0.4f, -3.5f),
+  glm::vec3(-1.7f,  3.0f, -7.5f),
+  glm::vec3(1.3f, -2.0f, -2.5f),
+  glm::vec3(1.5f,  2.0f, -2.5f),
+  glm::vec3(1.5f,  0.2f, -1.5f),
+  glm::vec3(-1.3f,  1.0f, -1.5f)
+    };
+
+    unsigned int VAO;
+    glGenVertexArrays(1, &VAO);
+    glBindVertexArray(VAO);
+    //存储缓冲区对象id
+    unsigned int VBO;
+    //生成缓冲区对象并获取id
+    glGenBuffers(1, &VBO);
+    //将缓冲对象绑定到上下文，作为数组缓冲区
+    glBindBuffer(GL_ARRAY_BUFFER, VBO);
+    //复制数据到缓冲区
+    glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
+
+	Shader shader("vertex_shader.glsl", "fragment_shader.glsl");
+    shader.use();
+
+    // position attribute
+    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void*)0);
+    glEnableVertexAttribArray(0);
+    // texture coord attribute
+    glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void*)(3 * sizeof(float)));
+    glEnableVertexAttribArray(1);
+
+    int width, height, nrChannels;
+    stbi_set_flip_vertically_on_load(true);
+    unsigned char* data1 = stbi_load("container.jpg", &width, &height, &nrChannels, 0);
+
+    unsigned int texture1;
+    glGenTextures(1, &texture1);
+    glBindTexture(GL_TEXTURE_2D, texture1);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+    glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, data1);
+    glGenerateMipmap(GL_TEXTURE_2D);
+    stbi_image_free(data1);
+
+    unsigned char* data2 = stbi_load("awesomeface.png", &width, &height, &nrChannels, 0);
+    unsigned int texture2;
+    glGenTextures(2, &texture2);
+    glBindTexture(GL_TEXTURE_2D, texture2);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+    glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGBA, GL_UNSIGNED_BYTE, data2);
+    glGenerateMipmap(GL_TEXTURE_2D);
+    stbi_image_free(data2);
+
+    glUniform1i(glGetUniformLocation(shader.ID, "texture1"), 0); // 手动设置
+    shader.setInt("texture2", 1); // 或者使用着色器类设置
+    glEnable(GL_DEPTH_TEST);
+
+    glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
+
+    while (!glfwWindowShouldClose(window))
+    {
+
+        float currentFrame = static_cast<float>(glfwGetTime());
+        deltaTime = currentFrame - lastFrame;
+        lastFrame = currentFrame;
+        // 输入
+        processInput(window);
+
+        // 渲染
+        // 清除颜色缓冲
+        glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
+        glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+
+        // 记得激活着色器
+        shader.use();
+
+        // 更新uniform颜色
+        float timeValue = glfwGetTime();
+        float greenValue = sin(timeValue) / 2.0f + 0.5f;
+
+		shader.setVec4("ourColor", 0.0f, greenValue, 0.0f, 1.0f);
+
+        // 绘制三角形
+        glActiveTexture(GL_TEXTURE0);
+        glBindTexture(GL_TEXTURE_2D, texture1);
+        glActiveTexture(GL_TEXTURE1);
+        glBindTexture(GL_TEXTURE_2D, texture2);
+
+        glBindVertexArray(VAO);
+
+        glm::mat4 projection;
+        projection = glm::perspective(glm::radians(camera.Zoom), screenWidth / screenHeight, 0.1f, 100.0f);
+        unsigned transformLoc = glGetUniformLocation(shader.ID, "projection");
+        glUniformMatrix4fv(transformLoc, 1, GL_FALSE, glm::value_ptr(projection));
+
+        glm::mat4 view;
+        view = camera.GetViewMatrix();
+        transformLoc = glGetUniformLocation(shader.ID, "view");
+        glUniformMatrix4fv(transformLoc, 1, GL_FALSE, glm::value_ptr(view));
+
+        for (unsigned int i = 0; i < 10; i++)
+        {
+            glm::mat4 model;
+            model = glm::translate(model, cubePositions[i]);
+            float angle = 20.0f * i;
+            model = glm::rotate(model, glm::radians(angle), glm::vec3(1.0f, 0.3f, 0.5f));
+            transformLoc = glGetUniformLocation(shader.ID, "model");
+            glUniformMatrix4fv(transformLoc, 1, GL_FALSE, glm::value_ptr(model));
+
+            glDrawArrays(GL_TRIANGLES, 0, 36);
+        }
+
+        // 交换缓冲并查询IO事件
+        glfwSwapBuffers(window);
+        glfwPollEvents();
+    }
+    glDeleteVertexArrays(1, &VAO);
+    glDeleteBuffers(1, &VBO);
+    //释放资源
+    glfwTerminate();
+
+    return 0;
+}
+```
+
+
+# 着色器
 - 一些**运行在 GPU 上**的小程序，着色器的功能比较简单，只是接受输入并产生输出
 ### 编译着色器
 - 创建着色器对象 `Gluint glCreateShader(GLenum type)`
@@ -1346,7 +2459,41 @@ int main()
 	- 标记为可删除，当对应的着色器程序不再使用时会自动进行删除
 - 删除着色器程序 `void glDeleteProgram(Gluint program)`
 ### 独立着色器对象
+- 传统方式一个程序绑定一整套多个着色器，如果要更换其中一个着色器就必须更换整个程序
+- 独立着色器对象允许开发者将不同的着色器阶段分开管理组合，不需要创建一个完整的着色器程序。即想替换一个着色器只需要重新连接对应的程序
+- 每个着色器阶段可以**单独编译并存储为一个对象**。不同阶段的着色器对象可以在运行时**动态组合**，而无需重新链接整个程序。
+```c++
+// 顶点和片段着色器代码
+const char* vertexShaderSource = "顶点着色器代码...";
+const char* fragmentShaderSource = "片段着色器代码...";
 
+// 创建独立着色器对象
+GLuint vertexShaderProgram = glCreateShaderProgramv(GL_VERTEX_SHADER, 1, &vertexShaderSource);
+GLuint fragmentShaderProgram = glCreateShaderProgramv(GL_FRAGMENT_SHADER, 1, &fragmentShaderSource);
+
+// 检查编译是否成功
+GLint success;
+glGetProgramiv(vertexShaderProgram, GL_LINK_STATUS, &success);
+if (!success) {
+    char infoLog[512];
+    glGetProgramInfoLog(vertexShaderProgram, 512, NULL, infoLog);
+    std::cerr << "ERROR::SHADER::VERTEX::COMPILATION_FAILED\n" << infoLog << std::endl;
+}
+
+// 创建管线对象并绑定
+GLuint pipeline;
+glGenProgramPipelines(1, &pipeline);
+glBindProgramPipeline(pipeline);
+
+// 绑定着色器对象到管线阶段
+glUseProgramStages(pipeline, GL_VERTEX_SHADER_BIT, vertexShaderProgram);
+glUseProgramStages(pipeline, GL_FRAGMENT_SHADER_BIT, fragmentShaderProgram);
+
+// 绘制
+glBindProgramPipeline(pipeline);
+glBindVertexArray(VAO);
+glDrawArrays(GL_TRIANGLES, 0, 3);
+```
 ### GLSL
 - 着色器程序通常的结构
 ```glsl
@@ -2152,601 +3299,266 @@ void main()
 }
 ```
 
+## 绘制方式
+### 图元
+- opengl 支持
 
+## 着色器的内建变量
 
-## 变换
+### 顶点着色器
 
-### 坐标系统
+- `gl_PointSize`：输出变量，float，可以用于设置点的宽高（像素）、
+  - 默认禁用，需要先 `glEnable(GL_PROGRAM_POINT_SIZE);`
+  - 可以动态设置，比如根据 z 进行设置，就可以实现距离变远点增大等
+- `gl_VertexID`：输入变量，存储了正在绘制的顶点的 ID，使用索引绘制时，这个值就等于索引值；否则为从渲染调用开始的已处理的顶点数量
 
-<img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/undefinedcoordinate_systems_right_handed.png" alt="coordinate_systems_right_handed" style="zoom: 80%;" />
+### 片段着色器
 
-<img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/undefinedimage-20241107145529476.png" alt="image-20241107145529476" style="zoom:67%;" />
+- `gl_FragCoord`：输入变量，Vec 3，xy 分量为片段的窗口坐标（左下角为原点），z 为片段的深度值（**只读**）
+- `gl_FrontFacing`：输入百年来那个，bool，可以获取当前片段式属于正向面还是属于北背向面的想（如果你开启了面剔除，你就看不到箱子内部的面了，所以现在再使用 gl_FrontFacing 就没有意义了。）
+- `gl_FragDepth`：输出变量，float，可以设置深度值
+  - 使用了则会禁用提前深度测试
+  - 可以使用深度条件进行声明 `layout (depth_<condition>) out float gl_FragDepth;`
+  - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/undefinedimage-20241119174156028.png" alt="image-20241119174156028" style="zoom:50%;" />
+  - 这样就能保留部分的提前深度测试
 
-- **局部空间**(Local Space)：对象相对于局部原点的坐标
-  - 适合对物体自身进行操作(如调整模型)
-  - 通过**模型**矩阵转换
-- **世界空间**(World Space)：相当于世界的全局原点
-  - 物体之间的位置关系，对物体进行移动、缩放、旋转等，场景布置
-  - 通过**观察**矩阵转换
-- **观察空间**(View Space)：从摄像机/观察者角度观察
-  - opengl本身没有摄像机的概念，通过相反移动物体来实现模拟摄像机
-  - 通过**投影**矩阵转换
+### 几何着色器
 
-- **裁剪空间**(Clip Space)：裁剪到 -1~1的范围
-  - 将大范围坐标转化到小范围，比如在每个维度上的-1000到1000。投影矩阵接着会将在这个指定的范围内的坐标变换为标准化设备坐标的范围(-1.0, 1.0)。所有在范围外的坐标不会被映射到在-1.0到1.0的范围之间，所以**会被裁剪**掉。
-  - 裁剪之后进行投影映射到屏幕空间
-- **屏幕空间**(Screen Space)：屏幕上的坐标
+- 图元是图形渲染管线中绘制几何图形的基本单位
+  - 点
+  - 线
+  - 三角形
 
-
-
-- **正交投影**
-  - 可以使用glm创建投影矩阵`glm::ortho(0.0f, 800.0f, 0.0f, 600.0f, 0.1f, 100.0f);`
-  - 参数给出了宽度，长度，远近平面的范围
-  - 主要用于二维渲染、建筑工程
-- **透视投影**
-  - `glm::mat4 proj = glm::perspective(glm::radians(45.0f), (float)width/(float)height, 0.1f, 100.0f);`
-  - 参数给出fov视野角度，宽高比，远近平面
-  - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/undefinedperspective_frustum.png" alt=" perspective_frustum" style="zoom: 67%;" />
-
-
-
-- 完整的变换$V_{clip}=M_{projection}\cdot M_{view}\cdot M_{model}\cdot V_{local}$
-  - 着色器中`gl_Position = projection * view * model * vec4(aPos, 1.0);`
+- 介于顶点着色器和片段着色器之间
+  - 给予输入的图元生成**新的图元或修改现有的图元**
+  - 比如将点转化为边
 
 
 
 
-#### 深度缓冲
+```glsl
+#version 330 core
+    layout (points) in;//输入的图元
+layout (line_strip, max_vertices = 2) out;//输出的图元
 
-- 开启深度缓冲`glEnable(GL_DEPTH_TEST);`
-- 附加每帧清楚缓冲`glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);`
-
-### 摄像机
-
-- 通过构建摄像机三维坐标系矩阵，来对物体进行变换
-
-<img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/undefinedcamera_axes.png" alt="img" style="zoom: 80%;" />
-
-- 首先摄像机的**坐标**`glm::vec3 cameraPos = glm::vec3(0.0f, 0.0f, 3.0f);`
-- 结合指向计算得到摄像机**指向**（反方向，图中蓝色）
-
-```c
-glm::vec3 cameraTarget = glm::vec3(0.0f, 0.0f, 0.0f);
-glm::vec3 cameraDirection = glm::normalize(cameraPos - cameraTarget);
+void main() {    
+    //设置第一个点
+    gl_Position = gl_in[0].gl_Position + vec4(-0.1, 0.0, 0.0, 0.0); 
+    EmitVertex();//发射（即gl_position中的向量会被添加到图元中）
+	//设置第二个点
+    gl_Position = gl_in[0].gl_Position + vec4( 0.1, 0.0, 0.0, 0.0);
+    EmitVertex();//发射
+	//图元结束
+    EndPrimitive();
+}
 ```
 
-- **右轴**：摄像机空间的x轴正方向
-  - ​	通过定义上向量，与指向叉乘就可以得到右轴
+- 这里的 in 和 out 不是具体的变量，而是类型，用于指定集合着色器处理图元的方式
+- 几何着色器接受的图元输入
+  - `points`：绘制 GL_POINTS 图元时（1）。
+  - `lines`：绘制 GL_LINES 或 GL_LINE_STRIP 时（2）
+  - `lines_adjacency`：GL_LINES_ADJACENCY 或 GL_LINE_STRIP_ADJACENCY（4）
+  - `triangles`：GL_TRIANGLES、GL_TRIANGLE_STRIP 或 GL_TRIANGLE_FAN（3）
+  - `triangles_adjacency`：GL_TRIANGLES_ADJACENCY 或 GL_TRIANGLE_STRIP_ADJACENCY（6）
 
-```c
-glm::vec3 up = glm::vec3(0.0f, 1.0f, 0.0f); 
-glm::vec3 cameraRight = glm::normalize(glm::cross(up, cameraDirection));
-```
-
-- **上轴**：摄像机空间的y轴正方向
-  - 可以由另外两个轴计算得到`glm::vec3 cameraUp = glm::cross(cameraDirection, cameraRight);`
-
+- 如果定义了几何着色器，那么要**手动**将顶点着色器的 out 传递给**片段着色器**
 
 
-- 用这三个向量，和摄像机坐标就能构建变换矩阵Lookat矩阵
-  - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/undefinedimage-20241107160228888.png" alt="image-20241107160228888" style="zoom:67%;" />
-- 只需要提供摄像机**位置、目标位置、上向量**就可以用glm创建出lookat矩阵
 
-```c
-glm::mat4 view;
-view = glm::lookAt(glm::vec3(0.0f, 0.0f, 3.0f), 
-           glm::vec3(0.0f, 0.0f, 0.0f), 
-           glm::vec3(0.0f, 1.0f, 0.0f));
-```
+- 通过 glsl 内建变量 `gl_in[]` 获取数据
 
-- 实现一个简单的摄像机环绕
-
-```c
-float radius = 10.0f;
-float camX = sin(glfwGetTime()) * radius;
-float camZ = cos(glfwGetTime()) * radius;
-glm::mat4 view;
-view = glm::lookAt(glm::vec3(camX, 0.0, camZ), glm::vec3(0.0, 0.0, 0.0), glm::vec3(0.0, 1.0, 0.0));
-```
-
-#### 平移
-
-- 要想实现平移效果，可以让目标点与摄像机坐标相关，比如始终值指向前面
-
-```c
-glm::vec3 cameraPos   = glm::vec3(0.0f, 0.0f,  3.0f);
-glm::vec3 cameraFront = glm::vec3(0.0f, 0.0f, -1.0f);
-glm::vec3 cameraUp    = glm::vec3(0.0f, 1.0f,  0.0f);
-view = glm::lookAt(cameraPos, cameraPos + cameraFront, cameraUp);
-//用键盘来控制移动
-void processInput(GLFWwindow* window)
+```glsl
+in gl_Vertex
 {
-    if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
-        glfwSetWindowShouldClose(window, true);
-
-    float cameraSpeed = 0.05f; // adjust accordingly
-    if (glfwGetKey(window, GLFW_KEY_W) == GLFW_PRESS)
-        cameraPos += cameraSpeed * cameraFront;
-    if (glfwGetKey(window, GLFW_KEY_S) == GLFW_PRESS)
-        cameraPos -= cameraSpeed * cameraFront;
-    if (glfwGetKey(window, GLFW_KEY_A) == GLFW_PRESS)
-        cameraPos -= glm::normalize(glm::cross(cameraFront, cameraUp)) * cameraSpeed;
-    if (glfwGetKey(window, GLFW_KEY_D) == GLFW_PRESS)
-        cameraPos += glm::normalize(glm::cross(cameraFront, cameraUp)) * cameraSpeed;
-}
-```
-
-- 左右移动方向是根据叉乘再标准化得到的
-- 注意这种移动速度和刷新率相关，想要恒定速度要计算时间
-
-#### 旋转
-
-- 三种旋转角：俯仰角、偏航角、滚转角
-  - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/undefinedcamera_pitch_yaw_roll.png" alt="img" style="zoom:80%;" />
-
-
-
-- 通过鼠标输入实现旋转控制：水平的移动影响偏航角，竖直的移动影响俯仰角
-  - 通过比较两帧之间坐标差距，决定角度的偏移
-
-
-
-- 捕捉光标，在窗口内不显示（但是记录位置用于操控）`glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);`
-
-- 注册监听`glfwSetCursorPosCallback(window, mouse_callback);`
-
-```c
-void mouse_callback(GLFWwindow* window, double xpos, double ypos) {
-    if (firstMouse)
-    {
-        lastX = xpos;
-        lastY = ypos;
-        firstMouse = false;
-    }
-
-    float xoffset = xpos - lastX;
-    float yoffset = lastY - ypos;
-    lastX = xpos;
-    lastY = ypos;
-
-    float sensitivity = 0.05;
-    xoffset *= sensitivity;
-    yoffset *= sensitivity;
-
-    yaw += xoffset;
-    pitch += yoffset;
-
-    if (pitch > 89.0f)
-        pitch = 89.0f;
-    if (pitch < -89.0f)
-        pitch = -89.0f;
-
-    glm::vec3 front;
-    front.x = cos(glm::radians(yaw)) * cos(glm::radians(pitch));
-    front.y = sin(glm::radians(pitch));
-    front.z = sin(glm::radians(yaw)) * cos(glm::radians(pitch));
-    cameraFront = glm::normalize(front);
-
-}
+    vec4  gl_Position;
+    float gl_PointSize;
+    float gl_ClipDistance[];
+} gl_in[];
 ```
 
 
 
-#### 缩放
+- 编译和链接几何着色器
 
-- 通过监听滚轮调整fov来实现
-- 
-
-#### 示例：摄像机类
-
-```c
-#ifndef CAMERA_H
-#define CAMERA_H
-
-#include <glad/glad.h>
-#include <glm/glm.hpp>
-#include <glm/gtc/matrix_transform.hpp>
-
-// Defines several possible options for camera movement. Used as abstraction to stay away from window-system specific input methods
-enum Camera_Movement {
-    FORWARD,
-    BACKWARD,
-    LEFT,
-    RIGHT
-};
-
-// Default camera values
-const float YAW         = -90.0f;
-const float PITCH       =  0.0f;
-const float SPEED       =  2.5f;
-const float SENSITIVITY =  0.1f;
-const float ZOOM        =  45.0f;
-
-
-// An abstract camera class that processes input and calculates the corresponding Euler Angles, Vectors and Matrices for use in OpenGL
-class Camera
-{
-public:
-    // camera Attributes
-    glm::vec3 Position;
-    glm::vec3 Front;
-    glm::vec3 Up;
-    glm::vec3 Right;
-    glm::vec3 WorldUp;
-    // euler Angles
-    float Yaw;
-    float Pitch;
-    // camera options
-    float MovementSpeed;
-    float MouseSensitivity;
-    float Zoom;
-
-    // constructor with vectors
-    Camera(glm::vec3 position = glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3 up = glm::vec3(0.0f, 1.0f, 0.0f), float yaw = YAW, float pitch = PITCH) : Front(glm::vec3(0.0f, 0.0f, -1.0f)), MovementSpeed(SPEED), MouseSensitivity(SENSITIVITY), Zoom(ZOOM)
-    {
-        Position = position;
-        WorldUp = up;
-        Yaw = yaw;
-        Pitch = pitch;
-        updateCameraVectors();
-    }
-    // constructor with scalar values
-    Camera(float posX, float posY, float posZ, float upX, float upY, float upZ, float yaw, float pitch) : Front(glm::vec3(0.0f, 0.0f, -1.0f)), MovementSpeed(SPEED), MouseSensitivity(SENSITIVITY), Zoom(ZOOM)
-    {
-        Position = glm::vec3(posX, posY, posZ);
-        WorldUp = glm::vec3(upX, upY, upZ);
-        Yaw = yaw;
-        Pitch = pitch;
-        updateCameraVectors();
-    }
-
-    // returns the view matrix calculated using Euler Angles and the LookAt Matrix
-    glm::mat4 GetViewMatrix()
-    {
-        return glm::lookAt(Position, Position + Front, Up);
-    }
-
-    // processes input received from any keyboard-like input system. Accepts input parameter in the form of camera defined ENUM (to abstract it from windowing systems)
-    void ProcessKeyboard(Camera_Movement direction, float deltaTime)
-    {
-        float velocity = MovementSpeed * deltaTime;
-        if (direction == FORWARD)
-            Position += Front * velocity;
-        if (direction == BACKWARD)
-            Position -= Front * velocity;
-        if (direction == LEFT)
-            Position -= Right * velocity;
-        if (direction == RIGHT)
-            Position += Right * velocity;
-    }
-
-    // processes input received from a mouse input system. Expects the offset value in both the x and y direction.
-    void ProcessMouseMovement(float xoffset, float yoffset, GLboolean constrainPitch = true)
-    {
-        xoffset *= MouseSensitivity;
-        yoffset *= MouseSensitivity;
-
-        Yaw   += xoffset;
-        Pitch += yoffset;
-
-        // make sure that when pitch is out of bounds, screen doesn't get flipped
-        if (constrainPitch)
-        {
-            if (Pitch > 89.0f)
-                Pitch = 89.0f;
-            if (Pitch < -89.0f)
-                Pitch = -89.0f;
-        }
-
-        // update Front, Right and Up Vectors using the updated Euler angles
-        updateCameraVectors();
-    }
-
-    // processes input received from a mouse scroll-wheel event. Only requires input on the vertical wheel-axis
-    void ProcessMouseScroll(float yoffset)
-    {
-        Zoom -= (float)yoffset;
-        if (Zoom < 1.0f)
-            Zoom = 1.0f;
-        if (Zoom > 45.0f)
-            Zoom = 45.0f;
-    }
-
-private:
-    // calculates the front vector from the Camera's (updated) Euler Angles
-    void updateCameraVectors()
-    {
-        // calculate the new Front vector
-        glm::vec3 front;
-        front.x = cos(glm::radians(Yaw)) * cos(glm::radians(Pitch));
-        front.y = sin(glm::radians(Pitch));
-        front.z = sin(glm::radians(Yaw)) * cos(glm::radians(Pitch));
-        Front = glm::normalize(front);
-        // also re-calculate the Right and Up vector
-        Right = glm::normalize(glm::cross(Front, WorldUp));  // normalize the vectors, because their length gets closer to 0 the more you look up or down which results in slower movement.
-        Up    = glm::normalize(glm::cross(Right, Front));
-    }
-};
-#endif
-1
-```
-
-- 程序代码
-
-```c
-
-#include "shader.h"
-#include "camera.h"
-#define STB_IMAGE_IMPLEMENTATION
-#include "stb_image.h"
-#include <glad\glad.h> 
-#include <GLFW\glfw3.h>
-#include <iostream>
-#include <glm/glm.hpp>
-#include <glm/gtc/matrix_transform.hpp>
-#include <glm/gtc/type_ptr.hpp>
-
-glm::vec3 cameraPos = glm::vec3(0.0f, 0.0f, 3.0f);
-glm::vec3 cameraFront = glm::vec3(0.0f, 0.0f, -1.0f);
-glm::vec3 cameraUp = glm::vec3(0.0f, 1.0f, 0.0f);
-float screenWidth = 800;
-float screenHeight = 600;
-float lastX = screenWidth/2, lastY = screenHeight/2;
-float deltaTime = 0.0f;
-float lastFrame = 0.0f;
-bool firstMouse = true;
-Camera camera(glm::vec3(0.0f, 0.0f, 3.0f));
-
-
-void framebuffer_size_callback(GLFWwindow* window, int width, int height)
-{
-    glViewport(0, 0, width, height);
-}
-
-void processInput(GLFWwindow* window)
-{
-    if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
-        glfwSetWindowShouldClose(window, true);
-
-    if (glfwGetKey(window, GLFW_KEY_W) == GLFW_PRESS)
-        camera.ProcessKeyboard(FORWARD, deltaTime);
-    if (glfwGetKey(window, GLFW_KEY_S) == GLFW_PRESS)
-        camera.ProcessKeyboard(BACKWARD, deltaTime);
-    if (glfwGetKey(window, GLFW_KEY_A) == GLFW_PRESS)
-        camera.ProcessKeyboard(LEFT, deltaTime);
-    if (glfwGetKey(window, GLFW_KEY_D) == GLFW_PRESS)
-        camera.ProcessKeyboard(RIGHT, deltaTime);
-}
-void mouse_callback(GLFWwindow* window, double xpos, double ypos) {
-    if (firstMouse)
-    {
-        lastX = xpos;
-        lastY = ypos;
-        firstMouse = false;
-    }
-
-    float xoffset = xpos - lastX;
-    float yoffset = lastY - ypos;
-    lastX = xpos;
-    lastY = ypos;
-
-    camera.ProcessMouseMovement(xoffset, yoffset);
-}
-
-void scroll_callback(GLFWwindow* window, double xoffset, double yoffset)
-{
-    camera.ProcessMouseScroll(static_cast<float>(yoffset));
-}
-
-int main()
-{
-    //参数设置
-    glfwInit();
-    glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
-    glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
-    glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
-    //创建上下文
-    GLFWwindow* window = glfwCreateWindow(screenWidth, screenHeight, "LearnOpenGL", NULL, NULL);
-    if (window == NULL)
-    {
-        std::cout << "Failed to create GLFW window" << std::endl;
-        glfwTerminate();
-        return -1;
-    }
-    glfwMakeContextCurrent(window);
-    //板顶函数
-    if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))
-    {
-        std::cout << "Failed to initialize GLAD" << std::endl;
-        return -1;
-    }
-    //设置视口大小
-    glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
-    glfwSetCursorPosCallback(window, mouse_callback);
-    glfwSetScrollCallback(window, scroll_callback);
-
-
-    float vertices[] = {
-    -0.5f, -0.5f, -0.5f,  0.0f, 0.0f,
-     0.5f, -0.5f, -0.5f,  1.0f, 0.0f,
-     0.5f,  0.5f, -0.5f,  1.0f, 1.0f,
-     0.5f,  0.5f, -0.5f,  1.0f, 1.0f,
-    -0.5f,  0.5f, -0.5f,  0.0f, 1.0f,
-    -0.5f, -0.5f, -0.5f,  0.0f, 0.0f,
-
-    -0.5f, -0.5f,  0.5f,  0.0f, 0.0f,
-     0.5f, -0.5f,  0.5f,  1.0f, 0.0f,
-     0.5f,  0.5f,  0.5f,  1.0f, 1.0f,
-     0.5f,  0.5f,  0.5f,  1.0f, 1.0f,
-    -0.5f,  0.5f,  0.5f,  0.0f, 1.0f,
-    -0.5f, -0.5f,  0.5f,  0.0f, 0.0f,
-
-    -0.5f,  0.5f,  0.5f,  1.0f, 0.0f,
-    -0.5f,  0.5f, -0.5f,  1.0f, 1.0f,
-    -0.5f, -0.5f, -0.5f,  0.0f, 1.0f,
-    -0.5f, -0.5f, -0.5f,  0.0f, 1.0f,
-    -0.5f, -0.5f,  0.5f,  0.0f, 0.0f,
-    -0.5f,  0.5f,  0.5f,  1.0f, 0.0f,
-
-     0.5f,  0.5f,  0.5f,  1.0f, 0.0f,
-     0.5f,  0.5f, -0.5f,  1.0f, 1.0f,
-     0.5f, -0.5f, -0.5f,  0.0f, 1.0f,
-     0.5f, -0.5f, -0.5f,  0.0f, 1.0f,
-     0.5f, -0.5f,  0.5f,  0.0f, 0.0f,
-     0.5f,  0.5f,  0.5f,  1.0f, 0.0f,
-
-    -0.5f, -0.5f, -0.5f,  0.0f, 1.0f,
-     0.5f, -0.5f, -0.5f,  1.0f, 1.0f,
-     0.5f, -0.5f,  0.5f,  1.0f, 0.0f,
-     0.5f, -0.5f,  0.5f,  1.0f, 0.0f,
-    -0.5f, -0.5f,  0.5f,  0.0f, 0.0f,
-    -0.5f, -0.5f, -0.5f,  0.0f, 1.0f,
-
-    -0.5f,  0.5f, -0.5f,  0.0f, 1.0f,
-     0.5f,  0.5f, -0.5f,  1.0f, 1.0f,
-     0.5f,  0.5f,  0.5f,  1.0f, 0.0f,
-     0.5f,  0.5f,  0.5f,  1.0f, 0.0f,
-    -0.5f,  0.5f,  0.5f,  0.0f, 0.0f,
-    -0.5f,  0.5f, -0.5f,  0.0f, 1.0f
-    };
-
-    glm::vec3 cubePositions[] = {
-  glm::vec3(0.0f,  0.0f,  0.0f),
-  glm::vec3(2.0f,  5.0f, -15.0f),
-  glm::vec3(-1.5f, -2.2f, -2.5f),
-  glm::vec3(-3.8f, -2.0f, -12.3f),
-  glm::vec3(2.4f, -0.4f, -3.5f),
-  glm::vec3(-1.7f,  3.0f, -7.5f),
-  glm::vec3(1.3f, -2.0f, -2.5f),
-  glm::vec3(1.5f,  2.0f, -2.5f),
-  glm::vec3(1.5f,  0.2f, -1.5f),
-  glm::vec3(-1.3f,  1.0f, -1.5f)
-    };
-
-    unsigned int VAO;
-    glGenVertexArrays(1, &VAO);
-    glBindVertexArray(VAO);
-    //存储缓冲区对象id
-    unsigned int VBO;
-    //生成缓冲区对象并获取id
-    glGenBuffers(1, &VBO);
-    //将缓冲对象绑定到上下文，作为数组缓冲区
-    glBindBuffer(GL_ARRAY_BUFFER, VBO);
-    //复制数据到缓冲区
-    glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
-
-	Shader shader("vertex_shader.glsl", "fragment_shader.glsl");
-    shader.use();
-
-    // position attribute
-    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void*)0);
-    glEnableVertexAttribArray(0);
-    // texture coord attribute
-    glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void*)(3 * sizeof(float)));
-    glEnableVertexAttribArray(1);
-
-    int width, height, nrChannels;
-    stbi_set_flip_vertically_on_load(true);
-    unsigned char* data1 = stbi_load("container.jpg", &width, &height, &nrChannels, 0);
-
-    unsigned int texture1;
-    glGenTextures(1, &texture1);
-    glBindTexture(GL_TEXTURE_2D, texture1);
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-    glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, data1);
-    glGenerateMipmap(GL_TEXTURE_2D);
-    stbi_image_free(data1);
-
-    unsigned char* data2 = stbi_load("awesomeface.png", &width, &height, &nrChannels, 0);
-    unsigned int texture2;
-    glGenTextures(2, &texture2);
-    glBindTexture(GL_TEXTURE_2D, texture2);
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-    glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGBA, GL_UNSIGNED_BYTE, data2);
-    glGenerateMipmap(GL_TEXTURE_2D);
-    stbi_image_free(data2);
-
-    glUniform1i(glGetUniformLocation(shader.ID, "texture1"), 0); // 手动设置
-    shader.setInt("texture2", 1); // 或者使用着色器类设置
-    glEnable(GL_DEPTH_TEST);
-
-    glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
-
-    while (!glfwWindowShouldClose(window))
-    {
-
-        float currentFrame = static_cast<float>(glfwGetTime());
-        deltaTime = currentFrame - lastFrame;
-        lastFrame = currentFrame;
-        // 输入
-        processInput(window);
-
-        // 渲染
-        // 清除颜色缓冲
-        glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
-        glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-
-        // 记得激活着色器
-        shader.use();
-
-        // 更新uniform颜色
-        float timeValue = glfwGetTime();
-        float greenValue = sin(timeValue) / 2.0f + 0.5f;
-
-		shader.setVec4("ourColor", 0.0f, greenValue, 0.0f, 1.0f);
-
-        // 绘制三角形
-        glActiveTexture(GL_TEXTURE0);
-        glBindTexture(GL_TEXTURE_2D, texture1);
-        glActiveTexture(GL_TEXTURE1);
-        glBindTexture(GL_TEXTURE_2D, texture2);
-
-        glBindVertexArray(VAO);
-
-        glm::mat4 projection;
-        projection = glm::perspective(glm::radians(camera.Zoom), screenWidth / screenHeight, 0.1f, 100.0f);
-        unsigned transformLoc = glGetUniformLocation(shader.ID, "projection");
-        glUniformMatrix4fv(transformLoc, 1, GL_FALSE, glm::value_ptr(projection));
-
-        glm::mat4 view;
-        view = camera.GetViewMatrix();
-        transformLoc = glGetUniformLocation(shader.ID, "view");
-        glUniformMatrix4fv(transformLoc, 1, GL_FALSE, glm::value_ptr(view));
-
-        for (unsigned int i = 0; i < 10; i++)
-        {
-            glm::mat4 model;
-            model = glm::translate(model, cubePositions[i]);
-            float angle = 20.0f * i;
-            model = glm::rotate(model, glm::radians(angle), glm::vec3(1.0f, 0.3f, 0.5f));
-            transformLoc = glGetUniformLocation(shader.ID, "model");
-            glUniformMatrix4fv(transformLoc, 1, GL_FALSE, glm::value_ptr(model));
-
-            glDrawArrays(GL_TRIANGLES, 0, 36);
-        }
-
-        // 交换缓冲并查询IO事件
-        glfwSwapBuffers(window);
-        glfwPollEvents();
-    }
-    glDeleteVertexArrays(1, &VAO);
-    glDeleteBuffers(1, &VBO);
-    //释放资源
-    glfwTerminate();
-
-    return 0;
-}
+```c++
+geometryShader = glCreateShader(GL_GEOMETRY_SHADER);
+glShaderSource(geometryShader, 1, &gShaderCode, NULL);
+glCompileShader(geometryShader);  
+...
+glAttachShader(program, geometryShader);
+glLinkProgram(program);
 ```
 
 
 
-## 光照
+- 在调用 `EmitVertex()` 时，几何着色器会将当前设置的顶点属性（如 `gl_Position` 和自定义的 `out` 变量）作为一个新的顶点，保存到输出缓冲区中。
+  - 也就是说 out 变量也会进行传递
+
+```c++
+fColor = gs_in[0].color; 
+gl_Position = position + vec4(-0.2, -0.2, 0.0, 0.0);    // 1:左下 
+EmitVertex();   
+gl_Position = position + vec4( 0.2, -0.2, 0.0, 0.0);    // 2:右下
+EmitVertex();
+gl_Position = position + vec4(-0.2,  0.2, 0.0, 0.0);    // 3:左上
+EmitVertex();
+gl_Position = position + vec4( 0.2,  0.2, 0.0, 0.0);    // 4:右上
+EmitVertex();
+gl_Position = position + vec4( 0.0,  0.4, 0.0, 0.0);    // 5:顶部
+fColor = vec3(1.0, 1.0, 1.0);
+EmitVertex();
+EndPrimitive();  
+```
+
+- 这就实现了最后一个点和前面的点颜色不同
+
+
+
+- 可以实现很多效果：
+  - 面位移实现爆破效果
+  - 显示所有面的法线等等
+
+## 实例化渲染
+
+- 实例化渲染通常会用于渲染草、植被、粒子，基本上只要场景中有很多重复的形状，都能够使用实例化渲染来提高性能。
+
+- 反复绑定 VAO，由 cpu 去告诉 gpu 如何绘制，这样绘制多个物体是较慢的，如果我们能够将数据**一次性发送**给 GPU，然后使用**一个绘制函数**让 OpenGL 利用这些数据绘制多个物体，就会更方便了。这就是实例化。
+  - 即一个渲染调用来绘制多个物体，接受 CPU->GPU 通信
+- 有一个额外参数，告诉 GPU 渲染的次数；微粒让物体渲染不同（而不是重复一个位置），着色器中有一个 in 变量 `gl_InstanceID`
+  - 这个值从 0 开始，每个示例被渲染时递增 1
+  - `glDrawArraysInstanced(GL_TRIANGLES, 0, 6, 100);` 即渲染 100 次
+
+
+
+- 利用这个值很容易实现矩阵排列
+
+```c++
+#version 330 core
+layout (location = 0) in vec2 aPos;
+layout (location = 1) in vec3 aColor;
+
+out vec3 fColor;
+
+uniform vec2 offsets[100];
+
+void main()
+{
+    vec2 offset = offsets[gl_InstanceID];
+    gl_Position = vec4(aPos + offset, 0.0, 1.0);
+    fColor = aColor;
+}
+```
+
+<img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/undefinedinstancing_quads.png" alt="img" style="zoom:50%;" />
+
+- 使用 `uniform` 数组传递偏移数据时，当实例数量较多时会受到 GPU 硬件对 `uniform` 变量数量限制的制约。并且每次绘制都需要根据 `gl_InstanceID` 从 `uniform` 数组中索引数据，这种方式受限于数据带宽和硬件能力。
+- 实例化数组：将逐实例的数据存储为顶点属性并通过**顶点缓冲对象（VBO）**传递，可以突破 `uniform` 数量限制。通过设置更新频率在每个顶点计算时进行更新
+
+```glsl
+#version 330 core
+layout (location = 0) in vec2 aPos;       // 顶点位置
+layout (location = 1) in vec3 aColor;     // 颜色
+layout (location = 2) in vec2 aOffset;    // 偏移量（实例化数组）
+
+out vec3 fColor;
+
+void main()
+{
+    gl_Position = vec4(aPos + aOffset, 0.0, 1.0); // 使用偏移量
+    fColor = aColor;
+}
+
+```
+
+- 创建实例化 VBO
+
+```glsl
+unsigned int instanceVBO;
+glGenBuffers(1, &instanceVBO);
+glBindBuffer(GL_ARRAY_BUFFER, instanceVBO);
+// 将偏移量数组的数据传递到VBO
+glBufferData(GL_ARRAY_BUFFER, sizeof(glm::vec2) * 100, &translations[0], GL_STATIC_DRAW);
+glBindBuffer(GL_ARRAY_BUFFER, 0);
+
+glEnableVertexAttribArray(2); // 启用属性位置 2（aOffset）
+glBindBuffer(GL_ARRAY_BUFFER, instanceVBO);
+glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, 2 * sizeof(float), (void*)0);
+glBindBuffer(GL_ARRAY_BUFFER, 0);
+
+glVertexAttribDivisor(2, 1);//设置更新频率1
+
+glBindVertexArray(quadVAO);
+glDrawArraysInstanced(GL_TRIANGLES, 0, 6, 100);
+
+```
+
+- 即索引获取值的工作从着色器转移到了 CPU
+
+## 抗锯齿
+
+- 要使用 MSAA 需要在每个像素中存储**大于 1 个颜色值**的颜色缓冲，即多重采样缓冲
+
+
+
+- 通过 GLFW 可以快速实现 MSAA
+
+- `glfwWindowHint(GLFW_SAMPLES, 4);` 之后再创建渲染窗口，每个屏幕坐标就会有一个包含 4 个子采样点的颜色缓冲了。
+  - 之后确保开启多重采样 `glEnable(GL_MULTISAMPLE);`
+
+
+
+### 离屏 MSAA
+
+- 通过帧缓冲来实现
+
+- 创建支持多采样点的纹理
+
+```c++
+// 1. 创建多重采样帧缓冲
+GLuint multisampledFBO;
+glGenFramebuffers(1, &multisampledFBO);
+glBindFramebuffer(GL_FRAMEBUFFER, multisampledFBO);
+
+// 1.1 创建并附加多重采样纹理附件
+GLuint tex;
+glGenTextures(1, &tex);
+glBindTexture(GL_TEXTURE_2D_MULTISAMPLE, tex);
+glTexImage2DMultisample(GL_TEXTURE_2D_MULTISAMPLE, 4, GL_RGB, width, height, GL_TRUE);
+glFramebufferTexture2D(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, GL_TEXTURE_2D_MULTISAMPLE, tex, 0);
+
+// 1.2 创建并附加多重采样渲染缓冲（深度和模板缓冲）
+GLuint rbo;
+glGenRenderbuffers(1, &rbo);
+glBindRenderbuffer(GL_RENDERBUFFER, rbo);
+glRenderbufferStorageMultisample(GL_RENDERBUFFER, 4, GL_DEPTH24_STENCIL8, width, height);
+glFramebufferRenderbuffer(GL_FRAMEBUFFER, GL_DEPTH_STENCIL_ATTACHMENT, GL_RENDERBUFFER, rbo);
+
+// 检查帧缓冲完整性
+if (glCheckFramebufferStatus(GL_FRAMEBUFFER) != GL_FRAMEBUFFER_COMPLETE)
+    std::cout << "ERROR::FRAMEBUFFER:: Framebuffer is not complete!" << std::endl;
+glBindFramebuffer(GL_FRAMEBUFFER, 0);
+
+// 2. 渲染到多重采样帧缓冲
+glBindFramebuffer(GL_FRAMEBUFFER, multisampledFBO);
+glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+glEnable(GL_DEPTH_TEST);
+RenderScene();
+glBindFramebuffer(GL_FRAMEBUFFER, 0);
+
+// 3. 解析多重采样图像并显示
+glBindFramebuffer(GL_READ_FRAMEBUFFER, multisampledFBO);
+glBindFramebuffer(GL_DRAW_FRAMEBUFFER, 0);
+glBlitFramebuffer(0, 0, width, height, 0, 0, width, height, GL_COLOR_BUFFER_BIT, GL_NEAREST);
+
+```
+
+
+
+- 由于多重采样纹理无法直接在片段着色器中采样，因此无法直接用于后期处理
+  - 通过将多重采样帧缓冲的内容还原到普通的帧缓冲生成可采样的 2 D 纹理，然后使用该纹理作为输入进行后期处理。
+
+
+# 光照
 
 ### 颜色
 
@@ -3008,799 +3820,9 @@ float epsilon   = light.cutOff - light.outerCutOff;
 float intensity = clamp((theta - light.outerCutOff) / epsilon, 0.0, 1.0);    
 ```
 
-## 模型加载
+## Gamma 矫正
 
-## PBR
-
-## 高级
-
-### 高级opengl
-
-#### 深度测试
-
-- 通常深度测试是在片段着色器运行之后在屏幕空间进行的
-  - 提前深度测试：在片段着色器之前运行，提前丢弃永远不可见的片段，减少计算量
-- 开启深度测试`glEnable(GL_DEPTH_TEST);`
-  - 使用深度测试时，清除缓存是还要清除深度数据`glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);`
-- 将深度缓冲数据设置为只读，禁止修改`glDepthMask(GL_FALSE);`
-- 自定义深度测试比较函数`glDepthFunc(GL_LESS);`
-  - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/undefinedimage-20241118161429326.png" alt="image-20241118161429326" style="zoom: 50%;" />
-- 通常根据近远平面的值来计算深度值
-  - 一种线性方程$F_{depth}=\frac{z-near}{far-near}$
-  - 更常用的是非线性方程，与$1/z$成正比，即z值较小时具有较高的精度$F_{depth}=\frac{1/z-1/near}{1/far-1/near}$
-  - 深度缓冲精度不足时就会出现**深度冲突**，结果就是这两个形状不断地在切换前后顺序，这会导致很奇怪的花纹。
-- 着色器中通过`gl_FragCoord.z`可以直接获取到深度缓冲的值
-
-#### 模板测试
-
-- 模版测试是在深度测试之前进行的，每个模板值是8位的，可以丢弃或保留具有特定模板值的片段
-- 模板测试的目的：利用已经本次绘制的物体，产生一个区域，在**下次绘制**中利用这个区域做一些效果。
-  - 启用模板缓冲的写入。
-  - 渲染物体，**更新模板缓冲**的内容。
-  - 禁用模板缓冲的写入。
-  - 渲染（其它）物体，这次**根据模板缓冲的内容**丢弃特定的片段。
-- 启用模板测试`glEnable(GL_STENCIL_TEST);`
-- 清除模板缓冲`glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT | GL_STENCIL_BUFFER_BIT);`
-- `glStencilMask`允许我们设置一个位掩码，它会与将要写入缓冲的模板值进行与(AND)运算
-
-```c++
-glStencilMask(0xFF); // 每一位写入模板缓冲时都保持原样
-glStencilMask(0x00); // 每一位在写入模板缓冲时都会变成0（禁用写入）
-```
-
-##### 模板函数
-
-- 控制模板缓冲通过还是失败，以及如何影响模板缓冲
-- 对模板缓冲做什么(配置模版缓冲条件)：`glStencilFunc(GLenum func, GLint ref, GLuint mask)`
-  - `func`：设置模板测试函数(Stencil Test Function)。这个测试函数将会应用到已储存的模板值上和glStencilFunc函数的`ref`值上。可用的选项有：GL_NEVER、GL_LESS、GL_LEQUAL、GL_GREATER、GL_GEQUAL、GL_EQUAL、GL_NOTEQUAL和GL_ALWAYS。它们的语义和深度缓冲的函数类似。
-  - `ref`：设置了模板测试的参考值,模板缓冲的内容将会与这个值进行比较。
-  - `mask`：设置一个掩码，它将会与参考值和储存的模板值在测试比较它们之前进行与(AND)运算。初始情况下所有位都为1。
-  - 如`glStencilFunc(GL_EQUAL, 1, 0xFF)`
-- 更新模板缓冲的值`glStencilOp(GLenum sfail, GLenum dpfail, GLenum dppass)`
-  - `sfail`：模板测试失败时采取的行为。
-  - `dpfail`：模板测试通过，但深度测试失败时采取的行为。
-  - `dppass`：模板测试和深度测试都通过时采取的行为。
-  - ![image-20241118173453758](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefinedimage-20241118173453758.png)
-
-##### 用模板测试实现物体描边
-
-<img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/undefinedstencil_object_outlining.png" alt="img" style="zoom: 67%;" />
-
-- 先绘制物体（原箱子）
-
-```c++
-glEnable(GL_STENCIL_TEST);
-glStencilOp(GL_KEEP, GL_KEEP, GL_REPLACE);//如果模板测试和深度测试都通过了，那么我们希望将储存的模板值设置为参考值（1）
-glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT | GL_STENCIL_BUFFER_BIT); 
-
-glStencilMask(0x00); // 绘制不需要描边的物体
-normalShader.use();
-DrawFloor()  
-
-//绘制需要描边的物体
-glStencilFunc(GL_ALWAYS, 1, 0xFF); // 所有的片段都应该更新模板缓冲
-glStencilMask(0xFF); // 启用模板缓冲写入
-DrawTwoContainers();
-```
-
-- 接下来绘制大一号的箱子作为描边，这次要禁用描边
-
-```c++
-//绘制描边
-glStencilFunc(GL_NOTEQUAL, 1, 0xFF);//GL_NOTEQUAL只绘制模板值不为1的区域
-glStencilMask(0x00); // 禁止模板缓冲的写入
-glDisable(GL_DEPTH_TEST);
-shaderSingleColor.use(); 
-DrawTwoScaledUpContainers();
-glStencilMask(0xFF);
-```
-
-#### 混合
-
-##### 含透明通道贴图
-
-- 使用有透明分量的纹理时`glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, width, height, 0, GL_RGBA, GL_UNSIGNED_BYTE, data);`
-  - 要注意使用`GL_RGBA`
-- 在着色器中可以根据alpha的值来判断是否丢弃像素（这个点显示为透明）
-
-```c++
-void main()
-{             
-    vec4 texColor = texture(texture1, TexCoords);
-    if(texColor.a < 0.1)
-        discard;
-    FragColor = texColor;
-}
-```
-
-- 要注意的是，如果使用GL_REPEAT等环绕方式，由于OpenGL会对边缘的值和纹理下一个重复的值进行插值导致边框具有颜色， 这就可能产生一个半透明有色边框，对于这种图片就要使用GL_CLAMP_TO_EDGE环绕方式
-
-##### 颜色混合
-
-- 开启混合`glEnable(GL_BLEND);`
-- 混合方程$\bar{C}_{result}=\bar{C}_{source}*F_{source}+\bar{C}_{destination}*F_{destination}$
-  - 颜色1\*源因子值+颜色2\*目标因子值
-- `glBlendFunc(GLenum sfactor, GLenum dfactor)`函数接受两个参数，来设置源和目标因子
-  - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/undefinedimage-20241118202421466.png" alt="image-20241118202421466" style="zoom:50%;" />
-- 比如使用源的alpha、1-alpha：`glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);`
-- 也可以使用`glBlendFuncSeparate`来分别设置RGBA四个通道
-- `glBlendEquation(GLenum mode)`设置颜色的运算方式
-  - GL_FUNC_ADD：默认选项，将两个分量相加
-  - GL_FUNC_SUBTRACT：将两个分量相减
-  - GL_FUNC_REVERSE_SUBTRACT：将两个分量相减，但顺序相反
-
-
-
-- 同时使用深度测试和混合会存在问题，导致不该被丢弃的内容被丢弃
-  - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/undefinedblending_incorrect_order.png" alt="img" style="zoom:50%;" />
-  - 对于每一个片段，深度测试会比较它的深度值与深度缓冲的当前值。如果深度测试失败该片段会被丢弃，即使当前值所在的贴图是半透明的！这就丢失了数据
-  - 要想保证窗户中能够显示它们背后的窗户，我们需要首先绘制背后的这部分窗户。这也就是说在绘制的时候，我们必须先**手动**将窗户按照**最远到最近**来排序，再按照顺序渲染。
-
-- 使用混合时的渲染原则
-  - 先绘制所有不透明的物体。
-  - 对所有透明的物体排序。
-  - 按顺序绘制所有透明的物体。
-
-
-
-- 排序透明物体：观察者视角获取物体的距离，可以通过计算摄像机位置向量和物体的位置向量之间的距离所获得
-
-```c++
-std::map<float, glm::vec3> sorted;
-for (unsigned int i = 0; i < windows.size(); i++)
-{
-    float distance = glm::length(camera.Position - windows[i]);
-    sorted[distance] = windows[i];
-}
-```
-
-
-
-- 渲染时直接从map读取排好序的
-
-```c++
-for(std::map<float,glm::vec3>::reverse_iterator it = sorted.rbegin(); it != sorted.rend(); ++it) 
-{
-    model = glm::mat4();
-    model = glm::translate(model, it->second);              
-    shader.setMat4("model", model);
-    glDrawArrays(GL_TRIANGLES, 0, 6);
-}
-```
-
-#### 面剔除
-
-- 丢弃背对观察者的面，只渲染面向观察者的面，节省开销
-
-
-
-- 以环绕顺序来定义三角形的顶点
-  - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/undefinedfaceculling_windingorder.png" alt="img" style="zoom:50%;" />
-  - 全部按照逆时针规则进行定义（对顶点数据的要求）
-- 这样从正面看为逆时针的三角形就是面向观察者的面，顺时针的就是背对的面，可以进行剔除
-
-
-
-- 启用面剔除：`glEnable(GL_CULL_FACE);`
-- 剔除的面的类型`glCullFace(GL_FRONT);`
-  - `GL_BACK`：只剔除背向面。
-  - `GL_FRONT`：只剔除正向面。
-  - `GL_FRONT_AND_BACK`：剔除正向面和背向面。
-- 正面的方向`glFrontFace(GL_CCW);`
-  - GL_CCW表示逆时针环绕
-  - GL_CW表示顺时针环绕
-
-#### 帧缓冲
-
-- 颜色缓冲、深度信息缓冲等各种缓冲结合再起来就是帧缓冲，默认的真缓冲是窗口时生成和配置的
-- 帧缓冲是一种容器对象，用于管理多个附件
-- 可以用于**离屏渲染**：将渲染结果输出到纹理或其他附件上而不是直接显示在屏幕
-
-
-
-- 创建帧缓冲对象
-
-```c++
-unsigned int fbo;
-glGenFramebuffers(1, &fbo);
-//绑定为当前激活的帧缓冲
-glBindFramebuffer(GL_FRAMEBUFFER, fbo);
-```
-
-- 绑定帧缓冲之后，所有的读取和写入帧缓冲的操作都会影响绑定的帧缓冲
-  - 也可以用GL_READ_FRAMEBUFFER或GL_DRAW_FRAMEBUFFER分别进行绑定
-
-
-
-- 完整的帧缓冲：
-  - 附加至少一个缓冲（颜色、深度或模板缓冲）。
-  - 至少有一个颜色附件(Attachment)。
-  - 所有的附件都必须是完整的（保留了内存）。
-  - 每个缓冲都应该有相同的样本数(sample)。
-- 检查帧缓冲是否完整`if(glCheckFramebufferStatus(GL_FRAMEBUFFER) == GL_FRAMEBUFFER_COMPLETE)`
-
-- 之后所有的渲染操作将会渲染到当前绑定帧缓冲的附件中,要保证所有的渲染操作在主窗口中有视觉效果，我们需要再次激活默认帧缓冲，将它绑定到`0`。
-  - `glBindFramebuffer(GL_FRAMEBUFFER, 0);`
-
-
-
-##### 纹理附件
-
-- 可以**直接采样**，适合需要**后续处理**的情况
-
-- 当把一个纹理附加到帧缓冲的时候，所有的渲染指令将会写入到这个纹理中，所有渲染操作的结果将会被储存在一个纹理图像中
-
-```c++
-unsigned int texture;
-glGenTextures(1, &texture);
-glBindTexture(GL_TEXTURE_2D, texture);
-//只分配空间，并没有设置纹理数据
-glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, 800, 600, 0, GL_RGB, GL_UNSIGNED_BYTE, NULL);
-
-glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
-glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-glFramebufferTexture2D(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, GL_TEXTURE_2D, texture, 0);
-
-//创建一个深度&模板缓冲的纹理（正好24+8=32）
-glTexImage2D(
-  GL_TEXTURE_2D, 0, GL_DEPTH24_STENCIL8, 800, 600, 0, 
-  GL_DEPTH_STENCIL, GL_UNSIGNED_INT_24_8, NULL
-);
-glFramebufferTexture2D(GL_FRAMEBUFFER, GL_DEPTH_STENCIL_ATTACHMENT, GL_TEXTURE_2D, texture, 0);
-```
-
-- 将纹理附加到帧缓冲`glFramebufferTexture2D(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, GL_TEXTURE_2D, texture, 0);`
-  - `target`：帧缓冲的目标（绘制、读取或者两者皆有）
-  - `attachment`：我们想要附加的附件类型。当前我们正在附加一个颜色附件。注意最后的`0`意味着我们可以附加多个颜色附件。我们将在之后的教程中提到。
-  - `textarget`：你希望附加的纹理类型
-  - `texture`：要附加的纹理本身
-  - `level`：多级渐远纹理的级别。我们将它保留为0。
-
-
-
-##### 渲染缓冲对象附件
-
-- 用于存储渲染过程中生成的数据，**不能直接采样**，主要用于**中间渲染结果的存储**，实际存储了渲染数据
-  - 直接将多有的渲染数据存储到缓冲中，不进行任何转换，效率很高
-  - 渲染缓冲对象通常都是**只写**的：不能采样（通过纹理坐标进行访问），但是可以将数据复制到纹理再进行访问
-
-```c++
-unsigned int rbo;
-glGenRenderbuffers(1, &rbo);
-//绑定帧缓冲对象
-glBindRenderbuffer(GL_RENDERBUFFER, rbo);
-//为渲染缓冲对象分配存储空间
-glRenderbufferStorage(GL_RENDERBUFFER, GL_DEPTH24_STENCIL8, 800, 600);
-//将渲染缓冲对象附加到帧缓冲对象
-glFramebufferRenderbuffer(GL_FRAMEBUFFER, GL_DEPTH_STENCIL_ATTACHMENT, GL_RENDERBUFFER, rbo);
-```
-
-##### 渲染到纹理
-
-- 将一个场景附加到帧缓冲对象上的颜色纹理并在图形上绘制这个纹理
-
-```c++
-//创建帧缓冲对象
-unsigned int framebuffer;
-glGenFramebuffers(1, &framebuffer);
-glBindFramebuffer(GL_FRAMEBUFFER, framebuffer);
-
-// 生成纹理(颜色纹理需要采样、显示，因此使用纹理附件)
-unsigned int texColorBuffer;
-glGenTextures(1, &texColorBuffer);
-glBindTexture(GL_TEXTURE_2D, texColorBuffer);
-glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, 800, 600, 0, GL_RGB, GL_UNSIGNED_BYTE, NULL);
-glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR );
-glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-glBindTexture(GL_TEXTURE_2D, 0);
-// 将它附加到当前绑定的帧缓冲对象
-glFramebufferTexture2D(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, GL_TEXTURE_2D, texColorBuffer, 0);  
-
-//深度、模板缓冲不需要采样，因此使用帧缓冲对象
-unsigned int rbo;
-glGenRenderbuffers(1, &rbo);
-glBindRenderbuffer(GL_RENDERBUFFER, rbo); 
-glRenderbufferStorage(GL_RENDERBUFFER, GL_DEPTH24_STENCIL8, 800, 600);  
-glBindRenderbuffer(GL_RENDERBUFFER, 0);
-glFramebufferRenderbuffer(GL_FRAMEBUFFER, GL_DEPTH_STENCIL_ATTACHMENT, GL_RENDERBUFFER, rbo);
-
-//检查是否完整
-if(glCheckFramebufferStatus(GL_FRAMEBUFFER) != GL_FRAMEBUFFER_COMPLETE)
-    std::cout << "ERROR::FRAMEBUFFER:: Framebuffer is not complete!" << std::endl;
-//接下来将新的帧缓冲绑定为激活的帧缓冲
-glBindFramebuffer(GL_FRAMEBUFFER, 0);
-```
-
-- 离屏渲染
-
-```c++
-glBindFramebuffer(GL_FRAMEBUFFER, framebuffer);  // 绑定自定义帧缓冲
-glClearColor(0.1f, 0.1f, 0.1f, 1.0f);            // 设置清屏颜色
-glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT); // 清空颜色缓冲和深度缓冲
-glEnable(GL_DEPTH_TEST);                         // 启用深度测试
-DrawScene();                                     // 渲染场景
-```
-
-- 屏幕渲染
-
-```c++
-glBindFramebuffer(GL_FRAMEBUFFER, 0);            // 绑定默认帧缓冲（屏幕帧缓冲）
-glClearColor(1.0f, 1.0f, 1.0f, 1.0f);            // 设置屏幕清屏颜色为白色
-glClear(GL_COLOR_BUFFER_BIT);                    // 清空屏幕的颜色缓冲
-screenShader.use();                              // 使用屏幕渲染的着色器
-glBindVertexArray(quadVAO);                      // 绑定渲染屏幕四边形的VAO
-glDisable(GL_DEPTH_TEST);                        // 禁用深度测试
-glBindTexture(GL_TEXTURE_2D, textureColorbuffer);// 绑定第一阶段的颜色缓冲纹理
-glDrawArrays(GL_TRIANGLES, 0, 6);                // 绘制屏幕四边形
-
-```
-
-##### 后期处理
-
-- 可以在离屏渲染后，切换使用后期处理着色器，即实现在屏幕渲染阶段的后期处理
-  - 此时可以实现很多效果，因为可以获得一个像素及其周边像素的数据(核采样时要小心环绕扩展方式造成的影响)
-- 如模糊效果$\begin{bmatrix}1&2&1\\2&4&2\\1&2&1\end{bmatrix}/16$
-
-#### 立方体贴图
-
-- 立方体贴图由6个普通的平面贴图组成
-  - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/undefinedimage-20241119160505281.png" alt="image-20241119160505281" style="zoom:67%;" />
-- 创建并绑定立方体贴图的面
-
-```c++
-unsigned int loadCubemap(vector<std::string> faces)
-{
-    unsigned int textureID;
-    glGenTextures(1, &textureID);
-    glBindTexture(GL_TEXTURE_CUBE_MAP, textureID);
-
-    int width, height, nrChannels;
-    for (unsigned int i = 0; i < faces.size(); i++)
-    {
-        unsigned char *data = stbi_load(faces[i].c_str(), &width, &height, &nrChannels, 0);
-        if (data)
-        {
-            glTexImage2D(GL_TEXTURE_CUBE_MAP_POSITIVE_X + i, 
-                         0, GL_RGB, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, data
-            );
-            stbi_image_free(data);
-        }
-        else
-        {
-            std::cout << "Cubemap texture failed to load at path: " << faces[i] << std::endl;
-            stbi_image_free(data);
-        }
-    }
-    glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
-    glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-    glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
-    glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
-    glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_WRAP_R, GL_CLAMP_TO_EDGE);
-
-    return textureID;
-}
-
-vector<std::string> faces
-{
-    "right.jpg",
-    "left.jpg",
-    "top.jpg",
-    "bottom.jpg",
-    "front.jpg",
-    "back.jpg"
-};
-unsigned int cubemapTexture = loadCubemap(faces);
-```
-
-- 片段着色器中要使用samplerCube
-
-```glsl
-#version 330 core
-layout (location = 0) in vec3 aPos;
-
-out vec3 TexCoords;
-
-uniform mat4 projection;
-uniform mat4 view;
-
-void main()
-{
-    TexCoords = aPos;
-    gl_Position = projection * view * vec4(aPos, 1.0);
-}
-
-
-
-#version 330 core
-out vec4 FragColor;
-
-in vec3 TexCoords;
-
-uniform samplerCube skybox;
-
-void main()
-{    
-    FragColor = texture(skybox, TexCoords);
-}
-```
-
-##### 天空盒
-
-- 立方体贴图可以用于实现天空盒
-- 为了在天空盒中有移动效果，可以消除调控和的位移效果（即不因摄像机动而动），但是保留旋转效果
-- 先渲染场景物体，最后再渲染天空盒；通过**提前深度测试**，在天空盒渲染阶段快速丢弃被场景物体遮挡的像素，从而减少片段着色器的运行。（天空盒的深度始终为最大的1.0）
-  - 要将条件从小于改为小于等于`glDepthFunc(GL_LEQUAL);`
-
-##### 环境映射
-
-- 通过环境的立方体贴图，给物体反射和折射属性
-
-- 当立方体位于(0,0,0)时每个位置向量都是**从原点出发的方向向量**，这个方向向量正是获取立方体上**特定位置的纹理值**所需要的（即**通过方向向量来获取数据**）
-
-###### 反射
-
-<img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/undefinedcubemaps_reflection_theory.png" alt="img" style="zoom:67%;" />
-
-- 计算得到反射向量，通过反射向量采样立方体贴图，返回环境的颜色值
-
-```glsl
-#version 330 core
-layout (location = 0) in vec3 aPos;
-layout (location = 1) in vec3 aNormal;
-
-out vec3 Normal;
-out vec3 Position;
-
-uniform mat4 model;
-uniform mat4 view;
-uniform mat4 projection;
-
-void main()
-{
-    Normal = mat3(transpose(inverse(model))) * aNormal;
-    Position = vec3(model * vec4(aPos, 1.0));
-    gl_Position = projection * view * model * vec4(aPos, 1.0);
-}
-
-
-
-#version 330 core
-out vec4 FragColor;
-
-in vec3 Normal;
-in vec3 Position;
-
-uniform vec3 cameraPos;
-uniform samplerCube skybox;
-
-void main()
-{             
-    vec3 I = normalize(Position - cameraPos);
-    vec3 R = reflect(I, normalize(Normal));
-    FragColor = vec4(texture(skybox, R).rgb, 1.0);
-}
-```
-
-###### 折射
-
-- 类似的，通过折射定律获取方向获取法向量，进而获取材质数据
-
-```glsl
-void main()
-{             
-    float ratio = 1.00 / 1.52;
-    vec3 I = normalize(Position - cameraPos);
-    vec3 R = refract(I, normalize(Normal), ratio);
-    FragColor = vec4(texture(skybox, R).rgb, 1.0);
-}
-```
-
-#### 高级数据
-
-- 通过`glBufferData`可以创建缓冲对象，并用数据立即进行填充
-- 也可以通过`glBufferSubData`来填充特定的缓冲区域
-  - `glBufferSubData(GL_ARRAY_BUFFER, 24, sizeof(data), &data);`
-  - 缓冲目标、偏移量、数据大小、数据源
-  - 要保证缓冲区有足够大的内存
-- 也可以直接`void *ptr = glMapBuffer(GL_ARRAY_BUFFER, GL_WRITE_ONLY);`获取缓冲区内存的指针，再通过`memcpy`等直接修改缓冲区的内容
-  - 释放指针`glUnmapBuffer(GL_ARRAY_BUFFER);`
-
-
-
-- 除了使用类似结构体那样交替存储顶点数据（123123123123），采用分批的方式进行存储（111122223333）
-  - 有时获得的时这种分批方式存储的数据
-
-```c++
-float positions[] = { ... };
-float normals[] = { ... };
-float tex[] = { ... };
-// 填充缓冲
-glBufferSubData(GL_ARRAY_BUFFER, 0, sizeof(positions), &positions);
-glBufferSubData(GL_ARRAY_BUFFER, sizeof(positions), sizeof(normals), &normals);
-glBufferSubData(GL_ARRAY_BUFFER, sizeof(positions) + sizeof(normals), sizeof(tex), &tex);
-//绑定
-glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), 0);  
-glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)(sizeof(positions)));  
-glVertexAttribPointer(
-  2, 2, GL_FLOAT, GL_FALSE, 2 * sizeof(float), (void*)(sizeof(positions) + sizeof(normals)));
-```
-
-
-
-- 复制缓冲`void glCopyBufferSubData(GLenum readtarget, GLenum writetarget, GLintptr readoffset, GLintptr writeoffset, GLsizeiptr size);`
-  - `readtarget`和`writetarget`参数需要填入复制源和复制目标的缓冲目标。比如说，我们可以将VERTEX_ARRAY_BUFFER缓冲复制到VERTEX_ELEMENT_ARRAY_BUFFER缓冲
-- 也可以使用提供的专供复制的GL_COPY_READ_BUFFER和GL_COPY_WRITE_BUFFER
-
-```c++
-float vertexData[] = { ... };
-glBindBuffer(GL_COPY_READ_BUFFER, vbo1);
-glBindBuffer(GL_COPY_WRITE_BUFFER, vbo2);
-glCopyBufferSubData(GL_COPY_READ_BUFFER, GL_COPY_WRITE_BUFFER, 0, 0, sizeof(vertexData));
-```
-
-
-
-#### 高级glsl
-
-##### 着色器的内建变量
-
-###### 顶点着色器
-
-- `gl_PointSize`：输出变量，float，可以用于设置点的宽高（像素）、
-  - 默认禁用，需要先`glEnable(GL_PROGRAM_POINT_SIZE);`
-  - 可以动态设置，比如根据z进行设置，就可以实现距离变远点增大等
-- `gl_VertexID`：输入变量，存储了正在绘制的顶点的ID，使用索引绘制时，这个值就等于索引值；否则为从渲染调用开始的已处理的顶点数量
-
-###### 片段着色器
-
-- `gl_FragCoord`：输入变量，Vec3，xy分量为片段的窗口坐标（左下角为原点），z为片段的深度值（**只读**）
-- `gl_FrontFacing`：输入百年来那个，bool，可以获取当前片段式属于正向面还是属于北背向面的想（如果你开启了面剔除，你就看不到箱子内部的面了，所以现在再使用gl_FrontFacing就没有意义了。）
-- `gl_FragDepth`：输出变量，float，可以设置深度值
-  - 使用了则会禁用提前深度测试
-  - 可以使用深度条件进行声明`layout (depth_<condition>) out float gl_FragDepth;`
-  - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/undefinedimage-20241119174156028.png" alt="image-20241119174156028" style="zoom:50%;" />
-  - 这样就能保留部分的提前深度测试
-
-#### 几何着色器
-
-- 图元是图形渲染管线中绘制几何图形的基本单位
-  - 点
-  - 线
-  - 三角形
-
-- 介于顶点着色器和片段着色器之间
-  - 给予输入的图元生成**新的图元或修改现有的图元**
-  - 比如将点转化为边
-
-
-
-
-```glsl
-#version 330 core
-    layout (points) in;//输入的图元
-layout (line_strip, max_vertices = 2) out;//输出的图元
-
-void main() {    
-    //设置第一个点
-    gl_Position = gl_in[0].gl_Position + vec4(-0.1, 0.0, 0.0, 0.0); 
-    EmitVertex();//发射（即gl_position中的向量会被添加到图元中）
-	//设置第二个点
-    gl_Position = gl_in[0].gl_Position + vec4( 0.1, 0.0, 0.0, 0.0);
-    EmitVertex();//发射
-	//图元结束
-    EndPrimitive();
-}
-```
-
-- 这里的in和out不是具体的变量，而是类型，用于指定集合着色器处理图元的方式
-- 几何着色器接受的图元输入
-  - `points`：绘制GL_POINTS图元时（1）。
-  - `lines`：绘制GL_LINES或GL_LINE_STRIP时（2）
-  - `lines_adjacency`：GL_LINES_ADJACENCY或GL_LINE_STRIP_ADJACENCY（4）
-  - `triangles`：GL_TRIANGLES、GL_TRIANGLE_STRIP或GL_TRIANGLE_FAN（3）
-  - `triangles_adjacency`：GL_TRIANGLES_ADJACENCY或GL_TRIANGLE_STRIP_ADJACENCY（6）
-
-- 如果定义了几何着色器，那么要**手动**将顶点着色器的out传递给**片段着色器**
-
-
-
-- 通过glsl内建变量`gl_in[]`获取数据
-
-```glsl
-in gl_Vertex
-{
-    vec4  gl_Position;
-    float gl_PointSize;
-    float gl_ClipDistance[];
-} gl_in[];
-```
-
-
-
-- 编译和链接几何着色器
-
-```c++
-geometryShader = glCreateShader(GL_GEOMETRY_SHADER);
-glShaderSource(geometryShader, 1, &gShaderCode, NULL);
-glCompileShader(geometryShader);  
-...
-glAttachShader(program, geometryShader);
-glLinkProgram(program);
-```
-
-
-
-- 在调用 `EmitVertex()` 时，几何着色器会将当前设置的顶点属性（如 `gl_Position` 和自定义的 `out` 变量）作为一个新的顶点，保存到输出缓冲区中。
-  - 也就是说out变量也会进行传递
-
-```c++
-fColor = gs_in[0].color; 
-gl_Position = position + vec4(-0.2, -0.2, 0.0, 0.0);    // 1:左下 
-EmitVertex();   
-gl_Position = position + vec4( 0.2, -0.2, 0.0, 0.0);    // 2:右下
-EmitVertex();
-gl_Position = position + vec4(-0.2,  0.2, 0.0, 0.0);    // 3:左上
-EmitVertex();
-gl_Position = position + vec4( 0.2,  0.2, 0.0, 0.0);    // 4:右上
-EmitVertex();
-gl_Position = position + vec4( 0.0,  0.4, 0.0, 0.0);    // 5:顶部
-fColor = vec3(1.0, 1.0, 1.0);
-EmitVertex();
-EndPrimitive();  
-```
-
-- 这就实现了最后一个点和前面的点颜色不同
-
-
-
-- 可以实现很多效果：
-  - 面位移实现爆破效果
-  - 显示所有面的法线等等
-
-#### 实例化渲染
-
-- 实例化渲染通常会用于渲染草、植被、粒子，基本上只要场景中有很多重复的形状，都能够使用实例化渲染来提高性能。
-
-- 反复绑定VAO，由cpu去告诉gpu如何绘制，这样绘制多个物体是较慢的，如果我们能够将数据**一次性发送**给GPU，然后使用**一个绘制函数**让OpenGL利用这些数据绘制多个物体，就会更方便了。这就是实例化。
-  - 即一个渲染调用来绘制多个物体，接受CPU->GPU通信
-- 有一个额外参数，告诉GPU渲染的次数；微粒让物体渲染不同（而不是重复一个位置），着色器中有一个in变量`gl_InstanceID`
-  - 这个值从0开始，每个示例被渲染时递增1
-  - `glDrawArraysInstanced(GL_TRIANGLES, 0, 6, 100);`即渲染100次
-
-
-
-- 利用这个值很容易实现矩阵排列
-
-```c++
-#version 330 core
-layout (location = 0) in vec2 aPos;
-layout (location = 1) in vec3 aColor;
-
-out vec3 fColor;
-
-uniform vec2 offsets[100];
-
-void main()
-{
-    vec2 offset = offsets[gl_InstanceID];
-    gl_Position = vec4(aPos + offset, 0.0, 1.0);
-    fColor = aColor;
-}
-```
-
-<img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/undefinedinstancing_quads.png" alt="img" style="zoom:50%;" />
-
-- 使用`uniform`数组传递偏移数据时，当实例数量较多时会受到GPU硬件对`uniform`变量数量限制的制约。并且每次绘制都需要根据`gl_InstanceID`从`uniform`数组中索引数据，这种方式受限于数据带宽和硬件能力。
-- 实例化数组：将逐实例的数据存储为顶点属性并通过**顶点缓冲对象（VBO）**传递，可以突破`uniform`数量限制。通过设置更新频率在每个顶点计算时进行更新
-
-```glsl
-#version 330 core
-layout (location = 0) in vec2 aPos;       // 顶点位置
-layout (location = 1) in vec3 aColor;     // 颜色
-layout (location = 2) in vec2 aOffset;    // 偏移量（实例化数组）
-
-out vec3 fColor;
-
-void main()
-{
-    gl_Position = vec4(aPos + aOffset, 0.0, 1.0); // 使用偏移量
-    fColor = aColor;
-}
-
-```
-
-- 创建实例化VBO
-
-```glsl
-unsigned int instanceVBO;
-glGenBuffers(1, &instanceVBO);
-glBindBuffer(GL_ARRAY_BUFFER, instanceVBO);
-// 将偏移量数组的数据传递到VBO
-glBufferData(GL_ARRAY_BUFFER, sizeof(glm::vec2) * 100, &translations[0], GL_STATIC_DRAW);
-glBindBuffer(GL_ARRAY_BUFFER, 0);
-
-glEnableVertexAttribArray(2); // 启用属性位置 2（aOffset）
-glBindBuffer(GL_ARRAY_BUFFER, instanceVBO);
-glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, 2 * sizeof(float), (void*)0);
-glBindBuffer(GL_ARRAY_BUFFER, 0);
-
-glVertexAttribDivisor(2, 1);//设置更新频率1
-
-glBindVertexArray(quadVAO);
-glDrawArraysInstanced(GL_TRIANGLES, 0, 6, 100);
-
-```
-
-- 即索引获取值的工作从着色器转移到了CPU
-
-#### 抗锯齿
-
-- 要使用MSAA需要在每个像素中存储**大于1个颜色值**的颜色缓冲，即多重采样缓冲
-
-
-
-- 通过GLFW可以快速实现MSAA
-
-- `glfwWindowHint(GLFW_SAMPLES, 4);`之后再创建渲染窗口，每个屏幕坐标就会有一个包含4个子采样点的颜色缓冲了。
-  - 之后确保开启多重采样`glEnable(GL_MULTISAMPLE);`
-
-
-
-##### 离屏MSAA
-
-- 通过帧缓冲来实现
-
-- 创建支持多采样点的纹理
-
-```c++
-// 1. 创建多重采样帧缓冲
-GLuint multisampledFBO;
-glGenFramebuffers(1, &multisampledFBO);
-glBindFramebuffer(GL_FRAMEBUFFER, multisampledFBO);
-
-// 1.1 创建并附加多重采样纹理附件
-GLuint tex;
-glGenTextures(1, &tex);
-glBindTexture(GL_TEXTURE_2D_MULTISAMPLE, tex);
-glTexImage2DMultisample(GL_TEXTURE_2D_MULTISAMPLE, 4, GL_RGB, width, height, GL_TRUE);
-glFramebufferTexture2D(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, GL_TEXTURE_2D_MULTISAMPLE, tex, 0);
-
-// 1.2 创建并附加多重采样渲染缓冲（深度和模板缓冲）
-GLuint rbo;
-glGenRenderbuffers(1, &rbo);
-glBindRenderbuffer(GL_RENDERBUFFER, rbo);
-glRenderbufferStorageMultisample(GL_RENDERBUFFER, 4, GL_DEPTH24_STENCIL8, width, height);
-glFramebufferRenderbuffer(GL_FRAMEBUFFER, GL_DEPTH_STENCIL_ATTACHMENT, GL_RENDERBUFFER, rbo);
-
-// 检查帧缓冲完整性
-if (glCheckFramebufferStatus(GL_FRAMEBUFFER) != GL_FRAMEBUFFER_COMPLETE)
-    std::cout << "ERROR::FRAMEBUFFER:: Framebuffer is not complete!" << std::endl;
-glBindFramebuffer(GL_FRAMEBUFFER, 0);
-
-// 2. 渲染到多重采样帧缓冲
-glBindFramebuffer(GL_FRAMEBUFFER, multisampledFBO);
-glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-glEnable(GL_DEPTH_TEST);
-RenderScene();
-glBindFramebuffer(GL_FRAMEBUFFER, 0);
-
-// 3. 解析多重采样图像并显示
-glBindFramebuffer(GL_READ_FRAMEBUFFER, multisampledFBO);
-glBindFramebuffer(GL_DRAW_FRAMEBUFFER, 0);
-glBlitFramebuffer(0, 0, width, height, 0, 0, width, height, GL_COLOR_BUFFER_BIT, GL_NEAREST);
-
-```
-
-
-
-- 由于多重采样纹理无法直接在片段着色器中采样，因此无法直接用于后期处理
-  - 通过将多重采样帧缓冲的内容还原到普通的帧缓冲生成可采样的2D纹理，然后使用该纹理作为输入进行后期处理。
-
-### 高级光照
-
-#### Gamma矫正
-
-- Gamma用于描述非线性颜色空间中的输入与输出关系（如亮度）
+- Gamma 用于描述非线性颜色空间中的输入与输出关系（如亮度）
   - $V_{{\mathrm{out}}}=V_{{\mathrm{in}}}^{{\frac1\gamma}}$
   - **Gamma = 1.0**：线性关系，输入值与输出值成正比。
   - **Gamma > 1.0**：输出值的暗部被压缩，高光部分更明亮。
@@ -3810,14 +3832,14 @@ glBlitFramebuffer(0, 0, width, height, 0, 0, width, height, GL_COLOR_BUFFER_BIT,
 - 人眼感知亮度：人眼对亮度的感知是**非线性的**，对暗部亮度变化更敏感，对高亮区域的变化则不敏感。
   - 从亮度 0.10.10.1 增加到 0.20.20.2，我们会感受到亮度翻倍。
   - 但从亮度 0.40.40.4 增加到 0.80.80.8，感知到的变化程度与前者类似。
-  - 显示器亮度通常是**指数映射**（2.2）而不是线性映射（早期技术限制，现在微粒兼容sRGB）
+  - 显示器亮度通常是**指数映射**（2.2）而不是线性映射（早期技术限制，现在微粒兼容 sRGB）
 - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/undefinedgamma_correction_gamma_curves.png" alt="img" style="zoom: 67%;" />
-  - 因为显示器指数调整亮度，会导致中间值被压暗，因此通过gamma矫正进行修正
-  - 加上个`1/2.2`次幂，与显示器的指数中和
+  - 因为显示器指数调整亮度，会导致中间值被压暗，因此通过 gamma 矫正进行修正
+  - 加上个 `1/2.2` 次幂，与显示器的指数中和
 
 
 
-- 使用自带的gamma矫正`glEnable(GL_FRAMEBUFFER_SRGB);`
+- 使用自带的 gamma 矫正 `glEnable(GL_FRAMEBUFFER_SRGB);`
 - 手动在着色器中进行矫正
 
 ```c++
@@ -3831,18 +3853,18 @@ void main()
 }
 ```
 
-- 要注意的事对于sRGB空间中的纹理不需要再次进行gamma矫正
-- 可以在创建时指出是SRGB纹理`glTexImage2D(GL_TEXTURE_2D, 0, GL_SRGB, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, image);`这样opengl就会自动把颜色矫正到线性空间
+- 要注意的事对于 sRGB 空间中的纹理不需要再次进行 gamma 矫正
+- 可以在创建时指出是 SRGB 纹理 `glTexImage2D(GL_TEXTURE_2D, 0, GL_SRGB, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, image);` 这样 opengl 就会自动把颜色矫正到线性空间
   - 有透明通道则要设置为：`GL_SRGB_ALPHA`
 
-##### 光线衰减
+### 光线衰减
 
 - 物理上光照的衰减和光源的距离的平方成反比
-- 但是由于gamma矫正，双曲线衰减`float attenuation = 1.0 / distance;`在矫正后为$(1.0/distance^2)^{2.2}$更加额规则
+- 但是由于 gamma 矫正，双曲线衰减 `float attenuation = 1.0 / distance;` 在矫正后为 $(1.0/distance^2)^{2.2}$ 更加额规则
 
-#### 阴影
+## 阴影
 
-##### 平行光阴影
+### 平行光阴影
 
 - 与深度缓冲类似，只是**从光源出发**
   - 对于平行光还要使用正交投影
@@ -3881,7 +3903,7 @@ void main()
 
 ```
 
-- 在片段着色器中，如果根据深度判断一个点在阴影中，则将漫反射和镜面反射的值乘以0
+- 在片段着色器中，如果根据深度判断一个点在阴影中，则将漫反射和镜面反射的值乘以 0
 
 ```glsl
 #version 330 core
@@ -3951,15 +3973,15 @@ float ShadowCalculation(vec4 fragPosLightSpace)
 
 
 
-##### 点光源阴影（万向阴影贴图）
+### 点光源阴影（万向阴影贴图）
 
 - 点光源会向各个方向发射光，也就是说阴影可以处于四周，不能像平行光那样使用一张深度贴图
-  - 使用立方体贴图，存储6个面的环境数据、
+  - 使用立方体贴图，存储 6 个面的环境数据、
 - [原教程](https://learnopengl-cn.github.io/05%20Advanced%20Lighting/03%20Shadows/02%20Point%20Shadows/)
 
-##### 阴影失真
+## 阴影失真
 
-###### 条纹
+### 条纹
 
 - **阴影失真**：出现交替黑线
   - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/undefinedshadow_mapping_acne.png" alt="img" style="zoom: 80%;" />
@@ -3977,14 +3999,14 @@ float shadow = currentDepth - bias > closestDepth  ? 1.0 : 0.0;
 
 
 
-- 另一种解决失真的方式是使用peter panning即在渲染深度贴图时使用正面剔除（这样就能使得条纹等渲染错误不会显现出来）
+- 另一种解决失真的方式是使用 peter panning 即在渲染深度贴图时使用正面剔除（这样就能使得条纹等渲染错误不会显现出来）
   - 但是只适用于不会对外开口的实体物体（如完整的正方体）
 
-###### 超出边界的阴影
+### 超出边界的阴影
 
 - 超出深度贴图的区域由于距离超过阈值，会全部处于阴影之中
   - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/undefinedshadow_mapping_outside_frustum.png" alt="img" style="zoom: 67%;" />
-- 可以将深度贴图中超出范围的深度设置为1.0(通过设置环绕方式实现)
+- 可以将深度贴图中超出范围的深度设置为 1.0 (通过设置环绕方式实现)
 
 ```c++
 glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_BORDER);
@@ -3993,7 +4015,7 @@ GLfloat borderColor[] = { 1.0, 1.0, 1.0, 1.0 };
 glTexParameterfv(GL_TEXTURE_2D, GL_TEXTURE_BORDER_COLOR, borderColor);
 ```
 
-- 不过处于远平面外的部分要单独丢弃（大于1了）
+- 不过处于远平面外的部分要单独丢弃（大于 1 了）
 
 ```c++
 float ShadowCalculation(vec4 fragPosLightSpace)
@@ -4006,12 +4028,12 @@ float ShadowCalculation(vec4 fragPosLightSpace)
 }
 ```
 
-###### PCF
+### PCF
 
-- ![img](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefinedshadow_mapping_zoom.png)
+- ![img](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefinedundefinedshadow_mapping_zoom.png)
   - 阴影的边缘可能存在较多的锯齿：因为深度贴图有一个固定的分辨率，多个片段对应于一个纹理像素。结果就是多个片段会从深度贴图的同一个深度值进行采样，这几个片段便得到的是同一个阴影，这就会产生锯齿边。
 - 可以通过增大阴影纹理的分辨率来改善
-- 也可以通过pcf来实现更柔和的阴影：核心思想是从深度贴图中**多次采样**，每一次采样的纹理坐标都稍有不同。每个独立的样本可能在也可能不再阴影中。所有的次生结果接着结合在一起，进行**平均化**，我们就得到了柔和阴影。
+- 也可以通过 pcf 来实现更柔和的阴影：核心思想是从深度贴图中**多次采样**，每一次采样的纹理坐标都稍有不同。每个独立的样本可能在也可能不再阴影中。所有的次生结果接着结合在一起，进行**平均化**，我们就得到了柔和阴影。
   - 如采集九宫格
 
 ```c++
@@ -4028,10 +4050,10 @@ for(int x = -1; x <= 1; ++x)
 shadow /= 9.0;
 ```
 
-#### 法线贴图
+## 法线贴图
 
-- 可以使用2D纹理来存储法线数据，xyz三个方向分辨对应颜色的rgb
-- 通常切线都是指向Z轴，因此看起来为蓝色
+- 可以使用 2 D 纹理来存储法线数据，xyz 三个方向分辨对应颜色的 rgb
+- 通常切线都是指向 Z 轴，因此看起来为蓝色
 
 ```glsl
 // 从法线贴图范围[0,1]获取法线
@@ -4042,14 +4064,14 @@ normal = normalize(normal * 2.0 - 1.0);
 
 - 物体有旋转等变换时不能直接使用法线贴图
 
-##### 切线空间
+### 切线空间
 
-- 在切线空间中，法线指向z方向，法线贴图被定义在切线空间
+- 在切线空间中，法线指向 z 方向，法线贴图被定义在切线空间
   - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/undefinednormal_mapping_tbn_vectors.png" alt="img" style="zoom:50%;" />
 - 从一个三角形的顶点计算切线空间
   - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/undefinednormal_mapping_surface_edges.png" alt="img" style="zoom:50%;" />
   - $\begin{aligned}(E_{1x},E_{1y},E_{1z})&=\Delta U_1(T_x,T_y,T_z)+\Delta V_1(B_x,B_y,B_z)\\(E_{2x},E_{2y},E_{2z})&=\Delta U_2(T_x,T_y,T_z)+\Delta V_2(B_x,B_y,B_z)\end{aligned}$
-  - 计算公式$\begin{bmatrix}T_x&T_y&T_z\\B_x&B_y&B_z\end{bmatrix}=\frac1{\Delta U_1\Delta V_2-\Delta U_2\Delta V_1}\begin{bmatrix}\Delta V_2&-\Delta V_1\\-\Delta U_2&\Delta U_1\end{bmatrix}\begin{bmatrix}E_{1x}&E_{1y}&E_{1z}\\E_{2x}&E_{2y}&E_{2z}\end{bmatrix}$
+  - 计算公式 $\begin{bmatrix}T_x&T_y&T_z\\B_x&B_y&B_z\end{bmatrix}=\frac1{\Delta U_1\Delta V_2-\Delta U_2\Delta V_1}\begin{bmatrix}\Delta V_2&-\Delta V_1\\-\Delta U_2&\Delta U_1\end{bmatrix}\begin{bmatrix}E_{1x}&E_{1y}&E_{1z}\\E_{2x}&E_{2y}&E_{2z}\end{bmatrix}$
 
 ```C++
 glm::vec3 edge1 = pos2 - pos1;
@@ -4072,7 +4094,7 @@ bitangent1 = glm::normalize(bitangent1);
 [...] // 对平面的第二个三角形采用类似步骤计算切线和副切线
 ```
 
-- 通过参数传递在着色器中获取tbn矩阵
+- 通过参数传递在着色器中获取 tbn 矩阵
 
 ```C++
 #version 330 core
@@ -4092,14 +4114,14 @@ void main()
 }
 ```
 
-- 法线贴图是在TBN坐标系中定义的，要将其转化到世界空间来进行渲染
+- 法线贴图是在 TBN 坐标系中定义的，要将其转化到世界空间来进行渲染
   - 切线空间 → 世界空间：$\mathrm{Normal}_{{\mathrm{world}}}=\mathrm{TBN}\cdot\mathrm{Normal}_{{\mathrm{tangent}}}$：将贴图的法线转换到世界空间与光照等进行计算
   - 世界空间 → 切线空间：$\mathrm{LightDir}_{{\mathrm{tangent}}}=\mathrm{TBN}^{-1}\cdot\mathrm{LightDir}_{{\mathrm{world}}}$：将光照等转换到切线空间与贴图的法线进行计算
     - 更常用：减少片段着色器的计算量，总体上效率更高
 
-###### 使用assimp实现复杂物体的切线空间计算
+#### 使用 assimp 实现复杂物体的切线空间计算
 
-- 加载时添加`aiProcess_CalcTangentSpace`Assimp会为每个加载的顶点计算出柔和的切线和副切线向量
+- 加载时添加 `aiProcess_CalcTangentSpace` Assimp 会为每个加载的顶点计算出柔和的切线和副切线向量
 
 ```C++
 const aiScene* scene = importer.ReadFile(
@@ -4114,7 +4136,7 @@ vertex.Tangent = vector;
 
 
 
-#### 视差贴图
+## 视差贴图
 
 - 视差贴图是一种位移贴图
 
@@ -4122,9 +4144,9 @@ vertex.Tangent = vector;
 
 <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/undefinedundefinedparallax_mapping_plane_height.png" style="zoom:50%;" />
 
-- 在以$V$方向看向$A$时通过加一个偏移，使得看到的内容贴近实际应该看到的$B$处
+- 在以 $V$ 方向看向 $A$ 时通过加一个偏移，使得看到的内容贴近实际应该看到的 $B$ 处
 
-- 一个算法是取$P=AH(A)$按照这个高度沿方向偏移，得到点$H(P)$作为便宜后的问题
+- 一个算法是取 $P=AH(A)$ 按照这个高度沿方向偏移，得到点 $H(P)$ 作为便宜后的问题
   - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/undefinedparallax_mapping_scaled_height.png" alt="img" style="zoom: 67%;" />
 - 这个方法并不精确，有时会产生较大误差
 - 因为要计算每个点的说色，因此在片段着色器中进行计算
@@ -4167,15 +4189,15 @@ vec2 ParallaxMapping(vec2 texCoords, vec3 viewDir, sampler2D heightMap)
 }
 ```
 
-##### 陡峭视差映射
+### 陡峭视差映射
 
-- 使用更多的样本来确定从向量到便宜点B，在陡峭高度变化下有更好的表现
+- 使用更多的样本来确定从向量到便宜点 B，在陡峭高度变化下有更好的表现
   - 即通过增加采样的数目提高了精确性
 
 <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/undefinedparallax_mapping_steep_parallax_mapping_diagram.png" alt="img" style="zoom: 67%;" />
 
 - 将总深度或分为多层，分别与视线方向产生交点
-  - 从上到下遍历深度层，直到找到第一个层深度大于深度贴图的点（图中的T3）
+  - 从上到下遍历深度层，直到找到第一个层深度大于深度贴图的点（图中的 T 3）
 
 ```glsl
 vec2 ParallaxMapping(vec2 texCoords, vec3 viewDir)
@@ -4214,7 +4236,7 @@ vec2 ParallaxMapping(vec2 texCoords, vec3 viewDir)
   - 可以通过增加采样数目来解决
   - 也可以通过下面方法
 
-##### 视差遮蔽映射
+### 视差遮蔽映射
 
 - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/undefinedparallax_mapping_parallax_occlusion_mapping_diagram.png" alt="img" style="zoom: 80%;" />
   - 取边缘的两个点并根据表面高度距离深度层深度值的距离进行线性插值
@@ -4236,16 +4258,16 @@ vec2 finalTexCoords = prevTexCoords * weight + currentTexCoords * (1.0 - weight)
 return finalTexCoords;
 ```
 
-#### HDR
+## HDR
 
-- 解决：多个两光源叠加使得亮度值超过了1.0，导致高光混成一片难以分辨
-- hdr允许片段的颜色超过1，最终在映射到0~1显示在显示器上（HDR->LDR**色调映射**）
+- 解决：多个两光源叠加使得亮度值超过了 1.0，导致高光混成一片难以分辨
+- hdr 允许片段的颜色超过 1，最终在映射到 0~1 显示在显示器上（HDR->LDR**色调映射**）
   - 亮的东西可以变得非常亮，暗的东西可以变得非常暗，而且充满细节。
-  - HDR渲染的关键就是指如何将HDR转换到LDR
+  - HDR 渲染的关键就是指如何将 HDR 转换到 LDR
 
 
 
-- 使用**浮点帧缓冲**，即用`GL_RGB16F(GL_RGB32F)`替代`GL_RGB`，`GL_RGB16F`为半精度浮点数，可表达的范围比`GL_RGB`大得多
+- 使用**浮点帧缓冲**，即用 `GL_RGB16F(GL_RGB32F)` 替代 `GL_RGB`，`GL_RGB16F` 为半精度浮点数，可表达的范围比 `GL_RGB` 大得多
 
 ```glsl
 glBindTexture(GL_TEXTURE_2D, colorBuffer);
@@ -4254,9 +4276,9 @@ glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB16F, SCR_WIDTH, SCR_HEIGHT, 0, GL_RGB, GL_F
 
 
 
-##### 色调映射
+### 色调映射
 
-- 尽可能小损失的准换浮点颜色值到LDR范围
+- 尽可能小损失的准换浮点颜色值到 LDR 范围
 - 最简单的办法是进行线性映射
 
 ```glsl
@@ -4274,7 +4296,7 @@ void main()
 
 
 
-- 曝光调色算法：调整曝光值可以调整hdr渲染的结果
+- 曝光调色算法：调整曝光值可以调整 hdr 渲染的结果
 
 ```glsl
 uniform float exposure;
@@ -4291,7 +4313,7 @@ void main()
 
 <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/undefinedhdr_exposure.png" alt="img" style="zoom:67%;" />
 
-#### 泛光
+## 泛光
 
 - 通过让明亮的光源（如灯）产生泛光效果，来让用户产生错觉，感觉区域很亮
 - 实现思路：提取**超过**一定亮度阈值的纹理进行**模糊处理**
@@ -4299,7 +4321,7 @@ void main()
 
 - 
 
-##### 多渲染目标MRT
+### 多渲染目标 MRT
 
 - 允许像素着色器的多个输出变量同时写入帧缓冲中的**不同颜色缓冲区**
 
@@ -4348,11 +4370,11 @@ void main()
 }
 ```
 
-##### **高斯模糊**
+### **高斯模糊**
 
 - 高斯模糊也是对一定范围的点做平均，不过是加权平均，中心权值大，四周小
-  - ![img](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefinedbloom_gaussian.png)
-- 对于面上的高斯模糊，可以对不同方向分别进行，这样复杂度就从$n^2$到$2n$
+  - ![img](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefinedundefinedbloom_gaussian.png)
+- 对于面上的高斯模糊，可以对不同方向分别进行，这样复杂度就从 $n^2$ 到 $2n$
   - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/undefinedbloom_gaussian_two_pass.png" alt="img" style="zoom:50%;" />
   - 对每个点进行如上操作最后将结果叠加
 
@@ -4404,18 +4426,18 @@ void main()
 
 - 高斯模糊就通过乒乓球渲染
 
-#### 延迟着色法
+## 延迟着色法
 
 - **正向渲染**：渲染每个物体的每个片段时都需要去遍历所有灯光，复杂度及哦啊高
 
 - **延迟着色法**用于优化有大量光源的场景的渲染：
-  - 第一阶段渲染场景并获取几何信息，生成**G缓冲**（纹理），包含位置、法线、漫反射颜色、镜面反射属性等
+  - 第一阶段渲染场景并获取几何信息，生成**G 缓冲**（纹理），包含位置、法线、漫反射颜色、镜面反射属性等
   - 第二个阶段使用数据显存逐灯光进行计算，这样只计算可见的像素，减少了冗余计算
-  - 问题：G缓冲会占用显存空间，并且对透明物体支持差
+  - 问题：G 缓冲会占用显存空间，并且对透明物体支持差
   - 主要用于场景较大动态灯光丰富的场景
-- 第一阶段完成后，由于深度测试，其实G缓冲中都是需要显示的像素；因此延迟着色时直接读取G缓冲中存储的信息并进行渲染即可
+- 第一阶段完成后，由于深度测试，其实 G 缓冲中都是需要显示的像素；因此延迟着色时直接读取 G 缓冲中存储的信息并进行渲染即可
 
-##### 延迟渲染的光体积优化、
+### 延迟渲染的光体积优化、
 
 - 在传统延迟渲染中，每个像素都会计算所有光源对其的光照贡献，不论光源是否显著影响该像素
 - **光体积**： 根据光源的衰减方程，确定光的衰减到“黑暗”状态时的最大距离（光体积半径）。
@@ -4426,20 +4448,19 @@ void main()
   - **只有球体投影到屏幕上的像素**会触发光照计算，大大减少了无关像素的计算。
   - 每个光源的光照结果独立计算，并最终叠加到帧缓冲中。
 
-#### SSAO
+### SSAO
 
-- **环境光遮蔽AO**：通过将褶皱、孔洞和非常靠近的墙面变暗的方法近似模拟出间接光照。这些区域很大程度上是被周围的几何体遮蔽的，光线会很难流失，所以这些地方看起来会更**暗**一些。
+- **环境光遮蔽 AO**：通过将褶皱、孔洞和非常靠近的墙面变暗的方法近似模拟出间接光照。这些区域很大程度上是被周围的几何体遮蔽的，光线会很难流失，所以这些地方看起来会更**暗**一些。
   - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/undefinedundefinedssao_example.png" style="zoom:50%;" />
-- SSAO使用了屏幕空间场景的深度而不是真实的几何体数据来确定遮蔽量,会根据周边深度值**估计**一个**遮蔽因子**用来减少或者抵消片段的环境光照分量。
+- SSAO 使用了屏幕空间场景的深度而不是真实的几何体数据来确定遮蔽量, 会根据周边深度值**估计**一个**遮蔽因子**用来减少或者抵消片段的环境光照分量。
 - 计算遮蔽因子
   - 以像素为中心点的一个半球形（结合像素所在平面（**法向半球体**）），在这个范围内进行采样
     - ​	<img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/undefinedssao_hemisphere.png" alt="img" style="zoom:67%;" />
   - 如果采样点比当前像素**更靠近**摄像机（即深度值较小），则认为这个点对环境光有遮挡作用。
   - 遮蔽因子会根据采样点的距离和角度进行加权。
   - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/undefinedimage-20241122191708467.png" alt="image-20241122191708467" style="zoom: 50%;" />
-  - 此外还要对生成的AO图进行平滑处理，如使用高斯模糊
-
-### PBR
+  - 此外还要对生成的 AO 图进行平滑处理，如使用高斯模糊
+# PBR
 
 #### 理论
 

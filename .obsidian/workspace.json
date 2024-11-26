@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "52b737b90da07d8b",
+        "id": "62fc574a3beb6052",
         "type": "tabs",
         "children": [
           {
-            "id": "92d88f209ca266ca",
+            "id": "eed68d62fcc669d9",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -200,13 +200,13 @@
       "obsidian-advanced-slides:Show Slide Preview": false
     }
   },
-  "active": "0a9cd0319ddd3dbc",
+  "active": "eed68d62fcc669d9",
   "lastOpenFiles": [
     "docs/自学内容/游戏开发&图形学/游戏开发/游戏引擎/unity/c#.md",
+    "docs/自学内容/游戏开发&图形学/计算机图形学/API编程/opengl/learnOpengl.md",
     "docs/自学内容/游戏开发&图形学/游戏开发/游戏引擎/unity/unity基础.md",
     "docs/自学内容/游戏开发&图形学/游戏开发/游戏引擎/unity/unity资源管理.md",
     "docs/自学内容/游戏开发&图形学/游戏开发/游戏引擎/unity/fairyGui(UnitySDK).md",
-    "docs/自学内容/游戏开发&图形学/计算机图形学/API编程/opengl/learnOpengl.md",
     "docs/自学内容/游戏开发&图形学/游戏开发/游戏设计/信息/2024腾讯游戏运营加餐包——《游戏活动与商业化运营》笔记(2).pdf",
     "docs/自学内容/游戏开发&图形学/游戏开发/游戏设计/信息/全球游戏市场进化论.pdf",
     "docs/自学内容/游戏开发&图形学/游戏开发/游戏设计/信息/信息整理.md",
