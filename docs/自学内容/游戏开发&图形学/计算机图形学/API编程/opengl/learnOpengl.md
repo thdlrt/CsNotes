@@ -3324,11 +3324,34 @@ void main()
 - 传统方式创建一个缓存对象之后还要将其连接到一个存储空间，即绑定到缓存目标
 	- `glBinfBuffer(GLenum target, GLuint buffer)`
 	- ![image.png|500](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefined20241127194943.png)
-- 也可以直接在创建时传递管理数据 `vodi glNamedBufferStorage(GLuint buffer, GLsizeiptr size, const void(data, GLbitfield flags));`
+- 也可以直接在创建时传递管理数据 `vodi glNamedBufferStorage(GLuint buffer, GLsizeiptr size, const void*data, GLbitfield flags);`
 	- ![image.png|500](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefined20241127200725.png)
 	- ![image.png|500](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefined20241127200734.png)
+	- 对部分数据单独更新 `void glNamedBufferSubData(GLuint buffer, HLinptr offset, GLsizeiptr size, const void *data);`
+	- ![image.png|500](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefined20241127201238.png)
+- 这两个方法可以用于清空缓存（当 data=null 时）
+	- ![image.png|500](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefined20241127201753.png)
+- 冲一个缓存复制到另一个 `void gLCopyNamedBufferSubData(GLuint readBuffer,GLuint writeBuffer,GLintptr readoffset, GLintptr writeoffset, GLsizeiptr size); `
+- 从缓存读取数据 `void glGetNamedBufferSubData(GLenum target,GLintptr offset,GLsizeiptr size,void*data);`
+	- 会进行一次数据拷贝，将缓存对象的数据存拷贝到应用程序内存中。
+- 将缓存对象映射到客户端地址空间 `void*glMapBuffer(GLenum target,GLenum access)`
+	- ![image.png|500](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefined20241127203134.png)
+	- 解除映射 `GLboolean glUnmapNamedBuffer(Gluint buffer);`
+	- 通过映射可以方便的访问管理缓存数据
+	-  更适合频繁或高效的数据访问，尤其是在需要直接操作 GPU 内存的场景。它的性能通常优于 `glGetNamedBufferSubData`
+	- ![image.png|500](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefined20241127203512.png)
 
+- `void gIMapNamedBufferRange(GLuint buffer,GLintptr offset,GLsizeiptr length,GLbitfield access);` 对部分缓存进行数据映射
+- 丢弃不使用的缓存数据 
+	- ![|500](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefinedundefined20241127204742.png)
+
+>这些缓存实际上都是在 GPU 中的
 ### 绘制命令
+- 基于数组元素绘制几何图元 `void glDrawArrays(GLenum mode,GLint first,GLsizei count):`
+	- mode 表示图元的类型：`GL_TRIANGLES` 、`GL_LINE_LOOP` 、`GL_LINES` 、`GL_POINTS`
+- 基于索引进行绘制 `void glerawElements(GLenum mode,GLsizei count,GLenum type,const GLvoid*indices);`
+	- 指定开始的索引 `void glDrawElementsBaseVertex(GLenum mode,GLsizei count,GLenum type,const GLvoid*indices. GLint basevertex); `
+	- 指定索引范围 `void glDrawRangeElements(GLenum mode,GLuint start,GLuint end,GLsizei count,GLenum type, const GLvoid*indices); `
 ## 着色器的内建变量
 
 ### 顶点着色器
