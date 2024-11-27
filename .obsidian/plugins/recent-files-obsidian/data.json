@@ -1,6 +1,10 @@
 {
   "recentFiles": [
     {
+      "basename": "Drawing 2024-11-27 18.19.06.excalidraw",
+      "path": "Excalidraw/Drawing 2024-11-27 18.19.06.excalidraw.md"
+    },
+    {
       "basename": "Drawing 2024-11-27 14.51.35.excalidraw",
       "path": "Excalidraw/Drawing 2024-11-27 14.51.35.excalidraw.md"
     },
@@ -195,10 +199,6 @@
     {
       "basename": "图论",
       "path": "docs/算法竞赛/图论.md"
-    },
-    {
-      "basename": "数学",
-      "path": "docs/算法竞赛/数学.md"
     }
   ],
   "omittedPaths": [],

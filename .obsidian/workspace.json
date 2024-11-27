@@ -32,9 +32,21 @@
               "icon": "excalidraw-icon",
               "title": "Drawing 2024-11-27 14.51.35.excalidraw"
             }
+          },
+          {
+            "id": "0c1bcea9e2ae6d4d",
+            "type": "leaf",
+            "state": {
+              "type": "excalidraw",
+              "state": {
+                "file": "Excalidraw/Drawing 2024-11-27 18.19.06.excalidraw.md"
+              },
+              "icon": "excalidraw-icon",
+              "title": "Drawing 2024-11-27 18.19.06.excalidraw"
+            }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -111,8 +123,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 291.49999618530273,
-    "collapsed": true
+    "width": 291.49999618530273
   },
   "right": {
     "id": "d615b65a4ccf8a6a",
@@ -184,10 +195,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Excalidraw/Drawing 2024-11-27 14.51.35.excalidraw.md"
+                "file": "Excalidraw/Drawing 2024-11-27 18.19.06.excalidraw.md"
               },
               "icon": "lucide-list",
-              "title": "Drawing 2024-11-27 14.51.35.excalidraw 的大纲"
+              "title": "Drawing 2024-11-27 18.19.06.excalidraw 的大纲"
             }
           }
         ],
@@ -213,10 +224,11 @@
       "obsidian-advanced-slides:Show Slide Preview": false
     }
   },
-  "active": "1090c993d7ad8b64",
+  "active": "0c1bcea9e2ae6d4d",
   "lastOpenFiles": [
-    "docs/自学内容/游戏开发&图形学/计算机图形学/API编程/opengl/learnOpengl.md",
     "Excalidraw/Drawing 2024-11-27 14.51.35.excalidraw.md",
+    "Excalidraw/Drawing 2024-11-27 18.19.06.excalidraw.md",
+    "docs/自学内容/游戏开发&图形学/计算机图形学/API编程/opengl/learnOpengl.md",
     "Excalidraw",
     "docs/_draft_/技术部分.md",
     "docs/_draft_/Untitled.md",
@@ -260,7 +272,6 @@
     "docs/知识点（保研&工作）/保研/计算机科学/编译原理.md",
     "docs/知识点（保研&工作）/保研/计算机科学/数据结构与算法.md",
     "docs/知识点（保研&工作）/保研/计算机科学/操作系统.md",
-    "docs/知识点（保研&工作）/保研/面试/英语/【英语】问题准备.md",
     "未命名.canvas"
   ]
 }
