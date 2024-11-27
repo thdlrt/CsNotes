@@ -3320,6 +3320,13 @@ void main()
 - 三角形扇面
 	- ![image.png|195](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefined20241126230514.png)
 ### 缓存数据
+- 创建一个缓存对象 `void glCreateBuffers(GLsizei n, GLuint*buffers)`
+- 传统方式创建一个缓存对象之后还要将其连接到一个存储空间，即绑定到缓存目标
+	- `glBinfBuffer(GLenum target, GLuint buffer)`
+	- ![image.png|500](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefined20241127194943.png)
+- 也可以直接在创建时传递管理数据 `vodi glNamedBufferStorage(GLuint buffer, GLsizeiptr size, const void(data, GLbitfield flags));`
+	- ![image.png|500](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefined20241127200725.png)
+	- ![image.png|500](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefined20241127200734.png)
 
 ### 绘制命令
 ## 着色器的内建变量
