@@ -20,8 +20,21 @@
               "icon": "lucide-file",
               "title": "learnOpengl"
             }
+          },
+          {
+            "id": "1090c993d7ad8b64",
+            "type": "leaf",
+            "state": {
+              "type": "excalidraw",
+              "state": {
+                "file": "Excalidraw/Drawing 2024-11-27 14.51.35.excalidraw.md"
+              },
+              "icon": "excalidraw-icon",
+              "title": "Drawing 2024-11-27 14.51.35.excalidraw"
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -171,10 +184,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/自学内容/游戏开发&图形学/计算机图形学/API编程/opengl/learnOpengl.md"
+                "file": "Excalidraw/Drawing 2024-11-27 14.51.35.excalidraw.md"
               },
               "icon": "lucide-list",
-              "title": "learnOpengl 的大纲"
+              "title": "Drawing 2024-11-27 14.51.35.excalidraw 的大纲"
             }
           }
         ],
@@ -200,10 +213,14 @@
       "obsidian-advanced-slides:Show Slide Preview": false
     }
   },
-  "active": "eed68d62fcc669d9",
+  "active": "1090c993d7ad8b64",
   "lastOpenFiles": [
-    "docs/自学内容/游戏开发&图形学/游戏开发/游戏引擎/unity/c#.md",
     "docs/自学内容/游戏开发&图形学/计算机图形学/API编程/opengl/learnOpengl.md",
+    "Excalidraw/Drawing 2024-11-27 14.51.35.excalidraw.md",
+    "Excalidraw",
+    "docs/_draft_/技术部分.md",
+    "docs/_draft_/Untitled.md",
+    "docs/自学内容/游戏开发&图形学/游戏开发/游戏引擎/unity/c#.md",
     "docs/自学内容/游戏开发&图形学/游戏开发/游戏引擎/unity/unity基础.md",
     "docs/自学内容/游戏开发&图形学/游戏开发/游戏引擎/unity/unity资源管理.md",
     "docs/自学内容/游戏开发&图形学/游戏开发/游戏引擎/unity/fairyGui(UnitySDK).md",
@@ -233,7 +250,6 @@
     "docs/_export_/slide/本校保研流程（计算机系夏令营）/plugin/chalkboard/img/chalk-green.png",
     "docs/_export_/slide/本校保研流程（计算机系夏令营）/plugin/chalkboard/img/boardmarker-yellow.png",
     "docs/_export_/slide/本校保研流程（计算机系夏令营）/plugin/chalkboard/README.md",
-    "docs/_export_/slide/本校保研流程（计算机系夏令营）/plugin/chalkboard/plugin.js",
     "docs/_export_/slide/本校保研流程（计算机系夏令营）/plugin/chart/README.md",
     "docs/_export_/slide/本校保研流程（计算机系夏令营）/plugin/customcontrols/README.md",
     "docs/_export_/slide/本校保研流程（计算机系夏令营）/plugin/menu/README.md",
@@ -245,9 +261,6 @@
     "docs/知识点（保研&工作）/保研/计算机科学/数据结构与算法.md",
     "docs/知识点（保研&工作）/保研/计算机科学/操作系统.md",
     "docs/知识点（保研&工作）/保研/面试/英语/【英语】问题准备.md",
-    "docs/技能&工具/折腾/reveal.js.md",
-    "docs/_export_/本校保研流程（计算机系夏令营）/plugin/chalkboard/README.md",
-    "docs/_export_/本校保研流程（计算机系夏令营）/plugin/chart/README.md",
     "未命名.canvas"
   ]
 }
