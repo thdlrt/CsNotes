@@ -1325,8 +1325,23 @@ int main()
 }
 
 ```
-
-## 深度测试
+## 缓存
+- 常见的缓存：颜色缓存；深度缓存；模板缓存
+### 清除缓存
+- 清除缓存：`void glClearBufferfv(GLenum buffer,GLint drawbuffer,const GLfloat *value);`
+	- 清除地缓存（如 GL_COLOR）
+	- 处理多个颜色缓冲的情况
+	- 清除后的初始值
+- 清除不同的数据类型
+	- ![image.png|500](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefined20241128212104.png)
+	- 如用 `glClearBufferiv` 清除整数数据模板缓存
+- `glClearBufferfi()` 可以同时清除深度和模板缓存
+	- 采纳数必须为 `GL_DEPTH_STENCIL`，0
+### 缓存掩码
+- 在 opengl 向颜色、深度或者模板缓存写入数据之前可以对数据进行一次掩码操作
+- ![image.png|550](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefined20241128212612.png)
+	- 通过 bool 来设置是否允许进行写入（即用 1 进与还是用 0 进行）
+### 深度测试
 
 - 通常深度测试是在片段着色器运行之后在屏幕空间进行的
   - 提前深度测试：在片段着色器之前运行，提前丢弃永远不可见的片段，减少计算量
@@ -1341,7 +1356,7 @@ int main()
   - 深度缓冲精度不足时就会出现**深度冲突**，结果就是这两个形状不断地在切换前后顺序，这会导致很奇怪的花纹。
 - 着色器中通过 `gl_FragCoord.z` 可以直接获取到深度缓冲的值
 
-## 模板测试
+### 模板测试
 
 - 模版测试是在深度测试之前进行的，每个模板值是 8 位的，可以丢弃或保留具有特定模板值的片段
 - 模板测试的目的：利用已经本次绘制的物体，产生一个区域，在**下次绘制**中利用这个区域做一些效果。
@@ -1358,7 +1373,7 @@ glStencilMask(0xFF); // 每一位写入模板缓冲时都保持原样
 glStencilMask(0x00); // 每一位在写入模板缓冲时都会变成0（禁用写入）
 ```
 
-### 模板函数
+#### 模板函数
 
 - 控制模板缓冲通过还是失败，以及如何影响模板缓冲
 - 对模板缓冲做什么 (配置模版缓冲条件)：`glStencilFunc(GLenum func, GLint ref, GLuint mask)`
@@ -1372,7 +1387,7 @@ glStencilMask(0x00); // 每一位在写入模板缓冲时都会变成0（禁用�
   - `dppass`：模板测试和深度测试都通过时采取的行为。
   - ![image-20241118173453758](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefinedundefinedimage-20241118173453758.png)
 
-### 用模板测试实现物体描边
+#### 用模板测试实现物体描边
 
 <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/undefinedstencil_object_outlining.png" alt="img" style="zoom: 67%;" />
 
@@ -3354,7 +3369,92 @@ void main()
 	- 指定索引范围 `void glDrawRangeElements(GLenum mode,GLuint start,GLuint end,GLsizei count,GLenum type, const GLvoid*indices); `
 - 间接绘制命令：从缓存对象中获取参数 `void glDrawArrayslndirect(GLenum mode,const GLvoid*indirect);`
 	- 从 GL_DRAW_INDIRECT_BUFFER 缓存中获取结构体数据
-	- indirect 记录间接绘制缓存中的偏移地址
+	- indirect 记录间接绘制缓存中的偏移地址，从在这个偏移地址的结构体中获取缓存的参数
+		- ![image.png|450](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefined20241128200729.png)
+	- 类似的也有 `void gIDrawElementsIndirect(GLenum mode,GLenum type,const GLvoid*indirect);`
+- 绘制多个图元 `void gIMultiDrawArrays(GLenum mode,const GLint*first,const GLint*count,GLsize primcount);` 
+	- 传入一系列数组，实现一次进行多个绘制动作
+#### 图元重启动
+- 在同一个渲染命令中进行图元重启动的功能，通过指定一个图元重启动索引，opengl 在渲染时遇到这个重启动索引后就会从这个索引之后的顶点开始重新进行相同图源类型的渲染
+	- 定义重启动索引 `glPrimitiveRestartIndex(GLuint index)`
+	- ![|500](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefinedundefined20241128202634.png)
+- 开启功能 `glEnable(GL_PRIMITIVE_RESTART)`
+#### 实例化渲染
+
+- 实例化渲染通常会用于渲染草、植被、粒子，基本上只要场景中有很多重复的形状，都能够使用实例化渲染来提高性能。
+
+- 反复绑定 VAO，由 cpu 去告诉 gpu 如何绘制，这样绘制多个物体是较慢的，如果我们能够将数据**一次性发送**给 GPU，然后使用**一个绘制函数**让 OpenGL 利用这些数据绘制多个物体，就会更方便了。这就是实例化。
+  - 即一个渲染调用来绘制多个物体，接受 CPU->GPU 通信
+
+- 有一个额外参数，告诉 GPU 渲染的次数；微粒让物体渲染不同（而不是重复一个位置），着色器中有一个 in 变量 `gl_InstanceID`
+  - 这个值从 0 开始，每个示例被渲染时递增 1
+  - `glDrawArraysInstanced(GL_TRIANGLES, 0, 6, 100);` 即渲染 100 次
+
+- 利用这个值很容易实现矩阵排列
+
+```c++
+#version 330 core
+layout (location = 0) in vec2 aPos;
+layout (location = 1) in vec3 aColor;
+
+out vec3 fColor;
+
+uniform vec2 offsets[100];
+
+void main()
+{
+    vec2 offset = offsets[gl_InstanceID];
+    gl_Position = vec4(aPos + offset, 0.0, 1.0);
+    fColor = aColor;
+}
+```
+
+<img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/undefinedinstancing_quads.png" alt="img" style="zoom:50%;" />
+
+- 使用 `uniform` 数组传递偏移数据时，当实例数量较多时会受到 GPU 硬件对 `uniform` 变量数量限制的制约。并且每次绘制都需要根据 `gl_InstanceID` 从 `uniform` 数组中索引数据，这种方式受限于数据带宽和硬件能力。
+- 实例化数组：将逐实例的数据存储为顶点属性并通过**顶点缓冲对象（VBO）**传递，可以突破 `uniform` 数量限制。通过设置更新频率在每个顶点计算时进行更新
+
+```glsl
+#version 330 core
+layout (location = 0) in vec2 aPos;       // 顶点位置
+layout (location = 1) in vec3 aColor;     // 颜色
+layout (location = 2) in vec2 aOffset;    // 偏移量（实例化数组）
+
+out vec3 fColor;
+
+void main()
+{
+    gl_Position = vec4(aPos + aOffset, 0.0, 1.0); // 使用偏移量
+    fColor = aColor;
+}
+
+```
+
+- 创建实例化 VBO
+
+```glsl
+unsigned int instanceVBO;
+glGenBuffers(1, &instanceVBO);
+glBindBuffer(GL_ARRAY_BUFFER, instanceVBO);
+// 将偏移量数组的数据传递到VBO
+glBufferData(GL_ARRAY_BUFFER, sizeof(glm::vec2) * 100, &translations[0], GL_STATIC_DRAW);
+glBindBuffer(GL_ARRAY_BUFFER, 0);
+
+glEnableVertexAttribArray(2); // 启用属性位置 2（aOffset）
+glBindBuffer(GL_ARRAY_BUFFER, instanceVBO);
+glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, 2 * sizeof(float), (void*)0);
+glBindBuffer(GL_ARRAY_BUFFER, 0);
+
+glVertexAttribDivisor(2, 1);//设置更新频率1
+
+glBindVertexArray(quadVAO);
+glDrawArraysInstanced(GL_TRIANGLES, 0, 6, 100);
+
+```
+
+- 即索引获取值的工作从着色器转移到了 CPU
+
+
 ## 着色器的内建变量
 
 ### 顶点着色器
@@ -3464,88 +3564,9 @@ EndPrimitive();
 
 - 这就实现了最后一个点和前面的点颜色不同
 
-
-
 - 可以实现很多效果：
   - 面位移实现爆破效果
   - 显示所有面的法线等等
-
-## 实例化渲染
-
-- 实例化渲染通常会用于渲染草、植被、粒子，基本上只要场景中有很多重复的形状，都能够使用实例化渲染来提高性能。
-
-- 反复绑定 VAO，由 cpu 去告诉 gpu 如何绘制，这样绘制多个物体是较慢的，如果我们能够将数据**一次性发送**给 GPU，然后使用**一个绘制函数**让 OpenGL 利用这些数据绘制多个物体，就会更方便了。这就是实例化。
-  - 即一个渲染调用来绘制多个物体，接受 CPU->GPU 通信
-- 有一个额外参数，告诉 GPU 渲染的次数；微粒让物体渲染不同（而不是重复一个位置），着色器中有一个 in 变量 `gl_InstanceID`
-  - 这个值从 0 开始，每个示例被渲染时递增 1
-  - `glDrawArraysInstanced(GL_TRIANGLES, 0, 6, 100);` 即渲染 100 次
-
-
-
-- 利用这个值很容易实现矩阵排列
-
-```c++
-#version 330 core
-layout (location = 0) in vec2 aPos;
-layout (location = 1) in vec3 aColor;
-
-out vec3 fColor;
-
-uniform vec2 offsets[100];
-
-void main()
-{
-    vec2 offset = offsets[gl_InstanceID];
-    gl_Position = vec4(aPos + offset, 0.0, 1.0);
-    fColor = aColor;
-}
-```
-
-<img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/undefinedinstancing_quads.png" alt="img" style="zoom:50%;" />
-
-- 使用 `uniform` 数组传递偏移数据时，当实例数量较多时会受到 GPU 硬件对 `uniform` 变量数量限制的制约。并且每次绘制都需要根据 `gl_InstanceID` 从 `uniform` 数组中索引数据，这种方式受限于数据带宽和硬件能力。
-- 实例化数组：将逐实例的数据存储为顶点属性并通过**顶点缓冲对象（VBO）**传递，可以突破 `uniform` 数量限制。通过设置更新频率在每个顶点计算时进行更新
-
-```glsl
-#version 330 core
-layout (location = 0) in vec2 aPos;       // 顶点位置
-layout (location = 1) in vec3 aColor;     // 颜色
-layout (location = 2) in vec2 aOffset;    // 偏移量（实例化数组）
-
-out vec3 fColor;
-
-void main()
-{
-    gl_Position = vec4(aPos + aOffset, 0.0, 1.0); // 使用偏移量
-    fColor = aColor;
-}
-
-```
-
-- 创建实例化 VBO
-
-```glsl
-unsigned int instanceVBO;
-glGenBuffers(1, &instanceVBO);
-glBindBuffer(GL_ARRAY_BUFFER, instanceVBO);
-// 将偏移量数组的数据传递到VBO
-glBufferData(GL_ARRAY_BUFFER, sizeof(glm::vec2) * 100, &translations[0], GL_STATIC_DRAW);
-glBindBuffer(GL_ARRAY_BUFFER, 0);
-
-glEnableVertexAttribArray(2); // 启用属性位置 2（aOffset）
-glBindBuffer(GL_ARRAY_BUFFER, instanceVBO);
-glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, 2 * sizeof(float), (void*)0);
-glBindBuffer(GL_ARRAY_BUFFER, 0);
-
-glVertexAttribDivisor(2, 1);//设置更新频率1
-
-glBindVertexArray(quadVAO);
-glDrawArraysInstanced(GL_TRIANGLES, 0, 6, 100);
-
-```
-
-- 即索引获取值的工作从着色器转移到了 CPU
-
 ## 抗锯齿
 
 - 要使用 MSAA 需要在每个像素中存储**大于 1 个颜色值**的颜色缓冲，即多重采样缓冲
