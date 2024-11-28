@@ -1,6 +1,10 @@
 {
   "recentFiles": [
     {
+      "basename": "Drawing 2024-11-28 15.43.11.excalidraw",
+      "path": "Excalidraw/Drawing 2024-11-28 15.43.11.excalidraw.md"
+    },
+    {
       "basename": "learnOpengl",
       "path": "docs/自学内容/游戏开发&图形学/计算机图形学/API编程/opengl/learnOpengl.md"
     },
@@ -195,10 +199,6 @@
     {
       "basename": "EducationalCodeforcesRound155(Div.2)",
       "path": "docs/blog/posts/算法竞赛/EducationalCodeforcesRound155(Div.2).md"
-    },
-    {
-      "basename": "图论",
-      "path": "docs/算法竞赛/图论.md"
     }
   ],
   "omittedPaths": [],

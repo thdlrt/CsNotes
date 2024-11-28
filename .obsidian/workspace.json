@@ -20,8 +20,21 @@
               "icon": "lucide-file",
               "title": "learnOpengl"
             }
+          },
+          {
+            "id": "b1e09500329102c5",
+            "type": "leaf",
+            "state": {
+              "type": "excalidraw",
+              "state": {
+                "file": "Excalidraw/Drawing 2024-11-28 15.43.11.excalidraw.md"
+              },
+              "icon": "excalidraw-icon",
+              "title": "Drawing 2024-11-28 15.43.11.excalidraw"
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -171,10 +184,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/自学内容/游戏开发&图形学/计算机图形学/API编程/opengl/learnOpengl.md"
+                "file": "Excalidraw/Drawing 2024-11-28 15.43.11.excalidraw.md"
               },
               "icon": "lucide-list",
-              "title": "learnOpengl 的大纲"
+              "title": "Drawing 2024-11-28 15.43.11.excalidraw 的大纲"
             }
           }
         ],
@@ -200,11 +213,12 @@
       "obsidian-excalidraw-plugin:新建绘图文件": false
     }
   },
-  "active": "eed68d62fcc669d9",
+  "active": "b1e09500329102c5",
   "lastOpenFiles": [
+    "docs/自学内容/游戏开发&图形学/计算机图形学/API编程/opengl/learnOpengl.md",
+    "Excalidraw/Drawing 2024-11-28 15.43.11.excalidraw.md",
     "Excalidraw/Drawing 2024-11-27 18.19.06.excalidraw.md",
     "Excalidraw/Drawing 2024-11-27 14.51.35.excalidraw.md",
-    "docs/自学内容/游戏开发&图形学/计算机图形学/API编程/opengl/learnOpengl.md",
     "Excalidraw",
     "docs/_draft_/技术部分.md",
     "docs/_draft_/Untitled.md",
@@ -247,7 +261,6 @@
     "docs/知识点（保研&工作）/保研/计算机科学/补充.md",
     "docs/知识点（保研&工作）/保研/计算机科学/编译原理.md",
     "docs/知识点（保研&工作）/保研/计算机科学/数据结构与算法.md",
-    "docs/知识点（保研&工作）/保研/计算机科学/操作系统.md",
     "未命名.canvas"
   ]
 }
