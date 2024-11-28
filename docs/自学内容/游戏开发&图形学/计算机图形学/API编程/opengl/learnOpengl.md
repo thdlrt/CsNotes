@@ -3352,6 +3352,9 @@ void main()
 - 基于索引进行绘制 `void glerawElements(GLenum mode,GLsizei count,GLenum type,const GLvoid*indices);`
 	- 指定开始的索引 `void glDrawElementsBaseVertex(GLenum mode,GLsizei count,GLenum type,const GLvoid*indices. GLint basevertex); `
 	- 指定索引范围 `void glDrawRangeElements(GLenum mode,GLuint start,GLuint end,GLsizei count,GLenum type, const GLvoid*indices); `
+- 间接绘制命令：从缓存对象中获取参数 `void glDrawArrayslndirect(GLenum mode,const GLvoid*indirect);`
+	- 从 GL_DRAW_INDIRECT_BUFFER 缓存中获取结构体数据
+	- indirect 记录间接绘制缓存中的偏移地址
 ## 着色器的内建变量
 
 ### 顶点着色器
