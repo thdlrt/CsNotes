@@ -20,21 +20,8 @@
               "icon": "lucide-file",
               "title": "learnOpengl"
             }
-          },
-          {
-            "id": "b1e09500329102c5",
-            "type": "leaf",
-            "state": {
-              "type": "excalidraw",
-              "state": {
-                "file": "Excalidraw/Drawing 2024-11-28 15.43.11.excalidraw.md"
-              },
-              "icon": "excalidraw-icon",
-              "title": "Drawing 2024-11-28 15.43.11.excalidraw"
-            }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -184,10 +171,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Excalidraw/Drawing 2024-11-28 15.43.11.excalidraw.md"
+                "file": "docs/自学内容/游戏开发&图形学/计算机图形学/API编程/opengl/learnOpengl.md"
               },
               "icon": "lucide-list",
-              "title": "Drawing 2024-11-28 15.43.11.excalidraw 的大纲"
+              "title": "learnOpengl 的大纲"
             }
           }
         ],
@@ -213,10 +200,10 @@
       "obsidian-excalidraw-plugin:新建绘图文件": false
     }
   },
-  "active": "b1e09500329102c5",
+  "active": "eed68d62fcc669d9",
   "lastOpenFiles": [
-    "docs/自学内容/游戏开发&图形学/计算机图形学/API编程/opengl/learnOpengl.md",
     "Excalidraw/Drawing 2024-11-28 15.43.11.excalidraw.md",
+    "docs/自学内容/游戏开发&图形学/计算机图形学/API编程/opengl/learnOpengl.md",
     "Excalidraw/Drawing 2024-11-27 18.19.06.excalidraw.md",
     "Excalidraw/Drawing 2024-11-27 14.51.35.excalidraw.md",
     "Excalidraw",
