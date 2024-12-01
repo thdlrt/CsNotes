@@ -1,7 +1,10 @@
 >教程地址：[主页 - LearnOpenGL CN](https://learnopengl-cn.github.io/)
 >
 >代码：[LearnOpenGL/src at master · JoeyDeVries/LearnOpenGL](https://github.com/JoeyDeVries/LearnOpenGL/tree/master/src)
-
+GLObalstorage
+生活区碰撞体
+密码箱
+清屏摄像机
 ## 常用库
 
 ### GLFW
