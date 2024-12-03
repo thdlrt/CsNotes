@@ -1343,9 +1343,10 @@ int main()
 ### 缓存掩码
 - 在 opengl 向颜色、深度或者模板缓存写入数据之前可以对数据进行一次掩码操作
 - ![image.png|550](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefined20241128212612.png)
-	- 通过 bool 来设置是否允许进行写入（即用 1 进与还是用 0 进行）
+	- 通过 bool 来设置是否允许进行写入（即用 1 进行与还是用 0 进行）
 ## 混合
-
+- 一个输入的片元通过了测试，就可以与当前颜色缓存中当前内容通过某种方式来进行合并了（直接覆盖现有的值就实现深度缓冲遮挡效果、进行计算就是“融混”）
+- 开启混合 `glEnable(GL_BLEND);`
 ### 含透明通道贴图
 
 - 使用有透明分量的纹理时 `glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, width, height, 0, GL_RGBA, GL_UNSIGNED_BYTE, data);`
@@ -1366,7 +1367,6 @@ void main()
 
 ### 颜色混合
 
-- 开启混合 `glEnable(GL_BLEND);`
 - 混合方程 $\bar{C}_{result}=\bar{C}_{source}*F_{source}+\bar{C}_{destination}*F_{destination}$
   - 颜色 1\*源因子值+颜色 2\*目标因子值
 - `glBlendFunc(GLenum sfactor, GLenum dfactor)` 函数接受两个参数，来设置源和目标因子
@@ -3252,6 +3252,11 @@ void main()
 - 线由两个顶点表示
 - 开放的多段线叫条带线；闭合的叫循环线
 - 通过 `glLineWidth()` 来设置线段宽度
+### 绘制模式
+- 设置**图元的绘制模式**
+- `void glPolygonMode(GLenum face, GLenum mode)`
+	- `face`：指定绘制哪一面 `GL_FRONT GL_BACK GL_FRONT_)AND_BACK`
+	- `mode`：指定绘制模式 `GL_FILL` 填充绘制（默认）、`GL_LINE`：只绘制边缘、`GL_POINT`：只绘制顶点
 #### 三角形
 - 三角形的渲染是通过三个顶点到屏幕以及三条边的链接来完成
 - 三角形条带
@@ -3467,6 +3472,42 @@ glStencilMask(0xFF);
   - 更常用的是非线性方程，与 $1/z$ 成正比，即 z 值较小时具有较高的精度 $F_{depth}=\frac{1/z-1/near}{1/far-1/near}$
   - 深度缓冲精度不足时就会出现**深度冲突**，结果就是这两个形状不断地在切换前后顺序，这会导致很奇怪的花纹。
 - 着色器中通过 `gl_FragCoord.z` 可以直接获取到深度缓冲的值
+##### 多边形偏移
+- 通过调整深度值来解决**深度冲突**问题
+- `void glPolygonOffset(GLfloat factor, GLfloat uints)` 来为即将渲染的多边形设置一个深度偏移量
+	- factor 为深度便宜的缩放因子、uints 为控制偏移量的绝对大小
+	- `offset = m*factor + r*units` m 为最大深度斜率(表示多边形的表面倾斜程度)，r 为不同深度值之间可识别的最小差值
+	- ![image.png|400](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefined20241203175943.png)
+- 通常 factor 设置为一个较大的值（尤其倾斜度较大）；uints 设置为一个较小的值
+#### 逻辑操作
+- 对输入的片元数据、颜色缓冲中的数据等进行或、异或、非等操作
+- 开启：`glEnable(GL_COLOR_LOGIC_OP)`
+- 定义如何将缓冲区的颜色值与输入颜色值进行逻辑运算，通常在颜色混合之前进行
+- ![image.png|550](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefined20241203181740.png)
+#### 遮挡查询
+- 遮挡查询利用 GPU 的 **深度缓冲区**来检测一个物体是否在视锥体内被其他物体完全挡住。通过这种方式，只有在物体可见时，才进行实际的渲染。通过减少无效的绘制操作，避免绘制被遮挡的物体，能够显著提升渲染效率。
+- 创建查询对象：存储查询结果的容器 `glGenQueries(1, &queryID);`
+- 开始查询：`glBeginQuery(GL_SAMPLES_PASSED, queryID);`
+	- ![image.png|500](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefined20241203183015.png)
+- 进行绘制
+- 结束查询 `glEndQuery(GL_SAMPLES_PASSED);`
+- 获取查询结果
+```c++
+GLuint sampleCount; 
+glGetQueryObjectuiv(queryID, GL_QUERY_RESULT, &sampleCount);
+```
+- 程序可以依据这个结果进行判断，决定进一步的操作
+	- 例如，如果一个物体完全被另一个物体遮挡，可以跳过该物体的渲染过程。
+#### 条件渲染
+- 使用遮挡查询时：opengl 需要暂时停止片元处理，计算样本数目后返回值给程序，这会造成性能损失
+- 通过条件渲染来判断遮挡查询可以避免暂停 opengl 的操作
+```c++
+void glBeginCondifionalRender(GLuint id,GLenum mode);
+void glEndConditionalRender(void);
+```
+- 系统根据遮挡查询对象 id 的结果来决定是否自动抛弃，mode 设置判断方式
+	- ![image.png|500](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefined20241203183916.png)
+	- ![image.png|500](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefined20241203183924.png)
 
 ## 着色器的内建变量
 
@@ -3580,7 +3621,8 @@ EndPrimitive();
 - 可以实现很多效果：
   - 面位移实现爆破效果
   - 显示所有面的法线等等
-## 抗锯齿
+## 多重采样
+### 抗锯齿
 
 - 要使用 MSAA 需要在每个像素中存储**大于 1 个颜色值**的颜色缓冲，即多重采样缓冲
 
@@ -3593,7 +3635,7 @@ EndPrimitive();
 
 
 
-### 离屏 MSAA
+#### 离屏 MSAA
 
 - 通过帧缓冲来实现
 
