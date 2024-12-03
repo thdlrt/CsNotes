@@ -3677,6 +3677,16 @@ EndPrimitive();
   - 面位移实现爆破效果
   - 显示所有面的法线等等
 ## 多重采样
+- 用于对几何图元的边缘进行平滑（反走样）
+- 对每个像素点的几何图元进行多次采样，每个像素点记录多个样本值，最终显示时样本值被解析为最终像素的颜色
+- 开启多重采样 `glEnable(GL_MULTISAMPLE);`
+- 获取每个像素中有多少个样本值用于多重采样 `glGetIntegerv(GL_SAMPLES)`
+	- 如 4 就是 4xMSAA
+	- 由缓冲区设置和设备支持决定
+- `glGetIntegerv(GL_MAX_SAMPLES, &maxSamples);` 设备支持的最大样本数
+- `GlEnable(GL_SAMPLE_SHADING)` 强制 OpenGL 使用采样着色方式
+- `glMinSampleShading(GLfloat value)`
+- 0~1 表示至少使用多少比例的样本进行着色，0 表示只用一个，1 表示用全部的
 ### 抗锯齿
 
 - 要使用 MSAA 需要在每个像素中存储**大于 1 个颜色值**的颜色缓冲，即多重采样缓冲
@@ -3684,10 +3694,18 @@ EndPrimitive();
 - 通过 GLFW 可以快速实现 MSAA
 
 - `glfwWindowHint(GLFW_SAMPLES, 4);` 之后再创建渲染窗口，每个屏幕坐标就会有一个包含 4 个子采样点的颜色缓冲了。
-  - 之后确保开启多重采样 `glEnable(GL_MULTISAMPLE);`
 
-
-
+- 通过 `glHint(GLenum target, GLenum mode)` 可以提示驱动程序如何在某些情况下选择实现特定操作的策略
+	- ![image.png|500](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefined20241204002740.png)
+	- `GL_DONT_CARE`：表示驱动程序可以自由选择最适合的方式，不必考虑提示的影响。
+	- `GL_FASTEST`：表示驱动程序应优先选择速度最快的方式，通常会牺牲一些质量或精度。
+	- `GL_NICEST`：表示驱动程序应优先选择质量最好的方式，通常会牺牲一些性能。
+- 线段反走样
+	- 通常要对 alpha 通道进行融混设置
+	- ![image.png|500](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefined20241204003227.png)
+- 多边形反走样
+	- 也要对 alpha 进行混融
+	- 并且要保证按顺序进行渲染（防止深度缓冲直接丢弃）
 #### 离屏 MSAA
 
 - 通过帧缓冲来实现
@@ -3733,12 +3751,12 @@ glBlitFramebuffer(0, 0, width, height, 0, 0, width, height, GL_COLOR_BUFFER_BIT,
 
 ```
 
-
-
 - 由于多重采样纹理无法直接在片段着色器中采样，因此无法直接用于后期处理
   - 通过将多重采样帧缓冲的内容还原到普通的帧缓冲生成可采样的 2 D 纹理，然后使用该纹理作为输入进行后期处理。
-
-
+### 读取像素数据
+- 渲染工作结束后，可以获取渲染后的图像中的数据用以他用，可以使用 `glReadPixels` 函数从可读的帧缓冲中获取像素
+	- `void glReadPixels(GLint x,GLint y,GLsizei width,GLsizei height,GLenum format GLenum type, void*pixels); `
+- 
 # 光照
 
 ### 颜色
