@@ -3489,7 +3489,7 @@ glStencilMask(0xFF);
 - 创建查询对象：存储查询结果的容器 `glGenQueries(1, &queryID);`
 - 开始查询：`glBeginQuery(GL_SAMPLES_PASSED, queryID);`
 	- ![image.png|500](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefined20241203183015.png)
-- 进行绘制
+- 进行绘制 `glDrawArrays(GL_TRIANGLES, 0, 36);`
 - 结束查询 `glEndQuery(GL_SAMPLES_PASSED);`
 - 获取查询结果
 ```c++
@@ -3498,6 +3498,35 @@ glGetQueryObjectuiv(queryID, GL_QUERY_RESULT, &sampleCount);
 ```
 - 程序可以依据这个结果进行判断，决定进一步的操作
 	- 例如，如果一个物体完全被另一个物体遮挡，可以跳过该物体的渲染过程。
+```c++
+GLuint queryID;
+glGenQueries(1, &queryID);  // 创建查询对象
+
+// 开始渲染过程
+for (int i = 0; i < numObjects; ++i) {
+    // 启动遮挡查询，查询物体是否通过了深度测试
+    glBeginQuery(GL_SAMPLES_PASSED, queryID);
+    
+    // 绘制物体（可能会被遮挡）
+    glBindVertexArray(objectVAO[i]);  // 绑定当前物体的顶点数组
+    glDrawArrays(GL_TRIANGLES, 0, objectVertexCount[i]);  // 绘制物体
+    
+    glEndQuery(GL_SAMPLES_PASSED);  // 结束查询
+    
+    // 获取查询结果
+    GLuint sampleCount = 0;
+    glGetQueryObjectuiv(queryID, GL_QUERY_RESULT, &sampleCount);
+    
+    // 如果物体未被遮挡，继续渲染该物体
+    if (sampleCount > 0) {
+        // 物体可见，执行后续渲染操作
+        glUseProgram(shaderProgram);
+        glDrawArrays(GL_TRIANGLES, 0, objectVertexCount[i]);  // 再次绘制物体
+    }
+    // 否则，跳过渲染这个物体
+}
+
+```
 #### 条件渲染
 - 使用遮挡查询时：opengl 需要暂时停止片元处理，计算样本数目后返回值给程序，这会造成性能损失
 - 通过条件渲染来判断遮挡查询可以避免暂停 opengl 的操作
@@ -3508,7 +3537,33 @@ void glEndConditionalRender(void);
 - 系统根据遮挡查询对象 id 的结果来决定是否自动抛弃，mode 设置判断方式
 	- ![image.png|500](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefined20241203183916.png)
 	- ![image.png|500](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefined20241203183924.png)
+```C++
+GLuint queryID;
+glGenQueries(1, &queryID);  // 创建查询对象
 
+// 开始渲染过程
+for (int i = 0; i < numObjects; ++i) {
+    // 启动遮挡查询，查询物体是否通过了深度测试
+    glBeginQuery(GL_SAMPLES_PASSED, queryID);
+    
+    // 绘制物体（可能会被遮挡）
+    glBindVertexArray(objectVAO[i]);  // 绑定当前物体的顶点数组
+    glDrawArrays(GL_TRIANGLES, 0, objectVertexCount[i]);  // 绘制物体
+    
+    glEndQuery(GL_SAMPLES_PASSED);  // 结束查询
+    
+    // 开始条件渲染，只有在遮挡查询的结果大于 0 时才渲染物体
+    glBeginConditionalRender(queryID, GL_QUERY_WAIT);
+    
+    // 如果查询结果为 0，则此时的渲染会被跳过
+    glUseProgram(shaderProgram);
+    glDrawArrays(GL_TRIANGLES, 0, objectVertexCount[i]);  // 渲染物体
+    
+    glEndConditionalRender();  // 结束条件渲染
+}
+```
+- 与手动进行判断相比：条件渲染的好处是，它允许在 GPU 上进行**异步查询**，而不需要在 CPU 上主动检查查询结果。GPU 可以在后台处理查询，只有在查询结果可用时才继续渲染。这减少了 CPU 与 GPU 之间的同步开销。
+- `glBeginConditionalRender()` 使得这种查询结果驱动的渲染控制更加高效，特别适合用于需要频繁查询的场景，例如遮挡查询、性能监控等。
 ## 着色器的内建变量
 
 ### 顶点着色器
@@ -3625,8 +3680,6 @@ EndPrimitive();
 ### 抗锯齿
 
 - 要使用 MSAA 需要在每个像素中存储**大于 1 个颜色值**的颜色缓冲，即多重采样缓冲
-
-
 
 - 通过 GLFW 可以快速实现 MSAA
 
