@@ -1344,85 +1344,6 @@ int main()
 - 在 opengl 向颜色、深度或者模板缓存写入数据之前可以对数据进行一次掩码操作
 - ![image.png|550](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefined20241128212612.png)
 	- 通过 bool 来设置是否允许进行写入（即用 1 进与还是用 0 进行）
-### 深度测试
-
-- 通常深度测试是在片段着色器运行之后在屏幕空间进行的
-  - 提前深度测试：在片段着色器之前运行，提前丢弃永远不可见的片段，减少计算量
-- 开启深度测试 `glEnable(GL_DEPTH_TEST);`
-  - 使用深度测试时，清除缓存是还要清除深度数据 `glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);`
-- 将深度缓冲数据设置为只读，禁止修改 `glDepthMask(GL_FALSE);`
-- 自定义深度测试比较函数 `glDepthFunc(GL_LESS);`
-  - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/undefinedimage-20241118161429326.png" alt="image-20241118161429326" style="zoom: 50%;" />
-- 通常根据近远平面的值来计算深度值
-  - 一种线性方程 $F_{depth}=\frac{z-near}{far-near}$
-  - 更常用的是非线性方程，与 $1/z$ 成正比，即 z 值较小时具有较高的精度 $F_{depth}=\frac{1/z-1/near}{1/far-1/near}$
-  - 深度缓冲精度不足时就会出现**深度冲突**，结果就是这两个形状不断地在切换前后顺序，这会导致很奇怪的花纹。
-- 着色器中通过 `gl_FragCoord.z` 可以直接获取到深度缓冲的值
-
-### 模板测试
-
-- 模版测试是在深度测试之前进行的，每个模板值是 8 位的，可以丢弃或保留具有特定模板值的片段
-- 模板测试的目的：利用已经本次绘制的物体，产生一个区域，在**下次绘制**中利用这个区域做一些效果。
-  - 启用模板缓冲的写入。
-  - 渲染物体，**更新模板缓冲**的内容。
-  - 禁用模板缓冲的写入。
-  - 渲染（其它）物体，这次**根据模板缓冲的内容**丢弃特定的片段。
-- 启用模板测试 `glEnable(GL_STENCIL_TEST);`
-- 清除模板缓冲 `glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT | GL_STENCIL_BUFFER_BIT);`
-- `glStencilMask` 允许我们设置一个位掩码，它会与将要写入缓冲的模板值进行与 (AND) 运算
-
-```c++
-glStencilMask(0xFF); // 每一位写入模板缓冲时都保持原样
-glStencilMask(0x00); // 每一位在写入模板缓冲时都会变成0（禁用写入）
-```
-
-#### 模板函数
-
-- 控制模板缓冲通过还是失败，以及如何影响模板缓冲
-- 对模板缓冲做什么 (配置模版缓冲条件)：`glStencilFunc(GLenum func, GLint ref, GLuint mask)`
-  - `func`：设置模板测试函数 (Stencil Test Function)。这个测试函数将会应用到已储存的模板值上和 glStencilFunc 函数的 `ref` 值上。可用的选项有：GL_NEVER、GL_LESS、GL_LEQUAL、GL_GREATER、GL_GEQUAL、GL_EQUAL、GL_NOTEQUAL 和 GL_ALWAYS。它们的语义和深度缓冲的函数类似。
-  - `ref`：设置了模板测试的参考值, 模板缓冲的内容将会与这个值进行比较。
-  - `mask`：设置一个掩码，它将会与参考值和储存的模板值在测试比较它们之前进行与 (AND) 运算。初始情况下所有位都为 1。
-  - 如 `glStencilFunc(GL_EQUAL, 1, 0xFF)`
-- 更新模板缓冲的值 `glStencilOp(GLenum sfail, GLenum dpfail, GLenum dppass)`
-  - `sfail`：模板测试失败时采取的行为。
-  - `dpfail`：模板测试通过，但深度测试失败时采取的行为。
-  - `dppass`：模板测试和深度测试都通过时采取的行为。
-  - ![image-20241118173453758](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefinedundefinedimage-20241118173453758.png)
-
-#### 用模板测试实现物体描边
-
-<img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/undefinedstencil_object_outlining.png" alt="img" style="zoom: 67%;" />
-
-- 先绘制物体（原箱子）
-
-```c++
-glEnable(GL_STENCIL_TEST);
-glStencilOp(GL_KEEP, GL_KEEP, GL_REPLACE);//如果模板测试和深度测试都通过了，那么我们希望将储存的模板值设置为参考值（1）
-glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT | GL_STENCIL_BUFFER_BIT); 
-
-glStencilMask(0x00); // 绘制不需要描边的物体
-normalShader.use();
-DrawFloor()  
-
-//绘制需要描边的物体
-glStencilFunc(GL_ALWAYS, 1, 0xFF); // 所有的片段都应该更新模板缓冲
-glStencilMask(0xFF); // 启用模板缓冲写入
-DrawTwoContainers();
-```
-
-- 接下来绘制大一号的箱子作为描边，这次要禁用描边
-
-```c++
-//绘制描边
-glStencilFunc(GL_NOTEQUAL, 1, 0xFF);//GL_NOTEQUAL只绘制模板值不为1的区域
-glStencilMask(0x00); // 禁止模板缓冲的写入
-glDisable(GL_DEPTH_TEST);
-shaderSingleColor.use(); 
-DrawTwoScaledUpContainers();
-glStencilMask(0xFF);
-```
-
 ## 混合
 
 ### 含透明通道贴图
@@ -3457,6 +3378,95 @@ glDrawArraysInstanced(GL_TRIANGLES, 0, 6, 100);
 
 - 即索引获取值的工作从着色器转移到了 CPU
 
+### 片元测试
+- 片元在进入当前帧缓存之前要进行一系列的测试：片元可能会在某个测试过程中丢弃
+	- 剪切测试
+	- 多重采样的片元测试
+	- 模板测试
+	- 深度测试
+	- 融混
+	- 逻辑操作
+#### 剪切测试
+- **剪切盒**：程序窗口中的一个矩形区域，所有的**绘制操作都限制在这个区域之内**
+- `glEnable(SCISSOR_TEST)` 开启测试
+- `void glScissor(GLint x, GLint y, GLsizei width, GLsizei height)` 来设置剪切盒的属性
+#### 模板测试
+
+- 模版测试是在深度测试之前进行的，每个模板值是 8 位的，可以丢弃或保留具有特定模板值的片段
+- 模板测试的目的：利用已经本次绘制的物体，产生一个区域，在**下次绘制**中利用这个区域做一些效果。
+  - 启用模板缓冲的写入。
+  - 渲染物体，**更新模板缓冲**的内容。
+  - 禁用模板缓冲的写入。
+  - 渲染（其它）物体，这次**根据模板缓冲的内容**丢弃特定的片段。
+- 启用模板测试 `glEnable(GL_STENCIL_TEST);`
+- 清除模板缓冲 `glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT | GL_STENCIL_BUFFER_BIT);`
+- `glStencilMask` 允许我们设置一个位掩码，它会与将要写入缓冲的模板值进行与 (AND) 运算
+
+```c++
+glStencilMask(0xFF); // 每一位写入模板缓冲时都保持原样
+glStencilMask(0x00); // 每一位在写入模板缓冲时都会变成0（禁用写入）
+```
+
+##### 模板函数
+
+- 控制模板缓冲通过还是失败，以及如何影响模板缓冲
+- 对模板缓冲做什么 (配置模版缓冲条件)：`glStencilFunc(GLenum func, GLint ref, GLuint mask)`
+  - `func`：设置模板测试函数 (Stencil Test Function)。这个测试函数将会应用到已储存的模板值上和 glStencilFunc 函数的 `ref` 值上。可用的选项有：GL_NEVER、GL_LESS、GL_LEQUAL、GL_GREATER、GL_GEQUAL、GL_EQUAL、GL_NOTEQUAL 和 GL_ALWAYS。它们的语义和深度缓冲的函数类似。
+  - `ref`：设置了模板测试的参考值, 模板缓冲的内容将会与这个值进行比较。
+  - `mask`：设置一个掩码，它将会与参考值和储存的模板值在测试比较它们之前进行与 (AND) 运算。初始情况下所有位都为 1。
+  - 如 `glStencilFunc(GL_EQUAL, 1, 0xFF)`
+- 更新模板缓冲的值 `glStencilOp(GLenum sfail, GLenum dpfail, GLenum dppass)`
+  - `sfail`：模板测试失败时采取的行为。
+  - `dpfail`：模板测试通过，但深度测试失败时采取的行为。
+  - `dppass`：模板测试和深度测试都通过时采取的行为。
+  - ![image-20241118173453758](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefinedundefinedundefinedimage-20241118173453758.png)
+
+##### 用模板测试实现物体描边
+
+<img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/undefinedstencil_object_outlining.png" alt="img" style="zoom: 67%;" />
+
+- 先绘制物体（原箱子）
+
+```c++
+glEnable(GL_STENCIL_TEST);
+glStencilOp(GL_KEEP, GL_KEEP, GL_REPLACE);//如果模板测试和深度测试都通过了，那么我们希望将储存的模板值设置为参考值（1）
+glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT | GL_STENCIL_BUFFER_BIT); 
+
+glStencilMask(0x00); // 绘制不需要描边的物体
+normalShader.use();
+DrawFloor()  
+
+//绘制需要描边的物体
+glStencilFunc(GL_ALWAYS, 1, 0xFF); // 所有的片段都应该更新模板缓冲
+glStencilMask(0xFF); // 启用模板缓冲写入
+DrawTwoContainers();
+```
+
+- 接下来绘制大一号的箱子作为描边，这次要禁用描边
+
+```c++
+//绘制描边
+glStencilFunc(GL_NOTEQUAL, 1, 0xFF);//GL_NOTEQUAL只绘制模板值不为1的区域
+glStencilMask(0x00); // 禁止模板缓冲的写入
+glDisable(GL_DEPTH_TEST);
+shaderSingleColor.use(); 
+DrawTwoScaledUpContainers();
+glStencilMask(0xFF);
+```
+#### 深度测试
+
+- 通常深度测试是在片段着色器运行之后在屏幕空间进行的
+  - 提前深度测试：在片段着色器之前运行，提前丢弃永远不可见的片段，减少计算量
+- 开启深度测试 `glEnable(GL_DEPTH_TEST);`
+  - 使用深度测试时，清除缓存是还要清除深度数据 `glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);`
+- 将深度缓冲数据设置为只读，禁止修改 `glDepthMask(GL_FALSE);`
+- 自定义深度测试比较函数 `glDepthFunc(GL_LESS);`
+  - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/undefinedimage-20241118161429326.png" alt="image-20241118161429326" style="zoom: 50%;" />
+- 通常根据近远平面的值来计算深度值
+  - 一种线性方程 $F_{depth}=\frac{z-near}{far-near}$
+  - 更常用的是非线性方程，与 $1/z$ 成正比，即 z 值较小时具有较高的精度 $F_{depth}=\frac{1/z-1/near}{1/far-1/near}$
+  - 深度缓冲精度不足时就会出现**深度冲突**，结果就是这两个形状不断地在切换前后顺序，这会导致很奇怪的花纹。
+- 着色器中通过 `gl_FragCoord.z` 可以直接获取到深度缓冲的值
 
 ## 着色器的内建变量
 
