@@ -3756,7 +3756,12 @@ glBlitFramebuffer(0, 0, width, height, 0, 0, width, height, GL_COLOR_BUFFER_BIT,
 ### 读取像素数据
 - 渲染工作结束后，可以获取渲染后的图像中的数据用以他用，可以使用 `glReadPixels` 函数从可读的帧缓冲中获取像素
 	- `void glReadPixels(GLint x,GLint y,GLsizei width,GLsizei height,GLenum format GLenum type, void*pixels); `
-- 
+![image.png|600](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefined20241204005216.png)
+![image.png|600](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefined20241204005223.png)
+- 将像素数据从一个范围拷贝到另一个范围
+```c++
+void glBlitNamedFramebuffer(GLuint readFramebuffer,GLuint drawFramebuffer,GLint srcXO,GLint sreYO,GLint srcX1,GLint sreY1,GLint dstX0,GLint dstY0,GLint dstX1, GLint dstY1,GLbitfield mask,GLenum filter);
+```
 # 光照
 
 ### 颜色
