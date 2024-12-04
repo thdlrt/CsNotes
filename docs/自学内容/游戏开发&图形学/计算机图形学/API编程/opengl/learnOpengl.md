@@ -2933,7 +2933,61 @@ void main()
 ```
 
 - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/undefinedimage-20241105154439987.png" alt="image-20241105154439987" style="zoom:33%;" />
+##### 代理纹理
+- 每一个标准的纹理目标都可以有一个对应的代理纹理目标，代理纹理的核心思想是通过在低性能计算或渲染场景中替代真实的高分辨率纹理，来减少内存占用和提升渲染速度。只有在必要时（例如相机接近某个物体时），系统才会动态地加载并显示高分辨率的纹理。
+![image.png|600](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefined20241204151736.png)
+##### 纹理数据加载方式
+- 显示设置
+	- 直接传入字节流数组作为纹理的数据
+	- ![image.png|500](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefined20241204152229.png)
+```c++
+glTextureSubImage2D(tex checkerboard,
+//纹理
+0,
+//mipmap层0
+0,0,
+//x和y偏移
+8,8,
+//宽度和高度
+GL RED,GL UNSIGNED BYTE,
+//格式和类型
+tex checkerboard data);
+/1数据
+```
+- 从缓存加载纹理
+	- 将数据存储到缓存对象当中，之后再传递到纹理对象
+```c++
+// 1. 创建缓存对象
+GLuint buf;
+glCreateBuffers(1, &buf);
 
+// 2. 将源数据传递到缓存对象
+glNamedBufferStorage(buf, sizeof(tex_checkerboard_data), tex_checkerboard_data, 0);
+
+// 3. 创建并分配纹理存储空间
+GLuint texture;
+glCreateTextures(GL_TEXTURE_2D, 1, &texture);
+glTextureStorage2D(texture, 4, GL_R8, 8, 8);  // 为纹理分配内存空间
+
+// 4. 将缓存对象绑定到 `GL_PIXEL_UNPACK_BUFFER`
+glBindBuffer(GL_PIXEL_UNPACK_BUFFER, buf);
+
+// 5. 将纹理数据从缓存对象上传到纹理
+glTextureSubImage2D(texture, 0, 0, 0, 8, 8, GL_RED, GL_UNSIGNED_BYTE, NULL);
+
+// 清理缓存对象
+glDeleteBuffers(1, &buf);
+
+```
+- 从文件加载
+##### 获取纹理数据
+- 向纹理中传递数据之后可以再次读取数据冰传递回用户程序的本地内存中
+- `void glGetTexturelmage(GLuint texture,GLint level,GLenum format,GLenum type, GLsizei bufSize, void *pixels); `
+##### 纹理数据的排列布局
+#### 压缩纹理
+- 在线压缩：由 opengl 负责压缩数据，在渲染时实时进行，为了速度，通常质量不高
+	- 提供 RGTC（单、双通道）、BPTC 两种算法（多通道、RGB）
+- 离线压缩：在程序运行之前进行压缩，再吧结果传递给 opengl
 #### 完整代码
 
 ```c
