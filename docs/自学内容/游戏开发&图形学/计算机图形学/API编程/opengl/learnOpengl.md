@@ -2983,11 +2983,31 @@ glDeleteBuffers(1, &buf);
 ##### 获取纹理数据
 - 向纹理中传递数据之后可以再次读取数据冰传递回用户程序的本地内存中
 - `void glGetTexturelmage(GLuint texture,GLint level,GLenum format,GLenum type, GLsizei bufSize, void *pixels); `
+##### 排列纹理数据
+- 将不同格式排布的纹理数据（如 ABGR）转为为标准的 opengl 使用的 RBGA，并传递给着色器
+- 对要重新排列的纹理的每个通道使用 `glTextureParameteri()` 来设置对应的参数值 `GL TEXTURE_SWIZZLE_R` 等来指出通道的位置（即如果按正常顺序，纹理中的第几个通道）以及 `GL_RED` 等来指出目标的通道
+- ![image.png|550](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefined20241204173118.png)
+
 ##### 纹理数据的排列布局
 #### 压缩纹理
 - 在线压缩：由 opengl 负责压缩数据，在渲染时实时进行，为了速度，通常质量不高
 	- 提供 RGTC（单、双通道）、BPTC 两种算法（多通道、RGB）
 - 离线压缩：在程序运行之前进行压缩，再吧结果传递给 opengl
+
+- 为纹理分配空间时指定压缩格式 `glTexStorage2D(GL_TEXTURE_2D, 1, GL_COMPRESSED_RGBA_S3TC_DXT5_EXT, 512, 512);`
+- 对纹理进行压缩并绑定 `glCompressedTexSubImage2D(GL_TEXTURE_2D, 0, 0, 0, 512, 512, GL_COMPRESSED_RGBA_S3TC_DXT5_EXT, compressedDataSize, compressedData);`
+#### 采样器对象
+- 控制如何从纹理图像中进行读取
+```c++
+GLuint sampler;
+glGenSamplers(1, &sampler);
+//绑定采样器到当前活跃的纹理
+glActiveTexture(GL_TEXTURE0); // 选择纹理单元 0 
+glBindTexture(GL_TEXTURE_2D, texture); // 绑定纹理 
+glBindSampler(0, sampler); // 将采样器对象与纹理单元 0 绑定
+```
+- 配置采样器的参数 `glSamplerParameteri(sampler, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);`
+	- 设置纹理采样的相关参数，例如纹理过滤方式、纹理边缘行为等。
 #### 完整代码
 
 ```c
@@ -3177,7 +3197,12 @@ void main()
    FragColor = mix(texture(texture1, TexCoord), texture(texture2, TexCoord), 0.2);
 }
 ```
-## 立方体贴图
+## 复杂纹理
+### 3 d 纹理
+- 
+### 纹理数组
+- 
+### 立方体贴图
 
 - 立方体贴图由 6 个普通的平面贴图组成
   - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/undefinedimage-20241119160505281.png" alt="image-20241119160505281" style="zoom:67%;" />
@@ -3260,13 +3285,15 @@ void main()
 }
 ```
 
-### 天空盒
+#### 天空盒
 
 - 立方体贴图可以用于实现天空盒
 - 为了在天空盒中有移动效果，可以消除调控和的位移效果（即不因摄像机动而动），但是保留旋转效果
 - 先渲染场景物体，最后再渲染天空盒；通过**提前深度测试**，在天空盒渲染阶段快速丢弃被场景物体遮挡的像素，从而减少片段着色器的运行。（天空盒的深度始终为最大的 1.0）
   - 要将条件从小于改为小于等于 `glDepthFunc(GL_LEQUAL);`
-
+### 阴影采样器
+### 深度-模板纹理
+### 缓存纹理
 ## 环境映射
 
 - 通过环境的立方体贴图，给物体反射和折射属性
