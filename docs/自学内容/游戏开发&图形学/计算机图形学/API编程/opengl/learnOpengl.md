@@ -1589,161 +1589,6 @@ glDrawArrays(GL_TRIANGLES, 0, 6);                // 绘制屏幕四边形
 - 可以在离屏渲染后，切换使用后期处理着色器，即实现在屏幕渲染阶段的后期处理
   - 此时可以实现很多效果，因为可以获得一个像素及其周边像素的数据 (核采样时要小心环绕扩展方式造成的影响)
 - 如模糊效果 $\begin{bmatrix}1&2&1\\2&4&2\\1&2&1\end{bmatrix}/16$
-
-## 立方体贴图
-
-- 立方体贴图由 6 个普通的平面贴图组成
-  - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/undefinedimage-20241119160505281.png" alt="image-20241119160505281" style="zoom:67%;" />
-- 创建并绑定立方体贴图的面
-
-```c++
-unsigned int loadCubemap(vector<std::string> faces)
-{
-    unsigned int textureID;
-    glGenTextures(1, &textureID);
-    glBindTexture(GL_TEXTURE_CUBE_MAP, textureID);
-
-    int width, height, nrChannels;
-    for (unsigned int i = 0; i < faces.size(); i++)
-    {
-        unsigned char *data = stbi_load(faces[i].c_str(), &width, &height, &nrChannels, 0);
-        if (data)
-        {
-            glTexImage2D(GL_TEXTURE_CUBE_MAP_POSITIVE_X + i, 
-                         0, GL_RGB, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, data
-            );
-            stbi_image_free(data);
-        }
-        else
-        {
-            std::cout << "Cubemap texture failed to load at path: " << faces[i] << std::endl;
-            stbi_image_free(data);
-        }
-    }
-    glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
-    glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-    glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
-    glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
-    glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_WRAP_R, GL_CLAMP_TO_EDGE);
-
-    return textureID;
-}
-
-vector<std::string> faces
-{
-    "right.jpg",
-    "left.jpg",
-    "top.jpg",
-    "bottom.jpg",
-    "front.jpg",
-    "back.jpg"
-};
-unsigned int cubemapTexture = loadCubemap(faces);
-```
-
-- 片段着色器中要使用 samplerCube
-
-```glsl
-#version 330 core
-layout (location = 0) in vec3 aPos;
-
-out vec3 TexCoords;
-
-uniform mat4 projection;
-uniform mat4 view;
-
-void main()
-{
-    TexCoords = aPos;
-    gl_Position = projection * view * vec4(aPos, 1.0);
-}
-
-
-
-#version 330 core
-out vec4 FragColor;
-
-in vec3 TexCoords;
-
-uniform samplerCube skybox;
-
-void main()
-{    
-    FragColor = texture(skybox, TexCoords);
-}
-```
-
-### 天空盒
-
-- 立方体贴图可以用于实现天空盒
-- 为了在天空盒中有移动效果，可以消除调控和的位移效果（即不因摄像机动而动），但是保留旋转效果
-- 先渲染场景物体，最后再渲染天空盒；通过**提前深度测试**，在天空盒渲染阶段快速丢弃被场景物体遮挡的像素，从而减少片段着色器的运行。（天空盒的深度始终为最大的 1.0）
-  - 要将条件从小于改为小于等于 `glDepthFunc(GL_LEQUAL);`
-
-## 环境映射
-
-- 通过环境的立方体贴图，给物体反射和折射属性
-
-- 当立方体位于 (0,0,0) 时每个位置向量都是**从原点出发的方向向量**，这个方向向量正是获取立方体上**特定位置的纹理值**所需要的（即**通过方向向量来获取数据**）
-
-### 反射
-
-<img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/undefinedcubemaps_reflection_theory.png" alt="img" style="zoom:67%;" />
-
-- 计算得到反射向量，通过反射向量采样立方体贴图，返回环境的颜色值
-
-```glsl
-#version 330 core
-layout (location = 0) in vec3 aPos;
-layout (location = 1) in vec3 aNormal;
-
-out vec3 Normal;
-out vec3 Position;
-
-uniform mat4 model;
-uniform mat4 view;
-uniform mat4 projection;
-
-void main()
-{
-    Normal = mat3(transpose(inverse(model))) * aNormal;
-    Position = vec3(model * vec4(aPos, 1.0));
-    gl_Position = projection * view * model * vec4(aPos, 1.0);
-}
-
-
-
-#version 330 core
-out vec4 FragColor;
-
-in vec3 Normal;
-in vec3 Position;
-
-uniform vec3 cameraPos;
-uniform samplerCube skybox;
-
-void main()
-{             
-    vec3 I = normalize(Position - cameraPos);
-    vec3 R = reflect(I, normalize(Normal));
-    FragColor = vec4(texture(skybox, R).rgb, 1.0);
-}
-```
-
-### 折射
-
-- 类似的，通过折射定律获取方向获取法向量，进而获取材质数据
-
-```glsl
-void main()
-{             
-    float ratio = 1.00 / 1.52;
-    vec3 I = normalize(Position - cameraPos);
-    vec3 R = refract(I, normalize(Normal), ratio);
-    FragColor = vec4(texture(skybox, R).rgb, 1.0);
-}
-```
-
 ## 高级数据
 
 - 通过 `glBufferData` 可以创建缓冲对象，并用数据立即进行填充
@@ -1824,14 +1669,6 @@ glCopyBufferSubData(GL_COPY_READ_BUFFER, GL_COPY_WRITE_BUFFER, 0, 0, sizeof(vert
 
 - 完整的变换 $V_{clip}=M_{projection}\cdot M_{view}\cdot M_{model}\cdot V_{local}$
   - 着色器中 `gl_Position = projection * view * model * vec4(aPos, 1.0);`
-
-
-
-
-#### 深度缓冲
-
-- 开启深度缓冲 `glEnable(GL_DEPTH_TEST);`
-- 附加每帧清楚缓冲 `glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);`
 
 ### 摄像机
 
@@ -2374,7 +2211,56 @@ int main()
 }
 ```
 
+### 裁剪
+- 设置远近平面 `void glDepthRange(GLclampd near,GLclampd far);`
+- 用户裁剪：再添加一些任意方向的平面，利用这些平面进行进一步裁剪
+	- 根据片段到每个裁剪平面的距离来决定是否丢弃该片段。通常，如果该距离小于零，片段会被丢弃
+```c++
+#version 450 core
 
+out vec4 fragColor; // 片段颜色
+out float gl_ClipDistance[1]; // 裁剪距离
+
+uniform vec4 clipPlane; // 自定义裁剪平面
+
+void main() {
+    // 计算片段到裁剪平面的距离
+    float distance = dot(gl_FragCoord.xyz, clipPlane.xyz) + clipPlane.w;
+    
+    // 将计算的裁剪距离传递给 gl_ClipDistance
+    gl_ClipDistance[0] = distance;
+
+    // 输出颜色
+    fragColor = vec4(1.0, 0.0, 0.0, 1.0); // 红色
+}
+```
+- 如果 `distance < 0`，**片段**就会被丢弃。
+	- `gl_ClipDistance`：用于**片段级裁剪**。它控制的是每个片段（像素）是否被裁剪。
+	- `gl_CullDistance`：用于**图元级裁剪**。它控制的是整个图元（如三角形、线段等）是否被裁剪。
+- 多个裁剪平面
+```c++
+#version 450 core
+
+out vec4 fragColor;   // 输出颜色
+out float gl_ClipDistance[3]; // 三个裁剪平面
+
+uniform vec4 clipPlanes[3]; // 裁剪平面，三个平面
+
+void main() {
+    // 计算片段到每个裁剪平面的距离
+    for (int i = 0; i < 3; ++i) {
+        gl_ClipDistance[i] = dot(gl_FragCoord.xyz, clipPlanes[i].xyz) + clipPlanes[i].w;
+    }
+
+    // 输出颜色（此处仅为示例，实际颜色处理可能更复杂）
+    fragColor = vec4(1.0, 0.0, 0.0, 1.0); // 红色
+}
+
+```
+### transform feedback
+- 用于在图形渲染管线中捕获变换后的顶点数据，并将这些数据**输出到缓冲区中**，而不是渲染到帧缓冲中。
+- 这样可以避免将数据从 GPU 传输到 CPU，再传输回 GPU，从而提高性能。
+- 
 # 着色器
 - 一些**运行在 GPU 上**的小程序，着色器的功能比较简单，只是接受输入并产生输出
 ### 编译着色器
@@ -3233,6 +3119,159 @@ uniform sampler2D texture2;
 void main()
 {
    FragColor = mix(texture(texture1, TexCoord), texture(texture2, TexCoord), 0.2);
+}
+```
+## 立方体贴图
+
+- 立方体贴图由 6 个普通的平面贴图组成
+  - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/undefinedimage-20241119160505281.png" alt="image-20241119160505281" style="zoom:67%;" />
+- 创建并绑定立方体贴图的面
+
+```c++
+unsigned int loadCubemap(vector<std::string> faces)
+{
+    unsigned int textureID;
+    glGenTextures(1, &textureID);
+    glBindTexture(GL_TEXTURE_CUBE_MAP, textureID);
+
+    int width, height, nrChannels;
+    for (unsigned int i = 0; i < faces.size(); i++)
+    {
+        unsigned char *data = stbi_load(faces[i].c_str(), &width, &height, &nrChannels, 0);
+        if (data)
+        {
+            glTexImage2D(GL_TEXTURE_CUBE_MAP_POSITIVE_X + i, 
+                         0, GL_RGB, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, data
+            );
+            stbi_image_free(data);
+        }
+        else
+        {
+            std::cout << "Cubemap texture failed to load at path: " << faces[i] << std::endl;
+            stbi_image_free(data);
+        }
+    }
+    glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+    glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+    glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
+    glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
+    glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_WRAP_R, GL_CLAMP_TO_EDGE);
+
+    return textureID;
+}
+
+vector<std::string> faces
+{
+    "right.jpg",
+    "left.jpg",
+    "top.jpg",
+    "bottom.jpg",
+    "front.jpg",
+    "back.jpg"
+};
+unsigned int cubemapTexture = loadCubemap(faces);
+```
+
+- 片段着色器中要使用 samplerCube
+
+```glsl
+#version 330 core
+layout (location = 0) in vec3 aPos;
+
+out vec3 TexCoords;
+
+uniform mat4 projection;
+uniform mat4 view;
+
+void main()
+{
+    TexCoords = aPos;
+    gl_Position = projection * view * vec4(aPos, 1.0);
+}
+
+
+
+#version 330 core
+out vec4 FragColor;
+
+in vec3 TexCoords;
+
+uniform samplerCube skybox;
+
+void main()
+{    
+    FragColor = texture(skybox, TexCoords);
+}
+```
+
+### 天空盒
+
+- 立方体贴图可以用于实现天空盒
+- 为了在天空盒中有移动效果，可以消除调控和的位移效果（即不因摄像机动而动），但是保留旋转效果
+- 先渲染场景物体，最后再渲染天空盒；通过**提前深度测试**，在天空盒渲染阶段快速丢弃被场景物体遮挡的像素，从而减少片段着色器的运行。（天空盒的深度始终为最大的 1.0）
+  - 要将条件从小于改为小于等于 `glDepthFunc(GL_LEQUAL);`
+
+## 环境映射
+
+- 通过环境的立方体贴图，给物体反射和折射属性
+
+- 当立方体位于 (0,0,0) 时每个位置向量都是**从原点出发的方向向量**，这个方向向量正是获取立方体上**特定位置的纹理值**所需要的（即**通过方向向量来获取数据**）
+
+### 反射
+
+<img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/undefinedcubemaps_reflection_theory.png" alt="img" style="zoom:67%;" />
+
+- 计算得到反射向量，通过反射向量采样立方体贴图，返回环境的颜色值
+
+```glsl
+#version 330 core
+layout (location = 0) in vec3 aPos;
+layout (location = 1) in vec3 aNormal;
+
+out vec3 Normal;
+out vec3 Position;
+
+uniform mat4 model;
+uniform mat4 view;
+uniform mat4 projection;
+
+void main()
+{
+    Normal = mat3(transpose(inverse(model))) * aNormal;
+    Position = vec3(model * vec4(aPos, 1.0));
+    gl_Position = projection * view * model * vec4(aPos, 1.0);
+}
+
+
+
+#version 330 core
+out vec4 FragColor;
+
+in vec3 Normal;
+in vec3 Position;
+
+uniform vec3 cameraPos;
+uniform samplerCube skybox;
+
+void main()
+{             
+    vec3 I = normalize(Position - cameraPos);
+    vec3 R = reflect(I, normalize(Normal));
+    FragColor = vec4(texture(skybox, R).rgb, 1.0);
+}
+```
+
+### 折射
+
+- 类似的，通过折射定律获取方向获取法向量，进而获取材质数据
+
+```glsl
+void main()
+{             
+    float ratio = 1.00 / 1.52;
+    vec3 I = normalize(Position - cameraPos);
+    vec3 R = refract(I, normalize(Normal), ratio);
+    FragColor = vec4(texture(skybox, R).rgb, 1.0);
 }
 ```
 
