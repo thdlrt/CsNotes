@@ -2829,8 +2829,10 @@ int width, height, nrChannels;//宽度、高度、颜色通道个数
 unsigned char *data = stbi_load("container.jpg", &width, &height, &nrChannels, 0);
 ```
 
-- 生成纹理
+- 纹理的类型
+	- ![image.png|500](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefined20241204135738.png)
 
+- 生成纹理
 ```c
 //创建纹理对象
 unsigned int texture;
@@ -2857,6 +2859,9 @@ stbi_image_free(data);
 - 第七第八个参数定义了源图的格式和数据类型。我们使用RGB值加载这个图像，并把它们储存为`char`(byte)数组，我们将会传入对应值。
 - 最后一个参数是真正的图像数据。
 
+- 也可以不适用 stb
+- 为贴图分配空间
+	- ![image.png|500](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefined20241204144547.png)
 
 
 - 应用纹理，顶点还要给出纹理坐标
@@ -2882,10 +2887,7 @@ float vertices[] = {
     glEnableVertexAttribArray(2);
 ```
 
-
-
 - 着色器中获取纹理
-
 ```c
 uniform sampler2D ourTexture;
 
