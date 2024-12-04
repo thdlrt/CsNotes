@@ -1848,7 +1848,7 @@ glm::vec3 cameraDirection = glm::normalize(cameraPos - cameraTarget);
 ```
 
 - **右轴**：摄像机空间的 x 轴正方向
-  - ​	通过定义上向量，与指向叉乘就可以得到右轴
+  - ​通过定义上向量，与指向叉乘就可以得到右轴
 
 ```c
 glm::vec3 up = glm::vec3(0.0f, 1.0f, 0.0f); 
@@ -1857,8 +1857,6 @@ glm::vec3 cameraRight = glm::normalize(glm::cross(up, cameraDirection));
 
 - **上轴**：摄像机空间的 y 轴正方向
   - 可以由另外两个轴计算得到 `glm::vec3 cameraUp = glm::cross(cameraDirection, cameraRight);`
-
-
 
 - 用这三个向量，和摄像机坐标就能构建变换矩阵 Lookat 矩阵
   - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/undefinedimage-20241107160228888.png" alt="image-20241107160228888" style="zoom:67%;" />
