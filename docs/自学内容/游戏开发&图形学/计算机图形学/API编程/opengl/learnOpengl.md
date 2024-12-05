@@ -3201,7 +3201,55 @@ void main()
 ### 3 d 纹理
 - 从 3 d 纹理获取数据使用三维坐标
 ### 纹理数组
-- 
+- 将多组尺寸和格式相同的纹理合并到一个集合，生成一个更高维度的纹理
+	- 虽然压缩后用来索引的纹理坐标会被归一到 [0,1]，纹理数组提供了按序号进行访问的方法
+```C++
+GLuint textureArray;
+glGenTextures(1, &textureArray);
+glBindTexture(GL_TEXTURE_2D_ARRAY, textureArray);
+
+// 定义纹理数组的维度和格式
+int width = 512;   // 单张纹理的宽度
+int height = 512;  // 单张纹理的高度
+int layers = 10;   // 纹理层数
+glTexImage3D(
+    GL_TEXTURE_2D_ARRAY, 0, GL_RGBA8, 
+    width, height, layers, 0, GL_RGBA, GL_UNSIGNED_BYTE, nullptr
+);
+
+// 设置纹理过滤和环绕方式
+glTexParameteri(GL_TEXTURE_2D_ARRAY, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+glTexParameteri(GL_TEXTURE_2D_ARRAY, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+glTexParameteri(GL_TEXTURE_2D_ARRAY, GL_TEXTURE_WRAP_S, GL_REPEAT);
+glTexParameteri(GL_TEXTURE_2D_ARRAY, GL_TEXTURE_WRAP_T, GL_REPEAT);
+
+for (int i = 0; i < layers; ++i) {
+    // 假设已经加载图像数据到 imageData
+    unsigned char* imageData = LoadImage("texture" + std::to_string(i) + ".png");
+    glTexSubImage3D(
+        GL_TEXTURE_2D_ARRAY, 0, 
+        0, 0, i,  // x, y 偏移，z 表示层索引
+        width, height, 1,  // 宽度，高度，层数（1表示只上传一层）
+        GL_RGBA, GL_UNSIGNED_BYTE, imageData
+    );
+    free(imageData);
+}
+
+glActiveTexture(GL_TEXTURE0);
+glBindTexture(GL_TEXTURE_2D_ARRAY, textureArray);
+
+// 将纹理单元绑定到着色器中的采样器
+GLuint shaderProgram = ...;
+glUniform1i(glGetUniformLocation(shaderProgram, "textureArray"), 0);
+
+#version 330 core
+uniform sampler2DArray textureArray;
+in vec3 texCoords; // texCoords.z 是层索引
+out vec4 FragColor;
+void main() {
+    FragColor = texture(textureArray, texCoords); // 使用三维纹理坐标采样
+}
+```
 ### 立方体贴图
 
 - 立方体贴图由 6 个普通的平面贴图组成
@@ -3291,9 +3339,12 @@ void main()
 - 为了在天空盒中有移动效果，可以消除调控和的位移效果（即不因摄像机动而动），但是保留旋转效果
 - 先渲染场景物体，最后再渲染天空盒；通过**提前深度测试**，在天空盒渲染阶段快速丢弃被场景物体遮挡的像素，从而减少片段着色器的运行。（天空盒的深度始终为最大的 1.0）
   - 要将条件从小于改为小于等于 `glDepthFunc(GL_LEQUAL);`
-### 阴影采样器
-### 深度-模板纹理
 ### 缓存纹理
+- 允许着色器直接访问缓存对象的内容，将其作为一个巨大的一位纹理使用，即将一个**缓存对象作为纹理进行访问和管理**
+- 将缓存对象绑定到纹理 `void glTextureBuffer(GLuint texture,GLenum internalformat,GLuint buffer);`
+### 纹理视图
+- 从一个纹理对象可以创建出多个纹理视图
+- 这些视图可以拥有
 ## 环境映射
 
 - 通过环境的立方体贴图，给物体反射和折射属性
