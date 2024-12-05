@@ -2762,7 +2762,6 @@ while (!glfwWindowShouldClose(window))
     glfwPollEvents();
 }
 ```
-
 ### 纹理
 
 - 为了在图像上显示问题，需要给出图像上坐标和纹理文件的对应关系
@@ -3344,7 +3343,30 @@ void main()
 - 将缓存对象绑定到纹理 `void glTextureBuffer(GLuint texture,GLenum internalformat,GLuint buffer);`
 ### 纹理视图
 - 从一个纹理对象可以创建出多个纹理视图
-- 这些视图可以拥有
+- 这些**视图**可以拥有不同的格式或子范围
+- 也就是可以利用相同的数据进行不同解读，避免了重复创建纹理
+- `void glTextureView(GLuint texture, GLenum target, GLuint origtexture, GLenum internalformat, GLuint minlevel, GLuint numlevels, GLuint minlayer, GLuint numlayers);`
+	- `texture`：新创建的纹理视图的ID。
+	- `target`：视图的目标类型（例如 `GL_TEXTURE_2D`、`GL_TEXTURE_2D_ARRAY`）。
+	- `origtexture`：原始纹理的ID。
+	- `internalformat`：新视图的内部格式（可以与原始纹理不同，但需兼容）。
+	- `minlevel`：视图的最低mipmap级别。
+	- `numlevels`：视图包含的mipmap级别数。
+	- `minlayer`：视图的最低层索引（对于3D纹理或纹理数组）。
+	- `numlayers`：视图包含的层数。
+- 只要还有一个视图正在引用纹理，元数据就不会被删除
+### 滤波方式
+- 屏幕上的一个像素通常不会刚好对应纹理中的一个像素，
+	- 玩家喧杂不同的滤波（算法）来决定这个映射关系
+#### 线性滤波
+- 从一组离散的采样信号中选择相邻的采样点，然后将信号曲线拟合成近似线性的形式
+- ![image.png|550](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefined20241205201810.png)
+	- 即将点连成线，将线上的点作为采样点
+	- （双线性采样）
+	- 线性滤波可以在 mipmap 层直接进行
+- 
+#### mipmap
+- 
 ## 环境映射
 
 - 通过环境的立方体贴图，给物体反射和折射属性
