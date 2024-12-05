@@ -1441,14 +1441,11 @@ for(std::map<float,glm::vec3>::reverse_iterator it = sorted.rbegin(); it != sort
 
 ## 帧缓冲
 
-- 颜色缓冲、深度信息缓冲等各种缓冲结合再起来就是帧缓冲，默认的真缓冲是窗口时生成和配置的
+- 颜色缓冲、深度信息缓冲等各种缓冲结合再起来就是帧缓冲，默认的帧缓冲是窗口时生成和配置的
 - 帧缓冲是一种容器对象，用于管理多个附件
 - 可以用于**离屏渲染**：将渲染结果输出到纹理或其他附件上而不是直接显示在屏幕
 
-
-
 - 创建帧缓冲对象
-
 ```c++
 unsigned int fbo;
 glGenFramebuffers(1, &fbo);
@@ -1458,8 +1455,6 @@ glBindFramebuffer(GL_FRAMEBUFFER, fbo);
 
 - 绑定帧缓冲之后，所有的读取和写入帧缓冲的操作都会影响绑定的帧缓冲
   - 也可以用 GL_READ_FRAMEBUFFER 或 GL_DRAW_FRAMEBUFFER 分别进行绑定
-
-
 
 - 完整的帧缓冲：
   - 附加至少一个缓冲（颜色、深度或模板缓冲）。
@@ -1504,8 +1499,6 @@ glFramebufferTexture2D(GL_FRAMEBUFFER, GL_DEPTH_STENCIL_ATTACHMENT, GL_TEXTURE_2
   - `textarget`：你希望附加的纹理类型
   - `texture`：要附加的纹理本身
   - `level`：多级渐远纹理的级别。我们将它保留为 0。
-
-
 
 ### 渲染缓冲对象附件
 
@@ -1583,7 +1576,7 @@ glBindTexture(GL_TEXTURE_2D, textureColorbuffer);// 绑定第一阶段的颜色�
 glDrawArrays(GL_TRIANGLES, 0, 6);                // 绘制屏幕四边形
 
 ```
-
+- 颜色纹理用于第二阶段屏幕渲染，深度等信息适用于第一阶段离屏渲染时生成正确的颜色纹理的
 ### 后期处理
 
 - 可以在离屏渲染后，切换使用后期处理着色器，即实现在屏幕渲染阶段的后期处理
@@ -3364,9 +3357,53 @@ void main()
 	- 即将点连成线，将线上的点作为采样点
 	- （双线性采样）
 	- 线性滤波可以在 mipmap 层直接进行
-- 
+```c++
+// 设置纹理的最小滤波方式（当纹理坐标映射到纹理的多个像素时）
+glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
+
+// 设置纹理的放大滤波方式（当纹理坐标映射到一个像素时）
+glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+```
+- **`GL_NEAREST`**：最近点滤波，选择最接近的纹素。
+- **`GL_LINEAR`**：线性滤波，对纹素进行线性插值，得到较平滑的效果。
+- **`GL_NEAREST_MIPMAP_NEAREST`**：选择最接近的mipmap级别，然后在该级别上使用最近点滤波。
+- **`GL_LINEAR_MIPMAP_NEAREST`**：选择最接近的mipmap级别，然后在该级别上使用线性滤波。
+- **`GL_NEAREST_MIPMAP_LINEAR`**：选择两个最接近的mipmap级别，然后对这两个级别分别进行最近点滤波，再对结果进行线性插值。
+- **`GL_LINEAR_MIPMAP_LINEAR`**：选择两个最接近的mipmap级别，然后对这两个级别分别进行线性滤波，再对结果进行线性插值。
 #### mipmap
-- 
+- 使用 mipmap 要给出纹理从最大尺寸到 1\*1 的所有尺寸，按照 2 的幂进行划分
+- 由 opengl 快速生成 `void glGenerateTextureMipmap(GLuint texture);` 
+	- 以 texture 为第 0 层生成全部的 mipmap
+- 层次计算
+	- 纹理图像和贴图纹理的尺寸缩放比记为 $\rho$ ，层次为 $\lambda{=}\log_{2}\rho{+}lod_{bias}$，其中当 $\rho=1$ 刚好选择原图，即第 0 层
+	- $lod$ 为一个偏移值，通常为常数
+	- 当两边缩放比例不一致时选择较大值
+	- ![image.png|387](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefined20241205204743.png)
+### 无绑定纹理
+- opengl 支持一定数目的全局纹理，不需要绑定到纹理单月就可以在采样器中使用
+- 通过采样器句柄（64 位数字）来通过采样器访问纹理
+- 获得纹理句柄
+```c++
+GLuint64 GetTextureHandleARB(GLuint texture);
+GLuint64 GetTextureSamplerHandleARB(GLuint texture,GLuint sampler);
+```
+- 通过把这个句柄传递到着色器实现读取
+	- **必须**预先向驻留纹理列表中添加、删除纹理句柄
+	- ![image.png|500](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefined20241205205404.png)
+	- 检查 `GLboolean IsTextureHandleResidentARB(GLuint64 handle):`
+- 使用无绑定纹理比反复更换绑定的纹理效率更高
+### 稀疏纹理
+- 普通的纹理在显存中连续存储，会占据较大的空间；稀疏纹理将纹理划分为小块，只加载现在需要的部分数据而不是预先全部加载，从而降低了显存的占用
+```c++
+GLuint tex;
+//首先创建-个纹理对象
+glCreateTextures(GL TEXTURE 2D ARRAY,1,&tex);
+//开启它的稀疏属性
+glTextureParameteri(tex,GL TEXTURE SPARSE ARB,GL TRUE);
+//现在分配纹理的虚拟存储空问
+glTexturestorage3D(tex,11,GL RGBA8,2048,2048,2048);
+```
+- 通过 `void TexturePageCommitmentEXT(GLuint texture,GLint level,GLint xoffset,GLint yoffset, GLint zoffset, GLsizei width, GLsizei height, GLsizei depth, GLboolean commit); ` 来控制稀疏纹理页的
 ## 环境映射
 
 - 通过环境的立方体贴图，给物体反射和折射属性
@@ -3441,6 +3478,38 @@ void main()
 - 在程序中设置点的大小 `glPointSize(10.0f); // 设置点大小为10像素`
 - 在着色器中进行设置 `gl_PointSize = 15.0;`
 - 同样的大小坐标不同显示也会不同（位于像素交界处、像素中心）
+##### 点精灵
+-  利用点的坐标渲染具有大小和纹理的图形对象，而不仅仅是像素点
+- `glEnable(GL_POINT_SPRITE);`
+```c++
+#version 330 core
+layout(location = 0) in vec3 position; // 粒子的位置
+layout(location = 1) in vec4 color;    // 粒子的颜色
+
+out vec4 fragColor; // 传递给片段着色器的颜色
+
+uniform mat4 model;
+uniform mat4 view;
+uniform mat4 projection;
+
+void main() {
+    gl_Position = projection * view * model * vec4(position, 1.0);
+    gl_PointSize = 20.0; // 点的大小
+    fragColor = color;   // 将颜色传递给片段着色器
+} 
+
+#version 330 core
+out vec4 FragColor;
+in vec4 fragColor; // 从顶点着色器传来的颜色
+
+uniform sampler2D pointTexture;
+
+void main() {
+    FragColor = fragColor * texture(pointTexture, gl_PointCoord); // 混合颜色和纹理
+}
+```
+- 根距纹理（点的形状），对点周边（点大小范围）区域进行绘制 
+- 常用于粒子系统、光源等
 #### 线
 - 线由两个顶点表示
 - 开放的多段线叫条带线；闭合的叫循环线
