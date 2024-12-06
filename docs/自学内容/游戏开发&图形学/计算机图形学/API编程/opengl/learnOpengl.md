@@ -3845,99 +3845,6 @@ for (int i = 0; i < numObjects; ++i) {
   - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/undefinedimage-20241119174156028.png" alt="image-20241119174156028" style="zoom:50%;" />
   - 这样就能保留部分的提前深度测试
 
-### 几何着色器
-
-- 图元是图形渲染管线中绘制几何图形的基本单位
-  - 点
-  - 线
-  - 三角形
-
-- 介于顶点着色器和片段着色器之间
-  - 给予输入的图元生成**新的图元或修改现有的图元**
-  - 比如将点转化为边
-
-
-
-
-```glsl
-#version 330 core
-    layout (points) in;//输入的图元
-layout (line_strip, max_vertices = 2) out;//输出的图元
-
-void main() {    
-    //设置第一个点
-    gl_Position = gl_in[0].gl_Position + vec4(-0.1, 0.0, 0.0, 0.0); 
-    EmitVertex();//发射（即gl_position中的向量会被添加到图元中）
-	//设置第二个点
-    gl_Position = gl_in[0].gl_Position + vec4( 0.1, 0.0, 0.0, 0.0);
-    EmitVertex();//发射
-	//图元结束
-    EndPrimitive();
-}
-```
-
-- 这里的 in 和 out 不是具体的变量，而是类型，用于指定集合着色器处理图元的方式
-- 几何着色器接受的图元输入
-  - `points`：绘制 GL_POINTS 图元时（1）。
-  - `lines`：绘制 GL_LINES 或 GL_LINE_STRIP 时（2）
-  - `lines_adjacency`：GL_LINES_ADJACENCY 或 GL_LINE_STRIP_ADJACENCY（4）
-  - `triangles`：GL_TRIANGLES、GL_TRIANGLE_STRIP 或 GL_TRIANGLE_FAN（3）
-  - `triangles_adjacency`：GL_TRIANGLES_ADJACENCY 或 GL_TRIANGLE_STRIP_ADJACENCY（6）
-
-- 如果定义了几何着色器，那么要**手动**将顶点着色器的 out 传递给**片段着色器**
-
-
-
-- 通过 glsl 内建变量 `gl_in[]` 获取数据
-
-```glsl
-in gl_Vertex
-{
-    vec4  gl_Position;
-    float gl_PointSize;
-    float gl_ClipDistance[];
-} gl_in[];
-```
-
-
-
-- 编译和链接几何着色器
-
-```c++
-geometryShader = glCreateShader(GL_GEOMETRY_SHADER);
-glShaderSource(geometryShader, 1, &gShaderCode, NULL);
-glCompileShader(geometryShader);  
-...
-glAttachShader(program, geometryShader);
-glLinkProgram(program);
-```
-
-
-
-- 在调用 `EmitVertex()` 时，几何着色器会将当前设置的顶点属性（如 `gl_Position` 和自定义的 `out` 变量）作为一个新的顶点，保存到输出缓冲区中。
-  - 也就是说 out 变量也会进行传递
-
-```c++
-fColor = gs_in[0].color; 
-gl_Position = position + vec4(-0.2, -0.2, 0.0, 0.0);    // 1:左下 
-EmitVertex();   
-gl_Position = position + vec4( 0.2, -0.2, 0.0, 0.0);    // 2:右下
-EmitVertex();
-gl_Position = position + vec4(-0.2,  0.2, 0.0, 0.0);    // 3:左上
-EmitVertex();
-gl_Position = position + vec4( 0.2,  0.2, 0.0, 0.0);    // 4:右上
-EmitVertex();
-gl_Position = position + vec4( 0.0,  0.4, 0.0, 0.0);    // 5:顶部
-fColor = vec3(1.0, 1.0, 1.0);
-EmitVertex();
-EndPrimitive();  
-```
-
-- 这就实现了最后一个点和前面的点颜色不同
-
-- 可以实现很多效果：
-  - 面位移实现爆破效果
-  - 显示所有面的法线等等
 ## 多重采样
 - 用于对几何图元的边缘进行平滑（反走样）
 - 对每个像素点的几何图元进行多次采样，每个像素点记录多个样本值，最终显示时样本值被解析为最终像素的颜色
@@ -4024,6 +3931,95 @@ glBlitFramebuffer(0, 0, width, height, 0, 0, width, height, GL_COLOR_BUFFER_BIT,
 ```c++
 void glBlitNamedFramebuffer(GLuint readFramebuffer,GLuint drawFramebuffer,GLint srcXO,GLint sreYO,GLint srcX1,GLint sreY1,GLint dstX0,GLint dstY0,GLint dstX1, GLint dstY1,GLbitfield mask,GLenum filter);
 ```
+## 几何着色器
+
+- 图元是图形渲染管线中绘制几何图形的基本单位
+  - 点
+  - 线
+  - 三角形
+
+- 介于顶点着色器和片段着色器之间
+  - 给予输入的图元生成**新的图元或修改现有的图元**
+  - 比如将点转化为边
+
+
+
+
+```glsl
+#version 330 core
+    layout (points) in;//输入的图元
+layout (line_strip, max_vertices = 2) out;//输出的图元
+
+void main() {    
+    //设置第一个点
+    gl_Position = gl_in[0].gl_Position + vec4(-0.1, 0.0, 0.0, 0.0); 
+    EmitVertex();//发射（即gl_position中的向量会被添加到图元中）
+	//设置第二个点
+    gl_Position = gl_in[0].gl_Position + vec4( 0.1, 0.0, 0.0, 0.0);
+    EmitVertex();//发射
+	//图元结束
+    EndPrimitive();
+}
+```
+
+- 这里的 in 和 out 不是具体的变量，而是类型，用于指定集合着色器处理图元的方式
+- 几何着色器接受的图元输入
+  - `points`：绘制 GL_POINTS 图元时（1）。
+  - `lines`：绘制 GL_LINES 或 GL_LINE_STRIP 时（2）
+  - `lines_adjacency`：GL_LINES_ADJACENCY 或 GL_LINE_STRIP_ADJACENCY（4）
+  - `triangles`：GL_TRIANGLES、GL_TRIANGLE_STRIP 或 GL_TRIANGLE_FAN（3）
+  - `triangles_adjacency`：GL_TRIANGLES_ADJACENCY 或 GL_TRIANGLE_STRIP_ADJACENCY（6）
+
+- 如果定义了几何着色器，那么要**手动**将顶点着色器的 out 传递给**片段着色器**
+
+- 通过 glsl 内建变量 `gl_in[]` 获取数据
+
+```glsl
+in gl_Vertex
+{
+    vec4  gl_Position;
+    float gl_PointSize;
+    float gl_ClipDistance[];
+} gl_in[];
+```
+
+- 编译和链接几何着色器
+
+```c++
+geometryShader = glCreateShader(GL_GEOMETRY_SHADER);
+glShaderSource(geometryShader, 1, &gShaderCode, NULL);
+glCompileShader(geometryShader);  
+...
+glAttachShader(program, geometryShader);
+glLinkProgram(program);
+```
+
+- 在调用 `EmitVertex()` 时，几何着色器会将当前设置的顶点属性（如 `gl_Position` 和自定义的 `out` 变量）作为一个新的顶点，保存到输出缓冲区中。
+  - 也就是说 out 变量也会进行传递
+
+```c++
+fColor = gs_in[0].color; 
+gl_Position = position + vec4(-0.2, -0.2, 0.0, 0.0);    // 1:左下 
+EmitVertex();   
+gl_Position = position + vec4( 0.2, -0.2, 0.0, 0.0);    // 2:右下
+EmitVertex();
+gl_Position = position + vec4(-0.2,  0.2, 0.0, 0.0);    // 3:左上
+EmitVertex();
+gl_Position = position + vec4( 0.2,  0.2, 0.0, 0.0);    // 4:右上
+EmitVertex();
+gl_Position = position + vec4( 0.0,  0.4, 0.0, 0.0);    // 5:顶部
+fColor = vec3(1.0, 1.0, 1.0);
+EmitVertex();
+EndPrimitive();  
+```
+
+- 这就实现了最后一个点和前面的点颜色不同
+
+- 可以实现很多效果：
+  - 面位移实现爆破效果
+  - 显示所有面的法线等等
+## 细分着色器
+- 
 # 光照
 
 ### 颜色
@@ -4169,7 +4165,8 @@ lightingShader.setFloat("material.shininess", 32.0f);
 ```
 
 ### 光照
-
+- 完全在每一个片元着色器中计算光照开销较大，可以在顶点着色器中进行部分计算，片元着色器使用插值的数据
+	- 像素着色->点着色
 #### 光照属性
 
 - 通过光照属性影响显示的样式
@@ -4225,8 +4222,8 @@ vec3 ambient = light.ambient * vec3(texture(material.diffuse, TexCoords));
 - 片段着色器计算时直接使用**固定的方向向量**进行计算
 
 #### 点光源
-
-- 照亮光源附近的区域，存在距离衰减
+- **方向各异**，向四周发射
+- 照亮光源附近的区域，存在距离**衰减**
 - 计算公式$F_{att}=\frac{1.0}{K_c+K_l*d+K_q*d^2}$
   - 实现这样的衰减曲线：![img](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefinedattenuation.png)
 - 着色器代码
@@ -4248,14 +4245,12 @@ float distance    = length(light.position - FragPos);
 float attenuation = 1.0 / (light.constant + light.linear * distance + light.quadratic * (distance * distance));
 ```
 
-
-
 #### 聚光
 
 - 向特定方向发射光线
   - 一个坐标，一个方向和一个切光角
   - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/undefinedlight_casters_spotlight_angles.png" alt="img" style="zoom: 80%;" />
-- 通过比较一点与光源连线和聚光方向的夹角和切光角来判断光照的强弱
+- 通过比较一点与光源连线和聚光方向的**夹角**和切光角来判断光照的强弱
 
 ```glsl
 struct Light {
@@ -4285,7 +4280,17 @@ float theta     = dot(lightDir, normalize(-light.direction));
 float epsilon   = light.cutOff - light.outerCutOff;
 float intensity = clamp((theta - light.outerCutOff) / epsilon, 0.0, 1.0);    
 ```
-
+### 高级光照
+#### 半球光照
+- 在复杂的场景中，特别是没有直接光源的情况下，物体的表面往往会接收到来自多个方向的光照，半球光照通过**模拟这种多方向的光源**来提供更自然的环境光效果。
+- 由上半球和下半球两个虚拟部分组成
+	- **上半球光照**：表示来自大气或环境的直接光源（如阳光、天空光等）。这些光照通常为明亮、柔和的光。
+	- **下半球光照**：表示由地面或周围物体反射的光照。这部分光照通常较为暗淡，且根据反射表面和角度不同，可能会具有不同的强度和颜色。
+	- 混合公式![image.png](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefined20241206231700.png)
+#### 基于图像的光照
+ - 
+#### 球面光照
+- 
 ## Gamma 矫正
 
 - Gamma 用于描述非线性颜色空间中的输入与输出关系（如亮度）
