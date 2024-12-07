@@ -3570,7 +3570,92 @@ void main()
 - 使用这种复杂的计算方式，是为了产生更柔和（反走样）的图像
 #### 五角星玩具球
 ![image.png|400](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefined20241207130108.png)
+- 通过五角星的 5 条边建立 5 个半空间，球体上的点根据自身与每个半空间的关系定义为入点或出点
+	- ![image.png|500](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefined20241207143641.png)
+- 通过计数器统计一个片元在半空间内部的数目（初始值为-3，最终大于 0 即说明在五角星内部，可以完全显示）
+	- 创建了半球的坐标表示，很容易就能通过球心到片元的指向来判断这个片元是否在某一个半球内部
+```c++
+#version 330 core
 
+// Uniform 变量：由主程序传递给着色器的参数
+uniform float stripeWidth;        // 条纹的宽度
+uniform float InOrOutInit;        // 初始条纹内外标记值
+uniform float Fwidth = 0.005;     // 控制条纹平滑过渡的宽度
+uniform vec3 StarColor;           // 五角星的颜色
+uniform vec3 StripeColor;         // 条纹的颜色
+uniform vec4 BaseColor;           // 球体的基础颜色
+uniform vec3 LightDir;            // 光源方向，必须归一化
+uniform vec4 SpecularColor;       // 镜面反射颜色
+uniform float SpecularExponent;   // 镜面反射的指数，控制高光的锐利度
+uniform float Ka;                 // 环境光强度
+uniform float Kd;                 // 漫反射系数
+uniform vec3 Ks;                  // 镜面反射系数
+uniform vec3 ECPosition;          // 物体在视图空间中的位置
+uniform vec3 OCPosition;          // 物体在世界空间中的位置
+uniform vec4 ECBallCenter;        // 球体中心在视图空间中的位置
+
+// 输入变量：从顶点着色器传入的顶点数据
+in vec3 MCVertex;                 // 顶点位置
+in vec3 MCNormal;                 // 顶点法线
+in vec2 TexCoord0;                // 纹理坐标
+
+// 输出变量：传递到片段着色器的颜色值
+out vec4 FragColor;               // 最终输出颜色
+
+void main()
+{
+    // 计算得到的法线向量
+    vec3 normal;
+    normal = normalize(ECPosition.xyz - ECBallCenter.xyz);  // 计算物体表面法线
+
+    // 计算表面位置
+    vec3 pShade;                   
+    pShade.xyz = normalize(OCPosition.xyz);  // 物体坐标下的表面位置
+    pShade.w = 1.0;
+
+    // 初始化条纹内外标记
+    float inorout = InOrOutInit;  // 初始化为给定的条纹内外值
+
+    // 计算与五角星的边界距离
+    float distance[4];
+    distance[0] = dot(pShade, HalfSpace[0]);  // 计算到五角星半空间的距离
+    distance[1] = dot(pShade, HalfSpace[1]);
+    distance[2] = dot(pShade, HalfSpace[2]);
+    distance[3] = -dot(pShade, HalfSpace[3]);
+
+    // 对边界进行平滑过渡，消除硬边界
+    distance = smoothstep(-Fwidth, Fwidth, distance);  // 平滑过渡边界
+
+    // 计算条纹的内外效果
+    distance.x = dot(pShade, HalfSpace[4]);
+    distance.y = stripeWidth * abs(pShade.z);  // 计算条纹纵深效果
+    distance.xy = smoothstep(-Fwidth, Fwidth, distance.xy);  // 平滑条纹边界
+
+    inorout += distance.x;  // 更新条纹的内外状态
+    inorout = clamp(inorout, 0.0, 1.0);  // 将其限制在0到1之间
+
+    // 基础颜色与五角星颜色的混合
+    vec3 surfColor = mix(BaseColor.rgb, StarColor, inorout);
+    
+    // 根据条纹的效果混合条纹颜色
+    surfColor = mix(surfColor, StripeColor, distance.y);
+
+    // 计算光照效果：漫反射和镜面反射
+
+    // 漫反射光照计算
+    float intensity = Ka + Kd * clamp(dot(LightDir.xyz, normal), 0.0, 1.0);  // 漫反射光照强度
+    surfColor *= intensity;  // 将漫反射强度应用到表面颜色上
+
+    // 镜面反射光照计算
+    float HVectorDotNormal = clamp(dot(HVector.xyz, normal), 0.0, 1.0);  // 计算反射向量与法线的点积
+    intensity = Ks * pow(HVectorDotNormal, SpecularExponent);  // 镜面反射强度，SpecularExponent 控制高光锐利度
+    surfColor.rgb += SpecularColor.rgb * intensity;  // 将镜面反射强度加入到最终的表面颜色中
+
+    // 输出最终颜色
+    FragColor = vec4(surfColor, 1.0);  // 设置最终输出的颜色
+}
+
+```
 ### 法线贴图
 
 - 可以使用 2 D 纹理来存储法线数据，xyz 三个方向分辨对应颜色的 rgb
@@ -3778,7 +3863,9 @@ vec2 finalTexCoords = prevTexCoords * weight + currentTexCoords * (1.0 - weight)
 
 return finalTexCoords;
 ```
-
+### 程序式纹理反走样
+- 
+### 噪声
 ## 绘制方式
 ### 图元
 - opengl 主要支持点、线、三角形图元
