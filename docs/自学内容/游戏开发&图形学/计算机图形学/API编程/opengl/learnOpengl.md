@@ -4556,7 +4556,10 @@ void main()
 - 介于顶点着色器和片段着色器之间
   - 给予输入的图元生成**新的图元或修改现有的图元**
   - 比如将点转化为边
-
+- 可以实现很多效果：
+  - 面位移实现爆破效果
+  - 显示所有面的法线等等
+### 几何着色器的输入输出
 ```glsl
 #version 330 core
     layout (points) in;//输入的图元
@@ -4585,7 +4588,6 @@ void main() {
 - 如果定义了几何着色器，那么要**手动**将顶点着色器的 out 传递给**片段着色器**
 
 - 通过 glsl 内建变量 `gl_in[]` 获取数据
-
 ```glsl
 in gl_Vertex
 {
@@ -4594,9 +4596,10 @@ in gl_Vertex
     float gl_ClipDistance[];
 } gl_in[];
 ```
+- 对于从顶点着色器传递的数据 in 也要写成**数组形式**
+
 
 - 编译和链接几何着色器
-
 ```c++
 geometryShader = glCreateShader(GL_GEOMETRY_SHADER);
 glShaderSource(geometryShader, 1, &gShaderCode, NULL);
@@ -4624,12 +4627,16 @@ fColor = vec3(1.0, 1.0, 1.0);
 EmitVertex();
 EndPrimitive();  
 ```
-
 - 这就实现了最后一个点和前面的点颜色不同
+#### 几何着色器特殊图元
+- 邻接图元：`lines_adjacency` 和 `triangles_adjacency`
+	- 临接表示几何着色器处理一个图元时可以访问与该图元相邻的其他图元的数据，实现生成更加复杂的几何形状
+- ![image.png|333](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefined20241207210436.png)
+	- 如线就包含线的两个端点和前后两个邻接点
+- ![image.png|348](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefined20241207210711.png)
 
-- 可以实现很多效果：
-  - 面位移实现爆破效果
-  - 显示所有面的法线等等
+### 产生图元
+### 多视口与分层渲染
 # 光照
 
 ### 颜色
