@@ -3468,6 +3468,216 @@ void main()
 }
 ```
 ## 程序式纹理
+### 程序生成纹理
+#### 条纹生成
+
+### 法线贴图
+
+- 可以使用 2 D 纹理来存储法线数据，xyz 三个方向分辨对应颜色的 rgb
+- 通常切线都是指向 Z 轴，因此看起来为蓝色
+
+```glsl
+// 从法线贴图范围[0,1]获取法线
+normal = texture(normalMap, fs_in.TexCoords).rgb;
+// 将法线向量转换为范围[-1,1]
+normal = normalize(normal * 2.0 - 1.0); 
+```
+
+- 物体有旋转等变换时不能直接使用法线贴图
+
+#### 切线空间
+
+- 在切线空间中，法线指向 z 方向，法线贴图被定义在切线空间
+  - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/undefinednormal_mapping_tbn_vectors.png" alt="img" style="zoom:50%;" />
+- 从一个三角形的顶点计算切线空间
+  - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/undefinednormal_mapping_surface_edges.png" alt="img" style="zoom:50%;" />
+  - $\begin{aligned}(E_{1x},E_{1y},E_{1z})&=\Delta U_1(T_x,T_y,T_z)+\Delta V_1(B_x,B_y,B_z)\\(E_{2x},E_{2y},E_{2z})&=\Delta U_2(T_x,T_y,T_z)+\Delta V_2(B_x,B_y,B_z)\end{aligned}$
+  - 计算公式 $\begin{bmatrix}T_x&T_y&T_z\\B_x&B_y&B_z\end{bmatrix}=\frac1{\Delta U_1\Delta V_2-\Delta U_2\Delta V_1}\begin{bmatrix}\Delta V_2&-\Delta V_1\\-\Delta U_2&\Delta U_1\end{bmatrix}\begin{bmatrix}E_{1x}&E_{1y}&E_{1z}\\E_{2x}&E_{2y}&E_{2z}\end{bmatrix}$
+
+```C++
+glm::vec3 edge1 = pos2 - pos1;
+glm::vec3 edge2 = pos3 - pos1;
+glm::vec2 deltaUV1 = uv2 - uv1;
+glm::vec2 deltaUV2 = uv3 - uv1;
+
+GLfloat f = 1.0f / (deltaUV1.x * deltaUV2.y - deltaUV2.x * deltaUV1.y);
+
+tangent1.x = f * (deltaUV2.y * edge1.x - deltaUV1.y * edge2.x);
+tangent1.y = f * (deltaUV2.y * edge1.y - deltaUV1.y * edge2.y);
+tangent1.z = f * (deltaUV2.y * edge1.z - deltaUV1.y * edge2.z);
+tangent1 = glm::normalize(tangent1);
+
+bitangent1.x = f * (-deltaUV2.x * edge1.x + deltaUV1.x * edge2.x);
+bitangent1.y = f * (-deltaUV2.x * edge1.y + deltaUV1.x * edge2.y);
+bitangent1.z = f * (-deltaUV2.x * edge1.z + deltaUV1.x * edge2.z);
+bitangent1 = glm::normalize(bitangent1);  
+
+[...] // 对平面的第二个三角形采用类似步骤计算切线和副切线
+```
+
+- 通过参数传递在着色器中获取 tbn 矩阵
+
+```C++
+#version 330 core
+layout (location = 0) in vec3 position;
+layout (location = 1) in vec3 normal;
+layout (location = 2) in vec2 texCoords;
+layout (location = 3) in vec3 tangent;
+layout (location = 4) in vec3 bitangent;
+
+void main()
+{
+   [...]
+   vec3 T = normalize(vec3(model * vec4(tangent,   0.0)));
+   vec3 B = normalize(vec3(model * vec4(bitangent, 0.0)));
+   vec3 N = normalize(vec3(model * vec4(normal,    0.0)));
+   mat3 TBN = mat3(T, B, N)
+}
+```
+
+- 法线贴图是在 TBN 坐标系中定义的，要将其转化到世界空间来进行渲染
+  - 切线空间 → 世界空间：$\mathrm{Normal}_{{\mathrm{world}}}=\mathrm{TBN}\cdot\mathrm{Normal}_{{\mathrm{tangent}}}$：将贴图的法线转换到世界空间与光照等进行计算
+  - 世界空间 → 切线空间：$\mathrm{LightDir}_{{\mathrm{tangent}}}=\mathrm{TBN}^{-1}\cdot\mathrm{LightDir}_{{\mathrm{world}}}$：将光照等转换到切线空间与贴图的法线进行计算
+    - 更常用：减少片段着色器的计算量，总体上效率更高
+
+#### 使用 assimp 实现复杂物体的切线空间计算
+
+- 加载时添加 `aiProcess_CalcTangentSpace` Assimp 会为每个加载的顶点计算出柔和的切线和副切线向量
+
+```C++
+const aiScene* scene = importer.ReadFile(
+    path, aiProcess_Triangulate | aiProcess_FlipUVs | aiProcess_CalcTangentSpace
+);
+//获取并保存
+vector.x = mesh->mTangents[i].x;
+vector.y = mesh->mTangents[i].y;
+vector.z = mesh->mTangents[i].z;
+vertex.Tangent = vector;
+```
+
+
+
+### 视差贴图
+
+- 视差贴图是一种位移贴图
+
+<img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/undefinedimage-20241122122601050.png" alt="image-20241122122601050" style="zoom:50%;" />
+
+<img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/undefinedundefinedparallax_mapping_plane_height.png" style="zoom:50%;" />
+
+- 在以 $V$ 方向看向 $A$ 时通过加一个偏移，使得看到的内容贴近实际应该看到的 $B$ 处
+
+- 一个算法是取 $P=AH(A)$ 按照这个高度沿方向偏移，得到点 $H(P)$ 作为便宜后的问题
+  - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/undefinedparallax_mapping_scaled_height.png" alt="img" style="zoom: 67%;" />
+- 这个方法并不精确，有时会产生较大误差
+- 因为要计算每个点的说色，因此在片段着色器中进行计算
+
+```glsl
+void main()
+{           
+    // Offset texture coordinates with Parallax Mapping
+    vec3 viewDir   = normalize(fs_in.TangentViewPos - fs_in.TangentFragPos);
+    vec2 texCoords = ParallaxMapping(fs_in.TexCoords,  viewDir);
+
+    //丢弃错误数据
+    texCoords = ParallaxMapping(fs_in.TexCoords,  viewDir);
+	if(texCoords.x > 1.0 || texCoords.y > 1.0 || texCoords.x < 0.0 || texCoords.y < 0.0)
+    discard;
+    
+    // then sample textures with new texture coords
+    vec3 diffuse = texture(diffuseMap, texCoords);
+    vec3 normal  = texture(normalMap, texCoords);
+    normal = normalize(normal * 2.0 - 1.0);
+    // proceed with lighting code
+    [...]    
+}
+
+vec2 ParallaxMapping(vec2 texCoords, vec3 viewDir, sampler2D heightMap)
+{
+    // 从深度贴图中获取高度值
+    float height = texture(heightMap, texCoords).r;  // 高度值范围是 [0, 1]
+
+    // 根据高度值和视角方向计算偏移量
+    vec2 p = viewDir.xy / viewDir.z * (height * scale - bias);
+    //scale控制视差效果的强度（比例因子）
+    //bias用于微调，使纹理偏移的起点更自然
+    
+    // 调整纹理坐标(加还是减取决于view是从摄像机发出还是反之)
+    vec2 offsetTexCoords = texCoords - p;
+
+    // 返回调整后的纹理坐标
+    return offsetTexCoords;
+}
+```
+
+### 陡峭视差映射
+
+- 使用更多的样本来确定从向量到便宜点 B，在陡峭高度变化下有更好的表现
+  - 即通过增加采样的数目提高了精确性
+
+<img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/undefinedparallax_mapping_steep_parallax_mapping_diagram.png" alt="img" style="zoom: 67%;" />
+
+- 将总深度或分为多层，分别与视线方向产生交点
+  - 从上到下遍历深度层，直到找到第一个层深度大于深度贴图的点（图中的 T 3）
+
+```glsl
+vec2 ParallaxMapping(vec2 texCoords, vec3 viewDir)
+{ 
+    // number of depth layers
+    const float numLayers = 10;
+    // calculate the size of each layer
+    float layerDepth = 1.0 / numLayers;
+    // depth of current layer
+    float currentLayerDepth = 0.0;
+    // the amount to shift the texture coordinates per layer (from vector P)
+    vec2 P = viewDir.xy * height_scale; 
+    vec2 deltaTexCoords = P / numLayers;
+
+    // get initial values
+    vec2  currentTexCoords     = texCoords;
+    float currentDepthMapValue = texture(depthMap, currentTexCoords).r;
+
+    while(currentLayerDepth < currentDepthMapValue)
+    {
+        // shift texture coordinates along direction of P
+        currentTexCoords -= deltaTexCoords;
+        // get depthmap value at current texture coordinates
+        currentDepthMapValue = texture(depthMap, currentTexCoords).r;  
+        // get depth of next layer
+        currentLayerDepth += layerDepth;  
+    }
+
+    return currentTexCoords;
+
+}
+```
+
+- 由于采样点固定，可能会出现锯齿和断层
+  - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/undefinedparallax_mapping_steep_artifact.png" alt="img" style="zoom: 67%;" />
+  - 可以通过增加采样数目来解决
+  - 也可以通过下面方法
+
+### 视差遮蔽映射
+
+- <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/undefinedparallax_mapping_parallax_occlusion_mapping_diagram.png" alt="img" style="zoom: 80%;" />
+  - 取边缘的两个点并根据表面高度距离深度层深度值的距离进行线性插值
+
+```glsl
+[...] // steep parallax mapping code here
+
+// get texture coordinates before collision (reverse operations)
+vec2 prevTexCoords = currentTexCoords + deltaTexCoords;
+
+// get depth after and before collision for linear interpolation
+float afterDepth  = currentDepthMapValue - currentLayerDepth;
+float beforeDepth = texture(depthMap, prevTexCoords).r - currentLayerDepth + layerDepth;
+
+// interpolation of texture coordinates
+float weight = afterDepth / (afterDepth - beforeDepth);
+vec2 finalTexCoords = prevTexCoords * weight + currentTexCoords * (1.0 - weight);
+
+return finalTexCoords;
+```
 
 ## 绘制方式
 ### 图元
@@ -4526,215 +4736,6 @@ for(int x = -1; x <= 1; ++x)
 }
 shadow /= 9.0;
 ```
-
-## 法线贴图
-
-- 可以使用 2 D 纹理来存储法线数据，xyz 三个方向分辨对应颜色的 rgb
-- 通常切线都是指向 Z 轴，因此看起来为蓝色
-
-```glsl
-// 从法线贴图范围[0,1]获取法线
-normal = texture(normalMap, fs_in.TexCoords).rgb;
-// 将法线向量转换为范围[-1,1]
-normal = normalize(normal * 2.0 - 1.0); 
-```
-
-- 物体有旋转等变换时不能直接使用法线贴图
-
-### 切线空间
-
-- 在切线空间中，法线指向 z 方向，法线贴图被定义在切线空间
-  - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/undefinednormal_mapping_tbn_vectors.png" alt="img" style="zoom:50%;" />
-- 从一个三角形的顶点计算切线空间
-  - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/undefinednormal_mapping_surface_edges.png" alt="img" style="zoom:50%;" />
-  - $\begin{aligned}(E_{1x},E_{1y},E_{1z})&=\Delta U_1(T_x,T_y,T_z)+\Delta V_1(B_x,B_y,B_z)\\(E_{2x},E_{2y},E_{2z})&=\Delta U_2(T_x,T_y,T_z)+\Delta V_2(B_x,B_y,B_z)\end{aligned}$
-  - 计算公式 $\begin{bmatrix}T_x&T_y&T_z\\B_x&B_y&B_z\end{bmatrix}=\frac1{\Delta U_1\Delta V_2-\Delta U_2\Delta V_1}\begin{bmatrix}\Delta V_2&-\Delta V_1\\-\Delta U_2&\Delta U_1\end{bmatrix}\begin{bmatrix}E_{1x}&E_{1y}&E_{1z}\\E_{2x}&E_{2y}&E_{2z}\end{bmatrix}$
-
-```C++
-glm::vec3 edge1 = pos2 - pos1;
-glm::vec3 edge2 = pos3 - pos1;
-glm::vec2 deltaUV1 = uv2 - uv1;
-glm::vec2 deltaUV2 = uv3 - uv1;
-
-GLfloat f = 1.0f / (deltaUV1.x * deltaUV2.y - deltaUV2.x * deltaUV1.y);
-
-tangent1.x = f * (deltaUV2.y * edge1.x - deltaUV1.y * edge2.x);
-tangent1.y = f * (deltaUV2.y * edge1.y - deltaUV1.y * edge2.y);
-tangent1.z = f * (deltaUV2.y * edge1.z - deltaUV1.y * edge2.z);
-tangent1 = glm::normalize(tangent1);
-
-bitangent1.x = f * (-deltaUV2.x * edge1.x + deltaUV1.x * edge2.x);
-bitangent1.y = f * (-deltaUV2.x * edge1.y + deltaUV1.x * edge2.y);
-bitangent1.z = f * (-deltaUV2.x * edge1.z + deltaUV1.x * edge2.z);
-bitangent1 = glm::normalize(bitangent1);  
-
-[...] // 对平面的第二个三角形采用类似步骤计算切线和副切线
-```
-
-- 通过参数传递在着色器中获取 tbn 矩阵
-
-```C++
-#version 330 core
-layout (location = 0) in vec3 position;
-layout (location = 1) in vec3 normal;
-layout (location = 2) in vec2 texCoords;
-layout (location = 3) in vec3 tangent;
-layout (location = 4) in vec3 bitangent;
-
-void main()
-{
-   [...]
-   vec3 T = normalize(vec3(model * vec4(tangent,   0.0)));
-   vec3 B = normalize(vec3(model * vec4(bitangent, 0.0)));
-   vec3 N = normalize(vec3(model * vec4(normal,    0.0)));
-   mat3 TBN = mat3(T, B, N)
-}
-```
-
-- 法线贴图是在 TBN 坐标系中定义的，要将其转化到世界空间来进行渲染
-  - 切线空间 → 世界空间：$\mathrm{Normal}_{{\mathrm{world}}}=\mathrm{TBN}\cdot\mathrm{Normal}_{{\mathrm{tangent}}}$：将贴图的法线转换到世界空间与光照等进行计算
-  - 世界空间 → 切线空间：$\mathrm{LightDir}_{{\mathrm{tangent}}}=\mathrm{TBN}^{-1}\cdot\mathrm{LightDir}_{{\mathrm{world}}}$：将光照等转换到切线空间与贴图的法线进行计算
-    - 更常用：减少片段着色器的计算量，总体上效率更高
-
-#### 使用 assimp 实现复杂物体的切线空间计算
-
-- 加载时添加 `aiProcess_CalcTangentSpace` Assimp 会为每个加载的顶点计算出柔和的切线和副切线向量
-
-```C++
-const aiScene* scene = importer.ReadFile(
-    path, aiProcess_Triangulate | aiProcess_FlipUVs | aiProcess_CalcTangentSpace
-);
-//获取并保存
-vector.x = mesh->mTangents[i].x;
-vector.y = mesh->mTangents[i].y;
-vector.z = mesh->mTangents[i].z;
-vertex.Tangent = vector;
-```
-
-
-
-## 视差贴图
-
-- 视差贴图是一种位移贴图
-
-<img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/undefinedimage-20241122122601050.png" alt="image-20241122122601050" style="zoom:50%;" />
-
-<img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/undefinedundefinedparallax_mapping_plane_height.png" style="zoom:50%;" />
-
-- 在以 $V$ 方向看向 $A$ 时通过加一个偏移，使得看到的内容贴近实际应该看到的 $B$ 处
-
-- 一个算法是取 $P=AH(A)$ 按照这个高度沿方向偏移，得到点 $H(P)$ 作为便宜后的问题
-  - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/undefinedparallax_mapping_scaled_height.png" alt="img" style="zoom: 67%;" />
-- 这个方法并不精确，有时会产生较大误差
-- 因为要计算每个点的说色，因此在片段着色器中进行计算
-
-```glsl
-void main()
-{           
-    // Offset texture coordinates with Parallax Mapping
-    vec3 viewDir   = normalize(fs_in.TangentViewPos - fs_in.TangentFragPos);
-    vec2 texCoords = ParallaxMapping(fs_in.TexCoords,  viewDir);
-
-    //丢弃错误数据
-    texCoords = ParallaxMapping(fs_in.TexCoords,  viewDir);
-	if(texCoords.x > 1.0 || texCoords.y > 1.0 || texCoords.x < 0.0 || texCoords.y < 0.0)
-    discard;
-    
-    // then sample textures with new texture coords
-    vec3 diffuse = texture(diffuseMap, texCoords);
-    vec3 normal  = texture(normalMap, texCoords);
-    normal = normalize(normal * 2.0 - 1.0);
-    // proceed with lighting code
-    [...]    
-}
-
-vec2 ParallaxMapping(vec2 texCoords, vec3 viewDir, sampler2D heightMap)
-{
-    // 从深度贴图中获取高度值
-    float height = texture(heightMap, texCoords).r;  // 高度值范围是 [0, 1]
-
-    // 根据高度值和视角方向计算偏移量
-    vec2 p = viewDir.xy / viewDir.z * (height * scale - bias);
-    //scale控制视差效果的强度（比例因子）
-    //bias用于微调，使纹理偏移的起点更自然
-    
-    // 调整纹理坐标(加还是减取决于view是从摄像机发出还是反之)
-    vec2 offsetTexCoords = texCoords - p;
-
-    // 返回调整后的纹理坐标
-    return offsetTexCoords;
-}
-```
-
-### 陡峭视差映射
-
-- 使用更多的样本来确定从向量到便宜点 B，在陡峭高度变化下有更好的表现
-  - 即通过增加采样的数目提高了精确性
-
-<img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/undefinedparallax_mapping_steep_parallax_mapping_diagram.png" alt="img" style="zoom: 67%;" />
-
-- 将总深度或分为多层，分别与视线方向产生交点
-  - 从上到下遍历深度层，直到找到第一个层深度大于深度贴图的点（图中的 T 3）
-
-```glsl
-vec2 ParallaxMapping(vec2 texCoords, vec3 viewDir)
-{ 
-    // number of depth layers
-    const float numLayers = 10;
-    // calculate the size of each layer
-    float layerDepth = 1.0 / numLayers;
-    // depth of current layer
-    float currentLayerDepth = 0.0;
-    // the amount to shift the texture coordinates per layer (from vector P)
-    vec2 P = viewDir.xy * height_scale; 
-    vec2 deltaTexCoords = P / numLayers;
-
-    // get initial values
-    vec2  currentTexCoords     = texCoords;
-    float currentDepthMapValue = texture(depthMap, currentTexCoords).r;
-
-    while(currentLayerDepth < currentDepthMapValue)
-    {
-        // shift texture coordinates along direction of P
-        currentTexCoords -= deltaTexCoords;
-        // get depthmap value at current texture coordinates
-        currentDepthMapValue = texture(depthMap, currentTexCoords).r;  
-        // get depth of next layer
-        currentLayerDepth += layerDepth;  
-    }
-
-    return currentTexCoords;
-
-}
-```
-
-- 由于采样点固定，可能会出现锯齿和断层
-  - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/undefinedparallax_mapping_steep_artifact.png" alt="img" style="zoom: 67%;" />
-  - 可以通过增加采样数目来解决
-  - 也可以通过下面方法
-
-### 视差遮蔽映射
-
-- <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/undefinedparallax_mapping_parallax_occlusion_mapping_diagram.png" alt="img" style="zoom: 80%;" />
-  - 取边缘的两个点并根据表面高度距离深度层深度值的距离进行线性插值
-
-```glsl
-[...] // steep parallax mapping code here
-
-// get texture coordinates before collision (reverse operations)
-vec2 prevTexCoords = currentTexCoords + deltaTexCoords;
-
-// get depth after and before collision for linear interpolation
-float afterDepth  = currentDepthMapValue - currentLayerDepth;
-float beforeDepth = texture(depthMap, prevTexCoords).r - currentLayerDepth + layerDepth;
-
-// interpolation of texture coordinates
-float weight = afterDepth / (afterDepth - beforeDepth);
-vec2 finalTexCoords = prevTexCoords * weight + currentTexCoords * (1.0 - weight);
-
-return finalTexCoords;
-```
-
 ## HDR
 
 - 解决：多个两光源叠加使得亮度值超过了 1.0，导致高光混成一片难以分辨
