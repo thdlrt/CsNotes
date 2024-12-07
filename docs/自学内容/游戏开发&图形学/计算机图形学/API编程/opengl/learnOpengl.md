@@ -3864,8 +3864,101 @@ vec2 finalTexCoords = prevTexCoords * weight + currentTexCoords * (1.0 - weight)
 return finalTexCoords;
 ```
 ### 程序式纹理反走样
-- 
+#### 走样的来源
+- 如果被采样的场景的变化相对于采样点的空间来说频率非常高，呢么一些特性就会重叠和丢失，采样结果无法精确重现场景
+- 周期性的样式被采样的次数必须至少是样式本身频率的两倍，否则就会走样（要准确地重建一个信号，采样频率必须至少是该信号最高频率的两倍）
+#### 避免走样
+- 根据采样频率（如屏幕分辨率），选择不同大小的贴图（mipmap）
+- 提高分辨率超采样（MSAA 抗锯齿）
 ### 噪声
+- 一种随机的，可以附加到初始周期上的平滑扰动
+- 倍频：两个频率值的臂力恰好是 2:1
+- 一个程序式着色器中可以叠加多个倍频的噪声，但是如果噪声的频率是擦饲养频率的两倍以上，微粒避免出现走样，也应该停止添加更多细节（高频噪声），让其逐渐恢复到平均采样值
+#### 使用噪声
+- 在 GLSL 中编写噪声函数/使用纹理贴图存储生成的噪声数据
+- 可以使用一个 RGBA 贴图存储 4 维噪声（每个倍频的频率都是前一个的两倍，而振幅减半）
+- 噪声生成代码
+```c++
+#include <stdio.h>
+#include <stdlib.h>
+#include <GL/gl.h>  // OpenGL头文件，确保链接OpenGL库
+
+int noise3DTexsize = 128;       // 定义噪声纹理的尺寸
+GLuint noise3DTexName = 0;      // OpenGL纹理对象的名称（句柄）
+GLubyte *noise3DTexptr;         // 指向3D噪声纹理数据的指针
+
+// 用于生成3D噪声纹理的函数
+void make3DNoiseTexture(void) {
+    int f, i, j, k, inc;
+    int frequency = 4;         // 初始频率
+    int numOctaves = 4;        // 噪声的分辨率（分多次进行采样，增强细节）
+    double ni[3];              // 存储当前采样点的3D坐标
+    double inci, incj, inck;  // 每一维的增量，用于生成不同维度的噪声
+    int startFrequency = frequency;
+    GLubyte *ptr;              // 用于操作噪声纹理数据的指针
+    double amp = 0.5;          // 噪声的振幅（控制噪声的强度）
+    
+    // 分配内存来存储噪声纹理数据
+    if ((noise3DTexptr = (GLubyte*)malloc(noise3DTexsize * noise3DTexsize * noise3DTexsize * 4)) == NULL) {
+        // 如果内存分配失败，打印错误信息并退出
+        fprintf(stderr, "ERROR: Could not allocate 3D noise texture\n");
+        exit(1);
+    }
+
+    // 生成多频率（Octave）噪声数据
+    for (f = 0, inc = 0; f < numOctaves; ++f, frequency *= 2, ++inc, amp *= 0.5) {
+        // 设置噪声的频率（调用自定义函数 setNoiseFrequency）
+        setNoiseFrequency(frequency);  // 该函数需要定义，假设其用于设置当前噪声的频率
+
+        ptr = noise3DTexptr;
+        ni[0] = ni[1] = ni[2] = 0;
+        
+        // 计算各个维度的采样增量
+        inci = 1.0 / (noise3DTexsize / frequency); // 根据频率设置增量
+        for (i = 0; i < noise3DTexsize; ++i, ni[0] += inci) {
+            incj = 1.0 / (noise3DTexsize / frequency);  // 同理处理第二维
+            for (j = 0; j < noise3DTexsize; ++j, ni[1] += incj) {
+                inck = 1.0 / (noise3DTexsize / frequency);  // 同理处理第三维
+                for (k = 0; k < noise3DTexsize; ++k, ni[2] += inck, ptr += 4) {
+                    // 生成噪声值并写入纹理数据
+                    // noise(ni) 计算当前3D坐标的噪声值，假设该函数已定义
+                    *(ptr + inc) = (GLubyte)(((noise(ni) + 1.0) * amp) * 128.0);
+                }
+            }
+        }
+    }
+
+    // 生成并绑定 OpenGL 3D 噪声纹理
+    glGenTextures(1, &noise3DTexName);  // 生成一个新的纹理对象
+    glBindTexture(GL_TEXTURE_3D, noise3DTexName);  // 绑定该纹理对象
+
+    // 设置纹理参数
+    glTexParameteri(GL_TEXTURE_3D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+    glTexParameteri(GL_TEXTURE_3D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+    glTexParameteri(GL_TEXTURE_3D, GL_TEXTURE_WRAP_S, GL_REPEAT);
+    glTexParameteri(GL_TEXTURE_3D, GL_TEXTURE_WRAP_T, GL_REPEAT);
+    glTexParameteri(GL_TEXTURE_3D, GL_TEXTURE_WRAP_R, GL_REPEAT);
+
+    // 传递纹理数据到 OpenGL
+    glTexImage3D(GL_TEXTURE_3D, 0, GL_RGBA, noise3DTexsize, noise3DTexsize, noise3DTexsize, 0, GL_RGBA, GL_UNSIGNED_BYTE, noise3DTexptr);
+    
+    // 释放分配的内存
+    free(noise3DTexptr);
+}
+
+// 假设的噪声生成函数
+double noise(double *coord) {
+    // 这里可以使用 Perlin 噪声或者 Simplex 噪声算法来生成噪声值
+    // 为了简单起见，假设我们返回一个伪随机值
+    return (rand() % 1000) / 1000.0;
+}
+
+// 假设的噪声频率设置函数
+void setNoiseFrequency(int frequency) {
+    // 此处可以用来修改噪声的频率（例如更新噪声生成算法的参数）
+}
+
+```
 ## 绘制方式
 ### 图元
 - opengl 主要支持点、线、三角形图元
@@ -4417,6 +4510,20 @@ EndPrimitive();
   - 面位移实现爆破效果
   - 显示所有面的法线等等
 ## 细分着色器
+- 用于**细分图形网格**并动态计算细节
+	- 细分可以根据距离、视角或其他因素动态进行。
+	- 在细分后的每个小面片上执行额外的计算，可以实现更精细的渲染效果
+	- 细分着色器允许根据视角和需要来决定细分的程度，可以在接近视点的地方细分更多，而远离视点的地方保持较低的细分，从而减少计算量和内存消耗。
+- 分成两个主要阶段
+	- **细分控制着色器**：负责决定每个图形面要细分成多少个子面片，并计算出每个控制点的信息。（接受输入的顶点数据，根据规则决定如何细分，输出细分登记以及细分信息）
+	- **细分评估着色器**：负责在细分后的子面片上计算顶点的最终位置和属性。（在细分后的子面片上进行计算，评估顶点的位置、法线等信息，进行插值计算得到最终属性）
+### 面片
+- 细分过程**只会处理面片这一种图元**
+- 通常用于表示一个由**多个顶点**构成的图形单元，在细分渲染管线中，面片是**需要进行细分的基本单位**。面片的形状和类型可以根据不同的渲染算法和渲染目标而有所不同。
+- 分类：三角形面片；四边形面片；曲面面片
+### 细分控制着色器
+- 
+### 细分计算着色器
 - 
 # 光照
 
