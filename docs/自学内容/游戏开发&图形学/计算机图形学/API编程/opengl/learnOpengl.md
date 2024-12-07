@@ -3470,6 +3470,106 @@ void main()
 ## 程序式纹理
 ### 程序生成纹理
 #### 条纹生成
+- 在顶点着色器生成
+```c++
+#version 330 core
+
+uniform vec3 LightPosition;  // 光源的位置
+uniform vec3 LightColor;     // 光源的颜色
+uniform vec3 Eyeposition;    // 观察者的位置
+uniform vec3 Specular;       // 镜面反射的颜色
+uniform vec3 Ambient;        // 环境光的颜色
+uniform float Kd;            // 漫反射系数
+uniform mat4 MVMatrix;       // 模型视图矩阵
+uniform mat4 MVPMatrix;      // 模型视图投影矩阵
+uniform mat3 NormalMatrix;   // 法线矩阵
+
+in vec3 MCVertex;            // 顶点的位置
+in vec3 MCNormal;            // 顶点的法线
+in vec2 TexCoord0;           // 纹理坐标
+
+out vec3 DiffuseColor;       // 输出漫反射颜色
+out vec3 SpecularColor;      // 输出镜面反射颜色
+out float TexCoord;          // 输出纹理坐标的T分量
+
+void main()
+{
+    // 计算顶点的世界空间位置
+    vec3 ecPosition = vec3(MVMatrix * vec4(MCVertex, 1.0));
+
+    // 计算变换后的法线
+    vec3 tnorm = normalize(NormalMatrix * MCNormal);
+
+    // 计算光线方向（从物体到光源）
+    vec3 lightVec = normalize(LightPosition - ecPosition);
+
+    // 计算视线方向（从物体到观察者）
+    vec3 viewVec = normalize(EyePosition - ecPosition);
+    
+    // 计算光照反射的条纹效果
+    float scaledT = fract(TexCoord0.t * Scale);  // 通过纹理坐标生成条纹效果
+    float frac1 = clamp(scaledT - Fuzz, 0.0, 1.0); // 计算条纹的起始部分
+    float frac2 = clamp((scaledT + Width) - Fuzz, 0.0, 1.0); // 计算条纹的结束部分
+    frac1 = 1.0 - frac2;  // 反转条纹效果
+    frac1 = frac1 * (3.0 - (2.0 * frac1)); // 强调条纹的对比度
+
+    // 混合背景色和条纹色，最终得到条纹的颜色
+    vec3 finalColor = mix(BackColor, StripeColor, frac1);
+
+    // 最终颜色与光照色的结合
+    finalColor = finalColor * (DiffuseColor + SpecularColor);
+
+    // 设置最终的输出颜色
+    FragColor = vec4(finalColor, 1.0);
+    
+    // 计算顶点位置在裁剪空间的坐标
+    gl_Position = MVPMatrix * vec4(MCVertex, 1.0);
+}
+
+```
+- 在片段着色器生成
+```c++
+#version 330 core
+
+uniform vec3 LightColor;    // 光源颜色
+uniform vec3 Specular;      // 镜面反射颜色
+uniform vec3 Ambient;       // 环境光颜色
+uniform vec3 BackColor;     // 背景颜色（条纹的背景）
+uniform vec3 StripeColor;   // 条纹的颜色
+uniform float Width;        // 条纹宽度
+uniform float Fuzz;         // 条纹的模糊度
+uniform float Scale;        // 条纹缩放
+
+in vec3 DiffuseColor;       // 漫反射颜色
+in vec3 SpecularColor;      // 镜面反射颜色
+in float TexCoord;          // 纹理坐标的T分量
+
+out vec4 FragColor;         // 输出颜色
+
+void main()
+{
+    // 计算条纹效果的强度
+    float scaledT = fract(TexCoord * Scale); // 缩放后的纹理坐标
+    float frac1 = clamp(scaledT - Fuzz, 0.0, 1.0); // 条纹模糊的开始部分
+    float frac2 = clamp((scaledT + Width) - Fuzz, 0.0, 1.0); // 条纹模糊的结束部分
+
+    frac1 = 1.0 - frac2; // 调整条纹的显示效果
+    frac1 = frac1 * (3.0 - (2.0 * frac1)); // 进一步增强条纹效果
+
+    // 将背景色和条纹色混合，形成条纹颜色
+    vec3 finalColor = mix(BackColor, StripeColor, frac1);
+
+    // 最终的颜色：背景条纹色与漫反射、镜面反射结合
+    finalColor = finalColor * (DiffuseColor + SpecularColor);
+
+    // 输出最终颜色
+    FragColor = vec4(finalColor, 1.0);
+}
+
+```
+- 使用这种复杂的计算方式，是为了产生更柔和（反走样）的图像
+#### 五角星玩具球
+![image.png|400](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefined20241207130108.png)
 
 ### 法线贴图
 
