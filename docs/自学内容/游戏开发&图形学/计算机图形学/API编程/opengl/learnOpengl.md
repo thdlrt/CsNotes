@@ -4625,18 +4625,138 @@ EmitVertex();
 gl_Position = position + vec4( 0.0,  0.4, 0.0, 0.0);    // 5:顶部
 fColor = vec3(1.0, 1.0, 1.0);
 EmitVertex();
-EndPrimitive();  
+EndPrimitive();  //发送图元，多次创建可以生成多个图元实现几何体扩充
 ```
 - 这就实现了最后一个点和前面的点颜色不同
+
+- 利用集合着色器可以实现：
+	- 几何体裁剪：丢弃部分图元
+	- 几何体扩充：如在表面生成毛发
 #### 几何着色器特殊图元
 - 邻接图元：`lines_adjacency` 和 `triangles_adjacency`
 	- 临接表示几何着色器处理一个图元时可以访问与该图元相邻的其他图元的数据，实现生成更加复杂的几何形状
 - ![image.png|333](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefined20241207210436.png)
 	- 如线就包含线的两个端点和前后两个邻接点
 - ![image.png|348](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefined20241207210711.png)
+### transform feedback
+- 在图形管线的某些阶段直接捕捉顶点数据传输回 GPU 缓冲区，而不再继续经过片元着色器
+```c++
+//预先设置视口
+glviewportIndexedf (0,0.of,0.of,wot,hot)
+glviewportIndexedf (1,wot,0.of,wot,hot);
+glviewportIndexedf(2,0.Of,hot,wot,hot);
+glviewportTndexedf(3,wot,hot,wot,hot);
+//创建缓冲区
+GLuint feedbackBuffer;
+glGenBuffers(1, &feedbackBuffer);
+glBindBuffer(GL_ARRAY_BUFFER, feedbackBuffer);
+glBufferData(GL_ARRAY_BUFFER, bufferSize, NULL, GL_DYNAMIC_COPY);
+//创建反馈对象，用于管理transform feedback
+GLuint tfObject; glGenTransformFeedbacks(1, &tfObject);
+//绑定反馈对象
+glBindTransformFeedback(GL_TRANSFORM_FEEDBACK, tfObject); glBindBufferBase(GL_TRANSFORM_FEEDBACK_BUFFER, 0, feedbackBuffer);
+//启用
+glBeginTransformFeedback(GL_POINTS);
+//结束
+glEndTransformFeedback();
+//读取数据
+glBindBuffer(GL_ARRAY_BUFFER, feedbackBuffer);
+GLfloat* data = (GLfloat*)glMapBuffer(GL_ARRAY_BUFFER, GL_READ_ONLY);
+// 处理数据
+glUnmapBuffer(GL_ARRAY_BUFFER);
 
-### 产生图元
+```
 ### 多视口与分层渲染
+#### 视口索引
+-  `gl_ViewportIndex` 允许渲染器将数据输出到特定的视口或渲染层，通过设置这个值可以指定每个片元所属的视口
+- 在几何着色器中将输入顶点数据渲染到不同的视口中
+- 即通过几何体扩充并对一个几何体采取不同的变换
+```c++
+// 几何着色器示例
+#version 450 core
+layout (triangles) in;
+layout (triangle_strip, max_vertices = 3) out;
+
+void main() {
+    gl_Position = gl_in[0].gl_Position;
+    gl_ViewportIndex = 0;  // 输出到第一个视口
+
+    EmitVertex();  // 生成顶点
+    gl_Position = gl_in[1].gl_Position;
+    gl_ViewportIndex = 1;  // 输出到第二个视口
+    EmitVertex();
+    gl_Position = gl_in[2].gl_Position;
+    gl_ViewportIndex = 0;  // 输出到第一个视口
+    EmitVertex();
+    EndPrimitive();
+}
+```
+#### 分层渲染
+- `gl_Layer` 来制定输出图元的渲染层
+- 将不同的图元渲染到**多个层**，从而实现复杂的图形效果。可以通过几何着色器实现将图元渲染到不同的层
+```c++
+#version 330 core
+
+layout(triangles) in;   // 输入图元为三角形
+layout(triangle_strip, max_vertices = 3) out;  // 输出为三角形带
+
+in vec3 fragPos[];  // 输入的顶点位置（来自顶点着色器）
+
+out vec4 FragColor;  // 输出的颜色
+
+void main()
+{
+    // 设置图元的渲染层
+    if (fragPos[0].z < 0.0) {
+        gl_Layer = 0;  // 如果深度小于0，渲染到层0
+    } else {
+        gl_Layer = 1;  // 否则，渲染到层1
+    }
+
+    // 输出顶点
+    for (int i = 0; i < 3; i++) {
+        gl_Position = gl_in[i].gl_Position;
+        FragColor = vec4(fragPos[i], 1.0);  // 使用位置作为颜色
+        EmitVertex();
+    }
+    EndPrimitive();
+}
+```
+- 想实现多层缓冲，还要创建支持多层缓冲的帧缓冲颜色附件，比如向颜色附件管理数组纹理，用于不同的层
+```c++
+GLuint framebuffer;
+glGenFramebuffers(1, &framebuffer);
+glBindFramebuffer(GL_FRAMEBUFFER, framebuffer);
+
+// 假设你需要创建一个有 3 层的帧缓冲
+GLuint texture[3];
+glGenTextures(3, texture);  // 创建 3 个纹理对象
+
+for (int i = 0; i < 3; ++i) {
+    glBindTexture(GL_TEXTURE_2D_ARRAY, texture[i]);
+    glTexImage3D(GL_TEXTURE_2D_ARRAY, 0, GL_RGBA, width, height, 3, 0, GL_RGBA, GL_UNSIGNED_BYTE, nullptr);
+    glTexParameteri(GL_TEXTURE_2D_ARRAY, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+    glTexParameteri(GL_TEXTURE_2D_ARRAY, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+    glTexParameteri(GL_TEXTURE_2D_ARRAY, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
+    glTexParameteri(GL_TEXTURE_2D_ARRAY, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
+}
+
+glFramebufferTexture(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, texture[0], 0);
+glFramebufferTexture(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT1, texture[1], 0);
+glFramebufferTexture(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT2, texture[2], 0);
+
+// 设置帧缓冲的附件
+GLuint attachments[3] = { GL_COLOR_ATTACHMENT0, GL_COLOR_ATTACHMENT1, GL_COLOR_ATTACHMENT2 };
+glDrawBuffers(3, attachments);
+
+// 检查帧缓冲是否完整
+if (glCheckFramebufferStatus(GL_FRAMEBUFFER) != GL_FRAMEBUFFER_COMPLETE) {
+    std::cout << "Framebuffer is not complete!" << std::endl;
+}
+
+```
+## 计算着色器
+
 # 光照
 
 ### 颜色
@@ -5344,6 +5464,7 @@ void main()
   - 遮蔽因子会根据采样点的距离和角度进行加权。
   - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/undefinedimage-20241122191708467.png" alt="image-20241122191708467" style="zoom: 50%;" />
   - 此外还要对生成的 AO 图进行平滑处理，如使用高斯模糊
+# 内存
 # PBR
 
 #### 理论
