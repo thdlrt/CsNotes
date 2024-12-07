@@ -4422,6 +4422,130 @@ glBlitFramebuffer(0, 0, width, height, 0, 0, width, height, GL_COLOR_BUFFER_BIT,
 ```c++
 void glBlitNamedFramebuffer(GLuint readFramebuffer,GLuint drawFramebuffer,GLint srcXO,GLint sreYO,GLint srcX1,GLint sreY1,GLint dstX0,GLint dstY0,GLint dstX1, GLint dstY1,GLbitfield mask,GLenum filter);
 ```
+## 细分着色器
+- 用于**细分图形网格**并动态计算细节
+	- 细分可以根据距离、视角或其他因素动态进行。
+	- 在细分后的每个小面片上执行额外的计算，可以实现更精细的渲染效果
+	- 细分着色器允许根据视角和需要来决定细分的程度，可以在接近视点的地方细分更多，而远离视点的地方保持较低的细分，从而减少计算量和内存消耗。
+- 分成两个主要阶段
+	- **细分控制着色器**：负责决定每个图形面要细分成多少个子面片，并计算出每个控制点的信息。（接受输入的顶点数据，根据规则决定如何细分，输出细分登记以及细分信息）
+	- **细分评估着色器**：负责在细分后的子面片上计算顶点的最终位置和属性。（在细分后的子面片上进行计算，评估顶点的位置、法线等信息，进行插值计算得到最终属性）
+### 面片
+- 细分过程**只会处理面片这一种图元**
+- 通常用于表示一个由**多个顶点**构成的图形单元，在细分渲染管线中，面片是**需要进行细分的基本单位**。面片的形状和类型可以根据不同的渲染算法和渲染目标而有所不同。
+- 分类：三角形面片；四边形面片；曲面面片
+- 面片本质上就是传递给着色器的顶点列表，使用面片绘制时还需要告诉 opengl 定点数组中构成一个面片的顶点数目 `void glPatchParameteri(GLenum pname,GLint value);`
+	- pname 为 `GL_PATCH_VERTICES`
+```c++
+GLfloat vertices [][2]=
+{-0.75,-0.25},{-0.25,-0.25},{-0.25,0.25},{-0.75,0.25},{0.25，-0.25),{0.75，-0.25},{0.75,0.25},{0.25,0.25}
+]:
+glBindvertexArray(VAO):
+glBindBuffer (GL_ARRAY_BUFFER,VBO);
+glBufferData(GL_ARRAY_BUFFER,sizaof(vertices),vertices,
+GL_STATIC_DRAW):
+glVertexAttribPointer (vPos,2,GL_FLOAT,GL_FALSE,0,BUFFER_OFFSET(0)):
+glPatchParameteri (GL_PATCH_VERTICES,4);
+glDrawArrays (GL_PATCHES,0,8):
+```
+### 细分控制着色器
+- 内置数组 `gl_in` 即该棉片对应的顶点坐标（数目等于之前设置的）
+- 细分控制器生成的顶点列表在 `gl_out`
+	- 通过布局限定 `layout (vertices = 16) out` 可以设置输出顶点 `gl_out` 的顶点数目 (这样来设置 `gl_PatchVerticesOut`)
+	- `gl_InvocationID` 为当前处理的输出顶点（`gl_out` 中的下标）
+- 定点的数据结构
+	- ![image.png|330](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefined20241207172041.png)
+- 示例：直接一对一传送：
+```c++
+#version 420 core
+layout (vertices 4)out;
+void
+main()
+{
+gl_out [gl_InvocationID].gl_Position
+gl_in[gl_InvocationID].gl_Position;
+//然后设置细分的层级
+}z
+```
+- **外侧细分层级**：控制面片边界的细分，边上的顶点数由外侧层级决定。它影响的是面片的轮廓。（对于四边形来说 4 个值分别表示四条边，值越大表示细分越多，生成顶点越多）`float outerLevels[4] = {4.0, 4.0, 4.0, 4.0};`
+- **内侧细分层级**：控制面片内部的细分，决定了内部细分网格的密度，影响的是面片的内部结构。（由两个值，分别对应水平方向的细分和垂直方向的细分`InnerTessLevel[1]`）
+- ![image.png|300](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefined20241207172801.png)
+```C++
+gl TessLevelouter [0]=2.0:
+gl_TessLevelouter [1]=3.0;
+g1_TessLevelOuter [2]=2.0
+gl_TessLevelouter [3]=5.0；
+gl_TessLevelInner[0]=3.0;
+g1_TessLevelInner [1]=4.0;
+```
+- 也可以通过 `void glPatchParameterfv(GLenum pname,const GLfloat*values):` 在着色器外进行设置
+### 细分计算着色器
+- 设置图元生成域：指的是控制面片**如何**根据细分等级**生成更细的顶点网格**。细分计算着色器需要知道这些控制点如何被细分，并根据设置的细分层级进行插值，从而生成最终的顶点。
+	- ![image.png|500](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefined20241207173536.png)
+- 设置生成图元的面朝向
+- 设置细分坐标的间隔
+	- ![image.png|500](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefined20241207173622.png)
+- 更多的细分计算着色器 layout 选项
+- 设置顶点的位置
+	- 通常使用 `gl_TessCoord` 来获取细分坐标, 用于表示细分后的顶点在面片内的**插值位置（相对位置）**
+```c++
+gl_Position = (1.0 - gl_TessCoord.x - gl_TessCoord.y) * gl_in[0].gl_Position + 
+gl_TessCoord.x * gl_in[1].gl_Position + 
+gl_TessCoord.y * gl_in[2].gl_Position;
+```
+- 细分计算着色器的变量
+### 示例
+```c++
+#version 330 core
+
+layout (vertices = 3) out; // 指定每个面片有 3 个顶点（用于三角形）
+
+in vec3 aPos[]; // 输入的顶点
+
+// 输出顶点数据
+out vec3 tcsPosition[];
+
+void main()
+{
+    // 将输入的顶点位置传递给细分计算着色器
+    for (int i = 0; i < 3; ++i)
+    {
+        tcsPosition[i] = aPos[i];
+    }
+
+    // 设置细分等级，越大细分的越细
+    if (gl_InvocationID == 0)
+    {
+        gl_TessLevelOuter[0] = 4.0; // 外侧的细分等级（u方向）
+        gl_TessLevelOuter[1] = 4.0; // 外侧的细分等级（v方向）
+        gl_TessLevelOuter[2] = 4.0; // 外侧的细分等级（w方向）
+        gl_TessLevelInner[0] = 4.0; // 内侧的细分等级
+    }
+}
+
+#version 330 core
+
+layout (triangles, equal_spacing, ccw) in; // 指定细分类型为三角形，使用均匀细分，并且逆时针方向
+
+in vec3 tcsPosition[]; // 输入的细分控制点
+out vec4 fragColor; // 输出的颜色
+
+void main()
+{
+    // 使用细分坐标计算每个顶点的位置
+    vec3 position = (1.0 - gl_TessCoord.x - gl_TessCoord.y) * tcsPosition[0] +
+                    gl_TessCoord.x * tcsPosition[1] +
+                    gl_TessCoord.y * tcsPosition[2];
+
+    // 设置最终的顶点位置
+    gl_Position = vec4(position, 1.0);
+
+    // 为了展示，我们将输出一个简单的颜色
+    fragColor = vec4(1.0 - gl_TessCoord.x, gl_TessCoord.y, 0.0, 1.0); // 基于细分坐标生成颜色
+}
+
+```
+
 ## 几何着色器
 
 - 图元是图形渲染管线中绘制几何图形的基本单位
@@ -4432,9 +4556,6 @@ void glBlitNamedFramebuffer(GLuint readFramebuffer,GLuint drawFramebuffer,GLint 
 - 介于顶点着色器和片段着色器之间
   - 给予输入的图元生成**新的图元或修改现有的图元**
   - 比如将点转化为边
-
-
-
 
 ```glsl
 #version 330 core
@@ -4509,22 +4630,6 @@ EndPrimitive();
 - 可以实现很多效果：
   - 面位移实现爆破效果
   - 显示所有面的法线等等
-## 细分着色器
-- 用于**细分图形网格**并动态计算细节
-	- 细分可以根据距离、视角或其他因素动态进行。
-	- 在细分后的每个小面片上执行额外的计算，可以实现更精细的渲染效果
-	- 细分着色器允许根据视角和需要来决定细分的程度，可以在接近视点的地方细分更多，而远离视点的地方保持较低的细分，从而减少计算量和内存消耗。
-- 分成两个主要阶段
-	- **细分控制着色器**：负责决定每个图形面要细分成多少个子面片，并计算出每个控制点的信息。（接受输入的顶点数据，根据规则决定如何细分，输出细分登记以及细分信息）
-	- **细分评估着色器**：负责在细分后的子面片上计算顶点的最终位置和属性。（在细分后的子面片上进行计算，评估顶点的位置、法线等信息，进行插值计算得到最终属性）
-### 面片
-- 细分过程**只会处理面片这一种图元**
-- 通常用于表示一个由**多个顶点**构成的图形单元，在细分渲染管线中，面片是**需要进行细分的基本单位**。面片的形状和类型可以根据不同的渲染算法和渲染目标而有所不同。
-- 分类：三角形面片；四边形面片；曲面面片
-### 细分控制着色器
-- 
-### 细分计算着色器
-- 
 # 光照
 
 ### 颜色
