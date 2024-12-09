@@ -4755,8 +4755,6 @@ if (glCheckFramebufferStatus(GL_FRAMEBUFFER) != GL_FRAMEBUFFER_COMPLETE) {
 }
 
 ```
-## 计算着色器
-
 # 光照
 
 ### 颜色
@@ -5465,10 +5463,23 @@ void main()
   - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/undefinedimage-20241122191708467.png" alt="image-20241122191708467" style="zoom: 50%;" />
   - 此外还要对生成的 AO 图进行平滑处理，如使用高斯模糊
 # 内存
+- 除了图像数据之外，纹理也可以用来存储通用数据（如计算结果、表格、物理模拟中的状态数据等），这些数据可以在 GPU 并行处理的场景中方便的进行访问
+## 计算着色器
+- 用于进行高并行的通用计算任务，如物理模拟、图像处理、粒子系统等
+	- 使用 GPU 来进行高效的大规模并行计算
+- 与顶点、片段等传统的渲染阶段无关，独立于渲染管线。
+- 使用 glsl 编写
 # PBR
+> 基于物理的着色：
+> 基于微表面模型
+> 能量守恒
+> 基于物理的 BRDF
+## 理论
+### 微表面模型
+- 微平面越光滑（出射光线广德防线更多的符合镜面反射），镜面反射的效果就越锐利，可以用一个介于**0~1**的粗糙度参数表示微平面的情况
+	- ![image.png|500](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefined20241209154736.png)
 
-#### 理论
 
-#### 光照
+## 光照
 
-#### IBL
+## IBL
