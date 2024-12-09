@@ -5,6 +5,10 @@
       "path": "docs/自学内容/移动端开发/鸿蒙/ArkTS.md"
     },
     {
+      "basename": "笔记",
+      "path": "docs/自学内容/移动端开发/鸿蒙/笔记.md"
+    },
+    {
       "basename": "learnOpengl",
       "path": "docs/自学内容/游戏开发&图形学/计算机图形学/API编程/opengl/learnOpengl.md"
     },
@@ -195,10 +199,6 @@
     {
       "basename": "CodeforcesRound900(Div.3)",
       "path": "docs/blog/posts/算法竞赛/CodeforcesRound900(Div.3).md"
-    },
-    {
-      "basename": "CodeTONRound6",
-      "path": "docs/blog/posts/算法竞赛/CodeTONRound6.md"
     }
   ],
   "omittedPaths": [],
