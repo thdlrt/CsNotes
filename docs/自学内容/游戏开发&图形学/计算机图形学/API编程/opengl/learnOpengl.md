@@ -1,10 +1,7 @@
 >教程地址：[主页 - LearnOpenGL CN](https://learnopengl-cn.github.io/)
 >
 >代码：[LearnOpenGL/src at master · JoeyDeVries/LearnOpenGL](https://github.com/JoeyDeVries/LearnOpenGL/tree/master/src)
-GLObalstorage
-生活区碰撞体
-密码箱
-清屏摄像机
+
 ## 常用库
 
 ### GLFW
@@ -5478,8 +5475,66 @@ void main()
 ### 微表面模型
 - 微平面越光滑（出射光线广德防线更多的符合镜面反射），镜面反射的效果就越锐利，可以用一个介于**0~1**的粗糙度参数表示微平面的情况
 	- ![image.png|500](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefined20241209154736.png)
+### 渲染方程
+- $L_o(x,\omega_o)=L_e(x,\omega_o)+\int_\Omega f_r(x,\omega_i,\omega_o)L_i(x,\omega_i)(\omega_i\cdot n)d\omega_i$
+- ![image.png|350](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefined20241209160455.png)
+- ![image.png|450](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefined20241209160512.png)
+### BRDF
+- 接受入射方向、出射方向、平面法线和一个表示微平面粗糙成都的参数作为函数的输入参数
+- 分成漫反射（折射）和镜面反射连个部分 $f_r=k_df_{lambert}+k_sf_{cook-torrance}$
+	- $f_{lambert}=\frac c\pi$ 表面颜色除以 phi 进行标准化
+- 计算镜面反射 $f_{cook-torrance}=\frac{DFG}{4(\omega_o\cdot n)(\omega_i\cdot n)}$
+- $L_o(p,\omega_o)=\intop_\Omega(k_d\frac c\pi+k_s\frac{DFG}{4(\omega_o\cdot n)(\omega_i\cdot n)})L_i(p,\omega_i)n\cdot\omega_id\omega_i$
+#### G几何函数
+- 描述了微平面自成阴影的属性。当一个平面相对比较粗糙的时候，平面表面上的微平面有可能挡住其他的微平面从而减少表面所反射的光线。
+- 近似求得微平面之间相互遮蔽的比率，这种相互遮蔽会损耗光线的能量
+	- ![image.png|474](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefined20241209163901.png)
+- 也是结合材料的粗糙度进行计算，因为粗糙度较高的表面其相互遮蔽的概率就越高
+- $G_{\textit{SchlickGGX}}(n,v,k)=\frac{n\cdot v}{(n\cdot v)(1-k)+k}$
+	- 这里的 k 是对粗糙度 a 的重映射 $\begin{aligned}k_{direct}&=\frac{(\alpha+1)^2}8\\\\k_{IBL}&=\frac{\alpha^2}2\end{aligned}$
+	- ![image.png|500](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefined20241209164135.png)
+```glsl
+float GeometrySchlickGGX(float NdotV, float k)
+{
+    float nom   = NdotV;
+    float denom = NdotV * (1.0 - k) + k;
 
+    return nom / denom;
+}
 
+float GeometrySmith(vec3 N, vec3 V, vec3 L, float k)
+{
+    float NdotV = max(dot(N, V), 0.0);
+    float NdotL = max(dot(N, L), 0.0);
+    float ggx1 = GeometrySchlickGGX(NdotV, k);
+    float ggx2 = GeometrySchlickGGX(NdotL, k);
+
+    return ggx1 * ggx2;
+}
+```
+#### F菲涅尔方程
+- 菲涅尔方程描述的是在不同的表面角下表面所反射的光线所占的比率。
+- 当光线碰撞到一个表面的时候，菲涅尔方程会根据**观察角度**告诉我们被反射的光线所占的百分比。
+- $F_{Schlick}(h,v,F_0)=F_0+(1-F_0)(1-(h\cdot v))^5$ 其中 $F_{0}$ 为平面的基础反射率
+#### D法线分布函数
+- 估算在受到表面粗糙度的影响下，朝向方向与半程向量一致的微平面的数量。这是用来估算微平面的主要函数。
+- 从统计学上描述了与半程向量 h 取向一致的微平面的**比率，如有 3**5%一致，则返回 35%
+- $NDF_{GGXTR}(n,h,\alpha)=\frac{\alpha^2}{\pi((n\cdot h)^2(\alpha^2-1)+1)^2}$ 其中的 h 为半程向量，a 为表面粗糙度
+	- ![image.png|500](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefined20241209163249.png)
+```glsl
+float D_GGX_TR(vec3 N, vec3 H, float a)
+{
+    float a2     = a*a;
+    float NdotH  = max(dot(N, H), 0.0);
+    float NdotH2 = NdotH*NdotH;
+
+    float nom    = a2;
+    float denom  = (NdotH2 * (a2 - 1.0) + 1.0);
+    denom        = PI * denom * denom;
+
+    return nom / denom;
+}
+```
 ## 光照
 
-## IBL
+## IBL (基于图片的光照)
