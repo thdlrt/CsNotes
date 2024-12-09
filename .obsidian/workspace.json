@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/自学内容/移动端开发/鸿蒙/ArkTS.md",
+                "file": "docs/自学内容/游戏开发&图形学/计算机图形学/API编程/opengl/learnOpengl.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "ArkTS"
+              "title": "learnOpengl"
             }
           },
           {
@@ -107,7 +107,8 @@
               "title": "Recent Files"
             }
           }
-        ]
+        ],
+        "currentTab": 2
       }
     ],
     "direction": "horizontal",
@@ -184,10 +185,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/自学内容/移动端开发/鸿蒙/ArkTS.md"
+                "file": "docs/自学内容/游戏开发&图形学/计算机图形学/API编程/opengl/learnOpengl.md"
               },
               "icon": "lucide-list",
-              "title": "ArkTS 的大纲"
+              "title": "learnOpengl 的大纲"
             }
           }
         ],
@@ -215,8 +216,8 @@
   },
   "active": "eed68d62fcc669d9",
   "lastOpenFiles": [
-    "docs/自学内容/移动端开发/鸿蒙/笔记.md",
     "docs/自学内容/移动端开发/鸿蒙/ArkTS.md",
+    "docs/自学内容/移动端开发/鸿蒙/笔记.md",
     "docs/自学内容/游戏开发&图形学/计算机图形学/API编程/opengl/learnOpengl.md",
     "docs/技能&工具/折腾/openwrt软路由.md",
     "Excalidraw/Drawing 2024-11-28 15.43.11.excalidraw.md",
