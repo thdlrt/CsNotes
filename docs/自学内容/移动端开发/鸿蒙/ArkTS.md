@@ -1,0 +1,3 @@
+- 定义变量 `let title: string = 'xxx'`
+- 常用数据类型：`string`、`number` 、`boolean`
+- 局部变量 `let`，常量 `const`
