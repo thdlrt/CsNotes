@@ -1,16 +1,20 @@
 {
   "recentFiles": [
     {
+      "basename": "笔记",
+      "path": "docs/自学内容/移动端开发/鸿蒙/笔记.md"
+    },
+    {
+      "basename": "设计模式",
+      "path": "docs/自学内容/游戏开发&图形学/游戏开发/游戏引擎/unity/设计模式.md"
+    },
+    {
       "basename": "learnOpengl",
       "path": "docs/自学内容/游戏开发&图形学/计算机图形学/API编程/opengl/learnOpengl.md"
     },
     {
       "basename": "ArkTS",
       "path": "docs/自学内容/移动端开发/鸿蒙/ArkTS.md"
-    },
-    {
-      "basename": "笔记",
-      "path": "docs/自学内容/移动端开发/鸿蒙/笔记.md"
     },
     {
       "basename": "openwrt软路由",
@@ -195,10 +199,6 @@
     {
       "basename": "CodeforcesRound899(Div.2)",
       "path": "docs/blog/posts/算法竞赛/CodeforcesRound899(Div.2).md"
-    },
-    {
-      "basename": "CodeforcesRound900(Div.3)",
-      "path": "docs/blog/posts/算法竞赛/CodeforcesRound900(Div.3).md"
     }
   ],
   "omittedPaths": [],

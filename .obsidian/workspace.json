@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/自学内容/游戏开发&图形学/计算机图形学/API编程/opengl/learnOpengl.md",
+                "file": "docs/自学内容/游戏开发&图形学/游戏开发/游戏引擎/unity/设计模式.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "learnOpengl"
+              "title": "设计模式"
             }
           },
           {
@@ -35,7 +35,8 @@
               "title": "笔记"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -107,8 +108,7 @@
               "title": "Recent Files"
             }
           }
-        ],
-        "currentTab": 2
+        ]
       }
     ],
     "direction": "horizontal",
@@ -185,10 +185,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/自学内容/游戏开发&图形学/计算机图形学/API编程/opengl/learnOpengl.md"
+                "file": "docs/自学内容/移动端开发/鸿蒙/笔记.md"
               },
               "icon": "lucide-list",
-              "title": "learnOpengl 的大纲"
+              "title": "笔记 的大纲"
             }
           }
         ],
@@ -214,11 +214,12 @@
       "obsidian-excalidraw-plugin:新建绘图文件": false
     }
   },
-  "active": "eed68d62fcc669d9",
+  "active": "e0fef3a0d71f83fc",
   "lastOpenFiles": [
-    "docs/自学内容/移动端开发/鸿蒙/ArkTS.md",
+    "docs/自学内容/游戏开发&图形学/游戏开发/游戏引擎/unity/设计模式.md",
     "docs/自学内容/移动端开发/鸿蒙/笔记.md",
     "docs/自学内容/游戏开发&图形学/计算机图形学/API编程/opengl/learnOpengl.md",
+    "docs/自学内容/移动端开发/鸿蒙/ArkTS.md",
     "docs/技能&工具/折腾/openwrt软路由.md",
     "Excalidraw/Drawing 2024-11-28 15.43.11.excalidraw.md",
     "Excalidraw/Drawing 2024-11-27 18.19.06.excalidraw.md",
@@ -261,7 +262,6 @@
     "docs/_export_/slide/本校保研流程（计算机系夏令营）/plugin/menu/CONTRIBUTING.md",
     "docs/知识点（保研&工作）/保研/计算机科学/计算机网络.md",
     "docs/知识点（保研&工作）/保研/计算机科学/计算机组成原理.md",
-    "docs/知识点（保研&工作）/保研/计算机科学/补充.md",
     "未命名.canvas"
   ]
 }
