@@ -5040,12 +5040,10 @@ float intensity = clamp((theta - light.outerCutOff) / epsilon, 0.0, 1.0);
 - 人眼感知亮度：人眼对亮度的感知是**非线性的**，对暗部亮度变化更敏感，对高亮区域的变化则不敏感。
   - 从亮度 0.10.10.1 增加到 0.20.20.2，我们会感受到亮度翻倍。
   - 但从亮度 0.40.40.4 增加到 0.80.80.8，感知到的变化程度与前者类似。
-  - 显示器亮度通常是**指数映射**（2.2）而不是线性映射（早期技术限制，现在微粒兼容 sRGB）
+  - 显示器亮度通常是**指数映射**（2.2）而不是线性映射（早期技术限制，现在为了兼容 sRGB）
 - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/undefinedgamma_correction_gamma_curves.png" alt="img" style="zoom: 67%;" />
   - 因为显示器指数调整亮度，会导致中间值被压暗，因此通过 gamma 矫正进行修正
   - 加上个 `1/2.2` 次幂，与显示器的指数中和
-
-
 
 - 使用自带的 gamma 矫正 `glEnable(GL_FRAMEBUFFER_SRGB);`
 - 手动在着色器中进行矫正
@@ -5472,6 +5470,8 @@ void main()
 > 能量守恒
 > 基于物理的 BRDF
 ## 理论
+>采用线性颜色空间和HDR在PBR渲染管线中非常重要。如果没有这些操作，几乎是不可能正确地捕获到因光照强度变化的细节，这最终会导致你的计算变得不正确，在视觉上看上去非常不自然。
+
 ### 微表面模型
 - 微平面越光滑（出射光线广德防线更多的符合镜面反射），镜面反射的效果就越锐利，可以用一个介于**0~1**的粗糙度参数表示微平面的情况
 	- ![image.png|500](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefined20241209154736.png)
@@ -5536,6 +5536,10 @@ float D_GGX_TR(vec3 N, vec3 H, float a)
     return nom / denom;
 }
 ```
-## 光照
+## 实例
+```c++
+
+
+```
 
 ## IBL (基于图片的光照)
