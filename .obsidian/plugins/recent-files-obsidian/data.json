@@ -1,6 +1,10 @@
 {
   "recentFiles": [
     {
+      "basename": "设计模式",
+      "path": "docs/自学内容/游戏开发&图形学/游戏开发/游戏引擎/unity/设计模式.md"
+    },
+    {
       "basename": "unity基础",
       "path": "docs/自学内容/游戏开发&图形学/游戏开发/游戏引擎/unity/unity基础.md"
     },
@@ -11,10 +15,6 @@
     {
       "basename": "笔记",
       "path": "docs/自学内容/移动端开发/鸿蒙/笔记.md"
-    },
-    {
-      "basename": "设计模式",
-      "path": "docs/自学内容/游戏开发&图形学/游戏开发/游戏引擎/unity/设计模式.md"
     },
     {
       "basename": "learnOpengl",

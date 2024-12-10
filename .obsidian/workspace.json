@@ -35,8 +35,7 @@
               "title": "unity基础"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -112,7 +111,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 291.49999618530273
+    "width": 291.49999618530273,
+    "collapsed": true
   },
   "right": {
     "id": "d615b65a4ccf8a6a",
@@ -184,10 +184,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/自学内容/游戏开发&图形学/游戏开发/游戏引擎/unity/unity基础.md"
+                "file": "docs/自学内容/游戏开发&图形学/游戏开发/游戏引擎/unity/设计模式.md"
               },
               "icon": "lucide-list",
-              "title": "unity基础 的大纲"
+              "title": "设计模式 的大纲"
             }
           }
         ],
@@ -213,10 +213,10 @@
       "obsidian-excalidraw-plugin:新建绘图文件": false
     }
   },
-  "active": "e0fef3a0d71f83fc",
+  "active": "eed68d62fcc669d9",
   "lastOpenFiles": [
-    "docs/自学内容/游戏开发&图形学/游戏开发/游戏引擎/unity/c#.md",
     "docs/自学内容/游戏开发&图形学/游戏开发/游戏引擎/unity/unity基础.md",
+    "docs/自学内容/游戏开发&图形学/游戏开发/游戏引擎/unity/c#.md",
     "docs/自学内容/移动端开发/鸿蒙/笔记.md",
     "docs/自学内容/游戏开发&图形学/游戏开发/游戏引擎/unity/设计模式.md",
     "docs/自学内容/游戏开发&图形学/计算机图形学/API编程/opengl/learnOpengl.md",
