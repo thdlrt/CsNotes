@@ -1,6 +1,10 @@
 {
   "recentFiles": [
     {
+      "basename": "shaderToy学习",
+      "path": "docs/自学内容/游戏开发&图形学/计算机图形学/shader/shaderToy学习.md"
+    },
+    {
       "basename": "unity基础",
       "path": "docs/自学内容/游戏开发&图形学/游戏开发/游戏引擎/unity/unity基础.md"
     },
@@ -195,10 +199,6 @@
     {
       "basename": "ARC165",
       "path": "docs/blog/posts/算法竞赛/ARC165.md"
-    },
-    {
-      "basename": "CodeforcesRound899(Div.2)",
-      "path": "docs/blog/posts/算法竞赛/CodeforcesRound899(Div.2).md"
     }
   ],
   "omittedPaths": [],
