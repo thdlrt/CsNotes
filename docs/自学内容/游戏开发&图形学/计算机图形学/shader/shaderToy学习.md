@@ -224,6 +224,8 @@ void main() {
 }
 ```
 ### [Electrocardiogram_Loewe](https://www.shadertoy.com/view/XsyGzD)
+![image.png|600](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefined20241211173450.png)
+
 ```c++
 #version 330 core // OpenGL 着色器版本
 uniform vec3 iResolution;       // 屏幕分辨率
@@ -250,6 +252,100 @@ void main() {
     vec3 col = mix(vec3(1), vec3(0), smoothstep(0.02, 0.03, abs(uv.y)));
 
     fragColor = vec4(col * l, 1.0);
+}
+
+```
+- 图像由两个维度合成 `col*l`
+- 其中 `col` 控制的是形状
+![image.png](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefined20241211173805.png)
+- `l` 控制的是对于 x 变化的颜色
+![image.png](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefined20241211173826.png)
+#### l 光波
+- `vec2 uv = (-iResolution.xy + 2.0 * fragCoord) / iResolution.y;`
+	- 初始范围是 `[-aspect, aspect]`，其中 `aspect = iResolution.x / iResolution.y`。
+- `uv2.x += iResolution.x / iResolution.y;`
+	- 进行偏移
+	- 范围变为 `[0, 2 * aspect]`
+- `uv2.x -= 2.0 * mod(iTime, 1.0 * iResolution.x / iResolution.y);`
+	- 减去一个随时间线性增加的值, (即向右传递)
+	- `uv2.x` 的范围覆盖了 **`[-2 * aspect, 2 * aspect]`**
+```c++
+float width = -(1.0 / (25.0 * uv2.x));
+vec3 l = vec3(width, width * 1.9, width * 1.5);
+```
+- `uv2.x` 趋近与 0（且大于 0，即左侧）时亮度更大
+- 双侧光波 `float width = abs(-(1.0 / (25.0 * uv2.x)));`
+	- ![image.png|350](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefined20241211174523.png)
+
+#### col 正弦
+- `float xx = abs(1.0 / (20.0 * max(abs(uv.x), 0.3)));`
+	- 它的值与 `uv.x` 绝对值的大小成反比
+- `uv.y -= xx * (sin(uv.x) + 3.0 * sin(2.0 * uv.x) + 2.0 * sin(3.0 * uv.x) + sin(4.0 * uv.x));`
+	- 这一行代码是波形的核心，通过多个正弦波叠加形成复杂的波形
+- `vec3 col = mix(vec3(1), vec3(0), smoothstep(0.02, 0.03, abs(uv.y)));`
+	- 限定波附近的像素发光
+- `smoothstep` 用于将片元到波形的距离（`abs(uv.y)`）映射到一个平滑的梯度值：（用于限定发光区域的宽度）
+    - 当 `abs(uv.y) < 0.02` 时，返回接近 `0` 的值（线条内部，颜色接近白色）。
+    - 当 `abs(uv.y) > 0.03` 时，返回接近 `1` 的值（线条外部，颜色接近黑色）。
+    - 在 `0.02` 到 `0.03` 的区间内，进行平滑插值过渡。
+- `mix(vec3(1), vec3(0), ...)`：
+    - 插值 `vec3(1)`（白色）和 `vec3(0)`（黑色），根据 `smoothstep` 的结果生成最终颜色。
+    - 白色的线条区域：对应 `uv.y` 接近 0 的位置，表示片元接近波形线条中心。
+    - 黑色的背景区域：对应 `uv.y` 远离波形线条的位置，表示片元远离波形中心。
+      
+### [Just snow](https://www.shadertoy.com/view/ldsGDn)
+![image.png|550](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefined20241211174818.png)
+```c++
+// "Just snow" - 重写版
+// 使用简单的多层视差效果生成雪花，带有景深效果。
+
+#define LIGHT_SNOW // 注释此行可切换为暴风雪模式
+
+#ifdef LIGHT_SNOW
+    #define LAYERS 50
+    #define DEPTH 0.5
+    #define WIDTH 0.3
+    #define SPEED 0.6
+#else
+    #define LAYERS 200
+    #define DEPTH 0.1
+    #define WIDTH 0.8
+    #define SPEED 1.5
+#endif
+
+uniform vec3 iResolution; // 屏幕分辨率
+uniform vec4 iMouse;      // 鼠标位置
+uniform float iTime;      // 时间
+
+void main() {
+    const mat3 p = mat3(13.323122, 23.5112, 21.71123,
+                        21.1212,  28.7312, 11.9312,
+                        21.8112,  14.7212, 61.3934);
+
+    vec2 uv = iMouse.xy / iResolution.xy + vec2(1.0, iResolution.y / iResolution.x) * gl_FragCoord.xy / iResolution.xy;
+    vec3 acc = vec3(0.0);
+    float dof = 5.0 * sin(iTime * 0.1);
+
+    for (int i = 0; i < LAYERS; i++) {
+        float fi = float(i);
+        vec2 q = uv * (1.0 + fi * DEPTH);
+        q += vec2(q.y * (WIDTH * mod(fi * 7.238917, 1.0) - WIDTH * 0.5), SPEED * iTime / (1.0 + fi * DEPTH * 0.03));
+
+        vec3 n = vec3(floor(q), 31.189 + fi);
+        vec3 m = floor(n) * 0.00001 + fract(n);
+        vec3 mp = (31415.9 + m) / fract(p * m);
+        vec3 r = fract(mp);
+
+        vec2 s = abs(mod(q, 1.0) - 0.5 + 0.9 * r.xy - 0.45);
+        s += 0.01 * abs(2.0 * fract(10.0 * q.yx) - 1.0);
+        
+        float d = 0.6 * max(s.x - s.y, s.x + s.y) + max(s.x, s.y) - 0.01;
+        float edge = 0.005 + 0.05 * min(0.5 * abs(fi - 5.0 - dof), 1.0);
+
+        acc += vec3(smoothstep(edge, -edge, d) * (r.x / (1.0 + 0.02 * fi * DEPTH)));
+    }
+
+    gl_FragColor = vec4(acc, 1.0);
 }
 
 ```
