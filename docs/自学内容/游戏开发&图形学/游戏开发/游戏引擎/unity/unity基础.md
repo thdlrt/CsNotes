@@ -854,7 +854,6 @@ public class MeshReadWriteSetter
 
 - 为所有子对象添加mesh碰撞器
 
-
 ```c#
 using UnityEngine;
 using UnityEditor;
