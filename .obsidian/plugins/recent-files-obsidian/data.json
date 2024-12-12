@@ -1,8 +1,16 @@
 {
   "recentFiles": [
     {
+      "basename": "几何",
+      "path": "docs/自学内容/游戏开发&图形学/计算机图形学/图形学基础/几何.md"
+    },
+    {
       "basename": "现代图形学基础",
       "path": "docs/自学内容/游戏开发&图形学/计算机图形学/图形学基础/现代图形学基础.md"
+    },
+    {
+      "basename": "设计模式",
+      "path": "docs/自学内容/游戏开发&图形学/游戏开发/游戏引擎/unity/设计模式.md"
     },
     {
       "basename": "材质",
@@ -17,20 +25,12 @@
       "path": "docs/自学内容/游戏开发&图形学/计算机图形学/图形学基础/光栅化.md"
     },
     {
-      "basename": "几何",
-      "path": "docs/自学内容/游戏开发&图形学/计算机图形学/图形学基础/几何.md"
-    },
-    {
       "basename": "shaderToy学习",
       "path": "docs/自学内容/游戏开发&图形学/计算机图形学/shader/shaderToy学习.md"
     },
     {
       "basename": "unity基础",
       "path": "docs/自学内容/游戏开发&图形学/游戏开发/游戏引擎/unity/unity基础.md"
-    },
-    {
-      "basename": "设计模式",
-      "path": "docs/自学内容/游戏开发&图形学/游戏开发/游戏引擎/unity/设计模式.md"
     },
     {
       "basename": "c#",
