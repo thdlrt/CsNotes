@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/自学内容/游戏开发&图形学/计算机图形学/shader/shaderToy学习.md",
+                "file": "docs/自学内容/游戏开发&图形学/计算机图形学/图形学基础/现代图形学基础.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "shaderToy学习"
+              "title": "现代图形学基础"
             }
           }
         ],
@@ -185,10 +185,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/自学内容/游戏开发&图形学/计算机图形学/shader/shaderToy学习.md"
+                "file": "docs/自学内容/游戏开发&图形学/计算机图形学/图形学基础/现代图形学基础.md"
               },
               "icon": "lucide-list",
-              "title": "shaderToy学习 的大纲"
+              "title": "现代图形学基础 的大纲"
             }
           }
         ],
@@ -216,8 +216,12 @@
   },
   "active": "e0fef3a0d71f83fc",
   "lastOpenFiles": [
-    "docs/自学内容/游戏开发&图形学/游戏开发/游戏引擎/unity/unity基础.md",
+    "docs/自学内容/游戏开发&图形学/计算机图形学/图形学基础/材质.md",
+    "docs/自学内容/游戏开发&图形学/计算机图形学/图形学基础/光线追踪.md",
+    "docs/自学内容/游戏开发&图形学/计算机图形学/图形学基础/光栅化.md",
+    "docs/自学内容/游戏开发&图形学/计算机图形学/图形学基础/几何.md",
     "docs/自学内容/游戏开发&图形学/计算机图形学/shader/shaderToy学习.md",
+    "docs/自学内容/游戏开发&图形学/游戏开发/游戏引擎/unity/unity基础.md",
     "docs/自学内容/游戏开发&图形学/计算机图形学/shader",
     "docs/自学内容/游戏开发&图形学/游戏开发/游戏引擎/unity/设计模式.md",
     "docs/自学内容/游戏开发&图形学/游戏开发/游戏引擎/unity/c#.md",
@@ -258,10 +262,6 @@
     "docs/_export_/slide/本校保研流程（计算机系夏令营）/plugin/chalkboard/img/boardmarker-yellow.png",
     "docs/_export_/slide/本校保研流程（计算机系夏令营）/plugin/chalkboard/README.md",
     "docs/_export_/slide/本校保研流程（计算机系夏令营）/plugin/chart/README.md",
-    "docs/_export_/slide/本校保研流程（计算机系夏令营）/plugin/customcontrols/README.md",
-    "docs/_export_/slide/本校保研流程（计算机系夏令营）/plugin/menu/README.md",
-    "docs/_export_/slide/本校保研流程（计算机系夏令营）/plugin/menu/CONTRIBUTING.md",
-    "docs/知识点（保研&工作）/保研/计算机科学/计算机网络.md",
     "未命名.canvas"
   ]
 }

@@ -1,6 +1,26 @@
 {
   "recentFiles": [
     {
+      "basename": "现代图形学基础",
+      "path": "docs/自学内容/游戏开发&图形学/计算机图形学/图形学基础/现代图形学基础.md"
+    },
+    {
+      "basename": "材质",
+      "path": "docs/自学内容/游戏开发&图形学/计算机图形学/图形学基础/材质.md"
+    },
+    {
+      "basename": "光线追踪",
+      "path": "docs/自学内容/游戏开发&图形学/计算机图形学/图形学基础/光线追踪.md"
+    },
+    {
+      "basename": "光栅化",
+      "path": "docs/自学内容/游戏开发&图形学/计算机图形学/图形学基础/光栅化.md"
+    },
+    {
+      "basename": "几何",
+      "path": "docs/自学内容/游戏开发&图形学/计算机图形学/图形学基础/几何.md"
+    },
+    {
       "basename": "shaderToy学习",
       "path": "docs/自学内容/游戏开发&图形学/计算机图形学/shader/shaderToy学习.md"
     },
@@ -179,26 +199,6 @@
     {
       "basename": "thread",
       "path": "docs/学校课程/归档课程/操作系统/代码/thread-lib/thread.h"
-    },
-    {
-      "basename": "os-model",
-      "path": "docs/学校课程/归档课程/操作系统/代码/os-model/os-model.py"
-    },
-    {
-      "basename": "index",
-      "path": "docs/index.md"
-    },
-    {
-      "basename": "index",
-      "path": "docs/blog/index.md"
-    },
-    {
-      "basename": "ABC321",
-      "path": "docs/blog/posts/算法竞赛/ABC321.md"
-    },
-    {
-      "basename": "ARC165",
-      "path": "docs/blog/posts/算法竞赛/ARC165.md"
     }
   ],
   "omittedPaths": [],
