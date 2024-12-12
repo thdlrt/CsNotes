@@ -263,6 +263,7 @@ void main() {
 #### l 光波
 - `vec2 uv = (-iResolution.xy + 2.0 * fragCoord) / iResolution.y;`
 	- 初始范围是 `[-aspect, aspect]`，其中 `aspect = iResolution.x / iResolution.y`。
+	- 为什么要使用 `fragCoord) / iResolution.y` 修正：保证任意比例下显示出来看起来一样（比如要显示一个圆，长款都是 0.5 归一化范围就会有问题，因为实际长度是不一致的）
 - `uv2.x += iResolution.x / iResolution.y;`
 	- 进行偏移
 	- 范围变为 `[0, 2 * aspect]`
@@ -349,3 +350,28 @@ void main() {
 }
 
 ```
+
+- `vec2 q = uv * (1.0 + fi * DEPTH);` 按照层进行缩放，实现近大远小的效果（想大于扩大了比例尺）
+- `q += vec2(q.y * (WIDTH * mod(fi * 7.238917, 1.0) - WIDTH * 0.5), SPEED * iTime / (1.0 + fi * DEPTH * 0.03));`
+	- 前半部分是添加了随机水平偏移量，将水平偏移范围平移到 `[-WIDTH * 0.5, WIDTH * 0.5]`，使雪花的随机偏移左右对称。
+	- 后半部分随着时间 `iTime` 的变化，雪花的垂直坐标不断增加，模拟雪花向下飘落的动态效果。并且深层的移动较慢
+```c++
+vec3 n = vec3(floor(q), 31.189 + fi);
+vec3 m = floor(n) * 0.00001 + fract(n);
+vec3 mp = (31415.9 + m) / fract(p * m);
+vec3 r = fract(mp);
+```
+- 这段代码用于生成随机数
+```c++
+vec2 s = abs(mod(q, 1.0) - 0.5 + 0.9 * r.xy - 0.45);
+s += 0.01 * abs(2.0 * fract(10.0 * q.yx) - 1.0);
+```
+- 将坐标 q 映射到 \[0,1\) 区间内，从而产生一种周期性图案
+- 最终 `s` ，用来界定**像素点在这些形状中的位置关系**。
+	- 即将一个坐标 q 转到一个小区域进行检验，这个区域中心有一个**雪花图案**，只有这个像素位于这个区域中的图案内，才进行显示
+- `float d = 0.6 * max(s.x - s.y, s.x + s.y) + max(s.x, s.y) - 0.01;`
+	- 计算了像素与图案边界之间的距离
+- `float edge = 0.005 + 0.05 * min(0.5 * abs(fi - 5.0 - dof), 1.0);`
+	- 则生成了一个羽化（显示）区域
+- `acc += vec3(smoothstep(edge, -edge, d) * (r.x / (1.0 + 0.02 * fi * DEPTH)));`
+	- 只有区域内的像素才会有显示，并且遵循近处亮远处暗的原则
