@@ -494,3 +494,88 @@ Console.WriteLine(result);  // 输出: True
 ```
 - 尽管扩展方法允许为类型添加新方法，但它们不能访问类型的私有字段或方法。
 - 如果类型已经有了与扩展方法同名的方法，原始的方法会优先被调用。
+# 设计模式
+### 单例模式
+- 跨场景的单例
+```csharp
+private static AmbientAudioPlayerBehaviour instance = null;
+private void Awake(){
+	if(instance == null){
+	    instance = this;
+	    DontDestroyOnLoad(gameObject);
+	}
+	else if(instance != this){
+	    Destroy(gameObject);
+	}
+}
+```
+- 更好的单例的实现方式（将**需要作为单例的类打包为预制件**，这样就可以将任意类作为单例，而不需要修改类本身）
+	- 创建一个单例管理类
+```csharp
+GameObject Prefab = null;
+static bool hasSpawned = false;//重新加载场景也不会影响到static变量
+private void Awake(){
+	if(hasSpawned) return;
+	GameObject persistentObject = Instantiate(Prefab);
+	DontDestroyLoad(persistentObject)
+	hasSpawned = true;
+}
+```
+## 对象池
+```csharp
+using UnityEngine;
+using UnityEngine.Pool;
+
+public class BulletManager : MonoBehaviour
+{
+    [SerializeField] private GameObject bulletPrefab;
+    private IObjectPool<Bullet> bulletPool;
+
+    private void Awake()
+    {
+        bulletPool = new ObjectPool<Bullet>(
+            CreateBullet,  // 创建新对象
+            OnGetBullet,   // 获取对象时的操作
+            OnReleaseBullet, // 释放对象时的操作
+            OnDestroyBullet, // 销毁对象时的操作
+            maxSize: 20    // 对象池最大大小
+        );
+    }
+
+    private Bullet CreateBullet()
+    {
+        GameObject bulletObj = Instantiate(bulletPrefab);
+        Bullet bullet = bulletObj.GetComponent<Bullet>();
+        bulletObj.SetActive(false);
+        return bullet;
+    }
+
+    private void OnGetBullet(Bullet bullet)
+    {
+        bullet.gameObject.SetActive(true);
+    }
+
+    private void OnReleaseBullet(Bullet bullet)
+    {
+        bullet.gameObject.SetActive(false);
+    }
+
+    private void OnDestroyBullet(Bullet bullet)
+    {
+        Destroy(bullet.gameObject);
+    }
+
+    public void ShootBullet(Vector3 position, Vector3 direction)
+    {
+        Bullet bullet = bulletPool.Get();
+        bullet.transform.position = position;
+        bullet.Shoot(direction);
+    }
+
+    public void ReleaseBullet(Bullet bullet)
+    {
+        bulletPool.Release(bullet);
+    }
+}
+
+```

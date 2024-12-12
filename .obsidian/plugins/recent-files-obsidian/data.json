@@ -1,16 +1,20 @@
 {
   "recentFiles": [
     {
+      "basename": "c#",
+      "path": "docs/自学内容/游戏开发&图形学/游戏开发/游戏引擎/unity/c#.md"
+    },
+    {
+      "basename": "shader",
+      "path": "docs/自学内容/游戏开发&图形学/游戏开发/游戏引擎/unity/shader.md"
+    },
+    {
       "basename": "几何",
       "path": "docs/自学内容/游戏开发&图形学/计算机图形学/图形学基础/几何.md"
     },
     {
       "basename": "现代图形学基础",
       "path": "docs/自学内容/游戏开发&图形学/计算机图形学/图形学基础/现代图形学基础.md"
-    },
-    {
-      "basename": "设计模式",
-      "path": "docs/自学内容/游戏开发&图形学/游戏开发/游戏引擎/unity/设计模式.md"
     },
     {
       "basename": "材质",
@@ -31,10 +35,6 @@
     {
       "basename": "unity基础",
       "path": "docs/自学内容/游戏开发&图形学/游戏开发/游戏引擎/unity/unity基础.md"
-    },
-    {
-      "basename": "c#",
-      "path": "docs/自学内容/游戏开发&图形学/游戏开发/游戏引擎/unity/c#.md"
     },
     {
       "basename": "笔记",
@@ -195,10 +195,6 @@
     {
       "basename": "8",
       "path": "docs/学校课程/归档课程/计算机系统基础/data/8.md"
-    },
-    {
-      "basename": "thread",
-      "path": "docs/学校课程/归档课程/操作系统/代码/thread-lib/thread.h"
     }
   ],
   "omittedPaths": [],

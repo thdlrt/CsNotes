@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/自学内容/游戏开发&图形学/计算机图形学/图形学基础/几何.md",
+                "file": "docs/自学内容/游戏开发&图形学/游戏开发/游戏引擎/unity/c#.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "几何"
+              "title": "c#"
             }
           }
         ],
@@ -185,10 +185,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/自学内容/游戏开发&图形学/计算机图形学/图形学基础/几何.md"
+                "file": "docs/自学内容/游戏开发&图形学/游戏开发/游戏引擎/unity/c#.md"
               },
               "icon": "lucide-list",
-              "title": "几何 的大纲"
+              "title": "c# 的大纲"
             }
           }
         ],
@@ -216,16 +216,17 @@
   },
   "active": "e0fef3a0d71f83fc",
   "lastOpenFiles": [
-    "docs/自学内容/游戏开发&图形学/计算机图形学/图形学基础/现代图形学基础.md",
-    "docs/自学内容/游戏开发&图形学/计算机图形学/图形学基础/几何.md",
     "docs/自学内容/游戏开发&图形学/游戏开发/游戏引擎/unity/设计模式.md",
+    "docs/自学内容/游戏开发&图形学/游戏开发/游戏引擎/unity/c#.md",
+    "docs/自学内容/游戏开发&图形学/游戏开发/游戏引擎/unity/shader.md",
+    "docs/自学内容/游戏开发&图形学/计算机图形学/图形学基础/几何.md",
+    "docs/自学内容/游戏开发&图形学/计算机图形学/图形学基础/现代图形学基础.md",
     "docs/自学内容/游戏开发&图形学/计算机图形学/图形学基础/材质.md",
     "docs/自学内容/游戏开发&图形学/计算机图形学/图形学基础/光线追踪.md",
     "docs/自学内容/游戏开发&图形学/计算机图形学/图形学基础/光栅化.md",
     "docs/自学内容/游戏开发&图形学/计算机图形学/shader/shaderToy学习.md",
     "docs/自学内容/游戏开发&图形学/游戏开发/游戏引擎/unity/unity基础.md",
     "docs/自学内容/游戏开发&图形学/计算机图形学/shader",
-    "docs/自学内容/游戏开发&图形学/游戏开发/游戏引擎/unity/c#.md",
     "docs/自学内容/移动端开发/鸿蒙/笔记.md",
     "docs/自学内容/游戏开发&图形学/计算机图形学/API编程/opengl/learnOpengl.md",
     "docs/自学内容/移动端开发/鸿蒙/ArkTS.md",
@@ -261,7 +262,6 @@
     "docs/_export_/slide/本校保研流程（计算机系夏令营）/plugin/chalkboard/img/chalk-orange.png",
     "docs/_export_/slide/本校保研流程（计算机系夏令营）/plugin/chalkboard/img/chalk-green.png",
     "docs/_export_/slide/本校保研流程（计算机系夏令营）/plugin/chalkboard/img/boardmarker-yellow.png",
-    "docs/_export_/slide/本校保研流程（计算机系夏令营）/plugin/chalkboard/README.md",
     "未命名.canvas"
   ]
 }
