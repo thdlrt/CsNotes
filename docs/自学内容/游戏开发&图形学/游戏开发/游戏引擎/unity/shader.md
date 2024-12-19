@@ -93,6 +93,35 @@ Shader "Custom/BasicShader"
 	- ![image.png|500](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefined20241219155308.png)
 - **顶点、片元着色器**
 	- ![image.png|500](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefined20241219155501.png)
+	- 片元着色器中获取屏幕坐标：VPOS 或 WPOS `fixed4 frag(float4 sp:VPOS)`
+#### 编写顶点着色器与片元着色器
+- 一个最简单的着色器
+```c
+Shader "Unity Shaders Book/Chapter 5/Simple Shader"  
+{  
+    SubShader  
+    {  
+        Pass  
+        {  
+            CGPROGRAM  
+            //指出对应着色器函数
+                #pragma vertex vert  
+                #pragma fragment frag  
+
+                float4 vert(float4 vertex : POSITION) : SV_POSITION  
+                {  
+                    return UnityObjectToClipPos(vertex);  
+                }  
+            	fixed4 frag() : SV_Target  
+            	{                
+                	return fixed4(1.0, 1.0, 1.0, 1.0);            
+            	}                        
+            ENDCG  
+            }  
+    }
+}
+```
+- `POSITION` 和 `SV_POSITION` 等都为**语义**，告诉系统用户需要哪些输入值，以及用户输出的是什么
 #### 表面着色器
 # shader 蓝图
 ## 基本
