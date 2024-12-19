@@ -111,7 +111,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 291.49999618530273
+    "width": 200,
+    "collapsed": true
   },
   "right": {
     "id": "d615b65a4ccf8a6a",
@@ -212,7 +213,7 @@
       "obsidian-excalidraw-plugin:新建绘图文件": false
     }
   },
-  "active": "eed68d62fcc669d9",
+  "active": "6c7418c521ab7a68",
   "lastOpenFiles": [
     "docs/自学内容/游戏开发&图形学/计算机图形学/图形学基础/光栅化.md",
     "docs/自学内容/游戏开发&图形学/计算机图形学/图形学基础/现代图形学基础.md",
