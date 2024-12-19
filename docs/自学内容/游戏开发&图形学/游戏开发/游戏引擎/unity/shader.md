@@ -81,6 +81,13 @@ Shader "Custom/BasicShader"
 	- 一个 subshader 可以包含多个 pass，多个 pass 在同一个 subshader 中完成不同的渲染任务
 - 可以使用 CG、HLSL，嵌套在 `CGPROGRAM` 和 `ENDCG`
 	- GLSL 嵌套在 `GLSLPROGRAM` 和 `GLSL`
+	- 用于嵌套在 subshader 中编写着色器
+### 内置变量
+- 变换矩阵
+![image.png|550](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefined20241219172434.png)
+- 摄像机
+![image.png|550](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefined20241219172843.png)
+
 ### unity 着色器
 - **表面着色器**：对顶点、片元着色器更高层级的封装，在 subshader 中而不是 pass 中
 	- ![image.png|500](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefined20241219155308.png)
