@@ -98,7 +98,7 @@ Shader "Custom/BasicShader"
 	- 可以从 unity 逛网下载提供的一些文件 `CGIncludes`
 - ![image.png|550](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefined20241219211932.png)
 - ![image.png|550](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefined20241219211943.png)
-- ![image.png|550](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefined20241219212031.png)
+- ![image.png|550](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefined20241220152229.png)
 #### CG/HLSL 语义
 - 语义让 shader 知道从哪里读取数据并把数据输出到哪里
 - 系统数值语义：`SV_` 开头，有特殊含义，如 `SV_POSITION SV_Target` 分别作为顶点着色器和片元着色器的输出
@@ -263,7 +263,64 @@ Shader "Unity Shaders Book/Chapter 5/Simple Shader" {
 ### 性能优化
 - 慎用分支和循环语句，GPU 开销很大
 ## 光照
-### 实现
+### 简单光照
+#### 手动实现
+- 顶点光照着色
+```c
+Shader "Unity Shaders Book/Chapter 5/Simple Shader" {  
+    Properties  
+    {  
+        _Diffuse ("Diffuse", Color) = (1, 1, 1, 1)  
+        _Specular ("Specular", Color) = (1, 1, 1, 1)  
+        _Gloss ("Gloss", Range(8.0, 256)) = 20  
+    }  
+    SubShader {  
+        Pass {  
+            Tags {"LightMode" = "ForwardBase"}  
+            CGPROGRAM  
+            #pragma vertex vert  
+            #pragma fragment frag  
+            #include "Lighting.cginc"  
+  
+            fixed4 _Diffuse;  
+            fixed4 _Specular;  
+            float _Gloss;  
+  
+            struct a2v {  
+                float4 vertex : POSITION;  
+                float3 normal : NORMAL;  
+            };  
+            struct v2f {  
+                float4 pos : SV_POSITION;  
+                fixed3 color : COLOR;  
+            };  
+            v2f vert(a2v v) {  
+                v2f o;  
+                o.pos = UnityObjectToClipPos(v.vertex);  
+                fixed3 ambient = UNITY_LIGHTMODEL_AMBIENT.xyz;  
+                fixed3 wordNormal = normalize(mul(v.normal,(float3x3)unity_WorldToObject));  
+                fixed3 lightDir = normalize(_WorldSpaceLightPos0.xyz);  
+                fixed3 diffuse = _LightColor0.rgb * _Diffuse.rgb * saturate(dot(wordNormal, lightDir));  
+  
+                fixed3 reflectDir = normalize(reflect(-lightDir, wordNormal));  
+                fixed viewDir = normalize(_WorldSpaceCameraPos - mul(unity_ObjectToWorld, v.vertex).xyz);  
+                fixed3 specular = _LightColor0.rgb * _Specular.rgb * pow(saturate(dot(reflectDir, viewDir)), _Gloss);  
+                                o.color = ambient + diffuse + specular;  
+                return o;  
+            }  
+            fixed4 frag(v2f i) : SV_Target {  
+                fixed3 color = i.color;  
+                return fixed4(color, 1.0);  
+            }            ENDCG  
+        }  
+    }    Fallback "Diffuse"  
+}
+```
+#### 使用内置函数
+- 手动计算光源反射很麻烦，尤其是光源较多时
+- ![|550](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefinedundefined20241220152229.png)
+## 纹理
+
 # shader 蓝图
 ## 基本
 ![image.png|650](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefined20241212205645.png)
