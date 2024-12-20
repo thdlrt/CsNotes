@@ -263,6 +263,7 @@ Shader "Unity Shaders Book/Chapter 5/Simple Shader" {
 ### 性能优化
 - 慎用分支和循环语句，GPU 开销很大
 ## 光照
+### 实现
 # shader 蓝图
 ## 基本
 ![image.png|650](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefined20241212205645.png)
