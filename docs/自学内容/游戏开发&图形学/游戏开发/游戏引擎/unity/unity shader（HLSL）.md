@@ -324,55 +324,55 @@ Shader "Unity Shaders Book/Chapter 5/Simple Shader" {
 
 Shader "Unity Shaders Book/Chapter 7/Single Texture" {  
     Properties {  
-       _Color ("Color Tint", Color) = (1, 1, 1, 1)  
-       _MainTex ("Main Tex", 2D) = "white" {}  
-       _Specular ("Specular", Color) = (1, 1, 1, 1)  
-       _Gloss ("Gloss", Range(8.0, 256)) = 20  
+        _Color ("Color Tint", Color) = (1, 1, 1, 1)  
+            _MainTex ("Main Tex", 2D) = "white" {}  
+        _Specular ("Specular", Color) = (1, 1, 1, 1)  
+            _Gloss ("Gloss", Range(8.0, 256)) = 20  
     }  
     SubShader {         
-Pass {   
-Tags { "LightMode"="ForwardBase" }  
-       CGPROGRAM  
-          #pragma vertex vert  
-          #pragma fragment frag  
-  
-          #include "Lighting.cginc"  
-          fixed4 _Color;  
-          sampler2D _MainTex;  
-          float4 _MainTex_ST;  
-          fixed4 _Specular;  
-          float _Gloss;  
-          struct a2v {  
-             float4 vertex : POSITION;  
-             float3 normal : NORMAL;  
-             float4 texcoord : TEXCOORD0;  
-          };          struct v2f {  
-             float4 pos : SV_POSITION;  
-             float3 worldNormal : TEXCOORD0;  
-             float3 worldPos : TEXCOORD1;  
-             float2 uv : TEXCOORD2;  
-          };          v2f vert(a2v v) {  
-             v2f o;  
-             o.pos = UnityObjectToClipPos(v.vertex);  
-                          o.worldNormal = UnityObjectToWorldNormal(v.normal);  
-                          o.worldPos = mul(unity_ObjectToWorld, v.vertex).xyz;  
-                          o.uv = v.texcoord.xy * _MainTex_ST.xy + _MainTex_ST.zw;  
-             // Or just call the built-in function  
-//           o.uv = TRANSFORM_TEX(v.texcoord, _MainTex);  
-             return o;  
-          }          fixed4 frag(v2f i) : SV_Target {  
-             fixed3 worldNormal = normalize(i.worldNormal);  
-             fixed3 worldLightDir = normalize(UnityWorldSpaceLightDir(i.worldPos));  
-             // Use the texture to sample the diffuse color  
-             fixed3 albedo = tex2D(_MainTex, i.uv).rgb * _Color.rgb;  
-             fixed3 ambient = UNITY_LIGHTMODEL_AMBIENT.xyz * albedo;  
-             fixed3 diffuse = _LightColor0.rgb * albedo * max(0, dot(worldNormal, worldLightDir));  
-             fixed3 viewDir = normalize(UnityWorldSpaceViewDir(i.worldPos));  
-             fixed3 halfDir = normalize(worldLightDir + viewDir);  
-             fixed3 specular = _LightColor0.rgb * _Specular.rgb * pow(max(0, dot(worldNormal, halfDir)), _Gloss);  
-             return fixed4(ambient + diffuse + specular, 1.0);  
-          }          ENDCG  
-       }  
+        Pass {   
+            Tags { "LightMode"="ForwardBase" }  
+            CGPROGRAM  
+                #pragma vertex vert  
+                #pragma fragment frag  
+
+                #include "Lighting.cginc"  
+                fixed4 _Color;  
+            sampler2D _MainTex;  
+            float4 _MainTex_ST;  
+            fixed4 _Specular;  
+            float _Gloss;  
+            struct a2v {  
+                float4 vertex : POSITION;  
+                float3 normal : NORMAL;  
+                float4 texcoord : TEXCOORD0;  
+            };          struct v2f {  
+                float4 pos : SV_POSITION;  
+                float3 worldNormal : TEXCOORD0;  
+                float3 worldPos : TEXCOORD1;  
+                float2 uv : TEXCOORD2;  
+            };          v2f vert(a2v v) {  
+                v2f o;  
+                o.pos = UnityObjectToClipPos(v.vertex);  
+                o.worldNormal = UnityObjectToWorldNormal(v.normal);  
+                o.worldPos = mul(unity_ObjectToWorld, v.vertex).xyz;  
+                o.uv = v.texcoord.xy * _MainTex_ST.xy + _MainTex_ST.zw;  
+                // Or just call the built-in function  
+                //           o.uv = TRANSFORM_TEX(v.texcoord, _MainTex);  
+                return o;  
+            }          fixed4 frag(v2f i) : SV_Target {  
+                fixed3 worldNormal = normalize(i.worldNormal);  
+                fixed3 worldLightDir = normalize(UnityWorldSpaceLightDir(i.worldPos));  
+                // Use the texture to sample the diffuse color  
+                fixed3 albedo = tex2D(_MainTex, i.uv).rgb * _Color.rgb;  
+                fixed3 ambient = UNITY_LIGHTMODEL_AMBIENT.xyz * albedo;  
+                fixed3 diffuse = _LightColor0.rgb * albedo * max(0, dot(worldNormal, worldLightDir));  
+                fixed3 viewDir = normalize(UnityWorldSpaceViewDir(i.worldPos));  
+                fixed3 halfDir = normalize(worldLightDir + viewDir);  
+                fixed3 specular = _LightColor0.rgb * _Specular.rgb * pow(max(0, dot(worldNormal, halfDir)), _Gloss);  
+                return fixed4(ambient + diffuse + specular, 1.0);  
+            }          ENDCG  
+        }  
     }FallBack "Specular"  
 }
 ```
@@ -381,9 +381,103 @@ Tags { "LightMode"="ForwardBase" }
 	- `.xy` 获取缩放
 	- `.zw` 获取偏移
 	- 对纹理坐标进行修正 `o.uv = v.texcoord.xy * _MainTex_ST.xy + _MainTex_ST.zw;`或者使用内置 `TRANSFORM_TEX(v.texcoord, _MainTex)` 如果要使用平铺等纹理效果必须要加上这个设置
-### 纹理的属性
+### 法线纹理
+- 法线纹理有两种实现模式：将光照等准换到切线坐标系进行计算；将物体表面信息转换到世界坐标系进行计算
+#### 转换到法线坐标系
+
+- 在顶点着色器中构建变换矩阵，将摄像机、灯光等变换到法线坐标系
+  - 由于计算过程是在顶点着色器中进行，因此会自动插值到不同片元，需要在片元着色器中再归一化一下
+
+```c
+v2f vert(a2v v) {  
+    v2f o;  
+    o.pos = UnityObjectToClipPos(v.vertex);  
+    o.uv.xy = v.texcoord.xy * _MainTex_ST.xy + _MainTex_ST.zw;  
+    o.uv.zw = v.texcoord.xy * _BumpMap_ST.xy + _BumpMap_ST.zw;  
+    //得到变换矩阵（世界坐标系->切线坐标系）
+    fixed3 worldNormal = UnityObjectToWorldNormal(v.normal);    
+    fixed3 worldTangent = UnityObjectToWorldDir(v.tangent.xyz);    
+    fixed3 worldBinormal = cross(worldNormal, worldTangent) * v.tangent.w;   
+
+    float3x3 worldToTangent = float3x3(worldTangent, worldBinormal, worldNormal);  
+    o.lightDir = mul(worldToTangent, WorldSpaceLightDir(v.vertex));  
+    o.viewDir = mul(worldToTangent, WorldSpaceViewDir(v.vertex));  
+
+    return o;  
+}          
+fixed4 frag(v2f i) : SV_Target {              
+    fixed3 tangentLightDir = normalize(i.lightDir);  
+    fixed3 tangentViewDir = normalize(i.viewDir);  
+
+    fixed4 packedNormal = tex2D(_BumpMap, i.uv.zw);  //从法线贴图读取法线
+    fixed3 tangentNormal;  
+
+    tangentNormal = UnpackNormal(packedNormal);  
+    tangentNormal.xy *= _BumpScale;  
+    tangentNormal.z = sqrt(1.0 - saturate(dot(tangentNormal.xy, tangentNormal.xy)));  
+    fixed3 albedo = tex2D(_MainTex, i.uv).rgb * _Color.rgb;  
+    fixed3 ambient = UNITY_LIGHTMODEL_AMBIENT.xyz * albedo;  
+    fixed3 diffuse = _LightColor0.rgb * albedo * max(0, dot(tangentNormal, tangentLightDir));  
+
+    fixed3 halfDir = normalize(tangentLightDir + tangentViewDir);  
+    fixed3 specular = _LightColor0.rgb * _Specular.rgb * pow(max(0, dot(tangentNormal, halfDir)), _Gloss);  
+    return fixed4(ambient + diffuse + specular, 1.0);  
+}
+```
+
+#### 转换到世界坐标系
+
+- 在顶点着色器中计算出转换矩阵,并将矩阵拆分（因为插值参数限制最多只能是float4不能是矩阵）、传递到片元着色器
+  - 因为在偏远着色器中还需要用矩阵对发线进行变换
+
+```c
+v2f vert(a2v v) {
+    v2f o;
+    o.pos = UnityObjectToClipPos(v.vertex);
+
+    o.uv.xy = v.texcoord.xy * _MainTex_ST.xy + _MainTex_ST.zw;
+    o.uv.zw = v.texcoord.xy * _BumpMap_ST.xy + _BumpMap_ST.zw;
+
+    fixed3 worldNormal = UnityObjectToWorldNormal(v.normal);  
+    fixed3 worldTangent = UnityObjectToWorldDir(v.tangent.xyz);  
+    fixed3 worldBinormal = cross(worldNormal, worldTangent) * v.tangent.w; 
+
+    float3x3 worldToTangent = float3x3(worldTangent, worldBinormal, worldNormal);
+
+    o.lightDir = mul(worldToTangent, WorldSpaceLightDir(v.vertex));
+    o.viewDir = mul(worldToTangent, WorldSpaceViewDir(v.vertex));
+
+    return o;
+}
+
+fixed4 frag(v2f i) : SV_Target {				
+    fixed3 tangentLightDir = normalize(i.lightDir);
+    fixed3 tangentViewDir = normalize(i.viewDir);
+
+    fixed4 packedNormal = tex2D(_BumpMap, i.uv.zw);
+    fixed3 tangentNormal;
+
+    tangentNormal = UnpackNormal(packedNormal);
+    tangentNormal.xy *= _BumpScale;
+    tangentNormal.z = sqrt(1.0 - saturate(dot(tangentNormal.xy, tangentNormal.xy)));
+
+    fixed3 albedo = tex2D(_MainTex, i.uv).rgb * _Color.rgb;
+
+    fixed3 ambient = UNITY_LIGHTMODEL_AMBIENT.xyz * albedo;
+
+    fixed3 diffuse = _LightColor0.rgb * albedo * max(0, dot(tangentNormal, tangentLightDir));
+
+    fixed3 halfDir = normalize(tangentLightDir + tangentViewDir);
+    fixed3 specular = _LightColor0.rgb * _Specular.rgb * pow(max(0, dot(tangentNormal, halfDir)), _Gloss);
+
+    return fixed4(ambient + diffuse + specular, 1.0);
+}
+```
+
+
 
 # shader 蓝图
+
 ## 基本
 ![image.png|650](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefined20241212205645.png)
 1. blackboard 中用于创建输入变量（再外面 material 处的面板可以直接设置）
