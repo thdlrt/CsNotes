@@ -319,7 +319,39 @@ Shader "Unity Shaders Book/Chapter 5/Simple Shader" {
 #### 使用内置函数
 - 手动计算光源反射很麻烦，尤其是光源较多时
 - ![|550](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefinedundefined20241220152229.png)
+
+### 渲染路径
+
+- 渲染路径决定光照是如何应用到Unity Shader中，通过为pass指定使用的渲染路径，unity才知道如何把光**源和处理后的光照信息**放在数据里以供访问
+- 常用的渲染路径：前向渲染路径、延迟渲染路径
+  - 一般一个项目只使用一种渲染路径，因此在项目设置中配置
+  - 但也可以给每个摄像机设置不同的方式
+- 在pass中配置`Tags {"LightMode" = "ForwardBase"}`
+  - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/undefinedimage-20241221201217671.png" alt="image-20241221201217671" style="zoom:50%;" />
+
+#### 前向渲染路径
+
+- 使用颜色、深度两个缓冲区，根据深度缓冲区深度测试来判断是否更新颜色缓冲区的值
+  - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/undefinedimage-20241221201949675.png" alt="image-20241221201949675" style="zoom:50%;" />
+- 不同等级的光照处理方式：逐顶点处理、逐像素处理、球谐函数
+  - 渲染一个物体时，unity会根据光源距离以及重要程度进行排序，最多4个光源按照逐顶点的方式处理，剩下的可以用SH等
+  - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/undefinedimage-20241221202628062.png" alt="image-20241221202628062" style="zoom:50%;" />
+- <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/undefinedimage-20241221203528740.png" alt="image-20241221203528740" style="zoom:50%;" />
+  - 如果一个场景只有一个光源，只会调用 `ForwardBase`，效率最高。
+  - 如果场景中增加了更多光源，Unity可以按需调用 `ForwardAdd`，不需要修改主光源的渲染逻辑。
+- 默认情况下forwardadd用于计算附加光源的光照共享而不处理阴影，因此只有主光源（通常平行光）才有阴影
+  - 前向渲染光照的开销比较大
+- 内置变量
+  - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/undefinedimage-20241221205709397.png" alt="image-20241221205709397" style="zoom:50%;" />
+- 内置函数
+  - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/undefinedimage-20241221205809469.png" alt="image-20241221205809469" style="zoom:50%;" />
+
+#### 顶点照明渲染
+
+- 性能高效果较差，不支持逐像素才能得到的效果，如阴影，高精度高光反射等，只使用了逐顶点方式计算光照
+
 ## 纹理
+
 ```c
 
 Shader "Unity Shaders Book/Chapter 7/Single Texture" {  
@@ -684,7 +716,157 @@ Pass {
 
 
 - 默认情况下渲染是cull back会剔除背面，也就是说物体内部不会被渲染出来
-  - 
+
+  - 但是对于透明物体，背面可能是可见的，要`Cull Off`
+
+  - 拆分为两个pass，第一个渲染背面，第二个渲染正面
+
+```c
+// Upgrade NOTE: replaced '_Object2World' with 'unity_ObjectToWorld'
+// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
+
+Shader "Unity Shaders Book/Chapter 8/Alpha Blend With Both Side" {
+	Properties {
+		_Color ("Color Tint", Color) = (1, 1, 1, 1)
+		_MainTex ("Main Tex", 2D) = "white" {}
+		_AlphaScale ("Alpha Scale", Range(0, 1)) = 1
+	}
+	SubShader {
+		Tags {"Queue"="Transparent" "IgnoreProjector"="True" "RenderType"="Transparent"}
+		
+		Pass {
+			Tags { "LightMode"="ForwardBase" }
+			
+			// First pass renders only back faces 
+			Cull Front
+			
+			ZWrite Off
+			Blend SrcAlpha OneMinusSrcAlpha
+			
+			CGPROGRAM
+			
+			#pragma vertex vert
+			#pragma fragment frag
+			
+			#include "Lighting.cginc"
+			
+			fixed4 _Color;
+			sampler2D _MainTex;
+			float4 _MainTex_ST;
+			fixed _AlphaScale;
+			
+			struct a2v {
+				float4 vertex : POSITION;
+				float3 normal : NORMAL;
+				float4 texcoord : TEXCOORD0;
+			};
+			
+			struct v2f {
+				float4 pos : SV_POSITION;
+				float3 worldNormal : TEXCOORD0;
+				float3 worldPos : TEXCOORD1;
+				float2 uv : TEXCOORD2;
+			};
+			
+			v2f vert(a2v v) {
+				v2f o;
+				o.pos = UnityObjectToClipPos(v.vertex);
+				
+				o.worldNormal = UnityObjectToWorldNormal(v.normal);
+				
+				o.worldPos = mul(unity_ObjectToWorld, v.vertex).xyz;
+				
+				o.uv = TRANSFORM_TEX(v.texcoord, _MainTex);
+				
+				return o;
+			}
+			
+			fixed4 frag(v2f i) : SV_Target {
+				fixed3 worldNormal = normalize(i.worldNormal);
+				fixed3 worldLightDir = normalize(UnityWorldSpaceLightDir(i.worldPos));
+				
+				fixed4 texColor = tex2D(_MainTex, i.uv);
+				
+				fixed3 albedo = texColor.rgb * _Color.rgb;
+				
+				fixed3 ambient = UNITY_LIGHTMODEL_AMBIENT.xyz * albedo;
+				
+				fixed3 diffuse = _LightColor0.rgb * albedo * max(0, dot(worldNormal, worldLightDir));
+				
+				return fixed4(ambient + diffuse, texColor.a * _AlphaScale);
+			}
+			
+			ENDCG
+		}
+		
+		Pass {
+			Tags { "LightMode"="ForwardBase" }
+			
+			// Second pass renders only front faces 
+			Cull Back
+			
+			ZWrite Off
+			Blend SrcAlpha OneMinusSrcAlpha
+			
+			CGPROGRAM
+			
+			#pragma vertex vert
+			#pragma fragment frag
+			
+			#include "Lighting.cginc"
+			
+			fixed4 _Color;
+			sampler2D _MainTex;
+			float4 _MainTex_ST;
+			fixed _AlphaScale;
+			
+			struct a2v {
+				float4 vertex : POSITION;
+				float3 normal : NORMAL;
+				float4 texcoord : TEXCOORD0;
+			};
+			
+			struct v2f {
+				float4 pos : SV_POSITION;
+				float3 worldNormal : TEXCOORD0;
+				float3 worldPos : TEXCOORD1;
+				float2 uv : TEXCOORD2;
+			};
+			
+			v2f vert(a2v v) {
+				v2f o;
+				o.pos = UnityObjectToClipPos(v.vertex);
+				
+				o.worldNormal = UnityObjectToWorldNormal(v.normal);
+				
+				o.worldPos = mul(unity_ObjectToWorld, v.vertex).xyz;
+				
+				o.uv = TRANSFORM_TEX(v.texcoord, _MainTex);
+				
+				return o;
+			}
+			
+			fixed4 frag(v2f i) : SV_Target {
+				fixed3 worldNormal = normalize(i.worldNormal);
+				fixed3 worldLightDir = normalize(UnityWorldSpaceLightDir(i.worldPos));
+				
+				fixed4 texColor = tex2D(_MainTex, i.uv);
+				
+				fixed3 albedo = texColor.rgb * _Color.rgb;
+				
+				fixed3 ambient = UNITY_LIGHTMODEL_AMBIENT.xyz * albedo;
+				
+				fixed3 diffuse = _LightColor0.rgb * albedo * max(0, dot(worldNormal, worldLightDir));
+				
+				return fixed4(ambient + diffuse, texColor.a * _AlphaScale);
+			}
+			
+			ENDCG
+		}
+	} 
+	FallBack "Transparent/VertexLit"
+}
+```
 
 # shader 蓝图
 
