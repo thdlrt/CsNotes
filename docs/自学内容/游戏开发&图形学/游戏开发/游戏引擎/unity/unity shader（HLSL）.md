@@ -541,6 +541,7 @@ fixed4 frag(v2f i) : SV_Target {
 
 - 先渲染所有不透明物体，并开启深度测试和深度写入
 - 按照距离摄像机远近对半透明物体排序，按照从后往前的的顺序渲染，开启深度测试，关闭深度写入
+  - 透明物体渲染顺序会导致颜色叠加出现问题，（比如先红色 再 蓝色， 和 先蓝色 在红色）两种方式混合出的颜色是不同的
 - 通过渲染队列进行控制
   - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/undefinedimage-20241221174726794.png" alt="image-20241221174726794" style="zoom:50%;" />
 - `Tags{"Queue"="Transparent"}`就用于透明混合
@@ -561,6 +562,13 @@ clip (texColor.a - _Cutoff);
 
 #### 透明度混合
 
+- 混合方式
+  - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/undefinedimage-20241221184805013.png" alt="image-20241221184805013" style="zoom:50%;" />
+  - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/undefinedimage-20241221184953890.png" alt="image-20241221184953890" style="zoom:50%;" />
+  - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/undefinedimage-20241221185251192.png" alt="image-20241221185251192" style="zoom:50%;" />
+- 混合类型模板
+  - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/undefinedimage-20241221185342246.png" alt="image-20241221185342246" style="zoom:50%;" />
+
 ```c
 Shader "Unity Shaders Book/Chapter 8/Alpha Blend" {
     Properties {
@@ -575,6 +583,7 @@ Shader "Unity Shaders Book/Chapter 8/Alpha Blend" {
             Tags { "LightMode"="ForwardBase" }
 
             ZWrite Off//关闭深度写入
+                //ZTest 控制透明测试
             Blend SrcAlpha OneMinusSrcAlpha//开启混合
 
             CGPROGRAM
@@ -637,8 +646,44 @@ Shader "Unity Shaders Book/Chapter 8/Alpha Blend" {
 }
 ```
 
-- 对于复杂难以排序的图形<img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/undefinedimage-20241221175932278.png" alt="image-20241221175932278" style="zoom:33%;" />
+##### 半透明渲染方式
+
+- ZTest On能保证透明物体和不透明物体间的渲染正确
+  - ZTest Off后，会导致半透明物体直接将所有的不透明物体覆盖。。本来被不透明物体覆盖的，看不见的半透明物体都错误的显示出来了。
+  - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/undefinede47591c0f7446af5acaef135d91548c6.png" alt="在这里插入图片描述" style="zoom: 33%;" />
+- ZWrite On 能保证**不同透明物体**间穿插渲染正确
+  - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/undefinede104dc4f5547dbc59f54e679aeb9d1ff.png" alt="在这里插入图片描述" style="zoom:33%;" />
+- Cull Back能避免部分背面的渲染异常问题（控制剔除的面Cull Back/Front/Off）
+  - 虽然避免了自身出现穿插的问题，但是却没有还原出背面的不透明效果。缺失了真实感。
+  - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/undefinedbc562e757888f976bec2c7383b38347d.png" alt="在这里插入图片描述" style="zoom:33%;" />
+- 
+
+- 由于关闭了深度写入，我们就只能纯粹用Unity提供的渲染队列来解决渲染顺序这个问题。但是当遇到渲染模型本身遮挡效果复杂的情况下，效果往往会出错
+  - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/undefinedimage-20241221175932278.png" alt="image-20241221175932278" style="zoom:33%;" />
   - 可以通过开启深度写入来修复显示错误
+  - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/undefinedimage-20241221182155654.png" alt="image-20241221182155654" style="zoom:33%;" />
+
+```c
+Pass {
+    ZWrite On
+    ColorMask 0
+}
+
+Pass {
+    Tags { "LightMode"="ForwardBase" }
+
+    ZWrite Off
+    Blend SrcAlpha OneMinusSrcAlpha
+}
+```
+
+- 使用两阶段pass
+  - **第一个 Pass**（“Depth Only” Pass）只负责向深度缓冲写入 (ZWrite On)，并且 `ColorMask 0` 意味着它并不往屏幕上画任何颜色。
+  - **第二个 Pass**（“ForwardBase” Pass）才进行真正的渲染，包括光照计算、纹理采样、Alpha Blending 等，但它将 `ZWrite Off`，避免在这个阶段修改深度缓冲。
+
+
+
+- 默认情况下渲染是cull back会剔除背面，也就是说物体内部不会被渲染出来
   - 
 
 # shader 蓝图
