@@ -474,7 +474,172 @@ fixed4 frag(v2f i) : SV_Target {
 }
 ```
 
+### 渐变纹理
 
+- 主要用于卡通风格渲染
+  - 使用渐变纹理来控制漫反射
+- 通过漫反射强度控制uv坐标（从而实现按照渐变纹理来表示漫反射强度）
+
+```c
+v2f vert(a2v v) {
+    v2f o;
+    o.pos = UnityObjectToClipPos(v.vertex);
+
+    o.worldNormal = UnityObjectToWorldNormal(v.normal);
+
+    o.worldPos = mul(unity_ObjectToWorld, v.vertex).xyz;
+
+    o.uv = TRANSFORM_TEX(v.texcoord, _RampTex);
+
+    return o;
+}
+
+fixed4 frag(v2f i) : SV_Target {
+    fixed3 worldNormal = normalize(i.worldNormal);
+    fixed3 worldLightDir = normalize(UnityWorldSpaceLightDir(i.worldPos));
+
+    fixed3 ambient = UNITY_LIGHTMODEL_AMBIENT.xyz;
+
+    // Use the texture to sample the diffuse color
+    fixed halfLambert  = 0.5 * dot(worldNormal, worldLightDir) + 0.5;
+    fixed3 diffuseColor = tex2D(_RampTex, fixed2(halfLambert, halfLambert)).rgb * _Color.rgb;
+
+    fixed3 diffuse = _LightColor0.rgb * diffuseColor;
+
+    fixed3 viewDir = normalize(UnityWorldSpaceViewDir(i.worldPos));
+    fixed3 halfDir = normalize(worldLightDir + viewDir);
+    fixed3 specular = _LightColor0.rgb * _Specular.rgb * pow(max(0, dot(worldNormal, halfDir)), _Gloss);
+
+    return fixed4(ambient + diffuse + specular, 1.0);
+}
+```
+
+<img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/undefinedimage-20241221171453320.png" alt="image-20241221171453320" style="zoom: 50%;" />
+
+### 遮罩纹理
+
+- 使用遮罩来具体控制模型不同区域的反射（高光强度等）
+  - 比如将一个纹理的红色通道作为镜面反射的系数
+
+- <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/undefinedimage-20241221171522698.png" alt="image-20241221171522698" style="zoom:50%;" />
+  - 减少砖缝的反光
+
+
+
+## 透明效果
+
+- 透明度测试：通过比较片元的透明度值（Alpha 通道）与指定阈值
+  - 添加透明度测试：将 Alpha 值与指定的阈值（`Alpha Cutoff`）比较。
+    - 如果满足条件（如 Alpha 值 > 阈值），片元通过测试并被渲染。
+    - 如果不满足条件，片元被丢弃，不会参与后续的渲染管线。
+  - 片元要么完全渲染，要么完全丢弃，不需要进行混合运算
+- 透明度混合：通过将片元的颜色与背景颜色按透明度比例混合，计算出最终颜色
+  - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/undefinedimage-20241221172837991.png" alt="image-20241221172837991" style="zoom: 50%;" />
+  - 通常启用透明度混合时会禁用深度缓冲写入，以避免影响后续透明物体的渲染。（因此可能要手动排序，**调整渲染顺序**）
+
+#### 渲染顺序
+
+- 先渲染所有不透明物体，并开启深度测试和深度写入
+- 按照距离摄像机远近对半透明物体排序，按照从后往前的的顺序渲染，开启深度测试，关闭深度写入
+- 通过渲染队列进行控制
+  - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/undefinedimage-20241221174726794.png" alt="image-20241221174726794" style="zoom:50%;" />
+- `Tags{"Queue"="Transparent"}`就用于透明混合
+
+#### 透明度测试
+
+- 在片元着色器中添加测试
+
+```c
+if ((texColor.a - _Cutoff) < 0.0) {
+    discard;
+}
+//等价写法
+clip (texColor.a - _Cutoff);
+```
+
+
+
+#### 透明度混合
+
+```c
+Shader "Unity Shaders Book/Chapter 8/Alpha Blend" {
+    Properties {
+        _Color ("Color Tint", Color) = (1, 1, 1, 1)
+        _MainTex ("Main Tex", 2D) = "white" {}
+        _AlphaScale ("Alpha Scale", Range(0, 1)) = 1//控制整个物体的全局不透明度
+    }
+    SubShader {
+        Tags {"Queue"="Transparent" "IgnoreProjector"="True" "RenderType"="Transparent"}
+
+        Pass {
+            Tags { "LightMode"="ForwardBase" }
+
+            ZWrite Off//关闭深度写入
+            Blend SrcAlpha OneMinusSrcAlpha//开启混合
+
+            CGPROGRAM
+
+            #pragma vertex vert
+            #pragma fragment frag
+
+            #include "Lighting.cginc"
+
+            fixed4 _Color;
+            sampler2D _MainTex;
+            float4 _MainTex_ST;
+            fixed _AlphaScale;
+
+            struct a2v {
+                float4 vertex : POSITION;
+                float3 normal : NORMAL;
+                float4 texcoord : TEXCOORD0;
+            };
+
+            struct v2f {
+                float4 pos : SV_POSITION;
+                float3 worldNormal : TEXCOORD0;
+                float3 worldPos : TEXCOORD1;
+                float2 uv : TEXCOORD2;
+            };
+
+            v2f vert(a2v v) {
+                v2f o;
+                o.pos = UnityObjectToClipPos(v.vertex);
+
+                o.worldNormal = UnityObjectToWorldNormal(v.normal);
+
+                o.worldPos = mul(unity_ObjectToWorld, v.vertex).xyz;
+
+                o.uv = TRANSFORM_TEX(v.texcoord, _MainTex);
+
+                return o;
+            }
+
+            fixed4 frag(v2f i) : SV_Target {
+                fixed3 worldNormal = normalize(i.worldNormal);
+                fixed3 worldLightDir = normalize(UnityWorldSpaceLightDir(i.worldPos));
+
+                fixed4 texColor = tex2D(_MainTex, i.uv);
+
+                fixed3 albedo = texColor.rgb * _Color.rgb;
+
+                fixed3 ambient = UNITY_LIGHTMODEL_AMBIENT.xyz * albedo;
+
+                fixed3 diffuse = _LightColor0.rgb * albedo * max(0, dot(worldNormal, worldLightDir));
+
+                return fixed4(ambient + diffuse, texColor.a * _AlphaScale);
+            }
+
+            ENDCG
+        }
+    } 
+    FallBack "Transparent/VertexLit"
+}
+```
+
+- 对于复杂难以排序的图形<img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/undefinedimage-20241221175932278.png" alt="image-20241221175932278" style="zoom:33%;" />
+  - 可以通过开启深度写入来修复显示错误
+  - 
 
 # shader 蓝图
 
