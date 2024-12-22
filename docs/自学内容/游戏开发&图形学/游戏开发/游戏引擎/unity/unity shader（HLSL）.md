@@ -345,6 +345,163 @@ Shader "Unity Shaders Book/Chapter 5/Simple Shader" {
   - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/undefinedimage-20241221205709397.png" alt="image-20241221205709397" style="zoom:50%;" />
 - 内置函数
   - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/undefinedimage-20241221205809469.png" alt="image-20241221205809469" style="zoom:50%;" />
+- 实例代码（双光源，平行光+点光源）
+  - 拆分为两个pass：
+    - **ForwardBase**：处理环境光和第一个方向光。
+    - **ForwardAdd**：处理其他像素光源。
+  - 
+
+```c
+Shader "Unity Shaders Book/Chapter 9/Forward Rendering" {
+    Properties {
+        _Diffuse ("Diffuse", Color) = (1, 1, 1, 1)
+        _Specular ("Specular", Color) = (1, 1, 1, 1)
+        _Gloss ("Gloss", Range(8.0, 256)) = 20
+    }
+    SubShader {
+        Tags { "RenderType"="Opaque" }
+
+        Pass {
+            // Pass for ambient light & first pixel light (directional light)
+            Tags { "LightMode"="ForwardBase" }
+
+            CGPROGRAM
+
+            // Apparently need to add this declaration 
+            #pragma multi_compile_fwdbase	
+            #pragma vertex vert
+            #pragma fragment frag
+            #include "Lighting.cginc"
+
+            fixed4 _Diffuse;
+            fixed4 _Specular;
+            float _Gloss;
+
+            struct a2v {
+                float4 vertex : POSITION;
+                float3 normal : NORMAL;
+            };
+
+            struct v2f {
+                float4 pos : SV_POSITION;
+                float3 worldNormal : TEXCOORD0;
+                float3 worldPos : TEXCOORD1;
+            };
+
+            v2f vert(a2v v) {
+                v2f o;
+                o.pos = UnityObjectToClipPos(v.vertex);
+
+                o.worldNormal = UnityObjectToWorldNormal(v.normal);
+
+                o.worldPos = mul(unity_ObjectToWorld, v.vertex).xyz;
+
+                return o;
+            }
+
+            fixed4 frag(v2f i) : SV_Target {
+                fixed3 worldNormal = normalize(i.worldNormal);
+                fixed3 worldLightDir = normalize(_WorldSpaceLightPos0.xyz);
+
+                fixed3 ambient = UNITY_LIGHTMODEL_AMBIENT.xyz;
+
+                fixed3 diffuse = _LightColor0.rgb * _Diffuse.rgb * max(0, dot(worldNormal, worldLightDir));
+
+                fixed3 viewDir = normalize(_WorldSpaceCameraPos.xyz - i.worldPos.xyz);
+                fixed3 halfDir = normalize(worldLightDir + viewDir);
+                fixed3 specular = _LightColor0.rgb * _Specular.rgb * pow(max(0, dot(worldNormal, halfDir)), _Gloss);
+
+                fixed atten = 1.0;
+
+                return fixed4(ambient + (diffuse + specular) * atten, 1.0);
+            }
+
+            ENDCG
+        }
+
+        Pass {
+            // Pass for other pixel lights
+            Tags { "LightMode"="ForwardAdd" }
+
+            Blend One One
+
+                CGPROGRAM
+
+                // Apparently need to add this declaration
+                #pragma multi_compile_fwdadd
+
+                #pragma vertex vert
+                #pragma fragment frag
+
+                #include "Lighting.cginc"
+                #include "AutoLight.cginc"
+
+                fixed4 _Diffuse;
+            fixed4 _Specular;
+            float _Gloss;
+
+            struct a2v {
+                float4 vertex : POSITION;
+                float3 normal : NORMAL;
+            };
+
+            struct v2f {
+                float4 pos : SV_POSITION;
+                float3 worldNormal : TEXCOORD0;
+                float3 worldPos : TEXCOORD1;
+            };
+
+            v2f vert(a2v v) {
+                v2f o;
+                o.pos = UnityObjectToClipPos(v.vertex);
+
+                o.worldNormal = UnityObjectToWorldNormal(v.normal);
+
+                o.worldPos = mul(unity_ObjectToWorld, v.vertex).xyz;
+
+                return o;
+            }
+			//关键代码，处理非平行光的渲染
+            fixed4 frag(v2f i) : SV_Target {
+                fixed3 worldNormal = normalize(i.worldNormal);
+                #ifdef USING_DIRECTIONAL_LIGHT//平行光
+                fixed3 worldLightDir = normalize(_WorldSpaceLightPos0.xyz);
+                #else
+                fixed3 worldLightDir = normalize(_WorldSpaceLightPos0.xyz - i.worldPos.xyz);
+                #endif
+
+                fixed3 diffuse = _LightColor0.rgb * _Diffuse.rgb * max(0, dot(worldNormal, worldLightDir));
+
+                fixed3 viewDir = normalize(_WorldSpaceCameraPos.xyz - i.worldPos.xyz);
+                fixed3 halfDir = normalize(worldLightDir + viewDir);
+                fixed3 specular = _LightColor0.rgb * _Specular.rgb * pow(max(0, dot(worldNormal, halfDir)), _Gloss);
+				//计算光线衰减
+                #ifdef USING_DIRECTIONAL_LIGHT
+                fixed atten = 1.0;//平行光没有衰减
+                #else
+                #if defined (POINT)//点光源
+                float3 lightCoord = mul(unity_WorldToLight, float4(i.worldPos, 1)).xyz;
+                fixed atten = tex2D(_LightTexture0, dot(lightCoord, lightCoord).rr).UNITY_ATTEN_CHANNEL;
+                #elif defined (SPOT)//聚光灯
+                float4 lightCoord = mul(unity_WorldToLight, float4(i.worldPos, 1));
+                fixed atten = (lightCoord.z > 0) * tex2D(_LightTexture0, lightCoord.xy / lightCoord.w + 0.5).w * tex2D(_LightTextureB0, dot(lightCoord, lightCoord).rr).UNITY_ATTEN_CHANNEL;
+                #else
+                fixed atten = 1.0;
+                #endif
+                #endif
+
+                return fixed4((diffuse + specular) * atten, 1.0);
+            }
+
+            ENDCG
+        }
+    }
+    FallBack "Specular"
+}
+
+```
+
+
 
 #### 顶点照明渲染路径（已废弃）
 
@@ -355,16 +512,72 @@ Shader "Unity Shaders Book/Chapter 5/Simple Shader" {
 
 #### 延迟渲染路径
 
-- 当场景中包含过多实时光源时，前向渲染的性能会大幅下降
+- 当场景中包含过多实时光源时，前向渲染的性能会大幅下降，延迟渲染就主要用于有大量实时光照的场景
+  - 延迟渲染问题：不支持真正的抗锯齿、不能处理半透明物体、对显卡要求
 - 延迟渲染使用额外的缓冲区G缓冲，存储更多的表面信息，如法线、位置、材质等
 - 延迟渲染包含了两个Pass
   - 第一个Pass仅仅极速那哪些片元可见（深度缓冲），并将可见的片元的相关信息存储到G缓冲区
   - 在第二个Pass中，利用G缓冲区的各个片元信息进行真正的光照计算
 
 ```c
+// Pass 1: 不进行真正的光照计算
+// 仅将光照计算需要的信息存储到 G 缓冲中
+for (each primitive in this model) {
+    for (each fragment covered by this primitive) {
+        if (failed in depth test) {
+            // 如果没有通过深度测试，说明该片元是不可见的
+            discard;
+        } else {
+            // 如果该片元可见
+            // 就把需要的信息存储到 G 缓冲中
+            writeGBuffer(materialInfo, pos, normal, lightDir, viewDir);
+        }
+    }
+}
+
+// Pass 2: 利用 G 缓冲中的信息进行真正的光照计算
+for (each pixel in the screen) {
+    if (the pixel is valid) {
+        // 如果该像素是有效的
+        // 读取之前写入的 G 缓冲中的信息
+        readGBuffer(pixel, materialInfo, pos, normal, lightDir, viewDir);
+
+        // 根据读取到的信息进行光照计算
+        float4 color = Shading(materialInfo, pos, normal, lightDir, viewDir);
+
+        // 更新帧缓冲
+        writeFrameBuffer(pixel, color);
+    }
+}
 ```
 
+- <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/undefinedimage-20241222150747461.png" alt="image-20241222150747461" style="zoom:50%;" />
 
+### 光源
+
+- 光源的属性：位置、方向、颜色、强度、衰减
+- **平行光**：位置属性不影响光照，并且没有衰减
+- **点光源**：球形范围照明
+
+#### 光线衰减
+
+- unity使用一张**纹理**来查找光照衰减数值
+  - 灵活性受限
+  - 性能较好，大部分情况下效果良好
+- 将点转换到光源坐标系，然后用其平方来对纹理采样
+
+```c
+float3 lightCoord mul(LightMatrix0,float4(i.worldPosition,1)).xyz;
+fixed atten tex2D(LightTexture0,dot(1ightCoord,lightCoord).rr).UNITY ATTEN CHANNEL;
+```
+
+- 也可以使用数学公式进行计算
+
+### 阴影
+
+- 
+
+### 可以实际使用
 
 ## 纹理
 
