@@ -1618,7 +1618,7 @@ Shader "Unity Shaders Book/Chapter 10/Glass Refraction" {
 
 ### 程序纹理
 
-- 
+- 可以使用substance designer来很方便的创建程序纹理资源
 
 ## 透明效果
 
