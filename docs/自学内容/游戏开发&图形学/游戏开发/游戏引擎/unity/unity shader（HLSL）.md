@@ -346,9 +346,25 @@ Shader "Unity Shaders Book/Chapter 5/Simple Shader" {
 - 内置函数
   - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/undefinedimage-20241221205809469.png" alt="image-20241221205809469" style="zoom:50%;" />
 
-#### 顶点照明渲染
+#### 顶点照明渲染路径（已废弃）
 
-- 性能高效果较差，不支持逐像素才能得到的效果，如阴影，高精度高光反射等，只使用了逐顶点方式计算光照
+- 性能高效果较差，不支持逐像素才能得到的效果，如阴影，高精度高光反射等，只使用了**逐顶点方式计算光照**
+- 通常只需要一个Pass，会在这里完成所有光源对物体照明的计算（一个pass中最多8个逐顶点光源）
+- <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/undefinedimage-20241222144043955.png" alt="image-20241222144043955" style="zoom:50%;" />
+- ![image-20241222144349596](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefinedimage-20241222144349596.png)
+
+#### 延迟渲染路径
+
+- 当场景中包含过多实时光源时，前向渲染的性能会大幅下降
+- 延迟渲染使用额外的缓冲区G缓冲，存储更多的表面信息，如法线、位置、材质等
+- 延迟渲染包含了两个Pass
+  - 第一个Pass仅仅极速那哪些片元可见（深度缓冲），并将可见的片元的相关信息存储到G缓冲区
+  - 在第二个Pass中，利用G缓冲区的各个片元信息进行真正的光照计算
+
+```c
+```
+
+
 
 ## 纹理
 
