@@ -1292,11 +1292,329 @@ fixed4 frag(v2f i) : SV_Target {
 
 ### 立方体纹理
 
-- 
+- 使用立方体纹理实现环境映射
+  - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/undefinedimage-20241222210508738.png" alt="image-20241222210508738" style="zoom:50%;" />
+  - 使用六张平面材质创建
+  - 或者使用特殊布局的纹理，并将texturetype 设置为cubemap
+- 代码动态创建纹理
+  - 在renderFromPosition位置动态创建一个摄像机，将**当前位置的图像**渲染到指定纹理对象
+
+```c
+void OnwizardCreate (
+    //-create temporary camera for rendering
+    Gameobject go = new Gameobject "CubemapCamera");
+	go.AddComponent<Camera>();
+	//place it on the object
+	go.transform.position = renderFromPosition.position;
+	//render into cubemap
+	go.GetComponent<Camera>().RenderToCubemap(cubemap);
+	//destroy temporary camera
+	DestroyImmediate(go);
+}
+```
+
+
+
+- 设置天空盒材质
+  - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/undefinedimage-20241222211129219.png" alt="image-20241222211129219" style="zoom:50%;" />
+  - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/undefinedimage-20241222211141682.png" alt="image-20241222211141682" style="zoom:50%;" />
+
+#### 反射
+
+- 通过入射方向和表面法线来计算反射方向，再利用反射方向对立方体纹理进行采样
+- 在vert计算反射方向，frag中获取对应立方体纹理片元
+
+```c
+fixed4 _Color;
+fixed4 _ReflectColor;
+fixed _ReflectAmount;
+samplerCUBE _Cubemap;
+
+struct a2v {
+    float4 vertex : POSITION;
+    float3 normal : NORMAL;
+};
+
+struct v2f {
+    float4 pos : SV_POSITION;
+    float3 worldPos : TEXCOORD0;
+    fixed3 worldNormal : TEXCOORD1;
+    fixed3 worldViewDir : TEXCOORD2;
+    fixed3 worldRefl : TEXCOORD3;
+    SHADOW_COORDS(4)
+};
+
+v2f vert(a2v v) {
+    v2f o;
+
+    o.pos = UnityObjectToClipPos(v.vertex);
+
+    o.worldNormal = UnityObjectToWorldNormal(v.normal);
+
+    o.worldPos = mul(unity_ObjectToWorld, v.vertex).xyz;
+
+    o.worldViewDir = UnityWorldSpaceViewDir(o.worldPos);
+
+    // Compute the reflect dir in world space
+    o.worldRefl = reflect(-o.worldViewDir, o.worldNormal);
+
+    TRANSFER_SHADOW(o);
+
+    return o;
+}
+
+fixed4 frag(v2f i) : SV_Target {
+    fixed3 worldNormal = normalize(i.worldNormal);
+    fixed3 worldLightDir = normalize(UnityWorldSpaceLightDir(i.worldPos));		
+    fixed3 worldViewDir = normalize(i.worldViewDir);		
+
+    fixed3 ambient = UNITY_LIGHTMODEL_AMBIENT.xyz;
+
+    fixed3 diffuse = _LightColor0.rgb * _Color.rgb * max(0, dot(worldNormal, worldLightDir));
+
+    // Use the reflect dir in world space to access the cubemap
+    fixed3 reflection = texCUBE(_Cubemap, i.worldRefl).rgb * _ReflectColor.rgb;
+
+    UNITY_LIGHT_ATTENUATION(atten, i, i.worldPos);
+
+    // Mix the diffuse color with the reflected color
+    fixed3 color = ambient + lerp(diffuse, reflection, _ReflectAmount) * atten;
+
+    return fixed4(color, 1.0);
+}
+```
+
+
+
+#### 折射
+
+- 简化为一次折射，不考虑进入离开介质两次折射
+
+```c
+fixed4 _Color;
+fixed4 _RefractColor;
+float _RefractAmount;
+fixed _RefractRatio;
+samplerCUBE _Cubemap;
+
+struct a2v {
+    float4 vertex : POSITION;
+    float3 normal : NORMAL;
+};
+
+struct v2f {
+    float4 pos : SV_POSITION;
+    float3 worldPos : TEXCOORD0;
+    fixed3 worldNormal : TEXCOORD1;
+    fixed3 worldViewDir : TEXCOORD2;
+    fixed3 worldRefr : TEXCOORD3;
+    SHADOW_COORDS(4)
+};
+
+v2f vert(a2v v) {
+    v2f o;
+    o.pos = UnityObjectToClipPos(v.vertex);
+
+    o.worldNormal = UnityObjectToWorldNormal(v.normal);
+
+    o.worldPos = mul(unity_ObjectToWorld, v.vertex).xyz;
+
+    o.worldViewDir = UnityWorldSpaceViewDir(o.worldPos);
+
+    // Compute the refract dir in world space
+    o.worldRefr = refract(-normalize(o.worldViewDir), normalize(o.worldNormal), _RefractRatio);
+
+    TRANSFER_SHADOW(o);
+
+    return o;
+}
+
+fixed4 frag(v2f i) : SV_Target {
+    fixed3 worldNormal = normalize(i.worldNormal);
+    fixed3 worldLightDir = normalize(UnityWorldSpaceLightDir(i.worldPos));
+    fixed3 worldViewDir = normalize(i.worldViewDir);
+
+    fixed3 ambient = UNITY_LIGHTMODEL_AMBIENT.xyz;
+
+    fixed3 diffuse = _LightColor0.rgb * _Color.rgb * max(0, dot(worldNormal, worldLightDir));
+
+    // Use the refract dir in world space to access the cubemap
+    fixed3 refraction = texCUBE(_Cubemap, i.worldRefr).rgb * _RefractColor.rgb;
+
+    UNITY_LIGHT_ATTENUATION(atten, i, i.worldPos);
+
+    // Mix the diffuse color with the refract color
+    fixed3 color = ambient + lerp(diffuse, refraction, _RefractAmount) * atten;
+
+    return fixed4(color, 1.0);
+}
+```
+
+
+
+#### 菲涅尔反射
+
+- 用于计算被反射的光和入射光之间的比例
+- `fixed fresnel = _FresnelScale + (1 - _FresnelScale) * pow(1 - dot(worldViewDir, worldNormal), 5);`
 
 ### 渲染纹理
 
-- 
+- 将摄像机内容渲染到**渲染纹理**
+
+#### 镜子
+
+- 创建一个摄像机，使得其视野是镜子中希望显示的图像，将创建的渲染纹理MirrorTexture若拽到摄像机的目标纹理
+
+```c
+sampler2D _MainTex;
+
+struct a2v {
+    float4 vertex : POSITION;
+    float3 texcoord : TEXCOORD0;
+};
+
+struct v2f {
+    float4 pos : SV_POSITION;
+    float2 uv : TEXCOORD0;
+};
+
+v2f vert(a2v v) {
+    v2f o;
+    o.pos = UnityObjectToClipPos(v.vertex);
+
+    o.uv = v.texcoord;
+    // Mirror needs to filp x
+    o.uv.x = 1 - o.uv.x;
+
+    return o;
+}
+
+fixed4 frag(v2f i) : SV_Target {
+    return tex2D(_MainTex, i.uv);
+}
+```
+
+
+
+#### 玻璃
+
+- 除了摄像机，可以使用GrabPass来获取屏幕图像，将当前屏幕的图像绘制在一张纹理中
+- 与透明度混合可以实现更多的后处理，可以用于实现模拟折射来实现玻璃等效果
+- 使用cubemap来实现玻璃反射，使用grabpass来获取玻璃后的屏幕图像，通过法线贴图便宜来实现折射效果
+
+```c
+// Upgrade NOTE: replaced '_Object2World' with 'unity_ObjectToWorld'
+// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
+
+Shader "Unity Shaders Book/Chapter 10/Glass Refraction" {
+    Properties {
+        //玻璃纹理
+        _MainTex ("Main Tex", 2D) = "white" {}
+        //法线贴图
+        _BumpMap ("Normal Map", 2D) = "bump" {}
+        //环境立方体贴图
+        _Cubemap ("Environment Cubemap", Cube) = "_Skybox" {}
+        //折射强度
+        _Distortion ("Distortion", Range(0, 100)) = 10
+        //折射的权重，决定折射和反射的混合比例
+        _RefractAmount ("Refract Amount", Range(0.0, 1.0)) = 1.0
+    }
+    SubShader {
+        // We must be transparent, so other objects are drawn before this one.
+        Tags { "Queue"="Transparent" "RenderType"="Opaque" }
+
+        // This pass grabs the screen behind the object into a texture.
+        // We can access the result in the next pass as _RefractionTex
+        GrabPass { "_RefractionTex" }
+
+        Pass {		
+            CGPROGRAM
+
+                #pragma vertex vert
+                #pragma fragment frag
+
+                #include "UnityCG.cginc"
+
+                sampler2D _MainTex;
+            float4 _MainTex_ST;
+            sampler2D _BumpMap;
+            float4 _BumpMap_ST;
+            samplerCUBE _Cubemap;
+            float _Distortion;
+            fixed _RefractAmount;
+            sampler2D _RefractionTex;
+            float4 _RefractionTex_TexelSize;
+
+            struct a2v {
+                float4 vertex : POSITION;
+                float3 normal : NORMAL;
+                float4 tangent : TANGENT; 
+                float2 texcoord: TEXCOORD0;
+            };
+
+            struct v2f {
+                float4 pos : SV_POSITION;
+                float4 scrPos : TEXCOORD0;
+                float4 uv : TEXCOORD1;
+                float4 TtoW0 : TEXCOORD2;  
+                float4 TtoW1 : TEXCOORD3;  
+                float4 TtoW2 : TEXCOORD4; 
+            };
+
+            v2f vert (a2v v) {
+                v2f o;
+                o.pos = UnityObjectToClipPos(v.vertex);
+ 				// 2. 计算抓取屏幕位置，用于后续的折射采样
+                o.scrPos = ComputeGrabScreenPos(o.pos);
+
+                o.uv.xy = TRANSFORM_TEX(v.texcoord, _MainTex);
+                o.uv.zw = TRANSFORM_TEX(v.texcoord, _BumpMap);
+
+                float3 worldPos = mul(unity_ObjectToWorld, v.vertex).xyz;  
+                fixed3 worldNormal = UnityObjectToWorldNormal(v.normal);  
+                fixed3 worldTangent = UnityObjectToWorldDir(v.tangent.xyz);  
+                fixed3 worldBinormal = cross(worldNormal, worldTangent) * v.tangent.w; 
+
+                o.TtoW0 = float4(worldTangent.x, worldBinormal.x, worldNormal.x, worldPos.x);  
+                o.TtoW1 = float4(worldTangent.y, worldBinormal.y, worldNormal.y, worldPos.y);  
+                o.TtoW2 = float4(worldTangent.z, worldBinormal.z, worldNormal.z, worldPos.z);  
+
+                return o;
+            }
+
+            fixed4 frag (v2f i) : SV_Target {		
+                float3 worldPos = float3(i.TtoW0.w, i.TtoW1.w, i.TtoW2.w);
+                fixed3 worldViewDir = normalize(UnityWorldSpaceViewDir(worldPos));
+
+                // Get the normal in tangent space
+                fixed3 bump = UnpackNormal(tex2D(_BumpMap, i.uv.zw));	
+
+                // Compute the offset in tangent space
+                float2 offset = bump.xy * _Distortion * _RefractionTex_TexelSize.xy;
+                i.scrPos.xy = offset * i.scrPos.z + i.scrPos.xy;
+                fixed3 refrCol = tex2D(_RefractionTex, i.scrPos.xy/i.scrPos.w).rgb;
+
+                // Convert the normal to world space
+                bump = normalize(half3(dot(i.TtoW0.xyz, bump), dot(i.TtoW1.xyz, bump), dot(i.TtoW2.xyz, bump)));
+                fixed3 reflDir = reflect(-worldViewDir, bump);
+                fixed4 texColor = tex2D(_MainTex, i.uv.xy);
+                fixed3 reflCol = texCUBE(_Cubemap, reflDir).rgb * texColor.rgb;
+
+                fixed3 finalColor = reflCol * (1 - _RefractAmount) + refrCol * _RefractAmount;
+
+                return fixed4(finalColor, 1);
+            }
+
+            ENDCG
+        }
+    }
+
+    FallBack "Diffuse"
+}
+
+```
+
+
 
 ### 程序纹理
 
