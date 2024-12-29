@@ -4,6 +4,7 @@
   "IntrinsicSymbolPairs": true,
   "BaseObEditEnhance": true,
   "FW2HWEnhance": true,
+  "BetterCodeEdit": true,
   "AutoFormat": true,
   "ExcludeFiles": "",
   "ChineseEnglishSpace": true,
@@ -52,5 +53,7 @@
   "userCvtRuleSettingsOpen": true,
   "EnterTwice": false,
   "TryFixChineseIM": true,
-  "PuncRectify": false
+  "PuncRectify": false,
+  "FixMacOSContextMenu": false,
+  "TryFixMSIME": false
 }

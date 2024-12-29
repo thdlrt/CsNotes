@@ -1,6 +1,14 @@
 {
   "recentFiles": [
     {
+      "basename": "unity基础",
+      "path": "docs/自学内容/游戏开发&图形学/游戏开发/游戏引擎/unity/unity基础.md"
+    },
+    {
+      "basename": "设计模式",
+      "path": "docs/自学内容/游戏开发&图形学/游戏开发/游戏引擎/unity/设计模式.md"
+    },
+    {
       "basename": "世嘉新人培训教材",
       "path": "docs/自学内容/游戏开发&图形学/阅读/世嘉新人培训教材.md"
     },
@@ -31,10 +39,6 @@
     {
       "basename": "实验笔记",
       "path": "docs/学校课程/归档课程/操作系统/实验笔记.md"
-    },
-    {
-      "basename": "unity",
-      "path": "docs/自学内容/游戏开发&图形学/游戏开发/游戏引擎/unity/unity.md"
     },
     {
       "basename": "FAT32",
@@ -191,10 +195,6 @@
     {
       "basename": "unreal",
       "path": "docs/自学内容/游戏开发&图形学/游戏开发/游戏引擎/unreal.md"
-    },
-    {
-      "basename": "README",
-      "path": "README.md"
     }
   ],
   "omittedPaths": [],
