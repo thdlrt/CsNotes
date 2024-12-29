@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/自学内容/游戏开发&图形学/游戏开发/游戏引擎/unity/unity基础.md",
+                "file": "_draft_/FAT32.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "unity基础"
+              "title": "FAT32"
             }
           }
         ]
@@ -87,8 +87,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 307.5,
-    "collapsed": true
+    "width": 225.5
   },
   "right": {
     "id": "d615b65a4ccf8a6a",
@@ -192,8 +191,8 @@
   },
   "active": "ac7cf3d210bf6fd2",
   "lastOpenFiles": [
-    "conflict-files-obsidian-git.md",
     "docs/自学内容/游戏开发&图形学/游戏开发/游戏引擎/unity/unity基础.md",
+    "conflict-files-obsidian-git.md",
     "docs/自学内容/游戏开发&图形学/游戏开发/游戏引擎/unity/设计模式.md",
     "docs/自学内容/游戏开发&图形学/阅读/世嘉新人培训教材.md",
     "Excalidraw/Drawing 2024-11-27 18.19.06.excalidraw.md",
