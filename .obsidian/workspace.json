@@ -79,11 +79,12 @@
             "state": {
               "type": "file-tree-view",
               "state": {},
-              "icon": "sheets-in-box",
-              "title": "File Tree"
+              "icon": "lucide-file",
+              "title": "插件不再活动"
             }
           }
-        ]
+        ],
+        "currentTab": 2
       }
     ],
     "direction": "horizontal",
@@ -159,11 +160,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "docs/自学内容/游戏开发&图形学/游戏开发/游戏引擎/unity/unity基础.md"
-              },
+              "state": {},
               "icon": "lucide-list",
-              "title": "unity基础 的大纲"
+              "title": "大纲"
             }
           }
         ],
@@ -185,11 +184,11 @@
       "vscode-editor:新建代码文件": false,
       "obsidian-advanced-slides:Show Slide Preview": false,
       "media-extended:Open media": false,
-      "obsidian-excalidraw-plugin:新建绘图文件": false,
-      "omnisearch:Omnisearch": false
+      "omnisearch:Omnisearch": false,
+      "obsidian-excalidraw-plugin:新建绘图文件": false
     }
   },
-  "active": "ac7cf3d210bf6fd2",
+  "active": "0a9cd0319ddd3dbc",
   "lastOpenFiles": [
     "_draft_/FAT32.md",
     "_draft_/数据.md",
