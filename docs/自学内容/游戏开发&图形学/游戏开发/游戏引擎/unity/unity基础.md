@@ -245,6 +245,7 @@ GameObject instance = Instantiate(myPrefab, position, rotation);
   - 碰撞检测
     - **OnCollisionEnter**, **OnCollisionStay**, **OnCollisionExit**：当 Rigidbody 与其他物体发生碰撞时触发的事件。
     - **OnTriggerEnter**, **OnTriggerStay**, **OnTriggerExit**：当 Collider 设置为 "Trigger" 并与其他 Collider 重叠时触发的事件。
+![image.png](https://thdlrt.oss-cn-beijing.aliyuncs.com/20250101215255.png)
 
 #### 常用方法
 
