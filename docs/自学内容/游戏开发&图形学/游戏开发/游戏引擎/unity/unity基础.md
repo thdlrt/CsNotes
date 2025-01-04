@@ -724,7 +724,8 @@ public class ObjectPool : MonoBehaviour
   - **访问其他游戏对象和组件**：`MonoBehaviour`提供了方法如`GetComponent<T>()`，允许脚本与其所在的或其他游戏对象的组件交互。
   - **与Unity编辑器集成**：通过`MonoBehaviour`，你可以使用诸如`[SerializeField]`、`[HideInInspector]`这样的属性标签，来定制组件在Inspector视图中的显示。
   - **使用协程 (Coroutines)**：`MonoBehaviour`允许使用`StartCoroutine`方法，这使得你可以编写协程来执行延迟、重复或基于时间的任务，而不必完全依赖`Update`方法。
-
+### 调试
+- `OnDrawGizmos` 绘制只在编辑器中可见的内容，用于表示范围等可视化
 ### 版本控制PlasticSCM
 
 #### 分支与合并
