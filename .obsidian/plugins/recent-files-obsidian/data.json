@@ -1,6 +1,38 @@
 {
   "recentFiles": [
     {
+      "basename": "重构-改善既有代码的设计",
+      "path": "docs/自学内容/代码质量/重构-改善既有代码的设计.md"
+    },
+    {
+      "basename": "项目管理",
+      "path": "docs/自学内容/软件工程/项目管理.md"
+    },
+    {
+      "basename": "设计模式",
+      "path": "docs/自学内容/软件工程/设计模式.md"
+    },
+    {
+      "basename": "测试",
+      "path": "docs/自学内容/软件工程/软件测试/测试.md"
+    },
+    {
+      "basename": "文档",
+      "path": "docs/自学内容/软件工程/编程思想与规范/文档.md"
+    },
+    {
+      "basename": "代码规范",
+      "path": "docs/自学内容/软件工程/编程思想与规范/代码规范.md"
+    },
+    {
+      "basename": "并发编程",
+      "path": "docs/自学内容/软件工程/编程思想与规范/并发编程.md"
+    },
+    {
+      "basename": "编程思想",
+      "path": "docs/自学内容/软件工程/编程思想与规范/编程思想.md"
+    },
+    {
       "basename": "unity基础",
       "path": "docs/自学内容/游戏开发&图形学/游戏开发/游戏引擎/unity/unity基础.md"
     },
@@ -167,34 +199,6 @@
     {
       "basename": "模板",
       "path": "docs/算法竞赛/模板.md"
-    },
-    {
-      "basename": "哈希",
-      "path": "docs/算法竞赛/哈希.md"
-    },
-    {
-      "basename": "jupyter",
-      "path": "docs/技能&工具/折腾/jupyter.md"
-    },
-    {
-      "basename": "笔记",
-      "path": "docs/学校课程/归档课程/金融工程学/笔记.md"
-    },
-    {
-      "basename": "公式速记",
-      "path": "docs/学校课程/归档课程/金融工程学/公式速记.md"
-    },
-    {
-      "basename": "作业",
-      "path": "docs/学校课程/归档课程/金融工程学/作业.md"
-    },
-    {
-      "basename": "郑振龙《金融工程》（第5版）笔记和课后习题（含考研真题）详解答案",
-      "path": "docs/学校课程/归档课程/金融工程学/郑振龙《金融工程》（第5版）笔记和课后习题（含考研真题）详解答案.pdf"
-    },
-    {
-      "basename": "P5410 【模板】扩展 KMP_exKMP（Z 函数） - 洛谷 _ 计算机科学教育新生态",
-      "path": "linkdata/P5410 【模板】扩展 KMP_exKMP（Z 函数） - 洛谷 _ 计算机科学教育新生态.md"
     }
   ],
   "omittedPaths": [],
