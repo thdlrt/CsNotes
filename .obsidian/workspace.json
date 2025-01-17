@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/自学内容/代码质量/重构-改善既有代码的设计.md",
+                "file": "docs/自学内容/游戏开发&图形学/游戏开发/游戏引擎/unity/c#.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "重构-改善既有代码的设计"
+              "title": "c#"
             }
           }
         ]
@@ -159,10 +159,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/自学内容/代码质量/重构-改善既有代码的设计.md"
+                "file": "docs/自学内容/游戏开发&图形学/游戏开发/游戏引擎/unity/c#.md"
               },
               "icon": "lucide-list",
-              "title": "重构-改善既有代码的设计 的大纲"
+              "title": "c# 的大纲"
             }
           }
         ],
@@ -190,8 +190,11 @@
   },
   "active": "ac7cf3d210bf6fd2",
   "lastOpenFiles": [
-    "docs/自学内容/软件工程/项目管理.md",
+    "docs/自学内容/游戏开发&图形学/游戏开发/游戏引擎/unity/unity shader（HLSL）.md",
+    "docs/自学内容/游戏开发&图形学/游戏开发/游戏引擎/unity/unity基础.md",
+    "docs/自学内容/游戏开发&图形学/游戏开发/游戏引擎/unity/unity资源管理.md",
     "docs/自学内容/代码质量/重构-改善既有代码的设计.md",
+    "docs/自学内容/软件工程/项目管理.md",
     "docs/自学内容/代码质量",
     "docs/自学内容/软件工程/设计模式.md",
     "docs/自学内容/软件工程/软件测试/测试.md",
@@ -199,12 +202,9 @@
     "docs/自学内容/软件工程/编程思想与规范/代码规范.md",
     "docs/自学内容/软件工程/编程思想与规范/并发编程.md",
     "docs/自学内容/软件工程/编程思想与规范/编程思想.md",
-    "docs/自学内容/游戏开发&图形学/游戏开发/游戏引擎/unity/unity基础.md",
     "docs/自学内容/游戏开发&图形学/游戏开发/游戏引擎/unity/c#.md",
     "docs/自学内容/游戏开发&图形学/游戏开发/游戏引擎/unity/设计模式.md",
-    "docs/自学内容/游戏开发&图形学/游戏开发/游戏引擎/unity/unity shader（HLSL）.md",
     "docs/自学内容/游戏开发&图形学/游戏开发/游戏引擎/unity/fairyGui(UnitySDK).md",
-    "docs/自学内容/游戏开发&图形学/游戏开发/游戏引擎/unity/unity资源管理.md",
     "_draft_/FAT32.md",
     "_draft_/数据.md",
     "conflict-files-obsidian-git.md",

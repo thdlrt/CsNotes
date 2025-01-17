@@ -1,6 +1,22 @@
 {
   "recentFiles": [
     {
+      "basename": "c#",
+      "path": "docs/自学内容/游戏开发&图形学/游戏开发/游戏引擎/unity/c#.md"
+    },
+    {
+      "basename": "unity shader（HLSL）",
+      "path": "docs/自学内容/游戏开发&图形学/游戏开发/游戏引擎/unity/unity shader（HLSL）.md"
+    },
+    {
+      "basename": "unity基础",
+      "path": "docs/自学内容/游戏开发&图形学/游戏开发/游戏引擎/unity/unity基础.md"
+    },
+    {
+      "basename": "unity资源管理",
+      "path": "docs/自学内容/游戏开发&图形学/游戏开发/游戏引擎/unity/unity资源管理.md"
+    },
+    {
       "basename": "重构-改善既有代码的设计",
       "path": "docs/自学内容/代码质量/重构-改善既有代码的设计.md"
     },
@@ -33,24 +49,8 @@
       "path": "docs/自学内容/软件工程/编程思想与规范/编程思想.md"
     },
     {
-      "basename": "unity基础",
-      "path": "docs/自学内容/游戏开发&图形学/游戏开发/游戏引擎/unity/unity基础.md"
-    },
-    {
-      "basename": "c#",
-      "path": "docs/自学内容/游戏开发&图形学/游戏开发/游戏引擎/unity/c#.md"
-    },
-    {
-      "basename": "unity shader（HLSL）",
-      "path": "docs/自学内容/游戏开发&图形学/游戏开发/游戏引擎/unity/unity shader（HLSL）.md"
-    },
-    {
       "basename": "fairyGui(UnitySDK)",
       "path": "docs/自学内容/游戏开发&图形学/游戏开发/游戏引擎/unity/fairyGui(UnitySDK).md"
-    },
-    {
-      "basename": "unity资源管理",
-      "path": "docs/自学内容/游戏开发&图形学/游戏开发/游戏引擎/unity/unity资源管理.md"
     },
     {
       "basename": "世嘉新人培训教材",
