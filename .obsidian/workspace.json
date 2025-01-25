@@ -83,7 +83,8 @@
               "title": "插件不再活动"
             }
           }
-        ]
+        ],
+        "currentTab": 2
       }
     ],
     "direction": "horizontal",
@@ -188,7 +189,7 @@
       "obsidian-excalidraw-plugin:新建绘图文件": false
     }
   },
-  "active": "ac7cf3d210bf6fd2",
+  "active": "0a9cd0319ddd3dbc",
   "lastOpenFiles": [
     "docs/自学内容/游戏开发&图形学/游戏开发/游戏引擎/unity/fairyGui(UnitySDK).md",
     "docs/自学内容/游戏开发&图形学/游戏开发/游戏引擎/unity/c#.md",
