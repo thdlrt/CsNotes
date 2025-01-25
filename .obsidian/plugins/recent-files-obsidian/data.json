@@ -1,24 +1,28 @@
 {
   "recentFiles": [
     {
+      "basename": "games104游戏引擎",
+      "path": "docs/自学内容/游戏开发&图形学/游戏开发/游戏引擎/games104游戏引擎.md"
+    },
+    {
       "basename": "unity基础",
-      "path": "docs/自学内容/游戏开发&图形学/游戏开发/游戏引擎/unity/unity基础.md"
+      "path": "docs/自学内容/游戏开发&图形学/游戏开发/游戏客户端/unity/unity基础.md"
     },
     {
       "basename": "fairyGui(UnitySDK)",
-      "path": "docs/自学内容/游戏开发&图形学/游戏开发/游戏引擎/unity/fairyGui(UnitySDK).md"
+      "path": "docs/自学内容/游戏开发&图形学/游戏开发/游戏客户端/unity/fairyGui(UnitySDK).md"
     },
     {
       "basename": "c#",
-      "path": "docs/自学内容/游戏开发&图形学/游戏开发/游戏引擎/unity/c#.md"
+      "path": "docs/自学内容/游戏开发&图形学/游戏开发/游戏客户端/unity/c#.md"
     },
     {
       "basename": "unity shader（HLSL）",
-      "path": "docs/自学内容/游戏开发&图形学/游戏开发/游戏引擎/unity/unity shader（HLSL）.md"
+      "path": "docs/自学内容/游戏开发&图形学/游戏开发/游戏客户端/unity/unity shader（HLSL）.md"
     },
     {
       "basename": "unity资源管理",
-      "path": "docs/自学内容/游戏开发&图形学/游戏开发/游戏引擎/unity/unity资源管理.md"
+      "path": "docs/自学内容/游戏开发&图形学/游戏开发/游戏客户端/unity/unity资源管理.md"
     },
     {
       "basename": "重构-改善既有代码的设计",
@@ -195,10 +199,6 @@
     {
       "basename": "链表",
       "path": "docs/算法竞赛/链表.md"
-    },
-    {
-      "basename": "模板",
-      "path": "docs/算法竞赛/模板.md"
     }
   ],
   "omittedPaths": [],
