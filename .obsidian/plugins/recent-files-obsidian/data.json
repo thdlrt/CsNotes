@@ -1,6 +1,14 @@
 {
   "recentFiles": [
     {
+      "basename": "games202高质量实时渲染",
+      "path": "docs/自学内容/游戏开发&图形学/计算机图形学/games202高质量实时渲染.md"
+    },
+    {
+      "basename": "几何",
+      "path": "docs/自学内容/游戏开发&图形学/计算机图形学/图形学基础/几何.md"
+    },
+    {
       "basename": "games104游戏引擎",
       "path": "docs/自学内容/游戏开发&图形学/游戏开发/游戏引擎/games104游戏引擎.md"
     },
@@ -191,14 +199,6 @@
     {
       "basename": "贪心",
       "path": "docs/算法竞赛/贪心.md"
-    },
-    {
-      "basename": "数据结构",
-      "path": "docs/算法竞赛/数据结构.md"
-    },
-    {
-      "basename": "链表",
-      "path": "docs/算法竞赛/链表.md"
     }
   ],
   "omittedPaths": [],
