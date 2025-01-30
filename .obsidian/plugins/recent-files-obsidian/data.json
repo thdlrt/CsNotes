@@ -5,6 +5,34 @@
       "path": "docs/自学内容/游戏开发&图形学/计算机图形学/games202高质量实时渲染.md"
     },
     {
+      "basename": "光线追踪",
+      "path": "docs/自学内容/游戏开发&图形学/计算机图形学/图形学基础/光线追踪.md"
+    },
+    {
+      "basename": "现代图形学基础",
+      "path": "docs/自学内容/游戏开发&图形学/计算机图形学/图形学基础/现代图形学基础.md"
+    },
+    {
+      "basename": "线性代数与变换",
+      "path": "docs/自学内容/游戏开发&图形学/计算机图形学/图形学基础/线性代数与变换.md"
+    },
+    {
+      "basename": "shaderToy学习",
+      "path": "docs/自学内容/游戏开发&图形学/计算机图形学/shader/shaderToy学习.md"
+    },
+    {
+      "basename": "光栅化",
+      "path": "docs/自学内容/游戏开发&图形学/计算机图形学/图形学基础/光栅化.md"
+    },
+    {
+      "basename": "材质",
+      "path": "docs/自学内容/游戏开发&图形学/计算机图形学/图形学基础/材质.md"
+    },
+    {
+      "basename": "动画",
+      "path": "docs/自学内容/游戏开发&图形学/计算机图形学/图形学基础/动画.md"
+    },
+    {
       "basename": "几何",
       "path": "docs/自学内容/游戏开发&图形学/计算机图形学/图形学基础/几何.md"
     },
@@ -171,34 +199,6 @@
     {
       "basename": "CodeTONRound6",
       "path": "docs/blog/posts/算法竞赛/CodeTONRound6.md"
-    },
-    {
-      "basename": "EducationalCodeforcesRound155(Div.2)",
-      "path": "docs/blog/posts/算法竞赛/EducationalCodeforcesRound155(Div.2).md"
-    },
-    {
-      "basename": "图论",
-      "path": "docs/算法竞赛/图论.md"
-    },
-    {
-      "basename": "数学",
-      "path": "docs/算法竞赛/数学.md"
-    },
-    {
-      "basename": "数组与字符串",
-      "path": "docs/算法竞赛/数组与字符串.md"
-    },
-    {
-      "basename": "前缀和与差分",
-      "path": "docs/算法竞赛/前缀和与差分.md"
-    },
-    {
-      "basename": "位运算",
-      "path": "docs/算法竞赛/位运算.md"
-    },
-    {
-      "basename": "贪心",
-      "path": "docs/算法竞赛/贪心.md"
     }
   ],
   "omittedPaths": [],

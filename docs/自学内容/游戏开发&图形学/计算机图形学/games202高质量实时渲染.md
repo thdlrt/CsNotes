@@ -17,8 +17,25 @@
 	- ![image.png|600](https://thdlrt.oss-cn-beijing.aliyuncs.com/20250129211751.png)
 ### Variance Soft Shadow Mapping (VSSM)
 - 解决 PCSS **第一步和第三步**范围操作速度慢的问题
-- 优化 step 1：blocker depth 阴影硬度的求解
 - 优化 step 3：shadowmap 在一定范围内小于一个距离的点的数目
 	- 假设正态分布，只需要平均值和方差来确定分布就能估计数目
-	- 平均可以使用 mipmap 存储
+	- 平均可以使用 mipmap 存储（mipmap 存储误差较大）使用前缀和存储更加请准
 	- 方差使用均值计算 $\mathrm{Var}(X)=\mathrm{E}(X^2)-\mathrm{E}^2(X)$
+	- 再使用切比雪夫不等式进行估计 $P(x>t)\leq\frac{\sigma^2}{\sigma^2+(t-\mu)^2}$ 当做"等式"
+- 优化 step 1：blocker depth 阴影硬度的求解
+	- 注意求的是遮挡物（比目标点距离近的点）的距离平均值，而不是 mipmap 一定范围内所有点的平均值
+	- ![image.png|151](https://thdlrt.oss-cn-beijing.aliyuncs.com/20250130195033.png)
+	- 比如目标点为 7，那么只对红色部分求平均值
+	- $\frac{N_{1}}{N}Z_{unocc}+\frac{N_{2}}{N}Z_{occ}=Z_{Avg}$ 遮挡物的百分比乘以遮挡物平均深度+非遮挡物部分分就是总共的平均深度
+	- 设采样点深度为 $t$ 则可以假定 $Z_{unocc} = t$
+	- 同样可以用切比雪夫不等式求解
+		- ![image.png|300](https://thdlrt.oss-cn-beijing.aliyuncs.com/20250130200147.png)
+### SDF 软阴影
+- 使用 SDF 距离场估计软阴影
+	- 一个角度上一点的 SDF 越小表示不收遮挡的安全角越小，阴影就越硬
+	- ![image.png|350](https://thdlrt.oss-cn-beijing.aliyuncs.com/20250130204927.png)
+	- 取角度方向上距离场**最小值**作为安全距离
+	- 计算近似角度 $\min\left\{\frac{k\cdot\mathrm{SDF}(p)}{p-o},1.0\right\}$ 
+		- k 决定了阴影的硬度
+
+## 环境光照
