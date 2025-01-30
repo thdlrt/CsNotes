@@ -15,3 +15,10 @@
 
 - 更简单的估计：只根据灯光范围大小，scene 和灯光的距离来估计
 	- ![image.png|600](https://thdlrt.oss-cn-beijing.aliyuncs.com/20250129211751.png)
+### Variance Soft Shadow Mapping (VSSM)
+- 解决 PCSS **第一步和第三步**范围操作速度慢的问题
+- 优化 step 1：blocker depth 阴影硬度的求解
+- 优化 step 3：shadowmap 在一定范围内小于一个距离的点的数目
+	- 假设正态分布，只需要平均值和方差来确定分布就能估计数目
+	- 平均可以使用 mipmap 存储
+	- 方差使用均值计算 $\mathrm{Var}(X)=\mathrm{E}(X^2)-\mathrm{E}^2(X)$
