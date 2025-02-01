@@ -39,3 +39,22 @@
 		- k 决定了阴影的硬度
 
 ## 环境光照
+### splitsum 方法预处理的 IBM
+- IBM **基于图片的光照**
+- ![image.png|500](https://thdlrt.oss-cn-beijing.aliyuncs.com/20250130211317.png)
+	- 通常 BRDF 有以下性质中的一个：镜面反射（范围小）；漫反射（变化小）
+	- 这就可以使用**近似** $\int_\Omega f(x)g(x)\mathrm{~d}x\approx\frac{\int_{\Omega_G}f(x)\mathrm{~d}x}{\int_{\Omega_G}\mathrm{~d}x}\cdot\int_\Omega g(x)\mathrm{~d}x$（为了避免通过采样计算，这很慢）
+	- ![image.png|600](https://thdlrt.oss-cn-beijing.aliyuncs.com/20250130211841.png)
+	- ![image.png|600](https://thdlrt.oss-cn-beijing.aliyuncs.com/20250130212632.png)
+	- 因此可以对**环境光贴图进行预 prefiltering**（如生成一系列 mipmap）针对不同 BRDF 预生成
+	- ![image.png|550](https://thdlrt.oss-cn-beijing.aliyuncs.com/20250130212722.png)
+	- 就是相当于对一定区域的环境光贴图做 filtering
+- ![image.png|600](https://thdlrt.oss-cn-beijing.aliyuncs.com/20250130213359.png)
+	- 计算后半部分
+	- ![image.png|450](https://thdlrt.oss-cn-beijing.aliyuncs.com/20250130214409.png)
+	- 两个近似描述![image.png|600](https://thdlrt.oss-cn-beijing.aliyuncs.com/20250130214824.png)
+	- 由此利用菲涅尔项的近似
+	- ![image.png|600](https://thdlrt.oss-cn-beijing.aliyuncs.com/20250130215037.png)
+	- 可以近似认为只和 roughness 和 $\theta$ 有关，可以用一个纹理存储二维预计算结果![image.png|290](https://thdlrt.oss-cn-beijing.aliyuncs.com/20250130215942.png)
+	- 这里的角度是出射方向，入射方向是在积分预计算时对所有方向进行了计算
+### 实时环境光照
