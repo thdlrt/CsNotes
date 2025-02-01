@@ -1,6 +1,10 @@
 {
   "recentFiles": [
     {
+      "basename": "games001数学基础",
+      "path": "docs/自学内容/游戏开发&图形学/计算机图形学/games001数学基础.md"
+    },
+    {
       "basename": "games202高质量实时渲染",
       "path": "docs/自学内容/游戏开发&图形学/计算机图形学/games202高质量实时渲染.md"
     },
@@ -195,10 +199,6 @@
     {
       "basename": "CodeforcesRound900(Div.3)",
       "path": "docs/blog/posts/算法竞赛/CodeforcesRound900(Div.3).md"
-    },
-    {
-      "basename": "CodeTONRound6",
-      "path": "docs/blog/posts/算法竞赛/CodeTONRound6.md"
     }
   ],
   "omittedPaths": [],

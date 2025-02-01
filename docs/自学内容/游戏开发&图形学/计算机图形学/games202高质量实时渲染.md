@@ -57,4 +57,6 @@
 	- ![image.png|600](https://thdlrt.oss-cn-beijing.aliyuncs.com/20250130215037.png)
 	- 可以近似认为只和 roughness 和 $\theta$ 有关，可以用一个纹理存储二维预计算结果![image.png|290](https://thdlrt.oss-cn-beijing.aliyuncs.com/20250130215942.png)
 	- 这里的角度是出射方向，入射方向是在积分预计算时对所有方向进行了计算
+#### 环境光照的阴影
+- 只从最亮的（几）个光源生成阴影（来减少计算量）
 ### 实时环境光照
