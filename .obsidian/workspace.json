@@ -20,8 +20,21 @@
               "icon": "lucide-file",
               "title": "games001数学基础"
             }
+          },
+          {
+            "id": "d30ff4359426a08d",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.8.4"
+              },
+              "icon": "lucide-book-up",
+              "title": "Release Notes 1.8.4"
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -40,7 +53,8 @@
             "state": {
               "type": "file-explorer",
               "state": {
-                "sortOrder": "alphabetical"
+                "sortOrder": "alphabetical",
+                "autoReveal": false
               },
               "icon": "lucide-folder-closed",
               "title": "文件列表"
@@ -83,7 +97,8 @@
               "title": "插件不再活动"
             }
           }
-        ]
+        ],
+        "currentTab": 2
       }
     ],
     "direction": "horizontal",
@@ -159,10 +174,12 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/自学内容/游戏开发&图形学/计算机图形学/games001数学基础.md"
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "games001数学基础 的大纲"
+              "title": "大纲"
             }
           }
         ],
@@ -188,7 +205,7 @@
       "obsidian-excalidraw-plugin:新建绘图文件": false
     }
   },
-  "active": "ac7cf3d210bf6fd2",
+  "active": "0a9cd0319ddd3dbc",
   "lastOpenFiles": [
     "docs/自学内容/游戏开发&图形学/计算机图形学/games202高质量实时渲染.md",
     "docs/自学内容/游戏开发&图形学/计算机图形学/games001数学基础.md",
