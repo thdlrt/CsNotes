@@ -120,7 +120,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/编程语言/c++/C++Primer.md",
+                "file": "docs/自学内容/游戏开发&图形学/计算机图形学/games202高质量实时渲染.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -130,7 +130,7 @@
                 "unlinkedCollapsed": false
               },
               "icon": "links-coming-in",
-              "title": "C++Primer 的反向链接列表"
+              "title": "games202高质量实时渲染 的反向链接列表"
             }
           },
           {
@@ -185,8 +185,7 @@
               "title": "games202高质量实时渲染 的大纲"
             }
           }
-        ],
-        "currentTab": 4
+        ]
       }
     ],
     "direction": "horizontal",
@@ -204,10 +203,11 @@
       "vscode-editor:新建代码文件": false,
       "obsidian-advanced-slides:Show Slide Preview": false,
       "media-extended:Open media": false,
-      "omnisearch:Omnisearch": false
+      "omnisearch:Omnisearch": false,
+      "obsidian-excalidraw-plugin:新建绘图文件": false
     }
   },
-  "active": "d30ff4359426a08d",
+  "active": "2208db6412c2caff",
   "lastOpenFiles": [
     "docs/自学内容/游戏开发&图形学/计算机图形学/games202高质量实时渲染.md",
     "docs/自学内容/游戏开发&图形学/计算机图形学/games001数学基础.md",
