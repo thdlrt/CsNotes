@@ -25,12 +25,14 @@
             "id": "d30ff4359426a08d",
             "type": "leaf",
             "state": {
-              "type": "release-notes",
+              "type": "markdown",
               "state": {
-                "currentVersion": "1.8.4"
+                "file": "docs/自学内容/游戏开发&图形学/计算机图形学/games202高质量实时渲染.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-book-up",
-              "title": "Release Notes 1.8.4"
+              "icon": "lucide-file",
+              "title": "games202高质量实时渲染"
             }
           }
         ],
@@ -174,12 +176,13 @@
             "state": {
               "type": "outline",
               "state": {
+                "file": "docs/自学内容/游戏开发&图形学/计算机图形学/games202高质量实时渲染.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "大纲"
+              "title": "games202高质量实时渲染 的大纲"
             }
           }
         ],
@@ -201,11 +204,10 @@
       "vscode-editor:新建代码文件": false,
       "obsidian-advanced-slides:Show Slide Preview": false,
       "media-extended:Open media": false,
-      "omnisearch:Omnisearch": false,
-      "obsidian-excalidraw-plugin:新建绘图文件": false
+      "omnisearch:Omnisearch": false
     }
   },
-  "active": "0a9cd0319ddd3dbc",
+  "active": "d30ff4359426a08d",
   "lastOpenFiles": [
     "docs/自学内容/游戏开发&图形学/计算机图形学/games202高质量实时渲染.md",
     "docs/自学内容/游戏开发&图形学/计算机图形学/games001数学基础.md",
