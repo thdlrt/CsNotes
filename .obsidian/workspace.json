@@ -203,8 +203,7 @@
       "vscode-editor:新建代码文件": false,
       "obsidian-advanced-slides:Show Slide Preview": false,
       "media-extended:Open media": false,
-      "omnisearch:Omnisearch": false,
-      "obsidian-excalidraw-plugin:新建绘图文件": false
+      "omnisearch:Omnisearch": false
     }
   },
   "active": "2208db6412c2caff",
