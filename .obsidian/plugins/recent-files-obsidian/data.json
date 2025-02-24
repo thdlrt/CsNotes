@@ -1,100 +1,112 @@
 {
   "recentFiles": [
     {
-      "basename": "games202高质量实时渲染",
-      "path": "docs/自学内容/游戏开发&图形学/计算机图形学/games202高质量实时渲染.md"
+      "basename": "机器学习",
+      "path": "docs/自学内容/人工智能/机器学习.md"
     },
     {
-      "basename": "games001数学基础",
-      "path": "docs/自学内容/游戏开发&图形学/计算机图形学/games001数学基础.md"
-    },
-    {
-      "basename": "光线追踪",
-      "path": "docs/自学内容/游戏开发&图形学/计算机图形学/图形学基础/光线追踪.md"
-    },
-    {
-      "basename": "现代图形学基础",
-      "path": "docs/自学内容/游戏开发&图形学/计算机图形学/图形学基础/现代图形学基础.md"
-    },
-    {
-      "basename": "线性代数与变换",
-      "path": "docs/自学内容/游戏开发&图形学/计算机图形学/图形学基础/线性代数与变换.md"
-    },
-    {
-      "basename": "shaderToy学习",
-      "path": "docs/自学内容/游戏开发&图形学/计算机图形学/shader/shaderToy学习.md"
-    },
-    {
-      "basename": "光栅化",
-      "path": "docs/自学内容/游戏开发&图形学/计算机图形学/图形学基础/光栅化.md"
+      "basename": "深度学习",
+      "path": "docs/自学内容/人工智能/深度学习.md"
     },
     {
       "basename": "材质",
       "path": "docs/自学内容/游戏开发&图形学/计算机图形学/图形学基础/材质.md"
     },
     {
-      "basename": "动画",
-      "path": "docs/自学内容/游戏开发&图形学/计算机图形学/图形学基础/动画.md"
+      "basename": "光栅化",
+      "path": "docs/自学内容/游戏开发&图形学/计算机图形学/图形学基础/光栅化.md"
+    },
+    {
+      "basename": "现代图形学基础",
+      "path": "docs/自学内容/游戏开发&图形学/计算机图形学/图形学基础/现代图形学基础.md"
     },
     {
       "basename": "几何",
       "path": "docs/自学内容/游戏开发&图形学/计算机图形学/图形学基础/几何.md"
     },
     {
-      "basename": "games104游戏引擎",
-      "path": "docs/自学内容/游戏开发&图形学/游戏开发/游戏引擎/games104游戏引擎.md"
+      "basename": "光线追踪",
+      "path": "docs/自学内容/游戏开发&图形学/计算机图形学/图形学基础/光线追踪.md"
     },
     {
-      "basename": "unity基础",
-      "path": "docs/自学内容/游戏开发&图形学/游戏开发/游戏客户端/unity/unity基础.md"
+      "basename": "shaderToy学习",
+      "path": "docs/自学内容/游戏开发&图形学/计算机图形学/shader/shaderToy学习.md"
     },
     {
-      "basename": "fairyGui(UnitySDK)",
-      "path": "docs/自学内容/游戏开发&图形学/游戏开发/游戏客户端/unity/fairyGui(UnitySDK).md"
+      "basename": "笔记",
+      "path": "docs/自学内容/移动端开发/鸿蒙/笔记.md"
     },
     {
-      "basename": "c#",
-      "path": "docs/自学内容/游戏开发&图形学/游戏开发/游戏客户端/unity/c#.md"
+      "basename": "learnOpengl",
+      "path": "docs/自学内容/游戏开发&图形学/计算机图形学/API编程/opengl/learnOpengl.md"
     },
     {
-      "basename": "unity shader（HLSL）",
-      "path": "docs/自学内容/游戏开发&图形学/游戏开发/游戏客户端/unity/unity shader（HLSL）.md"
+      "basename": "ArkTS",
+      "path": "docs/自学内容/移动端开发/鸿蒙/ArkTS.md"
     },
     {
-      "basename": "unity资源管理",
-      "path": "docs/自学内容/游戏开发&图形学/游戏开发/游戏客户端/unity/unity资源管理.md"
+      "basename": "openwrt软路由",
+      "path": "docs/技能&工具/折腾/openwrt软路由.md"
     },
     {
-      "basename": "重构-改善既有代码的设计",
-      "path": "docs/自学内容/代码质量/重构-改善既有代码的设计.md"
+      "basename": "Drawing 2024-11-28 15.43.11.excalidraw",
+      "path": "Excalidraw/Drawing 2024-11-28 15.43.11.excalidraw.md"
     },
     {
-      "basename": "项目管理",
-      "path": "docs/自学内容/软件工程/项目管理.md"
+      "basename": "Drawing 2024-11-27 18.19.06.excalidraw",
+      "path": "Excalidraw/Drawing 2024-11-27 18.19.06.excalidraw.md"
     },
     {
-      "basename": "设计模式",
-      "path": "docs/自学内容/软件工程/设计模式.md"
+      "basename": "Drawing 2024-11-27 14.51.35.excalidraw",
+      "path": "Excalidraw/Drawing 2024-11-27 14.51.35.excalidraw.md"
     },
     {
-      "basename": "测试",
-      "path": "docs/自学内容/软件工程/软件测试/测试.md"
+      "basename": "全球游戏市场进化论",
+      "path": "docs/自学内容/游戏开发&图形学/游戏开发/游戏设计/信息/全球游戏市场进化论.pdf"
     },
     {
-      "basename": "文档",
-      "path": "docs/自学内容/软件工程/编程思想与规范/文档.md"
+      "basename": "信息整理",
+      "path": "docs/自学内容/游戏开发&图形学/游戏开发/游戏设计/信息/信息整理.md"
     },
     {
-      "basename": "代码规范",
-      "path": "docs/自学内容/软件工程/编程思想与规范/代码规范.md"
+      "basename": "UE基础",
+      "path": "docs/_private_/腾讯公开课/UE基础.md"
     },
     {
-      "basename": "并发编程",
-      "path": "docs/自学内容/软件工程/编程思想与规范/并发编程.md"
+      "basename": "本校保研流程（计算机系夏令营）",
+      "path": "docs/_draft_/本校保研流程（计算机系夏令营）.md"
     },
     {
-      "basename": "编程思想",
-      "path": "docs/自学内容/软件工程/编程思想与规范/编程思想.md"
+      "basename": "计算机网络",
+      "path": "docs/知识点（保研&工作）/保研/计算机科学/计算机网络.md"
+    },
+    {
+      "basename": "计算机组成原理",
+      "path": "docs/知识点（保研&工作）/保研/计算机科学/计算机组成原理.md"
+    },
+    {
+      "basename": "补充",
+      "path": "docs/知识点（保研&工作）/保研/计算机科学/补充.md"
+    },
+    {
+      "basename": "编译原理",
+      "path": "docs/知识点（保研&工作）/保研/计算机科学/编译原理.md"
+    },
+    {
+      "basename": "数据结构与算法",
+      "path": "docs/知识点（保研&工作）/保研/计算机科学/数据结构与算法.md"
+    },
+    {
+      "basename": "操作系统",
+      "path": "docs/知识点（保研&工作）/保研/计算机科学/操作系统.md"
+    },
+    {
+      "basename": "【英语】问题准备",
+      "path": "docs/知识点（保研&工作）/保研/面试/英语/【英语】问题准备.md"
+    },
+    {
+      "basename": "reveal.js",
+      "path": "docs/技能&工具/折腾/reveal.js.md"
     },
     {
       "basename": "世嘉新人培训教材",
@@ -123,6 +135,10 @@
     {
       "basename": "实验笔记",
       "path": "docs/学校课程/归档课程/操作系统/实验笔记.md"
+    },
+    {
+      "basename": "FAT32",
+      "path": "_draft_/FAT32.md"
     },
     {
       "basename": "竞赛信息",
@@ -167,38 +183,6 @@
     {
       "basename": "8",
       "path": "docs/学校课程/归档课程/计算机系统基础/data/8.md"
-    },
-    {
-      "basename": "thread",
-      "path": "docs/学校课程/归档课程/操作系统/代码/thread-lib/thread.h"
-    },
-    {
-      "basename": "os-model",
-      "path": "docs/学校课程/归档课程/操作系统/代码/os-model/os-model.py"
-    },
-    {
-      "basename": "index",
-      "path": "docs/index.md"
-    },
-    {
-      "basename": "index",
-      "path": "docs/blog/index.md"
-    },
-    {
-      "basename": "ABC321",
-      "path": "docs/blog/posts/算法竞赛/ABC321.md"
-    },
-    {
-      "basename": "ARC165",
-      "path": "docs/blog/posts/算法竞赛/ARC165.md"
-    },
-    {
-      "basename": "CodeforcesRound899(Div.2)",
-      "path": "docs/blog/posts/算法竞赛/CodeforcesRound899(Div.2).md"
-    },
-    {
-      "basename": "CodeforcesRound900(Div.3)",
-      "path": "docs/blog/posts/算法竞赛/CodeforcesRound900(Div.3).md"
     }
   ],
   "omittedPaths": [],
