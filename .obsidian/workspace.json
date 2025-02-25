@@ -75,27 +75,22 @@
             }
           },
           {
-            "id": "7f9e279672fe6459",
+            "id": "6c7418c521ab7a68",
             "type": "leaf",
             "state": {
-              "type": "recent-files",
-              "state": {},
-              "icon": "lucide-file",
-              "title": "插件不再活动"
-            }
-          },
-          {
-            "id": "92cd72639cd9fada",
-            "type": "leaf",
-            "state": {
-              "type": "recent-files",
-              "state": {},
-              "icon": "clock",
-              "title": "Recent Files"
+              "type": "outline",
+              "state": {
+                "file": "docs/自学内容/人工智能/机器学习.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "机器学习 的大纲"
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
@@ -164,25 +159,13 @@
               "icon": "lucide-bookmark",
               "title": "书签"
             }
-          },
-          {
-            "id": "6c7418c521ab7a68",
-            "type": "leaf",
-            "state": {
-              "type": "outline",
-              "state": {
-                "file": "docs/自学内容/人工智能/机器学习.md"
-              },
-              "icon": "lucide-list",
-              "title": "机器学习 的大纲"
-            }
           }
         ],
-        "currentTab": 4
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
-    "width": 226.5,
+    "width": 358.5,
     "collapsed": true
   },
   "left-ribbon": {
@@ -201,7 +184,7 @@
       "obsidian-excalidraw-plugin:新建绘图文件": false
     }
   },
-  "active": "0a9cd0319ddd3dbc",
+  "active": "e0fef3a0d71f83fc",
   "lastOpenFiles": [
     "docs/自学内容/人工智能/深度学习.md",
     "docs/自学内容/人工智能/机器学习.md",
