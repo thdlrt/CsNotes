@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/自学内容/人工智能/机器学习.md",
+                "file": "docs/自学内容/人工智能/pytorch.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "机器学习"
+              "title": "pytorch"
             }
           }
         ]
@@ -80,13 +80,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/自学内容/人工智能/机器学习.md",
+                "file": "docs/自学内容/人工智能/pytorch.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "机器学习 的大纲"
+              "title": "pytorch 的大纲"
             }
           }
         ]
@@ -185,8 +185,10 @@
   },
   "active": "e0fef3a0d71f83fc",
   "lastOpenFiles": [
-    "docs/自学内容/人工智能/深度学习.md",
     "docs/自学内容/人工智能/机器学习.md",
+    "docs/自学内容/人工智能/pytorch.md",
+    "docs/自学内容/人工智能/未命名",
+    "docs/自学内容/人工智能/深度学习.md",
     "docs/自学内容/游戏开发&图形学/游戏开发/游戏引擎/unity/unity shader（HLSL）.md",
     "docs/自学内容/人工智能",
     "docs/自学内容/游戏开发&图形学/计算机图形学/games202高质量实时渲染.md",
@@ -215,12 +217,10 @@
     "docs/自学内容/游戏开发&图形学/计算机图形学/shader/shaderToy学习.md",
     "docs/自学内容/游戏开发&图形学/游戏开发/游戏引擎/unity/unity基础.md",
     "docs/自学内容/游戏开发&图形学/计算机图形学/shader",
-    "docs/自学内容/移动端开发/鸿蒙/笔记.md",
     "Excalidraw",
     "docs/自学内容/游戏开发&图形学/游戏开发/游戏设计/信息/2024腾讯游戏运营加餐包——《游戏活动与商业化运营》笔记(2).pdf",
     "docs/自学内容/游戏开发&图形学/游戏开发/游戏设计/信息/全球游戏市场进化论.pdf",
     "docs/自学内容/游戏开发&图形学/游戏开发/游戏设计/信息",
-    "docs/自学内容/游戏开发&图形学/游戏开发/游戏设计",
     "docs/_export_/slide/本校保研流程（计算机系夏令营）/plugin/chalkboard/img/whiteboard.png",
     "docs/_export_/slide/本校保研流程（计算机系夏令营）/plugin/chalkboard/img/boardmarker-green.png",
     "docs/_export_/slide/本校保研流程（计算机系夏令营）/plugin/chalkboard/img/sponge.png",
