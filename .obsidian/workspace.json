@@ -89,7 +89,8 @@
               "title": "pytorch 的大纲"
             }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
@@ -183,7 +184,7 @@
       "obsidian-excalidraw-plugin:新建绘图文件": false
     }
   },
-  "active": "e0fef3a0d71f83fc",
+  "active": "6c7418c521ab7a68",
   "lastOpenFiles": [
     "docs/自学内容/人工智能/机器学习.md",
     "docs/自学内容/人工智能/pytorch.md",
