@@ -54,3 +54,93 @@ u.grad
 v.grad
 ```
 ### 数据集
+- 使用固定的随机数生成器种子值，确保代码的**可重复性** `torch.manual_seed(0)`
+- `原始数据 → Dataset → 单样本处理 → DataLoader → 批量生成`
+#### Dataset
+- 定义数据的组织方式
+- 提供标准化的数据访问方法
+- **重写**来实现 Dataset 类
+```python
+from torch.utils.data import Dataset
+
+class toy_set(Dataset):
+    def __init__(self, length = 100, transform = None):
+        self.len = length
+        self.x = 2 * torch.ones(length, 2)
+        self.y = torch.ones(length, 1)
+        self.transform = transform
+        """初始化数据路径、预处理参数等"""
+    
+    def __len__(self):
+        return self.len
+        """返回数据集总样本数"""
+
+    def __getitem__(self, idx):
+        sample = self.x[index], self.y[index]
+        if self.transform:
+            sample = self.transform(sample)     
+        return sample
+        """返回单个样本（支持索引访问）"""
+```
+#### DataLoader
+- 
+#### 变换
+- 用于变换数据的变换类
+```python
+class add_mult(object):
+
+# Constructor
+def __init__(self, addx = 1, muly = 2):
+    self.addx = addx
+    self.muly = muly
+
+# Executor
+def __call__(self, sample):
+    x = sample[0]
+    y = sample[1]
+    x = x + self.addx
+    y = y * self.muly
+    sample = x, y
+    return sample
+    
+#对数据进行转换
+a_m = add_mult()
+data_set = toy_set()
+a_m(data_set[i])
+#也可以在创建数据集时就传递变换
+cust_data_set = toy_set(transform = a_m)
+```
+- 组合多种变换
+```python
+from torchvision import transforms
+
+# 定义第二个变化类
+class mult(object):
+
+# Constructor
+def __init__(self, mult = 100):
+    self.mult = mult
+    
+# Executor
+def __call__(self, sample):
+    x = sample[0]
+    y = sample[1]
+    x = x * self.mult
+    y = y * self.mult
+    sample = x, y
+    return sample
+    
+#组合变化
+data_transform = transforms.Compose([add_mult(), mult()])
+data_transform(data_set[0])
+```
+## 算法
+### 线性回归预测
+- 使用模型
+```python
+from torch.nn import Linear
+# 模型的wb参数会被随机初始化
+model = Linear(in_features = 1, out_features = 1)
+```
+#### 训练
+#### 梯度下降
