@@ -142,4 +142,10 @@ from torch.nn import Linear
 # 模型的wb参数会被随机初始化
 model = Linear(in_features = 1, out_features = 1, bias=True)# 输入的特征数目、输出的特征数目、是否包含偏置项
 ```
-#### 梯度下降
+#### 使用 pytorch 实现梯度下降的线性回归算法
+
+```python
+import torch
+X = torch.arange(-3, 3, 0.1).view(-1, 1)
+f = 1 * X - 1
+```
