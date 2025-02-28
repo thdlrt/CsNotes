@@ -140,7 +140,6 @@ data_transform(data_set[0])
 ```python
 from torch.nn import Linear
 # 模型的wb参数会被随机初始化
-model = Linear(in_features = 1, out_features = 1)
+model = Linear(in_features = 1, out_features = 1, bias=True)# 输入的特征数目、输出的特征数目、是否包含偏置项
 ```
-#### 训练
 #### 梯度下降
