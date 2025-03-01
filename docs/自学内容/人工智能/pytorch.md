@@ -85,6 +85,11 @@ class toy_set(Dataset):
 #### DataLoader
 - 从`Dataset`中高效生成批量数据
 - 原始数据 → Dataset → 单样本处理 → DataLoader → 批量生成 → 模型训练/验证
+- 可以方便的实现：
+	- 批量控制
+	- 数据打乱
+	- 并行加载
+	- 内存管理
 ```python
 trainloader = DataLoader(dataset = dataset, batch_size = 1)
 w = torch.tensor(-15.0,requires_grad=True)
@@ -238,10 +243,11 @@ train_model(15)
 #### 随机梯度下降
 - 每次迭代**只使用一个样本**(依次选择)计算成本，而不是使用所有的样本
 	- 通过 **单个样本** 的梯度来**近似**全体数据的梯度，迭代更新模型参数。
-- 不能保证总体损失递减（比如选到了偏离值），可能会产生波动
-	- 内存占用低（仅需存储单个样本的梯度）
-	- 适用于大规模数据集或在线学习
-	- ![image.png|246](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefined20250301112551.png)
+- ![image.png|600](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefined20250301115110.png)
+- ![image.png|600](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefined20250301115120.png)
+- ![image.png|600](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefined20250301115134.png)
+
+
 ```python
 # The function for training the model
 
@@ -286,4 +292,78 @@ def train_model_SGD(iter):
         get_surface.plot_ps()
 ```
 #### 小批量梯度下降
-#### 优化
+- 将数据集拆分，每次选择**一部分**计算成本，兼顾效率与准确性
+[[3 2_mini-batch_gradient_descent_v3.ipynb]]
+- ![image.png|550](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefined20250301121328.png)
+- ![image.png|550](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefined20250301121358.png)
+
+- 通过 dataloader 可以方便的实现以批为单位取出
+```python
+dataset = Data()
+trainloader = DataLoader(dataset = dataset, batch_size = 5)
+w = torch.tensor(-15.0, requires_grad = True)
+b = torch.tensor(-10.0, requires_grad = True)
+LOSS_MINI5 = []
+lr = 0.1
+
+def train_model_Mini5(epochs):
+    for epoch in range(epochs):
+        Yhat = forward(X)
+        get_surface.set_para_loss(w.data.tolist(), b.data.tolist(), criterion(Yhat, Y).tolist())
+        get_surface.plot_ps()
+        LOSS_MINI5.append(criterion(forward(X), Y).tolist())
+        for x, y in trainloader:
+            yhat = forward(x)
+            loss = criterion(yhat, y)
+            get_surface.set_para_loss(w.data.tolist(), b.data.tolist(), loss.tolist())
+            loss.backward()
+            w.data = w.data - lr * w.grad.data
+            b.data = b.data - lr * b.grad.data
+            w.grad.data.zero_()
+            b.grad.data.zero_()
+```
+#### 优化器
+- ![image.png|400](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefined20250301123501.png)
+- PyTorch 中的优化流程
+	- 从 `trainloader` 读取小批量数据 `x, y`。
+	- 输入 `x` 至模型，计算预测值 `yhat`。
+	- 使用损失函数计算预测值与真实值之间的误差（`loss`）。
+	- 使用反向传播（`backward()`）计算梯度。
+	- 使用优化器（`optimizer.step()`）更新模型参数。
+	- 清空梯度（`optimizer.zero_grad()`），进入下一轮循环。
+- 使用 pytorch 提供的一系列类来实现算法[[3 3_PyTorchway_v3.ipynb]]
+```python
+from torch import nn, optim
+#线性回归类定义
+class linear_regression(nn.Module):
+    # Constructor
+    def __init__(self, input_size, output_size):
+        super(linear_regression, self).__init__()
+        self.linear = nn.Linear(input_size, output_size)
+    # Prediction
+    def forward(self, x):
+        yhat = self.linear(x)
+        return yhat
+        
+#损失函数与优化器      
+criterion = nn.MSELoss() # 均方误差损失
+model = linear_regression(1, 1) # 实例化模型 
+optimizer = optim.SGD(model.parameters(), lr=0.01) # 优化器绑定模型参数
+
+trainloader = DataLoader(dataset = dataset, batch_size = 1)
+#参数手动初始化
+model.state_dict()['linear.weight'][0] = -15 model.state_dict()['linear.bias'][0] = -10
+
+#初始化参数 → 数据加载 → 前向传播 → 损失计算
+# ↑									↓ 
+#参数更新 ← 梯度清零 ← 反向传播 ← 损失计算
+def train_model_BGD(iter):
+    for epoch in range(iter):
+        for x, y in trainloader:
+            yhat = model(x)                   # 前向传播
+            loss = criterion(yhat, y)         # 损失计算
+            get_surface.set_para_loss(...)    # 可视化更新
+            optimizer.zero_grad()             # 梯度清零
+            loss.backward()                   # 反向传播
+            optimizer.step()                 # 参数更新
+```
