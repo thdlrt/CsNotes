@@ -57,8 +57,8 @@ v.grad
 - 使用固定的随机数生成器种子值，确保代码的**可重复性** `torch.manual_seed(0)`
 - `原始数据 → Dataset → 单样本处理 → DataLoader → 批量生成`
 #### Dataset
-- 定义数据的组织方式
-- 提供标准化的数据访问方法
+- 定义数据的**组织方式**
+- 提供标准化的**数据访问**方法
 - **重写**来实现 Dataset 类
 ```python
 from torch.utils.data import Dataset
@@ -83,7 +83,50 @@ class toy_set(Dataset):
         """返回单个样本（支持索引访问）"""
 ```
 #### DataLoader
-- 
+- 从`Dataset`中高效生成批量数据
+- 原始数据 → Dataset → 单样本处理 → DataLoader → 批量生成 → 模型训练/验证
+```python
+trainloader = DataLoader(dataset = dataset, batch_size = 1)
+w = torch.tensor(-15.0,requires_grad=True)
+b = torch.tensor(-10.0,requires_grad=True)
+LOSS_Loader = []
+
+def train_model_DataLoader(epochs):
+    
+    # Loop
+    for epoch in range(epochs):
+        
+        # SGD is an approximation of out true total loss/cost, in this line of code we calculate our true loss/cost and store it
+        Yhat = forward(X)
+        
+        # store the loss 
+        LOSS_Loader.append(criterion(Yhat, Y).tolist())
+        
+        for x, y in trainloader:
+            
+            # make a prediction
+            yhat = forward(x)
+            
+            # calculate the loss
+            loss = criterion(yhat, y)
+            
+            # Section for plotting
+            get_surface.set_para_loss(w.data.tolist(), b.data.tolist(), loss.tolist())
+            
+            # Backward pass: compute gradient of the loss with respect to all the learnable parameters
+            loss.backward()
+            
+            # Updata parameters slope
+            w.data = w.data - lr * w.grad.data
+            b.data = b.data - lr* b.grad.data
+            
+            # Clear gradients 
+            w.grad.data.zero_()
+            b.grad.data.zero_()
+            
+        #plot surface and data space after each epoch    
+        get_surface.plot_ps()
+```
 #### 变换
 - 用于变换数据的变换类
 ```python
@@ -193,5 +236,54 @@ train_model(15)
 ```
 ![image.png|400](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefined20250301011302.png)
 #### 随机梯度下降
+- 每次迭代**只使用一个样本**(依次选择)计算成本，而不是使用所有的样本
+	- 通过 **单个样本** 的梯度来**近似**全体数据的梯度，迭代更新模型参数。
+- 不能保证总体损失递减（比如选到了偏离值），可能会产生波动
+	- 内存占用低（仅需存储单个样本的梯度）
+	- 适用于大规模数据集或在线学习
+	- ![image.png|246](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefined20250301112551.png)
+```python
+# The function for training the model
+
+LOSS_SGD = []
+w = torch.tensor(-15.0, requires_grad = True)
+b = torch.tensor(-10.0, requires_grad = True)
+
+def train_model_SGD(iter):
+    
+    # Loop
+    for epoch in range(iter):
+        
+        # SGD is an approximation of out true total loss/cost, in this line of code we calculate our true loss/cost and store it
+        Yhat = forward(X)
+
+        # store the loss 
+        LOSS_SGD.append(criterion(Yhat, Y).tolist())
+        
+        for x, y in zip(X, Y):
+            
+            # make a pridiction
+            yhat = forward(x)
+        
+            # calculate the loss 
+            loss = criterion(yhat, y)
+
+            # Section for plotting
+            get_surface.set_para_loss(w.data.tolist(), b.data.tolist(), loss.tolist())
+        
+            # backward pass: compute gradient of the loss with respect to all the learnable parameters
+            loss.backward()
+        
+            # update parameters slope and bias
+            w.data = w.data - lr * w.grad.data
+            b.data = b.data - lr * b.grad.data
+
+            # zero the gradients before running the backward pass
+            w.grad.data.zero_()
+            b.grad.data.zero_()
+            
+        #plot surface and data space after each epoch    
+        get_surface.plot_ps()
+```
 #### 小批量梯度下降
 #### 优化
