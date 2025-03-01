@@ -367,3 +367,9 @@ def train_model_BGD(iter):
             loss.backward()                   # 反向传播
             optimizer.step()                 # 参数更新
 ```
+### 数据集的拆分
+- 将数据集划分为训练、验证、测试数据集
+- 
+```python
+
+```
