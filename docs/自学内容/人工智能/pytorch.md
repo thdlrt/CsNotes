@@ -1,3 +1,4 @@
+## 基本概念
 ### Tensors 张量
 - 使用 pytorch 张量组成神经网络，作为神经网络中数据流动的结拜呢单位
 - 张量可以表示不同维度的数据
@@ -190,140 +191,8 @@ from torch.nn import Linear
 # 模型的wb参数会被随机初始化
 model = Linear(in_features = 1, out_features = 1, bias=True)# 输入的特征数目、输出的特征数目、是否包含偏置项
 ```
-#### 使用 pytorch 实现梯度下降的线性回归算法
-[[2 3_training_slope_and_bias_v3.ipynb]]
-```python
-import torch
-X = torch.arange(-3, 3, 0.1).view(-1, 1)
-f = 1 * X - 1
-# Add noise
-Y = f + 0.1 * torch.randn(X.size())
 
-def forward(x):#预测计算
-    return w * x + b
-def criterion(yhat,y):#成本计算
-    return torch.mean((yhat-y)**2)
-#初始化参数
-w = torch.tensor(-15.0, requires_grad = True)
-b = torch.tensor(-10.0, requires_grad = True)
-lr = 0.1
-LOSS = []
-#执行训练
-def train_model(iter):
-    # Loop
-    for epoch in range(iter):
-
-        # make a prediction
-        Yhat = forward(X)
-
-        # calculate the loss 
-        loss = criterion(Yhat, Y)
-
-        # Section for plotting
-        get_surface.set_para_loss(w.data.tolist(), b.data.tolist(),     loss.tolist())
-        if epoch % 3 == 0:
-            get_surface.plot_ps()
-
-        # store the loss in the list LOSS
-        LOSS.append(loss)
-
-        # backward pass: compute gradient of the loss with respect  to all the learnable parameters
-        loss.backward()
-
-        # update parameters slope and bias
-        w.data = w.data - lr * w.grad.data
-        b.data = b.data - lr * b.grad.data
-
-        # zero the gradients before running the backward pass
-        w.grad.data.zero_()
-        b.grad.data.zero_()
-train_model(15)
-```
-![image.png|400](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefined20250301011302.png)
-#### 随机梯度下降
-- 每次迭代**只使用一个样本**(依次选择)计算成本，而不是使用所有的样本
-	- 通过 **单个样本** 的梯度来**近似**全体数据的梯度，迭代更新模型参数。
-	- 迭代表示用一个元素进行计算，计算一趟称为一个周期
-- ![image.png|600](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefined20250301115110.png)
-- ![image.png|600](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefined20250301115120.png)
-- ![image.png|600](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefined20250301115134.png)
-
-
-```python
-# The function for training the model
-
-LOSS_SGD = []
-w = torch.tensor(-15.0, requires_grad = True)
-b = torch.tensor(-10.0, requires_grad = True)
-
-def train_model_SGD(iter):
-    
-    # Loop
-    for epoch in range(iter):
-        
-        # SGD is an approximation of out true total loss/cost, in this line of code we calculate our true loss/cost and store it
-        Yhat = forward(X)
-
-        # store the loss 
-        LOSS_SGD.append(criterion(Yhat, Y).tolist())
-        
-        for x, y in zip(X, Y):
-            
-            # make a pridiction
-            yhat = forward(x)
-        
-            # calculate the loss 
-            loss = criterion(yhat, y)
-
-            # Section for plotting
-            get_surface.set_para_loss(w.data.tolist(), b.data.tolist(), loss.tolist())
-        
-            # backward pass: compute gradient of the loss with respect to all the learnable parameters
-            loss.backward()
-        
-            # update parameters slope and bias
-            w.data = w.data - lr * w.grad.data
-            b.data = b.data - lr * b.grad.data
-
-            # zero the gradients before running the backward pass
-            w.grad.data.zero_()
-            b.grad.data.zero_()
-            
-        #plot surface and data space after each epoch    
-        get_surface.plot_ps()
-```
-#### 小批量梯度下降
-- 将数据集拆分，每次选择**一部分**计算成本，兼顾效率与准确性
-[[3 2_mini-batch_gradient_descent_v3.ipynb]]
-- ![image.png|550](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefined20250301121328.png)
-- ![image.png|550](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefined20250301121358.png)
-
-- 通过 dataloader 可以方便的实现以批为单位取出
-```python
-dataset = Data()
-trainloader = DataLoader(dataset = dataset, batch_size = 5)
-w = torch.tensor(-15.0, requires_grad = True)
-b = torch.tensor(-10.0, requires_grad = True)
-LOSS_MINI5 = []
-lr = 0.1
-
-def train_model_Mini5(epochs):
-    for epoch in range(epochs):
-        Yhat = forward(X)
-        get_surface.set_para_loss(w.data.tolist(), b.data.tolist(), criterion(Yhat, Y).tolist())
-        get_surface.plot_ps()
-        LOSS_MINI5.append(criterion(forward(X), Y).tolist())
-        for x, y in trainloader:
-            yhat = forward(x)
-            loss = criterion(yhat, y)
-            get_surface.set_para_loss(w.data.tolist(), b.data.tolist(), loss.tolist())
-            loss.backward()
-            w.data = w.data - lr * w.grad.data
-            b.data = b.data - lr * b.grad.data
-            w.grad.data.zero_()
-            b.grad.data.zero_()
-```
-#### 优化器
+#### 工作流程
 - ![image.png|400](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefined20250301123501.png)
 - PyTorch 中的优化流程
 	- 从 `trainloader` 读取小批量数据 `x, y`。
@@ -372,8 +241,11 @@ def train_model_BGD(iter):
             loss.backward()                   # 反向传播
             optimizer.step()                 # 参数更新
 ```
-#### 数据集的拆分
+#### 超参数调优
 - 将数据集划分为训练、验证、测试数据集
+	- **训练阶段**：使用**训练集**更新模型参数（梯度下降）。
+	- **验证阶段**：使用**验证集**评估不同超参数配置的性能。
+	- **测试阶段**：使用**测试集**仅进行一次最终评估。
 - **训练集**
 	- 直接用于模型参数的训练（如通过**梯度下降**优化权重和偏置）
 	- 占数据总量的 **60%~80%**（依数据规模调整）
@@ -387,7 +259,98 @@ def train_model_BGD(iter):
 	- 仅在模型完全确定（超参数固定、训练完成）后使用一次。
 	- 占数据总量的 **10%~20%**。
 	- **严禁参与训练或调参**，否则会导致过拟合测试集。
-- 为什么区分训练集和
+- 为什么区分训练集和验证集：
+	- 如果在训练集上多次尝试不同学习率（或其他超参数），模型会间接“记住”验证集的特征，导致验证集上的性能被高估（本质是过拟合验证集）。
+	- 训练集的损失反映模型对已知数据的拟合程度，而验证集的损失反映模型对未知数据的预测能力。
+	- 利用验证集进行超参数调优可以提升模型的泛化能力，保证在未知数据（测试集上的表现）
 [[3 6_training_and_validation_v3.ipynb]]
+#### 随机梯度下降
+- 每次迭代**只使用一个样本**(依次选择) 计算成本，而不是使用所有的样本
+	- 通过 **单个样本** 的梯度来**近似**全体数据的梯度，迭代更新模型参数。
+	- 迭代表示用一个元素进行计算，计算一趟称为一个周期
+- ![image.png|600](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefinedundefined20250301115110.png)
+- ![image.png|600](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefinedundefined20250301115120.png)
+- ![image.png|600](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefinedundefined20250301115134.png)
+
+
+```python
+# The function for training the model
+
+LOSS_SGD = []
+w = torch.tensor(-15.0, requires_grad = True)
+b = torch.tensor(-10.0, requires_grad = True)
+
+def train_model_SGD(iter):
+    
+    # Loop
+    for epoch in range(iter):
+        
+        # SGD is an approximation of out true total loss/cost, in this line of code we calculate our true loss/cost and store it
+        Yhat = forward(X)
+
+        # store the loss 
+        LOSS_SGD.append(criterion(Yhat, Y).tolist())
+        
+        for x, y in zip(X, Y):
+            
+            # make a pridiction
+            yhat = forward(x)
+        
+            # calculate the loss 
+            loss = criterion(yhat, y)
+
+            # Section for plotting
+            get_surface.set_para_loss(w.data.tolist(), b.data.tolist(), loss.tolist())
+        
+            # backward pass: compute gradient of the loss with respect to all the learnable parameters
+            loss.backward()
+        
+            # update parameters slope and bias
+            w.data = w.data - lr * w.grad.data
+            b.data = b.data - lr * b.grad.data
+
+            # zero the gradients before running the backward pass
+            w.grad.data.zero_()
+            b.grad.data.zero_()
+            
+        #plot surface and data space after each epoch    
+        get_surface.plot_ps()
+```
+#### 小批量梯度下降
+- 将数据集拆分，每次选择**一部分**计算成本，兼顾效率与准确性
+[[3 2_mini-batch_gradient_descent_v3.ipynb]]
+- ![image.png|550](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefinedundefined20250301121328.png)
+- ![image.png|550](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefinedundefined20250301121358.png)
+
+- 通过 dataloader 可以方便的实现以批为单位取出
+```python
+dataset = Data()
+trainloader = DataLoader(dataset = dataset, batch_size = 5)
+w = torch.tensor(-15.0, requires_grad = True)
+b = torch.tensor(-10.0, requires_grad = True)
+LOSS_MINI5 = []
+lr = 0.1
+
+def train_model_Mini5(epochs):
+    for epoch in range(epochs):
+        Yhat = forward(X)
+        get_surface.set_para_loss(w.data.tolist(), b.data.tolist(), criterion(Yhat, Y).tolist())
+        get_surface.plot_ps()
+        LOSS_MINI5.append(criterion(forward(X), Y).tolist())
+        for x, y in trainloader:
+            yhat = forward(x)
+            loss = criterion(yhat, y)
+            get_surface.set_para_loss(w.data.tolist(), b.data.tolist(), loss.tolist())
+            loss.backward()
+            w.data = w.data - lr * w.grad.data
+            b.data = b.data - lr * b.grad.data
+            w.grad.data.zero_()
+            b.grad.data.zero_()
+```
 #### 多元线性回归
+
+#### 多重输出线性回归
+
 #### 逻辑回归
+
+## 实操
