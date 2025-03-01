@@ -20,6 +20,16 @@
               "icon": "lucide-file",
               "title": "pytorch"
             }
+          },
+          {
+            "id": "11f0a203a382e25f",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {},
+              "icon": "lucide-file",
+              "title": "新标签页"
+            }
           }
         ]
       }
@@ -89,8 +99,7 @@
               "title": "pytorch 的大纲"
             }
           }
-        ],
-        "currentTab": 3
+        ]
       }
     ],
     "direction": "horizontal",
@@ -186,8 +195,9 @@
   },
   "active": "e0fef3a0d71f83fc",
   "lastOpenFiles": [
-    "docs/自学内容/人工智能/机器学习.md",
     "docs/自学内容/人工智能/pytorch.md",
+    "linkdata/3 6_training_and_validation_v3.ipynb",
+    "docs/自学内容/人工智能/机器学习.md",
     "linkdata/3 3_PyTorchway_v3.ipynb",
     "linkdata/3 2_mini-batch_gradient_descent_v3.ipynb",
     "docs/自学内容/人工智能/未命名",
@@ -220,7 +230,6 @@
     "docs/自学内容/游戏开发&图形学/计算机图形学/图形学基础/光线追踪.md",
     "docs/自学内容/游戏开发&图形学/计算机图形学/shader/shaderToy学习.md",
     "docs/自学内容/游戏开发&图形学/计算机图形学/shader",
-    "Excalidraw",
     "docs/_export_/slide/本校保研流程（计算机系夏令营）/plugin/chalkboard/img/whiteboard.png",
     "docs/_export_/slide/本校保研流程（计算机系夏令营）/plugin/chalkboard/img/boardmarker-green.png",
     "docs/_export_/slide/本校保研流程（计算机系夏令营）/plugin/chalkboard/img/sponge.png",

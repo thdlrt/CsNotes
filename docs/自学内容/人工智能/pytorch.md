@@ -243,6 +243,7 @@ train_model(15)
 #### 随机梯度下降
 - 每次迭代**只使用一个样本**(依次选择)计算成本，而不是使用所有的样本
 	- 通过 **单个样本** 的梯度来**近似**全体数据的梯度，迭代更新模型参数。
+	- 迭代表示用一个元素进行计算，计算一趟称为一个周期
 - ![image.png|600](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefined20250301115110.png)
 - ![image.png|600](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefined20250301115120.png)
 - ![image.png|600](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefined20250301115134.png)
@@ -331,6 +332,10 @@ def train_model_Mini5(epochs):
 	- 使用反向传播（`backward()`）计算梯度。
 	- 使用优化器（`optimizer.step()`）更新模型参数。
 	- 清空梯度（`optimizer.zero_grad()`），进入下一轮循环。
+- `model.state_dict()`返回一个字典，包含模型的所有可学习参数（如权重、偏置）及其当前值。
+- ![image.png|600](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefined20250301202244.png)
+	- optim 表示优化器
+	- lr 为学习率
 - 使用 pytorch 提供的一系列类来实现算法[[3 3_PyTorchway_v3.ipynb]]
 ```python
 from torch import nn, optim
@@ -367,9 +372,22 @@ def train_model_BGD(iter):
             loss.backward()                   # 反向传播
             optimizer.step()                 # 参数更新
 ```
-### 数据集的拆分
+#### 数据集的拆分
 - 将数据集划分为训练、验证、测试数据集
-- 
-```python
-
-```
+- **训练集**
+	- 直接用于模型参数的训练（如通过**梯度下降**优化权重和偏置）
+	- 占数据总量的 **60%~80%**（依数据规模调整）
+- **验证集**
+	- 用于 **超参数调优**（如**学习率**、正则化系数、网络层数等）。
+	- 评估模型的泛化能力，防止过拟合训练数据。
+	- 占数据总量的 **10%~20%**。
+	- 需与训练集独立分布，反映真实场景数据特性。
+- **测试集**
+	- **最终评估** 模型在未知数据上的性能（模拟真实场景）。
+	- 仅在模型完全确定（超参数固定、训练完成）后使用一次。
+	- 占数据总量的 **10%~20%**。
+	- **严禁参与训练或调参**，否则会导致过拟合测试集。
+- 为什么区分训练集和
+[[3 6_training_and_validation_v3.ipynb]]
+#### 多元线性回归
+#### 逻辑回归
