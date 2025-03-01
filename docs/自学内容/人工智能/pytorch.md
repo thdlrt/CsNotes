@@ -143,9 +143,55 @@ from torch.nn import Linear
 model = Linear(in_features = 1, out_features = 1, bias=True)# 输入的特征数目、输出的特征数目、是否包含偏置项
 ```
 #### 使用 pytorch 实现梯度下降的线性回归算法
-
+[[2 3_training_slope_and_bias_v3.ipynb]]
 ```python
 import torch
 X = torch.arange(-3, 3, 0.1).view(-1, 1)
 f = 1 * X - 1
+# Add noise
+Y = f + 0.1 * torch.randn(X.size())
+
+def forward(x):#预测计算
+    return w * x + b
+def criterion(yhat,y):#成本计算
+    return torch.mean((yhat-y)**2)
+#初始化参数
+w = torch.tensor(-15.0, requires_grad = True)
+b = torch.tensor(-10.0, requires_grad = True)
+lr = 0.1
+LOSS = []
+#执行训练
+def train_model(iter):
+    # Loop
+    for epoch in range(iter):
+
+        # make a prediction
+        Yhat = forward(X)
+
+        # calculate the loss 
+        loss = criterion(Yhat, Y)
+
+        # Section for plotting
+        get_surface.set_para_loss(w.data.tolist(), b.data.tolist(),     loss.tolist())
+        if epoch % 3 == 0:
+            get_surface.plot_ps()
+
+        # store the loss in the list LOSS
+        LOSS.append(loss)
+
+        # backward pass: compute gradient of the loss with respect  to all the learnable parameters
+        loss.backward()
+
+        # update parameters slope and bias
+        w.data = w.data - lr * w.grad.data
+        b.data = b.data - lr * b.grad.data
+
+        # zero the gradients before running the backward pass
+        w.grad.data.zero_()
+        b.grad.data.zero_()
+train_model(15)
 ```
+![image.png|400](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefined20250301011302.png)
+#### 随机梯度下降
+#### 小批量梯度下降
+#### 优化
