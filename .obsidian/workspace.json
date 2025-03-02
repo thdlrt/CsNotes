@@ -22,6 +22,16 @@
             }
           },
           {
+            "id": "df15a40d31701170",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {},
+              "icon": "lucide-file",
+              "title": "新标签页"
+            }
+          },
+          {
             "id": "11f0a203a382e25f",
             "type": "leaf",
             "state": {
@@ -31,7 +41,8 @@
               "title": "新标签页"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -90,17 +101,15 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/自学内容/人工智能/pytorch.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "pytorch 的大纲"
+              "title": "大纲"
             }
           }
-        ],
-        "currentTab": 3
+        ]
       }
     ],
     "direction": "horizontal",
@@ -194,9 +203,10 @@
       "obsidian-excalidraw-plugin:新建绘图文件": false
     }
   },
-  "active": "6c7418c521ab7a68",
+  "active": "df15a40d31701170",
   "lastOpenFiles": [
     "docs/自学内容/人工智能/pytorch.md",
+    "linkdata/4 2 multiple_linear_regression_training_v2.ipynb",
     "linkdata/3 6_training_and_validation_v3.ipynb",
     "docs/自学内容/人工智能/机器学习.md",
     "linkdata/3 3_PyTorchway_v3.ipynb",
@@ -230,7 +240,6 @@
     "docs/自学内容/游戏开发&图形学/计算机图形学/图形学基础/几何.md",
     "docs/自学内容/游戏开发&图形学/计算机图形学/图形学基础/光线追踪.md",
     "docs/自学内容/游戏开发&图形学/计算机图形学/shader/shaderToy学习.md",
-    "docs/自学内容/游戏开发&图形学/计算机图形学/shader",
     "docs/_export_/slide/本校保研流程（计算机系夏令营）/plugin/chalkboard/img/whiteboard.png",
     "docs/_export_/slide/本校保研流程（计算机系夏令营）/plugin/chalkboard/img/boardmarker-green.png",
     "docs/_export_/slide/本校保研流程（计算机系夏令营）/plugin/chalkboard/img/sponge.png",

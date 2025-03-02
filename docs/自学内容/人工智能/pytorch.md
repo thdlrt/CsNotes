@@ -348,6 +348,7 @@ def train_model_Mini5(epochs):
             b.grad.data.zero_()
 ```
 #### 多元线性回归
+[[4 2 multiple_linear_regression_training_v2.ipynb]]
 
 #### 多重输出线性回归
 
