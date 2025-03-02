@@ -241,6 +241,15 @@ def train_model_BGD(iter):
             loss.backward()                   # 反向传播
             optimizer.step()                 # 参数更新
 ```
+- 保存模型参数 `torch.save(model.state_dict(), 'lol_win_predictor.pth')`
+- 加载模型 
+```python
+#先创建模型然后加载参数
+# 创建新模型实例（需保持与原模型相同结构） 
+loaded_model = LogisticRegressionModel(input_dim=X_train_tensor.shape[1])
+loaded_model.load_state_dict(torch.load('lol_win_predictor.pth'))
+```
+
 #### 超参数调优
 - 将数据集划分为训练、验证、测试数据集
 	- **训练阶段**：使用**训练集**更新模型参数（梯度下降）。
@@ -404,4 +413,3 @@ train_model(100)
 ```
 ## 实操
 ### 逻辑回归分类算法
-[[Neural Network for Breast Cancer Classification.ipynb]]
