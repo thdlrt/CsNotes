@@ -360,4 +360,48 @@ def train_model_Mini5(epochs):
 sig = nn.Sigmoid()
 yhat = sig(z)
 ```
+- 此外为了避免阶梯状代价函数（无法收敛到最低处），使用对数代价函数
+[[5 3_cross_entropy_logistic_regression_v2.ipynb]]
+```python
+class logistic_regression(nn.Module):
+    
+    # Constructor
+    def __init__(self, n_inputs):
+        super(logistic_regression, self).__init__()
+        self.linear = nn.Linear(n_inputs, 1)
+        
+    # Prediction
+    def forward(self, x):
+        yhat = torch.sigmoid(self.linear(x))
+        return yhat
+        
+model = logistic_regression(1)
+# 对数成本函数
+def criterion(yhat,y):
+    out = -1 * torch.mean(y * torch.log(yhat) + (1 - y) * torch.log(1 - yhat))
+    return out
+
+# Build in criterion
+# criterion = nn.BCELoss()
+
+trainloader = DataLoader(dataset = data_set, batch_size = 3)
+learning_rate = 2
+optimizer = torch.optim.SGD(model.parameters(), lr = learning_rate)
+
+def train_model(epochs):
+    for epoch in range(epochs):
+        for x, y in trainloader:
+            yhat = model(x)
+            loss = criterion(yhat, y)
+            optimizer.zero_grad()
+            loss.backward()
+            optimizer.step()
+            get_surface.set_para_loss(model, loss.tolist())
+        if epoch % 20 == 0:
+            get_surface.plot_ps()
+            
+train_model(100)
+```
 ## 实操
+### 逻辑回归分类算法
+[[Neural Network for Breast Cancer Classification.ipynb]]

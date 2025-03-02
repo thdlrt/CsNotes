@@ -20,8 +20,19 @@
               "icon": "lucide-file",
               "title": "pytorch"
             }
+          },
+          {
+            "id": "b0898560f906133e",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {},
+              "icon": "lucide-file",
+              "title": "新标签页"
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -80,13 +91,12 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/自学内容/人工智能/pytorch.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "pytorch 的大纲"
+              "title": "大纲"
             }
           }
         ]
@@ -183,12 +193,14 @@
       "obsidian-excalidraw-plugin:新建绘图文件": false
     }
   },
-  "active": "e0fef3a0d71f83fc",
+  "active": "b0898560f906133e",
   "lastOpenFiles": [
     "docs/自学内容/人工智能/pytorch.md",
+    "linkdata/Neural Network for Breast Cancer Classification.ipynb",
+    "linkdata/5 3_cross_entropy_logistic_regression_v2.ipynb",
+    "docs/自学内容/人工智能/机器学习.md",
     "linkdata/4 2 multiple_linear_regression_training_v2.ipynb",
     "linkdata/3 6_training_and_validation_v3.ipynb",
-    "docs/自学内容/人工智能/机器学习.md",
     "linkdata/3 3_PyTorchway_v3.ipynb",
     "linkdata/3 2_mini-batch_gradient_descent_v3.ipynb",
     "docs/自学内容/人工智能/未命名",
@@ -208,9 +220,7 @@
     "docs/自学内容/游戏开发&图形学/游戏开发/游戏客户端/unity",
     "docs/自学内容/游戏开发&图形学/游戏开发/游戏客户端/LibGDX.md",
     "docs/自学内容/游戏开发&图形学/游戏开发/游戏客户端/cocos.md",
-    "docs/自学内容/游戏开发&图形学/游戏开发/游戏客户端",
     "docs/自学内容/代码质量/重构-改善既有代码的设计.md",
-    "docs/自学内容/代码质量",
     "docs/自学内容/游戏开发&图形学/计算机图形学/图形学基础/材质.md",
     "docs/自学内容/游戏开发&图形学/计算机图形学/图形学基础/光栅化.md",
     "docs/自学内容/游戏开发&图形学/计算机图形学/图形学基础/现代图形学基础.md",
