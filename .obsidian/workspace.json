@@ -20,29 +20,8 @@
               "icon": "lucide-file",
               "title": "pytorch"
             }
-          },
-          {
-            "id": "df15a40d31701170",
-            "type": "leaf",
-            "state": {
-              "type": "empty",
-              "state": {},
-              "icon": "lucide-file",
-              "title": "新标签页"
-            }
-          },
-          {
-            "id": "11f0a203a382e25f",
-            "type": "leaf",
-            "state": {
-              "type": "empty",
-              "state": {},
-              "icon": "lucide-file",
-              "title": "新标签页"
-            }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -101,12 +80,13 @@
             "state": {
               "type": "outline",
               "state": {
+                "file": "docs/自学内容/人工智能/pytorch.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "大纲"
+              "title": "pytorch 的大纲"
             }
           }
         ]
@@ -203,7 +183,7 @@
       "obsidian-excalidraw-plugin:新建绘图文件": false
     }
   },
-  "active": "df15a40d31701170",
+  "active": "e0fef3a0d71f83fc",
   "lastOpenFiles": [
     "docs/自学内容/人工智能/pytorch.md",
     "linkdata/4 2 multiple_linear_regression_training_v2.ipynb",

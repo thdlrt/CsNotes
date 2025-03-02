@@ -349,8 +349,11 @@ def train_model_Mini5(epochs):
 ```
 #### 多元线性回归
 [[4 2 multiple_linear_regression_training_v2.ipynb]]
-
 #### 多重输出线性回归
+- 多套参数，有输出输出多个不同的结果
+	- ![image.png|400](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefined20250302134604.png)
+	- ![image.png|400](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefined20250302134936.png)
+
 
 #### 逻辑回归
 
