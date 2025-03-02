@@ -353,8 +353,11 @@ def train_model_Mini5(epochs):
 - 多套参数，有输出输出多个不同的结果
 	- ![image.png|400](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefined20250302134604.png)
 	- ![image.png|400](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefined20250302134936.png)
-
-
 #### 逻辑回归
-
+- 如果一个数据中的顶点类型可以通过线性划分，那么称其为线性可分的
+- 映射函数：从任意大小映射到 `0~1` 范围
+```python
+sig = nn.Sigmoid()
+yhat = sig(z)
+```
 ## 实操
