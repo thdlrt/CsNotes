@@ -191,13 +191,14 @@
       "vscode-editor:新建代码文件": false,
       "obsidian-advanced-slides:Show Slide Preview": false,
       "obsidian-excalidraw-plugin:新建绘图文件": false,
-      "copilot:Open Copilot Chat": false
+      "copilot:Open Copilot Chat": false,
+      "markdown-importer:打开 Markdown 格式转换器": false
     }
   },
   "active": "2fcabaafbf0f2da4",
   "lastOpenFiles": [
-    "_copilot-conversations_/讲解下笔记中的正则化内容@20250303_115250.md",
     "docs/自学内容/人工智能/pytorch.md",
+    "_copilot-conversations_/讲解下笔记中的正则化内容@20250303_115250.md",
     "docs/自学内容/人工智能/机器学习.md",
     "docs/自学内容/人工智能/深度学习.md",
     "_copilot-conversations_/解释一下：from_torch.utils.data_import_Dataset_class_toy_set(Dataset)_def___init__(self,_length_=@20250303_010815.md",
