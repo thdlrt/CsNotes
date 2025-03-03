@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "62fc574a3beb6052",
+        "id": "647e37af607e444c",
         "type": "tabs",
         "children": [
           {
-            "id": "e0fef3a0d71f83fc",
+            "id": "2fcabaafbf0f2da4",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "_copilot-conversations_/解释一下：from_torch.utils.data_import_Dataset_class_toy_set(Dataset)_def___init__(self,_length_=@20250303_010815.md",
+                "file": "docs/自学内容/人工智能/pytorch.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "解释一下：from_torch.utils.data_import_Dataset_class_toy_set(Dataset)_def___init__(self,_length_=@20250303_010815"
+              "title": "pytorch"
             }
           }
         ]
@@ -80,13 +80,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "_copilot-conversations_/解释一下：from_torch.utils.data_import_Dataset_class_toy_set(Dataset)_def___init__(self,_length_=@20250303_010815.md",
+                "file": "docs/自学内容/人工智能/pytorch.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "解释一下：from_torch.utils.data_import_Dataset_class_toy_set(Dataset)_def___init__(self,_length_=@20250303_010815 的大纲"
+              "title": "pytorch 的大纲"
             }
           }
         ]
@@ -174,7 +174,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 884.5
+    "width": 297.5,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -193,23 +194,24 @@
       "copilot:Open Copilot Chat": false
     }
   },
-  "active": "e0fef3a0d71f83fc",
+  "active": "2fcabaafbf0f2da4",
   "lastOpenFiles": [
+    "_copilot-conversations_/讲解下笔记中的正则化内容@20250303_115250.md",
     "docs/自学内容/人工智能/pytorch.md",
+    "docs/自学内容/人工智能/机器学习.md",
+    "docs/自学内容/人工智能/深度学习.md",
     "_copilot-conversations_/解释一下：from_torch.utils.data_import_Dataset_class_toy_set(Dataset)_def___init__(self,_length_=@20250303_010815.md",
     "_copilot-conversations_",
     "copilot-conversations/Provide_three_follow-up_questions_worded_as_if_I'm_asking_you@20250303_005701.md",
     "copilot-conversations",
     "linkdata/Neural Network for Breast Cancer Classification.ipynb",
     "linkdata/5 3_cross_entropy_logistic_regression_v2.ipynb",
-    "docs/自学内容/人工智能/机器学习.md",
     "linkdata/4 2 multiple_linear_regression_training_v2.ipynb",
     "linkdata/3 6_training_and_validation_v3.ipynb",
     "linkdata/3 3_PyTorchway_v3.ipynb",
     "linkdata/3 2_mini-batch_gradient_descent_v3.ipynb",
     "docs/自学内容/人工智能/未命名",
     "linkdata/2 3_training_slope_and_bias_v3.ipynb",
-    "docs/自学内容/人工智能/深度学习.md",
     "docs/自学内容/游戏开发&图形学/游戏开发/游戏引擎/unity/unity shader（HLSL）.md",
     "docs/自学内容/游戏开发&图形学/计算机图形学/games202高质量实时渲染.md",
     "docs/自学内容/游戏开发&图形学/计算机图形学/games001数学基础.md",
@@ -230,7 +232,6 @@
     "docs/自学内容/游戏开发&图形学/游戏开发/游戏引擎/unity/c#.md",
     "docs/自学内容/游戏开发&图形学/游戏开发/游戏引擎/unity/设计模式.md",
     "docs/自学内容/游戏开发&图形学/计算机图形学/图形学基础/几何.md",
-    "docs/自学内容/游戏开发&图形学/计算机图形学/图形学基础/光线追踪.md",
     "docs/_export_/slide/本校保研流程（计算机系夏令营）/plugin/chalkboard/img/whiteboard.png",
     "docs/_export_/slide/本校保研流程（计算机系夏令营）/plugin/chalkboard/img/boardmarker-green.png",
     "docs/_export_/slide/本校保研流程（计算机系夏令营）/plugin/chalkboard/img/sponge.png",

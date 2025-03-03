@@ -15,7 +15,7 @@
   "openRouterAiApiKey": "",
   "defaultChainType": "llm_chain",
   "defaultModelKey": "deepseek r1 14B|lm-studio",
-  "embeddingModelKey": "text-embedding-3-small|openai",
+  "embeddingModelKey": "text-embedding-bge-m3|lm-studio",
   "temperature": 0.1,
   "maxTokens": 1600,
   "contextTurns": 15,
@@ -218,6 +218,17 @@
       "enabled": true,
       "isBuiltIn": true,
       "isEmbeddingModel": true
+    },
+    {
+      "name": "text-embedding-bge-m3",
+      "provider": "lm-studio",
+      "enabled": true,
+      "isBuiltIn": false,
+      "baseUrl": "http://192.168.1.110:35240/v1",
+      "apiKey": "",
+      "isEmbeddingModel": true,
+      "capabilities": [],
+      "enableCors": true
     }
   ],
   "embeddingRequestsPerMin": 90,
