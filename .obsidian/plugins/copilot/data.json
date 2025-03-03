@@ -14,20 +14,20 @@
   "googleApiKey": "",
   "openRouterAiApiKey": "",
   "defaultChainType": "llm_chain",
-  "defaultModelKey": "gpt-4o|openai",
+  "defaultModelKey": "deepseek r1 14B|lm-studio",
   "embeddingModelKey": "text-embedding-3-small|openai",
   "temperature": 0.1,
-  "maxTokens": 1000,
+  "maxTokens": 1600,
   "contextTurns": 15,
   "userSystemPrompt": "",
   "openAIProxyBaseUrl": "",
   "openAIEmbeddingProxyBaseUrl": "",
   "stream": true,
-  "defaultSaveFolder": "copilot-conversations",
+  "defaultSaveFolder": "_copilot-conversations_",
   "defaultConversationTag": "copilot-conversation",
-  "autosaveChat": false,
+  "autosaveChat": true,
   "defaultOpenArea": "view",
-  "customPromptsFolder": "copilot-custom-prompts",
+  "customPromptsFolder": "_copilot-custom-prompts_",
   "indexVaultToVectorStore": "ON MODE SWITCH",
   "qaExclusions": "",
   "qaInclusions": "",
@@ -139,6 +139,20 @@
       "provider": "azure openai",
       "enabled": true,
       "isBuiltIn": true
+    },
+    {
+      "name": "deepseek r1 14B",
+      "provider": "lm-studio",
+      "enabled": true,
+      "isBuiltIn": false,
+      "baseUrl": "http://localhost:35240/v1",
+      "apiKey": "deepseek-r1-distill-qwen-14b",
+      "isEmbeddingModel": false,
+      "capabilities": [
+        "reasoning"
+      ],
+      "stream": true,
+      "enableCors": true
     }
   ],
   "activeEmbeddingModels": [
@@ -212,7 +226,11 @@
   "showSuggestedPrompts": true,
   "showRelevantNotes": true,
   "numPartitions": 1,
-  "enabledCommands": {},
+  "enabledCommands": {
+    "emojify-prompt": {
+      "enabled": false
+    }
+  },
   "promptUsageTimestamps": {},
   "defaultConversationNoteName": "{$topic}@{$date}_{$time}"
 }
