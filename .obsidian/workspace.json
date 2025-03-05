@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/自学内容/人工智能/深度学习.md",
+                "file": "docs/自学内容/人工智能/pytorch.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "深度学习"
+              "title": "pytorch"
             }
           }
         ]
@@ -89,7 +89,8 @@
               "title": "pytorch 的大纲"
             }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
@@ -195,12 +196,12 @@
       "markdown-importer:打开 Markdown 格式转换器": false
     }
   },
-  "active": "2fcabaafbf0f2da4",
+  "active": "6c7418c521ab7a68",
   "lastOpenFiles": [
+    "docs/自学内容/人工智能/深度学习.md",
     "docs/自学内容/人工智能/pytorch.md",
     "_copilot-conversations_/讲解下笔记中的正则化内容@20250303_115250.md",
     "docs/自学内容/人工智能/机器学习.md",
-    "docs/自学内容/人工智能/深度学习.md",
     "_copilot-conversations_/解释一下：from_torch.utils.data_import_Dataset_class_toy_set(Dataset)_def___init__(self,_length_=@20250303_010815.md",
     "_copilot-conversations_",
     "copilot-conversations/Provide_three_follow-up_questions_worded_as_if_I'm_asking_you@20250303_005701.md",

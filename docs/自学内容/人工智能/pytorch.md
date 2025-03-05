@@ -6,6 +6,8 @@
 	- 向量（1维张量）：一维数组，如 `torch.tensor([1, 2, 3])`
 	- 矩阵（2维张量）：二维数组，如 `torch.tensor([[1, 2], [3, 4]])`
 	- 高维张量：更高维度的数据，如图像（3维：通道×高×宽）
+#### 基本操作
+- 直接对变量进行赋值 `Y = Y + X` 实际上会为变量分配新的内存，也就是 `Y` 的存储位置会发生改变，如果想原地操作，可以 `Y[:] = X + Y`
 #### Tensors 1D
 - 一维数组 
 ```python
@@ -412,4 +414,36 @@ def train_model(epochs):
 train_model(100)
 ```
 ## 实操
+### 数据集处理
+- 将数据集写入到 CSV
+```python
+import os
+
+os.makedirs(os.path.join('..', 'data'), exist_ok=True)
+data_file = os.path.join('..', 'data', 'house_tiny.csv')
+with open(data_file, 'w') as f:
+    f.write('NumRooms,Alley,Price\n')  # 列名
+    f.write('NA,Pave,127500\n')  # 每行表示一个数据样本
+    f.write('2,NA,106000\n')
+    f.write('4,NA,178100\n')
+    f.write('NA,NA,140000\n')
+```
+- 从 CSV 读取数据
+```python
+import pandas as pd
+
+data = pd.read_csv(data_file)
+print(data)
+# 转化为numpy进而变为张量格式
+X = torch.tensor(inputs.to_numpy(dtype=float))
+y = torch.tensor(outputs.to_numpy(dtype=float))
+```
+#### 处理缺失值
+- 插值法：用替代值，弥补缺失值
+- 删除法：直接忽略缺失值
+- 示例：使用输入的均值弥补缺失值
+```python
+inputs, outputs = data.iloc[:, 0:2], data.iloc[:, 2]
+inputs = inputs.fillna(inputs.mean())
+```
 ### 逻辑回归分类算法
