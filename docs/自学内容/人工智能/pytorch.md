@@ -19,7 +19,11 @@ A.T #矩阵转置
 	- 梯度的大小就表示函数值在该方向上的变化率
 
 - 概率计算
-- 
+```python
+fair_probs = torch.ones([6]) / 6 # 设置概率向量
+multinomial.Multinomial(10, fair_probs).sample()# 采样十次
+# tensor([5., 3., 2., 0., 0., 0.])
+```
 #### Tensors 1D
 - 一维数组 
 ```python
