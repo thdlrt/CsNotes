@@ -13,8 +13,13 @@
 A.T #矩阵转置
 
 ```
-- 微积分相关运算
 
+- 微积分相关运算
+- **梯度**：一个向量，表示函数在某点的所有偏导数的**集合**，指向函数增大的最快方向。$\nabla f=\left(\frac{\partial f}{\partial x_1},\frac{\partial f}{\partial x_2},\ldots,\frac{\partial f}{\partial x_n}\right)$
+	- 梯度的大小就表示函数值在该方向上的变化率
+
+- 概率计算
+- 
 #### Tensors 1D
 - 一维数组 
 ```python
@@ -50,6 +55,7 @@ c = a.view(4, -1)       # 非法，总元素数 6 无法整除 4
 	- 也可以进行矩阵乘法 `torch.mm(A,B)`
 ### 微分
 - 导数的计算
+	- 深度学习框架通过**自动计算导数**，即自动微分（来加快求导。 实际中，根据设计好的模型，系统会构建一个计算图， 来跟踪计算是哪些数据通过哪些操作组合起来产生输出。 自动微分使系统能够随后反向传播梯度。
 ```python
 x = torch.tensor(2, requires_grad=True) # 跟踪计算图
 y = x ** 2
@@ -63,6 +69,7 @@ f.backward()
 u.grad
 v.grad
 ```
+
 ### 数据集
 - 使用固定的随机数生成器种子值，确保代码的**可重复性** `torch.manual_seed(0)`
 - `原始数据 → Dataset → 单样本处理 → DataLoader → 批量生成`
