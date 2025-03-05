@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/自学内容/人工智能/pytorch.md",
+                "file": "docs/自学内容/人工智能/深度学习.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "pytorch"
+              "title": "深度学习"
             }
           }
         ]
