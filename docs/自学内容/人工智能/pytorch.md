@@ -57,6 +57,21 @@ c = a.view(4, -1)       # 非法，总元素数 6 无法整除 4
 - ![image.png|300](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefined20250228121846.png)
 - 不同于矩阵乘法，张量相乘的结果就是对应位置的元素相乘 `A*b`
 	- 也可以进行矩阵乘法 `torch.mm(A,B)`
+### 模型网络
+#### Sequential类
+- 将多个层按顺序连接，形成数据流动的管道。输入数据依次通过每一层，前一层的输出作为后一层的输入。
+- 深度学习框架已实现了常见层（如全连接层、卷积层），用户只需按需组合，无需手动实现底层计算。
+- 可以便捷的创建多个层，并定义前向传播
+```python
+import torch.nn as nn
+
+model = nn.Sequential(
+    nn.Linear(784, 256),  # 全连接层 784 → 256
+    nn.ReLU(),
+    nn.Linear(256, 10),   # 输出层 256 → 10
+    nn.Softmax(dim=1)
+)
+```
 ### 微分
 - 导数的计算
 	- 深度学习框架通过**自动计算导数**，即自动微分（来加快求导。 实际中，根据设计好的模型，系统会构建一个计算图， 来跟踪计算是哪些数据通过哪些操作组合起来产生输出。 自动微分使系统能够随后反向传播梯度。
@@ -77,6 +92,16 @@ v.grad
 ### 数据集
 - 使用固定的随机数生成器种子值，确保代码的**可重复性** `torch.manual_seed(0)`
 - `原始数据 → Dataset → 单样本处理 → DataLoader → 批量生成`
+#### 构造数据
+- 为线性回归构造一个有正态分布噪声的数据
+```python
+def synthetic_data(w, b, num_examples):  #@save
+    """生成y=Xw+b+噪声"""
+    X = torch.normal(0, 1, (num_examples, len(w)))
+    y = torch.matmul(X, w) + b
+    y += torch.normal(0, 0.01, y.shape)
+    return X, y.reshape((-1, 1))
+```
 #### Dataset
 - 定义数据的**组织方式**
 - 提供标准化的**数据访问**方法
@@ -464,4 +489,35 @@ y = torch.tensor(outputs.to_numpy(dtype=float))
 inputs, outputs = data.iloc[:, 0:2], data.iloc[:, 2]
 inputs = inputs.fillna(inputs.mean())
 ```
-### 逻辑回归分类算法
+### 线性回归
+```python
+# 构建数据集
+def load_array(data_arrays, batch_size, is_train=True):
+    """构造一个PyTorch数据迭代器"""
+    dataset = data.TensorDataset(*data_arrays)
+    return data.DataLoader(dataset, batch_size, shuffle=is_train)
+    
+batch_size = 10
+data_iter = load_array((features, labels), batch_size)
+#定义模型
+net = nn.Sequential(nn.Linear(2, 1))
+# net[0]访问第一层（Linear）
+net[0].weight.data.normal_(0, 0.01)# 用均值为0、标准差为0.01的正态分布初始化权重
+net[0].bias.data.fill_(0)# 将偏置参数置为0
+# 使用MSE损失函数
+loss = nn.MSELoss()
+# 定义优化算法
+trainer = torch.optim.SGD(net.parameters(), lr=0.03)
+# 开始训练
+num_epochs = 3 # 训练轮数
+for epoch in range(num_epochs):
+    for X, y in data_iter:
+        l = loss(net(X) ,y)# 计算损失
+        trainer.zero_grad()# 梯度清零
+        l.backward()# 反向传播极速那可训练参数的梯度
+        trainer.step()# 采纳数更新
+```
+### SoftMax 分类
+- 与简单的逻辑回归相比，对更多（不止两个）类型进行分类
+- 通过多个 01 输出（以二进制的形式）表示类别
+- 
