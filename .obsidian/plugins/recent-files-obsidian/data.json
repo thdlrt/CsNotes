@@ -5,12 +5,12 @@
       "path": "docs/自学内容/人工智能/深度学习.md"
     },
     {
-      "basename": "pytorch",
-      "path": "docs/自学内容/人工智能/pytorch.md"
-    },
-    {
       "basename": "机器学习",
       "path": "docs/自学内容/人工智能/机器学习.md"
+    },
+    {
+      "basename": "pytorch",
+      "path": "docs/自学内容/人工智能/pytorch.md"
     },
     {
       "basename": "讲解下笔记中的正则化内容@20250303_115250",
