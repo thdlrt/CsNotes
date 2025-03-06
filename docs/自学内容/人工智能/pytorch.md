@@ -294,7 +294,6 @@ def train_model_BGD(iter):
 loaded_model = LogisticRegressionModel(input_dim=X_train_tensor.shape[1])
 loaded_model.load_state_dict(torch.load('lol_win_predictor.pth'))
 ```
-
 #### 超参数调优
 - 将数据集划分为训练、验证、测试数据集
 	- **训练阶段**：使用**训练集**更新模型参数（梯度下降）。
@@ -407,7 +406,7 @@ def train_model_Mini5(epochs):
 - 多套参数，有输出输出多个不同的结果
 	- ![image.png|400](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefined20250302134604.png)
 	- ![image.png|400](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefined20250302134936.png)
-#### 逻辑回归
+### 逻辑回归
 - 如果一个数据中的顶点类型可以通过线性划分，那么称其为线性可分的
 - 映射函数：从任意大小映射到 `0~1` 范围
 ```python
@@ -456,6 +455,22 @@ def train_model(epochs):
             
 train_model(100)
 ```
+### SoftMax 分类
+- 与简单的逻辑回归相比，对更多（不止两个）类型进行分类
+- 通过多个 01 输出（分量和类别数目一样多）来表示类型，具有最大输出值的类型就是预测的目标类型（如 0.1、0.8 和 0.1 就表示第二项为预测结果）
+	- 为了实现这个效果，还需要对输出进行校准，即限制数字的输出综合为 1 ，这样才可以将输出视为概率
+- softmax 函数就是将未规范化的预测变换为**非负数且总合为 1**
+	- $\hat{y}_j=\frac{\exp(o_j)}{\sum_k\exp(o_k)}$
+- 使用多套线性回归方程分别预测每一位
+	- ![image.png|400](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefinedundefined20250306162838.png)
+- 代价函数：仍然使用对数似然（### 交叉熵损失）
+- 
+## 优化
+### 矢量化
+- 用矢量匀速那（如矩阵、向量乘法）来代替逐个计算（即用 GPU 进行加速）
+#### 小批量样本的矢量化 
+- 假设特征维度为 $d$ 批量大小为 $n$ 输出 $q$ 个类别
+	- $\text{特征为}\mathbf{X}\in\mathbb{R}^{n\times d}\text{,权重为}\mathbf{W}\in\mathbb{R}^{d\times q},\text{ 偏置为}\mathbf{b}\in\mathbb{R}^{1\times q}$
 ## 实操
 ### 数据集处理
 - 将数据集写入到 CSV
@@ -489,6 +504,7 @@ y = torch.tensor(outputs.to_numpy(dtype=float))
 inputs, outputs = data.iloc[:, 0:2], data.iloc[:, 2]
 inputs = inputs.fillna(inputs.mean())
 ```
+
 ### 线性回归
 ```python
 # 构建数据集
@@ -517,7 +533,46 @@ for epoch in range(num_epochs):
         l.backward()# 反向传播极速那可训练参数的梯度
         trainer.step()# 采纳数更新
 ```
-### SoftMax 分类
-- 与简单的逻辑回归相比，对更多（不止两个）类型进行分类
-- 通过多个 01 输出（以二进制的形式）表示类别
-- 
+### softmax回归
+- 使用Fashion-MNIST 图像数据集 (单通道 1\*28\*28)
+- 首先下载训练和测试数据集 
+```python
+trans = transforms.ToTensor()
+mnist_train = torchvision.datasets.FashionMNIST(
+    root="../data", train=True, transform=trans, download=True)
+mnist_test = torchvision.datasets.FashionMNIST(
+    root="../data", train=False, transform=trans, download=True)
+```
+- 在数字标签索引及其文本名称之间进行联系
+```python
+# 输入index序列，输出对应的标签文字序列
+def get_fashion_mnist_labels(labels):
+    """返回Fashion-MNIST数据集的文本标签"""
+    text_labels = ['t-shirt', 'trouser', 'pullover', 'dress', 'coat',
+                   'sandal', 'shirt', 'sneaker', 'bag', 'ankle boot']
+    return [text_labels[int(i)] for i in labels]
+```
+- 批量读取，得到数据集
+```python
+batch_size = 256
+def get_dataloader_workers(): #@save """使用4个进程来读取数据""" 
+	return 4
+train_iter = data.DataLoader(
+    mnist_train,          # 训练数据集（已加载的Fashion-MNIST）
+    batch_size,           # 批次大小256
+    shuffle=True,         # 每个epoch打乱数据顺序
+    num_workers=get_dataloader_workers()  # 使用4个进程加载数据
+)
+```
+- 初始化网络
+```python
+net = nn.Sequential(nn.Flatten(), nn.Linear(784, 10))
+def init_weights(m):
+    if type(m) == nn.Linear:
+        nn.init.normal_(m.weight, std=0.01)
+net.apply(init_weights);
+loss = nn.CrossEntropyLoss(reduction='none')
+trainer = torch.optim.SGD(net.parameters(), lr=0.1)
+num_epochs = 10
+d2l.train_ch3(net, train_iter, test_iter, loss, num_epochs, trainer)
+```
