@@ -20,21 +20,8 @@
               "icon": "lucide-file",
               "title": "深度学习"
             }
-          },
-          {
-            "id": "ccff065510f6da44",
-            "type": "leaf",
-            "state": {
-              "type": "release-notes",
-              "state": {
-                "currentVersion": "1.8.9"
-              },
-              "icon": "lucide-book-up",
-              "title": "Release Notes 1.8.9"
-            }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -208,7 +195,7 @@
       "copilot:Open Copilot Chat": false
     }
   },
-  "active": "ccff065510f6da44",
+  "active": "2225612e0bcb7d37",
   "lastOpenFiles": [
     "docs/自学内容/人工智能/机器学习.md",
     "docs/自学内容/人工智能/深度学习.md",
