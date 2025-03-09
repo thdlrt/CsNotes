@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/自学内容/人工智能/深度学习.md",
+                "file": "docs/自学内容/游戏开发&图形学/计算机图形学/图形学基础/材质.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "深度学习"
+              "title": "材质"
             }
           }
         ]
@@ -80,17 +80,16 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/自学内容/人工智能/深度学习.md",
+                "file": "docs/自学内容/游戏开发&图形学/计算机图形学/图形学基础/材质.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "深度学习 的大纲"
+              "title": "材质 的大纲"
             }
           }
-        ],
-        "currentTab": 3
+        ]
       }
     ],
     "direction": "horizontal",
@@ -197,8 +196,8 @@
   },
   "active": "2225612e0bcb7d37",
   "lastOpenFiles": [
-    "docs/自学内容/人工智能/机器学习.md",
     "docs/自学内容/人工智能/深度学习.md",
+    "docs/自学内容/人工智能/机器学习.md",
     "docs/自学内容/人工智能/pytorch.md",
     "_copilot-conversations_/讲解下笔记中的正则化内容@20250303_115250.md",
     "_copilot-conversations_/解释一下：from_torch.utils.data_import_Dataset_class_toy_set(Dataset)_def___init__(self,_length_=@20250303_010815.md",

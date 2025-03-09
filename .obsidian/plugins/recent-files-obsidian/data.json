@@ -1,6 +1,10 @@
 {
   "recentFiles": [
     {
+      "basename": "材质",
+      "path": "docs/自学内容/游戏开发&图形学/计算机图形学/图形学基础/材质.md"
+    },
+    {
       "basename": "深度学习",
       "path": "docs/自学内容/人工智能/深度学习.md"
     },
@@ -19,10 +23,6 @@
     {
       "basename": "解释一下：from_torch.utils.data_import_Dataset_class_toy_set(Dataset)_def___init__(self,_length_=@20250303_010815",
       "path": "_copilot-conversations_/解释一下：from_torch.utils.data_import_Dataset_class_toy_set(Dataset)_def___init__(self,_length_=@20250303_010815.md"
-    },
-    {
-      "basename": "材质",
-      "path": "docs/自学内容/游戏开发&图形学/计算机图形学/图形学基础/材质.md"
     },
     {
       "basename": "光栅化",
