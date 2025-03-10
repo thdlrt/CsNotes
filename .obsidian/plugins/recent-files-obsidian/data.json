@@ -1,6 +1,22 @@
 {
   "recentFiles": [
     {
+      "basename": "fgsr",
+      "path": "docs/_draft_/fgsr.md"
+    },
+    {
+      "basename": "我的求职体验",
+      "path": "docs/_draft_/我的求职体验.md"
+    },
+    {
+      "basename": "本校保研流程（计算机系夏令营）",
+      "path": "docs/_draft_/本校保研流程（计算机系夏令营）.md"
+    },
+    {
+      "basename": "技术部分",
+      "path": "docs/_draft_/技术部分.md"
+    },
+    {
       "basename": "材质",
       "path": "docs/自学内容/游戏开发&图形学/计算机图形学/图形学基础/材质.md"
     },
@@ -83,10 +99,6 @@
     {
       "basename": "UE基础",
       "path": "docs/_private_/腾讯公开课/UE基础.md"
-    },
-    {
-      "basename": "本校保研流程（计算机系夏令营）",
-      "path": "docs/_draft_/本校保研流程（计算机系夏令营）.md"
     },
     {
       "basename": "计算机网络",
@@ -187,14 +199,6 @@
     {
       "basename": "绪论",
       "path": "docs/学校课程/归档课程/操作系统/笔记/绪论.md"
-    },
-    {
-      "basename": "7",
-      "path": "docs/学校课程/归档课程/计算机系统基础/data/7.md"
-    },
-    {
-      "basename": "8",
-      "path": "docs/学校课程/归档课程/计算机系统基础/data/8.md"
     }
   ],
   "omittedPaths": [],
