@@ -1,6 +1,10 @@
 {
   "recentFiles": [
     {
+      "basename": "深度学习",
+      "path": "docs/自学内容/人工智能/深度学习.md"
+    },
+    {
       "basename": "fgsr",
       "path": "docs/_draft_/fgsr.md"
     },
@@ -19,10 +23,6 @@
     {
       "basename": "材质",
       "path": "docs/自学内容/游戏开发&图形学/计算机图形学/图形学基础/材质.md"
-    },
-    {
-      "basename": "深度学习",
-      "path": "docs/自学内容/人工智能/深度学习.md"
     },
     {
       "basename": "机器学习",
