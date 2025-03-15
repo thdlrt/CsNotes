@@ -1,6 +1,10 @@
 {
   "recentFiles": [
     {
+      "basename": "unity基础",
+      "path": "docs/自学内容/游戏开发&图形学/游戏开发/游戏客户端/unity/unity基础.md"
+    },
+    {
       "basename": "深度学习",
       "path": "docs/自学内容/人工智能/深度学习.md"
     },
@@ -195,10 +199,6 @@
     {
       "basename": "虚拟化",
       "path": "docs/学校课程/归档课程/操作系统/笔记/虚拟化.md"
-    },
-    {
-      "basename": "绪论",
-      "path": "docs/学校课程/归档课程/操作系统/笔记/绪论.md"
     }
   ],
   "omittedPaths": [],
