@@ -1,0 +1,1 @@
+{"path":"docs/_draft_/Fundamentals-Of-Computer-Graphics-5th-CN-main/pic/Pasted image 20240321172246.png","text":"EdgesOfvertex(v) { e =v.e; do { if (e.tail == v) e = e.lprev; else e = e.rprev; } while (e != v.e); } EdgesOfFace (£f) { e =f.e; do { if (e.left == f) e = e.lnext; else e = e.rnext; } while (e != f.e); }","libVersion":"0.3.2","langs":"chi_sim+eng"}

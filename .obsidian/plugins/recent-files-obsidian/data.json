@@ -1,6 +1,14 @@
 {
   "recentFiles": [
     {
+      "basename": "pytorch",
+      "path": "docs/自学内容/人工智能/pytorch.md"
+    },
+    {
+      "basename": "1 & 2 - 介绍与数学基础",
+      "path": "docs/_draft_/Fundamentals-Of-Computer-Graphics-5th-CN-main/1 & 2 - 介绍与数学基础.md"
+    },
+    {
       "basename": "games202高质量实时渲染",
       "path": "docs/自学内容/游戏开发&图形学/计算机图形学/games202高质量实时渲染.md"
     },
@@ -35,10 +43,6 @@
     {
       "basename": "机器学习",
       "path": "docs/自学内容/人工智能/机器学习.md"
-    },
-    {
-      "basename": "pytorch",
-      "path": "docs/自学内容/人工智能/pytorch.md"
     },
     {
       "basename": "讲解下笔记中的正则化内容@20250303_115250",
@@ -195,10 +199,6 @@
     {
       "basename": "fish",
       "path": "docs/学校课程/归档课程/操作系统/代码/fish/fish.c"
-    },
-    {
-      "basename": "持久化",
-      "path": "docs/学校课程/归档课程/操作系统/笔记/持久化.md"
     }
   ],
   "omittedPaths": [],
