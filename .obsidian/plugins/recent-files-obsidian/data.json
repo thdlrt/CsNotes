@@ -1,6 +1,14 @@
 {
   "recentFiles": [
     {
+      "basename": "机器学习",
+      "path": "docs/自学内容/人工智能/机器学习.md"
+    },
+    {
+      "basename": "深度学习",
+      "path": "docs/自学内容/人工智能/深度学习.md"
+    },
+    {
       "basename": "pytorch",
       "path": "docs/自学内容/人工智能/pytorch.md"
     },
@@ -15,10 +23,6 @@
     {
       "basename": "unity基础",
       "path": "docs/自学内容/游戏开发&图形学/游戏开发/游戏客户端/unity/unity基础.md"
-    },
-    {
-      "basename": "深度学习",
-      "path": "docs/自学内容/人工智能/深度学习.md"
     },
     {
       "basename": "fgsr",
@@ -39,10 +43,6 @@
     {
       "basename": "材质",
       "path": "docs/自学内容/游戏开发&图形学/计算机图形学/图形学基础/材质.md"
-    },
-    {
-      "basename": "机器学习",
-      "path": "docs/自学内容/人工智能/机器学习.md"
     },
     {
       "basename": "讲解下笔记中的正则化内容@20250303_115250",
