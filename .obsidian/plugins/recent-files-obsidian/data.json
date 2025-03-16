@@ -1,12 +1,12 @@
 {
   "recentFiles": [
     {
-      "basename": "机器学习",
-      "path": "docs/自学内容/人工智能/机器学习.md"
-    },
-    {
       "basename": "深度学习",
       "path": "docs/自学内容/人工智能/深度学习.md"
+    },
+    {
+      "basename": "机器学习",
+      "path": "docs/自学内容/人工智能/机器学习.md"
     },
     {
       "basename": "pytorch",

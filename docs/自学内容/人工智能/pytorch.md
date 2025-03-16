@@ -88,6 +88,22 @@ f.backward()
 u.grad
 v.grad
 ```
+#### 误差反向传播计算微分
+- ![image.png|600](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefined20250316203840.png)
+	- 从左到右进行计算得到结果，称为正向传播
+- 通过计算图上反向传播可以高效计算导数
+- ![image.png|600](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefined20250316204402.png)
+	- 从结果反向到苹果，来通过计算图的反向传播计算“支付金额关于苹果的价格的导数”（即 2.2）
+- 实际上是通过链式法则，不断乘以局部导数
+	- ![image.png|450](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefined20250316204844.png)
+- 加法节点的反向传播节点视为 1
+	- ![image.png|216](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefined20250316205425.png)
+	- ![image.png|450](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefined20250316205625.png)
+
+- 乘法节点的反向传播：将上游的值乘以正向传播时的输入信号的“翻转值” 后传递给下游（即**另一个**被乘数）
+	- ![image.png|500](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefined20250316205611.png)
+	- ![image.png|500](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefined20250316205649.png)
+- ![image.png|550](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefined20250316205745.png)
 
 ### 数据集
 - 使用固定的随机数生成器种子值，确保代码的**可重复性** `torch.manual_seed(0)`
