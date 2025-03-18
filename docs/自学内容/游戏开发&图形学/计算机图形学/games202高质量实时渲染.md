@@ -12,11 +12,11 @@
 #### percentage closer filtering（PCF）
 - 硬阴影相当于只有 01 两种状态，通过 pcf 可以生成含中间状态的软阴影
 	- 是在阴影生成阴影过程中使用，而不只是后处理
-- 从 shadowmap 取样时取一个较大范围的值，并取平均值作为阴影的强度
+- 从 shadowmap 取样时取一个**较大范围**的值，并取平均值作为阴影的强度
 	- 采样范围就决定了阴影的硬度
 - ![image.png|600](https://thdlrt.oss-cn-beijing.aliyuncs.com/20250129210147.png)
 #### 软阴影的渲染
-- 通常阴影的硬度并不是恒定的，与遮挡物与投射平面的距离相关，距离越近阴影的硬度越大
+- 通常阴影的硬度并不是恒定的，与遮挡物与投射平面的**距离**相关，距离越近阴影的硬度越大
 	- 具体的规则 $w_{Penumbra}=(d_{Receiver}-d_{Blocker})\cdot w_{Light}/d_{Blocker}$
 	- ![image.png|350](https://thdlrt.oss-cn-beijing.aliyuncs.com/20250129210802.png)
 	- 通过估计不同位置的 penumbra 大小来决定 pc 采样防范未的大小，即阴影的硬度
