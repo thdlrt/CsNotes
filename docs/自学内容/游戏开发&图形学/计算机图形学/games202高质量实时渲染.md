@@ -73,8 +73,21 @@
 	- 这里的角度是出射方向，入射方向是在积分预计算时对所有方向进行了计算
 #### 环境光照的阴影
 - 只从**最亮的（几）个光源**生成阴影（来减少计算量）
-- 
 ### 实时环境光照
 #### 球面谐波函数
-- 一系列二维基函数
+- 球函数就是一系列**二维基函数**
+	- 球面谐波函数十一组定义在球面上的拯救函数，作用类似于在一维场合中用傅里叶级数分解函数
+	- 通过球面谐波函数，可以高效逼近环境光，并简化积分运算
+	- ![image.png|500](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefined20250318183151.png)
+- 可以通过积分求出任何函数 $f$ 在基函数 $B_{i}$ 上的投影（即 $B_i$ 的**系数**）$c_i=\int_\Omega f (\omega) B_i (\omega)\:\mathrm{d}\omega$
+
+- **漫反射的 BRDF** 表现就像一个低通滤波
+	- ![image.png|200](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefined20250318185112.png)
+	- 只有**前三阶**的系数较大，后面系数都趋近 0，也就是只需要使用少量的球面谐波函数就可以描述 $E_{Im}=A_1L_{Im}$ 就有很好的效果
+#### Precomputed Radiance Transfe（PRT）
+- 渲染方程：![image.png|600](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefined20250318190215.png)
+	- 三项均可以**用球面函数来描述**
+- 进行拆分：认为**只有光照**在渲染过程中**变化**
+	- ![image.png|450](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefined20250318190449.png)
+	- 
 ## 全局光照
