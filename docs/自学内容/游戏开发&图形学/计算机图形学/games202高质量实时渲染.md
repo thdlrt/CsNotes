@@ -87,7 +87,8 @@
 #### Precomputed Radiance Transfe（PRT）
 - 渲染方程：![image.png|600](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefined20250318190215.png)
 	- 三项均可以**用球面函数来描述**
-- 进行拆分：认为**只有光照**在渲染过程中**变化**
+
+- 进行拆分：认为**只有光照**在渲染过程中**变化**，因此 transport 部分可以预计算（球面函数）用基函数表示
 	- ![image.png|450](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefined20250318190449.png)
-	- 
+- 
 ## 全局光照
