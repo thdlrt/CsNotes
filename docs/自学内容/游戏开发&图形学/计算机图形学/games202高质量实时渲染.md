@@ -1,3 +1,12 @@
+## 数学
+- 两个重要的微积分不等式
+	- Schwarz 不等式：$\left[\int_{a}^{b}f(\:x\:)\:g(\:x\:)\:\mathrm{d}x\:\right]^{2}\leqslant\int_{a}^{b}f^{2}\left(\:x\:\right)\mathrm{d}x\cdot\int_{a}^{b}g^{2}\left(\:x\:\right)\mathrm{d}x$
+	- Minkowski 不等式：$\left\{\int_{a}^{b}\left[f(x)+g(x)\right]^{2}\mathrm{d}x\right\}^{\frac{1}{2}}\leqslant\left\{\int_{a}^{b}f^{2}(x)\mathrm{d}x\right\}^{\frac{1}{2}}\:+\:\left\{\int_{a}^{b}g^{2}(x)\mathrm{d}x\right\}^{\frac{1}{2}}$
+	- $\int_\Omega f(x)g(x)\:\mathrm{d}x\approx\frac{\int_\Omega f(x)\:\mathrm{d}x}{\int_\Omega\:\mathrm{d}x}\cdot\int_\Omega g(x)\:\mathrm{d}x$ 约等条件：$\Omega$ 积分范围很小或 g 函数足够光滑，积分域内变化较小
+- 应用：渲染方程![image.png|450](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefined20250318115802.png)
+	- 蓝色为入射光相关；黄色为反射性质；红色为集合修正因子
+	- 可以近似为![image.png|550](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefined20250318115847.png)
+- 其条件就是：积分域小（入射光范围小，如一个点光源）或积分内的函数比较光滑（如比较漫反射的 BRDF）
 ## 实时阴影
 ### percentage closer soft shadows（PCSS）
 #### percentage closer filtering（PCF）
