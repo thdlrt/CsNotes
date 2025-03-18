@@ -32,7 +32,7 @@
 	- 方差使用均值计算 $\mathrm{Var}(X)=\mathrm{E}(X^2)-\mathrm{E}^2(X)$
 	- 再使用切比雪夫不等式进行估计 $P(x>t)\leq\frac{\sigma^2}{\sigma^2+(t-\mu)^2}$ 当做"等式"
 - 优化 step 1：blocker depth 阴影硬度的求解
-	- 注意求的是遮挡物（比目标点距离近的点）的距离平均值，而不是 mipmap 一定范围内所有点的平均值
+	- 注意求的是遮挡物（比目标点距离近的点）的距离平均值（如图中蓝色部分平均值），而不是 mipmap 一定范围内所有点的平均值
 	- ![image.png|151](https://thdlrt.oss-cn-beijing.aliyuncs.com/20250130195033.png)
 	- 比如目标点为 7，那么只对红色部分求平均值
 	- $\frac{N_{1}}{N}Z_{unocc}+\frac{N_{2}}{N}Z_{occ}=Z_{Avg}$ 遮挡物的百分比乘以遮挡物平均深度+非遮挡物部分分就是总共的平均深度
