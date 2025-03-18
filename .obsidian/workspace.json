@@ -94,7 +94,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 221.5
+    "width": 221.5,
+    "collapsed": true
   },
   "right": {
     "id": "d615b65a4ccf8a6a",
@@ -195,7 +196,7 @@
       "copilot:Open Copilot Chat": false
     }
   },
-  "active": "6c7418c521ab7a68",
+  "active": "2225612e0bcb7d37",
   "lastOpenFiles": [
     "docs/自学内容/人工智能/深度学习.md",
     "docs/算法竞赛/数学.md",
