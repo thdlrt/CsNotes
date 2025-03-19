@@ -95,6 +95,7 @@
 	- 其他在球面上定义的物理量：任何涉及全方位角度分布的信号（如某些大气现象的模拟）都可以利用球面函数进行有效表示。
 
 - 用球面函数表示时，就是用一个一维向量（指示每个基向量的系数）来进行表示，还原出原始函数 $L(\mathbf{i})\approx\sum l_iB_i(\mathbf{i})$
+- 球面函数具有正交性 $B_{p}(w_{i})B_q{(w_{i})}\neq 0 \iff p=q$
 #### Precomputed Radiance Transfe（PRT）预计算辐射传输
 - **环境光照**通常可以近似为**低频信号**，通过将**入射光照**投影到一组球面谐波基底上，只需要少量系数就能高效表达出主要的光照信息。
 - 除了投影环境光照外，PRT 还会预先计算物体各点与入射光照交互产生的传递函数，将这种复杂的光传输过程同样表示为球面基底上的系数。在实际的渲染过程中，无论是光源还是物体旋转，只需对这些系数进行快速变换，从而实现实时计算。
@@ -113,9 +114,16 @@
 
 - 用球面函数表示环境光照本质上就是对光源进行了分解，变成系列标准形态的光照的组合
 	- ![image.png|400](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefined20250318213230.png)
-##### 非漫反射
-- 
-## 全局光照对于
+##### 非漫反射 Glossy
+- ![image.png|500](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefined20250319112533.png)
+- 光线的分类
+	- LE：直接入射到观察点的光线
+	- LGE：经过一次Glossy 反射后入射到观察点的光线
+	- L(D|G)\*E：经过多次 Glossy 或 Deffuse 反射到观察点的光线
+	- LS\*(D|G)\*E：先打到 specular（镜面反射物体）上
+	  ![image.png|500](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefined20250319113419.png)
+
+## 全局光照
 ### RSM
 - 
 ### LPV
