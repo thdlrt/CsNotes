@@ -165,6 +165,8 @@
 - 问题
 	- ![image.png|241](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefined20250319144639.png)
 		- 格子分辨率不够时可能产生错误的光照效果，比如左侧的漫反射错误的作用于了右侧（因为在同一个方格中）
+		- ![image.png|400](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefined20250319145101.png)
+
 
 #### VXGI
 
