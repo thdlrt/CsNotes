@@ -124,7 +124,38 @@
 	  ![image.png|500](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefined20250319113419.png)
 
 ## 全局光照
-### RSM
+> 所说的“全局光照”实际上就是想实现一次间接光照
+### 3 D 空间
+#### Reflective Shadow Maps (RSM) 反射阴影贴图
+- 采集更多信息：与传统阴影贴图只记录场景中各点到光源的深度信息不同，RSM在从光源视角渲染时，还同时**捕获了表面反射相关的信息，如光通量、表面法线以及位置**等。这些额外的信息能反映出当直接光照射到物体表面时的反射特性。
+- 间接照明的快速估计：利用从光源采集到的这些数据，RSM能够**近似计算场景中的间接照明**。通过对捕获的反射光进行散射和积分，可以在渲染过程中快速估计光在场景中多次反射后的能量传递，从而产生更自然的全局光照效果。
+
+- 需要解决的问题
+	- 哪些部分会被直接光照照射，成为次级光源：通过 shadowmap
+		- 假设所有次级光源都是 diffuse 的
+	- 如何计算所有次级光源的贡献并汇总
+		- ![image.png|230](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefined20250319121416.png)
+		- 图中 $q$ 点为次级光源，将光照反射到 $p$
+
+- ![image.png|500](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefined20250319122334.png)
+	- 将对立体角的积分转化为对光源 area 的积分
+- 对于 diffuse 的反射 $f_{r}=\frac{\rho}{\pi}$ (对应图中的 $q$ 点)
+	- q 点出射光线的强度 $L_{i}=f_{r}\cdot\frac{\Phi}{dA}$ (因为是漫反射，所以不同方向均匀亮度)
+	- $V$ 难以计算，因此就不算了
+
+- 一般来说只需要考虑距离比较近的次级光源（因为平方衰减）
+	- 可以在 shadowmap 上找较近的点
+- 预存储的内容：深度、世界坐标、法线、flux
+	- ![image.png|450](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefined20250319130411.png)
+- 应用：手电筒光的二次反射效果
+#### Light Propagation Volumes（LPV）光体积传播
 - 
-### LPV
-- 
+#### VXGI
+
+### 屏幕空间上的处理方法
+
+#### SSAO
+
+#### SSDO
+
+#### SSR

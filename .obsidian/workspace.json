@@ -94,8 +94,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 221.5,
-    "collapsed": true
+    "width": 221.5
   },
   "right": {
     "id": "d615b65a4ccf8a6a",
@@ -196,14 +195,16 @@
       "copilot:Open Copilot Chat": false
     }
   },
-  "active": "2225612e0bcb7d37",
+  "active": "6c7418c521ab7a68",
   "lastOpenFiles": [
+    "docs/知识点（保研&工作）/工作/计算机科学/计算机图形学.md",
+    "docs/知识点（保研&工作）/工作/计算机科学/计算机网络.md",
+    "docs/自学内容/游戏开发&图形学/计算机图形学/games202高质量实时渲染.md",
     "docs/自学内容/人工智能/深度学习.md",
     "docs/算法竞赛/数学.md",
     "docs/自学内容/人工智能/机器学习.md",
     "docs/自学内容/人工智能/pytorch.md",
     "docs/_draft_/Fundamentals-Of-Computer-Graphics-5th-CN-main/1 & 2 - 介绍与数学基础.md",
-    "docs/自学内容/游戏开发&图形学/计算机图形学/games202高质量实时渲染.md",
     "docs/_draft_/Fundamentals-Of-Computer-Graphics-5th-CN-main/pic/Pasted image 20241208220421.png",
     "docs/_draft_/Fundamentals-Of-Computer-Graphics-5th-CN-main/pic/Pasted image 20241206100854.png",
     "docs/_draft_/Fundamentals-Of-Computer-Graphics-5th-CN-main/pic/Pasted image 20241205213412.png",
@@ -235,8 +236,6 @@
     "docs/_draft_/Fundamentals-Of-Computer-Graphics-5th-CN-main/22 - 游戏中的计算机图形学.md",
     "docs/_draft_/Fundamentals-Of-Computer-Graphics-5th-CN-main/18 - 色彩.md",
     "docs/_draft_/Fundamentals-Of-Computer-Graphics-5th-CN-main/19 - 视觉感知.md",
-    "docs/_draft_/Fundamentals-Of-Computer-Graphics-5th-CN-main/20 - 色调重构.md",
-    "docs/_draft_/Fundamentals-Of-Computer-Graphics-5th-CN-main/16 - 计算机动画.md",
     "docs/_draft_/Fundamentals-Of-Computer-Graphics-5th-CN-main",
     "_copilot-conversations_",
     "copilot-conversations",
