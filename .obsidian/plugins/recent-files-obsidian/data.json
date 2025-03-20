@@ -1,6 +1,10 @@
 {
   "recentFiles": [
     {
+      "basename": "In-game Debug Console",
+      "path": "docs/自学内容/游戏开发&图形学/游戏开发/游戏客户端/unity/插件/In-game Debug Console.md"
+    },
+    {
       "basename": "games202高质量实时渲染",
       "path": "docs/自学内容/游戏开发&图形学/计算机图形学/games202高质量实时渲染.md"
     },
@@ -195,10 +199,6 @@
     {
       "basename": "金融工程论文寻找",
       "path": "_draft_/金融工程/金融工程论文寻找.md"
-    },
-    {
-      "basename": "补充",
-      "path": "docs/学校课程/归档课程/操作系统/笔记/补充.md"
     }
   ],
   "omittedPaths": [],
