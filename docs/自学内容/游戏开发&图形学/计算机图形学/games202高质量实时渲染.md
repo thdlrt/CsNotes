@@ -260,7 +260,46 @@
 	- 在传统方法中，微表面模型中需要对光源的形状（如矩形光源）和表面反射进行积分，这涉及到复杂的采样和计算，难以在实时渲染中高效实现。
 	- **LTC 方法** 提供了一种非常高效的近似方案，通过将复杂的光照分布转换为一个 **线性变换的余弦分布，从而简化积分计算，同时保留视觉上的高真实性。
 - ![image.png|450](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefined20250324001806.png)
-- 
+
+- 核心思想：将复杂不贵则的 2 DBRDF 分布变换为规则易于计算的**标准余弦分布**![image.png|550](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefined20250324002930.png)
+	-  ![image.png|550](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefined20250324004912.png)
+
 ### 迪士尼原子模型
-- 
+- 微表面模型并不能表示所有材质，并且对艺术家不友好，不便于调整
+	- 迪士尼原子模型不保证物理正确性
+- 原则：
+	- 使用艺术家友好的参数
+	- 使用尽可能少的参数
+	- 参数要便于调整（如拖动条）
+
+- ![image.png|500](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefined20250324010159.png)
+
+### 非真实感渲染 Non-Photorealistic Rendering (NPR)
+- 常用方式
+	- **Bold Contours**粗线条轮廓（描边）
+	- **Blocks of Colors**色块（使用大面积均匀色块来填充物体表面）
+	- **Strokes on Surfaces**表面笔触（模仿真实绘画的手绘感）
+#### 描边
+- **outline rendering**：描边包含：外边缘；折痕；材质边界；
+	- ![image.png|550](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefined20250324012057.png)
+	- S 外边界要求至少两个面共享（B 不要求）C 表示折痕 M 表示材质边界
+- 通过 **shading** 实现：可以认为法线与摄像机视线垂直的部分就是边界，需要描边
+	- ![image.png|450](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefined20250324012304.png)
+	- 问题，法线是渐变的，描边宽度也可能很大
+- 通过**几何**实现
+	- 把一个**大一圈**的模型放在后面，渲染成黑色
+- 图像后期处理
+	- 卷积做边缘检测并添加描边
+	- （锐化的实现类似）
+	- ![image.png|500](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefined20250324013025.png)
+#### 色块
+- ![image.png|400](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefined20250324013133.png)
+	- 先渲染，然后用阈值化处理
+	- 减少渐变，量子化（颜色**不再连续**）
+- ![image.png|500](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefined20250324013530.png)
+#### 表面笔触
+- 手绘风 ![image.png|550](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefined20250324013604.png)
+- 使用手绘风格的纹理
+	- 为了让不同距离的看起来一样的纹理，mipmap 上的纹理并不进行缩放，只裁剪![image.png|500](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefined20250324013944.png)
+
 ## 光线追踪
