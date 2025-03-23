@@ -248,8 +248,14 @@
 - $G(i,o,h)$ 就是综合表现 shadowing 和 masking 对渲染造成的影响
 	- 最终通常分开表示为 $G(\mathbf{i},\mathbf{o},\mathbf{m})\approx G_1(\mathbf{i},\mathbf{m})G_1(\mathbf{o},\mathbf{m})$
 	- ![image.png|239](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefined20250323211315.png)
-#### 问题
+#### 能量损失 Kulla-Conty
 - 前面的几个部分都削弱了光的反射，导致物体显示偏暗（如严重自遮挡，因为忽略了多次反射，会导致损失）
 - 增加一个能量 bonus 进行修饰：Kulla-Conty
-	- 
-### 迪士尼
+	- $E (\mu_o)=\int_0^{2\pi}\int_0^1 f (\mu_o,\mu_i,\phi)\mu_i\mathrm{d}\mu_i\mathrm{d}\phi$
+	- 损失的能量就是 $1-E(\mu_o)$，因此就把这些能量补上
+- ![image.png|600](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefined20250323212134.png)
+#### Linearly Transformed Cosines(LTC)着色
+- 
+### 迪士尼原子模型
+- 
+## 光线追踪
