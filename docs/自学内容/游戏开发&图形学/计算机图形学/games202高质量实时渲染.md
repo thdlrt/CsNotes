@@ -167,12 +167,21 @@
 		- 格子分辨率不够时可能产生错误的光照效果，比如左侧的漫反射错误的作用于了右侧（因为在同一个方格中）
 		- ![image.png|400](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefined20250319145101.png)
 
-
-#### VXGI
-
+#### Voxel Global ILLumination(VXGI)
+-  两趟的算法
+	- 将场景离散化为格子, 格子作为次级光源，使用八叉树等层次结构来存储池不同精度的体素数据，体素中存储用于之后计算光线散射方向得的发现数据等
+	- 利用体素进行光线追踪：从摄像机发射光线，找到第一个交点，再从交点发射锥形光线到场景中（通过体素）来采样间接光照
+- ![image.png|550](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefined20250323130406.png)
+- 问题：体素化工作量的，速度慢
 ### 屏幕空间上的处理方法
-
-#### SSAO
+- 利用**直接光照结果信息**进行后处理，添加全局光照的效果
+#### 屏幕空间环境光遮蔽Screen Space Ambient Occlusion(SSAO)
+- 环境光遮蔽：在物体接触位置添加阴影（左），以增添立体感 
+	- ![image.png|500](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefined20250323132156.png)
+	- 是全局光照的一种近似
+- idea
+	- 不知道间接关照的具体值，难就假设为一个常数
+	- 
 
 #### SSDO
 
