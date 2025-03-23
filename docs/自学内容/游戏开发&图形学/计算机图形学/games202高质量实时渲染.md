@@ -255,6 +255,11 @@
 	- 损失的能量就是 $1-E(\mu_o)$，因此就把这些能量补上
 - ![image.png|600](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefined20250323212134.png)
 #### Linearly Transformed Cosines(LTC)着色
+- **实时、高效地**计算面积光源的微表面BRDF积分。提供一种通用、简单、实时且高质量的BRDF光照积分近似方案。
+- 用于解决微表面模型上的着色问题，主要用于 GGX 分布，无阴影
+	- 在传统方法中，微表面模型中需要对光源的形状（如矩形光源）和表面反射进行积分，这涉及到复杂的采样和计算，难以在实时渲染中高效实现。
+	- **LTC 方法** 提供了一种非常高效的近似方案，通过将复杂的光照分布转换为一个 **线性变换的余弦分布，从而简化积分计算，同时保留视觉上的高真实性。
+- ![image.png|450](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefined20250324001806.png)
 - 
 ### 迪士尼原子模型
 - 
