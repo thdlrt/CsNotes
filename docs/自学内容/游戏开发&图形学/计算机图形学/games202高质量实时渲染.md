@@ -208,4 +208,20 @@
 
 #### Screen Space Reflection(SSR)
 - 在屏幕空间上做光线追踪（只能使用摄像机可以看到的信息）
-- 通过
+	- 一种 2 D 的光线追踪
+- 通过线性探测，找方向上与壳相交的点
+	- ![image.png|350](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefined20250323181810.png)
+- 希望通过**调整步长**，减少探测的开销
+	- 对深度图做 mipmap，但是上层的值为下层四个像素的深度最小值![image.png|238](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefined20250323182112.png)
+	- 探测时使用上层值先判断（如果不和上层相交那么也不会和下层相交），从而快速跳过格子
+	- 根据是否相交动态调整步长
+- 仍然存在的问题：摄像机看不到的信息就不知道
+	- ![image.png|450](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefined20250323183608.png)
+
+## 基于物理的材质
+- 基于表面：微表面模型、迪士尼 BRDF
+- 基于体积：快速近似进行散射, 模拟运动、皮肤、毛发等
+### 微表面 BRDF
+- ![image.png|550](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefined20250323190953.png)
+- F 菲涅尔项：反射强度与入射光与法线夹角相关
+### 迪士尼
