@@ -181,8 +181,17 @@
 	- 是全局光照的一种近似
 - idea
 	- 不知道间接光照的具体值，难就**假设为一个常数**
-	- 假设不同方向上的光线 visibility 不同
+	- 考虑不同方向上的光线 visibility 不同![image.png|400](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefined20250323155633.png)
 	- 假设均为漫反射材质
+
+- ![image.png|500](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefined20250323161746.png)
+	- L 和 f 均为常数，乘以 v 的加权平均
+	- 重点就变成了如何在**屏幕空间计算 v 的加权平均**
+
+- 限制一定的查找范围，检查光线是否会在这个范围内被挡住
+	- ![image.png|350](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefined20250323162635.png)
+- 为了减少计算量，只在范围内采样一些点，利用这些点是否在物体内部来估计这道那个情况![image.png|450](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefined20250323162733.png)
+	- 可以通过将这些点投射到摄像机的距离与 shadowmap 中存储的数据进行对比
 
 #### SSDO
 
