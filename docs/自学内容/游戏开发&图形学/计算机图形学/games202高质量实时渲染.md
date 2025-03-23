@@ -224,4 +224,32 @@
 ### 微表面 BRDF
 - ![image.png|550](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefined20250323190953.png)
 - F 菲涅尔项：反射强度与入射光与法线夹角相关
+- D 描述表面法线分布（粗糙程度）
+#### 描述法线分布 NDF
+- 使用半球来描述法线分布：
+	- 微面的法线方向是一个单位向量，它的方向可以**用半球上的一个点表示**。
+	- 半球是一个自然的几何空间，可以用来约束和表达微面的法线方向分布。法线分布函数只能在半球范围内定义，因为微面的法线必须朝向表面的正半球，而不能指向表面内部（负半球）。
+	- 有 $\int_\text{半球}D(h)\cos\theta_h\:d\omega_h=1$
+- $D(h)$ 输入法线方向 $h$ 输出一个标量表示微平面法线方向 $h$ 上的分布密度
+
+- Beckmann NDF
+	- $D(h)=\frac{e^{-\frac{\tan^2\theta_h}{\alpha^2}}}{\pi\alpha^2\cos^4\theta_h}$ 其中 $\alpha$ 表示表面的粗糙程度；
+	- 类似于高斯分布（离法线越远 $\theta_{h}$ 越大，分布越少）
+- GGX（TR）模型
+	- ![image.png|550](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefined20250323205223.png)
+	- 相比之下衰减较慢，相比之下会更加柔和
+	- ![image.png|350](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefined20250323205552.png)
+- 进一步扩展的 GGX（GTR），进一步延长尾部长度
+	- ![image.png|400](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefined20250323205928.png)
+#### shadowing-masking
+- 解决微表面之间自遮挡的问题（将图像变暗）![image.png|400](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefinedundefined20250323210414.png)
+- shadowing 遮挡：当光线照射到一个粗糙表面时，微表面中的某些区域会被其他微面遮挡，导致这些区域**无法直接接收到光线**。
+- masking 掩蔽：当光线从一个粗糙表面反射到观察者时，微表面中的一些区域会被其他微面挡住，从而**无法被观察者看到**。
+- $G(i,o,h)$ 就是综合表现 shadowing 和 masking 对渲染造成的影响
+	- 最终通常分开表示为 $G(\mathbf{i},\mathbf{o},\mathbf{m})\approx G_1(\mathbf{i},\mathbf{m})G_1(\mathbf{o},\mathbf{m})$
+	- ![image.png|239](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefined20250323211315.png)
+#### 问题
+- 前面的几个部分都削弱了光的反射，导致物体显示偏暗（如严重自遮挡，因为忽略了多次反射，会导致损失）
+- 增加一个能量 bonus 进行修饰：Kulla-Conty
+	- 
 ### 迪士尼
