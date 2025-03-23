@@ -180,8 +180,9 @@
 	- ![image.png|500](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefined20250323132156.png)
 	- 是全局光照的一种近似
 - idea
-	- 不知道间接关照的具体值，难就假设为一个常数
-	- 
+	- 不知道间接光照的具体值，难就**假设为一个常数**
+	- 假设不同方向上的光线 visibility 不同
+	- 假设均为漫反射材质
 
 #### SSDO
 
