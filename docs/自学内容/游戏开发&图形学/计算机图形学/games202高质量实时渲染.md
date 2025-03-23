@@ -191,8 +191,21 @@
 - 限制一定的查找范围，检查光线是否会在这个范围内被挡住
 	- ![image.png|350](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefined20250323162635.png)
 - 为了减少计算量，只在范围内采样一些点，利用这些点是否在物体内部来估计这道那个情况![image.png|450](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefined20250323162733.png)
-	- 可以通过将这些点投射到摄像机的距离与 shadowmap 中存储的数据进行对比
+	- 可以通过将这些点投射到摄像机的距离与 shadowmap 中存储的最近物体数据进行对比，来判断是不是在物体内部（但这可能存在误判，如图中的红线处点被误判为红色）
+	- 如果有法相信息就只需要考虑半圆而不是整个圆了
+#### Screen Space Directional Occlusion(SSDO)
+- 对 SSAO 的提高，不再假设所有点有相同的次级光照
+- 从点向外发射射线，如果没有打到障碍物，那么就是直接光照；否则是间接光照（这与 SSAO 完全相反）
+	- ![image.png|232](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefined20250323173148.png)、
+	- ![image.png|500](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefined20250323173408.png)
+- ![image.png|550](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefined20250323173732.png)
+	- 判断是否有遮挡的方式与 SSAO 相同
+	- ![image.png|400](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefined20250323173857.png)
+- 问题：
+	- 被遮挡住（摄像机看不到的部分）就完全不会对这次光照产生影响
+	- 只能处理小范围的（每个点搜查二次光照影响的范围有限，像下图就不回去找到最右侧的绿墙）
+	- ![image.png|400](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefined20250323174746.png)
 
-#### SSDO
-
-#### SSR
+#### Screen Space Reflection(SSR)
+- 在屏幕空间上做光线追踪（只能使用摄像机可以看到的信息）
+- 通过
