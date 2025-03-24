@@ -302,4 +302,32 @@
 - 使用手绘风格的纹理
 	- 为了让不同距离的看起来一样的纹理，mipmap 上的纹理并不进行缩放，只裁剪![image.png|500](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefined20250324013944.png)
 
-## 光线追踪
+## 光线追踪 Real-Time Ray Tracing (RTRT)
+- RTX 提供针对光线追踪定值的硬件，提供 1 SPP（sample per pixel）的光线追踪
+	- **1 rasterization (primary)**：  首先通过光栅化（Rasterization）方法生成初级可见性信息（Primary Visibility），即确定每个像素对应的场景中最初可见的物体表面。
+	- **1 ray (primary visibility)**：投射一条初级光线（Primary Ray），进一步确定初始的交点、材质信息。
+	- **1 ray (secondary bounce)**：从初级光线与物体表面的交点发出一条次级反射光线（Secondary Bounce Ray），用于计算间接光照（Indirect Illumination），也就是场景中其他物体对当前交点的光照贡献。
+	- **1 ray (secondary vis.)**：投射额外的次级可见性光线（Secondary Visibility Ray），检查次级反射光线的可见性，确定该交点处是否有其他物体遮挡、或进一步反射折射效果。
+	- ![image.png|209](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefined20250324112559.png)
+	- 光栅化初始化+三条光线
+- 1 SPP 由于采样率不足，会造成大量的噪点，还需要降噪处理
+### 降噪
+- 问题：通常的降噪不是针对实时渲染&光线追踪设置的，速度太慢难以满足实时性
+- idea：
+	- 假设前一帧已经处理过了，并**复用**其信息（帧之间的连续性）
+	- 使用运动向量来找到上一帧的位置
+	- ![image.png|450](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefined20250324114403.png)
+	- 能起到提高 SPP 的效果
+#### G-Buffer 几何缓冲区
+- ![image.png|600](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefined20250324114606.png)
+	- 缓存从摄像机看到的不同信息：直接光照、法线、深度等等（屏幕空间的信息）
+	- 生成的速度很快，代价极低
+- 目标：找到上一帧哪一个像素对应这一帧一个像素对应的物体上的点（后向投影）
+	- ![image.png|450](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefined20250324114904.png)
+- 过程
+	- 首先拿到当前点的世界坐标（通过 GBuffer 中存储的世界坐标）或者做逆变换来还原出世界坐标 $s=M^{-1}V^{-1}P^{-1}E^{-1}x$
+	- 
+
+#### Motion vector 运动向量
+
+#### 滤波
