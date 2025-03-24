@@ -354,12 +354,29 @@
 	- ![image.png|450](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefined20250324141452.png)
 	- 问题：无法区分边界之外的点和噪声（噪声的颜色差距也很大）
 ##### 联合双边滤波
-- 综合考虑更多的特性（法线、深度等 Gbuffer 中易于获得的信息）来决定权值的大小，很适合用于路径追踪的降噪
+- 综合考虑**更多的特性**（法线、深度等 Gbuffer 中易于获得的信息）来决定权值的大小，很适合用于路径追踪的降噪
 	- ![image.png|350](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefined20250324143836.png)
 	- AB 之间深度差距大，要降低权值
 	- BC 法线差距大，要降低权值
-	- 
+	- DE 颜色差距大，要降低权值
 - 可以使用任何的函数模型，不一定是高斯分布，也先不考虑是否满足守恒，最后再进行归一化即可
 	- ![image.png|450](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefined20250324142149.png)
 
+- **大的过滤盒**（如 64\*64）会产生很大的开销，需要进行过优化
+	- 将一次 N\*N 的过滤替换为一次水平 1\*N 和一次垂直 N\*1 的过滤，即 $N^{2}\to N+N$
+	- 用逐渐增大的滤波盒（间隙）进行多趟滤波：如进行 5 趟 5\*5 的过滤
+		- ![image.png|400](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefined20250324151535.png)
+##### Outlier removal
+- 移除**超级亮点**，难以通过滤波直接解决![image.png|350](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefined20250324152447.png)
+	- 因此要在滤波之前处理掉
+- 检测
+	- 以一个小盒子来扫描（7\*7）并计算每个区域的平均值和方差
+	- 可以认为超出范围 $[\mu-k\sigma,\mu+k\sigma]$ 的点就是Outlier
+- 消除
+	- 直接讲点回归到范围 $[\mu-k\sigma,\mu+k\sigma]$ 内
+#### 特殊滤波方式
+##### Spatiotemporal Variance-Guided Filtering (SVGF)
+- 
+##### Recurrent AutoEncoder (RAE)
+- 
 ## 工业界的解决思路
