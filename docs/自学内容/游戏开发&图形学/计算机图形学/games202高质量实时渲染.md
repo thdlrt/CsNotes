@@ -344,6 +344,22 @@
 	- Detection：标记每个物体的信息，如果发现上一帧的信息完全不符，则考虑降低上一帧的权重（即不可靠）
 	- 但是缺少上一帧还是会引入噪声
 #### 滤波
-- 
+- **高斯滤波**
+	- 但是高斯滤波会对整个图像模糊，而不仅仅是噪声
+	- ![image.png|450](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefined20250324140737.png)
+- **双边滤波**
+	- 希望保留明锐的图像边界（边界就是颜色剧烈变化的位置）
+	- 减少边界之外（不同颜色）的像素对目标渲染位置的错误共享
+	- $w(i,j,k,l)=\exp\left(-\frac{(i-k)^2+(j-l)^2}{2\sigma_d^2}-\frac{\|I(i,j)-I(k,l)\|^2}{2\sigma_r^2}\right)$ 减去了额外的一项，表示颜色差距越大权重越小
+	- ![image.png|450](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefined20250324141452.png)
+	- 问题：无法区分边界之外的点和噪声（噪声的颜色差距也很大）
+##### 联合双边滤波
+- 综合考虑更多的特性（法线、深度等 Gbuffer 中易于获得的信息）来决定权值的大小，很适合用于路径追踪的降噪
+	- ![image.png|350](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefined20250324143836.png)
+	- AB 之间深度差距大，要降低权值
+	- BC 法线差距大，要降低权值
+	- 
+- 可以使用任何的函数模型，不一定是高斯分布，也先不考虑是否满足守恒，最后再进行归一化即可
+	- ![image.png|450](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefined20250324142149.png)
 
 ## 工业界的解决思路
