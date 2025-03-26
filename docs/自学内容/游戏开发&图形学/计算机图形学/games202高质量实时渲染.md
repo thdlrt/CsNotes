@@ -376,7 +376,25 @@
 	- 直接讲点回归到范围 $[\mu-k\sigma,\mu+k\sigma]$ 内
 #### 特殊滤波方式
 ##### Spatiotemporal Variance-Guided Filtering (SVGF)
-- 
+- 结合时间信息与空间信息来进行滤波，对噪点平滑处理
+
+- 判断因素
+- **深度：**
+	- $w_z=\exp\left(-\frac{|z(p)-z(q)|}{\sigma_z|\nabla z(p)\cdot(p-q)|+\epsilon}\right)$
+	- 问题：对摄像机倾斜角度较大的面上的两点深度差别很大
+	- 可以通过两点研法线方向上的深度差异取代直接从摄像机视角出发的深度差距
+- **法线：**
+	- $w_n=\max(0,n(p)\cdot n(q))^{\sigma_n}$
+	- 只需要考虑物体表面（几何）大致的法线方向，而不需要使用法线贴图的具体法线方向
+- **颜色差异：**
+	- $w_l=\exp\left(-\frac{|\:l_i(p)-l_i(q)|}{\sigma_l\sqrt{g_{3\times3}(\mathrm{Var}(l_i(p)))}+\epsilon}\right)$
+
+- 改进
+	- SVGF 结合 **空间滤波**（当前帧的像素间滤波）和 **时间滤波**（结合前几帧的信息），通过重投影和方差引导技术，显著减少噪点。
+	- **动态场景一致性**：在处理动态场景时，SVGF 能够有效减少帧与帧之间的噪点波动，避免闪烁问题。
 ##### Recurrent AutoEncoder (RAE)
-- 
+- 使用神经网络，结合 Gbuffer 的信息来实现对 RTRT 的降噪
 ## 工业界的解决思路
+### Temporal Anti-Aliasing(TAA)
+- 时域上复用，复用上一帧的信息
+- 每一个像素点对应改点在最近几帧的渲染结果的平均值（即，每一帧的渲染结果通过综合连续的几帧来确定）
