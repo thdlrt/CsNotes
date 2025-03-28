@@ -53,7 +53,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "path:\"linkdata/\" ",
+                "query": "抗锯齿",
                 "matchingCase": true,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -90,7 +90,7 @@
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -195,10 +195,13 @@
       "copilot:Open Copilot Chat": false
     }
   },
-  "active": "6c7418c521ab7a68",
+  "active": "2225612e0bcb7d37",
   "lastOpenFiles": [
-    "docs/自学内容/游戏开发&图形学/游戏开发/游戏客户端/unity/插件/In-game Debug Console.md",
+    "docs/_draft_/Fundamentals-Of-Computer-Graphics-5th-CN-main/9 - 图形管线.md",
+    "docs/_draft_/Fundamentals-Of-Computer-Graphics-5th-CN-main/11 - 纹理映射.md",
+    "docs/自学内容/游戏开发&图形学/计算机图形学/图形学基础/光栅化.md",
     "docs/自学内容/游戏开发&图形学/计算机图形学/games202高质量实时渲染.md",
+    "docs/自学内容/游戏开发&图形学/游戏开发/游戏客户端/unity/插件/In-game Debug Console.md",
     "docs/自学内容/游戏开发&图形学/游戏开发/游戏客户端/unity/插件",
     "docs/知识点（保研&工作）/工作/计算机科学/计算机图形学.md",
     "docs/知识点（保研&工作）/工作/计算机科学/计算机网络.md",
@@ -224,7 +227,6 @@
     "docs/_draft_/Fundamentals-Of-Computer-Graphics-5th-CN-main/关于蒙特卡洛重要性采样无偏性、有效性的条件.md",
     "docs/_draft_/Fundamentals-Of-Computer-Graphics-5th-CN-main/关于透视投影矩阵的推导.md",
     "docs/_draft_/Fundamentals-Of-Computer-Graphics-5th-CN-main/README.md",
-    "docs/_draft_/Fundamentals-Of-Computer-Graphics-5th-CN-main/9 - 图形管线.md",
     "docs/_draft_/Fundamentals-Of-Computer-Graphics-5th-CN-main/pic",
     "docs/_draft_/Fundamentals-Of-Computer-Graphics-5th-CN-main/5 - 表面着色.md",
     "docs/_draft_/Fundamentals-Of-Computer-Graphics-5th-CN-main/fundamentals of computer graphics-5th.pdf",
@@ -235,8 +237,6 @@
     "docs/_draft_/Fundamentals-Of-Computer-Graphics-5th-CN-main/4 - 光线追踪.md",
     "docs/_draft_/Fundamentals-Of-Computer-Graphics-5th-CN-main/3 - 光栅图像.md",
     "docs/_draft_/Fundamentals-Of-Computer-Graphics-5th-CN-main/21 - 隐式建模.md",
-    "docs/_draft_/Fundamentals-Of-Computer-Graphics-5th-CN-main/22 - 游戏中的计算机图形学.md",
-    "docs/_draft_/Fundamentals-Of-Computer-Graphics-5th-CN-main/18 - 色彩.md",
     "docs/_draft_/Fundamentals-Of-Computer-Graphics-5th-CN-main",
     "_copilot-conversations_",
     "copilot-conversations",

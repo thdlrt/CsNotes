@@ -398,3 +398,29 @@
 ### Temporal Anti-Aliasing(TAA)
 - 时域上复用，复用上一帧的信息
 - 每一个像素点对应改点在最近几帧的渲染结果的平均值（即，每一帧的渲染结果通过综合连续的几帧来确定）
+### Temporal Super Resolution
+- 时域超分辨率技术
+- 结合历史帧信息来超分
+	- 关键：确保能高效的从历史帧中获取信息（而不是与当前渲染重复的信息）从而真正的增加分辨率，减少猜测的走样
+### 延迟渲染
+- 减少 shading 耗时，减少通不过深度测试的部分着色造成的浪费
+- 进行两趟渲染
+	- 第一趟不做 shading，只更新深度缓冲
+	- 第二趟再进行 shading（frag 数目降低为可见的 frag 数目）
+#### tailed shading
+- 将屏幕分成许多小块（如 32\*32）对每个小块分别做 shading
+- 减少每个点需要考虑的光源数目
+	- 由于光源的衰减，可以筛选掉几乎没有影响的远处光源
+- ![image.png|299](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefined20250327012415.png)
+#### clustered shading
+- 增添距离方向上的更细的小块
+	- ![image.png|243](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefined20250327012403.png)
+### Level of Detail Solutions (LOD)
+- mipmap 就是一种 lod
+- 控制显示的细节等级
+	- 如根据距离来决定要渲染的精细程度
+- 问题：切换时的平滑过渡问题
+- UE 5 Nanite
+### Global Illumination Solutions（GI）
+- 全局光照
+- 结合多种方案，同时使用 

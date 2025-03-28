@@ -5,6 +5,18 @@
       "path": "docs/自学内容/游戏开发&图形学/计算机图形学/games202高质量实时渲染.md"
     },
     {
+      "basename": "9 - 图形管线",
+      "path": "docs/_draft_/Fundamentals-Of-Computer-Graphics-5th-CN-main/9 - 图形管线.md"
+    },
+    {
+      "basename": "11 - 纹理映射",
+      "path": "docs/_draft_/Fundamentals-Of-Computer-Graphics-5th-CN-main/11 - 纹理映射.md"
+    },
+    {
+      "basename": "光栅化",
+      "path": "docs/自学内容/游戏开发&图形学/计算机图形学/图形学基础/光栅化.md"
+    },
+    {
       "basename": "In-game Debug Console",
       "path": "docs/自学内容/游戏开发&图形学/游戏开发/游戏客户端/unity/插件/In-game Debug Console.md"
     },
@@ -67,10 +79,6 @@
     {
       "basename": "解释一下：from_torch.utils.data_import_Dataset_class_toy_set(Dataset)_def___init__(self,_length_=@20250303_010815",
       "path": "_copilot-conversations_/解释一下：from_torch.utils.data_import_Dataset_class_toy_set(Dataset)_def___init__(self,_length_=@20250303_010815.md"
-    },
-    {
-      "basename": "光栅化",
-      "path": "docs/自学内容/游戏开发&图形学/计算机图形学/图形学基础/光栅化.md"
     },
     {
       "basename": "现代图形学基础",
@@ -191,14 +199,6 @@
     {
       "basename": "FAT32",
       "path": "_draft_/FAT32.md"
-    },
-    {
-      "basename": "竞赛信息",
-      "path": "_待办事项_/竞赛信息.md"
-    },
-    {
-      "basename": "金融工程论文寻找",
-      "path": "_draft_/金融工程/金融工程论文寻找.md"
     }
   ],
   "omittedPaths": [],
