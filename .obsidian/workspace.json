@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/自学内容/游戏开发&图形学/计算机图形学/games202高质量实时渲染.md",
+                "file": "docs/自学内容/游戏开发&图形学/计算机图形学/杂项/结果评价.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "games202高质量实时渲染"
+              "title": "结果评价"
             }
           }
         ]
@@ -89,8 +89,7 @@
               "title": "games202高质量实时渲染 的大纲"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -197,10 +196,14 @@
   },
   "active": "2225612e0bcb7d37",
   "lastOpenFiles": [
+    "docs/_draft_/技术部分.md",
+    "docs/自学内容/游戏开发&图形学/计算机图形学/杂项/结果评价.md",
+    "docs/自学内容/游戏开发&图形学/计算机图形学/杂项",
+    "docs/_draft_/fgsr.md",
+    "docs/自学内容/游戏开发&图形学/计算机图形学/games202高质量实时渲染.md",
     "docs/_draft_/Fundamentals-Of-Computer-Graphics-5th-CN-main/9 - 图形管线.md",
     "docs/_draft_/Fundamentals-Of-Computer-Graphics-5th-CN-main/11 - 纹理映射.md",
     "docs/自学内容/游戏开发&图形学/计算机图形学/图形学基础/光栅化.md",
-    "docs/自学内容/游戏开发&图形学/计算机图形学/games202高质量实时渲染.md",
     "docs/自学内容/游戏开发&图形学/游戏开发/游戏客户端/unity/插件/In-game Debug Console.md",
     "docs/自学内容/游戏开发&图形学/游戏开发/游戏客户端/unity/插件",
     "docs/知识点（保研&工作）/工作/计算机科学/计算机图形学.md",
@@ -234,15 +237,11 @@
     "docs/_draft_/Fundamentals-Of-Computer-Graphics-5th-CN-main/6 & 7 - 线性代数与变换矩阵.md",
     "docs/_draft_/Fundamentals-Of-Computer-Graphics-5th-CN-main/8 - 视图.md",
     "docs/_draft_/Fundamentals-Of-Computer-Graphics-5th-CN-main/23 - 可视化.md",
-    "docs/_draft_/Fundamentals-Of-Computer-Graphics-5th-CN-main/4 - 光线追踪.md",
-    "docs/_draft_/Fundamentals-Of-Computer-Graphics-5th-CN-main/3 - 光栅图像.md",
-    "docs/_draft_/Fundamentals-Of-Computer-Graphics-5th-CN-main/21 - 隐式建模.md",
     "docs/_draft_/Fundamentals-Of-Computer-Graphics-5th-CN-main",
     "_copilot-conversations_",
     "copilot-conversations",
     "linkdata/Neural Network for Breast Cancer Classification.ipynb",
     "linkdata/5 3_cross_entropy_logistic_regression_v2.ipynb",
-    "linkdata/4 2 multiple_linear_regression_training_v2.ipynb",
     "未命名.canvas"
   ]
 }

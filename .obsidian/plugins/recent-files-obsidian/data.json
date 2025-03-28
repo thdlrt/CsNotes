@@ -1,6 +1,18 @@
 {
   "recentFiles": [
     {
+      "basename": "结果评价",
+      "path": "docs/自学内容/游戏开发&图形学/计算机图形学/杂项/结果评价.md"
+    },
+    {
+      "basename": "技术部分",
+      "path": "docs/_draft_/技术部分.md"
+    },
+    {
+      "basename": "fgsr",
+      "path": "docs/_draft_/fgsr.md"
+    },
+    {
       "basename": "games202高质量实时渲染",
       "path": "docs/自学内容/游戏开发&图形学/计算机图形学/games202高质量实时渲染.md"
     },
@@ -53,20 +65,12 @@
       "path": "docs/自学内容/游戏开发&图形学/游戏开发/游戏客户端/unity/unity基础.md"
     },
     {
-      "basename": "fgsr",
-      "path": "docs/_draft_/fgsr.md"
-    },
-    {
       "basename": "我的求职体验",
       "path": "docs/_draft_/我的求职体验.md"
     },
     {
       "basename": "本校保研流程（计算机系夏令营）",
       "path": "docs/_draft_/本校保研流程（计算机系夏令营）.md"
-    },
-    {
-      "basename": "技术部分",
-      "path": "docs/_draft_/技术部分.md"
     },
     {
       "basename": "材质",
@@ -195,10 +199,6 @@
     {
       "basename": "实验笔记",
       "path": "docs/学校课程/归档课程/操作系统/实验笔记.md"
-    },
-    {
-      "basename": "FAT32",
-      "path": "_draft_/FAT32.md"
     }
   ],
   "omittedPaths": [],
