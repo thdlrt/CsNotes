@@ -1,6 +1,10 @@
 {
   "recentFiles": [
     {
+      "basename": "learnOpengl",
+      "path": "docs/自学内容/游戏开发&图形学/计算机图形学/API编程/opengl/learnOpengl.md"
+    },
+    {
       "basename": "结果评价",
       "path": "docs/自学内容/游戏开发&图形学/计算机图形学/杂项/结果评价.md"
     },
@@ -103,10 +107,6 @@
     {
       "basename": "笔记",
       "path": "docs/自学内容/移动端开发/鸿蒙/笔记.md"
-    },
-    {
-      "basename": "learnOpengl",
-      "path": "docs/自学内容/游戏开发&图形学/计算机图形学/API编程/opengl/learnOpengl.md"
     },
     {
       "basename": "ArkTS",
