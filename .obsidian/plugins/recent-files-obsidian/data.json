@@ -5,6 +5,10 @@
       "path": "docs/自学内容/游戏开发&图形学/游戏开发/游戏客户端/unity/Unity URP.md"
     },
     {
+      "basename": "未命名",
+      "path": "未命名.md"
+    },
+    {
       "basename": "learnOpengl",
       "path": "docs/自学内容/游戏开发&图形学/计算机图形学/API编程/opengl/learnOpengl.md"
     },
@@ -195,10 +199,6 @@
     {
       "basename": "C++基础",
       "path": "docs/编程语言/c++/C++基础.md"
-    },
-    {
-      "basename": "xlua",
-      "path": "docs/自学内容/游戏开发&图形学/lua/xlua.md"
     }
   ],
   "omittedPaths": [],
