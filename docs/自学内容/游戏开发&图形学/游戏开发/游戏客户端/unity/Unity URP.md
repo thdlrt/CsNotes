@@ -89,7 +89,43 @@ public class CustomRenderFeature : ScriptableRendererFeature
 	- xy 参数定义视口的起始位置（左下角）范围\[0- 1\]
 	- wh 定义视口的宽度和高度（在总体的比例）范围\[0- 1\]
 ### 渲染到渲染纹理
-- 
+- 只需要将摄像机的 output target 设置为 texture，并拖入目标渲染纹理即可
+### 清除、渲染顺序和过度绘制
+- 基础摄像机：
+	- 通过 **Background Type**可以设置在循环开始时对颜色缓冲区的操作，如将其清除初始化为纯色
+	- 在每个渲染循环开始时会清除其深度缓冲区
+- 叠加摄像机
+	- 在渲染循环开始时，叠加摄像机接收一个颜色缓冲区，该缓冲区包含来自摄像机堆叠中先前摄像机的颜色数据。颜色缓冲区的内容不会清除。
+	- 通过**Clear Depth**设置是否清空深度缓冲区，当 **Clear Depth** 设置为 false 时，叠加摄像机会在将其视图绘制到颜色缓冲区之前针对深度缓冲区进行测试。
+#### 摄像机剔除和渲染顺序
+1. Unity 获取场景中所有激活的[基础摄像机](https://docs.unity3d.com/cn/Packages/com.unity.render-pipelines.universal@12.1/manual/camera-types-and-render-type.html#base-camera)的列表。
+2. Unity 将激活的基础摄像机组织成 2 组：一组摄像机将其视图渲染到渲染纹理，另一组摄像机将其视图渲染到屏幕。
+3. Unity 按照 **Priority** 顺序对渲染到渲染纹理的基础摄像机进行排序，因此具有更高 **Priority** 值的摄像机将最后绘制。
+4. 对于渲染到渲染纹理的每个基础摄像机，Unity 执行以下步骤：
+    1. 剔除基础摄像机
+    2. 将基础摄像机渲染到渲染纹理
+    3. 对于基础摄像机的[摄像机堆叠](https://docs.unity3d.com/cn/Packages/com.unity.render-pipelines.universal@12.1/manual/camera-stacking.html)中的每个[叠加摄像机](https://docs.unity3d.com/cn/Packages/com.unity.render-pipelines.universal@12.1/manual/camera-types-and-render-type.html#overlay-camera)，按照在摄像机堆叠中定义的顺序：
+        1. 剔除叠加摄像机
+        2. 将叠加摄像机渲染到渲染纹理
+5. Unity 按照 **Priority** 顺序对渲染到屏幕的基础摄像机进行排序，因此具有更高 **Priority** 值的摄像机将最后绘制。
+6. 对于渲染到屏幕的每个基础摄像机，Unity 执行以下步骤：
+    1. 剔除基础摄像机
+    2. 将基础摄像机渲染到屏幕
+    3. 对于基础摄像机的摄像机堆叠中的每个叠加摄像机，按照在摄像机堆叠中定义的顺序：
+        1. 剔除叠加摄像机
+        2. 将叠加摄像机渲染到屏幕
 
 ## 后处理
+- 条件：
+	- 摄像机勾选 **Post Processing** 复选框
+	- 场景中创建有 Volume 组件的对象，并拖入配置文件
+### 范围控制
+- 创建不同类型（范围）的 volume：
+	- ![image.png|350](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefined20250401232700.png)
+- 将 Mode 设置为 **Global** 时，体积会影响场景中各处的摄像机。将 Mode 设置为 **Local** 时，如果**摄像机在碰撞体的边界以内**，则体积会影响摄像机。
+
+### 效果列表
+[效果列表 \| Universal RP \| 12.1.1](https://docs.unity3d.com/cn/Packages/com.unity.render-pipelines.universal@12.1/manual/EffectList.html)
 ## 着色器与材质
+### 内置着色器
+- 
