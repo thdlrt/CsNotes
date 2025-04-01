@@ -127,5 +127,97 @@ public class CustomRenderFeature : ScriptableRendererFeature
 ### 效果列表
 [效果列表 \| Universal RP \| 12.1.1](https://docs.unity3d.com/cn/Packages/com.unity.render-pipelines.universal@12.1/manual/EffectList.html)
 ## 着色器与材质
+### 着色模型
+- 基于物理着色：基于物理着色 (PBS) 根据**物理原理**计算从表面反射的光量，从而模拟对象在现实生活中的外观。
+	- 遵循能量守恒和物理定律
+	- 用于：光照 Lit ；粒子光照 Particles Lit
+	- 性能要求较高，不适合低端移动平台硬件
+
+- 简单着色：适用于风格化的视觉效果或适用于性能较弱的平台上的游戏，不会呈现真实的逼真感
+	- 不遵守能量守恒
+	- 基于Blinn-Phong 模型
+	- 用于：简单光照 Simple Lit；粒子简单光照 Particles Simple Lit
+
+- 烘焙光照着色：没有实时光照，材质从光照贴图/探针中接收红配光照，以较低的性能成本为场景增加一些深度，采用此着色模型的游戏可以在性能较弱的平台上运行。
+	- URP 烘焙光照着色器是唯一使用烘焙光照着色模型的着色器。
+
+- 无光照：没有方向光，也没有烘焙光照，由于无需进行光照计算，这些着色器的编译速度比具有光照的着色器更快。
+	- 用于：无光照 Unlit；粒子无光照 Particles Unlit
 ### 内置着色器
+[着色器和材质 \| Universal RP \| 12.1.1](https://docs.unity3d.com/cn/Packages/com.unity.render-pipelines.universal@12.1/manual/shaders-in-universalrp.html)
+### 编写着色器
+#### ShaderLab着色器的基本结构
+- `Shader "Example/URPUnlitShaderBasic"`：此声明中的路径决定了 Unity 着色器在材质 Shader 菜单中的显示名称和位置。
 - 
+```c
+// 此着色器使用代码中预定义的颜色来填充网格形状。
+Shader "Example/URPUnlitShaderBasic"
+{
+    // Unity 着色器的 Properties 代码块。在此示例中，这个代码块为空，
+    // 因为在片元着色器代码中预定义了输出颜色。
+    Properties
+    { }
+
+    // 包含 Shader 代码的 SubShader 代码块。
+    SubShader
+    {
+        // SubShader Tags 定义何时以及在何种条件下执行某个 SubShader 代码块
+        // 或某个通道。
+        Tags { "RenderType" = "Opaque" "RenderPipeline" = "UniversalPipeline" }
+
+        Pass
+        {
+            // HLSL 代码块。Unity SRP 使用 HLSL 语言。
+            HLSLPROGRAM
+            // 此行定义顶点着色器的名称。
+            #pragma vertex vert
+            // 此行定义片元着色器的名称。
+            #pragma fragment frag
+
+            // Core.hlsl 文件包含常用的 HLSL 宏和
+            // 函数的定义，还包含对其他 HLSL 文件（例如
+            // Common.hlsl、SpaceTransforms.hlsl 等）的 #include 引用。
+            #include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl"
+
+            // 结构定义将定义它包含哪些变量。
+            // 此示例使用 Attributes 结构作为顶点着色器中的
+            // 输入结构。
+            struct Attributes
+            {
+                // positionOS 变量包含对象空间中的顶点
+                // 位置。
+                float4 positionOS   : POSITION;
+            };
+
+            struct Varyings
+            {
+                // 此结构中的位置必须具有 SV_POSITION 语义。
+                float4 positionHCS  : SV_POSITION;
+            };
+
+            // 顶点着色器定义具有在 Varyings 结构中定义的
+            // 属性。vert 函数的类型必须与它返回的类型（结构）
+            // 匹配。
+            Varyings vert(Attributes IN)
+            {
+                // 使用 Varyings 结构声明输出对象 (OUT)。
+                Varyings OUT;
+                // TransformObjectToHClip 函数将顶点位置
+                // 从对象空间变换到齐次裁剪空间。
+                OUT.positionHCS = TransformObjectToHClip(IN.positionOS.xyz);
+                // 返回输出。
+                return OUT;
+            }
+
+            // 片元着色器定义。
+            half4 frag() : SV_Target
+            {
+                // 定义颜色变量并返回它。
+                half4 customColor = half4(0.5, 0, 0, 1);
+                return customColor;
+            }
+            ENDHLSL
+        }
+    }
+}
+```
