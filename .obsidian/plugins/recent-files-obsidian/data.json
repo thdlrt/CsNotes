@@ -1,16 +1,28 @@
 {
   "recentFiles": [
     {
+      "basename": "unity shader（HLSL）",
+      "path": "docs/自学内容/游戏开发&图形学/游戏开发/游戏客户端/unity/unity shader（HLSL）.md"
+    },
+    {
       "basename": "Unity URP",
       "path": "docs/自学内容/游戏开发&图形学/游戏开发/游戏客户端/unity/Unity URP.md"
     },
     {
-      "basename": "未命名",
-      "path": "未命名.md"
+      "basename": "unity基础",
+      "path": "docs/自学内容/游戏开发&图形学/游戏开发/游戏客户端/unity/unity基础.md"
+    },
+    {
+      "basename": "unity资源管理",
+      "path": "docs/自学内容/游戏开发&图形学/游戏开发/游戏客户端/unity/unity资源管理.md"
     },
     {
       "basename": "learnOpengl",
       "path": "docs/自学内容/游戏开发&图形学/计算机图形学/API编程/opengl/learnOpengl.md"
+    },
+    {
+      "basename": "未命名",
+      "path": "未命名.md"
     },
     {
       "basename": "结果评价",
@@ -71,10 +83,6 @@
     {
       "basename": "1 & 2 - 介绍与数学基础",
       "path": "docs/_draft_/Fundamentals-Of-Computer-Graphics-5th-CN-main/1 & 2 - 介绍与数学基础.md"
-    },
-    {
-      "basename": "unity基础",
-      "path": "docs/自学内容/游戏开发&图形学/游戏开发/游戏客户端/unity/unity基础.md"
     },
     {
       "basename": "我的求职体验",
@@ -191,14 +199,6 @@
     {
       "basename": "1",
       "path": "docs/编程语言/c++/笔记（整理前）/1.md"
-    },
-    {
-      "basename": "16",
-      "path": "docs/编程语言/c++/笔记（整理前）/16.md"
-    },
-    {
-      "basename": "C++基础",
-      "path": "docs/编程语言/c++/C++基础.md"
     }
   ],
   "omittedPaths": [],

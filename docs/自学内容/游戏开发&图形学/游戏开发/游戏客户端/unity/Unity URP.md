@@ -114,7 +114,24 @@ public class CustomRenderFeature : ScriptableRendererFeature
     3. 对于基础摄像机的摄像机堆叠中的每个叠加摄像机，按照在摄像机堆叠中定义的顺序：
         1. 剔除叠加摄像机
         2. 将叠加摄像机渲染到屏幕
+### 渲染前的额外处理
+- Unity 在每一帧中渲染每个活动摄像机之前会引发一个 `beginCameraRendering` 事件。
+	- 如果摄像机处于非活动状态（例如，如果摄像机游戏对象上的 **Camera** 组件复选框被清除），Unity 不会引发此摄像机的 `beginCameraRendering` 事件。
+- 通过订阅此事件的方法时，可以在 Unity 渲染摄像机之前执行自定义逻辑。
+```csharp
+private void OnEnable()
+   {
+       // 添加 WriteLogMessage 作为 RenderPipelineManager.beginCameraRendering 事件的委托
+       RenderPipelineManager.beginCameraRendering += WriteLogMessage;
+   }
 
+   // Unity 在禁用该组件时会自动调用这一方法
+   private void OnDisable()
+   {
+       // 移除作为 RenderPipelineManager.beginCameraRendering 事件的委托的 WriteLogMessage
+       RenderPipelineManager.beginCameraRendering -= WriteLogMessage;
+   }
+```
 ## 后处理
 - 条件：
 	- 摄像机勾选 **Post Processing** 复选框
@@ -146,78 +163,75 @@ public class CustomRenderFeature : ScriptableRendererFeature
 ### 内置着色器
 [着色器和材质 \| Universal RP \| 12.1.1](https://docs.unity3d.com/cn/Packages/com.unity.render-pipelines.universal@12.1/manual/shaders-in-universalrp.html)
 ### 编写着色器
+[[unity shader（HLSL）]]
 #### ShaderLab着色器的基本结构
 - `Shader "Example/URPUnlitShaderBasic"`：此声明中的路径决定了 Unity 着色器在材质 Shader 菜单中的显示名称和位置。
-- 
+- Properties 代码块：包含用户**可在材质 Inspector 窗口中**设置的属性的声明。
+- SubShader 代码块
+	- 一个 Unity 着色器源文件包含一个或多个 SubShader 代码块。渲染网格时，Unity 会选择与目标设备上的 GPU 兼容的第一个 SubShader。
+	- `Tags { "RenderType" = "Opaque" "RenderPipeline" = "UniversalPipeline" }` 表示适用范围：如RenderPipeline 的 SubShader 标签告诉 Unity 将此 SubShader 用于哪些渲染管线，而 UniversalPipeline 的值指示 Unity 应将此 SubShader 用于 URP。
+- Pass 代码块
+	- 包含 HLSL 程序代码
 ```c
-// 此着色器使用代码中预定义的颜色来填充网格形状。
-Shader "Example/URPUnlitShaderBasic"
+// 此着色器使用可由用户通过材质 Inspector 窗口更改的颜色来
+//填充网格形状。
+Shader "Example/URPUnlitShaderColor"
 {
-    // Unity 着色器的 Properties 代码块。在此示例中，这个代码块为空，
-    // 因为在片元着色器代码中预定义了输出颜色。
+    // _BaseColor 变量在材质的 Inspector 中显示为一个名为
+    // Base Color 的字段。您可以使用它来选择自定义颜色。此变量的
+    // 默认值为 (1, 1, 1, 1)。
     Properties
-    { }
+    {
+        [MainColor] _BaseColor("Base Color", Color) = (1, 1, 1, 1)
+    }
 
-    // 包含 Shader 代码的 SubShader 代码块。
     SubShader
     {
-        // SubShader Tags 定义何时以及在何种条件下执行某个 SubShader 代码块
-        // 或某个通道。
         Tags { "RenderType" = "Opaque" "RenderPipeline" = "UniversalPipeline" }
 
         Pass
         {
-            // HLSL 代码块。Unity SRP 使用 HLSL 语言。
             HLSLPROGRAM
-            // 此行定义顶点着色器的名称。
             #pragma vertex vert
-            // 此行定义片元着色器的名称。
             #pragma fragment frag
 
-            // Core.hlsl 文件包含常用的 HLSL 宏和
-            // 函数的定义，还包含对其他 HLSL 文件（例如
-            // Common.hlsl、SpaceTransforms.hlsl 等）的 #include 引用。
             #include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl"
 
-            // 结构定义将定义它包含哪些变量。
-            // 此示例使用 Attributes 结构作为顶点着色器中的
-            // 输入结构。
             struct Attributes
             {
-                // positionOS 变量包含对象空间中的顶点
-                // 位置。
                 float4 positionOS   : POSITION;
             };
 
             struct Varyings
             {
-                // 此结构中的位置必须具有 SV_POSITION 语义。
                 float4 positionHCS  : SV_POSITION;
             };
 
-            // 顶点着色器定义具有在 Varyings 结构中定义的
-            // 属性。vert 函数的类型必须与它返回的类型（结构）
-            // 匹配。
+            // 要使 Unity 着色器 SRP Batcher 兼容，请在
+            // 名为 UnityPerMaterial 的单个 CBUFFER 代码块中声明与材质
+            // 相关的所有属性。
+            CBUFFER_START(UnityPerMaterial)
+                // 以下行声明了 _BaseColor 变量，以便
+                // 可以在片元着色器中使用它。
+                half4 _BaseColor;
+            CBUFFER_END
+
             Varyings vert(Attributes IN)
             {
-                // 使用 Varyings 结构声明输出对象 (OUT)。
                 Varyings OUT;
-                // TransformObjectToHClip 函数将顶点位置
-                // 从对象空间变换到齐次裁剪空间。
                 OUT.positionHCS = TransformObjectToHClip(IN.positionOS.xyz);
-                // 返回输出。
                 return OUT;
             }
 
-            // 片元着色器定义。
             half4 frag() : SV_Target
             {
-                // 定义颜色变量并返回它。
-                half4 customColor = half4(0.5, 0, 0, 1);
-                return customColor;
+                // 返回 _BaseColor 值。
+                return _BaseColor;
             }
             ENDHLSL
         }
     }
 }
 ```
+
+## 2D URP
