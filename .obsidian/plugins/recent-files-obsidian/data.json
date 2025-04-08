@@ -1,6 +1,10 @@
 {
   "recentFiles": [
     {
+      "basename": "毕业之际我最想对母校说的话",
+      "path": "docs/_private_/毕业之际我最想对母校说的话.md"
+    },
+    {
       "basename": "unity资源管理",
       "path": "docs/自学内容/游戏开发&图形学/游戏开发/游戏客户端/unity/unity资源管理.md"
     },
@@ -195,10 +199,6 @@
     {
       "basename": "C++Primer",
       "path": "docs/编程语言/c++/C++Primer.md"
-    },
-    {
-      "basename": "1",
-      "path": "docs/编程语言/c++/笔记（整理前）/1.md"
     }
   ],
   "omittedPaths": [],

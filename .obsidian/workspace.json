@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/自学内容/游戏开发&图形学/游戏开发/游戏客户端/unity/unity资源管理.md",
+                "file": "docs/_private_/毕业之际我最想对母校说的话.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "unity资源管理"
+              "title": "毕业之际我最想对母校说的话"
             }
           }
         ]
@@ -80,21 +80,20 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/自学内容/游戏开发&图形学/游戏开发/游戏客户端/unity/unity资源管理.md",
+                "file": "docs/_private_/毕业之际我最想对母校说的话.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "unity资源管理 的大纲"
+              "title": "毕业之际我最想对母校说的话 的大纲"
             }
           }
         ]
       }
     ],
     "direction": "horizontal",
-    "width": 272.5,
-    "collapsed": true
+    "width": 272.5
   },
   "right": {
     "id": "d615b65a4ccf8a6a",
@@ -197,10 +196,11 @@
   },
   "active": "2225612e0bcb7d37",
   "lastOpenFiles": [
+    "docs/自学内容/游戏开发&图形学/游戏开发/游戏客户端/unity/unity资源管理.md",
+    "docs/_private_/毕业之际我最想对母校说的话.md",
     "docs/自学内容/游戏开发&图形学/游戏开发/游戏客户端/unity/unity shader（HLSL）.md",
     "docs/自学内容/游戏开发&图形学/游戏开发/游戏客户端/unity/Unity URP.md",
     "docs/自学内容/游戏开发&图形学/游戏开发/游戏客户端/unity/unity基础.md",
-    "docs/自学内容/游戏开发&图形学/游戏开发/游戏客户端/unity/unity资源管理.md",
     "docs/自学内容/游戏开发&图形学/计算机图形学/API编程/opengl/learnOpengl.md",
     "docs/自学内容/游戏开发&图形学/游戏开发/游戏客户端/unity/fairyGui(UnitySDK).md",
     "未命名.md",
@@ -234,7 +234,6 @@
     "docs/_draft_/Fundamentals-Of-Computer-Graphics-5th-CN-main/马尔可夫链与 Metropolis 采样.md",
     "docs/_draft_/Fundamentals-Of-Computer-Graphics-5th-CN-main/关于透视矫正插值.md",
     "docs/_draft_/Fundamentals-Of-Computer-Graphics-5th-CN-main/贝塞尔曲线和 B-样条曲线.md",
-    "docs/_draft_/Fundamentals-Of-Computer-Graphics-5th-CN-main/重要性采样中的分布转换.md",
     "docs/_draft_/Fundamentals-Of-Computer-Graphics-5th-CN-main/pic",
     "docs/_draft_/Fundamentals-Of-Computer-Graphics-5th-CN-main/fundamentals of computer graphics-5th.pdf",
     "docs/_draft_/Fundamentals-Of-Computer-Graphics-5th-CN-main/Fundamentals of Computer Graphics 4rd.pdf",
