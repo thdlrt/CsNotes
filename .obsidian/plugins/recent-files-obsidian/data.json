@@ -1,6 +1,14 @@
 {
   "recentFiles": [
     {
+      "basename": "光栅化",
+      "path": "docs/自学内容/游戏开发&图形学/计算机图形学/图形学基础/光栅化.md"
+    },
+    {
+      "basename": "几何",
+      "path": "docs/自学内容/游戏开发&图形学/计算机图形学/图形学基础/几何.md"
+    },
+    {
       "basename": "毕业之际我最想对母校说的话",
       "path": "docs/_private_/毕业之际我最想对母校说的话.md"
     },
@@ -51,10 +59,6 @@
     {
       "basename": "11 - 纹理映射",
       "path": "docs/_draft_/Fundamentals-Of-Computer-Graphics-5th-CN-main/11 - 纹理映射.md"
-    },
-    {
-      "basename": "光栅化",
-      "path": "docs/自学内容/游戏开发&图形学/计算机图形学/图形学基础/光栅化.md"
     },
     {
       "basename": "In-game Debug Console",
@@ -111,10 +115,6 @@
     {
       "basename": "现代图形学基础",
       "path": "docs/自学内容/游戏开发&图形学/计算机图形学/图形学基础/现代图形学基础.md"
-    },
-    {
-      "basename": "几何",
-      "path": "docs/自学内容/游戏开发&图形学/计算机图形学/图形学基础/几何.md"
     },
     {
       "basename": "光线追踪",
