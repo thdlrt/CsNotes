@@ -1,6 +1,10 @@
 {
   "recentFiles": [
     {
+      "basename": "TAASR",
+      "path": "docs/_private_/代码随读/hw_fgsr_demo/FSR超分/TAASR.md"
+    },
+    {
       "basename": "光栅化",
       "path": "docs/自学内容/游戏开发&图形学/计算机图形学/图形学基础/光栅化.md"
     },
@@ -195,10 +199,6 @@
     {
       "basename": "世嘉新人培训教材",
       "path": "docs/自学内容/游戏开发&图形学/阅读/世嘉新人培训教材.md"
-    },
-    {
-      "basename": "C++Primer",
-      "path": "docs/编程语言/c++/C++Primer.md"
     }
   ],
   "omittedPaths": [],
