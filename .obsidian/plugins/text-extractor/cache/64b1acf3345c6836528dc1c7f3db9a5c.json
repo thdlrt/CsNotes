@@ -1,0 +1,1 @@
+{"path":"docs/_draft_/Fundamentals-Of-Computer-Graphics-5th-CN-main/pic/Pasted image 20240425204751.png","text":"function V, M): * primitive: f(M); = warp: f(L(N), w(M)); * blend: f(L(N), M) + f(R(N), M)); “ union: max(f(L(N), M), f(R(N), M)); * intersection: min(f(L(N), M), f(R(N), M)); 。 difference: min(f(L(A), M), —f(R(N), M)).","libVersion":"0.3.2","langs":"chi_sim+eng"}

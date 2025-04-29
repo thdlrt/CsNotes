@@ -1,0 +1,1 @@
+{"path":"docs/_draft_/Fundamentals-Of-Computer-Graphics-5th-CN-main/pic/Pasted image 20240322163549.png","text":"class bsp-node subclass ofsurface virtual bool hit(ray e 十 td. real to real t;., hit-record rec) virtual box bounding-box[() surface-pointer left surface-pointer right real D","libVersion":"0.3.2","langs":"chi_sim+eng"}

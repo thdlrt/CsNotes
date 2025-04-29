@@ -4,39 +4,24 @@
     "type": "split",
     "children": [
       {
-        "id": "8d89f2003854386c",
+        "id": "820926ef138ada20",
         "type": "tabs",
         "children": [
           {
-            "id": "ac7cf3d210bf6fd2",
+            "id": "2225612e0bcb7d37",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/自学内容/游戏开发&图形学/计算机图形学/games001数学基础.md",
+                "file": "docs/_private_/代码随读/hw_fgsr_demo/FSR超分/TAASR.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "games001数学基础"
-            }
-          },
-          {
-            "id": "d30ff4359426a08d",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "docs/自学内容/游戏开发&图形学/计算机图形学/games202高质量实时渲染.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "games202高质量实时渲染"
+              "title": "TAASR"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -68,7 +53,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "世嘉",
+                "query": "抗锯齿",
                 "matchingCase": true,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -90,21 +75,26 @@
             }
           },
           {
-            "id": "b65b48028a8c5eaf",
+            "id": "6c7418c521ab7a68",
             "type": "leaf",
             "state": {
-              "type": "file-tree-view",
-              "state": {},
-              "icon": "lucide-file",
-              "title": "插件不再活动"
+              "type": "outline",
+              "state": {
+                "file": "docs/_private_/代码随读/hw_fgsr_demo/FSR超分/TAASR.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "TAASR 的大纲"
             }
           }
-        ],
-        "currentTab": 2
+        ]
       }
     ],
     "direction": "horizontal",
-    "width": 225.5
+    "width": 272.5,
+    "collapsed": true
   },
   "right": {
     "id": "d615b65a4ccf8a6a",
@@ -120,7 +110,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/自学内容/游戏开发&图形学/计算机图形学/games202高质量实时渲染.md",
+                "file": "docs/自学内容/游戏开发&图形学/阅读/世嘉新人培训教材.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -130,7 +120,7 @@
                 "unlinkedCollapsed": false
               },
               "icon": "links-coming-in",
-              "title": "games202高质量实时渲染 的反向链接列表"
+              "title": "世嘉新人培训教材 的反向链接列表"
             }
           },
           {
@@ -139,12 +129,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/编程语言/c++/C++Primer.md",
+                "file": "docs/自学内容/游戏开发&图形学/阅读/世嘉新人培训教材.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "C++Primer 的出链列表"
+              "title": "世嘉新人培训教材 的出链列表"
             }
           },
           {
@@ -171,25 +161,22 @@
             }
           },
           {
-            "id": "6c7418c521ab7a68",
+            "id": "b804208979fcbc13",
             "type": "leaf",
             "state": {
-              "type": "outline",
-              "state": {
-                "file": "docs/自学内容/游戏开发&图形学/计算机图形学/games202高质量实时渲染.md",
-                "followCursor": false,
-                "showSearch": false,
-                "searchQuery": ""
-              },
-              "icon": "lucide-list",
-              "title": "games202高质量实时渲染 的大纲"
+              "type": "copilot-chat-view",
+              "state": {},
+              "icon": "message-square",
+              "title": "Copilot"
             }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
-    "width": 226.5
+    "width": 297.5,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -200,60 +187,62 @@
       "command-palette:打开命令面板": false,
       "workspaces:管理工作区布局": false,
       "audio-recorder:开始/结束录音": false,
+      "media-extended:Open media": false,
+      "omnisearch:Omnisearch": false,
       "vscode-editor:新建代码文件": false,
       "obsidian-advanced-slides:Show Slide Preview": false,
-      "media-extended:Open media": false,
-      "omnisearch:Omnisearch": false
+      "obsidian-excalidraw-plugin:新建绘图文件": false,
+      "copilot:Open Copilot Chat": false
     }
   },
-  "active": "2208db6412c2caff",
+  "active": "2225612e0bcb7d37",
   "lastOpenFiles": [
-    "docs/自学内容/游戏开发&图形学/计算机图形学/games202高质量实时渲染.md",
-    "docs/自学内容/游戏开发&图形学/计算机图形学/games001数学基础.md",
-    "docs/自学内容/游戏开发&图形学/计算机图形学/图形学基础/光线追踪.md",
-    "docs/自学内容/游戏开发&图形学/计算机图形学/图形学基础/现代图形学基础.md",
-    "docs/自学内容/游戏开发&图形学/计算机图形学/图形学基础/线性代数与变换.md",
-    "docs/自学内容/游戏开发&图形学/计算机图形学/shader/shaderToy学习.md",
+    "docs/_private_/代码随读/hw_fgsr_demo/FSR超分",
+    "docs/_private_/代码随读/hw_fgsr_demo",
     "docs/自学内容/游戏开发&图形学/计算机图形学/图形学基础/光栅化.md",
-    "docs/自学内容/游戏开发&图形学/计算机图形学/图形学基础/材质.md",
-    "docs/自学内容/游戏开发&图形学/计算机图形学/图形学基础/动画.md",
+    "docs/_private_/代码随读/hw_fgsr_demo/FSR超分/TAASR.md",
+    "docs/_private_/代码随读",
     "docs/自学内容/游戏开发&图形学/计算机图形学/图形学基础/几何.md",
-    "docs/自学内容/游戏开发&图形学/计算机图形学/图形学基础/未命名.md",
-    "docs/自学内容/游戏开发&图形学/游戏开发/游戏引擎/games104游戏引擎.md",
-    "docs/自学内容/游戏开发&图形学/游戏开发/游戏客户端/unity/unity基础.md",
-    "docs/自学内容/游戏开发&图形学/游戏开发/游戏客户端",
-    "docs/自学内容/游戏开发&图形学/游戏开发/游戏客户端/unity/fairyGui(UnitySDK).md",
-    "docs/自学内容/游戏开发&图形学/游戏开发/游戏客户端/unity/c#.md",
-    "docs/自学内容/游戏开发&图形学/游戏开发/游戏客户端/unity/unity shader（HLSL）.md",
+    "docs/_private_/毕业之际我最想对母校说的话.md",
     "docs/自学内容/游戏开发&图形学/游戏开发/游戏客户端/unity/unity资源管理.md",
-    "docs/自学内容/代码质量/重构-改善既有代码的设计.md",
-    "docs/自学内容/软件工程/项目管理.md",
-    "docs/自学内容/代码质量",
-    "docs/自学内容/软件工程/设计模式.md",
-    "docs/自学内容/软件工程/软件测试/测试.md",
-    "docs/自学内容/软件工程/编程思想与规范/文档.md",
-    "docs/自学内容/软件工程/编程思想与规范/代码规范.md",
-    "docs/自学内容/软件工程/编程思想与规范/并发编程.md",
-    "docs/自学内容/软件工程/编程思想与规范/编程思想.md",
-    "docs/自学内容/游戏开发&图形学/游戏开发/游戏引擎/unity/设计模式.md",
-    "Excalidraw",
-    "docs/自学内容/移动端开发/鸿蒙",
-    "docs/自学内容/游戏开发&图形学/计算机图形学/shader",
-    "docs/自学内容/游戏开发&图形学/计算机图形学/API编程/opengl",
-    "docs/自学内容/游戏开发&图形学/游戏开发/游戏设计/信息/全球游戏市场进化论.pdf",
-    "docs/自学内容/游戏开发&图形学/游戏开发/游戏设计/信息/2024腾讯游戏运营加餐包——《游戏活动与商业化运营》笔记(2).pdf",
-    "docs/自学内容/游戏开发&图形学/游戏开发/游戏设计/信息",
-    "docs/自学内容/游戏开发&图形学/游戏开发/游戏设计",
-    "docs/知识点（保研&工作）/保研/笔试/c96536f112a74024be9f595f007a2763.jpg",
-    "docs/学校课程/归档课程/编译原理/作业/答案/dragon-book-exercise-answers-master/ch12/12.7/assets/12.7.2.png",
-    "docs/学校课程/归档课程/编译原理/作业/答案/dragon-book-exercise-answers-master/ch12/12.7/assets/12.7.1.png",
-    "docs/学校课程/归档课程/编译原理/作业/答案/dragon-book-exercise-answers-master/ch08/8.5/assets/8.5.3.gif",
-    "docs/学校课程/归档课程/编译原理/作业/答案/dragon-book-exercise-answers-master/ch08/8.5/assets/8.5.4.gif",
-    "docs/学校课程/归档课程/编译原理/作业/答案/dragon-book-exercise-answers-master/ch08/8.5/assets/8.5.1.gif",
-    "docs/学校课程/归档课程/编译原理/作业/答案/dragon-book-exercise-answers-master/ch08/8.4/assets/8.4.2-2.gif",
-    "docs/学校课程/归档课程/编译原理/作业/答案/dragon-book-exercise-answers-master/ch08/8.4/assets/8.4.1-2.gif",
-    "docs/学校课程/归档课程/编译原理/作业/答案/dragon-book-exercise-answers-master/ch05/5.2/assets/5.2.2-1.gif",
-    "docs/学校课程/归档课程/编译原理/作业/答案/dragon-book-exercise-answers-master/ch05/5.1/assets/5.1.3-2.gif",
+    "docs/自学内容/游戏开发&图形学/游戏开发/游戏客户端/unity/unity shader（HLSL）.md",
+    "docs/自学内容/游戏开发&图形学/游戏开发/游戏客户端/unity/Unity URP.md",
+    "docs/自学内容/游戏开发&图形学/游戏开发/游戏客户端/unity/unity基础.md",
+    "docs/自学内容/游戏开发&图形学/计算机图形学/API编程/opengl/learnOpengl.md",
+    "docs/自学内容/游戏开发&图形学/游戏开发/游戏客户端/unity/fairyGui(UnitySDK).md",
+    "未命名.md",
+    "docs/自学内容/游戏开发&图形学/计算机图形学/杂项/结果评价.md",
+    "docs/_draft_/技术部分.md",
+    "docs/自学内容/游戏开发&图形学/计算机图形学/杂项",
+    "docs/_draft_/fgsr.md",
+    "docs/自学内容/游戏开发&图形学/计算机图形学/games202高质量实时渲染.md",
+    "docs/_draft_/Fundamentals-Of-Computer-Graphics-5th-CN-main/9 - 图形管线.md",
+    "docs/_draft_/Fundamentals-Of-Computer-Graphics-5th-CN-main/11 - 纹理映射.md",
+    "docs/自学内容/游戏开发&图形学/游戏开发/游戏客户端/unity/插件/In-game Debug Console.md",
+    "docs/自学内容/游戏开发&图形学/游戏开发/游戏客户端/unity/插件",
+    "docs/知识点（保研&工作）/工作/计算机科学/计算机图形学.md",
+    "docs/知识点（保研&工作）/工作/计算机科学/计算机网络.md",
+    "docs/自学内容/人工智能/深度学习.md",
+    "docs/算法竞赛/数学.md",
+    "docs/自学内容/人工智能/机器学习.md",
+    "docs/自学内容/人工智能/pytorch.md",
+    "docs/_draft_/Fundamentals-Of-Computer-Graphics-5th-CN-main/1 & 2 - 介绍与数学基础.md",
+    "docs/_draft_/Fundamentals-Of-Computer-Graphics-5th-CN-main/pic/Pasted image 20241208220421.png",
+    "docs/_draft_/Fundamentals-Of-Computer-Graphics-5th-CN-main/pic/Pasted image 20241206100854.png",
+    "docs/_draft_/Fundamentals-Of-Computer-Graphics-5th-CN-main/pic/Pasted image 20241205213412.png",
+    "docs/_draft_/Fundamentals-Of-Computer-Graphics-5th-CN-main/pic/Pasted image 20240430165618.png",
+    "docs/_draft_/Fundamentals-Of-Computer-Graphics-5th-CN-main/pic/Pasted image 20241205211219.png",
+    "docs/_draft_/Fundamentals-Of-Computer-Graphics-5th-CN-main/pic/Pasted image 20240430165007.png",
+    "docs/_draft_/Fundamentals-Of-Computer-Graphics-5th-CN-main/pic/Pasted image 20240430164423.png",
+    "docs/_draft_/Fundamentals-Of-Computer-Graphics-5th-CN-main/pic/Pasted image 20240430163833.png",
+    "docs/_draft_/Fundamentals-Of-Computer-Graphics-5th-CN-main/pic/Pasted image 20240430163745.png",
+    "docs/_draft_/Fundamentals-Of-Computer-Graphics-5th-CN-main/pic/Pasted image 20240430163030.png",
+    "docs/_draft_/Fundamentals-Of-Computer-Graphics-5th-CN-main/pic",
+    "docs/_draft_/Fundamentals-Of-Computer-Graphics-5th-CN-main/fundamentals of computer graphics-5th.pdf",
+    "docs/_draft_/Fundamentals-Of-Computer-Graphics-5th-CN-main/Fundamentals of Computer Graphics 4rd.pdf",
+    "docs/_draft_/Fundamentals-Of-Computer-Graphics-5th-CN-main",
+    "_copilot-conversations_",
+    "copilot-conversations",
     "未命名.canvas"
   ]
 }

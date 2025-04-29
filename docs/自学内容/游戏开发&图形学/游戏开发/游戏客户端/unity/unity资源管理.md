@@ -1,5 +1,20 @@
 ## Package Manager
 - 用于管理Unity项目中所需的各种库、插件和工具包
+### 包管理
+- Packages 文件夹下主要存储了工程所需包的配置文件
+	- `manifest.json`：存储项目中所需的所有 Unity Package（包）的依赖信息（包含包的名称及对应的版本号）![image.png|450](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefined20250404003231.png)
+	- `packages-lock.json`：记录项目中包的确切版本和依赖关系树![image.png|400](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefined20250404003247.png)
+- Unity 的 Package Manager 管理的包都是自动维护的，实际代码通常存放在 Library/PackageCache 中，这里的文件是**只读**且由 Unity 自动生成的映射。
+	- 修改缓存中的文件不会被持久保存
+- 如果项目中需要对这些代码进行修改，一般的做法是将包嵌入到工程中，这样对应文件就会从 Library/PackageCache 移动到工程的 Packages 文件夹中，就可以自由修改而不会被覆盖。
+	- 可以把文件从 Library/PackageCache 中复制出来，放到 Packages 文件夹下，自行管理和修改。
+
+- package 的加载过程
+	- 解析 manifest.json：Unity 在启动时会读取 `Packages/manifest.json` 文件，其中列出了所有需要安装的包及其版本信息。
+	- 优先查找本地嵌入包：在加载包的整体流程中，Unity 会先检查项目根目录下的 `Packages` 文件夹，看是否有同名的包文件夹。如果在 `Packages` 文件夹中找到了名称与 `manifest.json` 中相同的包，那么 Unity 会优先加载这个版本，而忽略缓存中的版本。
+		- 这种设计使得开发者可以将包“嵌入”到项目中，从而**对包中的源码进行修改和定制**。
+	- 加载缓存中的包：- 如果 `Packages` 文件夹中没有相应的嵌入包，则 Unity 会从 Package Manager 下载并缓存包到 `Library/PackageCache` 目录中，然后加载这个版本。
+		- 缓存中的包主要用于统一管理和更新，一般情况下是**不允许直接修改**的。
 ## 资源加载
 ![image.png](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefined20241103171530.png)
 ### 文件结构

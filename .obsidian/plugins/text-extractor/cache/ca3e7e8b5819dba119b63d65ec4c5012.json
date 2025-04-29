@@ -1,0 +1,1 @@
+{"path":"docs/_draft_/Fundamentals-Of-Computer-Graphics-5th-CN-main/pic/Pasted image 20240322102038.png","text":"function traverse(node) Push(Misal) draw object using composite matrix from stack traverse(left child) traverse(right child) pop()","libVersion":"0.3.2","langs":"chi_sim+eng"}

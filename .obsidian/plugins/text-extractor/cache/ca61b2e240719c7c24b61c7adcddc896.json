@@ -1,0 +1,1 @@
+{"path":"docs/_draft_/Fundamentals-Of-Computer-Graphics-5th-CN-main/pic/Pasted image 20240322103820.png","text":"instance::hit(ray a + tb, real #o, real 1, hit-record rec) ray Y = M~ 'a+tM~'b if (base-object—hit(r’, to. t1, rec)) then recn = (M) Trec.n return true else return false","libVersion":"0.3.2","langs":"chi_sim+eng"}

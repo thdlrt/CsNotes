@@ -1,0 +1,1 @@
+{"path":"docs/_draft_/Fundamentals-Of-Computer-Graphics-5th-CN-main/pic/Pasted image 20240321170204.png","text":"Tzianglesofvertex (v) { {t, i} = v.e; do { {t, i} = t.nbrlil; i = (i+1) mod 3; } while ( != v.e.t); }","libVersion":"0.3.2","langs":"chi_sim+eng"}
