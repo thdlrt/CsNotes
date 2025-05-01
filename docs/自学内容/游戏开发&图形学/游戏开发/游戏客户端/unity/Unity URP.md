@@ -72,6 +72,114 @@ public class CustomRenderFeature : ScriptableRendererFeature
     }
 }
 ```
+##### 可供重写的方法
+- Feature
+
+| 方法                                       | 调用时机                     | 主要用途                                 |
+|------------------------------------------|----------------------------|----------------------------------------|
+| Create()                                 | 渲染管线创建/加载时（一次）       | 实例化 & 配置 Pass，设置 `renderPassEvent` |
+| AddRenderPasses(renderer, ref data)      | 每帧、每个相机渲染前              | 决定是否 `EnqueuePass`，传参给 Pass       |
+| Dispose(bool disposing) (可选)           | 管线销毁时                     | 释放额外资源（RTHandle、ComputeBuffer 等） |
+```csharp
+public class MyFeature : ScriptableRendererFeature
+{
+    // 通常持有一个或多个自定义的 Pass
+    MyPass m_MyPass;
+
+    // 在管线 asset 被创建或编辑器加载时调用一次
+    public override void Create()
+    {
+        // 在这里 new 出你的 Pass，并设置好 renderPassEvent
+        m_MyPass = new MyPass(RenderPassEvent.BeforeRenderingOpaques);
+    }
+
+    // 每帧、每个相机渲染前调用，用来决定是否加入你的 Pass
+    public override void AddRenderPasses(ScriptableRenderer renderer, ref RenderingData renderingData)
+    {
+        Camera cam = renderingData.cameraData.camera;
+        if (!ShouldUseForCamera(cam))
+            return;
+
+        // （可选）给 Pass 传入一些运行时参数
+        m_MyPass.Setup(/* ... */);
+
+        // 把它加入到渲染队列
+        renderer.EnqueuePass(m_MyPass);
+    }
+
+    // （可选）在管线销毁时清理资源
+    protected override void Dispose(bool disposing)
+    {
+        base.Dispose(disposing);
+        // 如果你的 Pass 申请了 RTHandle、ComputeBuffer 等，在这里 Release
+    }
+
+    bool ShouldUseForCamera(Camera cam) { /* 你的逻辑 */ return true; }
+}
+```
+
+- Pass
+
+| 方法                                                                                | 调用时机                     | 主要用途                        |
+| --------------------------------------------------------------------------------- | ------------------------ | --------------------------- |
+| 构造函数 `MyPass(RenderPassEvent evt)`                                                | 实例化时                     | 设置 `renderPassEvent`（执行阶段）  |
+| `Configure(CommandBuffer cmd, RenderTextureDescriptor desc)`<br>或 `OnCameraSetup` | 渲染前（Execute 之前）          | 绑定/申请 RT、设置 ClearFlag       |
+| `Execute(ScriptableRenderContext ctx, ref RenderingData d)`                       | 在指定的 `renderPassEvent` 时 | 发出 Draw/Blit/Dispatch 等渲染命令 |
+| `FrameCleanup(CommandBuffer cmd)`<br>或 `OnCameraCleanup`                          | 渲染结束后                    | 释放临时 RT、重置状态                |
+```csharp
+public class MyPass : ScriptableRenderPass
+{
+    // 运行时数据，比如要写入的 RenderTexture、材质、shader property id……
+    private RenderTargetIdentifier m_Target;
+    private Material m_Material;
+
+    public MyPass(RenderPassEvent evt)
+    {
+        // 决定你的 Execute() 会被调用在哪个阶段
+        this.renderPassEvent = evt;
+    }
+
+    // 自定义的“Setup”方法，把运行时所需的数据传进来
+    public void Setup(RenderTargetIdentifier target, Material mat)
+    {
+        m_Target   = target;
+        m_Material = mat;
+    }
+
+    // （可选）在 Configure 里 Bind RT／ClearFlag／ClearColor
+    // URP 会在 Execute 之前，统一调用所有 Pass 的 Configure
+    public override void Configure(CommandBuffer cmd, RenderTextureDescriptor cameraTextureDescriptor)
+    {
+        // 比如需要把后续 draw 都导向一个临时 RT
+        cmd.GetTemporaryRT(Shader.PropertyToID("_MyTempRT"), cameraTextureDescriptor);
+        ConfigureTarget(new RenderTargetIdentifier("_MyTempRT"));
+        ConfigureClear(ClearFlag.All, Color.clear);
+    }
+
+    // 真正的渲染逻辑：在 renderPassEvent 指定的时机点被调用
+    public override void Execute(ScriptableRenderContext context, ref RenderingData renderingData)
+    {
+        var cmd = CommandBufferPool.Get("MyPass");
+        // 1. 绑定 camera properties
+        context.SetupCameraProperties(renderingData.cameraData.camera);
+        // 2. Issue Draw 或 Blit
+        cmd.Blit(renderingData.cameraData.renderer.cameraColorTarget, m_Target, m_Material);
+        // 3. 提交
+        context.ExecuteCommandBuffer(cmd);
+        CommandBufferPool.Release(cmd);
+    }
+
+    // 渲染完毕后的清理——释放在 Configure 里申请的临时 RT
+    public override void FrameCleanup(CommandBuffer cmd)
+    {
+        cmd.ReleaseTemporaryRT(Shader.PropertyToID("_MyTempRT"));
+    }
+
+    // （URP 12+ 推荐 API）也可以用下面两个替代 Configure/FrameCleanup：
+    // public override void OnCameraSetup(CommandBuffer cmd, ref RenderingData renderingData) { … }
+    // public override void OnCameraCleanup(CommandBuffer cmd)                             { … }
+}
+```
 ## 灯光
 ## 摄像机
 - 基础摄像机：渲染到渲染目标的通用摄像机
