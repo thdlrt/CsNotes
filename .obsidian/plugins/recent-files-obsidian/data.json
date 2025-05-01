@@ -1,16 +1,20 @@
 {
   "recentFiles": [
     {
-      "basename": "Unity URP",
-      "path": "docs/自学内容/游戏开发&图形学/游戏开发/游戏客户端/unity/Unity URP.md"
-    },
-    {
       "basename": "games202高质量实时渲染",
       "path": "docs/自学内容/游戏开发&图形学/计算机图形学/games202高质量实时渲染.md"
     },
     {
+      "basename": "shaderToy学习",
+      "path": "docs/自学内容/游戏开发&图形学/计算机图形学/shader/shaderToy学习.md"
+    },
+    {
       "basename": "games001数学基础",
       "path": "docs/自学内容/游戏开发&图形学/计算机图形学/games001数学基础.md"
+    },
+    {
+      "basename": "Unity URP",
+      "path": "docs/自学内容/游戏开发&图形学/游戏开发/游戏客户端/unity/Unity URP.md"
     },
     {
       "basename": "光线追踪",
@@ -23,10 +27,6 @@
     {
       "basename": "线性代数与变换",
       "path": "docs/自学内容/游戏开发&图形学/计算机图形学/图形学基础/线性代数与变换.md"
-    },
-    {
-      "basename": "shaderToy学习",
-      "path": "docs/自学内容/游戏开发&图形学/计算机图形学/shader/shaderToy学习.md"
     },
     {
       "basename": "光栅化",
