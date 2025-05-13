@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/_private_/代码随读/hw_fgsr_demo/FSR超分/TAASR.md",
+                "file": "docs/自学内容/游戏开发&图形学/计算机图形学/杂项/结果评价.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "TAASR"
+              "title": "结果评价"
             }
           }
         ]
@@ -196,16 +196,19 @@
   },
   "active": "2225612e0bcb7d37",
   "lastOpenFiles": [
+    "docs/自学内容/游戏开发&图形学/计算机图形学/图形学基础/光栅化.md",
+    "docs/自学内容/游戏开发&图形学/计算机图形学/games202高质量实时渲染.md",
+    "docs/自学内容/游戏开发&图形学/计算机图形学/shader/shaderToy学习.md",
+    "docs/自学内容/游戏开发&图形学/计算机图形学/games001数学基础.md",
+    "docs/自学内容/游戏开发&图形学/游戏开发/游戏客户端/unity/Unity URP.md",
     "docs/_private_/代码随读/hw_fgsr_demo/FSR超分",
     "docs/_private_/代码随读/hw_fgsr_demo",
-    "docs/自学内容/游戏开发&图形学/计算机图形学/图形学基础/光栅化.md",
     "docs/_private_/代码随读/hw_fgsr_demo/FSR超分/TAASR.md",
     "docs/_private_/代码随读",
     "docs/自学内容/游戏开发&图形学/计算机图形学/图形学基础/几何.md",
     "docs/_private_/毕业之际我最想对母校说的话.md",
     "docs/自学内容/游戏开发&图形学/游戏开发/游戏客户端/unity/unity资源管理.md",
     "docs/自学内容/游戏开发&图形学/游戏开发/游戏客户端/unity/unity shader（HLSL）.md",
-    "docs/自学内容/游戏开发&图形学/游戏开发/游戏客户端/unity/Unity URP.md",
     "docs/自学内容/游戏开发&图形学/游戏开发/游戏客户端/unity/unity基础.md",
     "docs/自学内容/游戏开发&图形学/计算机图形学/API编程/opengl/learnOpengl.md",
     "docs/自学内容/游戏开发&图形学/游戏开发/游戏客户端/unity/fairyGui(UnitySDK).md",
@@ -214,7 +217,6 @@
     "docs/_draft_/技术部分.md",
     "docs/自学内容/游戏开发&图形学/计算机图形学/杂项",
     "docs/_draft_/fgsr.md",
-    "docs/自学内容/游戏开发&图形学/计算机图形学/games202高质量实时渲染.md",
     "docs/_draft_/Fundamentals-Of-Computer-Graphics-5th-CN-main/9 - 图形管线.md",
     "docs/_draft_/Fundamentals-Of-Computer-Graphics-5th-CN-main/11 - 纹理映射.md",
     "docs/自学内容/游戏开发&图形学/游戏开发/游戏客户端/unity/插件/In-game Debug Console.md",
@@ -225,7 +227,6 @@
     "docs/算法竞赛/数学.md",
     "docs/自学内容/人工智能/机器学习.md",
     "docs/自学内容/人工智能/pytorch.md",
-    "docs/_draft_/Fundamentals-Of-Computer-Graphics-5th-CN-main/1 & 2 - 介绍与数学基础.md",
     "docs/_draft_/Fundamentals-Of-Computer-Graphics-5th-CN-main/pic/Pasted image 20241208220421.png",
     "docs/_draft_/Fundamentals-Of-Computer-Graphics-5th-CN-main/pic/Pasted image 20241206100854.png",
     "docs/_draft_/Fundamentals-Of-Computer-Graphics-5th-CN-main/pic/Pasted image 20241205213412.png",
@@ -241,7 +242,6 @@
     "docs/_draft_/Fundamentals-Of-Computer-Graphics-5th-CN-main/Fundamentals of Computer Graphics 4rd.pdf",
     "docs/_draft_/Fundamentals-Of-Computer-Graphics-5th-CN-main",
     "_copilot-conversations_",
-    "copilot-conversations",
     "未命名.canvas"
   ]
 }
