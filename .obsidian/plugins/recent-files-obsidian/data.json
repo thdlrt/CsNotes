@@ -1,6 +1,14 @@
 {
   "recentFiles": [
     {
+      "basename": "TAA",
+      "path": "docs/自学内容/游戏开发&图形学/计算机图形学/专题/超分插帧/经典算法/TAA.md"
+    },
+    {
+      "basename": "TAASR",
+      "path": "docs/自学内容/游戏开发&图形学/计算机图形学/专题/超分插帧/FSR超分/TAASR.md"
+    },
+    {
       "basename": "结果评价",
       "path": "docs/自学内容/游戏开发&图形学/计算机图形学/杂项/结果评价.md"
     },
@@ -187,18 +195,6 @@
     {
       "basename": "index",
       "path": "docs/blog/index.md"
-    },
-    {
-      "basename": "ABC321",
-      "path": "docs/blog/posts/算法竞赛/ABC321.md"
-    },
-    {
-      "basename": "ARC165",
-      "path": "docs/blog/posts/算法竞赛/ARC165.md"
-    },
-    {
-      "basename": "CodeforcesRound899(Div.2)",
-      "path": "docs/blog/posts/算法竞赛/CodeforcesRound899(Div.2).md"
     }
   ],
   "omittedPaths": [],
