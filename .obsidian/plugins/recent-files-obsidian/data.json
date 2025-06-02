@@ -1,12 +1,76 @@
 {
   "recentFiles": [
     {
-      "basename": "TAASR",
-      "path": "docs/自学内容/游戏开发&图形学/计算机图形学/专题/超分插帧/FSR超分/TAASR.md"
+      "basename": "3 - 光栅图像",
+      "path": "docs/_draft_/Fundamentals-Of-Computer-Graphics-5th-CN-main/3 - 光栅图像.md"
     },
     {
-      "basename": "fgsr",
-      "path": "docs/_draft_/fgsr.md"
+      "basename": "1 & 2 - 介绍与数学基础",
+      "path": "docs/_draft_/Fundamentals-Of-Computer-Graphics-5th-CN-main/1 & 2 - 介绍与数学基础.md"
+    },
+    {
+      "basename": "6 & 7 - 线性代数与变换矩阵",
+      "path": "docs/_draft_/Fundamentals-Of-Computer-Graphics-5th-CN-main/6 & 7 - 线性代数与变换矩阵.md"
+    },
+    {
+      "basename": "5 - 表面着色",
+      "path": "docs/_draft_/Fundamentals-Of-Computer-Graphics-5th-CN-main/5 - 表面着色.md"
+    },
+    {
+      "basename": "4 - 光线追踪",
+      "path": "docs/_draft_/Fundamentals-Of-Computer-Graphics-5th-CN-main/4 - 光线追踪.md"
+    },
+    {
+      "basename": "光栅化",
+      "path": "docs/自学内容/游戏开发&图形学/计算机图形学/图形学基础/光栅化.md"
+    },
+    {
+      "basename": "线性代数与变换",
+      "path": "docs/自学内容/游戏开发&图形学/计算机图形学/图形学基础/线性代数与变换.md"
+    },
+    {
+      "basename": "材质",
+      "path": "docs/自学内容/游戏开发&图形学/计算机图形学/图形学基础/材质.md"
+    },
+    {
+      "basename": "光线追踪",
+      "path": "docs/自学内容/游戏开发&图形学/计算机图形学/图形学基础/光线追踪.md"
+    },
+    {
+      "basename": "动画",
+      "path": "docs/自学内容/游戏开发&图形学/计算机图形学/图形学基础/动画.md"
+    },
+    {
+      "basename": "几何",
+      "path": "docs/自学内容/游戏开发&图形学/计算机图形学/图形学基础/几何.md"
+    },
+    {
+      "basename": "games202高质量实时渲染",
+      "path": "docs/自学内容/游戏开发&图形学/计算机图形学/课程/games202高质量实时渲染.md"
+    },
+    {
+      "basename": "games001数学基础",
+      "path": "docs/自学内容/游戏开发&图形学/计算机图形学/课程/games001数学基础.md"
+    },
+    {
+      "basename": "图形学与游戏开发中的数学",
+      "path": "docs/自学内容/游戏开发&图形学/阅读/图形学与游戏开发中的数学.md"
+    },
+    {
+      "basename": "11 - 纹理映射",
+      "path": "docs/_draft_/Fundamentals-Of-Computer-Graphics-5th-CN-main/11 - 纹理映射.md"
+    },
+    {
+      "basename": "xlua",
+      "path": "docs/自学内容/游戏开发&图形学/lua/xlua.md"
+    },
+    {
+      "basename": "世嘉新人培训教材",
+      "path": "docs/自学内容/游戏开发&图形学/阅读/世嘉新人培训教材.md"
+    },
+    {
+      "basename": "TAASR",
+      "path": "docs/自学内容/游戏开发&图形学/计算机图形学/专题/超分插帧/FSR超分/TAASR.md"
     },
     {
       "basename": "使用UnityYamlMerge处理冲突",
@@ -21,48 +85,12 @@
       "path": "docs/自学内容/游戏开发&图形学/计算机图形学/杂项/结果评价.md"
     },
     {
-      "basename": "光栅化",
-      "path": "docs/自学内容/游戏开发&图形学/计算机图形学/图形学基础/光栅化.md"
-    },
-    {
-      "basename": "games202高质量实时渲染",
-      "path": "docs/自学内容/游戏开发&图形学/计算机图形学/games202高质量实时渲染.md"
-    },
-    {
       "basename": "shaderToy学习",
       "path": "docs/自学内容/游戏开发&图形学/计算机图形学/shader/shaderToy学习.md"
     },
     {
-      "basename": "games001数学基础",
-      "path": "docs/自学内容/游戏开发&图形学/计算机图形学/games001数学基础.md"
-    },
-    {
       "basename": "Unity URP",
       "path": "docs/自学内容/游戏开发&图形学/游戏开发/游戏客户端/unity/Unity URP.md"
-    },
-    {
-      "basename": "光线追踪",
-      "path": "docs/自学内容/游戏开发&图形学/计算机图形学/图形学基础/光线追踪.md"
-    },
-    {
-      "basename": "现代图形学基础",
-      "path": "docs/自学内容/游戏开发&图形学/计算机图形学/图形学基础/现代图形学基础.md"
-    },
-    {
-      "basename": "线性代数与变换",
-      "path": "docs/自学内容/游戏开发&图形学/计算机图形学/图形学基础/线性代数与变换.md"
-    },
-    {
-      "basename": "材质",
-      "path": "docs/自学内容/游戏开发&图形学/计算机图形学/图形学基础/材质.md"
-    },
-    {
-      "basename": "动画",
-      "path": "docs/自学内容/游戏开发&图形学/计算机图形学/图形学基础/动画.md"
-    },
-    {
-      "basename": "几何",
-      "path": "docs/自学内容/游戏开发&图形学/计算机图形学/图形学基础/几何.md"
     },
     {
       "basename": "games104游戏引擎",
@@ -117,10 +145,6 @@
       "path": "docs/自学内容/软件工程/编程思想与规范/编程思想.md"
     },
     {
-      "basename": "世嘉新人培训教材",
-      "path": "docs/自学内容/游戏开发&图形学/阅读/世嘉新人培训教材.md"
-    },
-    {
       "basename": "C++Primer",
       "path": "docs/编程语言/c++/C++Primer.md"
     },
@@ -135,10 +159,6 @@
     {
       "basename": "C++基础",
       "path": "docs/编程语言/c++/C++基础.md"
-    },
-    {
-      "basename": "xlua",
-      "path": "docs/自学内容/游戏开发&图形学/lua/xlua.md"
     },
     {
       "basename": "实验笔记",
@@ -179,26 +199,6 @@
     {
       "basename": "绪论",
       "path": "docs/学校课程/归档课程/操作系统/笔记/绪论.md"
-    },
-    {
-      "basename": "7",
-      "path": "docs/学校课程/归档课程/计算机系统基础/data/7.md"
-    },
-    {
-      "basename": "8",
-      "path": "docs/学校课程/归档课程/计算机系统基础/data/8.md"
-    },
-    {
-      "basename": "thread",
-      "path": "docs/学校课程/归档课程/操作系统/代码/thread-lib/thread.h"
-    },
-    {
-      "basename": "os-model",
-      "path": "docs/学校课程/归档课程/操作系统/代码/os-model/os-model.py"
-    },
-    {
-      "basename": "index",
-      "path": "docs/index.md"
     }
   ],
   "omittedPaths": [],
