@@ -1,12 +1,20 @@
 {
   "recentFiles": [
     {
+      "basename": "线性代数与变换",
+      "path": "docs/自学内容/游戏开发&图形学/计算机图形学/图形学基础/线性代数与变换.md"
+    },
+    {
       "basename": "4 - 光线追踪",
       "path": "docs/_draft_/Fundamentals-Of-Computer-Graphics-5th-CN-main/4 - 光线追踪.md"
     },
     {
       "basename": "光栅化",
       "path": "docs/自学内容/游戏开发&图形学/计算机图形学/图形学基础/光栅化.md"
+    },
+    {
+      "basename": "6 & 7 - 线性代数与变换矩阵",
+      "path": "docs/_draft_/Fundamentals-Of-Computer-Graphics-5th-CN-main/6 & 7 - 线性代数与变换矩阵.md"
     },
     {
       "basename": "3 - 光栅图像",
@@ -17,16 +25,8 @@
       "path": "docs/_draft_/Fundamentals-Of-Computer-Graphics-5th-CN-main/1 & 2 - 介绍与数学基础.md"
     },
     {
-      "basename": "6 & 7 - 线性代数与变换矩阵",
-      "path": "docs/_draft_/Fundamentals-Of-Computer-Graphics-5th-CN-main/6 & 7 - 线性代数与变换矩阵.md"
-    },
-    {
       "basename": "5 - 表面着色",
       "path": "docs/_draft_/Fundamentals-Of-Computer-Graphics-5th-CN-main/5 - 表面着色.md"
-    },
-    {
-      "basename": "线性代数与变换",
-      "path": "docs/自学内容/游戏开发&图形学/计算机图形学/图形学基础/线性代数与变换.md"
     },
     {
       "basename": "材质",
