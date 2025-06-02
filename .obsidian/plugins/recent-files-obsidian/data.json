@@ -1,16 +1,20 @@
 {
   "recentFiles": [
     {
+      "basename": "TAASR",
+      "path": "docs/自学内容/游戏开发&图形学/计算机图形学/专题/超分插帧/FSR超分/TAASR.md"
+    },
+    {
+      "basename": "fgsr",
+      "path": "docs/_draft_/fgsr.md"
+    },
+    {
       "basename": "使用UnityYamlMerge处理冲突",
       "path": "docs/自学内容/游戏开发&图形学/游戏开发/游戏客户端/unity/插件/使用UnityYamlMerge处理冲突.md"
     },
     {
       "basename": "TAA",
       "path": "docs/自学内容/游戏开发&图形学/计算机图形学/专题/超分插帧/经典算法/TAA.md"
-    },
-    {
-      "basename": "TAASR",
-      "path": "docs/自学内容/游戏开发&图形学/计算机图形学/专题/超分插帧/FSR超分/TAASR.md"
     },
     {
       "basename": "结果评价",
@@ -195,10 +199,6 @@
     {
       "basename": "index",
       "path": "docs/index.md"
-    },
-    {
-      "basename": "index",
-      "path": "docs/blog/index.md"
     }
   ],
   "omittedPaths": [],

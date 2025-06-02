@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/自学内容/游戏开发&图形学/游戏开发/游戏客户端/unity/插件/使用UnityYamlMerge处理冲突.md",
+                "file": "docs/自学内容/游戏开发&图形学/计算机图形学/专题/超分插帧/FSR超分/TAASR.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "使用UnityYamlMerge处理冲突"
+              "title": "TAASR"
             }
           }
         ]
@@ -196,8 +196,9 @@
   },
   "active": "2225612e0bcb7d37",
   "lastOpenFiles": [
-    "docs/自学内容/游戏开发&图形学/计算机图形学/专题/超分插帧/经典算法/TAA.md",
+    "docs/_draft_/fgsr.md",
     "docs/自学内容/游戏开发&图形学/游戏开发/游戏客户端/unity/插件/使用UnityYamlMerge处理冲突.md",
+    "docs/自学内容/游戏开发&图形学/计算机图形学/专题/超分插帧/经典算法/TAA.md",
     "linkdata/simpread-主流抗锯齿方案详解（二）TAA.md",
     "未命名.md",
     "docs/自学内容/游戏开发&图形学/计算机图形学/专题/超分插帧/FSR超分/TAASR.md",
@@ -223,7 +224,6 @@
     "docs/自学内容/游戏开发&图形学/游戏开发/游戏客户端/unity/fairyGui(UnitySDK).md",
     "docs/_draft_/技术部分.md",
     "docs/自学内容/游戏开发&图形学/计算机图形学/杂项",
-    "docs/_draft_/fgsr.md",
     "docs/_draft_/Fundamentals-Of-Computer-Graphics-5th-CN-main/9 - 图形管线.md",
     "docs/_draft_/Fundamentals-Of-Computer-Graphics-5th-CN-main/11 - 纹理映射.md",
     "docs/自学内容/游戏开发&图形学/游戏开发/游戏客户端/unity/插件/In-game Debug Console.md",
