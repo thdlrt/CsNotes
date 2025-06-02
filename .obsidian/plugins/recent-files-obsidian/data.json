@@ -1,6 +1,14 @@
 {
   "recentFiles": [
     {
+      "basename": "4 - 光线追踪",
+      "path": "docs/_draft_/Fundamentals-Of-Computer-Graphics-5th-CN-main/4 - 光线追踪.md"
+    },
+    {
+      "basename": "光栅化",
+      "path": "docs/自学内容/游戏开发&图形学/计算机图形学/图形学基础/光栅化.md"
+    },
+    {
       "basename": "3 - 光栅图像",
       "path": "docs/_draft_/Fundamentals-Of-Computer-Graphics-5th-CN-main/3 - 光栅图像.md"
     },
@@ -15,14 +23,6 @@
     {
       "basename": "5 - 表面着色",
       "path": "docs/_draft_/Fundamentals-Of-Computer-Graphics-5th-CN-main/5 - 表面着色.md"
-    },
-    {
-      "basename": "4 - 光线追踪",
-      "path": "docs/_draft_/Fundamentals-Of-Computer-Graphics-5th-CN-main/4 - 光线追踪.md"
-    },
-    {
-      "basename": "光栅化",
-      "path": "docs/自学内容/游戏开发&图形学/计算机图形学/图形学基础/光栅化.md"
     },
     {
       "basename": "线性代数与变换",
