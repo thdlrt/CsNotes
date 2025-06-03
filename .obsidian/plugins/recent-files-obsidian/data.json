@@ -1,16 +1,40 @@
 {
   "recentFiles": [
     {
-      "basename": "光栅化",
-      "path": "docs/自学内容/游戏开发&图形学/计算机图形学/图形学基础/光栅化.md"
-    },
-    {
       "basename": "9 - 图形管线",
       "path": "docs/_draft_/Fundamentals-Of-Computer-Graphics-5th-CN-main/9 - 图形管线.md"
     },
     {
+      "basename": "线性代数与变换",
+      "path": "docs/自学内容/游戏开发&图形学/计算机图形学/图形学基础/线性代数与变换.md"
+    },
+    {
+      "basename": "关于透视矫正插值",
+      "path": "docs/_draft_/Fundamentals-Of-Computer-Graphics-5th-CN-main/关于透视矫正插值.md"
+    },
+    {
+      "basename": "Drawing 2025-06-03 15.13.59.excalidraw",
+      "path": "Excalidraw/Drawing 2025-06-03 15.13.59.excalidraw.md"
+    },
+    {
+      "basename": "Drawing 2024-11-27 14.51.35.excalidraw",
+      "path": "Excalidraw/Drawing 2024-11-27 14.51.35.excalidraw.md"
+    },
+    {
+      "basename": "Pasted Image 20250603151426_231",
+      "path": "Excalidraw/pic/Pasted Image 20250603151426_231.png"
+    },
+    {
+      "basename": "Pasted Image 20250603151447_863",
+      "path": "Excalidraw/pic/Pasted Image 20250603151447_863.png"
+    },
+    {
       "basename": "10 - 信号处理",
       "path": "docs/_draft_/Fundamentals-Of-Computer-Graphics-5th-CN-main/10 - 信号处理.md"
+    },
+    {
+      "basename": "光栅化",
+      "path": "docs/自学内容/游戏开发&图形学/计算机图形学/图形学基础/光栅化.md"
     },
     {
       "basename": "13 - 采样",
@@ -23,10 +47,6 @@
     {
       "basename": "11 - 纹理映射",
       "path": "docs/_draft_/Fundamentals-Of-Computer-Graphics-5th-CN-main/11 - 纹理映射.md"
-    },
-    {
-      "basename": "线性代数与变换",
-      "path": "docs/自学内容/游戏开发&图形学/计算机图形学/图形学基础/线性代数与变换.md"
     },
     {
       "basename": "8 - 视图",
@@ -179,26 +199,6 @@
     {
       "basename": "C++基础",
       "path": "docs/编程语言/c++/C++基础.md"
-    },
-    {
-      "basename": "实验笔记",
-      "path": "docs/学校课程/归档课程/操作系统/实验笔记.md"
-    },
-    {
-      "basename": "竞赛信息",
-      "path": "_待办事项_/竞赛信息.md"
-    },
-    {
-      "basename": "金融工程论文寻找",
-      "path": "_draft_/金融工程/金融工程论文寻找.md"
-    },
-    {
-      "basename": "补充",
-      "path": "docs/学校课程/归档课程/操作系统/笔记/补充.md"
-    },
-    {
-      "basename": "4",
-      "path": "docs/学校课程/归档课程/计算机系统基础/data/4.md"
     }
   ],
   "omittedPaths": [],

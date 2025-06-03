@@ -6,6 +6,7 @@
       {
         "id": "ab3bc1f95605ee2e",
         "type": "tabs",
+        "dimension": 45.1995012468828,
         "children": [
           {
             "id": "562443d7bde5273c",
@@ -19,6 +20,34 @@
               },
               "icon": "lucide-file",
               "title": "9 - 图形管线"
+            }
+          },
+          {
+            "id": "5f73380599da0a62",
+            "type": "leaf",
+            "state": {
+              "type": "webviewer",
+              "state": {
+                "url": "https://zhuanlan.zhihu.com/p/403259571",
+                "title": "图形学 - 关于透视矫正插值那些事 - 知乎",
+                "mode": "webview"
+              },
+              "icon": "globe-2",
+              "title": "图形学 - 关于透视矫正插值那些事 - 知乎"
+            }
+          },
+          {
+            "id": "94f830e0467e8ff9",
+            "type": "leaf",
+            "state": {
+              "type": "webviewer",
+              "state": {
+                "url": "https://www.cs.ucr.edu/~craigs/courses/2018-fall-cs-130/lectures/perspective-correct-interpolation.pdf",
+                "title": "perspective-correct-interpolation.dvi",
+                "mode": "webview"
+              },
+              "icon": "globe-2",
+              "title": "perspective-correct-interpolation.dvi"
             }
           },
           {
@@ -82,6 +111,7 @@
       {
         "id": "820926ef138ada20",
         "type": "tabs",
+        "dimension": 54.80049875311721,
         "children": [
           {
             "id": "2225612e0bcb7d37",
@@ -168,7 +198,7 @@
             }
           }
         ],
-        "currentTab": 4
+        "currentTab": 5
       }
     ],
     "direction": "vertical"
@@ -227,17 +257,16 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/自学内容/游戏开发&图形学/计算机图形学/图形学基础/光栅化.md",
+                "file": "docs/_draft_/Fundamentals-Of-Computer-Graphics-5th-CN-main/9 - 图形管线.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "光栅化 的大纲"
+              "title": "9 - 图形管线 的大纲"
             }
           }
-        ],
-        "currentTab": 3
+        ]
       }
     ],
     "direction": "horizontal",
@@ -342,15 +371,22 @@
       "copilot:Open Copilot Chat": false
     }
   },
-  "active": "52b37849a4ee026a",
+  "active": "562443d7bde5273c",
   "lastOpenFiles": [
+    "docs/自学内容/游戏开发&图形学/计算机图形学/图形学基础/线性代数与变换.md",
     "docs/_draft_/Fundamentals-Of-Computer-Graphics-5th-CN-main/9 - 图形管线.md",
-    "docs/自学内容/游戏开发&图形学/计算机图形学/图形学基础/光栅化.md",
+    "docs/_draft_/Fundamentals-Of-Computer-Graphics-5th-CN-main/关于透视矫正插值.md",
+    "Excalidraw/Drawing 2025-06-03 15.13.59.excalidraw.md",
+    "Excalidraw/Drawing 2024-11-27 14.51.35.excalidraw.md",
+    "Excalidraw/pic/Pasted Image 20250603151426_231.png",
+    "Excalidraw/pic",
+    "Excalidraw/pic/Pasted Image 20250603151447_863.png",
+    "Excalidraw/pic/Pasted Image 20250603151439_890.png",
     "docs/_draft_/Fundamentals-Of-Computer-Graphics-5th-CN-main/10 - 信号处理.md",
+    "docs/自学内容/游戏开发&图形学/计算机图形学/图形学基础/光栅化.md",
     "docs/_draft_/Fundamentals-Of-Computer-Graphics-5th-CN-main/13 - 采样.md",
     "docs/_draft_/Fundamentals-Of-Computer-Graphics-5th-CN-main/12 - 图形数据结构.md",
     "docs/_draft_/Fundamentals-Of-Computer-Graphics-5th-CN-main/11 - 纹理映射.md",
-    "docs/自学内容/游戏开发&图形学/计算机图形学/图形学基础/线性代数与变换.md",
     "docs/_draft_/Fundamentals-Of-Computer-Graphics-5th-CN-main/8 - 视图.md",
     "docs/自学内容/游戏开发&图形学/计算机图形学/图形学基础/光线追踪.md",
     "docs/_draft_/Fundamentals-Of-Computer-Graphics-5th-CN-main/6 & 7 - 线性代数与变换矩阵.md",
@@ -368,9 +404,6 @@
     "docs/自学内容/游戏开发&图形学/阅读/图形学与游戏开发中的数学.md",
     "docs/自学内容/游戏开发&图形学/lua/xlua.md",
     "docs/_draft_/本校保研流程（计算机系夏令营）.md",
-    "docs/_draft_/fgsr.md",
-    "docs/_draft_/技术部分.md",
-    "docs/自学内容/游戏开发&图形学/阅读/世嘉新人培训教材.md",
     "docs/自学内容/游戏开发&图形学/计算机图形学/专题/超分插帧/经典算法",
     "docs/自学内容/游戏开发&图形学/计算机图形学/专题/超分插帧",
     "docs/自学内容/游戏开发&图形学/计算机图形学/论文阅读",
@@ -379,7 +412,6 @@
     "docs/_private_/代码随读/hw_fgsr_demo",
     "docs/_private_/代码随读",
     "docs/自学内容/游戏开发&图形学/计算机图形学/杂项",
-    "docs/自学内容/游戏开发&图形学/游戏开发/游戏客户端/unity/插件",
     "docs/_draft_/Fundamentals-Of-Computer-Graphics-5th-CN-main/pic/Pasted image 20241208220421.png",
     "docs/_draft_/Fundamentals-Of-Computer-Graphics-5th-CN-main/pic/Pasted image 20241206100854.png",
     "docs/_draft_/Fundamentals-Of-Computer-Graphics-5th-CN-main/pic/Pasted image 20241205213412.png",
@@ -387,9 +419,6 @@
     "docs/_draft_/Fundamentals-Of-Computer-Graphics-5th-CN-main/pic/Pasted image 20241205211219.png",
     "docs/_draft_/Fundamentals-Of-Computer-Graphics-5th-CN-main/pic/Pasted image 20240430165007.png",
     "docs/_draft_/Fundamentals-Of-Computer-Graphics-5th-CN-main/pic/Pasted image 20240430164423.png",
-    "docs/_draft_/Fundamentals-Of-Computer-Graphics-5th-CN-main/pic/Pasted image 20240430163833.png",
-    "docs/_draft_/Fundamentals-Of-Computer-Graphics-5th-CN-main/pic/Pasted image 20240430163745.png",
-    "docs/_draft_/Fundamentals-Of-Computer-Graphics-5th-CN-main/pic/Pasted image 20240430163030.png",
     "未命名.canvas"
   ]
 }
