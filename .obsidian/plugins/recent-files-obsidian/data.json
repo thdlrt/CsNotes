@@ -1,28 +1,44 @@
 {
   "recentFiles": [
     {
-      "basename": "4 - 光线追踪",
-      "path": "docs/_draft_/Fundamentals-Of-Computer-Graphics-5th-CN-main/4 - 光线追踪.md"
+      "basename": "光栅化",
+      "path": "docs/自学内容/游戏开发&图形学/计算机图形学/图形学基础/光栅化.md"
+    },
+    {
+      "basename": "9 - 图形管线",
+      "path": "docs/_draft_/Fundamentals-Of-Computer-Graphics-5th-CN-main/9 - 图形管线.md"
+    },
+    {
+      "basename": "10 - 信号处理",
+      "path": "docs/_draft_/Fundamentals-Of-Computer-Graphics-5th-CN-main/10 - 信号处理.md"
+    },
+    {
+      "basename": "13 - 采样",
+      "path": "docs/_draft_/Fundamentals-Of-Computer-Graphics-5th-CN-main/13 - 采样.md"
+    },
+    {
+      "basename": "12 - 图形数据结构",
+      "path": "docs/_draft_/Fundamentals-Of-Computer-Graphics-5th-CN-main/12 - 图形数据结构.md"
+    },
+    {
+      "basename": "11 - 纹理映射",
+      "path": "docs/_draft_/Fundamentals-Of-Computer-Graphics-5th-CN-main/11 - 纹理映射.md"
     },
     {
       "basename": "线性代数与变换",
       "path": "docs/自学内容/游戏开发&图形学/计算机图形学/图形学基础/线性代数与变换.md"
     },
     {
-      "basename": "光栅化",
-      "path": "docs/自学内容/游戏开发&图形学/计算机图形学/图形学基础/光栅化.md"
+      "basename": "8 - 视图",
+      "path": "docs/_draft_/Fundamentals-Of-Computer-Graphics-5th-CN-main/8 - 视图.md"
+    },
+    {
+      "basename": "光线追踪",
+      "path": "docs/自学内容/游戏开发&图形学/计算机图形学/图形学基础/光线追踪.md"
     },
     {
       "basename": "6 & 7 - 线性代数与变换矩阵",
       "path": "docs/_draft_/Fundamentals-Of-Computer-Graphics-5th-CN-main/6 & 7 - 线性代数与变换矩阵.md"
-    },
-    {
-      "basename": "3 - 光栅图像",
-      "path": "docs/_draft_/Fundamentals-Of-Computer-Graphics-5th-CN-main/3 - 光栅图像.md"
-    },
-    {
-      "basename": "1 & 2 - 介绍与数学基础",
-      "path": "docs/_draft_/Fundamentals-Of-Computer-Graphics-5th-CN-main/1 & 2 - 介绍与数学基础.md"
     },
     {
       "basename": "5 - 表面着色",
@@ -33,8 +49,16 @@
       "path": "docs/自学内容/游戏开发&图形学/计算机图形学/图形学基础/材质.md"
     },
     {
-      "basename": "光线追踪",
-      "path": "docs/自学内容/游戏开发&图形学/计算机图形学/图形学基础/光线追踪.md"
+      "basename": "4 - 光线追踪",
+      "path": "docs/_draft_/Fundamentals-Of-Computer-Graphics-5th-CN-main/4 - 光线追踪.md"
+    },
+    {
+      "basename": "3 - 光栅图像",
+      "path": "docs/_draft_/Fundamentals-Of-Computer-Graphics-5th-CN-main/3 - 光栅图像.md"
+    },
+    {
+      "basename": "1 & 2 - 介绍与数学基础",
+      "path": "docs/_draft_/Fundamentals-Of-Computer-Graphics-5th-CN-main/1 & 2 - 介绍与数学基础.md"
     },
     {
       "basename": "动画",
@@ -55,10 +79,6 @@
     {
       "basename": "图形学与游戏开发中的数学",
       "path": "docs/自学内容/游戏开发&图形学/阅读/图形学与游戏开发中的数学.md"
-    },
-    {
-      "basename": "11 - 纹理映射",
-      "path": "docs/_draft_/Fundamentals-Of-Computer-Graphics-5th-CN-main/11 - 纹理映射.md"
     },
     {
       "basename": "xlua",
@@ -179,26 +199,6 @@
     {
       "basename": "4",
       "path": "docs/学校课程/归档课程/计算机系统基础/data/4.md"
-    },
-    {
-      "basename": "并发",
-      "path": "docs/学校课程/归档课程/操作系统/笔记/并发.md"
-    },
-    {
-      "basename": "fish",
-      "path": "docs/学校课程/归档课程/操作系统/代码/fish/fish.c"
-    },
-    {
-      "basename": "持久化",
-      "path": "docs/学校课程/归档课程/操作系统/笔记/持久化.md"
-    },
-    {
-      "basename": "虚拟化",
-      "path": "docs/学校课程/归档课程/操作系统/笔记/虚拟化.md"
-    },
-    {
-      "basename": "绪论",
-      "path": "docs/学校课程/归档课程/操作系统/笔记/绪论.md"
     }
   ],
   "omittedPaths": [],
