@@ -201,13 +201,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/自学内容/游戏开发&图形学/计算机图形学/图形学基础/光栅化.md",
+                "file": "docs/_draft_/Fundamentals-Of-Computer-Graphics-5th-CN-main/10 - 信号处理.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "光栅化 的大纲"
+              "title": "10 - 信号处理 的大纲"
             }
           }
         ],
@@ -316,13 +316,13 @@
       "copilot:Open Copilot Chat": false
     }
   },
-  "active": "ea47a9e0e7f7f443",
+  "active": "f1572fa4d17012e4",
   "lastOpenFiles": [
+    "docs/_draft_/Fundamentals-Of-Computer-Graphics-5th-CN-main/11 - 纹理映射.md",
     "docs/_draft_/Fundamentals-Of-Computer-Graphics-5th-CN-main/10 - 信号处理.md",
     "docs/自学内容/游戏开发&图形学/计算机图形学/图形学基础/光栅化.md",
     "docs/_draft_/Fundamentals-Of-Computer-Graphics-5th-CN-main/13 - 采样.md",
     "docs/_draft_/Fundamentals-Of-Computer-Graphics-5th-CN-main/12 - 图形数据结构.md",
-    "docs/_draft_/Fundamentals-Of-Computer-Graphics-5th-CN-main/11 - 纹理映射.md",
     "docs/自学内容/游戏开发&图形学/计算机图形学/图形学基础/光线追踪.md",
     "docs/自学内容/游戏开发&图形学/计算机图形学/图形学基础/几何.md",
     "docs/自学内容/游戏开发&图形学/计算机图形学/图形学基础/线性代数与变换.md",
