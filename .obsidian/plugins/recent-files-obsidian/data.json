@@ -1,6 +1,14 @@
 {
   "recentFiles": [
     {
+      "basename": "GSR",
+      "path": "docs/自学内容/游戏开发&图形学/计算机图形学/专题/超分插帧/开源算法/GSR.md"
+    },
+    {
+      "basename": "FSR",
+      "path": "docs/自学内容/游戏开发&图形学/计算机图形学/专题/超分插帧/开源算法/FSR.md"
+    },
+    {
       "basename": "10 - 信号处理",
       "path": "docs/_draft_/Fundamentals-Of-Computer-Graphics-5th-CN-main/10 - 信号处理.md"
     },
@@ -109,10 +117,6 @@
       "path": "docs/自学内容/游戏开发&图形学/阅读/世嘉新人培训教材.md"
     },
     {
-      "basename": "TAASR",
-      "path": "docs/自学内容/游戏开发&图形学/计算机图形学/专题/超分插帧/FSR超分/TAASR.md"
-    },
-    {
       "basename": "使用UnityYamlMerge处理冲突",
       "path": "docs/自学内容/游戏开发&图形学/游戏开发/游戏客户端/unity/插件/使用UnityYamlMerge处理冲突.md"
     },
@@ -195,10 +199,6 @@
     {
       "basename": "16",
       "path": "docs/编程语言/c++/笔记（整理前）/16.md"
-    },
-    {
-      "basename": "C++基础",
-      "path": "docs/编程语言/c++/C++基础.md"
     }
   ],
   "omittedPaths": [],
