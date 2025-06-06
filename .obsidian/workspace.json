@@ -69,7 +69,7 @@
       {
         "id": "820926ef138ada20",
         "type": "tabs",
-        "dimension": 54.80049875311721,
+        "dimension": 54.8004987531172,
         "children": [
           {
             "id": "2225612e0bcb7d37",
@@ -210,8 +210,7 @@
               "title": "10 - 信号处理 的大纲"
             }
           }
-        ],
-        "currentTab": 3
+        ]
       }
     ],
     "direction": "horizontal",
@@ -316,7 +315,7 @@
       "copilot:Open Copilot Chat": false
     }
   },
-  "active": "f1572fa4d17012e4",
+  "active": "96e173acdf249e6c",
   "lastOpenFiles": [
     "docs/_draft_/Fundamentals-Of-Computer-Graphics-5th-CN-main/10 - 信号处理.md",
     "docs/自学内容/游戏开发&图形学/计算机图形学/图形学基础/光栅化.md",
