@@ -46,16 +46,86 @@ glm::mat4 clipToPrevClip = (previous_view_proj * inv_vp);
 | Convert  | 把源帧中的几何信息转成便于时域处理的表征         | Opaque/Color、Depth、Velocity | YCoCg 色度、Motion+Depth+Alpha     | 预处理、色域变换     |
 | Activate | 用上一帧历史校正当前信息，提前标能安全累积以及易出错的像 | Prev-LumaHistory、Convert 输出 | MotionDepth**Clip**、LumaHistory | 深度裁剪、边缘判定    |
 | Upscale  | 真正做放大和时间插值，输出 Display 分辨率    | Activate 输出、Prev-History    | SceneColorOutput、HistoryOutput  | Lanczos、时域滤波 |
+|          |                              |                             |                                 |              |
 - Convert 与 Activate 在 **Render 分辨率**运行。
 - Upscale 在 **Display 分辨率**运行，只处理颜色。
-### Activate
+### Convert
+- 预处理所有输入的几何与色彩信息，将其整理成便于后续时域插值和超分的格式。
+- 主要做：深度膨胀、运动估计、半透明遮罩生成、色彩空间变换。
 
+- 本阶段的输入就是算法**输入**的那四项（颜色和深度）
+- **输出**
+
+| 名称                     | 介绍                                 |
+| ---------------------- | ---------------------------------- |
+| Colorluma（YCoCg Color） | 存储转换后的YCoCg色度分量（后续Upscale主输入）。     |
+| MotionDepthAlphaBuffer | 存储每像素的运动矢量（RG）、膨胀深度（B）、Alpha遮罩（A）。 |
+- 深度膨胀：
+	- 对每个像素，取其自身及周围3x3范围内的最小深度
+	- 这样做能修补低分辨率情况下深度贴图的空洞、裂缝问题
+- 运动矢量生成：
+	- 对于**有InputVelocity**（即应用主动给了运动矢量的像素），直接解码，填入结果。
+    - 对于**没有InputVelocity**（通常静态物体、或者应用没填），就用“深度+clipToPrevClip”逆推像素运动。
+- 半透明遮罩：
+	- 比较InputColor和InputOpaqueColor的alpha通道：
+    - 如果InputColor的alpha < 阈值（如0.99），则判定为**半透明像素**，写入MotionDepthAlphaBuffer的A通道为0，否则为1。
+	- 后续Upscale时，α=0的像素不会做历史累积，避免UI、玻璃拖影
+- 色彩空间变化：
+	- 把InputColor的RGB转换到YCoCg空间，分别存储亮度（Y）和色度（Co、Cg）分量。
+	- YCoCg空间亮度与色度分离，便于后续做最小/最大/方差裁剪，提升去噪与插值质量。
+### Activate
+- 像素可靠性分析：判断哪些像素的历史值可以安全利用，哪些像素因遮挡/剧烈变化不应使用历史信息。
+- 边缘与亮度突变检测：检测像素是否处于边缘或明暗剧变区域，为后续时域融合提供权重与保护。
+- 历史亮度维护：为下一帧的判断保存亮度信息，实现帧间的“亮度异常检测”。
+
+**输入**
+
+| 名称                     | 介绍                             |
+| ---------------------- | ------------------------------ |
+| PrevLumaHistory        | 上一帧每像素亮度的历史数据                  |
+| MotionDepthAlphaBuffer | Convert Pass 输出的运动、深度、alpha等信息 |
+| Colorluma              | Convert Pass 输出的 YCoCg 色彩      |
+
+**输出**
+
+| 名称                         | 介绍                                |
+| -------------------------- | --------------------------------- |
+| MotionDepthClipAlphaBuffer | 存储运动、深度裁剪（depthClip）、alpha、无边缘等标记 |
+| LumaHistory                | 本帧的亮度历史                           |
+
+- 深度裁剪判定：
+	- 检测像素是否被遮挡
+	- 通过运动矢量将本帧像素投影到上一帧，采样上一帧的深度，如果两者差异很大，说明可能被遮挡，需要标记为不可安全基类的深度值，写入到MotionDepthClipAlphaBuffer
+- 亮度边缘与突变检测
+	- 
+- 亮度历史信息维护
+	- 为后续帧判断亮度突变（比如闪烁、亮暗跳变）提供参考，防止时域累积“拖尾”。
+	- 
+### Upscale
+- 
+## 代码解析
 ### Convert
 - 
-### Upscale
 
-## 代码解析
 ### Activate
-### Convert
+- 
+
 ### Upscale
+- 
+
 ## 在 Unity 中的实现
+### Convert
+- 
+```c
+
+```
+### Activate
+- 
+```c
+
+```
+### Upscale
+- 
+```c
+
+```

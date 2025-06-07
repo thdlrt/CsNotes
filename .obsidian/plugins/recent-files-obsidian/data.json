@@ -5,6 +5,10 @@
       "path": "docs/自学内容/游戏开发&图形学/计算机图形学/专题/超分插帧/开源算法/GSR/GSR.md"
     },
     {
+      "basename": "tinyraytracer",
+      "path": "docs/自学内容/游戏开发&图形学/计算机图形学/实验/tinyraytracer.md"
+    },
+    {
       "basename": "FSR",
       "path": "docs/自学内容/游戏开发&图形学/计算机图形学/专题/超分插帧/开源算法/FSR/FSR.md"
     },
@@ -191,14 +195,6 @@
     {
       "basename": "C++Primer",
       "path": "docs/编程语言/c++/C++Primer.md"
-    },
-    {
-      "basename": "1",
-      "path": "docs/编程语言/c++/笔记（整理前）/1.md"
-    },
-    {
-      "basename": "16",
-      "path": "docs/编程语言/c++/笔记（整理前）/16.md"
     }
   ],
   "omittedPaths": [],
