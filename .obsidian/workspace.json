@@ -14,7 +14,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/自学内容/游戏开发&图形学/计算机图形学/专题/超分插帧/开源算法/GSR.md",
+                "file": "docs/自学内容/游戏开发&图形学/计算机图形学/专题/超分插帧/开源算法/GSR/GSR.md",
                 "mode": "source",
                 "source": false
               },
@@ -35,12 +35,12 @@
             "state": {
               "type": "webviewer",
               "state": {
-                "url": "https://github.com/SnapdragonStudios/snapdragon-gsr",
-                "title": "GitHub - SnapdragonStudios/snapdragon-gsr",
+                "url": "https://github.com/SnapdragonStudios/snapdragon-gsr/tree/main/sgsr/v2",
+                "title": "snapdragon-gsr/sgsr/v2 at main · SnapdragonStudios/snapdragon-gsr · GitHub",
                 "mode": "webview"
               },
               "icon": "globe-2",
-              "title": "GitHub - SnapdragonStudios/snapdragon-gsr"
+              "title": "snapdragon-gsr/sgsr/v2 at main · SnapdragonStudios/snapdragon-gsr · GitHub"
             }
           }
         ]
@@ -115,7 +115,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 272.5
+    "width": 432.5
   },
   "right": {
     "id": "d615b65a4ccf8a6a",
@@ -216,10 +216,20 @@
       "copilot:Open Copilot Chat": false
     }
   },
-  "active": "abf78084f80089f6",
+  "active": "f1572fa4d17012e4",
   "lastOpenFiles": [
-    "docs/自学内容/游戏开发&图形学/计算机图形学/专题/超分插帧/开源算法/GSR.md",
-    "docs/自学内容/游戏开发&图形学/计算机图形学/专题/超分插帧/开源算法/FSR.md",
+    "docs/自学内容/游戏开发&图形学/计算机图形学/专题/超分插帧/开源算法/GSR/GSR.md",
+    "docs/自学内容/游戏开发&图形学/计算机图形学/专题/超分插帧/开源算法/FSR/FSR.md",
+    "docs/自学内容/游戏开发&图形学/计算机图形学/专题/超分插帧/开源算法/GSR/代码（原版）/sgsr2_convert.comp",
+    "docs/自学内容/游戏开发&图形学/计算机图形学/专题/超分插帧/开源算法/GSR/代码（原版）/sgsr2_activate.comp",
+    "docs/自学内容/游戏开发&图形学/计算机图形学/专题/超分插帧/开源算法/GSR/代码（原版）/sgsr2_upscale.comp",
+    "docs/自学内容/游戏开发&图形学/计算机图形学/专题/超分插帧/开源算法/GSR/代码（unity）",
+    "docs/自学内容/游戏开发&图形学/计算机图形学/专题/超分插帧/开源算法/FSR/代码（Unity）/TAASR.compute",
+    "docs/自学内容/游戏开发&图形学/计算机图形学/专题/超分插帧/开源算法/FSR/代码（Unity）",
+    "docs/自学内容/游戏开发&图形学/计算机图形学/专题/超分插帧/开源算法/GSR/新建文件夹",
+    "docs/自学内容/游戏开发&图形学/计算机图形学/专题/超分插帧/开源算法/GSR/代码（原版）",
+    "docs/自学内容/游戏开发&图形学/计算机图形学/专题/超分插帧/开源算法/FSR/代码/TAASR.compute",
+    "docs/自学内容/游戏开发&图形学/计算机图形学/专题/超分插帧/开源算法/FSR/代码",
     "docs/_draft_/Fundamentals-Of-Computer-Graphics-5th-CN-main/10 - 信号处理.md",
     "docs/自学内容/游戏开发&图形学/计算机图形学/图形学基础/光栅化.md",
     "docs/_draft_/Fundamentals-Of-Computer-Graphics-5th-CN-main/11 - 纹理映射.md",
@@ -233,7 +243,6 @@
     "Excalidraw/Drawing 2025-06-03 15.13.59.excalidraw.md",
     "Excalidraw/Drawing 2024-11-27 14.51.35.excalidraw.md",
     "Excalidraw/pic/Pasted Image 20250603151426_231.png",
-    "Excalidraw/pic",
     "Excalidraw/pic/Pasted Image 20250603151447_863.png",
     "Excalidraw/pic/Pasted Image 20250603151439_890.png",
     "docs/_draft_/Fundamentals-Of-Computer-Graphics-5th-CN-main/8 - 视图.md",
@@ -246,17 +255,7 @@
     "docs/自学内容/游戏开发&图形学/计算机图形学/图形学基础/现代图形学基础.md",
     "docs/自学内容/游戏开发&图形学/计算机图形学/图形学基础/动画.md",
     "docs/自学内容/游戏开发&图形学/计算机图形学/课程/games202高质量实时渲染.md",
-    "docs/自学内容/游戏开发&图形学/计算机图形学/课程",
     "docs/自学内容/游戏开发&图形学/计算机图形学/课程/games001数学基础.md",
-    "docs/自学内容/游戏开发&图形学/阅读/图形学与游戏开发中的数学.md",
-    "docs/自学内容/游戏开发&图形学/计算机图形学/专题/超分插帧/经典算法",
-    "docs/自学内容/游戏开发&图形学/计算机图形学/专题/超分插帧",
-    "docs/自学内容/游戏开发&图形学/计算机图形学/论文阅读",
-    "docs/自学内容/游戏开发&图形学/计算机图形学/专题",
-    "docs/自学内容/游戏开发&图形学/计算机图形学/专题/超分插帧/开源算法",
-    "docs/_private_/代码随读/hw_fgsr_demo",
-    "docs/_private_/代码随读",
-    "docs/自学内容/游戏开发&图形学/计算机图形学/杂项",
     "docs/_draft_/Fundamentals-Of-Computer-Graphics-5th-CN-main/pic/Pasted image 20241208220421.png",
     "docs/_draft_/Fundamentals-Of-Computer-Graphics-5th-CN-main/pic/Pasted image 20241206100854.png",
     "docs/_draft_/Fundamentals-Of-Computer-Graphics-5th-CN-main/pic/Pasted image 20241205213412.png",
