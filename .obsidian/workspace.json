@@ -6,7 +6,6 @@
       {
         "id": "ab3bc1f95605ee2e",
         "type": "tabs",
-        "dimension": 45.44887780548628,
         "children": [
           {
             "id": "f1572fa4d17012e4",
@@ -20,27 +19,6 @@
               },
               "icon": "lucide-file",
               "title": "GSR"
-            }
-          }
-        ]
-      },
-      {
-        "id": "f107288c159afe06",
-        "type": "tabs",
-        "dimension": 54.55112219451371,
-        "children": [
-          {
-            "id": "abf78084f80089f6",
-            "type": "leaf",
-            "state": {
-              "type": "webviewer",
-              "state": {
-                "url": "https://github.com/SnapdragonStudios/snapdragon-gsr/tree/main/sgsr/v2",
-                "title": "snapdragon-gsr/sgsr/v2 at main · SnapdragonStudios/snapdragon-gsr · GitHub",
-                "mode": "webview"
-              },
-              "icon": "globe-2",
-              "title": "snapdragon-gsr/sgsr/v2 at main · SnapdragonStudios/snapdragon-gsr · GitHub"
             }
           }
         ]
@@ -115,7 +93,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 311.5
+    "width": 200
   },
   "right": {
     "id": "d615b65a4ccf8a6a",
@@ -216,7 +194,7 @@
       "copilot:Open Copilot Chat": false
     }
   },
-  "active": "abf78084f80089f6",
+  "active": "f1572fa4d17012e4",
   "lastOpenFiles": [
     "docs/自学内容/游戏开发&图形学/计算机图形学/专题/超分插帧/开源算法/GSR/GSR.md",
     "docs/自学内容/游戏开发&图形学/计算机图形学/实验/tinyraytracer.md",

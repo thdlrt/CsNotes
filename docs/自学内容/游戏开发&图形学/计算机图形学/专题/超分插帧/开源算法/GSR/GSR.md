@@ -1,5 +1,6 @@
 > 三个模式，本文主要介绍3-pass-cs
 > [GitHub - SnapdragonStudios/snapdragon-gsr](https://github.com/SnapdragonStudios/snapdragon-gsr)
+> [Site Unreachable](https://zhuanlan.zhihu.com/p/8980985121)
 
 ## 算法介绍
 - 3-pass模式的流程为：Activate → Convert → Upscale
@@ -40,6 +41,8 @@ glm::mat4 clipToPrevClip = (previous_view_proj * inv_vp);
 	- `InputColor`：当前帧**所有物体渲染完毕**后的最终颜色贴图。
 	- `InputDepth`：应用渲染主Pass时输出的深度贴图
 	- `InputVelocity`：当前帧的运动矢量贴图
+
+- 3-pass 版本的功能设计与划分如下，本文之后的每个部分都是围绕这三个部分分别介绍
 
 | Pass     | 目标                           | 输入                          | 输出                              | 核心           |
 | -------- | ---------------------------- | --------------------------- | ------------------------------- | ------------ |
@@ -97,20 +100,51 @@ glm::mat4 clipToPrevClip = (previous_view_proj * inv_vp);
 	- 检测像素是否被遮挡
 	- 通过运动矢量将本帧像素投影到上一帧，采样上一帧的深度，如果两者差异很大，说明可能被遮挡，需要标记为不可安全基类的深度值，写入到MotionDepthClipAlphaBuffer
 - 亮度边缘与突变检测
-	- 
+	- 检测哪些像素位于边缘或亮度剧烈变化区，这些地方容易有“鬼影”或“历史脏数据”，需要特殊处理。
+	- 对当前像素及周围3x3区域的亮度做极值分析。如果最大亮度 - 最小亮度 < 阈值，则认为该像素处于非边缘，可以更放心地用历史数据。最后将标记写入 MotionDepthClipAlphaBuffer
 - 亮度历史信息维护
 	- 为后续帧判断亮度突变（比如闪烁、亮暗跳变）提供参考，防止时域累积“拖尾”。
-	- 
 ### Upscale
-- 
+- 将低分辨率的结果上采样到高分辨率，输出锐利且无明显噪声的色彩。
+- 融合历史（时域）信息，进一步去除抖动、噪点和插值伪影，提升画面稳定性。
+
+**输入**
+
+| 名称                         | 介绍                                               |
+| -------------------------- | ------------------------------------------------ |
+| MotionDepthClipAlphaBuffer | 来自Activate/Convert Pass，含运动、深度裁剪（clip）、alpha、边缘等 |
+| Colorluma                  | YCoCg色度（低分辨率，含亮度与色差）                             |
+| PrevHistory                | 上一帧Upscale输出的历史色彩（高分辨率）                          |
+**输出**
+
+| 名称               | 介绍           |
+| ---------------- | ------------ |
+| SceneColorOutput | 最终超分输出（高分辨率） |
+| HistoryOutput    |              |
+- Lanczos 上采样（空间超分）
+	- 对每个目标高分辨率像素，按比例采样低分辨率 Colorluma（YCoCg）图像的**3x3（9点）邻域**。
+	- 使用 Lanczos2 滤波器进行权重加权插值，得到上采样后的基础色彩。
+	- 在采样过程中，同时统计该邻域的最小值、最大值、方差（Y、Co、Cg通道分别统计），用于后续裁剪。
+- 历史色彩可信度分析（时域融合准备）
+	- 结合 MotionDepthClipAlphaBuffer 里的信息，分析历史数据是否可靠
+	- 若像素被判定为不可累积（如遮挡、半透明、高速运动等），则大幅降低历史色彩的权重
+- 历史色彩裁剪
+	- 用当前邻域的 min/max/variance（方差）对历史色彩做“夹紧”处理，防止历史漂移出当前色彩统计范围
+	- 防止历史噪点、伪影被无限累积
+- 时域融合
+	- 根据权重对历史颜色和当前帧颜色进行融合
+- YCoCg到RGB的逆变换
 ## 代码解析
 ### Convert
+[[sgsr2_convert.comp]]
 - 
 
 ### Activate
+[[sgsr2_activate.comp]]
 - 
 
 ### Upscale
+[[sgsr2_upscale.comp]]
 - 
 
 ## 在 Unity 中的实现
