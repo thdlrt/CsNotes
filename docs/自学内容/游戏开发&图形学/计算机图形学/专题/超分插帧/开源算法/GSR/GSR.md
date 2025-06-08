@@ -49,7 +49,7 @@ glm::mat4 clipToPrevClip = (previous_view_proj * inv_vp);
 | Convert  | 把源帧中的几何信息转成便于时域处理的表征         | Opaque/Color、Depth、Velocity | YCoCg 色度、Motion+Depth+Alpha     | 预处理、色域变换     |
 | Activate | 用上一帧历史校正当前信息，提前标能安全累积以及易出错的像 | Prev-LumaHistory、Convert 输出 | MotionDepth**Clip**、LumaHistory | 深度裁剪、边缘判定    |
 | Upscale  | 真正做放大和时间插值，输出 Display 分辨率    | Activate 输出、Prev-History    | SceneColorOutput、HistoryOutput  | Lanczos、时域滤波 |
-|          |                              |                             |                                 |              |
+
 - Convert 与 Activate 在 **Render 分辨率**运行。
 - Upscale 在 **Display 分辨率**运行，只处理颜色。
 ### Convert
