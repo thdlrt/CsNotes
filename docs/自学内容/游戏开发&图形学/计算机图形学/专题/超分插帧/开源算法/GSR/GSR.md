@@ -1,6 +1,6 @@
 > 三个模式，本文主要介绍3-pass-cs
 > [GitHub - SnapdragonStudios/snapdragon-gsr](https://github.com/SnapdragonStudios/snapdragon-gsr)
-> [Site Unreachable](https://zhuanlan.zhihu.com/p/8980985121)
+> [Site Unreachable](https://zhuanlan.zhihu.com/p/8980985121) 
 
 ## 算法介绍
 - 3-pass模式的流程为：Activate → Convert → Upscale
