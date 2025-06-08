@@ -137,29 +137,20 @@ glm::mat4 clipToPrevClip = (previous_view_proj * inv_vp);
 ## 代码解析
 ### Convert
 [[sgsr2_convert.comp]]
-- 
-
 ### Activate
 [[sgsr2_activate.comp]]
-- 
-
 ### Upscale
 [[sgsr2_upscale.comp]]
-- 
-
 ## 在 Unity 中的实现
 ### Convert
-- 
 ```c
 
 ```
 ### Activate
-- 
 ```c
 
 ```
 ### Upscale
-- 
 ```c
 
 ```
