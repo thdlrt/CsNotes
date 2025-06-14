@@ -1,16 +1,16 @@
 {
   "recentFiles": [
     {
+      "basename": "GSR",
+      "path": "docs/自学内容/游戏开发&图形学/计算机图形学/专题/超分插帧/开源算法/GSR/GSR.md"
+    },
+    {
       "basename": "git",
       "path": "docs/技能&工具/git/git.md"
     },
     {
       "basename": "github",
       "path": "docs/技能&工具/git/github.md"
-    },
-    {
-      "basename": "GSR",
-      "path": "docs/自学内容/游戏开发&图形学/计算机图形学/专题/超分插帧/开源算法/GSR/GSR.md"
     },
     {
       "basename": "tinyraytracer",
