@@ -1,6 +1,14 @@
 {
   "recentFiles": [
     {
+      "basename": "git",
+      "path": "docs/技能&工具/git/git.md"
+    },
+    {
+      "basename": "github",
+      "path": "docs/技能&工具/git/github.md"
+    },
+    {
       "basename": "GSR",
       "path": "docs/自学内容/游戏开发&图形学/计算机图形学/专题/超分插帧/开源算法/GSR/GSR.md"
     },
@@ -191,10 +199,6 @@
     {
       "basename": "编程思想",
       "path": "docs/自学内容/软件工程/编程思想与规范/编程思想.md"
-    },
-    {
-      "basename": "C++Primer",
-      "path": "docs/编程语言/c++/C++Primer.md"
     }
   ],
   "omittedPaths": [],

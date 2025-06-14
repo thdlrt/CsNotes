@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/自学内容/游戏开发&图形学/计算机图形学/专题/超分插帧/开源算法/GSR/GSR.md",
+                "file": "docs/技能&工具/git/git.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "GSR"
+              "title": "git"
             }
           }
         ]
@@ -80,20 +80,21 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/_draft_/Fundamentals-Of-Computer-Graphics-5th-CN-main/10 - 信号处理.md",
+                "file": "docs/技能&工具/git/git.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "10 - 信号处理 的大纲"
+              "title": "git 的大纲"
             }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 381.5
   },
   "right": {
     "id": "d615b65a4ccf8a6a",
@@ -194,8 +195,9 @@
       "copilot:Open Copilot Chat": false
     }
   },
-  "active": "f1572fa4d17012e4",
+  "active": "6c7418c521ab7a68",
   "lastOpenFiles": [
+    "docs/技能&工具/git/github.md",
     "docs/自学内容/游戏开发&图形学/计算机图形学/专题/超分插帧/开源算法/GSR/GSR.md",
     "docs/自学内容/游戏开发&图形学/计算机图形学/实验/tinyraytracer.md",
     "docs/自学内容/电子/嵌入式/硬件.md",
@@ -234,7 +236,6 @@
     "docs/_draft_/Fundamentals-Of-Computer-Graphics-5th-CN-main/3 - 光栅图像.md",
     "docs/_draft_/Fundamentals-Of-Computer-Graphics-5th-CN-main/1 & 2 - 介绍与数学基础.md",
     "docs/自学内容/游戏开发&图形学/计算机图形学/图形学基础/现代图形学基础.md",
-    "docs/自学内容/游戏开发&图形学/计算机图形学/图形学基础/动画.md",
     "docs/_draft_/Fundamentals-Of-Computer-Graphics-5th-CN-main/pic/Pasted image 20241208220421.png",
     "docs/_draft_/Fundamentals-Of-Computer-Graphics-5th-CN-main/pic/Pasted image 20241206100854.png",
     "docs/_draft_/Fundamentals-Of-Computer-Graphics-5th-CN-main/pic/Pasted image 20241205213412.png",
