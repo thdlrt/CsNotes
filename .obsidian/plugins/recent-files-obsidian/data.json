@@ -1,6 +1,14 @@
 {
   "recentFiles": [
     {
+      "basename": "pytorch",
+      "path": "docs/自学内容/人工智能/pytorch.md"
+    },
+    {
+      "basename": "深度学习",
+      "path": "docs/自学内容/人工智能/深度学习.md"
+    },
+    {
       "basename": "GSR",
       "path": "docs/自学内容/游戏开发&图形学/计算机图形学/专题/超分插帧/开源算法/GSR/GSR.md"
     },
@@ -191,14 +199,6 @@
     {
       "basename": "代码规范",
       "path": "docs/自学内容/软件工程/编程思想与规范/代码规范.md"
-    },
-    {
-      "basename": "并发编程",
-      "path": "docs/自学内容/软件工程/编程思想与规范/并发编程.md"
-    },
-    {
-      "basename": "编程思想",
-      "path": "docs/自学内容/软件工程/编程思想与规范/编程思想.md"
     }
   ],
   "omittedPaths": [],
