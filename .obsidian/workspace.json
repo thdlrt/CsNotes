@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/自学内容/人工智能/pytorch.md",
+                "file": "docs/自学内容/人工智能/深度学习.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "pytorch"
+              "title": "深度学习"
             }
           }
         ]
@@ -196,6 +196,7 @@
   },
   "active": "2225612e0bcb7d37",
   "lastOpenFiles": [
+    "docs/自学内容/人工智能/pytorch.md",
     "docs/自学内容/人工智能/深度学习.md",
     "docs/自学内容/游戏开发&图形学/计算机图形学/杂项/结果评价.md",
     "linkdata/simpread-主流抗锯齿方案详解（二）TAA.md",
@@ -234,7 +235,6 @@
     "docs/自学内容/游戏开发&图形学/游戏开发/游戏客户端/unity/unity基础.md",
     "docs/自学内容/游戏开发&图形学/计算机图形学/API编程/opengl/learnOpengl.md",
     "未命名.md",
-    "docs/_draft_/技术部分.md",
     "docs/_draft_/Fundamentals-Of-Computer-Graphics-5th-CN-main/pic/Pasted image 20241208220421.png",
     "docs/_draft_/Fundamentals-Of-Computer-Graphics-5th-CN-main/pic/Pasted image 20241206100854.png",
     "docs/_draft_/Fundamentals-Of-Computer-Graphics-5th-CN-main/pic/Pasted image 20241205213412.png",
