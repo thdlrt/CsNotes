@@ -5,6 +5,10 @@
       "path": "docs/自学内容/人工智能/深度学习.md"
     },
     {
+      "basename": "数据",
+      "path": "_draft_/数据.md"
+    },
+    {
       "basename": "pytorch",
       "path": "docs/自学内容/人工智能/pytorch.md"
     },
@@ -195,10 +199,6 @@
     {
       "basename": "文档",
       "path": "docs/自学内容/软件工程/编程思想与规范/文档.md"
-    },
-    {
-      "basename": "代码规范",
-      "path": "docs/自学内容/软件工程/编程思想与规范/代码规范.md"
     }
   ],
   "omittedPaths": [],
