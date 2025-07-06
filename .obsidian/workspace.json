@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/自学内容/人工智能/深度学习.md",
+                "file": "docs/自学内容/人工智能/pytorch.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "深度学习"
+              "title": "pytorch"
             }
           }
         ]
@@ -80,13 +80,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/_private_/代码随读/hw_fgsr_demo/FSR超分/TAASR.md",
+                "file": "docs/自学内容/人工智能/pytorch.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "TAASR 的大纲"
+              "title": "pytorch 的大纲"
             }
           }
         ]
@@ -196,9 +196,9 @@
   },
   "active": "2225612e0bcb7d37",
   "lastOpenFiles": [
+    "docs/自学内容/人工智能/深度学习.md",
     "_draft_/数据.md",
     "未命名.md",
-    "docs/自学内容/人工智能/深度学习.md",
     "docs/自学内容/人工智能/pytorch.md",
     "docs/自学内容/游戏开发&图形学/计算机图形学/杂项/结果评价.md",
     "linkdata/simpread-主流抗锯齿方案详解（二）TAA.md",
