@@ -1,12 +1,20 @@
 {
   "recentFiles": [
     {
+      "basename": "世嘉新人培训教材",
+      "path": "docs/其他内容/游戏开发&图形学/阅读/世嘉新人培训教材.md"
+    },
+    {
+      "basename": "图形学与游戏开发中的数学",
+      "path": "docs/其他内容/游戏开发&图形学/阅读/图形学与游戏开发中的数学.md"
+    },
+    {
       "basename": "pytorch",
-      "path": "docs/自学内容/人工智能/pytorch.md"
+      "path": "docs/其他内容/人工智能/pytorch.md"
     },
     {
       "basename": "深度学习",
-      "path": "docs/自学内容/人工智能/深度学习.md"
+      "path": "docs/其他内容/人工智能/深度学习.md"
     },
     {
       "basename": "数据",
@@ -14,7 +22,7 @@
     },
     {
       "basename": "GSR",
-      "path": "docs/自学内容/游戏开发&图形学/计算机图形学/专题/超分插帧/开源算法/GSR/GSR.md"
+      "path": "docs/其他内容/游戏开发&图形学/计算机图形学/专题/超分插帧/开源算法/GSR/GSR.md"
     },
     {
       "basename": "git",
@@ -26,11 +34,11 @@
     },
     {
       "basename": "tinyraytracer",
-      "path": "docs/自学内容/游戏开发&图形学/计算机图形学/实验/tinyraytracer.md"
+      "path": "docs/其他内容/游戏开发&图形学/计算机图形学/实验/tinyraytracer.md"
     },
     {
       "basename": "FSR",
-      "path": "docs/自学内容/游戏开发&图形学/计算机图形学/专题/超分插帧/开源算法/FSR/FSR.md"
+      "path": "docs/其他内容/游戏开发&图形学/计算机图形学/专题/超分插帧/开源算法/FSR/FSR.md"
     },
     {
       "basename": "10 - 信号处理",
@@ -38,7 +46,7 @@
     },
     {
       "basename": "光栅化",
-      "path": "docs/自学内容/游戏开发&图形学/计算机图形学/图形学基础/光栅化.md"
+      "path": "docs/其他内容/游戏开发&图形学/计算机图形学/图形学基础/光栅化.md"
     },
     {
       "basename": "11 - 纹理映射",
@@ -54,15 +62,15 @@
     },
     {
       "basename": "光线追踪",
-      "path": "docs/自学内容/游戏开发&图形学/计算机图形学/图形学基础/光线追踪.md"
+      "path": "docs/其他内容/游戏开发&图形学/计算机图形学/图形学基础/光线追踪.md"
     },
     {
       "basename": "几何",
-      "path": "docs/自学内容/游戏开发&图形学/计算机图形学/图形学基础/几何.md"
+      "path": "docs/其他内容/游戏开发&图形学/计算机图形学/图形学基础/几何.md"
     },
     {
       "basename": "线性代数与变换",
-      "path": "docs/自学内容/游戏开发&图形学/计算机图形学/图形学基础/线性代数与变换.md"
+      "path": "docs/其他内容/游戏开发&图形学/计算机图形学/图形学基础/线性代数与变换.md"
     },
     {
       "basename": "9 - 图形管线",
@@ -102,7 +110,7 @@
     },
     {
       "basename": "材质",
-      "path": "docs/自学内容/游戏开发&图形学/计算机图形学/图形学基础/材质.md"
+      "path": "docs/其他内容/游戏开发&图形学/计算机图形学/图形学基础/材质.md"
     },
     {
       "basename": "4 - 光线追踪",
@@ -118,87 +126,79 @@
     },
     {
       "basename": "动画",
-      "path": "docs/自学内容/游戏开发&图形学/计算机图形学/图形学基础/动画.md"
+      "path": "docs/其他内容/游戏开发&图形学/计算机图形学/图形学基础/动画.md"
     },
     {
       "basename": "games202高质量实时渲染",
-      "path": "docs/自学内容/游戏开发&图形学/计算机图形学/课程/games202高质量实时渲染.md"
+      "path": "docs/其他内容/游戏开发&图形学/计算机图形学/课程/games202高质量实时渲染.md"
     },
     {
       "basename": "games001数学基础",
-      "path": "docs/自学内容/游戏开发&图形学/计算机图形学/课程/games001数学基础.md"
-    },
-    {
-      "basename": "图形学与游戏开发中的数学",
-      "path": "docs/自学内容/游戏开发&图形学/阅读/图形学与游戏开发中的数学.md"
+      "path": "docs/其他内容/游戏开发&图形学/计算机图形学/课程/games001数学基础.md"
     },
     {
       "basename": "xlua",
-      "path": "docs/自学内容/游戏开发&图形学/lua/xlua.md"
-    },
-    {
-      "basename": "世嘉新人培训教材",
-      "path": "docs/自学内容/游戏开发&图形学/阅读/世嘉新人培训教材.md"
+      "path": "docs/其他内容/游戏开发&图形学/lua/xlua.md"
     },
     {
       "basename": "使用UnityYamlMerge处理冲突",
-      "path": "docs/自学内容/游戏开发&图形学/游戏开发/游戏客户端/unity/插件/使用UnityYamlMerge处理冲突.md"
+      "path": "docs/其他内容/游戏开发&图形学/游戏开发/游戏客户端/unity/插件/使用UnityYamlMerge处理冲突.md"
     },
     {
       "basename": "TAA",
-      "path": "docs/自学内容/游戏开发&图形学/计算机图形学/专题/超分插帧/经典算法/TAA.md"
+      "path": "docs/其他内容/游戏开发&图形学/计算机图形学/专题/超分插帧/经典算法/TAA.md"
     },
     {
       "basename": "结果评价",
-      "path": "docs/自学内容/游戏开发&图形学/计算机图形学/杂项/结果评价.md"
+      "path": "docs/其他内容/游戏开发&图形学/计算机图形学/杂项/结果评价.md"
     },
     {
       "basename": "shaderToy学习",
-      "path": "docs/自学内容/游戏开发&图形学/计算机图形学/shader/shaderToy学习.md"
+      "path": "docs/其他内容/游戏开发&图形学/计算机图形学/shader/shaderToy学习.md"
     },
     {
       "basename": "Unity URP",
-      "path": "docs/自学内容/游戏开发&图形学/游戏开发/游戏客户端/unity/Unity URP.md"
+      "path": "docs/其他内容/游戏开发&图形学/游戏开发/游戏客户端/unity/Unity URP.md"
     },
     {
       "basename": "games104游戏引擎",
-      "path": "docs/自学内容/游戏开发&图形学/游戏开发/游戏引擎/games104游戏引擎.md"
+      "path": "docs/其他内容/游戏开发&图形学/游戏开发/游戏引擎/games104游戏引擎.md"
     },
     {
       "basename": "unity基础",
-      "path": "docs/自学内容/游戏开发&图形学/游戏开发/游戏客户端/unity/unity基础.md"
+      "path": "docs/其他内容/游戏开发&图形学/游戏开发/游戏客户端/unity/unity基础.md"
     },
     {
       "basename": "c#",
-      "path": "docs/自学内容/游戏开发&图形学/游戏开发/游戏客户端/unity/c#.md"
+      "path": "docs/其他内容/游戏开发&图形学/游戏开发/游戏客户端/unity/c#.md"
     },
     {
       "basename": "unity shader（HLSL）",
-      "path": "docs/自学内容/游戏开发&图形学/游戏开发/游戏客户端/unity/unity shader（HLSL）.md"
+      "path": "docs/其他内容/游戏开发&图形学/游戏开发/游戏客户端/unity/unity shader（HLSL）.md"
     },
     {
       "basename": "unity资源管理",
-      "path": "docs/自学内容/游戏开发&图形学/游戏开发/游戏客户端/unity/unity资源管理.md"
+      "path": "docs/其他内容/游戏开发&图形学/游戏开发/游戏客户端/unity/unity资源管理.md"
     },
     {
       "basename": "重构-改善既有代码的设计",
-      "path": "docs/自学内容/代码质量/重构-改善既有代码的设计.md"
+      "path": "docs/其他内容/代码质量/重构-改善既有代码的设计.md"
     },
     {
       "basename": "项目管理",
-      "path": "docs/自学内容/软件工程/项目管理.md"
+      "path": "docs/其他内容/软件工程/项目管理.md"
     },
     {
       "basename": "设计模式",
-      "path": "docs/自学内容/软件工程/设计模式.md"
+      "path": "docs/其他内容/软件工程/设计模式.md"
     },
     {
       "basename": "测试",
-      "path": "docs/自学内容/软件工程/软件测试/测试.md"
+      "path": "docs/其他内容/软件工程/软件测试/测试.md"
     },
     {
       "basename": "文档",
-      "path": "docs/自学内容/软件工程/编程思想与规范/文档.md"
+      "path": "docs/其他内容/软件工程/编程思想与规范/文档.md"
     }
   ],
   "omittedPaths": [],
