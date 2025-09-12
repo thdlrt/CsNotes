@@ -1,6 +1,18 @@
 {
   "recentFiles": [
     {
+      "basename": "后处理",
+      "path": "docs/其他内容/游戏开发&图形学/计算机图形学/杂项/后处理.md"
+    },
+    {
+      "basename": "FSR",
+      "path": "docs/其他内容/游戏开发&图形学/计算机图形学/专题/超分插帧/开源算法/FSR/FSR.md"
+    },
+    {
+      "basename": "Drawing 2025-09-12 00.03.25.excalidraw",
+      "path": "Excalidraw/Drawing 2025-09-12 00.03.25.excalidraw.md"
+    },
+    {
       "basename": "世嘉新人培训教材",
       "path": "docs/其他内容/游戏开发&图形学/阅读/世嘉新人培训教材.md"
     },
@@ -35,10 +47,6 @@
     {
       "basename": "tinyraytracer",
       "path": "docs/其他内容/游戏开发&图形学/计算机图形学/实验/tinyraytracer.md"
-    },
-    {
-      "basename": "FSR",
-      "path": "docs/其他内容/游戏开发&图形学/计算机图形学/专题/超分插帧/开源算法/FSR/FSR.md"
     },
     {
       "basename": "10 - 信号处理",
@@ -191,14 +199,6 @@
     {
       "basename": "设计模式",
       "path": "docs/其他内容/软件工程/设计模式.md"
-    },
-    {
-      "basename": "测试",
-      "path": "docs/其他内容/软件工程/软件测试/测试.md"
-    },
-    {
-      "basename": "文档",
-      "path": "docs/其他内容/软件工程/编程思想与规范/文档.md"
     }
   ],
   "omittedPaths": [],
