@@ -1,0 +1,1 @@
+{"path":"docs/_draft_/Fundamentals-Of-Computer-Graphics-5th-CN-main/pic/Pasted image 20240229212053.png","text":"class Ray Vec3 o | ray origin Vec3 d | ray direction Vec3 evaluate(real t)","libVersion":"0.3.2","langs":"chi_sim+eng"}

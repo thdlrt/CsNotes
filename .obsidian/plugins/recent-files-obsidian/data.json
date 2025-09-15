@@ -1,106 +1,6 @@
 {
   "recentFiles": [
     {
-      "basename": "games202高质量实时渲染",
-      "path": "docs/自学内容/游戏开发&图形学/计算机图形学/games202高质量实时渲染.md"
-    },
-    {
-      "basename": "games001数学基础",
-      "path": "docs/自学内容/游戏开发&图形学/计算机图形学/games001数学基础.md"
-    },
-    {
-      "basename": "光线追踪",
-      "path": "docs/自学内容/游戏开发&图形学/计算机图形学/图形学基础/光线追踪.md"
-    },
-    {
-      "basename": "现代图形学基础",
-      "path": "docs/自学内容/游戏开发&图形学/计算机图形学/图形学基础/现代图形学基础.md"
-    },
-    {
-      "basename": "线性代数与变换",
-      "path": "docs/自学内容/游戏开发&图形学/计算机图形学/图形学基础/线性代数与变换.md"
-    },
-    {
-      "basename": "shaderToy学习",
-      "path": "docs/自学内容/游戏开发&图形学/计算机图形学/shader/shaderToy学习.md"
-    },
-    {
-      "basename": "光栅化",
-      "path": "docs/自学内容/游戏开发&图形学/计算机图形学/图形学基础/光栅化.md"
-    },
-    {
-      "basename": "材质",
-      "path": "docs/自学内容/游戏开发&图形学/计算机图形学/图形学基础/材质.md"
-    },
-    {
-      "basename": "动画",
-      "path": "docs/自学内容/游戏开发&图形学/计算机图形学/图形学基础/动画.md"
-    },
-    {
-      "basename": "几何",
-      "path": "docs/自学内容/游戏开发&图形学/计算机图形学/图形学基础/几何.md"
-    },
-    {
-      "basename": "games104游戏引擎",
-      "path": "docs/自学内容/游戏开发&图形学/游戏开发/游戏引擎/games104游戏引擎.md"
-    },
-    {
-      "basename": "unity基础",
-      "path": "docs/自学内容/游戏开发&图形学/游戏开发/游戏客户端/unity/unity基础.md"
-    },
-    {
-      "basename": "fairyGui(UnitySDK)",
-      "path": "docs/自学内容/游戏开发&图形学/游戏开发/游戏客户端/unity/fairyGui(UnitySDK).md"
-    },
-    {
-      "basename": "c#",
-      "path": "docs/自学内容/游戏开发&图形学/游戏开发/游戏客户端/unity/c#.md"
-    },
-    {
-      "basename": "unity shader（HLSL）",
-      "path": "docs/自学内容/游戏开发&图形学/游戏开发/游戏客户端/unity/unity shader（HLSL）.md"
-    },
-    {
-      "basename": "unity资源管理",
-      "path": "docs/自学内容/游戏开发&图形学/游戏开发/游戏客户端/unity/unity资源管理.md"
-    },
-    {
-      "basename": "重构-改善既有代码的设计",
-      "path": "docs/自学内容/代码质量/重构-改善既有代码的设计.md"
-    },
-    {
-      "basename": "项目管理",
-      "path": "docs/自学内容/软件工程/项目管理.md"
-    },
-    {
-      "basename": "设计模式",
-      "path": "docs/自学内容/软件工程/设计模式.md"
-    },
-    {
-      "basename": "测试",
-      "path": "docs/自学内容/软件工程/软件测试/测试.md"
-    },
-    {
-      "basename": "文档",
-      "path": "docs/自学内容/软件工程/编程思想与规范/文档.md"
-    },
-    {
-      "basename": "代码规范",
-      "path": "docs/自学内容/软件工程/编程思想与规范/代码规范.md"
-    },
-    {
-      "basename": "并发编程",
-      "path": "docs/自学内容/软件工程/编程思想与规范/并发编程.md"
-    },
-    {
-      "basename": "编程思想",
-      "path": "docs/自学内容/软件工程/编程思想与规范/编程思想.md"
-    },
-    {
-      "basename": "世嘉新人培训教材",
-      "path": "docs/自学内容/游戏开发&图形学/阅读/世嘉新人培训教材.md"
-    },
-    {
       "basename": "C++Primer",
       "path": "docs/编程语言/c++/C++Primer.md"
     },
@@ -115,10 +15,6 @@
     {
       "basename": "C++基础",
       "path": "docs/编程语言/c++/C++基础.md"
-    },
-    {
-      "basename": "xlua",
-      "path": "docs/自学内容/游戏开发&图形学/lua/xlua.md"
     },
     {
       "basename": "实验笔记",
