@@ -11,10 +11,14 @@
             "id": "2225612e0bcb7d37",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "docs/学校课程/智能三维重建/笔记.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "新标签页"
+              "title": "笔记"
             }
           }
         ]
@@ -190,8 +194,11 @@
       "copilot:Open Copilot Chat": false
     }
   },
-  "active": "96e173acdf249e6c",
+  "active": "2225612e0bcb7d37",
   "lastOpenFiles": [
+    "conflict-files-obsidian-git.md",
+    "docs/学校课程/智能三维重建/笔记.md",
+    "docs/学校课程/智能三维重建",
     "docs/自学内容/人工智能/pytorch.md",
     "docs/其他内容/游戏开发&图形学/计算机图形学/专题/超分插帧/开源算法/GSR/代码（原版）/sgsr2_upscale.comp",
     "docs/其他内容/游戏开发&图形学/计算机图形学/专题/超分插帧/开源算法/GSR/代码（原版）/sgsr2_convert.comp",
@@ -207,7 +214,6 @@
     "docs/其他内容/游戏开发&图形学/游戏开发/游戏客户端/unity/插件/使用UnityYamlMerge处理冲突.md",
     "docs/其他内容/游戏开发&图形学/游戏开发/游戏客户端/unity/插件/In-game Debug Console.md",
     "docs/其他内容/游戏开发&图形学/计算机图形学/专题/超分插帧/经典算法",
-    "docs/其他内容/游戏开发&图形学/计算机图形学/专题/超分插帧/开源算法",
     "docs/其他内容/游戏开发&图形学/计算机图形学/API编程/opengl/learnOpengl.md",
     "docs/其他内容/游戏开发&图形学/游戏开发/游戏设计/信息/信息整理.md",
     "docs/其他内容/游戏开发&图形学/游戏开发/游戏客户端/unity/unity基础.md",
@@ -226,8 +232,6 @@
     "docs/其他内容/Web开发（前后端）/数据/关系数据库/data/MySQL安装.md",
     "docs/其他内容/Web开发（前后端）/数据/关系数据库/data/MySQL卸载文档-Windows版.md",
     "docs/其他内容/游戏开发&图形学/计算机图形学/课程/games202高质量实时渲染.md",
-    "docs/其他内容/游戏开发&图形学/计算机图形学/课程/games001数学基础.md",
-    "docs/其他内容/游戏开发&图形学/计算机图形学/实验/tinyrender.md",
     "Excalidraw/pic/Pasted Image 20250603151447_863.png",
     "Excalidraw/pic/Pasted Image 20250603151426_231.png",
     "Excalidraw/pic/Pasted Image 20250603151439_890.png",

@@ -1,204 +1,104 @@
 {
   "recentFiles": [
     {
-      "basename": "FSR",
-      "path": "docs/其他内容/游戏开发&图形学/计算机图形学/专题/超分插帧/开源算法/FSR/FSR.md"
+      "basename": "笔记",
+      "path": "docs/学校课程/智能三维重建/笔记.md"
     },
     {
-      "basename": "后处理",
-      "path": "docs/其他内容/游戏开发&图形学/计算机图形学/杂项/后处理.md"
+      "basename": "C++Primer",
+      "path": "docs/编程语言/c++/C++Primer.md"
     },
     {
-      "basename": "Drawing 2025-09-12 00.03.25.excalidraw",
-      "path": "Excalidraw/Drawing 2025-09-12 00.03.25.excalidraw.md"
+      "basename": "1",
+      "path": "docs/编程语言/c++/笔记（整理前）/1.md"
     },
     {
-      "basename": "世嘉新人培训教材",
-      "path": "docs/其他内容/游戏开发&图形学/阅读/世嘉新人培训教材.md"
+      "basename": "16",
+      "path": "docs/编程语言/c++/笔记（整理前）/16.md"
     },
     {
-      "basename": "图形学与游戏开发中的数学",
-      "path": "docs/其他内容/游戏开发&图形学/阅读/图形学与游戏开发中的数学.md"
+      "basename": "C++基础",
+      "path": "docs/编程语言/c++/C++基础.md"
     },
     {
-      "basename": "pytorch",
-      "path": "docs/其他内容/人工智能/pytorch.md"
+      "basename": "实验笔记",
+      "path": "docs/学校课程/归档课程/操作系统/实验笔记.md"
     },
     {
-      "basename": "深度学习",
-      "path": "docs/其他内容/人工智能/深度学习.md"
+      "basename": "竞赛信息",
+      "path": "_待办事项_/竞赛信息.md"
     },
     {
-      "basename": "数据",
-      "path": "_draft_/数据.md"
+      "basename": "金融工程论文寻找",
+      "path": "_draft_/金融工程/金融工程论文寻找.md"
     },
     {
-      "basename": "GSR",
-      "path": "docs/其他内容/游戏开发&图形学/计算机图形学/专题/超分插帧/开源算法/GSR/GSR.md"
+      "basename": "补充",
+      "path": "docs/学校课程/归档课程/操作系统/笔记/补充.md"
     },
     {
-      "basename": "git",
-      "path": "docs/技能&工具/git/git.md"
+      "basename": "4",
+      "path": "docs/学校课程/归档课程/计算机系统基础/data/4.md"
     },
     {
-      "basename": "github",
-      "path": "docs/技能&工具/git/github.md"
+      "basename": "并发",
+      "path": "docs/学校课程/归档课程/操作系统/笔记/并发.md"
     },
     {
-      "basename": "tinyraytracer",
-      "path": "docs/其他内容/游戏开发&图形学/计算机图形学/实验/tinyraytracer.md"
+      "basename": "fish",
+      "path": "docs/学校课程/归档课程/操作系统/代码/fish/fish.c"
     },
     {
-      "basename": "10 - 信号处理",
-      "path": "docs/_draft_/Fundamentals-Of-Computer-Graphics-5th-CN-main/10 - 信号处理.md"
+      "basename": "持久化",
+      "path": "docs/学校课程/归档课程/操作系统/笔记/持久化.md"
     },
     {
-      "basename": "光栅化",
-      "path": "docs/其他内容/游戏开发&图形学/计算机图形学/图形学基础/光栅化.md"
+      "basename": "虚拟化",
+      "path": "docs/学校课程/归档课程/操作系统/笔记/虚拟化.md"
     },
     {
-      "basename": "11 - 纹理映射",
-      "path": "docs/_draft_/Fundamentals-Of-Computer-Graphics-5th-CN-main/11 - 纹理映射.md"
+      "basename": "绪论",
+      "path": "docs/学校课程/归档课程/操作系统/笔记/绪论.md"
     },
     {
-      "basename": "13 - 采样",
-      "path": "docs/_draft_/Fundamentals-Of-Computer-Graphics-5th-CN-main/13 - 采样.md"
+      "basename": "7",
+      "path": "docs/学校课程/归档课程/计算机系统基础/data/7.md"
     },
     {
-      "basename": "12 - 图形数据结构",
-      "path": "docs/_draft_/Fundamentals-Of-Computer-Graphics-5th-CN-main/12 - 图形数据结构.md"
+      "basename": "8",
+      "path": "docs/学校课程/归档课程/计算机系统基础/data/8.md"
     },
     {
-      "basename": "光线追踪",
-      "path": "docs/其他内容/游戏开发&图形学/计算机图形学/图形学基础/光线追踪.md"
+      "basename": "thread",
+      "path": "docs/学校课程/归档课程/操作系统/代码/thread-lib/thread.h"
     },
     {
-      "basename": "几何",
-      "path": "docs/其他内容/游戏开发&图形学/计算机图形学/图形学基础/几何.md"
+      "basename": "os-model",
+      "path": "docs/学校课程/归档课程/操作系统/代码/os-model/os-model.py"
     },
     {
-      "basename": "线性代数与变换",
-      "path": "docs/其他内容/游戏开发&图形学/计算机图形学/图形学基础/线性代数与变换.md"
+      "basename": "index",
+      "path": "docs/index.md"
     },
     {
-      "basename": "9 - 图形管线",
-      "path": "docs/_draft_/Fundamentals-Of-Computer-Graphics-5th-CN-main/9 - 图形管线.md"
+      "basename": "index",
+      "path": "docs/blog/index.md"
     },
     {
-      "basename": "关于透视矫正插值",
-      "path": "docs/_draft_/Fundamentals-Of-Computer-Graphics-5th-CN-main/关于透视矫正插值.md"
+      "basename": "ABC321",
+      "path": "docs/blog/posts/算法竞赛/ABC321.md"
     },
     {
-      "basename": "Drawing 2025-06-03 15.13.59.excalidraw",
-      "path": "Excalidraw/Drawing 2025-06-03 15.13.59.excalidraw.md"
+      "basename": "ARC165",
+      "path": "docs/blog/posts/算法竞赛/ARC165.md"
     },
     {
-      "basename": "Drawing 2024-11-27 14.51.35.excalidraw",
-      "path": "Excalidraw/Drawing 2024-11-27 14.51.35.excalidraw.md"
+      "basename": "CodeforcesRound899(Div.2)",
+      "path": "docs/blog/posts/算法竞赛/CodeforcesRound899(Div.2).md"
     },
     {
-      "basename": "Pasted Image 20250603151426_231",
-      "path": "Excalidraw/pic/Pasted Image 20250603151426_231.png"
-    },
-    {
-      "basename": "Pasted Image 20250603151447_863",
-      "path": "Excalidraw/pic/Pasted Image 20250603151447_863.png"
-    },
-    {
-      "basename": "8 - 视图",
-      "path": "docs/_draft_/Fundamentals-Of-Computer-Graphics-5th-CN-main/8 - 视图.md"
-    },
-    {
-      "basename": "6 & 7 - 线性代数与变换矩阵",
-      "path": "docs/_draft_/Fundamentals-Of-Computer-Graphics-5th-CN-main/6 & 7 - 线性代数与变换矩阵.md"
-    },
-    {
-      "basename": "5 - 表面着色",
-      "path": "docs/_draft_/Fundamentals-Of-Computer-Graphics-5th-CN-main/5 - 表面着色.md"
-    },
-    {
-      "basename": "材质",
-      "path": "docs/其他内容/游戏开发&图形学/计算机图形学/图形学基础/材质.md"
-    },
-    {
-      "basename": "4 - 光线追踪",
-      "path": "docs/_draft_/Fundamentals-Of-Computer-Graphics-5th-CN-main/4 - 光线追踪.md"
-    },
-    {
-      "basename": "3 - 光栅图像",
-      "path": "docs/_draft_/Fundamentals-Of-Computer-Graphics-5th-CN-main/3 - 光栅图像.md"
-    },
-    {
-      "basename": "1 & 2 - 介绍与数学基础",
-      "path": "docs/_draft_/Fundamentals-Of-Computer-Graphics-5th-CN-main/1 & 2 - 介绍与数学基础.md"
-    },
-    {
-      "basename": "动画",
-      "path": "docs/其他内容/游戏开发&图形学/计算机图形学/图形学基础/动画.md"
-    },
-    {
-      "basename": "games202高质量实时渲染",
-      "path": "docs/其他内容/游戏开发&图形学/计算机图形学/课程/games202高质量实时渲染.md"
-    },
-    {
-      "basename": "games001数学基础",
-      "path": "docs/其他内容/游戏开发&图形学/计算机图形学/课程/games001数学基础.md"
-    },
-    {
-      "basename": "xlua",
-      "path": "docs/其他内容/游戏开发&图形学/lua/xlua.md"
-    },
-    {
-      "basename": "使用UnityYamlMerge处理冲突",
-      "path": "docs/其他内容/游戏开发&图形学/游戏开发/游戏客户端/unity/插件/使用UnityYamlMerge处理冲突.md"
-    },
-    {
-      "basename": "TAA",
-      "path": "docs/其他内容/游戏开发&图形学/计算机图形学/专题/超分插帧/经典算法/TAA.md"
-    },
-    {
-      "basename": "结果评价",
-      "path": "docs/其他内容/游戏开发&图形学/计算机图形学/杂项/结果评价.md"
-    },
-    {
-      "basename": "shaderToy学习",
-      "path": "docs/其他内容/游戏开发&图形学/计算机图形学/shader/shaderToy学习.md"
-    },
-    {
-      "basename": "Unity URP",
-      "path": "docs/其他内容/游戏开发&图形学/游戏开发/游戏客户端/unity/Unity URP.md"
-    },
-    {
-      "basename": "games104游戏引擎",
-      "path": "docs/其他内容/游戏开发&图形学/游戏开发/游戏引擎/games104游戏引擎.md"
-    },
-    {
-      "basename": "unity基础",
-      "path": "docs/其他内容/游戏开发&图形学/游戏开发/游戏客户端/unity/unity基础.md"
-    },
-    {
-      "basename": "c#",
-      "path": "docs/其他内容/游戏开发&图形学/游戏开发/游戏客户端/unity/c#.md"
-    },
-    {
-      "basename": "unity shader（HLSL）",
-      "path": "docs/其他内容/游戏开发&图形学/游戏开发/游戏客户端/unity/unity shader（HLSL）.md"
-    },
-    {
-      "basename": "unity资源管理",
-      "path": "docs/其他内容/游戏开发&图形学/游戏开发/游戏客户端/unity/unity资源管理.md"
-    },
-    {
-      "basename": "重构-改善既有代码的设计",
-      "path": "docs/其他内容/代码质量/重构-改善既有代码的设计.md"
-    },
-    {
-      "basename": "项目管理",
-      "path": "docs/其他内容/软件工程/项目管理.md"
-    },
-    {
-      "basename": "设计模式",
-      "path": "docs/其他内容/软件工程/设计模式.md"
+      "basename": "CodeforcesRound900(Div.3)",
+      "path": "docs/blog/posts/算法竞赛/CodeforcesRound900(Div.3).md"
     }
   ],
   "omittedPaths": [],
