@@ -178,7 +178,6 @@
   },
   "left-ribbon": {
     "hiddenItems": {
-      "daily-notes:打开/创建今天的日记": false,
       "bases:创建新数据库": false,
       "switcher:打开快速切换": false,
       "graph:查看关系图谱": false,
@@ -197,9 +196,9 @@
   },
   "active": "2225612e0bcb7d37",
   "lastOpenFiles": [
+    "conflict-files-obsidian-git.md",
     "docs/其他内容/游戏开发&图形学/阅读/实时渲染第四版.md",
     "docs/学校课程/智能三维重建/笔记.md",
-    "conflict-files-obsidian-git.md",
     "docs/学校课程/智能三维重建",
     "docs/自学内容/人工智能/pytorch.md",
     "docs/其他内容/游戏开发&图形学/计算机图形学/专题/超分插帧/开源算法/GSR/代码（原版）/sgsr2_upscale.comp",
