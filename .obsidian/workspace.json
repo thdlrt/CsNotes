@@ -4,25 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "ab3bc1f95605ee2e",
+        "id": "820926ef138ada20",
         "type": "tabs",
         "children": [
           {
-            "id": "f1572fa4d17012e4",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "docs/其他内容/游戏开发&图形学/阅读/实时渲染第四版.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "实时渲染第四版"
-            }
-          },
-          {
-            "id": "296a91085b17de34",
+            "id": "2225612e0bcb7d37",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -84,8 +70,8 @@
             "state": {
               "type": "recent-files",
               "state": {},
-              "icon": "clock",
-              "title": "Recent Files"
+              "icon": "lucide-ghost",
+              "title": "recent-files"
             }
           },
           {
@@ -94,20 +80,19 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/自学内容/游戏开发&图形学/计算机图形学/专题/超分插帧/开源算法/GSR/GSR.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "GSR 的大纲"
+              "title": "大纲"
             }
           }
         ]
       }
     ],
     "direction": "horizontal",
-    "width": 255.5
+    "width": 272.5
   },
   "right": {
     "id": "d615b65a4ccf8a6a",
@@ -179,8 +164,8 @@
             "state": {
               "type": "copilot-chat-view",
               "state": {},
-              "icon": "message-square",
-              "title": "Copilot"
+              "icon": "lucide-ghost",
+              "title": "copilot-chat-view"
             }
           }
         ],
@@ -200,55 +185,57 @@
       "canvas:新建白板": false,
       "templates:插入模板": false,
       "command-palette:打开命令面板": false,
+      "workspaces:管理工作区布局": false,
+      "audio-recorder:开始/结束录音": false,
+      "obsidian-excalidraw-plugin:新建绘图文件": false,
       "media-extended:Open media": false,
       "omnisearch:Omnisearch": false,
       "vscode-editor:新建代码文件": false,
       "obsidian-advanced-slides:Show Slide Preview": false,
-      "obsidian-excalidraw-plugin:新建绘图文件": false,
       "copilot:Open Copilot Chat": false
     }
   },
-  "active": "f1572fa4d17012e4",
+  "active": "2225612e0bcb7d37",
   "lastOpenFiles": [
-    "docs/其他内容/游戏开发&图形学/计算机图形学/杂项/后处理.md",
     "docs/其他内容/游戏开发&图形学/阅读/实时渲染第四版.md",
-    "docs/其他内容/游戏开发&图形学/阅读/图形学与游戏开发中的数学.md",
-    "docs/其他内容/游戏开发&图形学/阅读/实时渲染",
-    "docs/其他内容/游戏开发&图形学/计算机图形学/专题/超分插帧/开源算法/FSR/FSR.md",
     "docs/学校课程/智能三维重建/笔记.md",
+    "conflict-files-obsidian-git.md",
     "docs/学校课程/智能三维重建",
-    "Excalidraw/Drawing 2025-09-12 00.03.25.excalidraw.md",
-    "docs/其他内容/游戏开发&图形学/计算机图形学/图像后处理",
-    "docs/其他内容/游戏开发&图形学/阅读/世嘉新人培训教材.md",
-    "docs/其他内容/游戏开发&图形学/计算机图形学/专题/超分插帧/开源算法/GSR/GSR.md",
-    "docs/技能&工具/git/git.md",
-    "docs/技能&工具/git/github.md",
-    "docs/其他内容/游戏开发&图形学/计算机图形学/实验/tinyraytracer.md",
-    "docs/自学内容/电子/嵌入式/硬件.md",
-    "docs/自学内容/电子/嵌入式/arduino.md",
+    "docs/自学内容/人工智能/pytorch.md",
+    "docs/其他内容/游戏开发&图形学/计算机图形学/专题/超分插帧/开源算法/GSR/代码（原版）/sgsr2_upscale.comp",
     "docs/其他内容/游戏开发&图形学/计算机图形学/专题/超分插帧/开源算法/GSR/代码（原版）/sgsr2_convert.comp",
     "docs/其他内容/游戏开发&图形学/计算机图形学/专题/超分插帧/开源算法/GSR/代码（原版）/sgsr2_activate.comp",
-    "docs/其他内容/游戏开发&图形学/计算机图形学/专题/超分插帧/开源算法/GSR/代码（原版）/sgsr2_upscale.comp",
-    "docs/其他内容/游戏开发&图形学/计算机图形学/专题/超分插帧/开源算法/GSR/代码（unity）",
     "docs/其他内容/游戏开发&图形学/计算机图形学/专题/超分插帧/开源算法/FSR/代码（Unity）/TAASR.compute",
+    "docs/其他内容/游戏开发&图形学/计算机图形学/专题/超分插帧/开源算法/GSR/代码（原版）",
     "docs/其他内容/游戏开发&图形学/计算机图形学/专题/超分插帧/开源算法/FSR/代码（Unity）",
-    "docs/自学内容/游戏开发&图形学/计算机图形学/专题/超分插帧/开源算法/GSR/新建文件夹",
-    "docs/_draft_/Fundamentals-Of-Computer-Graphics-5th-CN-main/10 - 信号处理.md",
-    "docs/其他内容/游戏开发&图形学/计算机图形学/图形学基础/光栅化.md",
-    "docs/_draft_/Fundamentals-Of-Computer-Graphics-5th-CN-main/11 - 纹理映射.md",
-    "docs/_draft_/Fundamentals-Of-Computer-Graphics-5th-CN-main/13 - 采样.md",
-    "docs/_draft_/Fundamentals-Of-Computer-Graphics-5th-CN-main/12 - 图形数据结构.md",
-    "docs/其他内容/游戏开发&图形学/计算机图形学/图形学基础/光线追踪.md",
-    "docs/其他内容/游戏开发&图形学/计算机图形学/图形学基础/几何.md",
-    "docs/其他内容/游戏开发&图形学/计算机图形学/图形学基础/线性代数与变换.md",
-    "docs/_draft_/Fundamentals-Of-Computer-Graphics-5th-CN-main/9 - 图形管线.md",
-    "docs/_draft_/Fundamentals-Of-Computer-Graphics-5th-CN-main/关于透视矫正插值.md",
-    "Excalidraw/Drawing 2025-06-03 15.13.59.excalidraw.md",
-    "Excalidraw/Drawing 2024-11-27 14.51.35.excalidraw.md",
-    "Excalidraw/pic/Pasted Image 20250603151426_231.png",
+    "docs/其他内容/游戏开发&图形学/计算机图形学/专题/超分插帧/开源算法/GSR/GSR.md",
+    "docs/其他内容/游戏开发&图形学/计算机图形学/专题/超分插帧/开源算法/FSR/FSR.md",
+    "docs/其他内容/游戏开发&图形学/计算机图形学/专题/超分插帧/经典算法/TAA.md",
+    "docs/其他内容/游戏开发&图形学/计算机图形学/专题/超分插帧/开源算法/GSR",
+    "docs/其他内容/游戏开发&图形学/计算机图形学/专题/超分插帧/开源算法/FSR",
+    "docs/其他内容/游戏开发&图形学/游戏开发/游戏客户端/unity/插件/使用UnityYamlMerge处理冲突.md",
+    "docs/其他内容/游戏开发&图形学/游戏开发/游戏客户端/unity/插件/In-game Debug Console.md",
+    "docs/其他内容/游戏开发&图形学/计算机图形学/专题/超分插帧/经典算法",
+    "docs/其他内容/游戏开发&图形学/计算机图形学/API编程/opengl/learnOpengl.md",
+    "docs/其他内容/游戏开发&图形学/游戏开发/游戏设计/信息/信息整理.md",
+    "docs/其他内容/游戏开发&图形学/游戏开发/游戏客户端/unity/unity基础.md",
+    "docs/其他内容/游戏开发&图形学/游戏开发/游戏客户端/unity/unity资源管理.md",
+    "docs/其他内容/游戏开发&图形学/游戏开发/游戏客户端/unity/Unity URP.md",
+    "docs/其他内容/游戏开发&图形学/游戏开发/游戏客户端/unity/unity shader（HLSL）.md",
+    "docs/其他内容/游戏开发&图形学/游戏开发/游戏客户端/unity/fairyGui(UnitySDK).md",
+    "docs/其他内容/游戏开发&图形学/游戏开发/游戏客户端/unity/c#.md",
+    "docs/其他内容/Web开发（前后端）/数据/大数据/hadoop/概述.md",
+    "docs/其他内容/Web开发（前后端）/数据/大数据/hadoop/云计算.md",
+    "docs/其他内容/Web开发（前后端）/数据/大数据/hadoop/Spark.md",
+    "docs/其他内容/Web开发（前后端）/数据/大数据/hadoop/NoSQL.md",
+    "docs/其他内容/Web开发（前后端）/数据/大数据/hadoop/Hive.md",
+    "docs/其他内容/Web开发（前后端）/数据/大数据/hadoop/Hadoop.md",
+    "docs/其他内容/Web开发（前后端）/数据/大数据/hadoop/HBase.md",
+    "docs/其他内容/Web开发（前后端）/数据/关系数据库/data/MySQL安装.md",
+    "docs/其他内容/Web开发（前后端）/数据/关系数据库/data/MySQL卸载文档-Windows版.md",
     "Excalidraw/pic/Pasted Image 20250603151447_863.png",
+    "Excalidraw/pic/Pasted Image 20250603151426_231.png",
     "Excalidraw/pic/Pasted Image 20250603151439_890.png",
-    "docs/_draft_/Fundamentals-Of-Computer-Graphics-5th-CN-main/8 - 视图.md",
     "docs/_draft_/Fundamentals-Of-Computer-Graphics-5th-CN-main/pic/Pasted image 20241208220421.png",
     "docs/_draft_/Fundamentals-Of-Computer-Graphics-5th-CN-main/pic/Pasted image 20241206100854.png",
     "docs/_draft_/Fundamentals-Of-Computer-Graphics-5th-CN-main/pic/Pasted image 20241205213412.png",
