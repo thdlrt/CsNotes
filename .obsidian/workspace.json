@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/其他内容/游戏开发&图形学/计算机图形学/杂项/后处理.md",
+                "file": "docs/其他内容/游戏开发&图形学/阅读/实时渲染第四版.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "后处理"
+              "title": "实时渲染第四版"
             }
           }
         ]
@@ -92,7 +92,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 272.5
+    "width": 272.5,
+    "collapsed": true
   },
   "right": {
     "id": "d615b65a4ccf8a6a",
@@ -185,8 +186,6 @@
       "canvas:新建白板": false,
       "templates:插入模板": false,
       "command-palette:打开命令面板": false,
-      "workspaces:管理工作区布局": false,
-      "audio-recorder:开始/结束录音": false,
       "obsidian-excalidraw-plugin:新建绘图文件": false,
       "media-extended:Open media": false,
       "omnisearch:Omnisearch": false,
@@ -197,6 +196,7 @@
   },
   "active": "2225612e0bcb7d37",
   "lastOpenFiles": [
+    "docs/其他内容/游戏开发&图形学/计算机图形学/杂项/后处理.md",
     "docs/其他内容/游戏开发&图形学/阅读/实时渲染第四版.md",
     "docs/学校课程/智能三维重建/笔记.md",
     "conflict-files-obsidian-git.md",
@@ -232,7 +232,6 @@
     "docs/其他内容/Web开发（前后端）/数据/大数据/hadoop/Hadoop.md",
     "docs/其他内容/Web开发（前后端）/数据/大数据/hadoop/HBase.md",
     "docs/其他内容/Web开发（前后端）/数据/关系数据库/data/MySQL安装.md",
-    "docs/其他内容/Web开发（前后端）/数据/关系数据库/data/MySQL卸载文档-Windows版.md",
     "Excalidraw/pic/Pasted Image 20250603151447_863.png",
     "Excalidraw/pic/Pasted Image 20250603151426_231.png",
     "Excalidraw/pic/Pasted Image 20250603151439_890.png",
