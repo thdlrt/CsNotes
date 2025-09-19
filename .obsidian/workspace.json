@@ -22,6 +22,20 @@
             }
           },
           {
+            "id": "0af87bd6107cefe5",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "conflict-files-obsidian-git.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "conflict-files-obsidian-git"
+            }
+          },
+          {
             "id": "296a91085b17de34",
             "type": "leaf",
             "state": {
@@ -35,7 +49,8 @@
               "title": "后处理"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -208,11 +223,11 @@
       "copilot:Open Copilot Chat": false
     }
   },
-  "active": "f1572fa4d17012e4",
+  "active": "0af87bd6107cefe5",
   "lastOpenFiles": [
+    "docs/其他内容/游戏开发&图形学/阅读/实时渲染第四版.md",
     "conflict-files-obsidian-git.md",
     "docs/其他内容/游戏开发&图形学/计算机图形学/杂项/后处理.md",
-    "docs/其他内容/游戏开发&图形学/阅读/实时渲染第四版.md",
     "docs/其他内容/游戏开发&图形学/阅读/图形学与游戏开发中的数学.md",
     "docs/其他内容/游戏开发&图形学/阅读/实时渲染",
     "docs/其他内容/游戏开发&图形学/计算机图形学/专题/超分插帧/开源算法/FSR/FSR.md",
