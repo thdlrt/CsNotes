@@ -94,16 +94,17 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/自学内容/游戏开发&图形学/计算机图形学/专题/超分插帧/开源算法/GSR/GSR.md",
+                "file": "docs/其他内容/游戏开发&图形学/计算机图形学/图形学基础/线性代数与变换.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "GSR 的大纲"
+              "title": "线性代数与变换 的大纲"
             }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
@@ -208,12 +209,13 @@
       "copilot:Open Copilot Chat": false
     }
   },
-  "active": "f1572fa4d17012e4",
+  "active": "6c7418c521ab7a68",
   "lastOpenFiles": [
+    "docs/其他内容/游戏开发&图形学/计算机图形学/杂项/后处理.md",
+    "docs/其他内容/游戏开发&图形学/计算机图形学/图形学基础/线性代数与变换.md",
     "docs/其他内容/游戏开发&图形学/计算机图形学/图形学基础/几何.md",
     "docs/其他内容/游戏开发&图形学/阅读/实时渲染第四版.md",
     "conflict-files-obsidian-git.md",
-    "docs/其他内容/游戏开发&图形学/计算机图形学/杂项/后处理.md",
     "docs/其他内容/游戏开发&图形学/阅读/图形学与游戏开发中的数学.md",
     "docs/其他内容/游戏开发&图形学/阅读/实时渲染",
     "docs/其他内容/游戏开发&图形学/计算机图形学/专题/超分插帧/开源算法/FSR/FSR.md",
@@ -241,7 +243,6 @@
     "docs/_draft_/Fundamentals-Of-Computer-Graphics-5th-CN-main/13 - 采样.md",
     "docs/_draft_/Fundamentals-Of-Computer-Graphics-5th-CN-main/12 - 图形数据结构.md",
     "docs/其他内容/游戏开发&图形学/计算机图形学/图形学基础/光线追踪.md",
-    "docs/其他内容/游戏开发&图形学/计算机图形学/图形学基础/线性代数与变换.md",
     "docs/_draft_/Fundamentals-Of-Computer-Graphics-5th-CN-main/9 - 图形管线.md",
     "docs/_draft_/Fundamentals-Of-Computer-Graphics-5th-CN-main/关于透视矫正插值.md",
     "Excalidraw/Drawing 2025-06-03 15.13.59.excalidraw.md",
