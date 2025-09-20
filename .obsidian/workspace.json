@@ -108,7 +108,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 274.5
+    "width": 205.5
   },
   "right": {
     "id": "d615b65a4ccf8a6a",
@@ -209,7 +209,7 @@
       "copilot:Open Copilot Chat": false
     }
   },
-  "active": "6c7418c521ab7a68",
+  "active": "f1572fa4d17012e4",
   "lastOpenFiles": [
     "docs/其他内容/游戏开发&图形学/计算机图形学/杂项/后处理.md",
     "docs/其他内容/游戏开发&图形学/计算机图形学/图形学基础/线性代数与变换.md",
