@@ -1,24 +1,16 @@
 {
   "recentFiles": [
     {
-      "basename": "机器学习",
-      "path": "docs/其他内容/人工智能/机器学习.md"
-    },
-    {
-      "basename": "训练框架使用",
-      "path": "docs/其他内容/人工智能/实验/训练框架使用.md"
-    },
-    {
-      "basename": "pytorch",
-      "path": "docs/其他内容/人工智能/pytorch.md"
-    },
-    {
-      "basename": "后处理",
-      "path": "docs/其他内容/游戏开发&图形学/计算机图形学/杂项/后处理.md"
+      "basename": "README",
+      "path": "README.md"
     },
     {
       "basename": "线性代数与变换",
       "path": "docs/其他内容/游戏开发&图形学/计算机图形学/图形学基础/线性代数与变换.md"
+    },
+    {
+      "basename": "后处理",
+      "path": "docs/其他内容/游戏开发&图形学/计算机图形学/杂项/后处理.md"
     },
     {
       "basename": "几何",
