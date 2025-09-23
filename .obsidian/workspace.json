@@ -178,14 +178,13 @@
   },
   "left-ribbon": {
     "hiddenItems": {
+      "daily-notes:打开/创建今天的日记": false,
       "bases:创建新数据库": false,
       "switcher:打开快速切换": false,
       "graph:查看关系图谱": false,
       "canvas:新建白板": false,
       "templates:插入模板": false,
       "command-palette:打开命令面板": false,
-      "workspaces:管理工作区布局": false,
-      "audio-recorder:开始/结束录音": false,
       "obsidian-excalidraw-plugin:新建绘图文件": false,
       "media-extended:Open media": false,
       "omnisearch:Omnisearch": false,
@@ -194,7 +193,7 @@
       "copilot:Open Copilot Chat": false
     }
   },
-  "active": "2225612e0bcb7d37",
+  "active": "96e173acdf249e6c",
   "lastOpenFiles": [
     "conflict-files-obsidian-git.md",
     "docs/其他内容/游戏开发&图形学/计算机图形学/杂项/后处理.md",
