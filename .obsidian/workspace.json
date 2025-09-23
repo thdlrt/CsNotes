@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/其他内容/人工智能/机器学习.md",
+                "file": "docs/其他内容/人工智能/深度学习.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "机器学习"
+              "title": "深度学习"
             }
           }
         ]
@@ -80,15 +80,17 @@
             "state": {
               "type": "outline",
               "state": {
+                "file": "docs/其他内容/人工智能/深度学习.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "大纲"
+              "title": "深度学习 的大纲"
             }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
@@ -195,8 +197,8 @@
   },
   "active": "2225612e0bcb7d37",
   "lastOpenFiles": [
-    "docs/其他内容/人工智能/实验/训练框架使用.md",
     "docs/其他内容/人工智能/机器学习.md",
+    "docs/其他内容/人工智能/实验/训练框架使用.md",
     "docs/其他内容/人工智能/pytorch.md",
     "docs/其他内容/人工智能/实验",
     "docs/其他内容/游戏开发&图形学/计算机图形学/杂项/后处理.md",
