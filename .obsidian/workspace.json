@@ -13,30 +13,15 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/其他内容/游戏开发&图形学/计算机图形学/杂项/后处理.md",
+                "file": "docs/其他内容/人工智能/机器学习.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "后处理"
-            }
-          },
-          {
-            "id": "15f2beedf9fae33c",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "conflict-files-obsidian-git.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "conflict-files-obsidian-git"
+              "title": "机器学习"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -208,8 +193,12 @@
       "copilot:Open Copilot Chat": false
     }
   },
-  "active": "15f2beedf9fae33c",
+  "active": "2225612e0bcb7d37",
   "lastOpenFiles": [
+    "docs/其他内容/人工智能/实验/训练框架使用.md",
+    "docs/其他内容/人工智能/机器学习.md",
+    "docs/其他内容/人工智能/pytorch.md",
+    "docs/其他内容/人工智能/实验",
     "docs/其他内容/游戏开发&图形学/计算机图形学/杂项/后处理.md",
     "conflict-files-obsidian-git.md",
     "docs/其他内容/游戏开发&图形学/计算机图形学/三维重建/笔记.md",
@@ -228,7 +217,6 @@
     "docs/其他内容/游戏开发&图形学/计算机图形学/专题/超分插帧/开源算法/FSR/FSR.md",
     "docs/其他内容/游戏开发&图形学/计算机图形学/专题/超分插帧/经典算法/TAA.md",
     "docs/其他内容/游戏开发&图形学/计算机图形学/专题/超分插帧/开源算法/GSR",
-    "docs/其他内容/游戏开发&图形学/计算机图形学/专题/超分插帧/开源算法/FSR",
     "docs/其他内容/游戏开发&图形学/游戏开发/游戏客户端/unity/插件/使用UnityYamlMerge处理冲突.md",
     "docs/其他内容/游戏开发&图形学/游戏开发/游戏客户端/unity/插件/In-game Debug Console.md",
     "docs/其他内容/游戏开发&图形学/计算机图形学/API编程/opengl/learnOpengl.md",
@@ -243,9 +231,6 @@
     "docs/其他内容/Web开发（前后端）/数据/大数据/hadoop/云计算.md",
     "docs/其他内容/Web开发（前后端）/数据/大数据/hadoop/Spark.md",
     "docs/其他内容/Web开发（前后端）/数据/大数据/hadoop/NoSQL.md",
-    "docs/其他内容/Web开发（前后端）/数据/大数据/hadoop/Hive.md",
-    "docs/其他内容/Web开发（前后端）/数据/大数据/hadoop/Hadoop.md",
-    "docs/其他内容/Web开发（前后端）/数据/大数据/hadoop/HBase.md",
     "Excalidraw/pic/Pasted Image 20250603151447_863.png",
     "Excalidraw/pic/Pasted Image 20250603151426_231.png",
     "Excalidraw/pic/Pasted Image 20250603151439_890.png",
