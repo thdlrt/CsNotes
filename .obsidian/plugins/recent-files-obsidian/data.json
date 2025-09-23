@@ -1,20 +1,20 @@
 {
   "recentFiles": [
     {
-      "basename": "深度学习",
-      "path": "docs/其他内容/人工智能/深度学习.md"
+      "basename": "pytorch",
+      "path": "docs/其他内容/人工智能/pytorch.md"
     },
     {
-      "basename": "机器学习",
-      "path": "docs/其他内容/人工智能/机器学习.md"
+      "basename": "机器学习理论基础",
+      "path": "docs/其他内容/人工智能/机器学习理论基础.md"
+    },
+    {
+      "basename": "动手学深度学习",
+      "path": "docs/其他内容/人工智能/动手学深度学习.md"
     },
     {
       "basename": "训练框架使用",
       "path": "docs/其他内容/人工智能/实验/训练框架使用.md"
-    },
-    {
-      "basename": "pytorch",
-      "path": "docs/其他内容/人工智能/pytorch.md"
     },
     {
       "basename": "后处理",

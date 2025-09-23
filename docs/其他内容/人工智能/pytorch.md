@@ -87,7 +87,7 @@ f.backward()
 u.grad
 v.grad
 ```
-#### 误差反向传播计算微分
+#### 误差反向传播计算微分原理
 - ![image.png|600](https://thdlrt.oss-cn-beijing.aliyuncs.com/undefined20250316203840.png)
 	- 从左到右进行计算得到结果，称为正向传播
 - 通过计算图上反向传播可以高效计算导数
@@ -112,7 +112,6 @@ v.grad
 - 基本流程：读取数据集-处理缺失值-转化为张量格式
 - 缺失值的处理有：插值法和删除法
 	- 使用平均值进行插值来对缺失数据进行填充：`inputs = inputs.fillna(inputs.mean())`
-	- 
 #### 构造数据
 - 为线性回归构造一个有正态分布噪声的数据
 ```python
@@ -142,7 +141,7 @@ class toy_set(Dataset):
         return self.len
         """返回数据集总样本数"""
 
-    def __getitem__(self, idx):
+    def __getitem__(self, index):
         sample = self.x[index], self.y[index]
         if self.transform:
             sample = self.transform(sample)     
@@ -307,7 +306,10 @@ def train_model_BGD(iter):
             loss.backward()                   # 反向传播
             optimizer.step()                 # 参数更新
 ```
-- 保存模型参数 `torch.save(model.state_dict(), 'lol_win_predictor.pth')`
+- 保存模型参数 
+```python
+torch.save(model.state_dict(), 'lol_win_predictor.pth') 
+```
 - 加载模型 
 ```python
 #先创建模型然后加载参数
