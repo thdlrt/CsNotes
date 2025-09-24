@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "temp/ExtraSS A Framework for Joint Spatial Super Sampling and Frame Extrapolation.md",
+                "file": "论文研读/超分插帧/ExtraSS A Framework for Joint Spatial Super Sampling and Frame Extrapolation.md",
                 "mode": "source",
                 "source": false
               },
@@ -80,7 +80,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "temp/ExtraSS A Framework for Joint Spatial Super Sampling and Frame Extrapolation.md",
+                "file": "论文研读/超分插帧/ExtraSS A Framework for Joint Spatial Super Sampling and Frame Extrapolation.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -93,8 +93,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 272.5,
-    "collapsed": true
+    "width": 272.5
   },
   "right": {
     "id": "d615b65a4ccf8a6a",
@@ -195,11 +194,12 @@
       "copilot:Open Copilot Chat": false
     }
   },
-  "active": "7fa86c2358eb623f",
+  "active": "96e173acdf249e6c",
   "lastOpenFiles": [
+    "论文研读/超分插帧",
     "docs/其他内容/人工智能/pytorch.md",
-    "temp/ExtraSS A Framework for Joint Spatial Super Sampling and Frame Extrapolation.md",
-    "temp",
+    "论文研读/超分插帧/ExtraSS A Framework for Joint Spatial Super Sampling and Frame Extrapolation.md",
+    "论文研读",
     "docs/其他内容/人工智能/机器学习理论基础.md",
     "docs/其他内容/人工智能/动手学深度学习.md",
     "docs/其他内容/人工智能/实验/训练框架使用.md",
@@ -232,7 +232,6 @@
     "docs/其他内容/游戏开发&图形学/游戏开发/游戏客户端/unity/fairyGui(UnitySDK).md",
     "docs/其他内容/游戏开发&图形学/游戏开发/游戏客户端/unity/c#.md",
     "docs/其他内容/Web开发（前后端）/数据/大数据/hadoop/概述.md",
-    "docs/其他内容/Web开发（前后端）/数据/大数据/hadoop/云计算.md",
     "Excalidraw/pic/Pasted Image 20250603151447_863.png",
     "Excalidraw/pic/Pasted Image 20250603151426_231.png",
     "Excalidraw/pic/Pasted Image 20250603151439_890.png",
