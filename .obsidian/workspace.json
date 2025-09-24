@@ -93,7 +93,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 272.5
+    "width": 272.5,
+    "collapsed": true
   },
   "right": {
     "id": "d615b65a4ccf8a6a",
@@ -194,7 +195,7 @@
       "copilot:Open Copilot Chat": false
     }
   },
-  "active": "96e173acdf249e6c",
+  "active": "7fa86c2358eb623f",
   "lastOpenFiles": [
     "论文研读/超分插帧",
     "docs/其他内容/人工智能/pytorch.md",
