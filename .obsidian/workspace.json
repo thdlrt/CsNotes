@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "820926ef138ada20",
+        "id": "0c48540d354869e6",
         "type": "tabs",
         "children": [
           {
-            "id": "2225612e0bcb7d37",
+            "id": "7fa86c2358eb623f",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "temp/ExtraSS A Framework for Joint Spatial Super Sampling and Frame Extrapolation.md",
+                "file": "docs/其他内容/人工智能/pytorch.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "ExtraSS A Framework for Joint Spatial Super Sampling and Frame Extrapolation"
+              "title": "pytorch"
             }
           }
         ]
@@ -80,20 +80,21 @@
             "state": {
               "type": "outline",
               "state": {
+                "file": "docs/其他内容/人工智能/pytorch.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "大纲"
+              "title": "pytorch 的大纲"
             }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
-    "width": 272.5,
-    "collapsed": true
+    "width": 272.5
   },
   "right": {
     "id": "d615b65a4ccf8a6a",
@@ -194,18 +195,17 @@
       "copilot:Open Copilot Chat": false
     }
   },
-  "active": "2225612e0bcb7d37",
+  "active": "7fa86c2358eb623f",
   "lastOpenFiles": [
-    "docs/其他内容/人工智能/机器学习.md",
     "temp/ExtraSS A Framework for Joint Spatial Super Sampling and Frame Extrapolation.md",
     "temp",
     "docs/其他内容/人工智能/机器学习理论基础.md",
+    "docs/其他内容/人工智能/pytorch.md",
     "docs/其他内容/人工智能/动手学深度学习.md",
     "docs/其他内容/人工智能/实验/训练框架使用.md",
-    "docs/其他内容/人工智能/pytorch.md",
+    "conflict-files-obsidian-git.md",
     "docs/其他内容/人工智能/实验",
     "docs/其他内容/游戏开发&图形学/计算机图形学/杂项/后处理.md",
-    "conflict-files-obsidian-git.md",
     "docs/其他内容/游戏开发&图形学/计算机图形学/三维重建/笔记.md",
     "docs/其他内容/游戏开发&图形学/计算机图形学/三维重建",
     "docs/其他内容/游戏开发&图形学/阅读/实时渲染第四版.md",
@@ -232,6 +232,7 @@
     "docs/其他内容/游戏开发&图形学/游戏开发/游戏客户端/unity/fairyGui(UnitySDK).md",
     "docs/其他内容/游戏开发&图形学/游戏开发/游戏客户端/unity/c#.md",
     "docs/其他内容/Web开发（前后端）/数据/大数据/hadoop/概述.md",
+    "docs/其他内容/Web开发（前后端）/数据/大数据/hadoop/云计算.md",
     "Excalidraw/pic/Pasted Image 20250603151447_863.png",
     "Excalidraw/pic/Pasted Image 20250603151426_231.png",
     "Excalidraw/pic/Pasted Image 20250603151439_890.png",
