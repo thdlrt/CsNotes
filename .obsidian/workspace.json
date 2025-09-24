@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/其他内容/人工智能/pytorch.md",
+                "file": "temp/ExtraSS A Framework for Joint Spatial Super Sampling and Frame Extrapolation.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "pytorch"
+              "title": "ExtraSS A Framework for Joint Spatial Super Sampling and Frame Extrapolation"
             }
           }
         ]
@@ -80,21 +80,21 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/其他内容/人工智能/pytorch.md",
+                "file": "temp/ExtraSS A Framework for Joint Spatial Super Sampling and Frame Extrapolation.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "pytorch 的大纲"
+              "title": "ExtraSS A Framework for Joint Spatial Super Sampling and Frame Extrapolation 的大纲"
             }
           }
-        ],
-        "currentTab": 3
+        ]
       }
     ],
     "direction": "horizontal",
-    "width": 272.5
+    "width": 272.5,
+    "collapsed": true
   },
   "right": {
     "id": "d615b65a4ccf8a6a",
@@ -197,10 +197,10 @@
   },
   "active": "7fa86c2358eb623f",
   "lastOpenFiles": [
+    "docs/其他内容/人工智能/pytorch.md",
     "temp/ExtraSS A Framework for Joint Spatial Super Sampling and Frame Extrapolation.md",
     "temp",
     "docs/其他内容/人工智能/机器学习理论基础.md",
-    "docs/其他内容/人工智能/pytorch.md",
     "docs/其他内容/人工智能/动手学深度学习.md",
     "docs/其他内容/人工智能/实验/训练框架使用.md",
     "conflict-files-obsidian-git.md",
