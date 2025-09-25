@@ -1389,8 +1389,6 @@ void main()
   - 对所有透明的物体排序。
   - 按顺序绘制所有透明的物体。
 
-
-
 - 排序透明物体：观察者视角获取物体的距离，可以通过计算摄像机位置向量和物体的位置向量之间的距离所获得
 
 ```c++
@@ -1401,8 +1399,6 @@ for (unsigned int i = 0; i < windows.size(); i++)
     sorted[distance] = windows[i];
 }
 ```
-
-
 
 - 渲染时直接从 map 读取排好序的
 
@@ -1420,14 +1416,10 @@ for(std::map<float,glm::vec3>::reverse_iterator it = sorted.rbegin(); it != sort
 
 - 丢弃背对观察者的面，只渲染面向观察者的面，节省开销
 
-
-
 - 以环绕顺序来定义三角形的顶点
   - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/undefinedfaceculling_windingorder.png" alt="img" style="zoom:50%;" />
   - 全部按照逆时针规则进行定义（对顶点数据的要求）
 - 这样从正面看为逆时针的三角形就是面向观察者的面，顺时针的就是背对的面，可以进行剔除
-
-
 
 - 启用面剔除：`glEnable(GL_CULL_FACE);`
 - 剔除的面的类型 `glCullFace(GL_FRONT);`
@@ -1438,7 +1430,7 @@ for(std::map<float,glm::vec3>::reverse_iterator it = sorted.rbegin(); it != sort
   - GL_CCW 表示逆时针环绕
   - GL_CW 表示顺时针环绕
 
-## 帧缓冲
+## 帧缓冲 FBO
 
 - 颜色缓冲、深度信息缓冲等各种缓冲结合再起来就是帧缓冲，默认的帧缓冲是窗口时生成和配置的
 - 帧缓冲是一种容器对象，用于管理多个附件
@@ -1454,6 +1446,7 @@ glBindFramebuffer(GL_FRAMEBUFFER, fbo);
 
 - 绑定帧缓冲之后，所有的读取和写入帧缓冲的操作都会影响绑定的帧缓冲
   - 也可以用 GL_READ_FRAMEBUFFER 或 GL_DRAW_FRAMEBUFFER 分别进行绑定
+  - **帧缓冲**本身不存储任何渲染结果，只是一个“**路由器**”负责把渲染输出到具体的存储位置，而**附件**就是**实际存储数据的载体**
 
 - 完整的帧缓冲：
   - 附加至少一个缓冲（颜色、深度或模板缓冲）。
@@ -1464,8 +1457,6 @@ glBindFramebuffer(GL_FRAMEBUFFER, fbo);
 
 - 之后所有的渲染操作将会渲染到当前绑定帧缓冲的附件中, 要保证所有的渲染操作在主窗口中有视觉效果，我们需要再次激活默认帧缓冲，将它绑定到 `0`。
   - `glBindFramebuffer(GL_FRAMEBUFFER, 0);`
-
-
 
 ### 纹理附件
 
@@ -1492,9 +1483,9 @@ glTexImage2D(
 glFramebufferTexture2D(GL_FRAMEBUFFER, GL_DEPTH_STENCIL_ATTACHMENT, GL_TEXTURE_2D, texture, 0);
 ```
 
-- 将纹理附加到帧缓冲 `glFramebufferTexture2D(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, GL_TEXTURE_2D, texture, 0);`
+- 将纹理附加到帧缓冲的颜色附件 `glFramebufferTexture2D(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, GL_TEXTURE_2D, texture, 0);`
   - `target`：帧缓冲的目标（绘制、读取或者两者皆有）
-  - `attachment`：我们想要附加的附件类型。当前我们正在附加一个颜色附件。注意最后的 `0` 意味着我们可以附加多个颜色附件。我们将在之后的教程中提到。
+  - `attachment`：我们想要附加的附件类型。当前我们正在附加一个颜色附件。注意最后的 `0` 意味着我们可以附加多个颜色附件。
   - `textarget`：你希望附加的纹理类型
   - `texture`：要附加的纹理本身
   - `level`：多级渐远纹理的级别。我们将它保留为 0。
@@ -1516,7 +1507,7 @@ glRenderbufferStorage(GL_RENDERBUFFER, GL_DEPTH24_STENCIL8, 800, 600);
 glFramebufferRenderbuffer(GL_FRAMEBUFFER, GL_DEPTH_STENCIL_ATTACHMENT, GL_RENDERBUFFER, rbo);
 ```
 
-### 渲染到纹理
+### 示例
 
 - 将一个场景附加到帧缓冲对象上的颜色纹理并在图形上绘制这个纹理
 
@@ -1591,11 +1582,8 @@ glDrawArrays(GL_TRIANGLES, 0, 6);                // 绘制屏幕四边形
 - 也可以直接 `void *ptr = glMapBuffer(GL_ARRAY_BUFFER, GL_WRITE_ONLY);` 获取缓冲区内存的指针，再通过 `memcpy` 等直接修改缓冲区的内容
   - 释放指针 `glUnmapBuffer(GL_ARRAY_BUFFER);`
 
-
-
 - 除了使用类似结构体那样交替存储顶点数据（123123123123），采用分批的方式进行存储（111122223333）
   - 有时获得的时这种分批方式存储的数据
-
 ```c++
 float positions[] = { ... };
 float normals[] = { ... };
@@ -1610,8 +1598,6 @@ glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)(sizeo
 glVertexAttribPointer(
   2, 2, GL_FLOAT, GL_FALSE, 2 * sizeof(float), (void*)(sizeof(positions) + sizeof(normals)));
 ```
-
-
 
 - 复制缓冲 `void glCopyBufferSubData(GLenum readtarget, GLenum writetarget, GLintptr readoffset, GLintptr writeoffset, GLsizeiptr size);`
   - `readtarget` 和 `writetarget` 参数需要填入复制源和复制目标的缓冲目标。比如说，我们可以将 VERTEX_ARRAY_BUFFER 缓冲复制到 VERTEX_ELEMENT_ARRAY_BUFFER缓冲
@@ -1645,8 +1631,6 @@ glCopyBufferSubData(GL_COPY_READ_BUFFER, GL_COPY_WRITE_BUFFER, 0, 0, sizeof(vert
   - 将大范围坐标转化到小范围，比如在每个维度上的-1000 到 1000。投影矩阵接着会将在这个指定的范围内的坐标变换为标准化设备坐标的范围 (-1.0, 1.0)。所有在范围外的坐标不会被映射到在-1.0 到 1.0 的范围之间，所以**会被裁剪**掉。
   - 裁剪之后进行投影映射到屏幕空间
 - **屏幕空间**(Screen Space)：屏幕上的坐标
-
-
 
 - **正交投影**
   - 可以使用 glm 创建投影矩阵 `glm::ortho(0.0f, 800.0f, 0.0f, 600.0f, 0.1f, 100.0f);`
@@ -1744,11 +1728,8 @@ void processInput(GLFWwindow* window)
   - <img src="https://thdlrt.oss-cn-beijing.aliyuncs.com/undefinedcamera_pitch_yaw_roll.png" alt="img" style="zoom:80%;" />
 
 
-
 - 通过鼠标输入实现旋转控制：水平的移动影响偏航角，竖直的移动影响俯仰角
   - 通过比较两帧之间坐标差距，决定角度的偏移
-
-
 
 - 捕捉光标，在窗口内不显示（但是记录位置用于操控）`glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);`
 
