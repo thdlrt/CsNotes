@@ -94,7 +94,7 @@
 	- **用编码器 E1 来执行 ESS**：$\bar{I}_{t+1}=D(E_1(f_g^{t+1}(i_t),\bar{i}_{t+1},f_r(\bar{I}_t),\alpha_{t+1},d_{t+1}))$
 		- $f_g^{t+1}(i_t)$ Gbuffer 重投影把低分辨率图像 $i_{t}$ 外推到 t+1 帧的结果
 		- $\bar{i}_{t+1}$ FRNet 的第 t+1 帧预测结果
-		- $f_r(\bar{I}_t)$将第 t 帧的高清图像重投影到 t+1 帧的结果
+		- $f_r(\bar{I}_t)$ 将第 t 帧的高清图像重投影(无 Guffer 的传统方法)到 t+1 帧的结果
 		- $\alpha_{t+1},d_{t+1}$ 为来自 Gbuffet 的 t+1 数据
 
 - 损失函数结构
@@ -126,3 +126,15 @@
     - 学习率: 4e-4
     - Batch size: 12
     - 训练 120 个 epoch
+### 网络结构图
+
+> Extrass
+![image.png|800](https://thdlrt.oss-cn-beijing.aliyuncs.com/20250925114405.png)
+- 名词对照
+	- Conv：卷积
+	- Activation：激活
+	- down/up sampling：下/上采样
+
+> FRNet
+![image.png](https://thdlrt.oss-cn-beijing.aliyuncs.com/20250925114417.png)
+
