@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "论文研读/超分插帧/ExtraSS A Framework for Joint Spatial Super Sampling and Frame Extrapolation.md",
+                "file": "docs/论文研读/超分插帧/ExtraSS A Framework for Joint Spatial Super Sampling and Frame Extrapolation.md",
                 "mode": "source",
                 "source": false
               },
@@ -47,6 +47,20 @@
               },
               "icon": "lucide-file",
               "title": "learnOpengl&glsl"
+            }
+          },
+          {
+            "id": "22c94738954ffb24",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "docs/其他内容/游戏开发&图形学/计算机图形学/shader/unity shader（HLSL）.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "unity shader（HLSL）"
             }
           }
         ],
@@ -118,12 +132,11 @@
               "title": "learnOpengl&glsl 的大纲"
             }
           }
-        ],
-        "currentTab": 3
+        ]
       }
     ],
     "direction": "horizontal",
-    "width": 217.49999618530273
+    "width": 265.49999618530273
   },
   "right": {
     "id": "d615b65a4ccf8a6a",
@@ -224,18 +237,19 @@
       "copilot:Open Copilot Chat": false
     }
   },
-  "active": "f56c8962853f58da",
+  "active": "96e173acdf249e6c",
   "lastOpenFiles": [
+    "docs/其他内容/游戏开发&图形学/计算机图形学/shader/unity shader（HLSL）.md",
+    "docs/其他内容/游戏开发&图形学/计算机图形学/API编程/opengl/learnOpengl&glsl.md",
     "docs/其他内容/人工智能/神经网络架构与技术.md",
-    "论文研读/超分插帧/ExtraSS A Framework for Joint Spatial Super Sampling and Frame Extrapolation.md",
+    "docs/论文研读/超分插帧/ExtraSS A Framework for Joint Spatial Super Sampling and Frame Extrapolation.md",
     "docs/其他内容/人工智能/动手学深度学习.md",
     "docs/其他内容/人工智能/机器学习理论基础.md",
     "docs/其他内容/人工智能/pytorch.md",
-    "docs/其他内容/游戏开发&图形学/计算机图形学/API编程/opengl/learnOpengl&glsl.md",
     "docs/其他内容/游戏开发&图形学/计算机图形学/API编程/opengl/pyopengl.md",
     "docs/其他内容/游戏开发&图形学/计算机图形学/shader/shaderToy学习.md",
-    "论文研读/超分插帧",
-    "论文研读",
+    "docs/论文研读/超分插帧",
+    "docs/论文研读",
     "docs/其他内容/人工智能/实验/训练框架使用.md",
     "conflict-files-obsidian-git.md",
     "docs/其他内容/人工智能/实验",
@@ -260,7 +274,6 @@
     "docs/其他内容/游戏开发&图形学/游戏开发/游戏客户端/unity/unity基础.md",
     "docs/其他内容/游戏开发&图形学/游戏开发/游戏客户端/unity/unity资源管理.md",
     "docs/其他内容/游戏开发&图形学/游戏开发/游戏客户端/unity/Unity URP.md",
-    "docs/其他内容/游戏开发&图形学/计算机图形学/shader/unity shader（HLSL）.md",
     "docs/其他内容/游戏开发&图形学/游戏开发/游戏客户端/unity/fairyGui(UnitySDK).md",
     "Excalidraw/pic/Pasted Image 20250603151447_863.png",
     "Excalidraw/pic/Pasted Image 20250603151426_231.png",
