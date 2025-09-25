@@ -20,8 +20,23 @@
               "icon": "lucide-file",
               "title": "ExtraSS A Framework for Joint Spatial Super Sampling and Frame Extrapolation"
             }
+          },
+          {
+            "id": "f56c8962853f58da",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "docs/其他内容/人工智能/神经网络架构与技术.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "神经网络架构与技术"
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -80,21 +95,20 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "论文研读/超分插帧/ExtraSS A Framework for Joint Spatial Super Sampling and Frame Extrapolation.md",
+                "file": "docs/其他内容/人工智能/神经网络架构与技术.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "ExtraSS A Framework for Joint Spatial Super Sampling and Frame Extrapolation 的大纲"
+              "title": "神经网络架构与技术 的大纲"
             }
           }
         ]
       }
     ],
     "direction": "horizontal",
-    "width": 272.5,
-    "collapsed": true
+    "width": 272.5
   },
   "right": {
     "id": "d615b65a4ccf8a6a",
@@ -195,15 +209,15 @@
       "copilot:Open Copilot Chat": false
     }
   },
-  "active": "7fa86c2358eb623f",
+  "active": "f56c8962853f58da",
   "lastOpenFiles": [
-    "docs/其他内容/人工智能/神经网络架构.md",
+    "docs/其他内容/人工智能/动手学深度学习.md",
     "论文研读/超分插帧/ExtraSS A Framework for Joint Spatial Super Sampling and Frame Extrapolation.md",
+    "docs/其他内容/人工智能/机器学习理论基础.md",
+    "docs/其他内容/人工智能/神经网络架构与技术.md",
     "论文研读/超分插帧",
     "docs/其他内容/人工智能/pytorch.md",
     "论文研读",
-    "docs/其他内容/人工智能/机器学习理论基础.md",
-    "docs/其他内容/人工智能/动手学深度学习.md",
     "docs/其他内容/人工智能/实验/训练框架使用.md",
     "conflict-files-obsidian-git.md",
     "docs/其他内容/人工智能/实验",
