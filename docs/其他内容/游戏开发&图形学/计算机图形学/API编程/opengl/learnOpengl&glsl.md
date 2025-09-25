@@ -140,29 +140,29 @@ unsigned int loadTexture(char const* path)
     unsigned int textureID;
     glGenTextures(1, &textureID);
 
-    int width, height, nrComponents;
-    unsigned char* data = stbi_load(path, &width, &height, &nrComponents, 0);
-    if (data)
-    {
-        GLenum format;
-        if (nrComponents == 1)
-            format = GL_RED;
-        else if (nrComponents == 3)
-            format = GL_RGB;
-        else if (nrComponents == 4)
-            format = GL_RGBA;
+ int width, height, nrComponents;
+ unsigned char* data = stbi_load(path, &width, &height, &nrComponents, 0);
+ if (data)
+ {
+     GLenum format;
+     if (nrComponents == 1)
+         format = GL_RED;
+     else if (nrComponents == 3)
+         format = GL_RGB;
+     else if (nrComponents == 4)
+         format = GL_RGBA;
 
-        glBindTexture(GL_TEXTURE_2D, textureID);
-        glTexImage2D(GL_TEXTURE_2D, 0, format, width, height, 0, format, GL_UNSIGNED_BYTE, data);
-        glGenerateMipmap(GL_TEXTURE_2D);
+     glBindTexture(GL_TEXTURE_2D, textureID);
+     glTexImage2D(GL_TEXTURE_2D, 0, format, width, height, 0, format, GL_UNSIGNED_BYTE, data);
+     //对texture的一些可选配置
+     glGenerateMipmap(GL_TEXTURE_2D);
+     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
+     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
+     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
+     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
 
-        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
-        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
-        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
-        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-
-        stbi_image_free(data);
-    }
+     stbi_image_free(data);
+ }
     else
     {
         std::cout << "Texture failed to load at path: " << path << std::endl;
@@ -176,7 +176,6 @@ unsigned int diffuseMap = loadTexture("container2.png");
 ```
 
 
-
 ### GLM
 
 - 用于opengl的数学库
@@ -184,7 +183,6 @@ unsigned int diffuseMap = loadTexture("container2.png");
   - 需要初始化为单位矩阵`glm::mat4 mat = glm::mat4(1.0f)`
   - `glm` 是一个头文件库，它不生成动态链接库（.dll）或静态库（.lib）,可以直接在项目中包含 `glm` 的头文件来使用它。
 - 常用头文件内容
-
 ```c
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
@@ -192,7 +190,6 @@ unsigned int diffuseMap = loadTexture("container2.png");
 ```
 
 - 可以用glm快速**创建各种变换矩阵**
-
 ```c
 glm::vec4 vec(1.0f, 0.0f, 0.0f, 1.0f);
 // 译注：下面就是矩阵初始化的一个例子，如果使用的是0.9.9及以上版本
@@ -209,8 +206,6 @@ trans = glm::scale(trans, glm::vec3(0.5, 0.5, 0.5));
 ```
 
 - 用同一个矩阵`trans`可以进行不同的变化，glm会自动将变化乘到`trans`上，最终用`trans`乘以目标矩阵就可以实现所有变化（注意变化**倒序**执行，上面就是先缩放再旋转）
-
-
 
 - 将变化矩阵传递给着色器
   - `uniform mat4 transform;`就可以传递一个四维矩阵
@@ -944,7 +939,7 @@ unsigned int TextureFromFile(const char *path, const string &directory, bool gam
 - **片段着色器**就散像素的颜色（结合光照等信息）
 - **测试与混合阶段**进行深度测试，以及不透明度的混合
 
-- opengl 中至少要配置顶点着色器和判断着色器
+- opengl 中至少要配置顶点着色器和片段着色器
 - opengl 只处理-1~1 立方范围内的信息
 - 使用 GLSL 编写着色器，编译之后就可以在程序中使用
 
@@ -988,8 +983,6 @@ glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(float), (void*)(3* si
 glEnableVertexAttribArray(1);
 ```
 
-
-
 #### 顶点数组对象 VAO
 
 - 每次都重新进行绑定设置很麻烦，使用**顶点数组对象 VAO**可以像顶点缓冲对象那样被绑定，任何随后的**顶点属性调用**都会储存在这个 VAO 中。
@@ -1028,8 +1021,6 @@ glBindVertexArray(0);
 #### 元素缓冲对象 EBO
 
 - EBO 是一个缓冲区，就像一个顶点缓冲区对象一样，它存储 OpenGL 用来决定要**绘制哪些顶点的索引**（决定点的绘制顺序避免性能浪费，比如两个三角拼接成一个矩形）
-
-
 
 - 使用索引来用更少的点进行绘制
 

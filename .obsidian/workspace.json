@@ -49,7 +49,8 @@
               "title": "learnOpengl&glsl"
             }
           }
-        ]
+        ],
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -108,16 +109,17 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "论文研读/超分插帧/ExtraSS A Framework for Joint Spatial Super Sampling and Frame Extrapolation.md",
+                "file": "docs/其他内容/游戏开发&图形学/计算机图形学/API编程/opengl/learnOpengl&glsl.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "ExtraSS A Framework for Joint Spatial Super Sampling and Frame Extrapolation 的大纲"
+              "title": "learnOpengl&glsl 的大纲"
             }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
@@ -222,13 +224,13 @@
       "copilot:Open Copilot Chat": false
     }
   },
-  "active": "7fa86c2358eb623f",
+  "active": "f56c8962853f58da",
   "lastOpenFiles": [
+    "docs/其他内容/人工智能/神经网络架构与技术.md",
+    "论文研读/超分插帧/ExtraSS A Framework for Joint Spatial Super Sampling and Frame Extrapolation.md",
     "docs/其他内容/人工智能/动手学深度学习.md",
     "docs/其他内容/人工智能/机器学习理论基础.md",
     "docs/其他内容/人工智能/pytorch.md",
-    "论文研读/超分插帧/ExtraSS A Framework for Joint Spatial Super Sampling and Frame Extrapolation.md",
-    "docs/其他内容/人工智能/神经网络架构与技术.md",
     "docs/其他内容/游戏开发&图形学/计算机图形学/API编程/opengl/learnOpengl&glsl.md",
     "docs/其他内容/游戏开发&图形学/计算机图形学/API编程/opengl/pyopengl.md",
     "docs/其他内容/游戏开发&图形学/计算机图形学/shader/shaderToy学习.md",
