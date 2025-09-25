@@ -130,11 +130,15 @@
 
 > Extrass
 ![image.png|800](https://thdlrt.oss-cn-beijing.aliyuncs.com/20250925114405.png)
-- 名词对照
-	- Conv：卷积
-	- Activation：激活
-	- down/up sampling：下/上采样
+- 左边红色的部分为 E0 E1 编码端，右边黄色的为 D 解码端
+	- 可以训练时在同一轮里分别前向它们，再把输出喂给同一个“橙色解码器 D”，计算联合损失并共同反传
+
 
 > FRNet
 ![image.png](https://thdlrt.oss-cn-beijing.aliyuncs.com/20250925114417.png)
 
+- **多尺度位移头 (D₁…D₄, 青绿楔形)**
+    - 在 4 个不同尺度上各预测一张 **2-D flow**（位移场）。
+    - 预测出的位移立即喂给 **WARP** 模块，对历史帧做多次渐进式重对齐。
+    - 这样做相当于在网络内部完成了一个“粗 → 细”的光流级联：  
+        先在 1/16 分辨率对齐一个大致流，再回到 1/8 … 最终在 1/2 分辨率细化。
