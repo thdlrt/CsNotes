@@ -1,6 +1,10 @@
 {
   "recentFiles": [
     {
+      "basename": "ExtraSS A Framework for Joint Spatial Super Sampling and Frame Extrapolation",
+      "path": "docs/论文研读/超分插帧/ExtraSS A Framework for Joint Spatial Super Sampling and Frame Extrapolation.md"
+    },
+    {
       "basename": "解释一下：from_torch.utils.data_import_Dataset_class_toy_set(Dataset)_def___init__(self,_length_=@20250303_010815",
       "path": "_copilot-conversations_/解释一下：from_torch.utils.data_import_Dataset_class_toy_set(Dataset)_def___init__(self,_length_=@20250303_010815.md"
     },
