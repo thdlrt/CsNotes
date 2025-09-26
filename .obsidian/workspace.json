@@ -34,9 +34,23 @@
               "icon": "lucide-file",
               "title": "解释一下：from_torch.utils.data_import_Dataset_class_toy_set(Dataset)_def___init__(self,_length_=@20250303_010815"
             }
+          },
+          {
+            "id": "5de2564b03a89226",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "conflict-files-obsidian-git.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "conflict-files-obsidian-git"
+            }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -209,10 +223,20 @@
       "copilot:Open Copilot Chat": false
     }
   },
-  "active": "57780d5e2051f55b",
+  "active": "5de2564b03a89226",
   "lastOpenFiles": [
-    "_copilot-conversations_/讲解下笔记中的正则化内容@20250303_115250.md",
+    "_copilot-conversations_/解释一下：from_torch.utils.data_import_Dataset_class_toy_set(Dataset)_def___init__(self,_length_=@20250303_010815.md",
     "conflict-files-obsidian-git.md",
+    "docs/论文研读/超分插帧/ExtraSS A Framework for Joint Spatial Super Sampling and Frame Extrapolation.md",
+    "docs/论文研读/超分插帧",
+    "docs/论文研读",
+    "docs/其他内容/游戏开发&图形学/计算机图形学/shader/unity shader（HLSL）.md",
+    "docs/其他内容/游戏开发&图形学/计算机图形学/API编程/opengl/pyopengl.md",
+    "docs/其他内容/游戏开发&图形学/计算机图形学/API编程/opengl/learnOpengl&glsl.md",
+    "docs/其他内容/人工智能/神经网络架构与技术.md",
+    "docs/其他内容/人工智能/机器学习理论基础.md",
+    "docs/其他内容/人工智能/动手学深度学习.md",
+    "_copilot-conversations_/讲解下笔记中的正则化内容@20250303_115250.md",
     "_copilot-conversations_/未命名",
     "docs/_draft_/未命名.md",
     "README.md",
@@ -234,19 +258,9 @@
     "docs/技能&工具/git/git.md",
     "docs/技能&工具/git/github.md",
     "docs/其他内容/游戏开发&图形学/计算机图形学/实验/tinyraytracer.md",
-    "docs/自学内容/电子/嵌入式/硬件.md",
-    "docs/自学内容/电子/嵌入式/arduino.md",
     "docs/其他内容/游戏开发&图形学/计算机图形学/专题/超分插帧/开源算法/GSR/代码（原版）/sgsr2_convert.comp",
     "docs/其他内容/游戏开发&图形学/计算机图形学/专题/超分插帧/开源算法/GSR/代码（原版）/sgsr2_activate.comp",
     "docs/其他内容/游戏开发&图形学/计算机图形学/专题/超分插帧/开源算法/GSR/代码（原版）/sgsr2_upscale.comp",
-    "docs/其他内容/游戏开发&图形学/计算机图形学/专题/超分插帧/开源算法/GSR/代码（unity）",
-    "docs/其他内容/游戏开发&图形学/计算机图形学/专题/超分插帧/开源算法/FSR/代码（Unity）/TAASR.compute",
-    "docs/_draft_/Fundamentals-Of-Computer-Graphics-5th-CN-main/10 - 信号处理.md",
-    "docs/其他内容/游戏开发&图形学/计算机图形学/图形学基础/光栅化.md",
-    "docs/_draft_/Fundamentals-Of-Computer-Graphics-5th-CN-main/11 - 纹理映射.md",
-    "docs/_draft_/Fundamentals-Of-Computer-Graphics-5th-CN-main/13 - 采样.md",
-    "docs/_draft_/Fundamentals-Of-Computer-Graphics-5th-CN-main/12 - 图形数据结构.md",
-    "docs/其他内容/游戏开发&图形学/计算机图形学/图形学基础/光线追踪.md",
     "Excalidraw/pic/Pasted Image 20250603151426_231.png",
     "Excalidraw/pic/Pasted Image 20250603151447_863.png",
     "Excalidraw/pic/Pasted Image 20250603151439_890.png",
