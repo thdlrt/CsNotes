@@ -1,6 +1,14 @@
 {
   "recentFiles": [
     {
+      "basename": "unity基础",
+      "path": "docs/其他内容/游戏开发&图形学/游戏开发/游戏客户端/unity/unity基础.md"
+    },
+    {
+      "basename": "使用UnityYamlMerge处理冲突",
+      "path": "docs/其他内容/游戏开发&图形学/游戏开发/游戏客户端/unity/插件/使用UnityYamlMerge处理冲突.md"
+    },
+    {
       "basename": "Spine 2D骨骼动画",
       "path": "docs/其他内容/游戏开发&图形学/游戏开发/游戏客户端/unity/插件/Spine 2D骨骼动画.md"
     },
