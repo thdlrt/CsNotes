@@ -891,7 +891,30 @@ public static class MeshColliderEditorUtility
     }
 }
 ```
+### transform 与 rigidbody
+- transform 坐标是用于显示，rigidbody 坐标是用于物理模拟
+- 有刚体的物体应该尽量使用 rigidbody 设置坐标，并且与物理相关的设置都尽量咋 fixedupdate 来进行
+- transform 和 rigidbody 的坐标会相互覆盖：物理帧开始时的同步（FixedUpdate 之前）Transform → Rigidbody；物理模拟之后（FixedUpdate 之后）则进行 Rigidbody → Transform
+```
+1. Start/Awake
+2. FixedUpdate循环 {
+    a. Physics.SyncTransforms() // Transform → Rigidbody
+    b. OnTriggerXXX/OnCollisionXXX
+    c. FixedUpdate()
+    d. 物理引擎模拟
+    e. 内部同步 // Rigidbody → Transform (非Kinematic)
+}
+3. Update()
+4. LateUpdate()
+5. 渲染
+```
+- 如果初始化等特殊情况需要在 fixedupdate 之外的部分去修改坐标，则可以同时对两种坐标进行设置，确保一致性
 
+- 非 Kinematic（isKinematic=false）：由物理引擎驱动，受力/碰撞/重力影响，参与求解。
+	- 非 Kinematic：在物理步（FixedUpdate）结束后，Rigidbody 的模拟结果会写回 Transform（Rigidbody → Transform）。
+	- 在 Fixedupdate 中进行移动，或者同时设置 transform 和 rigidbody 实现瞬移
+- Kinematic（isKinematic=true）：不参与物理求解与碰撞响应（不会被力推动），但仍可触发触发器事件；它可“穿过”动态刚体，动态刚体会在接触时被推开（由对方解算）。
+	- 通常手动驱动它的位置。通过 MovePosition/MoveRotation 或设置 Transform/position 来指定它的下一物理步位置。T
 ## 常用插件
 ### inputsystem
 - 新输入系统
