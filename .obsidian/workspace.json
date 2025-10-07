@@ -27,15 +27,16 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/其他内容/游戏开发&图形学/计算机图形学/API编程/opengl/pyopengl.md",
+                "file": "docs/论文研读/超分插帧/ExtraSS A Framework for Joint Spatial Super Sampling and Frame Extrapolation.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "pyopengl"
+              "title": "ExtraSS A Framework for Joint Spatial Super Sampling and Frame Extrapolation"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -209,13 +210,15 @@
       "copilot:Open Copilot Chat": false
     }
   },
-  "active": "7fa86c2358eb623f",
+  "active": "5067a8737312bfc0",
   "lastOpenFiles": [
+    "2025-10-07.md",
+    "docs/其他内容/游戏开发&图形学/计算机图形学/API编程/opengl/pyopengl.md",
+    "docs/其他内容/人工智能/实验/训练框架使用.md",
     "docs/论文研读/超分插帧/ExtraSS A Framework for Joint Spatial Super Sampling and Frame Extrapolation.md",
     "docs/其他内容/游戏开发&图形学/游戏开发/游戏客户端/unity/插件/Spine 2D骨骼动画.md",
     "docs/其他内容/游戏开发&图形学/游戏开发/游戏客户端/unity/unity基础.md",
     "docs/其他内容/游戏开发&图形学/游戏开发/游戏客户端/unity/插件/使用UnityYamlMerge处理冲突.md",
-    "docs/其他内容/游戏开发&图形学/计算机图形学/API编程/opengl/pyopengl.md",
     "docs/其他内容/游戏开发&图形学/计算机图形学/shader/unity shader（HLSL）.md",
     "docs/其他内容/游戏开发&图形学/lua/xlua.md",
     "docs/其他内容/游戏开发&图形学/阅读/实时渲染第四版.md",
@@ -231,7 +234,6 @@
     "docs/其他内容/游戏开发&图形学/计算机图形学/shader/shaderToy学习.md",
     "docs/论文研读/超分插帧",
     "docs/论文研读",
-    "docs/其他内容/人工智能/实验/训练框架使用.md",
     "conflict-files-obsidian-git.md",
     "docs/其他内容/人工智能/实验",
     "docs/其他内容/游戏开发&图形学/计算机图形学/杂项/后处理.md",
@@ -246,7 +248,6 @@
     "docs/其他内容/游戏开发&图形学/计算机图形学/专题/超分插帧/开源算法/FSR/代码（Unity）/TAASR.compute",
     "docs/其他内容/游戏开发&图形学/计算机图形学/专题/超分插帧/开源算法/GSR/代码（原版）",
     "docs/其他内容/游戏开发&图形学/计算机图形学/专题/超分插帧/开源算法/GSR/GSR.md",
-    "docs/其他内容/游戏开发&图形学/计算机图形学/专题/超分插帧/开源算法/FSR/FSR.md",
     "Excalidraw/pic/Pasted Image 20250603151447_863.png",
     "Excalidraw/pic/Pasted Image 20250603151426_231.png",
     "Excalidraw/pic/Pasted Image 20250603151439_890.png",
