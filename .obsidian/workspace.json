@@ -108,8 +108,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 357.49999618530273
   },
   "right": {
     "id": "d615b65a4ccf8a6a",
@@ -210,7 +209,7 @@
       "copilot:Open Copilot Chat": false
     }
   },
-  "active": "5067a8737312bfc0",
+  "active": "96e173acdf249e6c",
   "lastOpenFiles": [
     "docs/其他内容/人工智能/实验/训练框架使用.md",
     "docs/论文研读/超分插帧/ExtraSS A Framework for Joint Spatial Super Sampling and Frame Extrapolation.md",
