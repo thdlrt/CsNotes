@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/其他内容/人工智能/实验/训练框架使用.md",
+                "file": "docs/论文研读/超分插帧/超分插针融合/ExtraSS A Framework for Joint Spatial Super Sampling and Frame Extrapolation.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "训练框架使用"
+              "title": "ExtraSS A Framework for Joint Spatial Super Sampling and Frame Extrapolation"
             }
           },
           {
@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/论文研读/超分插帧/超分插针融合/ExtraSS A Framework for Joint Spatial Super Sampling and Frame Extrapolation.md",
+                "file": "docs/论文研读/超分插帧/超分插针融合/实验.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "ExtraSS A Framework for Joint Spatial Super Sampling and Frame Extrapolation"
+              "title": "实验"
             }
           }
         ]
@@ -210,9 +210,9 @@
   },
   "active": "7fa86c2358eb623f",
   "lastOpenFiles": [
-    "docs/论文研读/超分插帧/超分插针融合/ExtraSS A Framework for Joint Spatial Super Sampling and Frame Extrapolation.md",
     "docs/其他内容/人工智能/实验/训练框架使用.md",
     "docs/论文研读/超分插帧/超分插针融合/实验.md",
+    "docs/论文研读/超分插帧/超分插针融合/ExtraSS A Framework for Joint Spatial Super Sampling and Frame Extrapolation.md",
     "docs/论文研读/超分插帧/超分插针融合",
     "2025-10-07.md",
     "docs/其他内容/游戏开发&图形学/计算机图形学/API编程/opengl/pyopengl.md",
