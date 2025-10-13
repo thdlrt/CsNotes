@@ -201,11 +201,7 @@
       "templates:插入模板": false,
       "command-palette:打开命令面板": false,
       "obsidian-excalidraw-plugin:新建绘图文件": false,
-      "media-extended:Open media": false,
-      "omnisearch:Omnisearch": false,
-      "vscode-editor:新建代码文件": false,
-      "obsidian-advanced-slides:Show Slide Preview": false,
-      "copilot:Open Copilot Chat": false
+      "media-extended:Open media": false
     }
   },
   "active": "7fa86c2358eb623f",
