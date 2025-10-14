@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/论文研读/超分插帧/超分插针融合/ExtraSS A Framework for Joint Spatial Super Sampling and Frame Extrapolation.md",
+                "file": "docs/论文研读/超分插帧/未命名.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "ExtraSS A Framework for Joint Spatial Super Sampling and Frame Extrapolation"
+              "title": "未命名"
             }
           },
           {
@@ -201,14 +201,19 @@
       "templates:插入模板": false,
       "command-palette:打开命令面板": false,
       "obsidian-excalidraw-plugin:新建绘图文件": false,
-      "media-extended:Open media": false
+      "media-extended:Open media": false,
+      "omnisearch:Omnisearch": false,
+      "vscode-editor:新建代码文件": false,
+      "obsidian-advanced-slides:Show Slide Preview": false,
+      "copilot:Open Copilot Chat": false
     }
   },
   "active": "7fa86c2358eb623f",
   "lastOpenFiles": [
+    "docs/论文研读/超分插帧/超分插针融合/ExtraSS A Framework for Joint Spatial Super Sampling and Frame Extrapolation.md",
+    "docs/论文研读/超分插帧/未命名.md",
     "docs/其他内容/人工智能/实验/训练框架使用.md",
     "docs/论文研读/超分插帧/超分插针融合/实验.md",
-    "docs/论文研读/超分插帧/超分插针融合/ExtraSS A Framework for Joint Spatial Super Sampling and Frame Extrapolation.md",
     "docs/论文研读/超分插帧/超分插针融合",
     "2025-10-07.md",
     "docs/其他内容/游戏开发&图形学/计算机图形学/API编程/opengl/pyopengl.md",
@@ -237,7 +242,6 @@
     "docs/其他内容/游戏开发&图形学/计算机图形学/三维重建",
     "docs/学校课程/智能三维重建/笔记.md",
     "docs/学校课程/智能三维重建",
-    "docs/自学内容/人工智能/pytorch.md",
     "docs/其他内容/游戏开发&图形学/计算机图形学/专题/超分插帧/开源算法/GSR/代码（原版）/sgsr2_upscale.comp",
     "docs/其他内容/游戏开发&图形学/计算机图形学/专题/超分插帧/开源算法/GSR/代码（原版）/sgsr2_convert.comp",
     "docs/其他内容/游戏开发&图形学/计算机图形学/专题/超分插帧/开源算法/GSR/代码（原版）/sgsr2_activate.comp",
