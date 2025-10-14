@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/论文研读/超分插帧/未命名.md",
+                "file": "docs/论文研读/超分插帧/Kernel-Based Frame Interpolation for Spatio-Temporally Adaptive Rendering.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "未命名"
+              "title": "Kernel-Based Frame Interpolation for Spatio-Temporally Adaptive Rendering"
             }
           },
           {
@@ -107,7 +107,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 239.49999618530273
+    "width": 239.49999618530273,
+    "collapsed": true
   },
   "right": {
     "id": "d615b65a4ccf8a6a",
@@ -211,7 +212,7 @@
   "active": "7fa86c2358eb623f",
   "lastOpenFiles": [
     "docs/论文研读/超分插帧/超分插针融合/ExtraSS A Framework for Joint Spatial Super Sampling and Frame Extrapolation.md",
-    "docs/论文研读/超分插帧/未命名.md",
+    "docs/论文研读/超分插帧/Kernel-Based Frame Interpolation for Spatio-Temporally Adaptive Rendering.md",
     "docs/其他内容/人工智能/实验/训练框架使用.md",
     "docs/论文研读/超分插帧/超分插针融合/实验.md",
     "docs/论文研读/超分插帧/超分插针融合",
