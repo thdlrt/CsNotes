@@ -1,8 +1,12 @@
 {
   "recentFiles": [
     {
+      "basename": "Neural Frame Interpolation for Rendered Content",
+      "path": "docs/论文研读/超分插帧/taibase/Neural Frame Interpolation for Rendered Content.md"
+    },
+    {
       "basename": "Kernel-Based Frame Interpolation for Spatio-Temporally Adaptive Rendering",
-      "path": "docs/论文研读/超分插帧/Kernel-Based Frame Interpolation for Spatio-Temporally Adaptive Rendering.md"
+      "path": "docs/论文研读/超分插帧/taibase/Kernel-Based Frame Interpolation for Spatio-Temporally Adaptive Rendering.md"
     },
     {
       "basename": "ExtraSS A Framework for Joint Spatial Super Sampling and Frame Extrapolation",

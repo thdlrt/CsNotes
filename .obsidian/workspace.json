@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/论文研读/超分插帧/Kernel-Based Frame Interpolation for Spatio-Temporally Adaptive Rendering.md",
+                "file": "docs/论文研读/超分插帧/taibase/Neural Frame Interpolation for Rendered Content.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Kernel-Based Frame Interpolation for Spatio-Temporally Adaptive Rendering"
+              "title": "Neural Frame Interpolation for Rendered Content"
             }
           },
           {
@@ -211,8 +211,10 @@
   },
   "active": "7fa86c2358eb623f",
   "lastOpenFiles": [
+    "docs/论文研读/超分插帧/taibase/Kernel-Based Frame Interpolation for Spatio-Temporally Adaptive Rendering.md",
+    "docs/论文研读/超分插帧/taibase/Neural Frame Interpolation for Rendered Content.md",
+    "docs/论文研读/超分插帧/taibase",
     "docs/论文研读/超分插帧/超分插针融合/ExtraSS A Framework for Joint Spatial Super Sampling and Frame Extrapolation.md",
-    "docs/论文研读/超分插帧/Kernel-Based Frame Interpolation for Spatio-Temporally Adaptive Rendering.md",
     "docs/其他内容/人工智能/实验/训练框架使用.md",
     "docs/论文研读/超分插帧/超分插针融合/实验.md",
     "docs/论文研读/超分插帧/超分插针融合",
@@ -241,12 +243,10 @@
     "docs/其他内容/游戏开发&图形学/计算机图形学/杂项/后处理.md",
     "docs/其他内容/游戏开发&图形学/计算机图形学/三维重建/笔记.md",
     "docs/其他内容/游戏开发&图形学/计算机图形学/三维重建",
-    "docs/学校课程/智能三维重建/笔记.md",
     "docs/学校课程/智能三维重建",
     "docs/其他内容/游戏开发&图形学/计算机图形学/专题/超分插帧/开源算法/GSR/代码（原版）/sgsr2_upscale.comp",
     "docs/其他内容/游戏开发&图形学/计算机图形学/专题/超分插帧/开源算法/GSR/代码（原版）/sgsr2_convert.comp",
     "docs/其他内容/游戏开发&图形学/计算机图形学/专题/超分插帧/开源算法/GSR/代码（原版）/sgsr2_activate.comp",
-    "docs/其他内容/游戏开发&图形学/计算机图形学/专题/超分插帧/开源算法/FSR/代码（Unity）/TAASR.compute",
     "Excalidraw/pic/Pasted Image 20250603151447_863.png",
     "Excalidraw/pic/Pasted Image 20250603151426_231.png",
     "Excalidraw/pic/Pasted Image 20250603151439_890.png",
