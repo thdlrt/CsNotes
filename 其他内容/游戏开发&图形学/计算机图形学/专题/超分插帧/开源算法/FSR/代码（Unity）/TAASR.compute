@@ -1,0 +1,582 @@
+#pragma kernel UpscaleMain
+#pragma kernel SharpMain
+
+#pragma multi_compile __ USE_HALF
+
+#ifdef USE_HALF
+  #define PREC  half
+  #define PREC2 half2
+  #define PREC3 half3
+  #define PREC4 half4
+#else
+  #define PREC  float
+  #define PREC2 float2
+  #define PREC3 float3
+  #define PREC4 float4
+#endif
+
+Texture2D<float4> currentRGBLR;
+Texture2D<float4> prevRGBAHR;
+Texture2D<float4> motionDepthClipLRRead;
+Texture2D<float4> prevMotionLR;
+
+float _reset;
+float2 _curJitter;
+float2 _prevJitter;
+float2 _prevPrevJitter;
+float _sharpness;
+float2 renderSize;
+float2 displaySize;
+SamplerState smpLinearClamp;
+SamplerState smpPointClamp;
+
+RWTexture2D<float4> currentRGBAHR;
+RWTexture2D<float4> resultRGBHR;
+
+#define FSR_RCAS_LIMIT (0.25-(1.0/16.0))
+PREC3 reverseGamma(PREC3 c)
+{
+    return pow(c, PREC3(2.2, 2.2, 2.2));
+}
+
+PREC3 Gamma(PREC3 c)
+{
+    return pow(c, PREC3(1.0 / 2.2, 1.0 / 2.2, 1.0 / 2.2));
+}
+PREC3 RGB2YCoCg(PREC3 rgb)
+{
+    PREC3 res;
+    res.r = 0.25 * rgb.r + 0.5 * rgb.g + 0.25 * rgb.b;
+    res.g = 0.5 * rgb.r- 0.5 * rgb.b;
+    res.b = -0.25 * rgb.r + 0.5 * rgb.g - 0.25 * rgb.b;
+    return res;
+}
+PREC3 YCoCg2RGB(PREC3 YCoCg)
+{
+    PREC3 res;
+    res.r = YCoCg.r + YCoCg.g - YCoCg.b;
+    res.g = YCoCg.r + YCoCg.b;
+    res.b = YCoCg.r - YCoCg.g - YCoCg.b;
+    return res;
+}
+
+float calcLumin(float3 color)
+{
+    return color.r * 0.2126 + color.g * 0.7152 + color.b * 0.0722;
+}
+
+float fastLanczos(float base)
+{
+    float y = base - 1.0;
+    float y2 = y * y;
+    float y_temp = 0.75 * y + y2;
+    return abs(y_temp * y2);
+}
+float3 DecodeColor(uint sample32)
+{
+    uint x11 = sample32 >> 21u;
+    uint y11 = sample32 & (2047u << 10u);
+    uint z10 = sample32 & 1023u;
+    float3 samplecolor;
+    samplecolor.x = (float(x11) * (1.0 / 2047.5));
+    samplecolor.y = (float(y11) * (4.76953602e-7)) - 0.5;
+    samplecolor.z = (float(z10) * (1.0 / 1023.5)) - 0.5;
+
+    return samplecolor;
+}
+
+float4 BiCubicCatmullRom5Tap(Texture2D<float4> iChannel0, float2 P, float2 c_textureSize)
+{
+    float2 InvSize = 1.0 / c_textureSize;
+    float2 Weight[3];
+    float2 Sample[3];
+    
+    float2 UV = P * c_textureSize;
+    float2 tc = floor(UV - 0.5) + 0.5;
+    float2 f = UV - tc;
+    float2 f2 = f * f;
+    float2 f3 = f2 * f;
+    
+    float2 w0 = f2 - 0.5 * (f3 + f);
+    float2 w1 = 1.5 * f3 - 2.5 * f2 + float2(1.0f, 1.0f);
+    float2 w3 = 0.5 * (f3 - f2);
+    float2 w2 = float2(1.0f, 1.0f) - w0 - w1 - w3;
+    
+    Weight[0] = w0;
+    Weight[1] = w1 + w2;
+    Weight[2] = w3;
+
+    Sample[0] = tc - float2(1.0f,1.0f);
+    Sample[1] = tc + w2 / Weight[1];
+    Sample[2] = tc + float2(2.0f,2.0f);
+
+    Sample[0] *= InvSize;
+    Sample[1] *= InvSize;
+    Sample[2] *= InvSize;
+
+    float sampleWeight[5];
+    sampleWeight[0] = Weight[1].x * Weight[0].y;
+    sampleWeight[1] = Weight[0].x * Weight[1].y;
+    sampleWeight[2] = Weight[1].x * Weight[1].y;
+    sampleWeight[3] = Weight[2].x * Weight[1].y;
+    sampleWeight[4] = Weight[1].x * Weight[2].y;
+
+    float4 Ct = iChannel0.SampleLevel(smpLinearClamp,float2(Sample[1].x, Sample[0].y),0) * sampleWeight[0];
+    float4 Cl = iChannel0.SampleLevel(smpLinearClamp,float2(Sample[0].x, Sample[1].y),0) * sampleWeight[1];
+    float4 Cc = iChannel0.SampleLevel(smpLinearClamp,float2(Sample[1].x, Sample[1].y),0) * sampleWeight[2];
+    float4 Cr = iChannel0.SampleLevel(smpLinearClamp,float2(Sample[2].x, Sample[1].y),0) * sampleWeight[3];
+    float4 Cb = iChannel0.SampleLevel(smpLinearClamp,float2(Sample[1].x, Sample[2].y),0) * sampleWeight[4];
+    
+    float WeightMultiplier = 1. / (sampleWeight[0] + sampleWeight[1] + sampleWeight[2] + sampleWeight[3] + sampleWeight[4]);
+    
+    
+    return (Ct + Cl + Cc + Cr + Cb) * WeightMultiplier;
+}
+void func_EASUSet(inout PREC2 dirPX, inout PREC2 dirPY, inout PREC2 lenP, PREC2 pp, bool biSTUV, PREC2 lA, PREC2 lB, PREC2 lC, PREC2 lD, PREC2 lE)
+{
+    PREC2 w = biSTUV ? (PREC2(1.0f, 0.0f) + PREC2(-pp.x, pp.x)) * (1.0f - pp.y) : (PREC2(1.0f, 0.0f) + PREC2(-pp.x, pp.x)) * pp.y;
+    //dirX/dirY: the X/Y direction grads
+    //dirPX/dirPY: the X/Y direction grads with bilinear weight accumulate (f,g,j,k)
+    //lenX=saturate(|lD-lB|/max(|lD-lC|,|lC-lB|)) ^2 ： the edges feature of X-axis
+    //lenY=saturate(|lA-lE|/max(|lA-lC|,|lC-lE|)) ^2 ： the edges feature of Y-axis
+    //lenP: the edges feature of X-axis and Y-axis with bilinear weight accumulate (f,g,j,k)
+    //lenP=1 large feature, represents edge
+    //lenP=0 small feature, represents flat
+    
+    //      +---+---+
+    //      |   |   |
+    //      +--(0)--+
+    //      | b | c |
+    //  +---F---+---+---+
+    //  | e | f | g | h |
+    //  +--(1)--+--(2)--+
+    //  | i | j | k | l |
+    //  +---+---+---+---+
+    //      | n | o |
+    //      +--(3)--+
+    //      |   |   |
+    //      +---+---+
+    
+    //  A
+    //B C D
+    //  E
+    PREC2 dc = lD - lC;
+    PREC2 cb = lC - lB;
+    PREC2 lenX = PREC(1.0f) / max(abs(dc), abs(cb));
+    PREC2 dirX = lD - lB;
+    dirPX += dirX * w;
+    lenX = saturate(abs(dirX) * lenX);
+    lenX *= lenX;
+    lenP += lenX * w;
+    PREC2 ec = lE - lC;
+    PREC2 ca = lC - lA;
+    PREC2 lenY = PREC(1.0f) / max(abs(ec), abs(ca));
+    PREC2 dirY = lE - lA;
+    dirPY += dirY * w;
+    lenY = saturate(abs(dirY) * lenY);
+    lenY *= lenY;
+    lenP += lenY * w;
+}
+
+void func_EASUTap(inout PREC2 aCR, inout PREC2 aCG, inout PREC2 aCB, inout PREC2 aW, PREC2 offX, PREC2 offY, PREC2 dir, PREC2 len, PREC lob, PREC clp, PREC2 cR, PREC2 cG, PREC2 cB)
+{
+    //  Rotate offset by direction (dir=(cos,sin) ) and Anisotropy (len).
+    //dir=(cos(beta),sin(beta))
+    //P= (x,y)=(R*cos(alpha),R*sin(alpha))
+    //after rotating counterclockwise by (-beta) degrees around the (0,0)
+    //P'=(x*cos(beta)+y*sin(beta),y*cos(beta)-x*sin(beta))
+    //  =(R*cos(alpha-beta),R*sin(alpha-beta))
+    //now the grad direction is x-axis , and the edge (perpendicular to the grad direction) lies on y-axis;
+    //so we get an Anisotropy kernel
+    //image:
+    //0 0 0 0 0 1 1 1 1 1
+    //0 0 0 0 0 1 1 1 1 1
+    //0 0 0 0 0 1 1 1 1 1
+    //0 0 0 0 0 1 1 1 1 1
+    //0 0 0 0 0 1 1 1 1 1
+    //0 0 0 0 0 1 1 1 1 1
+    //0 0 0 0 0 1 1 1 1 1
+    //0 0 0 0 0 1 1 1 1 1
+    //0 0 0 0 0 1 1 1 1 1
+    //0 0 0 0 0 1 1 1 1 1
+    //we need:the anisotropy kernel's shape is Rectangle (y>x):
+    //0 0 0 0 0 0 0 0 0 0
+    //0 0 0 - - - - 0 0 0
+    //0 0 0 - + + - 0 0 0
+    //0 0 0 - + + - 0 0 0
+    //0 0 0 - + + - 0 0 0
+    //0 0 0 - + + - 0 0 0
+    //0 0 0 - + + - 0 0 0
+    //0 0 0 - + + - 0 0 0
+    //0 0 0 - - - - 0 0 0
+    //0 0 0 0 0 0 0 0 0 0
+    //the ordinary (isotropy) kernel's shape is Square (y=x):
+    //0 0 0 0 0 0 0 0 0 0
+    //0 0 0 0 0 0 0 0 0 0
+    //0 0 - - - - - - 0 0
+    //0 0 - + + + + - 0 0
+    //0 0 - + + + + - 0 0
+    //0 0 - + + + + - 0 0
+    //0 0 - + + + + - 0 0
+    //0 0 - - - - - - 0 0
+    //0 0 0 0 0 0 0 0 0 0
+    //0 0 0 0 0 0 0 0 0 0
+    
+    PREC2 vX = (offX * dir.xx + offY * dir.yy) * len.x;
+    PREC2 vY = (offY * dir.xx - offX * dir.yy) * len.y;
+    // Limit to the window as at corner. because we need d^2 in [0,1/lob] => (lob*d2-1)^2 in [0,1], where clp=1/lob
+    PREC2 d2 = min(vX * vX + vY * vY, clp);
+    //https://zhuanlan.zhihu.com/p/401030221
+    // Approximation of lancos2 without sin() or rcp(), or sqrt() to get x.
+    //  (25/16 * (2/5 * x^2 - 1)^2 - (25/16 - 1)) * (1/4[lob] * x^2 - 1)^2
+    //  |_______________________________________|   |_______________|
+    //                   base                             window
+    PREC2 wB = PREC(0.4) * d2 - PREC(1);
+    PREC2 wA = lob * d2 - PREC(1);
+    wA *= wA;
+    wB = PREC(25.0f / 16.0f) * wB * wB - PREC(25.0f / 16.0f - 1.0f);
+    PREC2 w = wA * wB;
+    aCR += cR * w;
+    aCG += cG * w;
+    aCB += cB * w;
+    aW += w;//TODO:weight accumulate?
+    
+}
+// the float-32 version of Efunc3_EASUASU (FSR 1.0)
+float3 func3_EASU(in Texture2D tex, float2 ip, float4 con0, float4 con1, float4 con2, float4 con3,out float3 minc,out float3 maxc)
+{
+    //https://atyuwen.github.io/posts/optimizing-fsr/
+    //source code:https://github.com/ndepoel/FSR3Unity
+    //analysis: https://zhuanlan.zhihu.com/p/401030221 https://blog.csdn.net/JMXIN422/article/details/129412650 https://zhuanlan.zhihu.com/p/637639295
+    float2 pp = ip * con0.xy + con0.zw;
+    PREC2 fp = floor(pp);
+    pp -= fp;
+    PREC2 ppp = pp;
+    
+    PREC2 dir;  
+    PREC  dirR;
+    
+    #ifdef USE_HALF
+    PREC kThresh = PREC(1) / PREC(64);    // half: 0.015625
+    #else
+    PREC kThresh = PREC(1) / PREC(32768); // float: 0.0000305
+    #endif
+    
+    #ifdef USE_HALF
+    //快速判断
+    float2 tc = (ip + float2(0.5, 0.5)) / displaySize;
+    PREC3 sA = tex.SampleLevel(smpLinearClamp, tc + float2( 0,-con1.y), 0).rgb;
+    PREC3 sB = tex.SampleLevel(smpLinearClamp, tc + float2(-con1.x, 0), 0).rgb; 
+    PREC3 sC = tex.SampleLevel(smpLinearClamp, tc              , 0).rgb;     
+    PREC3 sD = tex.SampleLevel(smpLinearClamp, tc + float2( con1.x,0), 0).rgb; 
+    PREC3 sE = tex.SampleLevel(smpLinearClamp, tc + float2(0, con1.y), 0).rgb; 
+    
+    PREC bL = sA.b * 0.5 + (sA.r * 0.5 + sA.g);  
+    PREC cL = sB.b * 0.5 + (sB.r * 0.5 + sB.g);  
+    PREC fL = sC.b * 0.5 + (sC.r * 0.5 + sC.g);  
+    PREC gL = sD.b * 0.5 + (sD.r * 0.5 + sD.g);  
+    PREC jL = sE.b * 0.5 + (sE.r * 0.5 + sE.g);  
+    
+    PREC w00 = (1-pp.x)*(1-pp.y);  
+    PREC w10 =  pp.x *(1-pp.y);  
+    PREC w01 = (1-pp.x)* pp.y;  
+    PREC w11 =  pp.x * pp.y;  
+    PREC lA = w00*bL + w10*cL + w01*fL + w11*gL;  
+    PREC lB = w00*cL + w10*fL + w01*gL + w11*jL;  
+    PREC lC = w00*fL + w10*gL + w01*jL + w11*jL;
+    PREC lD = w00*gL + w10*jL + w01*jL + w11*jL;  
+    PREC lE = w00*jL + w10*jL + w01*jL + w11*jL;  
+
+    //    X 方向  
+    PREC dc   = lD - lC;  
+    PREC cb   = lC - lB;  
+    PREC invX = PREC(1.0f) / max(abs(dc), abs(cb));  
+    PREC dirX = lD - lB;  
+    PREC lenX = saturate(abs(dirX)*invX);
+    lenX *= lenX;  
+
+    //    Y 方向  
+    PREC ec   = lE - lC;  
+    PREC ca   = lC - lA;  
+    PREC invY = PREC(1.0f) / max(abs(ec), abs(ca));  
+    PREC dirY = lE - lA;  
+    PREC lenY = saturate(abs(dirY)*invY);
+    lenY *= lenY;  
+
+    dir  = PREC2(dirX, dirY);  
+    dirR = dot(dir, dir);
+    
+    //优化4,非边缘快速结束，直接采样
+    if (dirR < kThresh)
+    {
+        float2 uvLinear = (ip + float2(0.5, 0.5)) / displaySize;
+        PREC3 col      = tex.SampleLevel(smpLinearClamp, uvLinear, 0).rgb;
+        minc = col;
+        maxc = col;
+        return col;
+    }
+    #endif
+        
+    //正常渲染流程
+    float2 p0 = fp * con1.xy + con1.zw;
+    float2 p1 = p0 + con2.xy;
+    float2 p2 = p0 + con2.zw;
+    float2 p3 = p0 + con3.xy;
+    PREC4 bczzR = tex.GatherRed(smpPointClamp, p0);
+    PREC4 bczzG = tex.GatherGreen(smpPointClamp, p0);
+    PREC4 bczzB = tex.GatherBlue(smpPointClamp, p0);
+    PREC4 ijfeR = tex.GatherRed(smpPointClamp, p1);
+    PREC4 ijfeG = tex.GatherGreen(smpPointClamp, p1);
+    PREC4 ijfeB = tex.GatherBlue(smpPointClamp, p1);
+    PREC4 klhgR = tex.GatherRed(smpPointClamp, p2);
+    PREC4 klhgG = tex.GatherGreen(smpPointClamp, p2);
+    PREC4 klhgB = tex.GatherBlue(smpPointClamp, p2);
+    PREC4 zzonR = tex.GatherRed(smpPointClamp, p3);
+    PREC4 zzonG = tex.GatherGreen(smpPointClamp, p3);
+    PREC4 zzonB = tex.GatherBlue(smpPointClamp, p3);
+    // Centers of gather4, first offset from upper-left of 'F'.
+    //      +---+---+
+    //      |   |   |
+    //      +--(0)--+
+    //      | b | c |
+    //  +---F---+---+---+
+    //  | e | f | g | h |
+    //  +--(1)--+--(2)--+
+    //  | i | j | k | l |
+    //  +---+---+---+---+
+    //      | n | o |
+    //      +--(3)--+
+    //      |   |   |
+    //      +---+---+
+    
+    PREC4 bczzL = bczzB * PREC(0.5) + bczzR * PREC(0.5) + bczzG;
+    PREC4 ijfeL = ijfeB * PREC(0.5) + ijfeR * PREC(0.5) + ijfeG;
+    PREC4 klhgL = klhgB * PREC(0.5) + klhgR * PREC(0.5) + klhgG;
+    PREC4 zzonL = zzonB * PREC(0.5) + zzonR * PREC(0.5) + zzonG;
+    PREC2 dirPX = PREC2(0, 0);
+    PREC2 dirPY = PREC2(0, 0);
+    PREC2 lenP = PREC2(0, 0);
+    //TODO 优化3:先计算再插值->先插值再计算
+    func_EASUSet(dirPX, dirPY, lenP, ppp, true, PREC2(bczzL.x, bczzL.y), PREC2(ijfeL.w, ijfeL.z), PREC2(ijfeL.z, klhgL.w), PREC2(klhgL.w, klhgL.z), PREC2(ijfeL.y, klhgL.x));
+    func_EASUSet(dirPX, dirPY, lenP, ppp, false, PREC2(ijfeL.z, klhgL.w), PREC2(ijfeL.x, ijfeL.y), PREC2(ijfeL.y, klhgL.x), PREC2(klhgL.x, klhgL.y), PREC2(zzonL.w, zzonL.z));
+    //dir: the direction grad
+    //len: the edge feature
+    //Normalization ==> (dir.x,dir.y)->(dir.x/(dir.x*dir.x+dir.y*dir.y),dir.y/(dir.x*dir.x+dir.y*dir.y)) ->(cos,sin)
+    dir = PREC2(dirPX.r + dirPX.g, dirPY.r + dirPY.g);
+    PREC len = lenP.r + lenP.g;
+    dirR = dot(dir, dir);
+    
+    dir.x = (dirR < kThresh) ? PREC(1) : dir.x;
+    dirR = (dirR < kThresh) ? PREC(1) : rsqrt(dirR);
+    dir *= dirR;
+    
+    len *= PREC(0.5f);
+    len *= len;
+    
+    //len=(lenP.x+lenP.y)/2)^2 in [0,1] represents the final bilinear interpolation results of edge feature among f,g,l and k
+    //stretch=1.0/max(abs(cos),abs(sin)) it's for calcuating the len2 (scale), whose value in [1,sqrt(2)]
+    //len2.x=1+(stretch-1)*len in [1,sqrt(2)]
+    //len2.y=1-0.5*len in [0.5,1]
+    //Anaysis: stretch=1 => horizonal/vertical edge, so small kernel
+    //         stretch=sqrt(2) => diagonal edge, so large kernel
+    //when the len increases, the area is more likely to be the edge
+    //and we want an Anisotropy kernel, so we need to scale the x and y respectively
+    //Specifically, we want more samples along the edge and less samples perpendicular to the edge
+    //the details is in func_EASUTapF(...)
+    
+    PREC stretch = dot(dir, dir) / max(abs(dir.x), abs(dir.y));
+    PREC2 len2 = PREC2(PREC(1) + (stretch - PREC(1)) * len, PREC(1) - PREC(0.5) * len);
+    //lob(w) =0.5-0.25*len, which is in [0.25,0.5]
+    //when the edge happens,the len is larger, then the lob(w) is smaller, 
+    //so the approximate lanzcos function has negative value bewteen [1,2], for the high frequency sharpening filter
+    //the 0.04f in calculating lob is practical, no reason in theory
+    //  -1
+    //-1 4 -1
+    //  -1
+    PREC lob = PREC(0.5f + ((0.25f - 0.04f) - 0.5f) * len);
+    PREC clp = PREC(1) / lob;
+    PREC2 bothR = max(max(PREC2(-ijfeR.z, ijfeR.z), PREC2(-klhgR.w, klhgR.w)), max(PREC2(-ijfeR.y, ijfeR.y), PREC2(-klhgR.x, klhgR.x)));
+    PREC2 bothG = max(max(PREC2(-ijfeG.z, ijfeG.z), PREC2(-klhgG.w, klhgG.w)), max(PREC2(-ijfeG.y, ijfeG.y), PREC2(-klhgG.x, klhgG.x)));
+    PREC2 bothB = max(max(PREC2(-ijfeB.z, ijfeB.z), PREC2(-klhgB.w, klhgB.w)), max(PREC2(-ijfeB.y, ijfeB.y), PREC2(-klhgB.x, klhgB.x)));
+    PREC2 pR = PREC2(0.0f, 0.0f);
+    PREC2 pG = PREC2(0.0f, 0.0f);
+    PREC2 pB = PREC2(0.0f, 0.0f);
+    PREC2 pW = PREC2(0.0f, 0.0f);
+    func_EASUTap(pR, pG, pB, pW, PREC2(0.0f, 1.0f) - ppp.xx, PREC2(-1.0f, -1.0f) - ppp.yy, dir, len2, lob, clp, bczzR.xy, bczzG.xy, bczzB.xy);
+    func_EASUTap(pR, pG, pB, pW, PREC2(-1.0f, 0.0f) - ppp.xx, PREC2(1.0f, 1.0f) - ppp.yy, dir, len2, lob, clp, ijfeR.xy, ijfeG.xy, ijfeB.xy);
+    func_EASUTap(pR, pG, pB, pW, PREC2(0.0f, -1.0f) - ppp.xx, PREC2(0.0f, 0.0f) - ppp.yy, dir, len2, lob, clp, ijfeR.zw, ijfeG.zw, ijfeB.zw);
+    func_EASUTap(pR, pG, pB, pW, PREC2(1.0f, 2.0f) - ppp.xx, PREC2(1.0f, 1.0f) - ppp.yy, dir, len2, lob, clp, klhgR.xy, klhgG.xy, klhgB.xy);
+    func_EASUTap(pR, pG, pB, pW, PREC2(2.0f, 1.0f) - ppp.xx, PREC2(0.0f, 0.0f) - ppp.yy, dir, len2, lob, clp, klhgR.zw, klhgG.zw, klhgB.zw);
+    func_EASUTap(pR, pG, pB, pW, PREC2(1.0f, 0.0f) - ppp.xx, PREC2(2.0f, 2.0f) - ppp.yy, dir, len2, lob, clp, zzonR.zw, zzonG.zw, zzonB.zw);
+    PREC3 aC = PREC3(pR.x + pR.y, pG.x + pG.y, pB.x + pB.y);
+    PREC aW = pW.x + pW.y;
+    minc = -PREC3(bothR.x, bothG.x, bothB.x);
+    maxc = PREC3(bothR.y, bothG.y, bothB.y);
+    PREC3 color = clamp(aC/aW, minc, maxc);
+    return color;
+}
+
+static const int2 offsets[] =
+    {
+        int2(0, 0),
+		int2(1, 0),
+		int2(0, 1),
+		int2(0, -1),
+		int2(-1, 0),
+		int2(-1, 1),
+		int2(1, 1),
+		int2(-1, -1),
+		int2(1, -1)
+    };
+PREC3 ClipToAABBCenter(PREC3 prevSample, PREC3 aabbMin, PREC3 aabbMax)
+{
+    PREC3 p_clip = 0.5 * (aabbMax + aabbMin);
+    PREC3 e_clip = 0.5 * (aabbMax - aabbMin);
+
+    PREC3 v_clip = prevSample - p_clip;
+    PREC3 v_unit = v_clip.xyz / e_clip;
+    PREC3 a_unit = abs(v_unit);
+    float ma_unit = max(a_unit.x, max(a_unit.y, a_unit.z));
+
+    if (ma_unit > 1.0)
+        return p_clip + v_clip / ma_unit;
+    else
+        return prevSample; // point inside aabb
+}
+
+[numthreads(4, 4, 1)]
+void UpscaleMain(uint3 id : SV_DispatchThreadID)
+{
+    int2 pos_sr = id.xy;
+    float2 ori_uv = float2(pos_sr + 0.5) / displaySize;
+    //float2 uv_renderpixel = float2(1.0f, 1.0f) / renderSize;
+    float2 cur_uv = ori_uv - _curJitter/renderSize;
+    //int2 pos_lr = cur_uv * renderSize;
+    PREC3 mvd = motionDepthClipLRRead.SampleLevel(smpLinearClamp, cur_uv, 0).xyz; //OLD:motionDepthClipLRRead.SampleLevel(smpLinearClamp, ori_uv, 0).xyz;
+    
+    PREC2 mv = mvd.xy;
+    float2 pre_uv = ori_uv - mv - _prevJitter / renderSize;
+    const PREC mvConfFactor = saturate(PREC(1) - length(mv * displaySize) / PREC(8));
+    
+    const PREC uv_weight = all(saturate(pre_uv) == pre_uv) ? PREC(1) : PREC(0);
+    PREC2 pre_mv = prevMotionLR.SampleLevel(smpLinearClamp, pre_uv, 0).xy;
+    PREC2 diff_mv_pixels = (mv - pre_mv) * displaySize;
+    PREC len_diff_mv_pixels = dot(diff_mv_pixels, diff_mv_pixels);
+    PREC2 inv_scale = renderSize * PREC(1) / displaySize;
+    PREC2 inv_renderSize = PREC(1) / renderSize;
+    
+    float4 con0 = float4(inv_scale.x, inv_scale.y, 0.5f * inv_scale.x - 0.5f, 0.5f * inv_scale.y - 0.5f);
+    float4 con1 = float4(inv_renderSize.x, inv_renderSize.y, inv_renderSize.x, -inv_renderSize.y);
+    float4 con2 = float4(-inv_renderSize.x, 2.0f * inv_renderSize.y, inv_renderSize.x, 2.0f * inv_renderSize.y);
+    float4 con3 = float4(0, 4 * inv_renderSize.y, 0, 0);
+    float3 minc = float3(9999.0f, 9999.0f, 9999.0f);
+    float3 maxc = float3(-9999.0f, -9999.0f, -9999.0f);
+    //NOTE: half-16 version => func3_EASUH(...)
+    //      float-32 version =>func3_EASU(...)
+    float2 nojitter_pos_sr = pos_sr - _curJitter * (displaySize / renderSize);
+    PREC3 cur_rgb = func3_EASU(currentRGBLR, nojitter_pos_sr, con0, con1, con2, con3, minc, maxc); //OLD:func3_EASU(currentRGBLR, pos_sr, con0, con1, con2, con3, minc, maxc); //currentRGBLR.SampleLevel(smpLinearClamp, uv, 0); //func3_EASU(currentRGBLR, pos_sr, con0, con1, con2, con3); //
+    const bool hasValidHistory = (mvConfFactor * uv_weight) > PREC(0);
+    bool isSky = (mvd.b == PREC(0));
+    //float3 debug_rgb = float3(1,1,1);
+    PREC4 result;
+    if (hasValidHistory)
+    {
+        float2 pre_sr_uv = ori_uv - mv;
+        float2 pre_sr_pos = pre_sr_uv * displaySize; //OLD:pre_njuv * displaySize;
+        
+        PREC4 prev_rgba = prevRGBAHR.SampleLevel(smpLinearClamp, pre_sr_uv, PREC(0));
+        PREC3 prev_YCoCg = RGB2YCoCg(prev_rgba.rgb);
+        PREC3 cur_YCoCg = RGB2YCoCg(cur_rgb);
+        minc = RGB2YCoCg(minc);
+        maxc = RGB2YCoCg(maxc); 
+        PREC3 valid_YCoCg = ClipToAABBCenter(prev_YCoCg, minc, maxc); //clamp(prev_YCoCg, minc, maxc); //ClipToAABBCenter(minc, maxc, prevColor);
+        float lerp_v_start = saturate(len_diff_mv_pixels + (isSky ? PREC(1) : PREC(0))) * PREC(0.9); //0.3; 
+        if (abs(mv.x) + abs(mv.y) > PREC(1))
+            lerp_v_start = PREC(1);
+        PREC lerp_contrib = (any(prev_YCoCg < minc) || any(prev_YCoCg > maxc)) ? lerp_v_start : PREC(0.1);
+        //debug_rgb = float3(abs(mv)*100, 0); //float3(abs(mv) * 100000, 0); //isSky ? float3(1, 1, 1) : float3(0, 0, 0);
+        PREC weight = prev_rgba.a * mvConfFactor * (PREC(1) - saturate(((any(prev_YCoCg < minc) || any(prev_YCoCg > maxc)) ? PREC(1) : length(maxc - minc) )*PREC(1) * length(valid_YCoCg - prev_YCoCg)));
+        valid_YCoCg = lerp(prev_YCoCg, valid_YCoCg, saturate(lerp_contrib + (isSky ? PREC(1) : PREC(0))));
+        
+        /*
+        TODO:think the accumulate weight
+        float afactor = saturate(abs(his_ycocga.a));
+        float base_upd = (1.0 - d_clip) * (1.0f - afactor);
+        float pmv_present_len = length(mv * displaySize);
+        base_upd = min(base_upd, lerp(base_upd, sr_ycocgw.w * 10.0, saturate(10.0 * pmv_present_len)));//?
+        base_upd = min(base_upd, lerp(base_upd, sr_ycocgw.w, saturate(0.05 * pmv_present_len)));//?
+        float base_min = min(base_upd, 0.1);
+        float base_alpha = lerp(base_min, base_upd, saturate(1.0-lerp_contrib));//!
+        float alpha_sum = max(eps, base_alpha + sr_ycocgw.w);//?
+        float alpha = saturate(sr_ycocgw.w / alpha_sum + _reset);
+        // alpha = sqrt(alpha);
+        sr_ycocgw.xyz = lerp(his_ycocg, sr_ycocgw.xyz, alpha);
+
+        */
+        result.rgb = YCoCg2RGB(lerp(cur_YCoCg, valid_YCoCg, weight));
+        result.a = saturate(PREC(0.2) + PREC(0.8) * weight); // saturate(1.0 / (4.0 - 3.0*weight));
+    }
+    else
+    {
+        result.rgb = cur_rgb;
+        result.a = PREC(0.25);
+    }
+    currentRGBAHR[pos_sr] = result;
+}
+
+[numthreads(4, 4, 1)]
+void SharpMain(uint3 id : SV_DispatchThreadID)
+{
+    int2 pos_sr = id.xy;
+     //    b
+     //  d e f
+     //    h
+    PREC3 b = currentRGBAHR[pos_sr + int2(0, -1)].rgb;
+    PREC3 d = currentRGBAHR[pos_sr + int2(-1, 0)].rgb;
+
+    PREC3 e = currentRGBAHR[pos_sr].rgb;
+    PREC3 f = currentRGBAHR[pos_sr + int2(1, 0)].rgb;
+    PREC3 h = currentRGBAHR[pos_sr + int2(0, 1)].rgb;
+     // Rename (32-bit) or regroup (16-bit).
+
+     // Luma times 2.
+    PREC3 vL = PREC3(0.5, 0.5, 1.0);
+    // PREC bL = dot(b.brg, vL);
+    // PREC dL = dot(d.brg, vL);
+    // PREC eL = dot(e.brg, vL);
+    // PREC fL = dot(f.brg, vL);
+    // PREC hL = dot(h.brg, vL);
+     // Noise detection.
+    // PREC nz = PREC(0.25) * bL + PREC(0.25) * dL + PREC(0.25) * fL + PREC(0.25) * hL - eL;
+    // PREC maxL = max(max(max(bL, dL), max(eL, fL)), hL);
+    // PREC minL = min(min(min(bL, dL), min(eL, fL)), hL);
+    // nz = saturate(abs(nz) * PREC(1) / (maxL - minL));
+    // nz = 1.0 - 0.5 * nz;
+     // Min and max of ring.
+    PREC3 mn4 = min(min(b, d), min(f, h));
+    PREC3 mx4 = max(max(b, d), max(f, h));
+
+     // Immediate constants for peak range.
+    PREC2 peakC = PREC2(1.0, -1.0 * 4.0);
+     // Limiters, these need to be high precision RCPs.
+    /*float hitMinR = mn4R /(4.0 * mx4R);
+    float hitMinG = mn4G /(4.0 * mx4G);
+    float hitMinB = mn4B /(4.0 * mx4B);*/
+    /*float hitMaxR = (peakC.x - mx4R) /(4.0 * mn4R + peakC.y);
+    float hitMaxG = (peakC.x - mx4G) /(4.0 * mn4G + peakC.y);
+    float hitMaxB = (peakC.x - mx4B) /(4.0 * mn4B + peakC.y);*/
+    float3 hitMin = min(mn4, e) / (4.0 * mx4);
+    float3 hitMax = (peakC.xxx - max(mx4, e)) / (4.0 * mn4 + peakC.yyy);
+    /*float lobeR = max(-hitMinR, hitMaxR);
+    float lobeG = max(-hitMinG, hitMaxG);
+    float lobeB = max(-hitMinB, hitMaxB);*/
+    float3 lobe4 = max(-hitMin, hitMax);
+    PREC lobe = max(0.25 - (1.0 / 16.0), min(max(max(lobe4.r, lobe4.g), lobe4.b), 0)) * _sharpness;
+    PREC rcpL = 1.0/(4.0 * lobe + 1.0);
+    /*pixR = (lobe * bR + lobe * dR + lobe * hR + lobe * fR + eR) * rcpL;
+    pixG = (lobe * bG + lobe * dG + lobe * hG + lobe * fG + eG) * rcpL;
+    pixB = (lobe * bB + lobe * dB + lobe * hB + lobe * fB + eB) * rcpL;*/
+    PREC3 res_rgb = (lobe * (b + d + h + f) + e) * rcpL;
+    resultRGBHR[pos_sr] = PREC4(res_rgb, 1.0);
+    return;
+}
